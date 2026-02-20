@@ -1,0 +1,29 @@
+{
+  "course_code": "CS 101",
+  "course_title": "Introduction to Computer Science",
+  "semester": "Spring 2026",
+  "instructor_name": "Dr. Ada Lovelace",
+  "instructor_email": "lovelace@university.edu",
+  "instructor_office": "Engineering Building, Room 142",
+  "office_hours": "Tuesday/Thursday 2-4pm",
+  "late_penalty": "10% per day, up to 3 days",
+  "name": "Session 5 Quiz – Objects and Object Methods",
+  "quiztype": "practice_quiz",
+  "indent": 1,
+  "timelimit": 20,
+  "allowedattempts": 3,
+  "shuffleanswers": true,
+  "showcorrectanswers": true,
+  "published": false,
+  "questiongroups": [
+    {
+      "bankid": "PLACEHOLDER_REPLACE_AFTER_SYNC",
+      "pick": 16,
+      "pointsperquestion": 1
+    }
+  ],
+  "type": "quiz",
+  "modules": [
+    "Foundations"
+  ]
+}

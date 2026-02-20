@@ -1,0 +1,33 @@
+title: "Essay Rubric"
+free_form_criterion_comments: false
+
+criteria:
+  - description: "Thesis and focus"
+    long_description: "Clarity and strength of the main argument."
+    points: 10
+    ratings:
+      - description: "Excellent"
+        long_description: "Clear, original thesis; fully focused throughout."
+        points: 10
+      - description: "Satisfactory"
+        long_description: "Thesis is present but may be vague or unevenly supported."
+        points: 8
+      - description: "Needs improvement"
+        long_description: "Thesis is missing, unclear, or not supported."
+        points: 5
+
+  - description: "Organization"
+    long_description: "Logical structure, paragraphing, and flow."
+    points: 10
+    ratings:
+      - description: "Excellent"
+        long_description: "Clear structure, smooth transitions, easy to follow."
+        points: 10
+      - description: "Satisfactory"
+        long_description: "Mostly organized; some awkward transitions or jumps."
+        points: 8
+      - description: "Needs improvement"
+        long_description: "Hard to follow; ideas feel scattered."
+        points: 5
+
+  - "{{rubric_row:writing_clarity}}"

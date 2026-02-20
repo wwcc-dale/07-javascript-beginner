@@ -1,0 +1,80 @@
+course_outcomes:
+  - code: 01-CODE
+    title: Develop JS code for use in web pages.
+    description: Develop JS code for use in web pages.
+    mastery_points: 4
+    ratings:
+      - points: 5
+        description: Excelling
+      - points: 4
+        description: Achieving
+      - points: 3
+        description: Developing
+      - points: 2
+        description: Beginning
+      - points: 0
+        description: No Evidence
+
+  - code: 02-OOP
+    title: Object Oriented Programming
+    description: Understand and utilize the fundamentals of OOP and complex data processing
+    mastery_points: 4
+    ratings:
+      - points: 5
+        description: Excelling
+      - points: 4
+        description: Achieving
+      - points: 3
+        description: Developing
+      - points: 2
+        description: Beginning
+      - points: 0
+        description: No Evidence
+
+  - code: 03-ELEM
+    title: Data types, data structures, functions and flow control
+    description: Control website behavior using data types, data structures, and logical dataflow and functions.
+    mastery_points: 4
+    ratings:
+      - points: 5
+        description: Excelling
+      - points: 4
+        description: Achieving
+      - points: 3
+        description: Developing
+      - points: 2
+        description: Beginning
+      - points: 0
+        description: No Evidence
+
+  - code: 04-MOD
+    title: Node.js, APIs and native modules
+    description: Explain the role of Node.js, APIs and native modules.
+    mastery_points: 4
+    ratings:
+      - points: 5
+        description: Excelling
+      - points: 4
+        description: Achieving
+      - points: 3
+        description: Developing
+      - points: 2
+        description: Beginning
+      - points: 0
+        description: No Evidence
+
+  - code: 05-DEBUG
+    title: Troubleshoot problems related to code execution
+    description: Troubleshoot problems related to code execution.
+    mastery_points: 4
+    ratings:
+      - points: 5
+        description: Excelling
+      - points: 4
+        description: Achieving
+      - points: 3
+        description: Developing
+      - points: 2
+        description: Beginning
+      - points: 0
+        description: No Evidence

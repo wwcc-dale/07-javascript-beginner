@@ -1,0 +1,329 @@
+:root {
+  --card-w: 65px;
+  --card-h: 95px;
+  --spades:   #1a1a1a;
+  --hearts:   #c41e3a;
+  --diamonds: #e85d2b;
+  --clubs:    #2d5016;
+  --table:    #1a6b3c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#game-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+/* ── Header ── */
+header {
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header h1 { margin: 0; font-size: 2em; flex: 1; }
+
+button {
+  background: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+button:hover { background: #45a049; transform: translateY(-2px); }
+
+/* ── Scoreboard ── */
+#scoreboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 16px;
+  background: #f1f3f4;
+}
+
+.team-slot {
+  background: white;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.team-name {
+  font-weight: 700;
+  font-size: 1.05em;
+  color: #1e3c72;
+  margin-bottom: 6px;
+}
+
+.team-score-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.team-score {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #2a5298;
+  line-height: 1;
+}
+
+.pts-label { color: #888; font-size: 0.9em; }
+
+.bags-label {
+  margin-left: auto;
+  font-size: 0.85em;
+  color: #c0392b;
+}
+
+.team-bid-info {
+  font-size: 0.82em;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* ── Status ── */
+#status-area {
+  text-align: center;
+  padding: 14px;
+  background: #e8f5e8;
+  border-bottom: 1px solid #ddd;
+}
+
+#game-status { font-size: 1.1em; font-weight: bold; color: #1a3a1a; }
+#round-info  { font-size: 0.9em; color: #555; margin-top: 4px; }
+
+/* ── Bidding Panel ── */
+#bidding-area {
+  margin: 16px;
+  padding: 20px;
+  background: #fff8e1;
+  border: 2px solid #f9a825;
+  border-radius: 12px;
+  text-align: center;
+}
+
+#bidding-area h3 { margin: 0 0 8px; color: #5d4037; }
+
+.bid-hint {
+  font-size: 0.88em;
+  color: #666;
+  margin: 0 0 14px;
+  font-family: monospace;
+}
+
+.bid-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.bid-btn {
+  background: #1565c0;
+  min-width: 52px;
+  padding: 10px 16px;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+.bid-btn:hover { background: #0d47a1; }
+
+.hidden { display: none !important; }
+
+/* ── Trick Table ── */
+#trick-display {
+  padding: 16px;
+  text-align: center;
+}
+
+#trick-display h3 { margin: 0 0 12px; }
+
+.trick-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: var(--table);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.trick-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.trick-middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.trick-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: calc(var(--card-w) + 8px);
+}
+
+.trick-label {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.78em;
+  margin-bottom: 4px;
+  min-height: 1em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.trick-card {
+  min-width: var(--card-w);
+  min-height: var(--card-h);
+}
+
+.trick-center-msg {
+  min-width: 90px;
+  color: #ffe082;
+  font-weight: bold;
+  font-size: 0.95em;
+  text-align: center;
+}
+
+/* ── Cards ── */
+.card {
+  width: var(--card-w);
+  height: var(--card-h);
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: default;
+  position: relative;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  transition: transform 0.15s, box-shadow 0.15s;
+  user-select: none;
+}
+
+.card.spades   { color: var(--spades); }
+.card.hearts   { color: var(--hearts); }
+.card.diamonds { color: var(--diamonds); }
+.card.clubs    { color: var(--clubs); }
+
+.card-corner {
+  position: absolute;
+  font-size: 11px;
+  line-height: 1.2;
+  text-align: center;
+}
+.card-corner.top-left     { top: 4px; left: 5px; }
+.card-corner.bottom-right { bottom: 4px; right: 5px; transform: rotate(180deg); }
+
+.card-center { font-size: 22px; }
+
+/* Playable card in the human hand */
+.card.playable {
+  cursor: pointer;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px #4CAF50, 0 4px 12px rgba(0,0,0,0.2);
+}
+.card.playable:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 0 0 2px #4CAF50, 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Grayed-out unplayable card */
+.card.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Player Hand Area ── */
+#player-hand-area {
+  padding: 0 16px 8px;
+}
+
+#player-hand-area h3 { margin: 12px 0 8px; font-size: 1em; color: #333; }
+
+.hand {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 12px;
+  background: #e8f5e8;
+  border-radius: 10px;
+  min-height: calc(var(--card-h) + 24px);
+}
+
+.play-hint {
+  font-size: 0.85em;
+  color: #2e7d32;
+  text-align: center;
+  margin-top: 6px;
+  min-height: 1.2em;
+  font-weight: 600;
+}
+
+/* ── Game Log ── */
+#game-log {
+  padding: 16px;
+  background: #f8f9fa;
+  border-top: 3px solid #dee2e6;
+}
+
+#game-log h3 { margin: 0 0 10px; font-size: 1em; }
+
+#log-content {
+  max-height: 180px;
+  overflow-y: auto;
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.log-entry { padding: 1px 0; }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  :root { --card-w: 48px; --card-h: 70px; }
+
+  #scoreboard { grid-template-columns: 1fr; }
+
+  .bid-buttons { gap: 5px; }
+  .bid-btn { min-width: 40px; padding: 8px 10px; font-size: 15px; }
+
+  .hand { gap: 4px; padding: 8px; }
+}

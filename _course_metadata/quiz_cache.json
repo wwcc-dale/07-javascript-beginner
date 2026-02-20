@@ -1,0 +1,106 @@
+{
+  "content/01-Foundations.module/01-2-variables-datatypes.quiz": {
+    "hash": "c7a1cccdffb3",
+    "canvas_id": 24815948
+  },
+  "content/01-Foundations.module/02-2-control-flow.quiz": {
+    "hash": "97c70f5b6796",
+    "canvas_id": 24815950
+  },
+  "content/01-Foundations.module/03-2-functions-scope.quiz": {
+    "hash": "0399f945add6",
+    "canvas_id": 24815952
+  },
+  "content/01-Foundations.module/04-2-arrays-methods.quiz": {
+    "hash": "d6b258246867",
+    "canvas_id": 24815954
+  },
+  "content/01-Foundations.module/05-2-objects-methods.quiz": {
+    "hash": "a751c1cf01e4",
+    "canvas_id": 24815956
+  },
+  "content/02-Object Oriented Programming.module/06-2-strings-templates.quiz": {
+    "hash": "0cf320b0ef5c",
+    "canvas_id": 24815958
+  },
+  "content/02-Object Oriented Programming.module/07-2-math-numbers.quiz": {
+    "hash": "50dcf7c39f0a",
+    "canvas_id": 24815962
+  },
+  "content/02-Object Oriented Programming.module/08-2-classes-oop.quiz": {
+    "hash": "b858a6dc30d6",
+    "canvas_id": 24815964
+  },
+  "content/02-Object Oriented Programming.module/09-2-inheritance-override.quiz": {
+    "hash": "0d9f4e6b5843",
+    "canvas_id": 24815966
+  },
+  "content/02-Object Oriented Programming.module/10-2-advanced-arrays-objects.quiz": {
+    "hash": "ef8ead2281c0",
+    "canvas_id": 24815968
+  },
+  "content/03-HTML, CSS and DOM Interactions.module/12-2-css-styling.quiz": {
+    "hash": "d831a6367242",
+    "canvas_id": 24815970
+  },
+  "content/03-HTML, CSS and DOM Interactions.module/13-2-responsive-design.quiz": {
+    "hash": "3b2be3164797",
+    "canvas_id": 24815972
+  },
+  "content/03-HTML, CSS and DOM Interactions.module/14-2-dom-manipulation.quiz": {
+    "hash": "1ee8680b2610",
+    "canvas_id": 24815974
+  },
+  "content/03-HTML, CSS and DOM Interactions.module/15-2-event-handling.quiz": {
+    "hash": "73e94acda120",
+    "canvas_id": 24815976
+  },
+  "content/04-Card Game Implementation.module/16-2-card-deck.quiz": {
+    "hash": "a9452b5e59e8",
+    "canvas_id": 24815978
+  },
+  "content/04-Card Game Implementation.module/17-2-player-hand.quiz": {
+    "hash": "e26f5f6812a5",
+    "canvas_id": 24815980
+  },
+  "content/04-Card Game Implementation.module/18-2-game-ui.quiz": {
+    "hash": "b6c379212be5",
+    "canvas_id": 24815982
+  },
+  "content/04-Card Game Implementation.module/19-2-events-animations.quiz": {
+    "hash": "856fe8fedf86",
+    "canvas_id": 24815984
+  },
+  "content/04-Card Game Implementation.module/20-2-polish-testing.quiz": {
+    "hash": "4888922c3f06",
+    "canvas_id": 24815986
+  },
+  "content/05-Card Game Advanced Features.module/21-2-ai-strategies.quiz": {
+    "hash": "e6a4a0d0468a",
+    "canvas_id": 24815988
+  },
+  "content/05-Card Game Advanced Features.module/22-2-local-storage.quiz": {
+    "hash": "82dafe1f9cfd",
+    "canvas_id": 24815990
+  },
+  "content/05-Card Game Advanced Features.module/23-2-advanced-ui.quiz": {
+    "hash": "f72574d932c1",
+    "canvas_id": 24815992
+  },
+  "content/05-Card Game Advanced Features.module/24-2-testing-quality.quiz": {
+    "hash": "87830c890e96",
+    "canvas_id": 24815994
+  },
+  "content/05-Card Game Advanced Features.module/25-2-final-project.quiz": {
+    "hash": "54db78667c7e",
+    "canvas_id": 24815996
+  },
+  "content/05-Card Game Advanced Features.module/legacy/22-2-local-storage.quiz": {
+    "hash": "391427e23f24",
+    "canvas_id": 24815990
+  },
+  "content/05-Card Game Advanced Features.module/legacy/24-2-testing-quality.quiz": {
+    "hash": "7d6577a57d7f",
+    "canvas_id": 24815994
+  }
+}

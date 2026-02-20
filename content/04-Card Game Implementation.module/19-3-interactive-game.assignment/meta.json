@@ -1,0 +1,30 @@
+{
+  "course_code": "CS 101",
+  "course_title": "Introduction to Computer Science",
+  "semester": "Spring 2026",
+  "instructor_name": "Dr. Ada Lovelace",
+  "instructor_email": "lovelace@university.edu",
+  "instructor_office": "Engineering Building, Room 142",
+  "office_hours": "Tuesday/Thursday 2-4pm",
+  "late_penalty": "10% per day, up to 3 days",
+  "name": "Session 19: Interactive Game with Animations",
+  "assignment_type": "online",
+  "points": 20,
+  "published": true,
+  "related_outcomes": [
+    "CLO-1",
+    "CLO-5"
+  ],
+  "submission_types": [
+    "online_upload"
+  ],
+  "allowed_extensions": [
+    "html",
+    "css",
+    "js"
+  ],
+  "type": "assignment",
+  "modules": [
+    "Card Game Implementation"
+  ]
+}

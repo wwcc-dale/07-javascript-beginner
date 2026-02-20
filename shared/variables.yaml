@@ -1,0 +1,21 @@
+# Course-wide variables
+# These are available in all pages using {{var:variable_name}}
+# Page frontmatter can override any of these values.
+
+# Course information
+course_code: "CS 101"
+course_title: "Introduction to Computer Science"
+semester: "Spring 2026"
+
+# Instructor information
+instructor_name: "Dr. Ada Lovelace"
+instructor_email: "lovelace@university.edu"
+instructor_office: "Engineering Building, Room 142"
+office_hours: "Tuesday/Thursday 2-4pm"
+
+# TA information (optional)
+# ta_name: "Charles Babbage"
+# ta_email: "babbage@university.edu"
+
+# Common phrases
+late_penalty: "10% per day, up to 3 days"

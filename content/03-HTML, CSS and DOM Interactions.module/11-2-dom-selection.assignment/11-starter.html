@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 11: DOM Selection and Modification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        h2 {
+            color: #666;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        
+        .info {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-left: 4px solid #007bff;
+        }
+        
+        #skills {
+            list-style: none;
+            padding: 0;
+        }
+        
+        #skills li {
+            padding: 8px;
+            margin: 5px 0;
+            background-color: #e9ecef;
+            border-radius: 4px;
+        }
+        
+        img {
+            max-width: 200px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Challenge 1: Select and Display -->
+    <div class="section">
+        <h1>Original Title</h1>
+        <p class="info">First paragraph</p>
+        <p class="info">Second paragraph</p>
+        <p class="info">Third paragraph</p>
+        <button id="updateBtn">Update Content</button>
+    </div>
+
+    <!-- Challenge 2: Dynamic List -->
+    <div class="section">
+        <h2>My Skills</h2>
+        <ul id="skills">
+            <!-- JavaScript will populate this -->
+        </ul>
+    </div>
+
+    <!-- Challenge 3: User Profile -->
+    <div class="section">
+        <h2>User Profile</h2>
+        <div id="profile">
+            <h2 id="userName"></h2>
+            <p id="userEmail"></p>
+            <p id="userStatus"></p>
+        </div>
+    </div>
+
+    <!-- Challenge 4: Image Gallery -->
+    <div class="section">
+        <h2>Image Gallery</h2>
+        <img id="image1" src="" alt="">
+        <img id="image2" src="" alt="">
+        <img id="image3" src="" alt="">
+    </div>
+
+    <script>
+        // ============================================
+        // Challenge 1: Select and Display
+        // ============================================
+        
+        // TODO: Select the h1 element and change its textContent to "DOM Master"
+        
+        
+        // TODO: Select all elements with class "info"
+        // Loop through them and change their textContent to include numbers
+        // Example: "1. First paragraph", "2. Second paragraph", etc.
+        
+        
+
+
+        // ============================================
+        // Challenge 2: Dynamic List
+        // ============================================
+        
+        // TODO: Create an array with these skills: 'JavaScript', 'HTML', 'CSS', 'DOM'
+        
+        
+        // TODO: Select the ul with id "skills"
+        
+        
+        // TODO: Loop through the skills array
+        // For each skill:
+        //   - Create a new li element
+        //   - Set its textContent to the skill
+        //   - Append it to the skills ul
+        
+        
+
+
+        // ============================================
+        // Challenge 3: User Profile
+        // ============================================
+        
+        // TODO: Create a user object with properties:
+        // name: 'Alex'
+        // email: 'alex@example.com'
+        // online: true
+        
+        
+        // TODO: Select the elements with ids: userName, userEmail, userStatus
+        
+        
+        // TODO: Set their textContent using the user object
+        // For status, show "Online" if user.online is true, otherwise "Offline"
+        
+        
+
+
+        // ============================================
+        // Challenge 4: Image Gallery
+        // ============================================
+        
+        // TODO: Create an array of 3 image URLs (use placeholder services or real URLs)
+        // Example: 'https://via.placeholder.com/200/FF0000/FFFFFF?text=Image+1'
+        
+        
+        // TODO: Select the three image elements (image1, image2, image3)
+        
+        
+        // TODO: Loop through and set each image's src attribute
+        // Also set appropriate alt text for each
+        
+        
+
+
+        // ============================================
+        // LEVEL 2 - STRETCH TASKS (OPTIONAL)
+        // ============================================
+
+        // Challenge 5: Dynamic Table
+        // TODO: Create a table with student data
+        // Array of objects: [{name: 'Alex', score: 85}, {name: 'Jordan', score: 92}, ...]
+        // Create table element, thead, tbody, rows, cells
+        // Append to a new section in the page
+        
+
+
+        // Challenge 6: Attribute Manager
+        // TODO: Build a form that shows and updates element attributes
+        // Select an element, display its attributes, allow changing them
+        
+
+
+        // ============================================
+        // LEVEL 3 - ADVANCED CHALLENGE (OPTIONAL)
+        // ============================================
+
+        // Challenge 7: Mini Dashboard
+        // TODO: Build a complete dashboard with:
+        // - Welcome message with user name
+        // - Stats cards showing numbers (created dynamically)
+        // - List of recent activities (created dynamically)
+        // - All from JavaScript objects, all elements created/populated dynamically
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+{
+  "quiz-banks/01-fundamentals.bank.md": {
+    "hash": "6d14ac44d4f2",
+    "bank_name": "Session 1: JavaScript Fundamentals",
+    "uploaded_at": "2026-01-31 18:09:41",
+    "migration_id": 14202552
+  },
+  "quiz-banks/02-fundamentals.bank.md": {
+    "hash": "09c4ce208703",
+    "bank_name": "Session 2: Functions and Reusable Code",
+    "uploaded_at": "2026-01-31 18:09:47",
+    "migration_id": 14202554
+  },
+  "quiz-banks/03-fundamentals.bank.md": {
+    "hash": "0cc309990a21",
+    "bank_name": "Session 3: Objects and Data Structures",
+    "uploaded_at": "2026-01-31 18:09:53",
+    "migration_id": 14202556
+  },
+  "quiz-banks/04-fundamentals.bank.md": {
+    "hash": "39a4bc507bac",
+    "bank_name": "Session 4: Loops and Iteration",
+    "uploaded_at": "2026-01-31 18:09:59",
+    "migration_id": 14202558
+  },
+  "quiz-banks/05-fundamentals.bank.md": {
+    "hash": "3ef691060ab8",
+    "bank_name": "Session 5: Algorithmic Thinking",
+    "uploaded_at": "2026-01-31 18:10:05",
+    "migration_id": 14202560
+  },
+  "quiz-banks/06-classes-intro.bank.md": {
+    "hash": "87fa2f9055b0",
+    "bank_name": "Session 6: Introduction to Classes",
+    "uploaded_at": "2026-01-31 18:10:13",
+    "migration_id": 14202562
+  },
+  "quiz-banks/07-encapsulation.bank.md": {
+    "hash": "59dfe140e64c",
+    "bank_name": "Session 7: Methods and Encapsulation",
+    "uploaded_at": "2026-01-31 18:10:19",
+    "migration_id": 14202568
+  },
+  "quiz-banks/08-multiple-objects.bank.md": {
+    "hash": "2a1e5c6213bb",
+    "bank_name": "Session 8: Working with Multiple Objects",
+    "uploaded_at": "2026-01-31 18:10:28",
+    "migration_id": 14202570
+  },
+  "quiz-banks/09-inheritance.bank.md": {
+    "hash": "0a8543960755",
+    "bank_name": "Session 9: Inheritance and Composition",
+    "uploaded_at": "2026-01-31 18:10:36",
+    "migration_id": 14202572
+  },
+  "quiz-banks/10-nodejs-npm.bank.md": {
+    "hash": "539bde86b08b",
+    "bank_name": "Session 10: Node.js, npm, and Module Systems",
+    "uploaded_at": "2026-01-31 18:10:46",
+    "migration_id": 14202576
+  },
+  "quiz-banks/11-dom-basics.bank.md": {
+    "hash": "58c153c20093",
+    "bank_name": "Session 11: JavaScript and the DOM",
+    "uploaded_at": "2026-01-31 18:10:55",
+    "migration_id": 14202578
+  },
+  "quiz-banks/sample.bank.md": {
+    "hash": "f582ea2d16b5",
+    "bank_name": "sample.bank",
+    "uploaded_at": "2026-01-31 18:11:03",
+    "migration_id": 14202580
+  },
+  "quiz-banks/01-js-fundamentals.bank.md": {
+    "hash": "6d14ac44d4f2",
+    "bank_name": "Session 1: JavaScript Fundamentals",
+    "uploaded_at": "2026-02-01 11:52:15",
+    "migration_id": 14209340
+  },
+  "quiz-banks/02-functions-reusable.bank.md": {
+    "hash": "09c4ce208703",
+    "bank_name": "Session 2: Functions and Reusable Code",
+    "uploaded_at": "2026-02-01 11:52:21",
+    "migration_id": 14209342
+  },
+  "quiz-banks/03-objects-data-structures.bank.md": {
+    "hash": "0cc309990a21",
+    "bank_name": "Session 3: Objects and Data Structures",
+    "uploaded_at": "2026-02-01 11:52:27",
+    "migration_id": 14209344
+  },
+  "quiz-banks/04-loops-iteration.bank.md": {
+    "hash": "39a4bc507bac",
+    "bank_name": "Session 4: Loops and Iteration",
+    "uploaded_at": "2026-02-01 11:52:33",
+    "migration_id": 14209348
+  },
+  "quiz-banks/05-algorithmic-thinking.bank.md": {
+    "hash": "3ef691060ab8",
+    "bank_name": "Session 5: Algorithmic Thinking",
+    "uploaded_at": "2026-02-01 11:52:39",
+    "migration_id": 14209352
+  },
+  "quiz-banks/11-html-structure.bank.md": {
+    "hash": "2abb9c3a34f2",
+    "bank_name": "Session 11: HTML Structure and Semantics",
+    "uploaded_at": "2026-02-01 11:52:44",
+    "migration_id": 14209354
+  },
+  "quiz-banks/12-css-styling.bank.md": {
+    "hash": "88ce28162b2a",
+    "bank_name": "Session 12: CSS Styling and Selectors",
+    "uploaded_at": "2026-02-01 11:52:50",
+    "migration_id": 14209360
+  },
+  "quiz-banks/13-responsive-design.bank.md": {
+    "hash": "92e92b42a826",
+    "bank_name": "Session 13: Responsive Design and Media Queries",
+    "uploaded_at": "2026-02-01 11:52:59",
+    "migration_id": 14209366
+  },
+  "quiz-banks/14-dom-manipulation.bank.md": {
+    "hash": "e13b9e5a03fc",
+    "bank_name": "Session 14: DOM Manipulation and Selection",
+    "uploaded_at": "2026-02-01 11:53:05",
+    "migration_id": 14209368
+  },
+  "quiz-banks/15-event-handling.bank.md": {
+    "hash": "2883b920801b",
+    "bank_name": "Session 15: Event Handling and Forms",
+    "uploaded_at": "2026-02-01 11:53:13",
+    "migration_id": 14209370
+  },
+  "quiz-banks/16-quiz-card-deck.bank.md": {
+    "hash": "77ef7290f60f",
+    "bank_name": "Session 16: Card Game Foundation - Card and Deck Classes",
+    "uploaded_at": "2026-02-01 11:53:19",
+    "migration_id": 14209374
+  },
+  "quiz-banks/17-quiz-player-hand.bank.md": {
+    "hash": "d23ae35f9d8d",
+    "bank_name": "Session 17: Player and Hand Management",
+    "uploaded_at": "2026-02-01 11:53:25",
+    "migration_id": 14209376
+  },
+  "quiz-banks/18-quiz-game-ui.bank.md": {
+    "hash": "a7ad21b3d469",
+    "bank_name": "Session 18: Game State and UI Foundation",
+    "uploaded_at": "2026-02-01 11:53:31",
+    "migration_id": 14209378
+  },
+  "quiz-banks/19-quiz-events-animations.bank.md": {
+    "hash": "176a2e7a23ef",
+    "bank_name": "Session 19: Event Handling and Animations",
+    "uploaded_at": "2026-02-01 11:53:37",
+    "migration_id": 14209380
+  },
+  "quiz-banks/20-quiz-polish-testing.bank.md": {
+    "hash": "c839ce29e2ff",
+    "bank_name": "Session 20: Polish, Testing, and Deployment",
+    "uploaded_at": "2026-02-01 11:53:43",
+    "migration_id": 14209382
+  },
+  "quiz-banks/21-quiz-ai-strategies.bank.md": {
+    "hash": "a435cfd33035",
+    "bank_name": "Session 21: Advanced Game Features - AI Strategies",
+    "uploaded_at": "2026-02-01 11:53:49",
+    "migration_id": 14209386
+  },
+  "quiz-banks/22-local-storage.bank.md": {
+    "hash": "cad1dd3a7233",
+    "bank_name": "Session 22: Local Storage and Game Persistence",
+    "uploaded_at": "2026-02-01 11:53:57",
+    "migration_id": 14209392
+  },
+  "quiz-banks/23-advanced-ui.bank.md": {
+    "hash": "53320f6b8eae",
+    "bank_name": "Session 23: Advanced UI - Settings, Themes, Leaderboards",
+    "uploaded_at": "2026-02-01 11:54:02",
+    "migration_id": 14209394
+  },
+  "quiz-banks/24-testing-quality.bank.md": {
+    "hash": "62990eb35570",
+    "bank_name": "Session 24: Testing, Debugging, and Code Quality",
+    "uploaded_at": "2026-02-01 11:54:08",
+    "migration_id": 14209398
+  },
+  "quiz-banks/25-final-project.bank.md": {
+    "hash": "80df5c814081",
+    "bank_name": "Session 25: Final Project - Complete Professional Card Game",
+    "uploaded_at": "2026-02-01 11:54:14",
+    "migration_id": 14209400
+  },
+  "question-banks/01-js-fundamentals.bank.md": {
+    "hash": "6d14ac44d4f2",
+    "bank_name": "Session 1: JavaScript Fundamentals",
+    "uploaded_at": "2026-02-01 20:13:55",
+    "migration_id": 14212462,
+    "bank_id": null
+  },
+  "question-banks/02-functions-reusable.bank.md": {
+    "hash": "09c4ce208703",
+    "bank_name": "Session 2: Functions and Reusable Code",
+    "uploaded_at": "2026-02-01 20:14:07",
+    "migration_id": 14212468,
+    "bank_id": null
+  },
+  "question-banks/03-objects-data-structures.bank.md": {
+    "hash": "0cc309990a21",
+    "bank_name": "Session 3: Objects and Data Structures",
+    "uploaded_at": "2026-02-01 20:14:15",
+    "migration_id": 14212470,
+    "bank_id": null
+  },
+  "question-banks/04-loops-iteration.bank.md": {
+    "hash": "39a4bc507bac",
+    "bank_name": "Session 4: Loops and Iteration",
+    "uploaded_at": "2026-02-01 20:14:25",
+    "migration_id": 14212474,
+    "bank_id": null
+  },
+  "question-banks/05-algorithmic-thinking.bank.md": {
+    "hash": "3ef691060ab8",
+    "bank_name": "Session 5: Algorithmic Thinking",
+    "uploaded_at": "2026-02-01 20:14:34",
+    "migration_id": 14212482,
+    "bank_id": null
+  },
+  "question-banks/06-classes-intro.bank.md": {
+    "hash": "87fa2f9055b0",
+    "bank_name": "Session 6: Introduction to Classes",
+    "uploaded_at": "2026-02-01 20:14:47",
+    "migration_id": 14212486,
+    "bank_id": null
+  },
+  "question-banks/07-encapsulation.bank.md": {
+    "hash": "59dfe140e64c",
+    "bank_name": "Session 7: Methods and Encapsulation",
+    "uploaded_at": "2026-02-01 20:15:01",
+    "migration_id": 14212488,
+    "bank_id": null
+  },
+  "question-banks/08-multiple-objects.bank.md": {
+    "hash": "2a1e5c6213bb",
+    "bank_name": "Session 8: Working with Multiple Objects",
+    "uploaded_at": "2026-02-01 20:15:11",
+    "migration_id": 14212492,
+    "bank_id": null
+  },
+  "question-banks/09-inheritance.bank.md": {
+    "hash": "0a8543960755",
+    "bank_name": "Session 9: Inheritance and Composition",
+    "uploaded_at": "2026-02-01 20:15:19",
+    "migration_id": 14212496,
+    "bank_id": null
+  },
+  "question-banks/10-nodejs-npm.bank.md": {
+    "hash": "539bde86b08b",
+    "bank_name": "Session 10: Node.js, npm, and Module Systems",
+    "uploaded_at": "2026-02-01 20:15:28",
+    "migration_id": 14212500,
+    "bank_id": null
+  },
+  "question-banks/11-dom-basics.bank.md": {
+    "hash": "58c153c20093",
+    "bank_name": "Session 11: JavaScript and the DOM",
+    "uploaded_at": "2026-02-01 21:20:12",
+    "migration_id": 14212504,
+    "bank_id": null
+  },
+  "question-banks/11-html-structure.bank.md": {
+    "hash": "2abb9c3a34f2",
+    "bank_name": "Session 11: HTML Structure and Semantics",
+    "uploaded_at": "2026-02-01 21:20:19",
+    "migration_id": 14212918,
+    "bank_id": null
+  },
+  "question-banks/12-css-styling.bank.md": {
+    "hash": "88ce28162b2a",
+    "bank_name": "Session 12: CSS Styling and Selectors",
+    "uploaded_at": "2026-02-01 21:20:25",
+    "migration_id": 14212924,
+    "bank_id": null
+  },
+  "question-banks/13-responsive-design.bank.md": {
+    "hash": "92e92b42a826",
+    "bank_name": "Session 13: Responsive Design and Media Queries",
+    "uploaded_at": "2026-02-01 21:20:32",
+    "migration_id": 14212926,
+    "bank_id": null
+  },
+  "question-banks/14-dom-manipulation.bank.md": {
+    "hash": "e13b9e5a03fc",
+    "bank_name": "Session 14: DOM Manipulation and Selection",
+    "uploaded_at": "2026-02-01 21:20:39",
+    "migration_id": 14212930,
+    "bank_id": null
+  },
+  "question-banks/15-event-handling.bank.md": {
+    "hash": "2883b920801b",
+    "bank_name": "Session 15: Event Handling and Forms",
+    "uploaded_at": "2026-02-01 21:20:44",
+    "migration_id": 14212932,
+    "bank_id": null
+  },
+  "question-banks/16-quiz-card-deck.bank.md": {
+    "hash": "77ef7290f60f",
+    "bank_name": "Session 16: Card Game Foundation - Card and Deck Classes",
+    "uploaded_at": "2026-02-01 21:20:51",
+    "migration_id": 14212934,
+    "bank_id": null
+  },
+  "question-banks/17-quiz-player-hand.bank.md": {
+    "hash": "d23ae35f9d8d",
+    "bank_name": "Session 17: Player and Hand Management",
+    "uploaded_at": "2026-02-01 22:16:27",
+    "migration_id": 14212936,
+    "bank_id": null
+  },
+  "question-banks/18-quiz-game-ui.bank.md": {
+    "hash": "a7ad21b3d469",
+    "bank_name": "Session 18: Game State and UI Foundation",
+    "uploaded_at": "2026-02-01 22:16:41",
+    "migration_id": 14213256,
+    "bank_id": null
+  },
+  "question-banks/19-quiz-events-animations.bank.md": {
+    "hash": "176a2e7a23ef",
+    "bank_name": "Session 19: Event Handling and Animations",
+    "uploaded_at": "2026-02-01 22:16:55",
+    "migration_id": 14213260,
+    "bank_id": null
+  },
+  "question-banks/20-quiz-polish-testing.bank.md": {
+    "hash": "c839ce29e2ff",
+    "bank_name": "Session 20: Polish, Testing, and Deployment",
+    "uploaded_at": "2026-02-01 22:17:09",
+    "migration_id": 14213264,
+    "bank_id": null
+  },
+  "question-banks/21-quiz-ai-strategies.bank.md": {
+    "hash": "a435cfd33035",
+    "bank_name": "Session 21: Advanced Game Features - AI Strategies",
+    "uploaded_at": "2026-02-01 23:17:27",
+    "migration_id": 14213274,
+    "bank_id": null
+  },
+  "question-banks/22-local-storage.bank.md": {
+    "hash": "cad1dd3a7233",
+    "bank_name": "Session 22: Local Storage and Game Persistence",
+    "uploaded_at": "2026-02-01 23:17:33",
+    "migration_id": 14213668,
+    "bank_id": null
+  },
+  "question-banks/23-advanced-ui.bank.md": {
+    "hash": "53320f6b8eae",
+    "bank_name": "Session 23: Advanced UI - Settings, Themes, Leaderboards",
+    "uploaded_at": "2026-02-01 23:17:40",
+    "migration_id": 14213670,
+    "bank_id": null
+  },
+  "question-banks/24-testing-quality.bank.md": {
+    "hash": "62990eb35570",
+    "bank_name": "Session 24: Testing, Debugging, and Code Quality",
+    "uploaded_at": "2026-02-01 23:17:49",
+    "migration_id": 14213672,
+    "bank_id": null
+  },
+  "question-banks/25-final-project.bank.md": {
+    "hash": "80df5c814081",
+    "bank_name": "Session 25: Final Project - Complete Professional Card Game",
+    "uploaded_at": "2026-02-01 23:17:55",
+    "migration_id": 14213674,
+    "bank_id": null
+  }
+}
