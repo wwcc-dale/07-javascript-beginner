@@ -166,32 +166,32 @@ greetBtn.addEventListener('click', () => {
 ### Putting It Together: Button That Creates Elements
 
 ```html
-<input id="taskInput" placeholder="New task">
-<button id="addBtn">Add</button>
-<ul id="taskList"></ul>
+<input id="quoteInput" placeholder="Enter a quote">
+<button id="addQuoteBtn">Add</button>
+<ul id="quoteBoard"></ul>
 ```
 
 ```js
-const taskInput = document.querySelector('#taskInput');
-const addBtn = document.querySelector('#addBtn');
-const taskList = document.querySelector('#taskList');
+const quoteInput = document.querySelector('#quoteInput');
+const addQuoteBtn = document.querySelector('#addQuoteBtn');
+const quoteBoard = document.querySelector('#quoteBoard');
 
-addBtn.addEventListener('click', () => {
-  const text = taskInput.value;
+addQuoteBtn.addEventListener('click', () => {
+  const text = quoteInput.value;
   if (text === '') return;   // do nothing on empty input
 
   const li = document.createElement('li');
   li.textContent = text;
 
-  const deleteBtn = document.createElement('button');
-  deleteBtn.textContent = 'Delete';
-  deleteBtn.addEventListener('click', () => {
-    li.remove();   // each delete button removes its own li
+  const removeBtn = document.createElement('button');
+  removeBtn.textContent = 'Remove';
+  removeBtn.addEventListener('click', () => {
+    li.remove();   // each remove button removes its own li
   });
 
-  li.appendChild(deleteBtn);
-  taskList.appendChild(li);
-  taskInput.value = '';   // clear after adding
+  li.appendChild(removeBtn);
+  quoteBoard.appendChild(li);
+  quoteInput.value = '';   // clear after adding
 });
 ```
 

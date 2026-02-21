@@ -71,71 +71,72 @@ button.addEventListener('click', (event) => {
 });
 ```
 
-### Real Example: Interactive Form
+### Real Example: Feedback Form
 
 ```html
-<form id="userForm">
-  <input id="nameInput" type="text" placeholder="Enter name">
-  <input id="emailInput" type="email" placeholder="Enter email">
-  <button type="submit">Submit</button>
-  <div id="message"></div>
+<form id="feedbackForm">
+  <input id="subjectInput" type="text" placeholder="Subject">
+  <select id="categorySelect">
+    <option value="">Select category</option>
+    <option value="bug">Bug Report</option>
+    <option value="feature">Feature Request</option>
+    <option value="other">Other</option>
+  </select>
+  <button type="submit">Send Feedback</button>
+  <div id="confirmation"></div>
 </form>
 ```
 
 ```js
-const form = document.querySelector('#userForm');
-const nameInput = document.querySelector('#nameInput');
-const emailInput = document.querySelector('#emailInput');
-const messageDiv = document.querySelector('#message');
+const form = document.querySelector('#feedbackForm');
+const subjectInput = document.querySelector('#subjectInput');
+const categorySelect = document.querySelector('#categorySelect');
+const confirmation = document.querySelector('#confirmation');
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();  // Stop page reload
-  
-  const name = nameInput.value;
-  const email = emailInput.value;
-  
-  if (name && email) {
-    messageDiv.textContent = `Welcome, ${name}!`;
+
+  const subject = subjectInput.value;
+  const category = categorySelect.value;
+
+  if (subject && category) {
+    confirmation.textContent = `Thanks! Your "${category}" feedback has been received.`;
     form.reset();  // Clear form
   }
 });
 ```
 
-### Real Example: Counter App
+### Real Example: Rating Widget
 
 ```html
-<div class="counter">
-  <h2 id="count">0</h2>
-  <button id="increment">+</button>
-  <button id="decrement">-</button>
-  <button id="reset">Reset</button>
+<div class="rating">
+  <h2 id="stars">★★★☆☆</h2>
+  <p id="ratingValue">3 / 5</p>
+  <button id="rateUp">▲ Better</button>
+  <button id="rateDown">▼ Worse</button>
 </div>
 ```
 
 ```js
-let counter = 0;
-const countDisplay = document.querySelector('#count');
-const incrementBtn = document.querySelector('#increment');
-const decrementBtn = document.querySelector('#decrement');
-const resetBtn = document.querySelector('#reset');
+let rating = 3;
+const starsDisplay = document.querySelector('#stars');
+const ratingValue = document.querySelector('#ratingValue');
+const rateUpBtn = document.querySelector('#rateUp');
+const rateDownBtn = document.querySelector('#rateDown');
 
 function updateDisplay() {
-  countDisplay.textContent = counter;
+  const filled = '★'.repeat(rating);
+  const empty = '☆'.repeat(5 - rating);
+  starsDisplay.textContent = filled + empty;
+  ratingValue.textContent = `${rating} / 5`;
 }
 
-incrementBtn.addEventListener('click', () => {
-  counter++;
-  updateDisplay();
+rateUpBtn.addEventListener('click', () => {
+  if (rating < 5) { rating++; updateDisplay(); }
 });
 
-decrementBtn.addEventListener('click', () => {
-  counter--;
-  updateDisplay();
-});
-
-resetBtn.addEventListener('click', () => {
-  counter = 0;
-  updateDisplay();
+rateDownBtn.addEventListener('click', () => {
+  if (rating > 1) { rating--; updateDisplay(); }
 });
 ```
 
@@ -144,17 +145,17 @@ resetBtn.addEventListener('click', () => {
 Handle events on many elements efficiently by attaching one listener to a parent:
 
 ```js
-const list = document.querySelector('#todoList');
+const gallery = document.querySelector('#photoGallery');
 
-list.addEventListener('click', (event) => {
+gallery.addEventListener('click', (event) => {
   if (event.target.tagName === 'BUTTON') {
-    console.log('Clicked:', event.target.textContent);
+    console.log('Removing:', event.target.textContent);
     event.target.parentElement.remove();
   }
 });
 ```
 
-This is more efficient than attaching a listener to every button individually, and it works for elements added to the list later.
+This is more efficient than attaching a listener to every button individually, and it works for elements added to the gallery later.
 
 ### Reading Form Element Values
 

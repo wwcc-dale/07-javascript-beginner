@@ -161,27 +161,27 @@ Encapsulation means **bundling data with the methods that operate on it, and con
 **Problem without encapsulation:**
 
 ```js
-class BankAccount {
-  constructor(balance) {
-    this.balance = balance;
+class MusicPlayer {
+  constructor(volume) {
+    this.volume = volume;
   }
 }
 
-const acc = new BankAccount(1000);
-acc.balance = -99999;  // Anyone can set any value — dangerous!
-console.log(acc.balance);  // -99999
+const player = new MusicPlayer(50);
+player.volume = 9999;  // Anyone can set any value — no limits enforced!
+console.log(player.volume);  // 9999
 ```
 
 **Solution:** hide the data and expose controlled access points.
 
 ### The Underscore Convention
 
-JavaScript doesn't enforce true privacy by default. Developers use an underscore prefix (`_balance`) as a signal: "this property is internal — don't touch it directly from outside the class."
+JavaScript doesn't enforce true privacy by default. Developers use an underscore prefix (`_volume`) as a signal: "this property is internal — don't touch it directly from outside the class."
 
 ```js
-class BankAccount {
-  constructor(balance) {
-    this._balance = balance;  // _ means "treat as private"
+class MusicPlayer {
+  constructor(volume) {
+    this._volume = volume;  // _ means "treat as private"
   }
 }
 ```
@@ -193,102 +193,104 @@ The underscore is just a naming convention — it's a message to other developer
 A **getter** is a special method that looks like a property when you read it. Define it with `get`:
 
 ```js
-class BankAccount {
-  constructor(balance) {
-    this._balance = balance;
+class MusicPlayer {
+  constructor(volume) {
+    this._volume = volume;
   }
 
-  get balance() {
-    return this._balance;
+  get volume() {
+    return this._volume;
   }
 }
 
-const acc = new BankAccount(1000);
-console.log(acc.balance);  // 1000  (calls the getter, no parentheses needed)
+const player = new MusicPlayer(50);
+console.log(player.volume);  // 50  (calls the getter, no parentheses needed)
 ```
 
-You read `acc.balance` like a property, but under the hood it's calling the getter method.
+You read `player.volume` like a property, but under the hood it's calling the getter method.
 
 ### Setters — Controlled Writing with Validation
 
 A **setter** runs code whenever you assign to a property. This is where you add validation:
 
 ```js
-class BankAccount {
-  constructor(balance) {
-    this._balance = balance;
+class MusicPlayer {
+  constructor(volume) {
+    this._volume = volume;
   }
 
-  get balance() {
-    return this._balance;
+  get volume() {
+    return this._volume;
   }
 
-  set balance(amount) {
-    if (amount < 0) {
-      console.log("Balance cannot be negative.");
+  set volume(level) {
+    if (level < 0 || level > 100) {
+      console.log("Volume must be between 0 and 100.");
       return;
     }
-    this._balance = amount;
+    this._volume = level;
   }
 }
 
-const acc = new BankAccount(1000);
-acc.balance = 1500;    // calls the setter — valid, accepted
-console.log(acc.balance);  // 1500
+const player = new MusicPlayer(50);
+player.volume = 80;    // calls the setter — valid, accepted
+console.log(player.volume);  // 80
 
-acc.balance = -500;   // calls the setter — rejected
-console.log(acc.balance);  // 1500 (unchanged)
+player.volume = 150;   // calls the setter — rejected
+console.log(player.volume);  // 80 (unchanged)
 ```
 
-### Real Example: Temperature
+### Real Example: Stopwatch
 
 ```js
-class Temperature {
-  constructor(celsius) {
-    this._celsius = celsius;
+class Stopwatch {
+  constructor(seconds) {
+    this._seconds = seconds;
   }
 
-  get celsius() {
-    return this._celsius;
+  get seconds() {
+    return this._seconds;
   }
 
-  set celsius(value) {
-    if (value < -273.15) {
-      console.log("Below absolute zero — impossible.");
+  set seconds(value) {
+    if (value < 0) {
+      console.log("Time cannot be negative.");
       return;
     }
-    this._celsius = value;
+    this._seconds = value;
   }
 
-  get fahrenheit() {
-    return (this._celsius * 9 / 5) + 32;
+  get minutes() {
+    return (this._seconds / 60).toFixed(2);
   }
 
-  set fahrenheit(value) {
-    this.celsius = (value - 32) * 5 / 9;  // uses the celsius setter for validation
+  set minutes(value) {
+    this.seconds = value * 60;  // uses the seconds setter for validation
   }
 }
 
-const temp = new Temperature(0);
-console.log(temp.fahrenheit);  // 32
+const watch = new Stopwatch(0);
+watch.seconds = 90;
+console.log(watch.seconds);  // 90
+console.log(watch.minutes);  // "1.50"
 
-temp.fahrenheit = 212;
-console.log(temp.celsius);     // 100
+watch.minutes = 2;
+console.log(watch.seconds);  // 120
 
-temp.celsius = -300;           // rejected — below absolute zero
-console.log(temp.celsius);     // 100 (unchanged)
+watch.seconds = -10;         // rejected — cannot be negative
+console.log(watch.seconds);  // 120 (unchanged)
 ```
 
-### Example: Product with Price Validation
+### Example: Artwork with Price Validation
 
 ```js
-class Product {
-  constructor(name, price) {
-    this._name = name;
+class Artwork {
+  constructor(title, price) {
+    this._title = title;
     this._price = price;
   }
 
-  get name() { return this._name; }
+  get title() { return this._title; }
   get price() { return this._price; }
 
   set price(value) {
@@ -304,14 +306,14 @@ class Product {
   }
 }
 
-const item = new Product("Headphones", 79.99);
-console.log(item.formattedPrice());  // "$79.99"
+const piece = new Artwork("Starry Night Print", 49.99);
+console.log(piece.formattedPrice());  // "$49.99"
 
-item.price = 89.99;
-console.log(item.price);   // 89.99
+piece.price = 59.99;
+console.log(piece.price);   // 59.99
 
-item.price = -10;          // rejected
-console.log(item.price);   // 89.99
+piece.price = -10;          // rejected
+console.log(piece.price);   // 59.99
 ```
 
 ### Why Encapsulation Matters
@@ -332,7 +334,7 @@ This video covers:
 - The underscore naming convention
 - Writing getters and setters
 - Adding validation in setters
-- Real examples with BankAccount and Temperature
+- Real examples with MusicPlayer and Stopwatch
 
 Pause and type each example.
 

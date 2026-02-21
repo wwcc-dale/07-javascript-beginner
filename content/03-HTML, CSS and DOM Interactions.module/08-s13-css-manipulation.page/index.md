@@ -106,68 +106,60 @@ const score = Number(localStorage.getItem('score'));  // convert back
 const theme = localStorage.getItem('theme') || 'light';  // default to 'light'
 ```
 
-### Real Example: Theme Switcher
+### Real Example: Large Text Toggle
 
 ```html
-<button id="themeBtn">Toggle Dark Mode</button>
+<button id="sizeBtn">Toggle Large Text</button>
 <div id="content">Page content</div>
 ```
 
 ```css
-body.dark-mode {
-  background-color: #333;
-  color: white;
-}
-
-body.dark-mode #content {
-  background-color: #222;
+body.large-text {
+  font-size: 20px;
+  line-height: 1.8;
 }
 ```
 
 ```js
-const btn = document.querySelector('#themeBtn');
-const isDarkMode = localStorage.getItem('darkMode') === 'true';
+const btn = document.querySelector('#sizeBtn');
+const savedSize = localStorage.getItem('textSize') || 'normal';
 
-if (isDarkMode) {
-  document.body.classList.add('dark-mode');
+if (savedSize === 'large') {
+  document.body.classList.add('large-text');
 }
 
 btn.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  const isDark = document.body.classList.contains('dark-mode');
-  localStorage.setItem('darkMode', isDark);
+  document.body.classList.toggle('large-text');
+  const isLarge = document.body.classList.contains('large-text');
+  localStorage.setItem('textSize', isLarge ? 'large' : 'normal');
 });
 ```
 
-### Real Example: Interactive Card
+### Real Example: Read More Panel
 
 ```html
-<div class="card">
-  <h3>Card Title</h3>
-  <p>Card content</p>
-  <button class="expand-btn">Expand</button>
+<div class="panel">
+  <h3>Article Title</h3>
+  <p class="preview">Short preview of the article...</p>
+  <p class="full-text hidden">This is the full article text with all the details.</p>
+  <button class="read-btn">Read More</button>
 </div>
 ```
 
 ```css
-.card {
-  width: 200px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.card.expanded {
-  width: 400px;
+.hidden {
+  display: none;
 }
 ```
 
 ```js
-const card = document.querySelector('.card');
-const btn = document.querySelector('.expand-btn');
+const panel = document.querySelector('.panel');
+const btn = document.querySelector('.read-btn');
+const fullText = panel.querySelector('.full-text');
 
 btn.addEventListener('click', () => {
-  card.classList.toggle('expanded');
-  btn.textContent = card.classList.contains('expanded') ? 'Collapse' : 'Expand';
+  fullText.classList.toggle('hidden');
+  btn.textContent = fullText.classList.contains('hidden') ? 'Read More' : 'Read Less';
 });
 ```
 

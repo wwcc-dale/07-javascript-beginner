@@ -127,43 +127,42 @@ Pause and type out each example yourself.
 
 ## Supplemental Practice: Real-World Scenarios (25 minutes)
 
-### Scenario 1: Calculate Average Score
+### Scenario 1: Calculate Star Rating
 
 ```js
-function calculateAverage(score1, score2, score3) {
-  let total = score1 + score2 + score3;
+function calcRating(review1, review2, review3) {
+  let total = review1 + review2 + review3;
   let average = total / 3;
   return average;
 }
 
-let studentAverage = calculateAverage(85, 92, 78);
-console.log("Average:", studentAverage);  // 85
+let restaurantRating = calcRating(4, 5, 3);
+console.log("Rating:", restaurantRating);  // 4
 ```
 
-Try with different scores.
+Try with different review scores.
 
-### Scenario 2: Calculate Discount Price
+### Scenario 2: Calculate Tip Amount
 
 ```js
-function applyDiscount(originalPrice, discountPercent) {
-  let discountAmount = originalPrice * (discountPercent / 100);
-  let finalPrice = originalPrice - discountAmount;
-  return finalPrice;
+function calcTip(billAmount, tipPercent) {
+  let tipAmount = billAmount * (tipPercent / 100);
+  return tipAmount;
 }
 
-console.log(applyDiscount(50, 10));   // 45 (10% off $50)
-console.log(applyDiscount(100, 20));  // 80 (20% off $100)
+console.log(calcTip(40, 15));   // 6  (15% tip on $40)
+console.log(calcTip(80, 20));   // 16 (20% tip on $80)
 ```
 
-### Scenario 3: Convert Hours to Minutes
+### Scenario 3: Convert Celsius to Fahrenheit
 
 ```js
-function hoursToMinutes(hours) {
-  return hours * 60;
+function celsiusToFahrenheit(celsius) {
+  return (celsius * 9 / 5) + 32;
 }
 
-console.log(hoursToMinutes(1));   // 60
-console.log(hoursToMinutes(2.5)); // 150
+console.log(celsiusToFahrenheit(0));    // 32
+console.log(celsiusToFahrenheit(100));  // 212
 ```
 
 ---

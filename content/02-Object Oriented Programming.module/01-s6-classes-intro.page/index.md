@@ -132,33 +132,34 @@ const alex = new Student("Alex", 85);
 const jordan = new Student("Jordan", 92);
 ```
 
-### Real-World Example: Book Class
+### Real-World Example: Recipe Class
 
 ```js
-class Book {
-  constructor(title, author, pages) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.currentPage = 0;
+class Recipe {
+  constructor(name, servings, caloriesPerServing) {
+    this.name = name;
+    this.servings = servings;
+    this.caloriesPerServing = caloriesPerServing;
   }
 
-  read(numPages) {
-    this.currentPage += numPages;
-    if (this.currentPage > this.pages) {
-      this.currentPage = this.pages;
-    }
+  totalCalories() {
+    return this.servings * this.caloriesPerServing;
   }
 
-  percentComplete() {
-    return (this.currentPage / this.pages) * 100;
+  scale(factor) {
+    this.servings = this.servings * factor;
+  }
+
+  summary() {
+    return `${this.name}: ${this.servings} servings, ${this.totalCalories()} cal total`;
   }
 }
 
-const book1 = new Book("JavaScript Basics", "Jane Dev", 300);
-book1.read(50);
-console.log(book1.currentPage);        // 50
-console.log(book1.percentComplete());  // 16.67
+const soup = new Recipe("Tomato Soup", 4, 120);
+console.log(soup.summary());      // "Tomato Soup: 4 servings, 480 cal total"
+soup.scale(2);
+console.log(soup.servings);       // 8
+console.log(soup.totalCalories()); // 960
 ```
 
 ### The `this` Keyword
@@ -195,7 +196,7 @@ This video covers:
 - Creating instances with `new`
 - Adding methods to classes
 - Understanding `this`
-- Real examples with Student and Product classes
+- Real examples with Student and Movie classes
 
 Pause and type each example.
 
@@ -203,91 +204,83 @@ Pause and type each example.
 
 ## Supplemental Practice: Building Classes (25 minutes)
 
-### Scenario 1: Product Class
+### Scenario 1: Movie Class
 
 ```js
-class Product {
-  constructor(name, price, stock) {
-    this.name = name;
-    this.price = price;
-    this.stock = stock;
+class Movie {
+  constructor(title, director, durationMinutes) {
+    this.title = title;
+    this.director = director;
+    this.durationMinutes = durationMinutes;
   }
 
-  inStock() {
-    return this.stock > 0;
+  isFeatureLength() {
+    return this.durationMinutes >= 60;
   }
 
-  buy(quantity) {
-    if (quantity <= this.stock) {
-      this.stock -= quantity;
-      return true;
-    }
-    return false;
+  getSummary() {
+    return `${this.title} by ${this.director} (${this.durationMinutes} min)`;
   }
 }
 
-const laptop = new Product("Laptop", 999, 5);
-console.log(laptop.inStock());    // true
-laptop.buy(2);
-console.log(laptop.stock);        // 3
+const film = new Movie("Inception", "Nolan", 148);
+console.log(film.isFeatureLength());  // true
+console.log(film.getSummary());       // "Inception by Nolan (148 min)"
 ```
 
-### Scenario 2: BankAccount Class
+### Scenario 2: Vehicle Class
 
 ```js
-class BankAccount {
-  constructor(owner, balance) {
-    this.owner = owner;
-    this.balance = balance;
+class Vehicle {
+  constructor(make, model, mileage) {
+    this.make = make;
+    this.model = model;
+    this.mileage = mileage;
   }
 
-  deposit(amount) {
-    this.balance += amount;
+  drive(miles) {
+    this.mileage += miles;
   }
 
-  withdraw(amount) {
-    if (amount <= this.balance) {
-      this.balance -= amount;
-      return true;
-    }
-    return false;
+  isHighMileage() {
+    return this.mileage > 100000;
   }
 }
 
-const account = new BankAccount("Alex", 1000);
-account.deposit(500);
-console.log(account.balance);  // 1500
-account.withdraw(200);
-console.log(account.balance);  // 1300
+const car = new Vehicle("Toyota", "Camry", 45000);
+car.drive(5000);
+console.log(car.mileage);          // 50000
+console.log(car.isHighMileage());  // false
 ```
 
-### Scenario 3: Timer Class
+### Scenario 3: Scoreboard Class
 
 ```js
-class Timer {
-  constructor(seconds) {
-    this.seconds = seconds;
+class Scoreboard {
+  constructor(team1, team2) {
+    this.team1 = team1;
+    this.team2 = team2;
+    this.score1 = 0;
+    this.score2 = 0;
   }
 
-  tick() {
-    if (this.seconds > 0) {
-      this.seconds--;
-    }
+  addPoints(team, points) {
+    if (team === 1) this.score1 += points;
+    if (team === 2) this.score2 += points;
   }
 
-  isFinished() {
-    return this.seconds === 0;
-  }
-
-  reset(newSeconds) {
-    this.seconds = newSeconds;
+  getLeader() {
+    if (this.score1 > this.score2) return this.team1;
+    if (this.score2 > this.score1) return this.team2;
+    return "Tied";
   }
 }
 
-const timer = new Timer(10);
-timer.tick();
-console.log(timer.seconds);      // 9
-console.log(timer.isFinished()); // false
+const board = new Scoreboard("Lions", "Tigers");
+board.addPoints(1, 7);
+board.addPoints(2, 3);
+console.log(board.score1);      // 7
+console.log(board.getLeader()); // "Lions"
 ```
 
 ---

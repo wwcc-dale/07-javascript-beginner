@@ -120,55 +120,55 @@ Pause the video and copy each example into your own file. Change the values and 
 
 ## Supplemental Practice: Simple Scenarios (25 minutes)
 
-### Scenario 1: Passing a Quiz
+### Scenario 1: Speed Check
 
 ```js
-const passingScore = 70;
-let myScore = 92;
+const speedLimit = 65;
+let vehicleSpeed = 80;
 
-if (myScore >= passingScore) {
-  console.log("You passed the quiz!");
+if (vehicleSpeed > speedLimit) {
+  console.log("Slow down — you are over the speed limit.");
 } else {
-  console.log("Try the quiz again.");
+  console.log("Speed looks good.");
 }
 ```
 
-Try changing `myScore` to 60. What happens?
+Try changing `vehicleSpeed` to 50. What happens?
 
-### Scenario 2: Free Shipping
+### Scenario 2: Membership Check
 
 ```js
-const freeShippingLimit = 35;
-let cartTotal = 30;
+const minAge = 18;
+let visitorAge = 15;
 
-if (cartTotal >= freeShippingLimit) {
-  console.log("You get free shipping!");
+if (visitorAge >= minAge) {
+  console.log("Access granted. Welcome!");
 } else {
-  console.log("Shipping fees apply.");
+  console.log("Sorry, you must be 18 or older.");
 }
 ```
 
-Practice: change `cartTotal` to 40. Predict the message before you run it.
+Practice: change `visitorAge` to 21. Predict the message before you run it.
 
-### Scenario 3: Check Homework Status
+### Scenario 3: Battery Alert
 
 ```js
-let homeworkDone = false;
+let batteryLow = true;
 
-if (homeworkDone === true) {
-  console.log("Nice work. You're ready for tomorrow.");
+if (batteryLow === true) {
+  console.log("Plug in your device — battery is low.");
 } else {
-  console.log("You still need to finish your homework.");
+  console.log("Battery level is fine.");
 }
 ```
 
 Shorter version:
 
 ```js
-if (homeworkDone) {
-  console.log("Nice work.");
+if (batteryLow) {
+  console.log("Plug in soon.");
 } else {
-  console.log("Keep going.");
+  console.log("Battery is fine.");
 }
 ```
 

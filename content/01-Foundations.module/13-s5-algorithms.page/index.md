@@ -54,19 +54,19 @@ console.log(findMax([3, 9, 2, 7, 5]));  // 9
 Count how many items match a condition.
 
 ```js
-function countPassing(scores) {
+function countAffordable(prices) {
   let count = 0;
-  
-  for (let i = 0; i < scores.length; i++) {
-    if (scores[i] >= 70) {
+
+  for (let i = 0; i < prices.length; i++) {
+    if (prices[i] <= 25) {
       count++;
     }
   }
-  
+
   return count;
 }
 
-console.log(countPassing([85, 65, 92, 72, 88]));  // 4
+console.log(countAffordable([12, 30, 8, 22, 45]));  // 3
 ```
 
 ### Algorithm 3: Calculate Average
