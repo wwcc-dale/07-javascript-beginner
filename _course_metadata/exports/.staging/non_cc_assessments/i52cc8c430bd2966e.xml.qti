@@ -1,0 +1,883 @@
+<?xml version="1.0" ?>
+<questestinterop xmlns="http://www.imsglobal.org/xsd/ims_qtiasiv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/ims_qtiasiv1p2 http://www.imsglobal.org/xsd/ims_qtiasiv1p2p1.xsd">
+  <assessment ident="i52cc8c430bd2966e" title="Session 18 Quiz – Game State and UI Foundation">
+    <qtimetadata>
+      <qtimetadatafield>
+        <fieldlabel>qmd_timelimit</fieldlabel>
+        <fieldentry>20</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>cc_maxattempts</fieldlabel>
+        <fieldentry>3</fieldentry>
+      </qtimetadatafield>
+    </qtimetadata>
+    <section ident="root_section">
+      <section ident="i52cc8c430bd2966e_questions" title="Session 18 Quiz – Game State and UI Foundation">
+        <item ident="i52cc8c430bd2966e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What does this render? `function renderCard(card) { return `&amp;lt;div class=&amp;quot;card&amp;quot;&amp;gt;${card.value} of ${card.suit}&amp;lt;/div&amp;gt;`; }`&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">HTML string for displaying a card</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Card object</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Error thrown</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Nothing</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i52cc8c430bd2966e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;Fix this: `document.getElementById(&amp;#x27;score&amp;#x27;).textContent = player.score;` (score is undefined)&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Check if player and player.score exist before accessing</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Code is correct</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Use innerHTML instead</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Cannot display score</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i52cc8c430bd2966e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What does this do? `function updateUI() { document.getElementById(&amp;#x27;player1-score&amp;#x27;).textContent = game.player1.score; }`&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Updates player1's score display in DOM</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Returns score</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Creates new element</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Error thrown</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i52cc8c430bd2966e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What&amp;#x27;s the result? `const gameState = { round: 1, isGameOver: false }; gameState.round++; console.log(gameState.round);`&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">2</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">1</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">"11"</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Error thrown</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i52cc8c430bd2966e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;Fix card display: `function renderHand(hand) { return hand.map(card =&amp;gt; `&amp;lt;div&amp;gt;${card}&amp;lt;/div&amp;gt;`).join(&amp;#x27;&amp;#x27;); }`&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">`return hand.map(card =&gt; `&lt;div&gt;${card.value} of ${card.suit}&lt;/div&gt;`).join('');` (access card properties)</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Code is correct</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Use forEach instead</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Cannot render hand</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i52cc8c430bd2966e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What happens? `class Game { constructor() { this.round = 0; } startNewRound() { this.round++; this.updateDisplay(); } }`&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Increments round and calls updateDisplay method</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Only increments round</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Error thrown</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Nothing happens</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i52cc8c430bd2966e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What&amp;#x27;s wrong? `document.querySelector(&amp;#x27;.score&amp;#x27;).textContent = score;` (multiple .score elements)&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">querySelector only updates first match, use querySelectorAll + forEach for all</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Nothing wrong</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Use getElementById</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Cannot update multiple</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i52cc8c430bd2966e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;Complete: `function displayWinner(winner) { const messageEl = document.getElementById(&amp;#x27;message&amp;#x27;); messageEl.textContent = ____; }`&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">`${winner} wins!` or similar message</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">`winner`</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">`'Winner'`</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">`messageEl`</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i52cc8c430bd2966e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What&amp;#x27;s the result? `const cards = [card1, card2, card3]; const html = cards.map(c =&amp;gt; renderCard(c)).join(&amp;#x27;&amp;#x27;); document.getElementById(&amp;#x27;hand&amp;#x27;).innerHTML = html;`&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Displays all 3 cards in #hand element</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Only displays first card</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Error thrown</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Nothing displayed</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i52cc8c430bd2966e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;Fix this: `function updateScores() { document.getElementById(&amp;#x27;p1-score&amp;#x27;).textContent = player1.score; document.getElementById(&amp;#x27;p2-score&amp;#x27;).textContent = player2.score; updateScores(); }`&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Remove recursive call `updateScores();` (causes infinite loop)</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Code is correct</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Add return statement</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Cannot update both scores</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i52cc8c430bd2966e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What does this return? `function getGameStatus() { return this.isGameOver ? &amp;#x27;Game Over&amp;#x27; : `Round ${this.round}`; }`&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">'Game Over' if game over, otherwise current round number</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Always 'Game Over'</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Always round number</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Error thrown</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i52cc8c430bd2966e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What&amp;#x27;s logged? `const container = document.createElement(&amp;#x27;div&amp;#x27;); container.innerHTML = &amp;#x27;&amp;lt;p&amp;gt;Score: 10&amp;lt;/p&amp;gt;&amp;#x27;; console.log(container.textContent);`&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">"Score: 10" (text content without HTML tags)</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">"&lt;p&gt;Score: 10&lt;/p&gt;"</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">undefined</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Error thrown</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i52cc8c430bd2966e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;Fix display: `function showCard(card) { document.getElementById(&amp;#x27;card-area&amp;#x27;).appendChild(card); }`&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Create DOM element first: `const el = document.createElement('div'); el.textContent = card.toString(); document.getElementById('card-area').appendChild(el);`</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Code is correct</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Use innerHTML instead</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Cannot append cards</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i52cc8c430bd2966e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What happens? `const gameUI = { updateScore(player) { document.querySelector(`#${player.name}-score`).textContent = player.score; } };`&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Creates object with updateScore method to update player score display</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Syntax error</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Cannot use template literals</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Nothing happens</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i52cc8c430bd2966e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;Complete: `class Game { constructor() { this.ui = { scoreBoard: document.getElementById(&amp;#x27;scores&amp;#x27;), message: document.getElementById(&amp;#x27;message&amp;#x27;) }; } displayMessage(text) { ____; } }`&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">`this.ui.message.textContent = text;`</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">`document.textContent = text;`</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">`this.message = text;`</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">`console.log(text);`</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i52cc8c430bd2966e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What&amp;#x27;s the issue? `function render() { const hand = game.player.hand; hand.forEach(card =&amp;gt; { document.body.innerHTML += renderCard(card); }); }`&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">+= with innerHTML is inefficient and resets event listeners, build string first or use appendChild</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Nothing wrong</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Use textContent instead</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Cannot use forEach</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+      </section>
+    </section>
+  </assessment>
+</questestinterop>

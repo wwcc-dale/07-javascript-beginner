@@ -1,6 +1,6 @@
 vendor_guid,object_type,title,description,display_name,calculation_method,calculation_int,workflow_state,parent_guids,mastery_points,ratings,,,,,,,,,
-01-CODE,outcome,Develop JS code for use in web pages.,Develop JS code for use in web pages.,01-CODE,,,active,,4,5,Excelling,4,Achieving,3,Developing,2,Beginning,0,No Evidence
-02-OOP,outcome,Object Oriented Programming,Understand and utilize the fundamentals of OOP and complex data processing,02-OOP,,,active,,4,5,Excelling,4,Achieving,3,Developing,2,Beginning,0,No Evidence
-03-ELEM,outcome,"Data types, data structures, functions and flow control","Control website behavior using data types, data structures, and logical dataflow and functions.",03-ELEM,,,active,,4,5,Excelling,4,Achieving,3,Developing,2,Beginning,0,No Evidence
-04-MOD,outcome,"Node.js, APIs and native modules","Explain the role of Node.js, APIs and native modules.",04-MOD,,,active,,4,5,Excelling,4,Achieving,3,Developing,2,Beginning,0,No Evidence
-05-DEBUG,outcome,Troubleshoot problems related to code execution,Troubleshoot problems related to code execution.,05-DEBUG,,,active,,4,5,Excelling,4,Achieving,3,Developing,2,Beginning,0,No Evidence
+14245609-01-CODE,outcome,Develop JS code for use in web pages.,Develop JS code for use in web pages.,01-CODE,,,active,,4,5,Excelling,4,Achieving,3,Developing,2,Beginning,0,No Evidence
+14245609-02-OOP,outcome,Object Oriented Programming,Understand and utilize the fundamentals of OOP and complex data processing,02-OOP,,,active,,4,5,Excelling,4,Achieving,3,Developing,2,Beginning,0,No Evidence
+14245609-03-ELEM,outcome,"Data types, data structures, functions and flow control","Control website behavior using data types, data structures, and logical dataflow and functions.",03-ELEM,,,active,,4,5,Excelling,4,Achieving,3,Developing,2,Beginning,0,No Evidence
+14245609-04-MOD,outcome,"Node.js, APIs and native modules","Explain the role of Node.js, APIs and native modules.",04-MOD,,,active,,4,5,Excelling,4,Achieving,3,Developing,2,Beginning,0,No Evidence
+14245609-05-DEBUG,outcome,Troubleshoot problems related to code execution,Troubleshoot problems related to code execution.,05-DEBUG,,,active,,4,5,Excelling,4,Achieving,3,Developing,2,Beginning,0,No Evidence

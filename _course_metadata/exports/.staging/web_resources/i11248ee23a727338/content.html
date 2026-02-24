@@ -1,0 +1,80 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Session 8: Library Management System</title>
+</head>
+<body>
+<h1>Session 8: Library Management System</h1>
+<p>Build a system with Book and Library classes that manage collections of objects.</p>
+<p><strong>Time:</strong> 60–90 minutes | <strong>Points:</strong> 20 | <strong>Submit:</strong> <code>08-assignment.js</code></p>
+<h2>Level 1 – Core Tasks (15 points)</h2>
+<h3>Challenge 1: Book Class</h3>
+<pre class="codehilite"><code class="language-js">// TODO: Create a Book class with:
+// - Constructor: title, author, pages, isCheckedOut (default false)
+// - Method checkout(): sets isCheckedOut to true
+// - Method returnBook(): sets isCheckedOut to false
+// - Method getInfo(): returns string with book details
+
+// Test:
+// const book = new Book(&quot;JS Guide&quot;, &quot;Jane Dev&quot;, 300);
+// book.checkout();
+// console.log(book.isCheckedOut); // true
+</code></pre>
+
+<h3>Challenge 2: Library Class (Container)</h3>
+<pre class="codehilite"><code class="language-js">// TODO: Create a Library class with:
+// - Constructor: name
+// - Property: books (empty array)
+// - Method addBook(book): adds book to array
+// - Method getTotalBooks(): returns books.length
+// - Method getAvailableBooks(): counts books where isCheckedOut is false
+
+// Test:
+// const lib = new Library(&quot;City Library&quot;);
+// lib.addBook(new Book(&quot;Book 1&quot;, &quot;Author 1&quot;, 200));
+// lib.addBook(new Book(&quot;Book 2&quot;, &quot;Author 2&quot;, 150));
+// console.log(lib.getTotalBooks()); // 2
+</code></pre>
+
+<h3>Challenge 3: Find Books by Author</h3>
+<pre class="codehilite"><code class="language-js">// TODO: Add method to Library class:
+// - findByAuthor(authorName): returns array of books by that author
+
+// Test:
+// const books = lib.findByAuthor(&quot;Jane Dev&quot;);
+// books should be an array of matching books
+</code></pre>
+
+<h3>Challenge 4: Checkout System</h3>
+<pre class="codehilite"><code class="language-js">// TODO: Add method to Library class:
+// - checkoutBook(title): finds book by title and checks it out
+// - Returns true if successful, false if not found or already checked out
+
+// Test:
+// lib.checkoutBook(&quot;JS Guide&quot;); // true
+// lib.checkoutBook(&quot;JS Guide&quot;); // false (already out)
+</code></pre>
+
+<h2>Level 2 – Stretch (3 points)</h2>
+<h3>Challenge 5: Statistics</h3>
+<p>Add methods to Library:
+- getMostPages(): returns book with most pages
+- getAveragePages(): returns average page count
+- getCheckedOutCount(): counts checked out books</p>
+<h3>Challenge 6: Member Class</h3>
+<p>Create a Member class with:
+- Properties: name, checkedOutBooks (array)
+- Method checkoutBook(book): adds to their array if book available
+- Method returnBook(book): removes from their array</p>
+<h2>Level 3 – Advanced (2 points)</h2>
+<h3>Challenge 7: Complete System</h3>
+<p>Build a system with:
+- Book class (from Challenge 1)
+- Member class (from Challenge 6)
+- Library class that tracks both books and members
+- Method library.checkoutToMember(bookTitle, memberName)
+- Method library.getMemberBooks(memberName)
+- Proper validation throughout</p>
+<p>Test with 5 books and 3 members.</p>
+</body>
+</html>

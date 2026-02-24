@@ -1,0 +1,910 @@
+<?xml version="1.0" ?>
+<questestinterop xmlns="http://www.imsglobal.org/xsd/ims_qtiasiv1p2">
+  <assessment ident="ib0c1b95b4d0a29c2" title="Session 8 Quiz – Classes and Object-Oriented Programming">
+    <qtimetadata>
+      <qtimetadatafield>
+        <fieldlabel>cc_profile</fieldlabel>
+        <fieldentry>cc.exam.v0p1</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>qmd_assessmenttype</fieldlabel>
+        <fieldentry>Examination</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>qmd_timelimit</fieldlabel>
+        <fieldentry>20</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>zaphod_quiz_type</fieldlabel>
+        <fieldentry>practice_quiz</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>zaphod_allowed_attempts</fieldlabel>
+        <fieldentry>3</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>zaphod_shuffle_answers</fieldlabel>
+        <fieldentry>True</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>zaphod_published</fieldlabel>
+        <fieldentry>False</fieldentry>
+      </qtimetadatafield>
+    </qtimetadata>
+    <objectives>
+      <material>
+        <mattext texttype="text/html">&lt;h1&gt;Session 8 Quiz – Classes and Object-Oriented Programming&lt;/h1&gt;
+&lt;p&gt;Test your understanding of ES6 classes, constructors, methods, and OOP principles.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Topics Covered:&lt;/strong&gt;
+- Class declarations and syntax
+- Constructor methods
+- Instance properties and methods
+- this keyword in classes
+- Creating and using instances
+- Encapsulation basics&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Instructions:&lt;/strong&gt;
+- 16 questions from the Session 8 question bank
+- 20 minute time limit
+- 3 attempts allowed
+- 16 points total (1 point per question)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;After syncing the question bank to Canvas:&lt;/strong&gt;&lt;/p&gt;</mattext>
+      </material>
+    </objectives>
+    <section ident="ib0c1b95b4d0a29c2_section">
+      <item ident="ib0c1b95b4d0a29c2_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;How do you create an array of object instances?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Use special syntax</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Create instances and put them in an array</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Arrays can't hold objects</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Use the object keyword</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="ib0c1b95b4d0a29c2_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does this code do? ```js const students = [ new Student(&amp;quot;Alex&amp;quot;, 85), new Student(&amp;quot;Jordan&amp;quot;, 92) ]; ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Creates an array containing two Student instances</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Creates one student</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Causes an error</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Creates two arrays</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="ib0c1b95b4d0a29c2_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;How do you loop through an array of objects?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Use a for loop with array length</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">You cannot loop through objects</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Objects loop automatically</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Use the loop keyword</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="ib0c1b95b4d0a29c2_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What is a container class?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">A class that manages a collection of other objects</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">A class with no methods</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">A temporary class</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">A class that cannot be instantiated</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="ib0c1b95b4d0a29c2_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What will this return? ```js class Classroom { constructor() { this.students = []; } addStudent(s) { this.students.push(s); } getCount() { return this.students.length; } } const room = new Classroom(); room.addStudent(new Student(&amp;quot;Alex&amp;quot;, 85)); room.addStudent(new Student(&amp;quot;Jordan&amp;quot;, 92)); console.log(room.getCount()); ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">2</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">0</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">undefined</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Error</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="ib0c1b95b4d0a29c2_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;Why use a container class instead of a plain array?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Encapsulates logic and provides useful methods</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Arrays don't work</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Container classes are faster</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">It's required</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="ib0c1b95b4d0a29c2_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does this method do? ```js getPassingCount() { let count = 0; for (let i = 0; i &amp;lt; this.students.length; i++) { if (this.students[i].isPassing()) { count++; } } return count; } ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Counts how many students are passing</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Returns all students</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Deletes failing students</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Returns true or false</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="ib0c1b95b4d0a29c2_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;Can objects work together in a system?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Yes, objects can call methods on other objects</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">No, objects are isolated</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Only with special syntax</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Objects cannot interact</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="ib0c1b95b4d0a29c2_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What&amp;#x27;s the benefit of managing multiple objects?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Makes code slower</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Models real-world systems with many entities</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Wastes memory</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">No benefit</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="ib0c1b95b4d0a29c2_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;How would you find the average grade of all students?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Loop through students, sum grades, divide by count</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Use the average keyword</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">JavaScript calculates it automatically</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">You cannot calculate averages</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="ib0c1b95b4d0a29c2_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What will this output? ```js class Library { constructor() { this.books = []; } addBook(book) { this.books.push(book); } getTotalBooks() { return this.books.length; } } const lib = new Library(); console.log(lib.getTotalBooks()); ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">0</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">undefined</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">null</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Error</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="ib0c1b95b4d0a29c2_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;Can you have an array inside a class?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Yes, arrays are properties like any other</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">No, classes cannot have arrays</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Only with special syntax</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Arrays must be outside classes</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="ib0c1b95b4d0a29c2_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What&amp;#x27;s the purpose of an addItem method?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">To add objects to the collection with validation</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">To delete items</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">To count items</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">To display items</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="ib0c1b95b4d0a29c2_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;How do you access a property of an object in an array?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">array.property</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">array[index].property</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">array-&gt;property</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">array(index).property</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="ib0c1b95b4d0a29c2_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does this represent? ```js class ShoppingCart { constructor() { this.items = []; } addItem(product) { this.items.push(product); } } ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">A container managing multiple product objects</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">A single product</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">An error</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">A database</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="ib0c1b95b4d0a29c2_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>true_false_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;True or false: You can loop through an array of objects and call methods on each object.&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">True</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">False</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+    </section>
+  </assessment>
+</questestinterop>

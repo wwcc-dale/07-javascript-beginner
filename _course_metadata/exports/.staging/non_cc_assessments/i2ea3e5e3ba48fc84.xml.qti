@@ -1,0 +1,883 @@
+<?xml version="1.0" ?>
+<questestinterop xmlns="http://www.imsglobal.org/xsd/ims_qtiasiv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/ims_qtiasiv1p2 http://www.imsglobal.org/xsd/ims_qtiasiv1p2p1.xsd">
+  <assessment ident="i2ea3e5e3ba48fc84" title="Session 2 Quiz – Control Flow (if/else, loops)">
+    <qtimetadata>
+      <qtimetadatafield>
+        <fieldlabel>qmd_timelimit</fieldlabel>
+        <fieldentry>20</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>cc_maxattempts</fieldlabel>
+        <fieldentry>3</fieldentry>
+      </qtimetadatafield>
+    </qtimetadata>
+    <section ident="root_section">
+      <section ident="i2ea3e5e3ba48fc84_questions" title="Session 2 Quiz – Control Flow (if/else, loops)">
+        <item ident="i2ea3e5e3ba48fc84_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What is a parameter in a function?&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">The code inside the function</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">An input that a function accepts</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">The value the function returns</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">A variable outside the function</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer1</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i2ea3e5e3ba48fc84_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;Which of these correctly defines a function with a parameter?&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">function add(num1 num2) { return num1 + num2; }</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">function add(num1, num2) { return num1 + num2; }</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">function add num1 num2 { return num1 + num2; }</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">function add[num1, num2] { return num1 + num2; }</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer1</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i2ea3e5e3ba48fc84_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What does `return` do in a function?&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Starts the function over</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Sends a value back to where the function was called</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Stops the program</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Prints to the console</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer1</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i2ea3e5e3ba48fc84_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What will this code print? ```js function multiply(a, b) { return a * b; } console.log(multiply(4, 5)); ```&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">a * b</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">20</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">undefined</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Error</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer1</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i2ea3e5e3ba48fc84_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;How many times can you call a function?&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Only once</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Only two times</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">As many times as you want</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">It depends on the parameters</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer2</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i2ea3e5e3ba48fc84_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What is wrong with this code? ```js function greet(name) { console.log(&amp;quot;Hello, &amp;quot; + name); } greet();  // Called with no argument ```&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Nothing is wrong</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">The function expects a parameter but none was provided</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">You cannot use string concatenation in functions</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">The function name is invalid</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer1</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i2ea3e5e3ba48fc84_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What will this code print? ```js function calculateTotal(price, tax) { let total = price + tax; return total; } let result = calculateTotal(50, 5); console.log(result); ```&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">55</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">50</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">5</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">undefined</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i2ea3e5e3ba48fc84_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;Which correctly calls a function with two parameters?&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">calculateTotal 50, 5</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">calculateTotal(50, 5)</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">calculateTotal[50, 5]</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">calculateTotal{50, 5}</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer1</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i2ea3e5e3ba48fc84_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What does this function do? ```js function isEven(num) { return num % 2 === 0; } ```&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Adds 2 to a number</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Returns true if the number is even, false otherwise</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Divides a number by 2</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Multiplies by 2</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer1</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i2ea3e5e3ba48fc84_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What will this code print? ```js function sayHello() { console.log(&amp;quot;Hello!&amp;quot;); } sayHello(); sayHello(); ```&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Hello!</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Hello! Hello!</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Hello! (printed once)</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Error</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer1</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i2ea3e5e3ba48fc84_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;A function that accepts a score and returns true if the score is 70 or higher would be:&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">function passTest(score) { if (score &gt;= 70) return true; }</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">function passTest(score) { if (score &gt;= 70) return true; else return false; }</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">function passTest(score) { console.log(score &gt;= 70); }</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Both a and b are correct</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer1</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i2ea3e5e3ba48fc84_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What is the difference between parameters and arguments?&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">They are the same thing</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Parameters are in the function definition; arguments are the values you pass when calling</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Parameters are always numbers</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Arguments can only be used once</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer1</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i2ea3e5e3ba48fc84_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What will this code print? ```js function applyTax(price) { let tax = price * 0.1; return price + tax; } console.log(applyTax(100)); ```&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">110</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">100</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">10</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">0.1</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i2ea3e5e3ba48fc84_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;Why would you use a function instead of repeating code?&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Functions are always faster</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Functions reduce repetition, make code cleaner, and are easier to fix</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Functions are required in JavaScript</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Functions use less memory</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer1</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i2ea3e5e3ba48fc84_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What will this code output? ```js function findMax(a, b) { if (a &amp;gt; b) return a; else return b; } console.log(findMax(25, 30)); ```&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">30</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">25</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">true</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Error</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i2ea3e5e3ba48fc84_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;A function that takes no parameters and returns no value would be:&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">function doNothing() { }</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">function doNothing() { console.log("Hi"); }</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Not allowed in JavaScript</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Called a "void" function</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer1</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+      </section>
+    </section>
+  </assessment>
+</questestinterop>

@@ -1,0 +1,264 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="identifier" content="i6f932875923e8408"/>
+<meta name="editing_roles" content="teachers"/>
+<meta name="workflow_state" content="active"/>
+<title>Session 11: JavaScript and the DOM</title>
+</head>
+<body>
+<h1>Session 11: JavaScript and the DOM</h1>
+<h2>Learning Outcomes</h2>
+<p>By the end of this session, you will be able to:
+- Select DOM elements using querySelector and related methods.
+- Read and modify element content and attributes.
+- Understand the relationship between JavaScript and HTML.
+- Dynamically update web pages using JavaScript.</p>
+<hr />
+<h2>Introduction (5 minutes)</h2>
+<p>You've built solid JavaScript skills. Now you'll apply them to the browser—manipulating web pages dynamically. The <strong>DOM</strong> (Document Object Model) is the interface between JavaScript and HTML. Today you'll learn to select elements and change them.</p>
+<hr />
+<h2>Reading: Selecting and Modifying Elements (35 minutes)</h2>
+<h3>What Is the DOM?</h3>
+<p>The DOM is a tree structure representing your HTML. JavaScript can access and modify it.</p>
+<pre class="codehilite"><code>Document
+├── html
+    ├── head
+    │   └── title
+    └── body
+        ├── h1
+        ├── p
+        └── button
+</code></pre>
+
+<h3>Selecting Elements</h3>
+<p><strong>querySelector (single element):</strong></p>
+<pre class="codehilite"><code class="language-js">const heading = document.querySelector('h1');
+const button = document.querySelector('#myButton');
+const firstBox = document.querySelector('.box');
+</code></pre>
+
+<p><strong>querySelectorAll (multiple elements):</strong></p>
+<pre class="codehilite"><code class="language-js">const boxes = document.querySelectorAll('.box');
+const paragraphs = document.querySelectorAll('p');
+
+for (let i = 0; i &lt; boxes.length; i++) {
+  console.log(boxes[i]);
+}
+</code></pre>
+
+<p><strong>getElementById, getElementsByClassName (older methods):</strong></p>
+<pre class="codehilite"><code class="language-js">const header = document.getElementById('header');
+const items = document.getElementsByClassName('item');
+</code></pre>
+
+<h3>Reading Content</h3>
+<p><strong>textContent (just text):</strong></p>
+<pre class="codehilite"><code class="language-js">const h1 = document.querySelector('h1');
+console.log(h1.textContent);  // The text inside
+</code></pre>
+
+<p><strong>innerHTML (HTML and text):</strong></p>
+<pre class="codehilite"><code class="language-js">const box = document.querySelector('.box');
+console.log(box.innerHTML);  // &lt;p&gt;Hello&lt;/p&gt;&lt;span&gt;World&lt;/span&gt;
+</code></pre>
+
+<h3>Modifying Content</h3>
+<pre class="codehilite"><code class="language-js">const h1 = document.querySelector('h1');
+h1.textContent = 'New Title';  // Change text
+
+const box = document.querySelector('.box');
+box.innerHTML = '&lt;p&gt;New content&lt;/p&gt;';  // Change HTML
+</code></pre>
+
+<h3>Working with Attributes</h3>
+<pre class="codehilite"><code class="language-js">const link = document.querySelector('a');
+
+// Read attribute
+console.log(link.getAttribute('href'));
+
+// Set attribute
+link.setAttribute('href', 'https://example.com');
+
+// Direct property access
+const image = document.querySelector('img');
+image.src = 'new-image.jpg';
+image.alt = 'A new image';
+</code></pre>
+
+<h3>Real Example: Dynamic Todo List</h3>
+<p><strong>HTML:</strong></p>
+<pre class="codehilite"><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+  &lt;h1&gt;Todos&lt;/h1&gt;
+  &lt;ul id=&quot;todoList&quot;&gt;&lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><strong>JavaScript:</strong></p>
+<pre class="codehilite"><code class="language-js">const todoList = document.querySelector('#todoList');
+
+const todos = ['Buy milk', 'Study JavaScript', 'Exercise'];
+
+for (let i = 0; i &lt; todos.length; i++) {
+  let li = document.createElement('li');
+  li.textContent = todos[i];
+  todoList.appendChild(li);
+}
+</code></pre>
+
+<h3>Common Properties</h3>
+<pre class="codehilite"><code class="language-js">const element = document.querySelector('p');
+
+element.textContent = 'Change text';
+element.innerHTML = '&lt;strong&gt;Bold text&lt;/strong&gt;';
+element.className = 'highlight';
+element.id = 'mainParagraph';
+element.style.color = 'red';
+element.style.fontSize = '20px';
+</code></pre>
+
+<hr />
+<h2>Video Tutorial: Selecting and Modifying DOM Elements (20 minutes)</h2>
+<p>Watch: <code>assets/videos/11-dom-basics.mp4</code></p>
+<p>Covers:
+- querySelector and querySelectorAll
+- textContent vs innerHTML
+- Modifying attributes
+- Creating elements
+- Real examples</p>
+<hr />
+<h2>Supplemental Practice (25 minutes)</h2>
+<h3>Exercise 1: Select and Modify</h3>
+<pre class="codehilite"><code class="language-html">&lt;h1&gt;Hello World&lt;/h1&gt;
+&lt;p class=&quot;intro&quot;&gt;Welcome&lt;/p&gt;
+&lt;button id=&quot;myBtn&quot;&gt;Click me&lt;/button&gt;
+</code></pre>
+
+<pre class="codehilite"><code class="language-js">// Select and modify
+const heading = document.querySelector('h1');
+heading.textContent = 'Welcome to JavaScript';
+
+const intro = document.querySelector('.intro');
+intro.innerHTML = '&lt;em&gt;You are welcome!&lt;/em&gt;';
+
+const btn = document.querySelector('#myBtn');
+btn.textContent = 'Click Me!';
+</code></pre>
+
+<h3>Exercise 2: List Builder</h3>
+<pre class="codehilite"><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+  &lt;h2&gt;My List&lt;/h2&gt;
+  &lt;ul id=&quot;list&quot;&gt;&lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre class="codehilite"><code class="language-js">const list = document.querySelector('#list');
+const items = ['JavaScript', 'HTML', 'CSS', 'Web Design'];
+
+for (let i = 0; i &lt; items.length; i++) {
+  const li = document.createElement('li');
+  li.textContent = items[i];
+  list.appendChild(li);
+}
+</code></pre>
+
+<h3>Exercise 4: Building a Table Dynamically</h3>
+<p><code>createElement</code> works for any HTML tag — including table elements. The pattern is the same: create, set content, append.</p>
+<pre class="codehilite"><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+  &lt;table id=&quot;scoreTable&quot;&gt;&lt;/table&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre class="codehilite"><code class="language-js">const students = [
+  { name: 'Alex', score: 88 },
+  { name: 'Jordan', score: 72 },
+  { name: 'Casey', score: 95 }
+];
+
+const table = document.querySelector('#scoreTable');
+
+// Create and add the header row
+const thead = document.createElement('thead');
+const headerRow = document.createElement('tr');
+
+const th1 = document.createElement('th');
+th1.textContent = 'Name';
+const th2 = document.createElement('th');
+th2.textContent = 'Score';
+
+headerRow.appendChild(th1);
+headerRow.appendChild(th2);
+thead.appendChild(headerRow);
+table.appendChild(thead);
+
+// Create and add the data rows
+const tbody = document.createElement('tbody');
+
+for (const student of students) {
+  const row = document.createElement('tr');
+
+  const tdName = document.createElement('td');
+  tdName.textContent = student.name;
+
+  const tdScore = document.createElement('td');
+  tdScore.textContent = student.score;
+
+  row.appendChild(tdName);
+  row.appendChild(tdScore);
+  tbody.appendChild(row);
+}
+
+table.appendChild(tbody);
+</code></pre>
+
+<p><strong>The pattern is always:</strong> <code>createElement</code> → set content → <code>appendChild</code> to parent. It works identically for <code>table</code>, <code>thead</code>, <code>tbody</code>, <code>tr</code>, <code>td</code>, <code>th</code>, <code>div</code>, <code>li</code>, <code>p</code>, or any other HTML tag.</p>
+<h3>Exercise 3: Update User Profile</h3>
+<pre class="codehilite"><code class="language-html">&lt;div class=&quot;profile&quot;&gt;
+  &lt;h2 id=&quot;name&quot;&gt;&lt;/h2&gt;
+  &lt;p id=&quot;email&quot;&gt;&lt;/p&gt;
+  &lt;p id=&quot;status&quot;&gt;&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre class="codehilite"><code class="language-js">const user = {
+  name: 'Alex',
+  email: 'alex@example.com',
+  online: true
+};
+
+document.querySelector('#name').textContent = user.name;
+document.querySelector('#email').textContent = user.email;
+document.querySelector('#status').textContent = user.online ? 'Online' : 'Offline';
+</code></pre>
+
+<hr />
+<h2>Knowledge Check Quiz (15 minutes)</h2>
+<p>Take the <strong>Session 11 Practice Quiz</strong> in Canvas.</p>
+<p>Focus on:
+- Selecting elements with querySelector
+- Modifying textContent and innerHTML
+- Reading and setting attributes
+- Understanding the DOM</p>
+<hr />
+<h2>Hands-On Assignment (60–90 minutes)</h2>
+<p>Open <strong>"Session 11: Selecting and Manipulating DOM Elements"</strong>.</p>
+<p>You will:
+- Select elements from a page
+- Modify their content
+- Create and add new elements
+- Build dynamic page updates</p>
+<hr />
+<h2>Wrap-Up (10 minutes)</h2>
+<h3>Key Takeaways</h3>
+<ul>
+<li><strong>The DOM</strong> is how JavaScript accesses HTML.</li>
+<li><strong>querySelector</strong> selects elements with CSS selectors.</li>
+<li><strong>textContent</strong> changes text; <strong>innerHTML</strong> changes HTML.</li>
+<li><strong>Attributes</strong> can be read and modified.</li>
+<li><strong>JavaScript can dynamically update web pages.</strong></li>
+</ul>
+<h3>How This Connects</h3>
+<p>Next session, you'll learn to modify <strong>CSS with JavaScript</strong>—making dynamic styling changes.</p>
+<p>Next session: <strong>DOM Manipulation and Creation</strong></p>
+</body>
+</html>

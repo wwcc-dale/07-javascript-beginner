@@ -1,0 +1,213 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="identifier" content="i24a61e54423d176d"/>
+<meta name="editing_roles" content="teachers"/>
+<meta name="workflow_state" content="active"/>
+<title>Session 17: Inheritance, Subclasses, and Object Graphs</title>
+</head>
+<body>
+<h1>Session 17: Inheritance, Subclasses, and Object Graphs</h1>
+<h2>Learning Outcomes</h2>
+<p>By the end of this session, you will be able to:
+- Use <code>extends</code> and <code>super</code> to create a subclass that inherits from a parent
+- Override parent methods and add new methods in a subclass
+- Build an object graph where one class owns arrays of another
+- Use a rotation loop to distribute items across multiple buckets
+- Sort an array of objects using a custom comparator</p>
+<hr />
+<h2>Introduction (5 minutes)</h2>
+<p>Your Spades game has a working <code>Card</code> and <code>Deck</code>. Now you need the humans and AI that will use those cards. That requires two more class techniques: <strong>inheritance</strong> for building specialized versions of a class, and <strong>object graphs</strong> for building structures where one object owns collections of others.</p>
+<hr />
+<h2>Reading: Inheritance and Object Graphs (35 minutes)</h2>
+<h3>Inheritance with <code>extends</code> and <code>super</code></h3>
+<p>Inheritance lets you define a more specialized version of an existing class without rewriting everything:</p>
+<pre class="codehilite"><code class="language-js">class Vehicle {
+  constructor(make, model, year) {
+    this.make  = make;
+    this.model = model;
+    this.year  = year;
+    this.speed = 0;
+  }
+
+  describe() {
+    return `${this.year} ${this.make} ${this.model}`;
+  }
+
+  accelerate(amount) {
+    this.speed += amount;
+  }
+}
+
+class ElectricVehicle extends Vehicle {
+  constructor(make, model, year, batteryKwh) {
+    super(make, model, year);   // Must call super() first — runs parent constructor
+    this.batteryKwh  = batteryKwh;
+    this.chargeLevel = 100;     // Additional property only on ElectricVehicle
+  }
+
+  describe() {
+    // Override parent method and extend it
+    return `${super.describe()} [Electric, ${this.batteryKwh} kWh]`;
+  }
+
+  charge() {
+    this.chargeLevel = 100;
+  }
+}
+
+const car = new ElectricVehicle('Tesla', 'Model 3', 2023, 82);
+console.log(car.describe());    // &quot;2023 Tesla Model 3 [Electric, 82 kWh]&quot;
+car.accelerate(30);             // Inherited from Vehicle
+console.log(car.speed);         // 30
+</code></pre>
+
+<p><strong>Rules:</strong>
+- <code>super(...)</code> in the constructor calls the parent constructor and must come before <code>this</code>
+- Methods defined in the subclass override same-named methods in the parent
+- <code>super.methodName()</code> calls the parent version of an overridden method</p>
+<hr />
+<h3>The <code>instanceof</code> Check</h3>
+<p>You can check whether an object is an instance of a particular class (or its parent):</p>
+<pre class="codehilite"><code class="language-js">const ev = new ElectricVehicle('Rivian', 'R1T', 2024, 135);
+
+console.log(ev instanceof ElectricVehicle);  // true
+console.log(ev instanceof Vehicle);           // true (it IS a Vehicle too)
+console.log(ev instanceof Object);            // true (everything is an Object)
+</code></pre>
+
+<p>This is useful when you have a mixed array and need to handle subclass instances differently:</p>
+<pre class="codehilite"><code class="language-js">const fleet = [
+  new Vehicle('Ford', 'F-150', 2022),
+  new ElectricVehicle('Tesla', 'Model Y', 2023, 75)
+];
+
+fleet.forEach(v =&gt; {
+  if (v instanceof ElectricVehicle) {
+    v.charge();
+    console.log(`${v.describe()} — charged`);
+  } else {
+    console.log(`${v.describe()} — gas vehicle`);
+  }
+});
+</code></pre>
+
+<hr />
+<h3>Object Graphs: One Object Owns Arrays of Others</h3>
+<p>Real programs are rarely a single object — they form <strong>graphs</strong> where objects own references to other objects. A fleet manager owns an array of vehicles; each vehicle owns a maintenance log:</p>
+<pre class="codehilite"><code class="language-js">class FleetManager {
+  constructor(companyName) {
+    this.companyName = companyName;
+    this.vehicles    = [];     // Owns an array of Vehicle objects
+    this.teamSize    = 0;
+  }
+
+  addVehicle(vehicle) {
+    this.vehicles.push(vehicle);
+  }
+
+  assignVehicle(vehicle, driverName) {
+    vehicle.driver = driverName;  // Add a property to an owned object
+  }
+
+  totalVehicles() {
+    return this.vehicles.length;
+  }
+
+  // Find all vehicles by a specific driver
+  vehiclesForDriver(name) {
+    return this.vehicles.filter(v =&gt; v.driver === name);
+  }
+}
+</code></pre>
+
+<hr />
+<h3>Rotation Loops</h3>
+<p>A <strong>rotation loop</strong> distributes items across multiple buckets in a round-robin pattern. This is how cards are dealt in real card games — one to each player in order, repeatedly:</p>
+<pre class="codehilite"><code class="language-js">// Distribute 20 tasks across 4 workers
+const tasks   = Array.from({ length: 20 }, (_, i) =&gt; `Task-${i + 1}`);
+const workers = [[], [], [], []];
+
+for (const task of tasks) {
+  // (index of current task) % 4 determines which worker gets it
+}
+</code></pre>
+
+<p>A simpler way to think about it: use a nested loop — outer loop repeats N times, inner loop goes through each bucket once:</p>
+<pre class="codehilite"><code class="language-js">for (let round = 0; round &lt; 5; round++) {      // 5 rounds
+  for (const worker of workers) {
+    worker.push(tasks.shift());                  // Give next task to each worker
+  }
+}
+
+workers.forEach((w, i) =&gt; console.log(`Worker ${i}: ${w.length} tasks`));
+// Each worker gets exactly 5 tasks
+</code></pre>
+
+<hr />
+<h3>Sorting Objects with a Custom Comparator</h3>
+<p><code>Array.sort()</code> takes an optional comparator function that returns a negative, zero, or positive number:</p>
+<pre class="codehilite"><code class="language-js">const books = [
+  { title: 'Dune',       year: 1965, pages: 412 },
+  { title: 'Foundation', year: 1951, pages: 255 },
+  { title: 'Neuromancer',year: 1984, pages: 271 }
+];
+
+// Sort by year (oldest first)
+books.sort((a, b) =&gt; a.year - b.year);
+console.log(books[0].title);  // &quot;Foundation&quot; (1951)
+
+// Sort by pages (largest first), then by year as tiebreaker
+books.sort((a, b) =&gt; {
+  const pageDiff = b.pages - a.pages;
+  if (pageDiff !== 0) return pageDiff;
+  return a.year - b.year;   // Tiebreaker
+});
+</code></pre>
+
+<p><strong>Key rule:</strong> <code>a - b</code> sorts ascending; <code>b - a</code> sorts descending. For a multi-level sort, compute the primary difference first — if it's zero, fall through to the secondary difference.</p>
+<hr />
+<h2>Video Tutorial: Inheritance and Object Graphs (20 minutes)</h2>
+<p>Watch: <code>assets/videos/17-inheritance-object-graphs.mp4</code></p>
+<p>Covers:
+- <code>extends</code> and <code>super</code> step by step with the Vehicle example
+- Building an object graph — <code>FleetManager</code> owning <code>Vehicle</code> instances
+- The rotation loop for even distribution
+- Multi-key sort comparators</p>
+<hr />
+<h2>Supplemental Practice (25 minutes)</h2>
+<h3>Exercise 1: Animal Subclass</h3>
+<p>Write an <code>Animal</code> class with <code>name</code>, <code>sound</code>, and a <code>speak()</code> method that returns <code>"[name] says [sound]"</code>. Create a <code>Dog</code> subclass that extends <code>Animal</code>, calls <code>super</code> with <code>'Woof'</code>, and adds a <code>fetch(item)</code> method that returns <code>"[name] fetches the [item]!"</code>. Verify that a <code>Dog</code> instance works with both <code>speak()</code> and <code>fetch()</code>.</p>
+<h3>Exercise 2: Distribute Items</h3>
+<p>Create an array of 52 numbers (1–52). Distribute them evenly across 4 arrays using a rotation loop (inner/outer loop pattern). Verify each of the 4 arrays has exactly 13 items.</p>
+<h3>Exercise 3: Sort by Two Keys</h3>
+<p>Create an array of 10 employee objects: <code>{ name, department, salary }</code>. Sort them first by department alphabetically, then by salary descending within each department.</p>
+<h3>Exercise 4: <code>instanceof</code> Filter</h3>
+<p>Create a mixed array containing both <code>Animal</code> and <code>Dog</code> instances. Use <code>instanceof</code> to separate them into two arrays: one for all animals, one for only dogs.</p>
+<hr />
+<h2>Knowledge Check Quiz (15 minutes)</h2>
+<p>Take the <strong>Session 17 Practice Quiz</strong> in Canvas.</p>
+<p>Focus on:
+- Why <code>super()</code> must be called before <code>this</code> in a subclass constructor
+- The difference between overriding a method and calling <code>super.method()</code>
+- How a rotation loop distributes items evenly across buckets
+- How the sort comparator controls ascending vs. descending order</p>
+<hr />
+<h2>Hands-On Assignment (60–90 minutes)</h2>
+<p>Open <strong>"Session 17: Player, AIPlayer, and Dealing"</strong>.</p>
+<p>You will apply these patterns to build <code>Player.js</code>, <code>AIPlayer.js</code>, and the dealing logic in <code>SpadesGame.js</code>.</p>
+<hr />
+<h2>Wrap-Up (10 minutes)</h2>
+<h3>Key Takeaways</h3>
+<ul>
+<li><strong><code>extends</code></strong> creates a subclass; <strong><code>super()</code></strong> calls the parent constructor</li>
+<li>Subclasses inherit all parent methods and can override or add to them</li>
+<li><strong>Object graphs</strong> model real-world "has-a" relationships — <code>FleetManager</code> has vehicles</li>
+<li><strong>Rotation loops</strong> distribute items evenly using nested loops (outer = rounds, inner = buckets)</li>
+<li><strong>Multi-key sort</strong> falls through from primary to secondary difference when the primary is zero</li>
+</ul>
+<h3>How This Connects to the Assignment</h3>
+<p>The assignment asks you to build a Player class, an AIPlayer subclass, and a game object that manages teams and deals cards using a rotation loop. The patterns in this reading map directly to those challenges.</p>
+<p>Next session: <strong>Session 18 — Conditional Logic, Filtering, and Comparison</strong></p>
+</body>
+</html>

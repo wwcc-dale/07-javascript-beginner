@@ -29,24 +29,24 @@ An algorithm is a step-by-step solution to a problem. You've learned the buildin
 
 An algorithm is a well-defined series of steps to solve a problem. In programming, it usually combines loops, conditionals, and functions.
 
-### Algorithm 1: Find Maximum
+### Algorithm 1: Find Largest
 
 Find the largest number in a list.
 
 ```js
-function findMax(numbers) {
-  let max = numbers[0];  // Start with first number
-  
-  for (let i = 1; i < numbers.length; i++) {
-    if (numbers[i] > max) {
-      max = numbers[i];  // Update if we find larger
+function getLargest(values) {
+  let largest = values[0];  // Start with first number
+
+  for (let i = 1; i < values.length; i++) {
+    if (values[i] > largest) {
+      largest = values[i];  // Update if we find larger
     }
   }
-  
-  return max;
+
+  return largest;
 }
 
-console.log(findMax([3, 9, 2, 7, 5]));  // 9
+console.log(getLargest([3, 9, 2, 7, 5]));  // 9
 ```
 
 ### Algorithm 2: Count Matching
@@ -88,24 +88,24 @@ function calculateAverage(numbers) {
 console.log(calculateAverage([80, 90, 100]));  // 90
 ```
 
-### Algorithm 4: Find Minimum
+### Algorithm 4: Find Smallest
 
 Find the smallest number.
 
 ```js
-function findMin(numbers) {
-  let min = numbers[0];
-  
-  for (let i = 1; i < numbers.length; i++) {
-    if (numbers[i] < min) {
-      min = numbers[i];
+function getSmallest(values) {
+  let smallest = values[0];
+
+  for (let i = 1; i < values.length; i++) {
+    if (values[i] < smallest) {
+      smallest = values[i];
     }
   }
-  
-  return min;
+
+  return smallest;
 }
 
-console.log(findMin([25, 10, 30, 5, 15]));  // 5
+console.log(getSmallest([25, 10, 30, 5, 15]));  // 5
 ```
 
 ### Algorithm Patterns

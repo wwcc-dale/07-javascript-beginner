@@ -1,0 +1,200 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="identifier" content="i8ad760ab74df911f"/>
+<meta name="editing_roles" content="teachers"/>
+<meta name="workflow_state" content="active"/>
+<title>Session 5: Algorithmic Thinking</title>
+</head>
+<body>
+<h1>Session 5: Algorithmic Thinking</h1>
+<h2>Learning Outcomes</h2>
+<p>By the end of this session, you will be able to:
+- Identify and solve problems using algorithmic patterns.
+- Find maximum and minimum values in data.
+- Count items matching specific criteria.
+- Combine functions, loops, and conditionals to solve problems.</p>
+<hr />
+<h2>Introduction (5 minutes)</h2>
+<p>An algorithm is a step-by-step solution to a problem. You've learned the building blocks (variables, functions, loops, conditionals). Now you'll use them together to solve real problems. This is where programming becomes powerful.</p>
+<hr />
+<h2>Reading: Common Algorithms (35 minutes)</h2>
+<h3>What Is an Algorithm?</h3>
+<p>An algorithm is a well-defined series of steps to solve a problem. In programming, it usually combines loops, conditionals, and functions.</p>
+<h3>Algorithm 1: Find Largest</h3>
+<p>Find the largest number in a list.</p>
+<pre class="codehilite"><code class="language-js">function getLargest(values) {
+  let largest = values[0];  // Start with first number
+
+  for (let i = 1; i &lt; values.length; i++) {
+    if (values[i] &gt; largest) {
+      largest = values[i];  // Update if we find larger
+    }
+  }
+
+  return largest;
+}
+
+console.log(getLargest([3, 9, 2, 7, 5]));  // 9
+</code></pre>
+
+<h3>Algorithm 2: Count Matching</h3>
+<p>Count how many items match a condition.</p>
+<pre class="codehilite"><code class="language-js">function countAffordable(prices) {
+  let count = 0;
+
+  for (let i = 0; i &lt; prices.length; i++) {
+    if (prices[i] &lt;= 25) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+console.log(countAffordable([12, 30, 8, 22, 45]));  // 3
+</code></pre>
+
+<h3>Algorithm 3: Calculate Average</h3>
+<p>Sum all values and divide by count.</p>
+<pre class="codehilite"><code class="language-js">function calculateAverage(numbers) {
+  let sum = 0;
+
+  for (let i = 0; i &lt; numbers.length; i++) {
+    sum = sum + numbers[i];
+  }
+
+  let average = sum / numbers.length;
+  return average;
+}
+
+console.log(calculateAverage([80, 90, 100]));  // 90
+</code></pre>
+
+<h3>Algorithm 4: Find Smallest</h3>
+<p>Find the smallest number.</p>
+<pre class="codehilite"><code class="language-js">function getSmallest(values) {
+  let smallest = values[0];
+
+  for (let i = 1; i &lt; values.length; i++) {
+    if (values[i] &lt; smallest) {
+      smallest = values[i];
+    }
+  }
+
+  return smallest;
+}
+
+console.log(getSmallest([25, 10, 30, 5, 15]));  // 5
+</code></pre>
+
+<h3>Algorithm Patterns</h3>
+<p>Many algorithms follow the same pattern:</p>
+<ol>
+<li><strong>Initialize</strong> – Set up a variable to track results</li>
+<li><strong>Loop</strong> – Go through the data</li>
+<li><strong>Condition</strong> – Check if current item matches criteria</li>
+<li><strong>Update</strong> – Modify the tracking variable</li>
+<li><strong>Return</strong> – Send back the result</li>
+</ol>
+<hr />
+<h2>Video Tutorial: Solving Problems with Algorithms (20 minutes)</h2>
+<p>Watch: <code>assets/videos/05-algorithms.mp4</code></p>
+<p>This video covers:
+- Common algorithmic patterns
+- How to break down problems
+- Finding max, min, and counting items
+- Combining multiple algorithms
+- Debugging algorithm errors</p>
+<p>Pause and implement each example.</p>
+<hr />
+<h2>Supplemental Practice: Real Algorithms (25 minutes)</h2>
+<h3>Scenario 1: Find Highest Temperature</h3>
+<pre class="codehilite"><code class="language-js">const temps = [72, 85, 68, 91, 77];
+
+function findHottest(temperatures) {
+  let hottest = temperatures[0];
+  for (let i = 1; i &lt; temperatures.length; i++) {
+    if (temperatures[i] &gt; hottest) {
+      hottest = temperatures[i];
+    }
+  }
+  return hottest;
+}
+
+console.log(findHottest(temps));  // 91
+</code></pre>
+
+<h3>Scenario 2: Count Late Assignments</h3>
+<pre class="codehilite"><code class="language-js">const submissions = [true, false, true, false, false, true];
+
+function countLate(arr) {
+  let lateCount = 0;
+  for (let i = 0; i &lt; arr.length; i++) {
+    if (arr[i] === false) {
+      lateCount++;
+    }
+  }
+  return lateCount;
+}
+
+console.log(countLate(submissions));  // 3
+</code></pre>
+
+<h3>Scenario 3: Find Best Test Score</h3>
+<pre class="codehilite"><code class="language-js">const allScores = [78, 92, 85, 88, 95, 80];
+
+function getBestScore(scores) {
+  let best = scores[0];
+  for (let i = 1; i &lt; scores.length; i++) {
+    if (scores[i] &gt; best) {
+      best = scores[i];
+    }
+  }
+  return best;
+}
+
+console.log(getBestScore(allScores));  // 95
+</code></pre>
+
+<hr />
+<h2>Knowledge Check Quiz (15 minutes)</h2>
+<p>Take the <strong>Session 5 Practice Quiz</strong> in Canvas.</p>
+<p>Focus on:
+- Understanding algorithmic patterns
+- Finding max/min values
+- Counting items
+- Solving multi-step problems</p>
+<hr />
+<h2>Hands-On Assignment (60–90 minutes)</h2>
+<p>Open the assignment <strong>"Session 5: Solving Problems with Algorithms"</strong>.</p>
+<p>You will:
+- Implement common algorithms
+- Combine multiple patterns
+- Solve real problems using algorithmic thinking</p>
+<hr />
+<h2>Wrap-Up (10 minutes)</h2>
+<h3>Key Takeaways</h3>
+<ul>
+<li><strong>Algorithms are step-by-step solutions</strong> combining loops, conditionals, and functions.</li>
+<li><strong>Common patterns</strong> (find max, count, average) appear in many programs.</li>
+<li><strong>Algorithm thinking</strong> means breaking problems into small steps.</li>
+<li><strong>Practice makes algorithms intuitive.</strong></li>
+</ul>
+<h3>How This Connects to Your Learning</h3>
+<p>You've now completed <strong>Phase 1: Foundations!</strong> You know:
+- Variables, data types, conditionals
+- Functions and reusable code
+- Objects for organizing data
+- Loops and iteration
+- Algorithmic thinking</p>
+<p><strong>Next phase:</strong> Object-Oriented Programming (Sessions 6-10). You'll learn to organize code using classes and objects, building more complex programs.</p>
+<h3>Questions?</h3>
+<ul>
+<li>Try writing your own algorithms for different problems.</li>
+<li>Experiment with variations of max/min/count patterns.</li>
+<li>Ask your instructor if anything is unclear.</li>
+</ul>
+<p><strong>Congratulations on completing the Foundations phase!</strong> 🎉</p>
+</body>
+</html>

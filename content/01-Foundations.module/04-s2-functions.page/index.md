@@ -34,19 +34,19 @@ A function is a reusable block of code that does a specific job. You write it on
 ### Simple Function (No Parameters, No Return)
 
 ```js
-function greetStudent() {
-  console.log("Welcome to class!");
+function showWelcome() {
+  console.log("Welcome to the app!");
 }
 
 // Call the function:
-greetStudent();
-greetStudent();  // Can call it multiple times
+showWelcome();
+showWelcome();  // Can call it multiple times
 ```
 
 Output:
 ```
-Welcome to class!
-Welcome to class!
+Welcome to the app!
+Welcome to the app!
 ```
 
 ### Function with Parameters

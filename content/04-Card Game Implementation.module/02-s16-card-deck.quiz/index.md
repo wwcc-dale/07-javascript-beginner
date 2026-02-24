@@ -1,16 +1,17 @@
 ---
-name: "Session 16 Quiz – Card Game Foundation (Card & Deck)"
-quiztype: practice_quiz
+allowed_attempts: 3
 indent: 1
-timelimit: 20
-allowedattempts: 3
-shuffleanswers: true
-showcorrectanswers: true
+name: Session 16 Quiz – Card Game Foundation (Card & Deck)
 published: false
-questiongroups:
-  - bankid: PLACEHOLDER_REPLACE_AFTER_SYNC
-    pick: 16
-    pointsperquestion: 1
+question_groups:
+- bank: s16-card-deck.bank
+  bank_id: 35301454
+  pick: 16
+  points_per_question: 1
+quiz_type: practice_quiz
+show_correct_answers: true
+shuffle_answers: true
+time_limit: 20
 ---
 
 # Session 16 Quiz – Card Game Foundation (Card & Deck)

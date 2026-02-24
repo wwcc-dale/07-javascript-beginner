@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Session 16: Card and Deck Implementation</title>
+</head>
+<body>
+<h1>Session 16: Card and Deck Implementation</h1>
+<p>Build <code>Card.js</code> and <code>Deck.js</code> — the foundation every other Spades file depends on.</p>
+<p><strong>Time:</strong> 60–90 minutes | <strong>Points:</strong> 20 | <strong>Submit:</strong> ZIP containing <code>Card.js</code>, <code>Deck.js</code>, and <code>test.html</code></p>
+<hr />
+<h2>Level 1 – Core (15 pts)</h2>
+<h3>Challenge 1: Card Class</h3>
+<p>Create <code>Card.js</code> with a class that has:</p>
+<ul>
+<li><code>constructor(suit, rank)</code> — stores both as properties</li>
+<li><code>getSuit()</code> — returns the suit string</li>
+<li><code>getRank()</code> — returns the rank string</li>
+<li><code>getValue()</code> — returns the numeric value: <code>'2'</code>→2 through <code>'10'</code>→10, <code>'J'</code>→11, <code>'Q'</code>→12, <code>'K'</code>→13, <code>'A'</code>→14</li>
+<li><code>toString()</code> — returns <code>"rank of suit"</code> (e.g., <code>"A of Spades"</code>)</li>
+<li><code>equals(other)</code> — returns <code>true</code> if both suit and rank match</li>
+</ul>
+<h3>Challenge 2: Deck Class</h3>
+<p>Create <code>Deck.js</code> with a class that has:</p>
+<ul>
+<li><code>constructor()</code> — creates the <code>cards</code> array and calls <code>buildDeck()</code></li>
+<li><code>buildDeck()</code> — uses nested loops (suits × ranks) to push all 52 cards</li>
+<li>Suits: <code>'Hearts'</code>, <code>'Diamonds'</code>, <code>'Clubs'</code>, <code>'Spades'</code></li>
+<li>Ranks: <code>'2'</code> through <code>'10'</code>, <code>'J'</code>, <code>'Q'</code>, <code>'K'</code>, <code>'A'</code></li>
+<li><code>shuffle()</code> — implements the Fisher-Yates algorithm</li>
+<li><code>draw()</code> — removes and returns the last card in the array</li>
+<li><code>cardsLeft()</code> — returns how many cards remain</li>
+<li><code>reset()</code> — clears the array, calls <code>buildDeck()</code>, then <code>shuffle()</code></li>
+</ul>
+<h3>Challenge 3: Test Page</h3>
+<p>Create <code>test.html</code> that:
+- Creates a <code>Deck</code>, logs <code>cardsLeft()</code> (should be 52)
+- Calls <code>shuffle()</code>, draws 4 cards, logs each with <code>toString()</code>
+- Calls <code>reset()</code>, confirms deck is back to 52
+- Tests <code>equals()</code> with matching and non-matching cards</p>
+<h3>Challenge 4: Verify 52 Unique Cards</h3>
+<p>In your test, confirm every card is unique:</p>
+<pre class="codehilite"><code class="language-js">const descriptions = deck.cards.map(c =&gt; c.toString());
+const unique = new Set(descriptions);
+console.log('All unique:', unique.size === 52);  // must be true
+</code></pre>
+
+<hr />
+<h2>Level 2 – Stretch (3 pts)</h2>
+<h3>Challenge 5: Count by Suit</h3>
+<p>Add a standalone function (not a class method) <code>countBySuit(deck, suit)</code> that returns how many cards of that suit remain in the deck. Verify it returns 13 for each suit on a fresh deck.</p>
+<h3>Challenge 6: Deal to Four Players</h3>
+<p>Write code in <code>test.html</code> that deals 13 cards to each of four hand arrays, then verifies each hand has exactly 13 cards and the deck is empty.</p>
+<hr />
+<h2>Level 3 – Advanced (2 pts)</h2>
+<h3>Challenge 7: Shuffle Quality Test</h3>
+<p>Write a test that shuffles the deck 100 times and checks that the first card is not always the same. A good shuffle should rarely produce the same result twice.</p>
+<pre class="codehilite"><code class="language-js">const firstCards = [];
+for (let i = 0; i &lt; 100; i++) {
+  deck.reset();
+  firstCards.push(deck.cards[0].toString());
+}
+const unique = new Set(firstCards);
+console.log('Unique first cards across 100 shuffles:', unique.size);
+// A good shuffle should produce many different results
+</code></pre>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spades</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+
+    <header>
+      <h1>♠ Spades</h1>
+      <button id="start-game">New Game</button>
+    </header>
+
+    <main>
+
+      <!-- Team Scoreboard -->
+      <section id="scoreboard">
+        <div class="team-slot" id="team-0">
+          <div class="team-name" id="team0-name">You &amp; Partner</div>
+          <div class="team-score-row">
+            <span id="team0-score" class="team-score">0</span>
+            <span class="pts-label">pts</span>
+            <span id="team0-bags" class="bags-label">Bags: 0</span>
+          </div>
+          <div class="team-bid-info" id="team0-bids"></div>
+        </div>
+        <div class="team-slot" id="team-1">
+          <div class="team-name" id="team1-name">Opponents</div>
+          <div class="team-score-row">
+            <span id="team1-score" class="team-score">0</span>
+            <span class="pts-label">pts</span>
+            <span id="team1-bags" class="bags-label">Bags: 0</span>
+          </div>
+          <div class="team-bid-info" id="team1-bids"></div>
+        </div>
+      </section>
+
+      <!-- Status Bar -->
+      <section id="status-area">
+        <div id="game-status">Click "New Game" to start</div>
+        <div id="round-info"></div>
+      </section>
+
+      <!-- Bidding Panel -->
+      <section id="bidding-area" class="hidden">
+        <h3>Your bid — how many tricks will you take?</h3>
+        <p class="bid-hint">Your hand: <span id="bid-hand-summary"></span></p>
+        <div id="bid-buttons" class="bid-buttons"></div>
+      </section>
+
+      <!-- Trick Table (compass layout) -->
+      <section id="trick-display">
+        <h3>Current Trick <span id="trick-number"></span></h3>
+        <div class="trick-table">
+
+          <!-- North (Partner, seat 2) -->
+          <div class="trick-row">
+            <div class="trick-slot" id="trick-slot-2">
+              <div class="trick-label" id="trick-label-2"></div>
+              <div class="trick-card" id="trick-card-2"></div>
+            </div>
+          </div>
+
+          <!-- West (seat 1) | center message | East (seat 3) -->
+          <div class="trick-row trick-middle">
+            <div class="trick-slot" id="trick-slot-1">
+              <div class="trick-label" id="trick-label-1"></div>
+              <div class="trick-card" id="trick-card-1"></div>
+            </div>
+            <div id="trick-winner-msg" class="trick-center-msg"></div>
+            <div class="trick-slot" id="trick-slot-3">
+              <div class="trick-label" id="trick-label-3"></div>
+              <div class="trick-card" id="trick-card-3"></div>
+            </div>
+          </div>
+
+          <!-- South (You, seat 0) -->
+          <div class="trick-row">
+            <div class="trick-slot" id="trick-slot-0">
+              <div class="trick-label" id="trick-label-0"></div>
+              <div class="trick-card" id="trick-card-0"></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Player's Hand -->
+      <section id="player-hand-area">
+        <h3>Your Hand <span id="hand-count"></span></h3>
+        <div id="player-hand" class="hand"></div>
+        <div id="play-hint" class="play-hint"></div>
+      </section>
+
+    </main>
+
+    <!-- Game Log -->
+    <section id="game-log">
+      <h3>Game Log</h3>
+      <div id="log-content"></div>
+      <button id="clear-log">Clear Log</button>
+    </section>
+
+  </div>
+
+  <script src="Card.js"></script>
+  <script src="Deck.js"></script>
+  <script src="Player.js"></script>
+  <script src="AIPlayer.js"></script>
+  <script src="SpadesGame.js"></script>
+  <script src="GameBoard.js"></script>
+  <script src="GameRunner.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

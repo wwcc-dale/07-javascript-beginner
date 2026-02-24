@@ -96,11 +96,103 @@
     "canvas_id": 24815996
   },
   "content/05-Card Game Advanced Features.module/legacy/22-2-local-storage.quiz": {
-    "hash": "391427e23f24",
-    "canvas_id": 24815990
+    "hash": "f1d585fa6cd4",
+    "canvas_id": 25100356
   },
   "content/05-Card Game Advanced Features.module/legacy/24-2-testing-quality.quiz": {
-    "hash": "7d6577a57d7f",
-    "canvas_id": 24815994
+    "hash": "46ecef8ccf79",
+    "canvas_id": 25100358
+  },
+  "content/01-Foundations.module/02-s1-variables-datatypes.quiz": {
+    "hash": "49df5cc22417",
+    "canvas_id": 25099296
+  },
+  "content/01-Foundations.module/05-s2-control-flow.quiz": {
+    "hash": "03dfdd9db465",
+    "canvas_id": 25099298
+  },
+  "content/01-Foundations.module/08-s3-functions-scope.quiz": {
+    "hash": "aa7a11ab471c",
+    "canvas_id": 25099300
+  },
+  "content/01-Foundations.module/11-s4-arrays-methods.quiz": {
+    "hash": "30e51fd00f03",
+    "canvas_id": 25099302
+  },
+  "content/01-Foundations.module/14-s5-algorithms.quiz": {
+    "hash": "36edb2d8e9dd",
+    "canvas_id": 25099304
+  },
+  "content/02-Object Oriented Programming.module/02-s6-classes-intro.quiz": {
+    "hash": "816319356976",
+    "canvas_id": 25099306
+  },
+  "content/02-Object Oriented Programming.module/05-s7-math-encapsulation.quiz": {
+    "hash": "3f439f02ee02",
+    "canvas_id": 25099308
+  },
+  "content/02-Object Oriented Programming.module/08-s8-advanced-oop.quiz": {
+    "hash": "27789c77b380",
+    "canvas_id": 25099310
+  },
+  "content/02-Object Oriented Programming.module/11-s9-inheritance.quiz": {
+    "hash": "65a5fa3b979e",
+    "canvas_id": 25099312
+  },
+  "content/02-Object Oriented Programming.module/14-s10-advanced-arrays.quiz": {
+    "hash": "77e59e888448",
+    "canvas_id": 25099314
+  },
+  "content/03-HTML, CSS and DOM Interactions.module/05-s12-dom-creation.quiz": {
+    "hash": "a4d3f78a42b1",
+    "canvas_id": 25099316
+  },
+  "content/03-HTML, CSS and DOM Interactions.module/07-s12-practice.quiz": {
+    "hash": "1ca245a6d35b",
+    "canvas_id": 25100332
+  },
+  "content/03-HTML, CSS and DOM Interactions.module/09-s13-css-manipulation.quiz": {
+    "hash": "c1f1f91b9d09",
+    "canvas_id": 25100334
+  },
+  "content/03-HTML, CSS and DOM Interactions.module/12-s14-event-handling.quiz": {
+    "hash": "ddc82f903ad9",
+    "canvas_id": 25100336
+  },
+  "content/03-HTML, CSS and DOM Interactions.module/15-s15-event-handling.quiz": {
+    "hash": "e81ef2a8dd2b",
+    "canvas_id": 25100338
+  },
+  "content/04-Card Game Implementation.module/02-s16-card-deck.quiz": {
+    "hash": "98a9d6d8a6b2",
+    "canvas_id": 25100340
+  },
+  "content/04-Card Game Implementation.module/05-s17-player-hand.quiz": {
+    "hash": "3f693a27baee",
+    "canvas_id": 25100342
+  },
+  "content/04-Card Game Implementation.module/08-s18-game-ui.quiz": {
+    "hash": "f653d065f4b3",
+    "canvas_id": 25100344
+  },
+  "content/04-Card Game Implementation.module/11-s19-events-animations.quiz": {
+    "hash": "266b4eeba4ce",
+    "canvas_id": 25100346
+  },
+  "content/04-Card Game Implementation.module/14-s20-polish-testing.quiz": {
+    "hash": "8528669b46fc",
+    "canvas_id": 25100348
+  },
+  "content/05-Card Game Advanced Features.module/02-s21-ai-strategies.quiz": {
+    "hash": "afa8c332e824",
+    "canvas_id": 25100350
+  },
+  "content/05-Card Game Advanced Features.module/07-s23-advanced-ui.quiz": {
+    "hash": "b0a59e1b1be4",
+    "canvas_id": 25100352
+  },
+  "content/05-Card Game Advanced Features.module/11-s25-final-project.quiz": {
+    "hash": "3bea7a6841c5",
+    "canvas_id": 25100354
   }
 }

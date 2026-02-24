@@ -109,16 +109,16 @@ Wrapping `JSON.parse()` in `try/catch` prevents a corrupt save from crashing the
 
 ### A Stats Tracker with localStorage
 
-Here is a complete pattern for persisting statistics:
+Here is a complete pattern for persisting statistics across page loads:
 
 ```js
-class WorkoutStats {
+class ReadingLog {
   constructor() {
     this.data = this.load();
   }
 
   load() {
-    const raw = localStorage.getItem('workoutStats');
+    const raw = localStorage.getItem('readingLog');
     if (!raw) return this.defaults();
     try {
       return JSON.parse(raw);
@@ -129,24 +129,24 @@ class WorkoutStats {
 
   defaults() {
     return {
-      totalSessions:   0,
-      totalMinutes:    0,
-      longestStreak:   0,
-      currentStreak:   0,
-      lastSessionDate: null
+      booksRead:     0,
+      pagesRead:     0,
+      longestStreak: 0,
+      currentStreak: 0,
+      lastReadDate:  null
     };
   }
 
   save() {
-    localStorage.setItem('workoutStats', JSON.stringify(this.data));
+    localStorage.setItem('readingLog', JSON.stringify(this.data));
   }
 
-  recordSession(durationMinutes) {
-    this.data.totalSessions++;
-    this.data.totalMinutes += durationMinutes;
+  logBook(pageCount) {
+    this.data.booksRead++;
+    this.data.pagesRead += pageCount;
 
     const today = new Date().toDateString();
-    const last  = this.data.lastSessionDate;
+    const last  = this.data.lastReadDate;
 
     if (last) {
       const daysSince = (new Date(today) - new Date(last)) / 86400000;
@@ -156,30 +156,29 @@ class WorkoutStats {
         this.data.currentStreak = 1;  // Streak broken
       }
     } else {
-      this.data.currentStreak = 1;  // First session
+      this.data.currentStreak = 1;  // First book
     }
 
     this.data.longestStreak = Math.max(
       this.data.longestStreak,
       this.data.currentStreak
     );
-    this.data.lastSessionDate = today;
+    this.data.lastReadDate = today;
 
     this.save();  // Always save after modifying
   }
 
-  getWinRate() {
-    // Example: returns ratio of sessions over 30 min
-    return this.data.totalSessions > 0
-      ? (this.data.totalMinutes / this.data.totalSessions).toFixed(1)
+  getAvgPages() {
+    return this.data.booksRead > 0
+      ? (this.data.pagesRead / this.data.booksRead).toFixed(0)
       : 0;
   }
 }
 
-const stats = new WorkoutStats();
-stats.recordSession(45);
-console.log(stats.data.totalSessions);  // 1
-// Reload the page — stats persist!
+const log = new ReadingLog();
+log.logBook(312);
+console.log(log.data.booksRead);  // 1
+// Reload the page — log persists!
 ```
 
 ---
@@ -325,6 +324,6 @@ You will apply localStorage patterns to add session-to-session statistics to you
 
 ### How This Connects to the Assignment
 
-The assignment asks you to add a stats-tracking class to the Spades game that persists wins, losses, and scores across page reloads, using all the patterns from this reading.
+The assignment asks you to apply the load/defaults/save pattern to the Spades game, creating a stats-tracking class that persists data across page reloads.
 
 Next session: **Session 23 — CSS Themes, Variables, and Visual Polish**

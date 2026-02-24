@@ -1,0 +1,2108 @@
+<?xml version="1.0" ?>
+<questestinterop xmlns="http://www.imsglobal.org/xsd/ims_qtiasiv1p2">
+  <assessment ident="i999b7972dcfa3a85" title="Session 10 Quiz – Advanced Array and Object Techniques">
+    <qtimetadata>
+      <qtimetadatafield>
+        <fieldlabel>cc_profile</fieldlabel>
+        <fieldentry>cc.exam.v0p1</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>qmd_assessmenttype</fieldlabel>
+        <fieldentry>Examination</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>qmd_timelimit</fieldlabel>
+        <fieldentry>20</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>zaphod_quiz_type</fieldlabel>
+        <fieldentry>practice_quiz</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>zaphod_allowed_attempts</fieldlabel>
+        <fieldentry>3</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>zaphod_shuffle_answers</fieldlabel>
+        <fieldentry>True</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>zaphod_published</fieldlabel>
+        <fieldentry>False</fieldentry>
+      </qtimetadatafield>
+    </qtimetadata>
+    <objectives>
+      <material>
+        <mattext texttype="text/html">&lt;h1&gt;Session 10 Quiz – Advanced Array and Object Techniques&lt;/h1&gt;
+&lt;p&gt;Test your understanding of advanced array methods, object manipulation, and data transformation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Topics Covered:&lt;/strong&gt;
+- Chaining array methods
+- Nested array and object access
+- Object.assign and spread for objects
+- Array sorting and comparison
+- Data transformation patterns
+- Working with complex data structures&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Instructions:&lt;/strong&gt;
+- 16 questions from the Session 10 question bank
+- 20 minute time limit
+- 3 attempts allowed
+- 16 points total (1 point per question)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;After syncing the question bank to Canvas:&lt;/strong&gt;&lt;/p&gt;</mattext>
+      </material>
+    </objectives>
+    <section ident="i999b7972dcfa3a85_section">
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does `.filter()` return?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">A new array containing only elements where the callback returns true</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">The first element that matches</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">The index of the first match</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">It modifies the original array</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does this produce? ```js const nums = [1, 2, 3, 4, 5]; const evens = nums.filter(n =&amp;gt; n % 2 === 0); console.log(evens); ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">[2, 4]</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">[1, 3, 5]</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">[1, 2, 3, 4, 5]</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">2</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does `.map()` return?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">The first element matching a condition</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">A new array where each element is the result of the callback</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">A boolean</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">It modifies the original array</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does this produce? ```js const prices = [10, 20, 30]; const withTax = prices.map(p =&amp;gt; p * 1.1); console.log(withTax[0]); ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">11</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">10</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">1.1</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">[11, 22, 33]</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What is the difference between `.find()` and `.filter()`?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">.find() returns the first matching element; .filter() returns all matches</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">.filter() is faster</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">.find() returns an index; .filter() returns elements</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">They are identical</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does `.findIndex()` return when no match is found?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">null</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">undefined</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">-1</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">0</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer2</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does this produce? ```js const users = [{id: 1, name: &amp;quot;Alex&amp;quot;}, {id: 2, name: &amp;quot;Jordan&amp;quot;}]; const user = users.find(u =&amp;gt; u.id === 2); console.log(user.name); ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">"Jordan"</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">"Alex"</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">undefined</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">2</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What is wrong with sorting numbers without a comparator? ```js [10, 9, 2, 100].sort() ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Sorts as strings: [10, 100, 2, 9] — wrong numeric order</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Sorts correctly</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Throws an error</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Returns the original array</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;Which comparator sorts numbers in ascending order?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">`(a, b) =&gt; a - b`</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">`(a, b) =&gt; b - a`</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">`(a, b) =&gt; a + b`</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">`(a, b) =&gt; 1`</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does `[...arr]` create?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">A shallow copy of the array</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">A reference to the same array</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">A deep clone</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">An empty array</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;Why spread before sorting? ```js const sorted = [...original].sort((a, b) =&amp;gt; a - b); ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">.sort() mutates in place; spread preserves the original</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">It makes sorting faster</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">.sort() requires an array copy to work</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">No real reason</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does this chain produce? ```js const students = [ {name: &amp;quot;Alex&amp;quot;, grade: 85}, {name: &amp;quot;Jordan&amp;quot;, grade: 55}, {name: &amp;quot;Casey&amp;quot;, grade: 92} ]; const result = students .filter(s =&amp;gt; s.grade &amp;gt;= 70) .map(s =&amp;gt; s.name); console.log(result); ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">["Alex", "Casey"]</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">["Alex", "Jordan", "Casey"]</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">[85, 92]</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">["Jordan"]</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does the spread operator do when applied to objects? ```js const base = {name: &amp;quot;Alex&amp;quot;, score: 85}; const updated = {...base, score: 92}; ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Creates a new object with all base properties, overriding score with 92</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Modifies base directly</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Concatenates objects</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Throws an error</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does `.slice(0, 3)` return?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">A new array of the first 3 elements</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Removes the first 3 elements</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Returns element at index 3</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Returns the last 3 elements</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What is method chaining?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Calling the same method multiple times</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Calling methods in sequence where each returns an array for the next to act on</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Using a loop inside a method</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">A special syntax for arrays only</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does this return? ```js const items = [&amp;quot;b&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;c&amp;quot;]; const sorted = [...items].sort(); console.log(items[0]); ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">"b" (original unchanged)</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">"a" (sorted array used)</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">"c"</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">undefined</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What is Node.js?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">A JavaScript runtime for running JS outside the browser</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">A web browser</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">A programming language</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">A CSS framework</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What is npm?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">A programming language</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Node Package Manager for installing packages</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">A text editor</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">A browser</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;How do you run a JavaScript file with Node.js?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Open it in a browser</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Use command: node filename.js</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Double-click the file</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Use npm run</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does `package.json` contain?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">JavaScript code</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Project metadata and dependencies</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">HTML structure</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">CSS styles</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;Which command initializes a new Node.js project?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">node new</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">npm init</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">npm start</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">node create</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;How do you install a package with npm?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">node install packagename</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">npm install packagename</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">npm get packagename</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">node add packagename</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;How do you export a function named `add` using ES6 module syntax?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">`module.exports = { add };`</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">`export function add(a, b) { return a + b; }`</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">`exports.add = add;`</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">`send add;`</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;How do you import the `add` function from `./math.js` using ES6 syntax?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">`import { add } from './math.js';`</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">`const { add } = require('./math.js');`</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">`include add from './math.js';`</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">`import add('./math.js');`</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;How do you enable ES6 modules in Node.js?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">It's automatic</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Add "type": "module" to package.json</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Use a special command</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Install a package</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;Which is ES6 import syntax?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">const x = require('./file');</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">import { x } from './file.js';</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">include './file.js';</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">load './file.js';</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What&amp;#x27;s the difference between Node.js and browser JavaScript?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Node.js runs on server/computer, browser JS runs in browser</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">They are the same</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Node.js is faster</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Browser JS is newer</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;Where are npm packages stored after installation?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">package.json</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">node_modules/ directory</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">npm/ folder</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">In the browser</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What can Node.js access that browser JavaScript cannot?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Variables</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">File system and operating system</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Functions</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Arrays</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;Which is a built-in Node.js module?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">react</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">fs (file system)</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">jquery</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">bootstrap</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does this do? ```js import chalk from &amp;#x27;chalk&amp;#x27;; console.log(chalk.blue(&amp;#x27;Hello&amp;#x27;)); ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Prints "Hello" in blue color in terminal</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Creates a blue box</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Changes background color</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Causes an error</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;Why use modules?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Organize code into reusable files</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Make code slower</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Modules are required</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">To avoid functions</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does `fs.writeFileSync(&amp;#x27;log.txt&amp;#x27;, &amp;#x27;hello&amp;#x27;)` do?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Creates (or overwrites) log.txt with the text "hello"</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Reads log.txt</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Deletes log.txt</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Appends to log.txt</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What second argument is required to get a string back from `fs.readFileSync`?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">'binary'</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">'raw'</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">'utf8'</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">No second argument is needed</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer2</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;In `process.argv`, where do user-provided arguments start?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Index 0</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Index 1</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Index 2</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Index 3</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer2</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does this print when run with `node calc.js multiply 4 5`? ```js const a = Number(process.argv[3]); const b = Number(process.argv[4]); console.log(a * b); ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">20</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">"4 5"</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">NaN</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Error</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;Why must you wrap `process.argv` values with `Number()` before doing arithmetic?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">process.argv values are always strings</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">They are already numbers</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Number() is optional</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">process.argv doesn't exist in Node.js</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i999b7972dcfa3a85_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What path prefix is required when importing your own local files?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">No prefix</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">`~/`</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">`./`</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">`node:`</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer2</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+    </section>
+  </assessment>
+</questestinterop>

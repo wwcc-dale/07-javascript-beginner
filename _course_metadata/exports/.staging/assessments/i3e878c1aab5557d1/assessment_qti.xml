@@ -1,0 +1,1754 @@
+<?xml version="1.0" ?>
+<questestinterop xmlns="http://www.imsglobal.org/xsd/ims_qtiasiv1p2">
+  <assessment ident="i3e878c1aab5557d1" title="Session 7 Quiz – Math and Number Methods">
+    <qtimetadata>
+      <qtimetadatafield>
+        <fieldlabel>cc_profile</fieldlabel>
+        <fieldentry>cc.exam.v0p1</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>qmd_assessmenttype</fieldlabel>
+        <fieldentry>Examination</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>qmd_timelimit</fieldlabel>
+        <fieldentry>20</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>zaphod_quiz_type</fieldlabel>
+        <fieldentry>practice_quiz</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>zaphod_allowed_attempts</fieldlabel>
+        <fieldentry>3</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>zaphod_shuffle_answers</fieldlabel>
+        <fieldentry>True</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>zaphod_published</fieldlabel>
+        <fieldentry>False</fieldentry>
+      </qtimetadatafield>
+    </qtimetadata>
+    <objectives>
+      <material>
+        <mattext texttype="text/html">&lt;h1&gt;Session 7 Quiz – Math and Number Methods&lt;/h1&gt;
+&lt;p&gt;Test your understanding of the Math object, number methods, and numeric operations.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Topics Covered:&lt;/strong&gt;
+- Math.random, Math.floor, Math.ceil, Math.round
+- Math.max, Math.min, Math.abs
+- Number methods (toFixed, parseInt, parseFloat)
+- isNaN and Number.isInteger
+- Random number generation
+- Rounding and precision&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Instructions:&lt;/strong&gt;
+- 16 questions from the Session 7 question bank
+- 20 minute time limit
+- 3 attempts allowed
+- 16 points total (1 point per question)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;After syncing the question bank to Canvas:&lt;/strong&gt;&lt;/p&gt;</mattext>
+      </material>
+    </objectives>
+    <section ident="i3e878c1aab5557d1_section">
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What is encapsulation?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Controlling how data is accessed and modified in a class</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Making all properties public</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">A type of loop</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">A way to delete objects</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;Why use getters and setters?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">They make code slower</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">To validate and control access to properties</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">They are required in all classes</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">To avoid using methods</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does the underscore convention (_property) indicate?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">The property is a number</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">The property is intended to be private/internal</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">The property is required</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">The property is a string</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What will this code do? ```js class BankAccount { constructor(balance) { this.balance = balance; } withdraw(amount) { if (amount &amp;gt; this.balance) return false; this.balance -= amount; return true; } } const acc = new BankAccount(100); acc.withdraw(150); ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Return false and balance stays 100</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Set balance to -50</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Throw an error</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Set balance to 0</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;Which is better encapsulation?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Allowing direct modification: account.balance = -500</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Using a method: account.withdraw(500) with validation</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Both are the same</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Neither, encapsulation isn't important</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What&amp;#x27;s wrong with this setter? ```js set price(newPrice) { this._price = newPrice; } ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Syntax error</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">No validation - allows invalid values</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Should use this.price</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Nothing is wrong</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does this getter do? ```js get fullName() { return this._firstName + &amp;quot; &amp;quot; + this._lastName; } ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Combines two properties into one computed value</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Sets the full name</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Deletes the name</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Nothing useful</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;Why validate input in methods?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">To make code longer</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">To prevent invalid object states</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Validation is not needed</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Because JavaScript requires it</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What will this return? ```js class Product { constructor(price) { this._price = price; } get price() { return this._price; } set price(val) { if (val &amp;lt; 0) return; this._price = val; } } const p = new Product(50); p.price = -10; console.log(p.price); ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">50 (setter rejected -10)</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">-10</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">undefined</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Error</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What is data hiding?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Keeping internal details private and exposing only necessary methods</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Deleting data</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Encrypting variables</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Using underscores</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;Can you still access _property directly even with underscore convention?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Yes, but it's discouraged</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">No, it's truly private</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Only with special syntax</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Only in getters</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What&amp;#x27;s the benefit of encapsulation?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Makes code run faster</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Prevents bugs by controlling data access</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Reduces file size</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Makes variables global</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;Which method name suggests encapsulation?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">account.balance = 500</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">account.deposit(500)</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">account.b = 500</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">balance(500)</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What will this do? ```js class User { constructor(age) { this._age = age; } set age(val) { if (val &amp;lt; 0 || val &amp;gt; 120) { console.log(&amp;quot;Invalid age&amp;quot;); return; } this._age = val; } } const u = new User(25); u.age = 150; ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Log "Invalid age" and keep age at 25</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Set age to 150</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Throw an error</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Set age to 0</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>true_false_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;True or false: Encapsulation makes debugging easier.&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">True</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">False</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What&amp;#x27;s the purpose of validation in methods?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Ensure data meets requirements before accepting it</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Make code slower</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Validation has no purpose</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">To use more memory</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does `Math.floor(4.9)` return?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">5</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">4</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">4.9</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Error</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does `Math.ceil(4.1)` return?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">5</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">4</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">4.1</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Error</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does `Math.round(4.5)` return?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">5</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">4</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">4.5</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Error</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What range does `Math.random()` return?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">0 (inclusive) to 1 (exclusive)</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">0 to 100</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">1 to 10</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">-1 to 1</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What is the correct pattern for a random integer from 1 to 6?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">`Math.random() * 6`</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">`Math.round(Math.random() * 6)`</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">`Math.floor(Math.random() * 6) + 1`</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">`Math.ceil(Math.random() * 6) - 1`</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer2</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does `Math.max(3, 9, 1, 7)` return?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">1</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">3</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">9</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">20</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer2</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does `Math.min(3, 9, 1, 7)` return?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">1</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">3</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">7</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">9</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does `Math.abs(-15)` return?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">-15</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">15</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">0</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Error</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does `(9.999).toFixed(2)` return?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">9.999</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">9.9</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">"10.00"</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">10</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer2</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does `parseInt(&amp;quot;42px&amp;quot;)` return?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">42</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">"42px"</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">NaN</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Error</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does `parseFloat(&amp;quot;3.14 meters&amp;quot;)` return?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">3.14</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">"3.14"</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">3</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">NaN</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>true_false_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does `isNaN(&amp;quot;hello&amp;quot;)` return?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">True</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">False</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>true_false_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does `Number.isInteger(5.0)` return?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">True</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">False</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does this produce? ```js const pages = Math.ceil(53 / 10); console.log(pages); ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">5</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">6</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">5.3</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Error</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;Which method always rounds DOWN regardless of the decimal part?&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">Math.floor()</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">Math.ceil()</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">Math.round()</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Math.trunc()</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer0</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item ident="i3e878c1aab5557d1_q1" title="Question 1">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>cc_profile</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>cc_weighting</fieldlabel>
+              <fieldentry>1.0</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">&lt;p&gt;What does this return? ```js Math.abs(budget - spent) // where budget = 500, spent = 620 ```&lt;/p&gt;</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="answer0">
+                <material>
+                  <mattext texttype="text/plain">-120</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer1">
+                <material>
+                  <mattext texttype="text/plain">120</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer2">
+                <material>
+                  <mattext texttype="text/plain">1120</mattext>
+                </material>
+              </response_label>
+              <response_label ident="answer3">
+                <material>
+                  <mattext texttype="text/plain">Error</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">answer1</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+    </section>
+  </assessment>
+</questestinterop>

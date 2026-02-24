@@ -38,7 +38,7 @@ Examples:
 ```js
 let quizScore = 0;           // A number that can change
 const studentName = "Alex";  // Text that stays the same
-let homeworkDone = false;    // True or false value
+let isLoggedIn = false;      // True or false value
 ```
 
 Use:
@@ -72,12 +72,12 @@ We will use three main types:
 Programs often need to choose what to do.
 
 ```js
-let score = 85;
+let temperature = 28;
 
-if (score >= 70) {
-  console.log("You passed!");
+if (temperature >= 30) {
+  console.log("Stay hydrated — it's very hot outside!");
 } else {
-  console.log("Keep practicing.");
+  console.log("Nice weather today, enjoy your day.");
 }
 ```
 

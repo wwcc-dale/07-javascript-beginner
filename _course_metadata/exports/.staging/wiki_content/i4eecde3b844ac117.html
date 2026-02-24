@@ -1,0 +1,155 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="identifier" content="i4eecde3b844ac117"/>
+<meta name="editing_roles" content="teachers"/>
+<meta name="workflow_state" content="active"/>
+<title>Session 22: Local Storage and Game Persistence</title>
+</head>
+<body>
+<h1>Session 22: Local Storage and Game Persistence</h1>
+<h2>Learning Outcomes</h2>
+<ul>
+<li>Use browser Local Storage to persist data</li>
+<li>Save and load game state</li>
+<li>Track player statistics across sessions</li>
+<li>Implement game history</li>
+<li>Handle data serialization</li>
+</ul>
+<hr />
+<h2>Reading: Data Persistence (35 minutes)</h2>
+<h3>Local Storage Basics</h3>
+<pre class="codehilite"><code class="language-js">// Save data
+localStorage.setItem('key', JSON.stringify(data));
+
+// Load data
+const data = JSON.parse(localStorage.getItem('key'));
+
+// Remove data
+localStorage.removeItem('key');
+
+// Clear all
+localStorage.clear();
+</code></pre>
+
+<h3>Saving Game Statistics</h3>
+<pre class="codehilite"><code class="language-js">class GameStats {
+  constructor() {
+    this.load();
+  }
+
+  load() {
+    const saved = localStorage.getItem('cardGameStats');
+    if (saved) {
+      const data = JSON.parse(saved);
+      this.gamesPlayed = data.gamesPlayed || 0;
+      this.gamesWon = data.gamesWon || 0;
+      this.gamesLost = data.gamesLost || 0;
+      this.gamesTied = data.gamesTied || 0;
+      this.totalScore = data.totalScore || 0;
+    } else {
+      this.gamesPlayed = 0;
+      this.gamesWon = 0;
+      this.gamesLost = 0;
+      this.gamesTied = 0;
+      this.totalScore = 0;
+    }
+  }
+
+  save() {
+    localStorage.setItem('cardGameStats', JSON.stringify({
+      gamesPlayed: this.gamesPlayed,
+      gamesWon: this.gamesWon,
+      gamesLost: this.gamesLost,
+      gamesTied: this.gamesTied,
+      totalScore: this.totalScore
+    }));
+  }
+
+  recordGame(winner, playerScore, computerScore) {
+    this.gamesPlayed++;
+    this.totalScore += playerScore;
+
+    if (winner === 'player') this.gamesWon++;
+    else if (winner === 'computer') this.gamesLost++;
+    else this.gamesTied++;
+
+    this.save();
+  }
+
+  getWinRate() {
+    if (this.gamesPlayed === 0) return 0;
+    return (this.gamesWon / this.gamesPlayed * 100).toFixed(2);
+  }
+}
+</code></pre>
+
+<h3>Game History</h3>
+<pre class="codehilite"><code class="language-js">class GameHistory {
+  constructor() {
+    this.load();
+  }
+
+  load() {
+    const saved = localStorage.getItem('cardGameHistory');
+    this.games = saved ? JSON.parse(saved) : [];
+  }
+
+  save() {
+    localStorage.setItem('cardGameHistory', JSON.stringify(this.games));
+  }
+
+  addGame(gameRecord) {
+    this.games.push({
+      date: new Date().toISOString(),
+      winner: gameRecord.winner,
+      playerScore: gameRecord.playerScore,
+      computerScore: gameRecord.computerScore,
+      rounds: gameRecord.rounds,
+      difficulty: gameRecord.difficulty
+    });
+
+    // Keep only last 50 games
+    if (this.games.length &gt; 50) {
+      this.games.shift();
+    }
+
+    this.save();
+  }
+
+  getRecentGames(count = 10) {
+    return this.games.slice(-count).reverse();
+  }
+}
+</code></pre>
+
+<h3>Displaying Statistics</h3>
+<pre class="codehilite"><code class="language-js">function displayStats() {
+  const stats = new GameStats();
+  const html = `
+    &lt;div id=&quot;stats-panel&quot;&gt;
+      &lt;h3&gt;Your Statistics&lt;/h3&gt;
+      &lt;p&gt;Games Played: ${stats.gamesPlayed}&lt;/p&gt;
+      &lt;p&gt;Won: ${stats.gamesWon} | Lost: ${stats.gamesLost} | Tied: ${stats.gamesTied}&lt;/p&gt;
+      &lt;p&gt;Win Rate: ${stats.getWinRate()}%&lt;/p&gt;
+      &lt;p&gt;Total Score: ${stats.totalScore}&lt;/p&gt;
+      &lt;button onclick=&quot;clearStats()&quot;&gt;Reset Stats&lt;/button&gt;
+    &lt;/div&gt;
+  `;
+  document.querySelector('#stats-container').innerHTML = html;
+}
+
+function clearStats() {
+  if (confirm('Clear all statistics?')) {
+    localStorage.removeItem('cardGameStats');
+    localStorage.removeItem('cardGameHistory');
+    displayStats();
+  }
+}
+</code></pre>
+
+<hr />
+<h2>Assignment: Implement Data Persistence</h2>
+<p>Save statistics, game history, player preferences to Local Storage.</p>
+</body>
+</html>

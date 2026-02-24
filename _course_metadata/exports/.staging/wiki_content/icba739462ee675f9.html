@@ -1,0 +1,179 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="identifier" content="icba739462ee675f9"/>
+<meta name="editing_roles" content="teachers"/>
+<meta name="workflow_state" content="active"/>
+<title>Session 1: JavaScript Fundamentals</title>
+</head>
+<body>
+<h1>Session 1: JavaScript Fundamentals</h1>
+<h2>Learning Outcomes</h2>
+<p>By the end of this session, you will be able to:
+- Use variables to store simple information (like scores and prices).
+- Write conditional statements to compare values.
+- Explain the difference between <code>let</code> and <code>const</code>.
+- Use <code>console.log</code> to display program output.</p>
+<hr />
+<h2>Introduction (5 minutes)</h2>
+<p>In this course you will learn JavaScript by building small programs step by step.<br />
+Today you will start with the most basic building blocks: variables and decisions. These skills will power everything else you do later, including building full games and web apps.</p>
+<hr />
+<h2>Reading: Variables and Conditionals (30 minutes)</h2>
+<h3>What Are Variables?</h3>
+<p>Variables are like labeled boxes that hold information.</p>
+<p>Examples:
+- A box for a quiz score.
+- A box for a username.
+- A box for whether homework is finished.</p>
+<pre class="codehilite"><code class="language-js">let quizScore = 0;           // A number that can change
+const studentName = &quot;Alex&quot;;  // Text that stays the same
+let isLoggedIn = false;      // True or false value
+</code></pre>
+
+<p>Use:
+- <code>let</code> when the value might change.
+- <code>const</code> when the value should not change.</p>
+<h3>Data Types</h3>
+<p>We will use three main types:</p>
+<ol>
+<li>
+<p><strong>Numbers</strong> – for scores, counts, prices.
+   <code>js
+   let score = 85;
+   let price = 12.99;</code></p>
+</li>
+<li>
+<p><strong>Strings</strong> – for text.
+   <code>js
+   let courseName = "Intro to JavaScript";
+   let statusMessage = "Great job!";</code></p>
+</li>
+<li>
+<p><strong>Booleans</strong> – for true/false.
+   <code>js
+   let passedQuiz = true;
+   let needsHelp = false;</code></p>
+</li>
+</ol>
+<h3>Conditionals: Making Decisions</h3>
+<p>Programs often need to choose what to do.</p>
+<pre class="codehilite"><code class="language-js">let temperature = 28;
+
+if (temperature &gt;= 30) {
+  console.log(&quot;Stay hydrated — it's very hot outside!&quot;);
+} else {
+  console.log(&quot;Nice weather today, enjoy your day.&quot;);
+}
+</code></pre>
+
+<p>Common comparison operators:
+- <code>===</code> equal to
+- <code>!==</code> not equal to
+- <code>&gt;</code> greater than
+- <code>&lt;</code> less than
+- <code>&gt;=</code> greater than or equal to
+- <code>&lt;=</code> less than or equal to</p>
+<h3>Everyday Example: Discount Check</h3>
+<pre class="codehilite"><code class="language-js">const total = 45;
+const discountLimit = 50;
+
+if (total &gt;= discountLimit) {
+  console.log(&quot;You get a discount!&quot;);
+} else {
+  console.log(&quot;Add more items to unlock a discount.&quot;);
+}
+</code></pre>
+
+<hr />
+<h2>Video Tutorial: JavaScript Basics (20 minutes)</h2>
+<p>Watch: <code>assets/videos/01-javascript-basics.mp4</code></p>
+<p>This video shows:
+- How to run simple JavaScript.
+- How to create variables with <code>let</code> and <code>const</code>.
+- How to write <code>if / else</code> statements.
+- How to use <code>console.log</code> to see what your code is doing.</p>
+<p>Pause the video and copy each example into your own file. Change the values and see how the output changes.</p>
+<hr />
+<h2>Supplemental Practice: Simple Scenarios (25 minutes)</h2>
+<h3>Scenario 1: Speed Check</h3>
+<pre class="codehilite"><code class="language-js">const speedLimit = 65;
+let vehicleSpeed = 80;
+
+if (vehicleSpeed &gt; speedLimit) {
+  console.log(&quot;Slow down — you are over the speed limit.&quot;);
+} else {
+  console.log(&quot;Speed looks good.&quot;);
+}
+</code></pre>
+
+<p>Try changing <code>vehicleSpeed</code> to 50. What happens?</p>
+<h3>Scenario 2: Membership Check</h3>
+<pre class="codehilite"><code class="language-js">const minAge = 18;
+let visitorAge = 15;
+
+if (visitorAge &gt;= minAge) {
+  console.log(&quot;Access granted. Welcome!&quot;);
+} else {
+  console.log(&quot;Sorry, you must be 18 or older.&quot;);
+}
+</code></pre>
+
+<p>Practice: change <code>visitorAge</code> to 21. Predict the message before you run it.</p>
+<h3>Scenario 3: Battery Alert</h3>
+<pre class="codehilite"><code class="language-js">let batteryLow = true;
+
+if (batteryLow === true) {
+  console.log(&quot;Plug in your device — battery is low.&quot;);
+} else {
+  console.log(&quot;Battery level is fine.&quot;);
+}
+</code></pre>
+
+<p>Shorter version:</p>
+<pre class="codehilite"><code class="language-js">if (batteryLow) {
+  console.log(&quot;Plug in soon.&quot;);
+} else {
+  console.log(&quot;Battery is fine.&quot;);
+}
+</code></pre>
+
+<hr />
+<h2>Knowledge Check Quiz (15 minutes)</h2>
+<p>Take the <strong>Session 1 Practice Quiz</strong> in Canvas.</p>
+<ul>
+<li>Ungraded.</li>
+<li>Unlimited attempts.</li>
+<li>Use it to see which ideas you should review.</li>
+<li>Aim for at least 80% before moving on.</li>
+</ul>
+<hr />
+<h2>Hands-On Assignment (60–90 minutes)</h2>
+<p>Open the assignment <strong>"Session 1: Comparing Scores and Totals"</strong>.<br />
+You will:</p>
+<ul>
+<li>Create variables for scores and totals.</li>
+<li>Write <code>if / else</code> statements to make decisions.</li>
+<li>Practice reading and writing simple JavaScript.</li>
+</ul>
+<p>The assignment includes:
+- Level 1: Core tasks everyone should complete.
+- Level 2: Stretch tasks for extra challenge.
+- Level 3: Advanced challenge if you finish early.</p>
+<hr />
+<h2>Wrap-Up (10 minutes)</h2>
+<p>Today you learned how to:</p>
+<ul>
+<li>Store information with variables.</li>
+<li>Represent numbers, text, and true/false values.</li>
+<li>Make your code choose different paths with <code>if / else</code>.</li>
+</ul>
+<p>These skills are the foundation for everything else in this course.<br />
+Later, you will use the same ideas to build more complex programs and, eventually, an interactive game.</p>
+<p>If any part of today's work felt confusing:
+- Re-read the examples.
+- Try changing values and see what happens.
+- Ask your instructor for help. They are here to support you.</p>
+<p>Next session, you will learn <strong>functions</strong>, which let you bundle code into reusable tools you can call whenever you need them.</p>
+</body>
+</html>

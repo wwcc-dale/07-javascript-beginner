@@ -1,16 +1,17 @@
 ---
-name: "Session 10 Quiz – Advanced Array and Object Techniques"
-quiztype: practice_quiz
+allowed_attempts: 3
 indent: 1
-timelimit: 20
-allowedattempts: 3
-shuffleanswers: true
-showcorrectanswers: true
+name: Session 10 Quiz – Advanced Array and Object Techniques
 published: false
-questiongroups:
-  - bankid: PLACEHOLDER_REPLACE_AFTER_SYNC
-    pick: 16
-    pointsperquestion: 1
+question_groups:
+- bank: s10-advanced-arrays-nodejs.bank
+  bank_id: 35301442
+  pick: 16
+  points_per_question: 1
+quiz_type: practice_quiz
+show_correct_answers: true
+shuffle_answers: true
+time_limit: 20
 ---
 
 # Session 10 Quiz – Advanced Array and Object Techniques

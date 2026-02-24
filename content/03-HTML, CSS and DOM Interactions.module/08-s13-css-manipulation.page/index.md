@@ -73,11 +73,11 @@ Normally, when the user refreshes the page, all your JavaScript variables reset 
 ```js
 // Save a value
 localStorage.setItem('username', 'Alex');
-localStorage.setItem('darkMode', 'true');   // only strings are stored
+localStorage.setItem('volume', '75');        // only strings are stored
 
 // Read it back
 const name = localStorage.getItem('username');    // "Alex"
-const dark = localStorage.getItem('darkMode');    // "true" (always a string)
+const vol = localStorage.getItem('volume');       // "75" (always a string)
 
 // Delete one key
 localStorage.removeItem('username');
@@ -89,8 +89,8 @@ localStorage.clear();
 **Important:** `localStorage` only stores **strings**. To save a boolean:
 
 ```js
-localStorage.setItem('darkMode', 'true');   // save as string "true"
-const isDark = localStorage.getItem('darkMode') === 'true';  // compare to restore boolean
+localStorage.setItem('soundEnabled', 'true');   // save as string "true"
+const soundOn = localStorage.getItem('soundEnabled') === 'true';  // compare to restore boolean
 ```
 
 To save a number:

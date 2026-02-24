@@ -1,0 +1,147 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="identifier" content="i8b63080ad7e5c7f6"/>
+<meta name="editing_roles" content="teachers"/>
+<meta name="workflow_state" content="active"/>
+<title>Session 13: CSS Manipulation with JavaScript</title>
+</head>
+<body>
+<h1>Session 13: CSS Manipulation with JavaScript</h1>
+<h2>Learning Outcomes</h2>
+<ul>
+<li>Modify element styles directly with <code>element.style</code></li>
+<li>Use <code>classList.add()</code>, <code>.remove()</code>, <code>.toggle()</code>, <code>.contains()</code> to manage CSS classes</li>
+<li>Save and load user preferences with <code>localStorage</code></li>
+<li>Create dynamic themes that persist across page reloads</li>
+</ul>
+<hr />
+<h2>Introduction (5 minutes)</h2>
+<p>You can change content and structure. Now learn to change <strong>styling</strong> with JavaScript—making interactive visual effects.</p>
+<hr />
+<h2>Reading: Styling with JavaScript (35 minutes)</h2>
+<h3>Inline Styles</h3>
+<pre class="codehilite"><code class="language-js">const box = document.querySelector('.box');
+box.style.backgroundColor = 'blue';
+box.style.fontSize = '20px';
+box.style.display = 'none';  // Hide
+</code></pre>
+
+<h3>CSS Classes (Better Approach)</h3>
+<pre class="codehilite"><code class="language-css">/* In CSS file */
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+</code></pre>
+
+<pre class="codehilite"><code class="language-js">const element = document.querySelector('p');
+
+// Add class
+element.classList.add('highlight');
+
+// Remove class
+element.classList.remove('hidden');
+
+// Toggle class
+element.classList.toggle('highlight');
+
+// Check if has class
+if (element.classList.contains('highlight')) {
+  console.log('Has highlight class');
+}
+</code></pre>
+
+<h3><code>localStorage</code> — Remembering Settings Across Page Loads</h3>
+<p>Normally, when the user refreshes the page, all your JavaScript variables reset to their starting values. <code>localStorage</code> solves this by letting you save data in the browser that persists across page loads.</p>
+<pre class="codehilite"><code class="language-js">// Save a value
+localStorage.setItem('username', 'Alex');
+localStorage.setItem('volume', '75');        // only strings are stored
+
+// Read it back
+const name = localStorage.getItem('username');    // &quot;Alex&quot;
+const vol = localStorage.getItem('volume');       // &quot;75&quot; (always a string)
+
+// Delete one key
+localStorage.removeItem('username');
+
+// Delete everything
+localStorage.clear();
+</code></pre>
+
+<p><strong>Important:</strong> <code>localStorage</code> only stores <strong>strings</strong>. To save a boolean:</p>
+<pre class="codehilite"><code class="language-js">localStorage.setItem('soundEnabled', 'true');   // save as string &quot;true&quot;
+const soundOn = localStorage.getItem('soundEnabled') === 'true';  // compare to restore boolean
+</code></pre>
+
+<p>To save a number:</p>
+<pre class="codehilite"><code class="language-js">localStorage.setItem('score', String(42));
+const score = Number(localStorage.getItem('score'));  // convert back
+</code></pre>
+
+<p><code>localStorage.getItem()</code> returns <code>null</code> if the key doesn't exist yet — useful for setting a default:</p>
+<pre class="codehilite"><code class="language-js">const theme = localStorage.getItem('theme') || 'light';  // default to 'light'
+</code></pre>
+
+<h3>Real Example: Large Text Toggle</h3>
+<pre class="codehilite"><code class="language-html">&lt;button id=&quot;sizeBtn&quot;&gt;Toggle Large Text&lt;/button&gt;
+&lt;div id=&quot;content&quot;&gt;Page content&lt;/div&gt;
+</code></pre>
+
+<pre class="codehilite"><code class="language-css">body.large-text {
+  font-size: 20px;
+  line-height: 1.8;
+}
+</code></pre>
+
+<pre class="codehilite"><code class="language-js">const btn = document.querySelector('#sizeBtn');
+const savedSize = localStorage.getItem('textSize') || 'normal';
+
+if (savedSize === 'large') {
+  document.body.classList.add('large-text');
+}
+
+btn.addEventListener('click', () =&gt; {
+  document.body.classList.toggle('large-text');
+  const isLarge = document.body.classList.contains('large-text');
+  localStorage.setItem('textSize', isLarge ? 'large' : 'normal');
+});
+</code></pre>
+
+<h3>Real Example: Read More Panel</h3>
+<pre class="codehilite"><code class="language-html">&lt;div class=&quot;panel&quot;&gt;
+  &lt;h3&gt;Article Title&lt;/h3&gt;
+  &lt;p class=&quot;preview&quot;&gt;Short preview of the article...&lt;/p&gt;
+  &lt;p class=&quot;full-text hidden&quot;&gt;This is the full article text with all the details.&lt;/p&gt;
+  &lt;button class=&quot;read-btn&quot;&gt;Read More&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre class="codehilite"><code class="language-css">.hidden {
+  display: none;
+}
+</code></pre>
+
+<pre class="codehilite"><code class="language-js">const panel = document.querySelector('.panel');
+const btn = document.querySelector('.read-btn');
+const fullText = panel.querySelector('.full-text');
+
+btn.addEventListener('click', () =&gt; {
+  fullText.classList.toggle('hidden');
+  btn.textContent = fullText.classList.contains('hidden') ? 'Read More' : 'Read Less';
+});
+</code></pre>
+
+<hr />
+<h2>Video Tutorial: Styling with JavaScript (20 minutes)</h2>
+<p>Watch: <code>assets/videos/13-css-manipulation.mp4</code></p>
+<hr />
+<h2>Assignment (60–90 minutes)</h2>
+<p>Open <strong>"Session 13: Dynamic Styling and Themes"</strong>.</p>
+<p>Build interactive UI with classList and dynamic styling.</p>
+</body>
+</html>

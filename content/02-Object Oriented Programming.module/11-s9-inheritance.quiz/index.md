@@ -1,16 +1,17 @@
 ---
-name: "Session 9 Quiz – Inheritance and Method Overriding"
-quiztype: practice_quiz
+allowed_attempts: 3
 indent: 1
-timelimit: 20
-allowedattempts: 3
-shuffleanswers: true
-showcorrectanswers: true
+name: Session 9 Quiz – Inheritance and Method Overriding
 published: false
-questiongroups:
-  - bankid: PLACEHOLDER_REPLACE_AFTER_SYNC
-    pick: 16
-    pointsperquestion: 1
+question_groups:
+- bank: s9-inheritance.bank
+  bank_id: 35301440
+  pick: 16
+  points_per_question: 1
+quiz_type: practice_quiz
+show_correct_answers: true
+shuffle_answers: true
+time_limit: 20
 ---
 
 # Session 9 Quiz – Inheritance and Method Overriding

@@ -1,0 +1,188 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="identifier" content="if6090573002de67c"/>
+<meta name="editing_roles" content="teachers"/>
+<meta name="workflow_state" content="active"/>
+<title>Session 20: Async/Await and Orchestrating Multi-Step Processes</title>
+</head>
+<body>
+<h1>Session 20: Async/Await and Orchestrating Multi-Step Processes</h1>
+<h2>Learning Outcomes</h2>
+<p>By the end of this session, you will be able to:
+- Declare and call <code>async</code> functions using <code>await</code>
+- Chain multiple <code>async</code> operations into a sequential process
+- Use <code>while</code> to drive a loop that ends on a condition, not a count
+- <code>await</code> a time delay to create pauses in an async sequence
+- Explain why <code>async/await</code> code reads like synchronous code but does not block the browser</p>
+<hr />
+<h2>Introduction (5 minutes)</h2>
+<p>You have all the pieces: scoring, rules, a UI that returns Promises. What is missing is the <strong>orchestrator</strong> — the code that says "first deal, then bid, then play 13 tricks, then score, then check if the game is over, then repeat."</p>
+<p>That orchestrator must:
+- Wait for human input (asynchronous)
+- Wait for AI delays (asynchronous)
+- Still read like a simple top-to-bottom sequence</p>
+<p><code>async/await</code> makes this possible.</p>
+<hr />
+<h2>Reading: Async/Await and Orchestration (35 minutes)</h2>
+<h3><code>async</code> Functions and <code>await</code></h3>
+<p>Any function declared <code>async</code> automatically returns a Promise. Inside it, <code>await</code> pauses execution until another Promise resolves:</p>
+<pre class="codehilite"><code class="language-js">async function loadUserData(userId) {
+  const user    = await fetchUser(userId);       // Pause until user is loaded
+  const orders  = await fetchOrders(user.id);   // Then pause until orders are loaded
+  const profile = await buildProfile(user, orders);
+  return profile;  // The async function's Promise resolves with this value
+}
+</code></pre>
+
+<p>From the caller's perspective, <code>await loadUserData(42)</code> pauses the caller until <code>loadUserData</code> finishes — just like synchronous code. But the browser's event loop is not blocked; other events (clicks, timers) can still fire.</p>
+<hr />
+<h3>Orchestrating a Sequence</h3>
+<p>The classic pattern for an orchestrator is a <code>while</code> loop that runs a unit of work, then checks a completion condition:</p>
+<pre class="codehilite"><code class="language-js">async function runWorkflow(steps) {
+  let stepIndex = 0;
+
+  while (stepIndex &lt; steps.length) {
+    const step = steps[stepIndex];
+
+    await executeStep(step);         // Wait for this step to finish
+
+    if (step.requiresApproval) {
+      const approved = await waitForManagerApproval(step);
+      if (!approved) {
+        await notifyRejection(step);
+        break;                       // Exit on rejection
+      }
+    }
+
+    stepIndex++;
+    await delay(500);                // Brief pause between steps
+  }
+
+  await finalizeWorkflow();
+}
+</code></pre>
+
+<p>This reads exactly like a synchronous process — but every <code>await</code> is a true pause that allows the browser to breathe.</p>
+<hr />
+<h3>Condition-Based vs. Count-Based Loops</h3>
+<p>A <code>for</code> loop is appropriate when you know the number of iterations in advance. Use <code>while</code> when the loop ends on a <strong>condition</strong> that may not be predictable:</p>
+<pre class="codehilite"><code class="language-js">// Count-based: always runs exactly 13 times
+for (let i = 0; i &lt; 13; i++) {
+  await processItem(items[i]);
+}
+
+// Condition-based: runs until score threshold is reached
+while (!isGameOver(state)) {
+  await playRound(state);
+  await delay(1500);  // Pause between rounds
+}
+</code></pre>
+
+<p>A condition-based loop also naturally handles <strong>extra iterations</strong> — for example, if both teams hit the target on the same round, you continue rather than stopping. <code>continue</code> goes back to the condition check; <code>break</code> exits immediately.</p>
+<hr />
+<h3>Creating Delays with <code>setTimeout</code></h3>
+<p><code>await delay(ms)</code> is a standard pattern for inserting a timed pause in an async sequence:</p>
+<pre class="codehilite"><code class="language-js">function delay(ms) {
+  return new Promise(resolve =&gt; setTimeout(resolve, ms));
+}
+
+async function showMessageSequence(messages) {
+  for (const msg of messages) {
+    displayMessage(msg);
+    await delay(2000);  // Wait 2 seconds before showing the next message
+    clearMessage();
+  }
+}
+</code></pre>
+
+<p><code>setTimeout</code> fires after <code>ms</code> milliseconds and calls <code>resolve</code>, which allows the <code>await</code> to complete and execution to continue.</p>
+<hr />
+<h3>Mixing Human Input and Automated Steps</h3>
+<p>The orchestrator pattern shines when some steps are human-driven and others are automated:</p>
+<pre class="codehilite"><code class="language-js">async function runApprovalProcess(items) {
+  for (const item of items) {
+    if (item.requiresHumanReview) {
+      displayItemForReview(item);
+      const decision = await waitForHumanDecision();  // Pauses for user
+      item.approved = decision === 'approve';
+    } else {
+      await delay(300);  // Simulate automated processing
+      item.approved = autoApprove(item);
+    }
+
+    logDecision(item);
+  }
+}
+</code></pre>
+
+<p>The loop iterates at the same pace regardless of whether each step is human or automated. Human steps block until clicked; automated steps unblock after a timer.</p>
+<hr />
+<h3>Script Load Order</h3>
+<p>In a multi-file browser project (without a module bundler), the order of <code>&lt;script&gt;</code> tags determines what is available when. Each file can only use names defined by scripts loaded before it:</p>
+<pre class="codehilite"><code class="language-html">&lt;!-- Correct order: dependencies first --&gt;
+&lt;script src=&quot;models/User.js&quot;&gt;&lt;/script&gt;       &lt;!-- No dependencies --&gt;
+&lt;script src=&quot;services/Auth.js&quot;&gt;&lt;/script&gt;     &lt;!-- Uses User --&gt;
+&lt;script src=&quot;controllers/App.js&quot;&gt;&lt;/script&gt;   &lt;!-- Uses Auth --&gt;
+&lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;              &lt;!-- Uses everything --&gt;
+</code></pre>
+
+<p>A <code>ReferenceError: ClassName is not defined</code> in the console usually means a script tried to use a class before its file was loaded. Fix it by moving that <code>&lt;script&gt;</code> tag earlier.</p>
+<hr />
+<h2>Video Tutorial: Async/Await Orchestration (20 minutes)</h2>
+<p>Watch: <code>assets/videos/20-async-await-orchestration.mp4</code></p>
+<p>Covers:
+- Tracing <code>async</code>/<code>await</code> execution step by step
+- <code>while</code> loop with <code>break</code> and <code>continue</code>
+- The <code>delay()</code> helper and <code>setTimeout</code>
+- Script load order in a multi-file project</p>
+<hr />
+<h2>Supplemental Practice (25 minutes)</h2>
+<h3>Exercise 1: Trace Async Execution</h3>
+<p>Given this code, write out the order in which the console logs appear, including the approximate time in milliseconds when each fires:</p>
+<pre class="codehilite"><code class="language-js">async function workflow() {
+  console.log('A');
+  await delay(1000);
+  console.log('B');
+  await delay(500);
+  console.log('C');
+}
+
+console.log('start');
+workflow();
+console.log('end');
+</code></pre>
+
+<h3>Exercise 2: Condition-Based Loop</h3>
+<p>Write an <code>async</code> function <code>drainQueue(queue, processItem)</code> that calls <code>await processItem(queue.shift())</code> in a loop until <code>queue.length === 0</code>. After each item, <code>await delay(200)</code>. Test it with an array of 5 items.</p>
+<h3>Exercise 3: Human vs. Automated Steps</h3>
+<p>Create an array of 5 tasks where tasks 2 and 4 require human confirmation (a button click). Write an <code>async</code> orchestrator that processes each task: automated tasks delay 500ms and auto-complete; human tasks wait for a button click. Log the task name and result for each.</p>
+<h3>Exercise 4: Script Load Order</h3>
+<p>Open a browser and create three files: <code>A.js</code> (defines <code>class A {}</code>), <code>B.js</code> (creates <code>new A()</code>), and <code>index.html</code>. Load <code>B.js</code> before <code>A.js</code>. Observe the error. Then fix the load order and verify it works.</p>
+<hr />
+<h2>Knowledge Check Quiz (15 minutes)</h2>
+<p>Take the <strong>Session 20 Practice Quiz</strong> in Canvas.</p>
+<p>Focus on:
+- What <code>async</code> means (the function returns a Promise implicitly)
+- What <code>await</code> does (pauses the current async function until the Promise resolves)
+- When to use <code>while</code> instead of <code>for</code> for a loop
+- How script load order causes <code>ReferenceError</code> and how to fix it</p>
+<hr />
+<h2>Hands-On Assignment (60–90 minutes)</h2>
+<p>Open <strong>"Session 20: GameRunner and Full Integration"</strong>.</p>
+<p>You will apply these async/await patterns to build <code>GameRunner.js</code>, write <code>app.js</code>, and assemble the full Spades game in <code>index.html</code>.</p>
+<hr />
+<h2>Wrap-Up (10 minutes)</h2>
+<h3>Key Takeaways</h3>
+<ul>
+<li><strong><code>async</code></strong> functions return Promises; <strong><code>await</code></strong> pauses until a Promise resolves</li>
+<li><strong>While loops with conditions</strong> run until an end state is reached, with <code>break</code>/<code>continue</code> for special cases</li>
+<li><strong><code>delay(ms)</code></strong> creates a timed pause without blocking the browser</li>
+<li><strong>Human and automated steps</strong> can be mixed in the same <code>async</code> loop — both use <code>await</code></li>
+<li><strong>Script load order</strong> is the dependency management system for browser JavaScript</li>
+</ul>
+<h3>How This Connects to the Assignment</h3>
+<p>The assignment asks you to build <code>GameRunner</code> — an async orchestrator that drives deal, bid, play, score, and check-for-winner across unlimited rounds. Everything you practiced today applies directly.</p>
+<p>Next session: <strong>Session 21 — AI Strategy and Decision Trees</strong></p>
+</body>
+</html>

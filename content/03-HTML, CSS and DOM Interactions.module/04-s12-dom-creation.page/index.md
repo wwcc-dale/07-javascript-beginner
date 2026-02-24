@@ -221,24 +221,24 @@ console.log(now.toLocaleTimeString());   // "10:34:00 AM"
 console.log(now.toLocaleString());       // "2/19/2026, 10:34:00 AM"
 ```
 
-**Real-world use: timestamp a comment**
+**Real-world use: timestamped activity log**
 
 ```js
-const commentInput = document.querySelector('#commentInput');
-const addBtn = document.querySelector('#addBtn');
-const commentList = document.querySelector('#commentList');
+const activityInput = document.querySelector('#activityInput');
+const logBtn = document.querySelector('#logBtn');
+const activityLog = document.querySelector('#activityLog');
 
-addBtn.addEventListener('click', () => {
-  const text = commentInput.value;
-  if (text === '') return;
+logBtn.addEventListener('click', () => {
+  const note = activityInput.value;
+  if (note === '') return;
 
   const timestamp = new Date().toLocaleString();   // current time as string
 
   const li = document.createElement('li');
-  li.textContent = `${text}  —  ${timestamp}`;
+  li.textContent = `${note}  —  ${timestamp}`;
 
-  commentList.appendChild(li);
-  commentInput.value = '';
+  activityLog.appendChild(li);
+  activityInput.value = '';
 });
 ```
 

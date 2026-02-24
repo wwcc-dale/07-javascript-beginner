@@ -1,0 +1,118 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Session 19: Scoring and GameBoard</title>
+</head>
+<body>
+<h1>Session 19: Scoring and GameBoard</h1>
+<p>Add end-of-round scoring to <code>SpadesGame.js</code>, then build <code>GameBoard.js</code> — the class that connects the game engine to the browser DOM using Promises.</p>
+<p><strong>Time:</strong> 60–90 minutes | <strong>Points:</strong> 20 | <strong>Submit:</strong> ZIP containing <code>SpadesGame.js</code> (with scoring methods), <code>GameBoard.js</code>, and <code>test.html</code></p>
+<hr />
+<h2>Level 1 – Core (15 pts)</h2>
+<h3>Challenge 1: <code>scoreRound()</code></h3>
+<p>Add this method to <code>SpadesGame</code>. It calculates and applies scores for both teams after 13 tricks are played:</p>
+<ul>
+<li>For each team, loop over its players:</li>
+<li>If a player bid <strong>0</strong> (nil): add +100 if they took 0 tricks, or −100 if they took any. Their tricks do <strong>not</strong> count toward the team's contract total.</li>
+<li>Otherwise: add <code>player.bid</code> to <code>teamBid</code> and <code>player.tricksWon</code> to <code>teamTricks</code>.</li>
+<li>If <code>teamTricks &gt;= teamBid</code> (made the bid):</li>
+<li><code>roundScore = teamBid * 10 + (teamTricks - teamBid)</code></li>
+<li>Add overtricks to <code>team.bags</code></li>
+<li>Use a <code>while</code> loop: while <code>team.bags &gt;= 10</code>, subtract 100 from <code>roundScore</code> and subtract 10 from <code>team.bags</code></li>
+<li>If failed (set): <code>roundScore = -(teamBid * 10)</code></li>
+<li>Add nil bonus/penalty to <code>roundScore</code>, then add to <code>team.score</code></li>
+<li>Return an array of result objects for logging</li>
+</ul>
+<h3>Challenge 2: <code>isGameOver()</code>, <code>isTied()</code>, <code>getWinner()</code></h3>
+<p>Add these three methods to <code>SpadesGame</code>:</p>
+<pre class="codehilite"><code class="language-js">isGameOver(targetScore = 500) {
+  return this.teams.some(t =&gt; t.score &gt;= targetScore || t.score &lt;= -200);
+}
+
+isTied(targetScore = 500) {
+  return this.teams.every(t =&gt; t.score &gt;= targetScore);
+}
+
+getWinner() {
+  return this.teams[0].score &gt; this.teams[1].score ? this.teams[0] : this.teams[1];
+}
+</code></pre>
+
+<h3>Challenge 3: <code>GameBoard</code> — Core Display Methods</h3>
+<p>Create <code>GameBoard.js</code> with these methods:</p>
+<ul>
+<li><code>constructor()</code> — calls <code>buildBidButtons()</code></li>
+<li><code>buildBidButtons()</code> — creates buttons 0–13 inside <code>#bid-buttons</code>; bid 0 shows text "Nil"</li>
+<li><code>createCardElement(card)</code> — returns a <code>div.card.{suit}</code> with <code>dataset.suit</code>, <code>dataset.rank</code>, and three spans: <code>.card-corner.top-left</code>, <code>.card-center</code>, <code>.card-corner.bottom-right</code></li>
+<li><code>updatePlayerHand(hand, validCards, interactive = false)</code> — clears <code>#player-hand</code> and renders each card; if <code>interactive</code>, add class <code>playable</code> or <code>disabled</code> based on <code>validCards</code></li>
+<li><code>getSuitSymbol(suit)</code> — returns <code>♠</code>, <code>♥</code>, <code>♦</code>, or <code>♣</code></li>
+</ul>
+<h3>Challenge 4: <code>GameBoard</code> — Promise-Based Input</h3>
+<p>Add these two methods to <code>GameBoard</code>:</p>
+<ul>
+<li><code>getBidFromUser(hand)</code>:</li>
+<li>Calls <code>this.updatePlayerHand(hand, [])</code> to display the hand</li>
+<li>Shows <code>#bidding-area</code> by removing the <code>hidden</code> class</li>
+<li>Returns a Promise that resolves with the bid number when the user clicks a <code>.bid-btn</code></li>
+<li>
+<p>Hides <code>#bidding-area</code> and removes the click listener before resolving</p>
+</li>
+<li>
+<p><code>getCardFromUser(hand, validCards)</code>:</p>
+</li>
+<li>Calls <code>this.updatePlayerHand(hand, validCards, true)</code> to highlight valid cards</li>
+<li>Sets <code>#play-hint</code> text to a prompt</li>
+<li>Returns a Promise that resolves with the clicked Card object</li>
+<li>Ignores clicks on <code>.disabled</code> cards</li>
+<li>Removes the click listener before resolving</li>
+</ul>
+<hr />
+<h2>Level 2 – Stretch (3 pts)</h2>
+<h3>Challenge 5: Remaining Display Methods</h3>
+<p>Add these display helpers to <code>GameBoard</code>:</p>
+<pre class="codehilite"><code class="language-js">showCardInTrick(playerIndex, player, card)  // Put card in #trick-card-{i}
+showTrickWinner(playerName)                 // Set text in #trick-winner-msg
+clearTrick()                                // Clear all trick slots and winner msg
+setTrickNumber(num)                         // Set #trick-number text to &quot;{num} / 13&quot;
+updateScoreboard(teams)                     // Update #team0-score, #team1-score, etc.
+updateBidInfo(players, teams)               // Update #team0-bids, #team1-bids
+setStatus(message)                          // Set #game-status text
+log(message)                               // Append entry to #log-content, scroll to bottom
+</code></pre>
+
+<h3>Challenge 6: Score Verification</h3>
+<p>Write a test in <code>test.html</code> that manually sets bids and tricks, calls <code>scoreRound()</code>, and verifies the score calculation:</p>
+<pre class="codehilite"><code class="language-js">// Scenario: Team 0 bid 5, took 7 (2 bags), starting with 8 bags already
+const game = new SpadesGame([...]);
+game.startRound();
+game.teams[0].bags = 8;
+players[0].bid = 3; players[0].tricksWon = 4;
+players[2].bid = 2; players[2].tricksWon = 3;
+// Expected: 50 + 2 bags = 52, bags go from 8→10, trigger penalty: -100
+// Net: 52 - 100 = -48, bags reset to 0
+const results = game.scoreRound();
+console.log('Score:', results[0].roundScore);  // -48
+console.log('Bags after:', game.teams[0].bags);  // 0
+</code></pre>
+
+<hr />
+<h2>Level 3 – Advanced (2 pts)</h2>
+<h3>Challenge 7: Full Nil Bid Test</h3>
+<p>Simulate a round where one player goes nil and succeeds, and verify that their tricks are excluded from the team contract:</p>
+<pre class="codehilite"><code class="language-js">game.startRound();
+// Partner goes nil (bid=0) and takes 0 tricks
+players[2].bid = 0; players[2].tricksWon = 0;
+// You bid 4 and take 4 (made exactly)
+players[0].bid = 4; players[0].tricksWon = 4;
+// Opponents bid 5 combined and take 9 (set)
+players[1].bid = 3; players[1].tricksWon = 4;
+players[3].bid = 2; players[3].tricksWon = 5;
+
+const r = game.scoreRound();
+console.log('Your team:', r[0].teamBid, r[0].teamTricks, r[0].roundScore);
+// teamBid=4, teamTricks=4 (partner's 0 excluded), roundScore=40 + 100 nil = 140
+console.log('Opponents:', r[1].teamBid, r[1].teamTricks, r[1].roundScore);
+// teamBid=5, teamTricks=9 → set → -50
+</code></pre>
+</body>
+</html>

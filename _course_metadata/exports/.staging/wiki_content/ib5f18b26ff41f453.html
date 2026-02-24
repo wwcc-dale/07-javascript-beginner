@@ -1,0 +1,167 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="identifier" content="ib5f18b26ff41f453"/>
+<meta name="editing_roles" content="teachers"/>
+<meta name="workflow_state" content="active"/>
+<title>Session 2: Functions and Reusable Code</title>
+</head>
+<body>
+<h1>Session 2: Functions and Reusable Code</h1>
+<h2>Learning Outcomes</h2>
+<p>By the end of this session, you will be able to:
+- Write functions that accept parameters and return values.
+- Understand why functions reduce code repetition.
+- Call functions with different inputs and use their outputs.
+- Apply functions to solve real-world problems.</p>
+<hr />
+<h2>Introduction (5 minutes)</h2>
+<p>Imagine you have code that calculates a student's grade from a score. Right now, you'd copy and paste that same code over and over for each student. Functions let you write that code once and reuse it anywhere. Today you'll learn how to build and use functions to make your code cleaner and more powerful.</p>
+<hr />
+<h2>Reading: Functions Basics (35 minutes)</h2>
+<h3>What Is a Function?</h3>
+<p>A function is a reusable block of code that does a specific job. You write it once, then call it as many times as you need.</p>
+<p><strong>Real-world analogy:</strong> A recipe is a function. You write it down once, then follow those instructions whenever you want to make the dish.</p>
+<h3>Simple Function (No Parameters, No Return)</h3>
+<pre class="codehilite"><code class="language-js">function showWelcome() {
+  console.log(&quot;Welcome to the app!&quot;);
+}
+
+// Call the function:
+showWelcome();
+showWelcome();  // Can call it multiple times
+</code></pre>
+
+<p>Output:</p>
+<pre class="codehilite"><code>Welcome to the app!
+Welcome to the app!
+</code></pre>
+
+<h3>Function with Parameters</h3>
+<p>Parameters are inputs. They let you pass information into a function.</p>
+<pre class="codehilite"><code class="language-js">function greetByName(name) {
+  console.log(&quot;Hello, &quot; + name + &quot;!&quot;);
+}
+
+greetByName(&quot;Alex&quot;);     // Hello, Alex!
+greetByName(&quot;Jordan&quot;);   // Hello, Jordan!
+greetByName(&quot;Casey&quot;);    // Hello, Casey!
+</code></pre>
+
+<h3>Function with Return Value</h3>
+<p>A return value is the output. The function sends back a result for you to use.</p>
+<pre class="codehilite"><code class="language-js">function addNumbers(num1, num2) {
+  let sum = num1 + num2;
+  return sum;
+}
+
+let result = addNumbers(5, 3);
+console.log(result);  // 8
+console.log(addNumbers(10, 20));  // 30
+</code></pre>
+
+<h3>Example: Checking if Someone Passed</h3>
+<p>Remember Challenge 1 from Session 1? Let's turn it into a function:</p>
+<pre class="codehilite"><code class="language-js">function didStudentPass(score, passingScore) {
+  if (score &gt;= passingScore) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// Use it with different students:
+let alex_passed = didStudentPass(85, 70);    // true
+let jordan_passed = didStudentPass(65, 70);  // false
+let casey_passed = didStudentPass(92, 70);   // true
+
+console.log(&quot;Alex passed:&quot;, alex_passed);
+console.log(&quot;Jordan passed:&quot;, jordan_passed);
+console.log(&quot;Casey passed:&quot;, casey_passed);
+</code></pre>
+
+<h3>Why Use Functions?</h3>
+<ol>
+<li><strong>DRY Principle</strong> – Don't Repeat Yourself. Write once, use many times.</li>
+<li><strong>Easier to fix</strong> – If you find a bug, fix it in one place, not everywhere.</li>
+<li><strong>Clear code</strong> – Functions with good names make your code easier to understand.</li>
+<li><strong>Reusable</strong> – Use the same function in multiple programs.</li>
+</ol>
+<hr />
+<h2>Video Tutorial: Writing and Using Functions (20 minutes)</h2>
+<p>Watch: <code>assets/videos/02-functions.mp4</code></p>
+<p>This video covers:
+- How to declare a function.
+- How to use parameters.
+- How to return values.
+- Real examples with different inputs.
+- Common mistakes and how to avoid them.</p>
+<p>Pause and type out each example yourself.</p>
+<hr />
+<h2>Supplemental Practice: Real-World Scenarios (25 minutes)</h2>
+<h3>Scenario 1: Calculate Star Rating</h3>
+<pre class="codehilite"><code class="language-js">function calcRating(review1, review2, review3) {
+  let total = review1 + review2 + review3;
+  let average = total / 3;
+  return average;
+}
+
+let restaurantRating = calcRating(4, 5, 3);
+console.log(&quot;Rating:&quot;, restaurantRating);  // 4
+</code></pre>
+
+<p>Try with different review scores.</p>
+<h3>Scenario 2: Calculate Tip Amount</h3>
+<pre class="codehilite"><code class="language-js">function calcTip(billAmount, tipPercent) {
+  let tipAmount = billAmount * (tipPercent / 100);
+  return tipAmount;
+}
+
+console.log(calcTip(40, 15));   // 6  (15% tip on $40)
+console.log(calcTip(80, 20));   // 16 (20% tip on $80)
+</code></pre>
+
+<h3>Scenario 3: Convert Celsius to Fahrenheit</h3>
+<pre class="codehilite"><code class="language-js">function celsiusToFahrenheit(celsius) {
+  return (celsius * 9 / 5) + 32;
+}
+
+console.log(celsiusToFahrenheit(0));    // 32
+console.log(celsiusToFahrenheit(100));  // 212
+</code></pre>
+
+<hr />
+<h2>Knowledge Check Quiz (15 minutes)</h2>
+<p>Take the <strong>Session 2 Practice Quiz</strong> in Canvas.</p>
+<p>Focus on:
+- When to use parameters
+- Understanding return values
+- Reading function code and predicting output
+- Why functions are useful</p>
+<hr />
+<h2>Hands-On Assignment (60–90 minutes)</h2>
+<p>Open the assignment <strong>"Session 2: Building Functions for Everyday Tasks"</strong>.</p>
+<p>You will:
+- Write functions with parameters and return values.
+- Practice calling functions with different inputs.
+- Solve problems by combining functions.</p>
+<p>The assignment includes three difficulty levels with stretch and advanced challenges.</p>
+<hr />
+<h2>Wrap-Up (10 minutes)</h2>
+<h3>Key Takeaways</h3>
+<ul>
+<li><strong>Functions are reusable code blocks</strong> that accept inputs (parameters) and produce outputs (return values).</li>
+<li><strong>Parameters</strong> let you pass different data into a function.</li>
+<li><strong>Return values</strong> let functions send results back to you.</li>
+<li><strong>Functions make code cleaner and easier to maintain.</strong></li>
+</ul>
+<h3>How This Connects to Your Learning</h3>
+<p>In the next session, you'll learn about <strong>arrays</strong>, which are lists of data. Functions and arrays work together powerfully—you'll often write functions that process arrays of information.</p>
+<h3>Questions?</h3>
+<p>If you're confused about any part:
+- Re-read the examples and try changing them.
+- Ask your instructor for help.
+- Don't move on until this feels solid—functions are fundamental.</p>
+<p>Next session: <strong>Arrays and Collections</strong></p>
+</body>
+</html>

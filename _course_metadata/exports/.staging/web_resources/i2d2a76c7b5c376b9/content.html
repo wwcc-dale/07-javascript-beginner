@@ -1,0 +1,126 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Session 18: Spades Rules Implementation</title>
+</head>
+<body>
+<h1>Session 18: Spades Rules Implementation</h1>
+<p>Add the Spades rule methods to <code>SpadesGame.js</code>: which cards are valid to play, what happens when a card is played, and who wins the trick.</p>
+<p><strong>Time:</strong> 60–90 minutes | <strong>Points:</strong> 20 | <strong>Submit:</strong> ZIP containing <code>SpadesGame.js</code> (with new methods) and <code>test.html</code></p>
+<hr />
+<h2>Level 1 – Core (15 pts)</h2>
+<h3>Challenge 1: <code>getValidCards(player)</code></h3>
+<p>Add this method to <code>SpadesGame</code>. It returns an array of Card objects that the player is allowed to play given the current trick state:</p>
+<ul>
+<li>If the trick is empty (player is leading):</li>
+<li>If <code>spadesBroken</code> is false, return only non-spade cards; if the player has no non-spades, return all cards</li>
+<li>If <code>spadesBroken</code> is true, return all cards</li>
+<li>If the trick has cards (player is following):</li>
+<li>Find cards matching the led suit</li>
+<li>If the player has any, return only those; otherwise return all cards</li>
+</ul>
+<h3>Challenge 2: <code>playCard(player, card)</code></h3>
+<p>Add this method to <code>SpadesGame</code>. It:
+1. Calls <code>player.playCard(card)</code> — which uses <code>equals()</code> to remove the card from the hand
+2. Returns <code>false</code> if the card was not found in the hand
+3. Sets <code>this.spadesBroken = true</code> if the played card is a spade
+4. Pushes <code>{ player, card: played }</code> onto <code>this.currentTrick</code>
+5. Returns <code>true</code> on success</p>
+<h3>Challenge 3: <code>determineTrickWinner()</code></h3>
+<p>Add this method to <code>SpadesGame</code>. It scans all four <code>{ player, card }</code> entries in <code>currentTrick</code> and returns the player who played the winning card, using these rules:
+- A spade always beats a non-spade
+- Between two spades (or two cards of the same non-spade suit), the higher value wins
+- Cards of a non-led, non-trump suit never win</p>
+<h3>Challenge 4: Test Page</h3>
+<p>Create <code>test.html</code> that loads all your JS files and verifies each method. At minimum, test:</p>
+<pre class="codehilite"><code class="language-js">const players = [
+  new Player('You', false),
+  new AIPlayer('West'),
+  new AIPlayer('Partner'),
+  new AIPlayer('East')
+];
+const game = new SpadesGame(players);
+game.startRound();
+
+// --- getValidCards: no spades before breaking ---
+const you = players[0];
+if (you.hand.some(c =&gt; c.getSuit() !== 'Spades')) {
+  const valid = game.getValidCards(you);
+  console.log('No spades in valid before breaking:', !valid.some(c =&gt; c.getSuit() === 'Spades'));
+}
+
+// --- playCard and spadesBroken ---
+const spadeCard = new Card('Spades', '2');
+you.hand = [spadeCard];
+game.playCard(you, spadeCard);
+console.log('Spades broken:', game.spadesBroken);  // true
+game.clearTrick();
+
+// --- determineTrickWinner: trump beats led suit ---
+game.startRound();
+const [p0, p1, p2, p3] = game.players;
+p0.hand = [new Card('Hearts', 'A')];
+p1.hand = [new Card('Hearts', 'K')];
+p2.hand = [new Card('Spades', '3')];
+p3.hand = [new Card('Hearts', 'Q')];
+game.playCard(p0, p0.hand[0]);
+game.playCard(p1, p1.hand[0]);
+game.playCard(p2, p2.hand[0]);
+game.playCard(p3, p3.hand[0]);
+const winner = game.determineTrickWinner();
+console.log('Winner:', winner.name);  // 'Partner' — 3 of Spades trumps Ace of Hearts
+game.clearTrick();
+</code></pre>
+
+<hr />
+<h2>Level 2 – Stretch (3 pts)</h2>
+<h3>Challenge 5: <code>isTrickComplete()</code></h3>
+<p>Add a helper method:</p>
+<pre class="codehilite"><code class="language-js">isTrickComplete() {
+  return this.currentTrick.length === 4;
+}
+</code></pre>
+
+<p>Test it by playing 4 cards and confirming it returns <code>true</code>.</p>
+<h3>Challenge 6: Full 13-Trick Simulation</h3>
+<p>Write a loop in <code>test.html</code> that plays all 13 tricks using AI decisions for all four players and verifies that each player ends with 0 cards:</p>
+<pre class="codehilite"><code class="language-js">game.startRound();
+// Give all players AI decision capability for testing:
+for (let trick = 0; trick &lt; 13; trick++) {
+  for (let i = 0; i &lt; 4; i++) {
+    const p = game.players[i];
+    const valid = game.getValidCards(p);
+    // Use the first valid card for simplicity
+    game.playCard(p, valid[0]);
+  }
+  game.determineTrickWinner();
+  game.clearTrick();
+}
+game.players.forEach(p =&gt; console.log(`${p.name} hand: ${p.hand.length}`));  // All 0
+</code></pre>
+
+<hr />
+<h2>Level 3 – Advanced (2 pts)</h2>
+<h3>Challenge 7: Verify Follow-Suit Enforcement</h3>
+<p>Write a test that deals specific cards and confirms that <code>getValidCards()</code> correctly restricts choices when following suit:</p>
+<pre class="codehilite"><code class="language-js">game.startRound();
+const [p0, p1] = game.players;
+
+// Lead with Diamonds
+p0.hand = [new Card('Diamonds', 'K')];
+game.playCard(p0, p0.hand[0]);
+
+// Player 1 has one Diamond and one Spade — must play Diamond
+p1.hand = [new Card('Diamonds', '5'), new Card('Spades', 'A')];
+const valid = game.getValidCards(p1);
+console.log('Valid count:', valid.length);  // 1
+console.log('Must follow:', valid[0].getSuit());  // 'Diamonds'
+
+// Player 1 has NO Diamonds — anything is valid
+p1.hand = [new Card('Clubs', '9'), new Card('Spades', 'A')];
+const validAll = game.getValidCards(p1);
+console.log('No-follow valid count:', validAll.length);  // 2
+game.clearTrick();
+</code></pre>
+</body>
+</html>

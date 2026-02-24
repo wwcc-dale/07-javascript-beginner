@@ -19,7 +19,7 @@ related_outcomes:
 
 ## Introduction (5 minutes)
 
-Real programs rarely work with just one object. You'll have arrays of students, products, or users. Today you'll learn to manage collections of objects and build systems where objects work together.
+Real programs rarely work with just one object. You'll have arrays of tasks, events, or contacts. Today you'll learn to manage collections of objects and build systems where objects work together.
 
 ---
 
@@ -28,26 +28,27 @@ Real programs rarely work with just one object. You'll have arrays of students, 
 ### Arrays of Objects
 
 ```js
-class Student {
-  constructor(name, grade) {
-    this.name = name;
-    this.grade = grade;
+class Task {
+  constructor(description, priority, done) {
+    this.description = description;
+    this.priority = priority;
+    this.done = done;
   }
-  
-  isPassing() {
-    return this.grade >= 70;
+
+  isUrgent() {
+    return this.priority === "high" && !this.done;
   }
 }
 
-const students = [
-  new Student("Alex", 85),
-  new Student("Jordan", 92),
-  new Student("Casey", 68)
+const tasks = [
+  new Task("Fix login bug", "high", false),
+  new Task("Update readme", "low", true),
+  new Task("Deploy to prod", "high", false)
 ];
 
-// Loop through all students
-for (let i = 0; i < students.length; i++) {
-  console.log(students[i].name, students[i].isPassing());
+// Loop through all tasks
+for (let i = 0; i < tasks.length; i++) {
+  console.log(tasks[i].description, tasks[i].isUrgent());
 }
 ```
 
@@ -56,73 +57,78 @@ for (let i = 0; i < students.length; i++) {
 A container class manages a collection of other objects.
 
 ```js
-class Classroom {
+class Project {
   constructor(name) {
     this.name = name;
-    this.students = [];
+    this.tasks = [];
   }
-  
-  addStudent(student) {
-    this.students.push(student);
+
+  addTask(task) {
+    this.tasks.push(task);
   }
-  
-  getPassingCount() {
+
+  getOpenCount() {
     let count = 0;
-    for (let i = 0; i < this.students.length; i++) {
-      if (this.students[i].isPassing()) {
+    for (let i = 0; i < this.tasks.length; i++) {
+      if (!this.tasks[i].done) {
         count++;
       }
     }
     return count;
   }
-  
-  getAverageGrade() {
-    let sum = 0;
-    for (let i = 0; i < this.students.length; i++) {
-      sum += this.students[i].grade;
+
+  getUrgentCount() {
+    let count = 0;
+    for (let i = 0; i < this.tasks.length; i++) {
+      if (this.tasks[i].isUrgent()) {
+        count++;
+      }
     }
-    return sum / this.students.length;
+    return count;
   }
 }
 
-const classroom = new Classroom("CS 101");
-classroom.addStudent(new Student("Alex", 85));
-classroom.addStudent(new Student("Jordan", 92));
-console.log(classroom.getAverageGrade()); // 88.5
+const project = new Project("Website Relaunch");
+project.addTask(new Task("Fix login bug", "high", false));
+project.addTask(new Task("Update readme", "low", false));
+project.addTask(new Task("Write tests", "high", true));
+console.log(project.getOpenCount());  // 2
+console.log(project.getUrgentCount()); // 1
 ```
 
 ### Objects Working Together
 
 ```js
-class ShoppingCart {
-  constructor() {
-    this.items = [];
+class Song {
+  constructor(title, durationSeconds) {
+    this.title = title;
+    this.durationSeconds = durationSeconds;
   }
-  
-  addItem(product, quantity) {
-    this.items.push({ product, quantity });
+}
+
+class Playlist {
+  constructor(name) {
+    this.name = name;
+    this.songs = [];
   }
-  
-  getTotal() {
+
+  addSong(song) {
+    this.songs.push(song);
+  }
+
+  getTotalDuration() {
     let total = 0;
-    for (let i = 0; i < this.items.length; i++) {
-      total += this.items[i].product.price * this.items[i].quantity;
+    for (let i = 0; i < this.songs.length; i++) {
+      total += this.songs[i].durationSeconds;
     }
     return total;
   }
 }
 
-class Product {
-  constructor(name, price) {
-    this.name = name;
-    this.price = price;
-  }
-}
-
-const cart = new ShoppingCart();
-cart.addItem(new Product("Laptop", 999), 1);
-cart.addItem(new Product("Mouse", 25), 2);
-console.log(cart.getTotal()); // 1049
+const playlist = new Playlist("Morning Mix");
+playlist.addSong(new Song("Rise Up", 210));
+playlist.addSong(new Song("Good Day", 185));
+console.log(playlist.getTotalDuration()); // 395
 ```
 
 ---

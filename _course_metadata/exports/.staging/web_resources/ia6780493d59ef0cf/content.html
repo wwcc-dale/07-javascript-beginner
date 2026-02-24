@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Session 21: Improving the AIPlayer</title>
+</head>
+<body>
+<h1>Session 21: Improving the AIPlayer</h1>
+<p>Upgrade <code>AIPlayer.js</code> with card tracking, goal-aware strategy, and a decision tree for card selection.</p>
+<p><strong>Time:</strong> 60–90 minutes | <strong>Points:</strong> 20 | <strong>Submit:</strong> ZIP containing <code>AIPlayer.js</code> and <code>test.html</code></p>
+<hr />
+<h2>Level 1 – Core (15 pts)</h2>
+<h3>Challenge 1: Card Tracking with a Set</h3>
+<p>Add a <code>seenCards</code> property to <code>AIPlayer</code>:
+- Initialize it as an empty <code>Set</code> in the constructor
+- Add a <code>recordCard(card)</code> method that adds <code>card.toString()</code> to the set
+- Add a <code>hasSeenCard(card)</code> method that returns <code>true</code> if the card has been recorded
+- Override <code>resetForRound()</code> to call <code>super.resetForRound()</code> and also reset <code>seenCards</code> to a new empty Set</p>
+<p>Verify in <code>test.html</code>:</p>
+<pre class="codehilite"><code class="language-js">const ai = new AIPlayer('West');
+ai.recordCard(new Card('Spades', 'A'));
+console.log('Ace of Spades seen:', ai.hasSeenCard(new Card('Spades', 'A')));  // true
+console.log('King of Spades seen:', ai.hasSeenCard(new Card('Spades', 'K'))); // false
+ai.resetForRound();
+console.log('After reset:', ai.seenCards.size);  // 0
+</code></pre>
+
+<h3>Challenge 2: Goal-Aware Card Decision</h3>
+<p>Update <code>getCardDecision(validCards, trick)</code> to check the current goal state:</p>
+<ul>
+<li>If <code>this.bid === 0</code> (nil): always return the lowest card in <code>validCards</code></li>
+<li>If <code>this.tricksWon &gt;= this.bid</code> (already made bid): return the lowest card (avoid bags)</li>
+<li>If the trick is empty (leading): return the lowest non-spade; if only spades, return the lowest spade</li>
+<li>Otherwise: try to win with the cheapest winning card; if no winner, return the lowest card</li>
+</ul>
+<p>Verify in <code>test.html</code>:</p>
+<pre class="codehilite"><code class="language-js">const ai = new AIPlayer('West');
+ai.bid = 2;
+ai.tricksWon = 2;  // Already made bid
+
+const options = [new Card('Spades', 'A'), new Card('Clubs', '3')];
+const choice = ai.getCardDecision(options, []);
+console.log('Should dump lowest:', choice.toString());  // '3 of Clubs'
+</code></pre>
+
+<h3>Challenge 3: Test Page</h3>
+<p>Write <code>test.html</code> that loads all game files and runs tests covering:
+- Card tracking: <code>recordCard</code> + <code>hasSeenCard</code> + reset
+- Goal-aware strategy: bid already met → dumps lowest
+- Nil strategy: always returns lowest
+- Leading strategy: prefers non-spade when options exist</p>
+<hr />
+<h2>Level 2 – Stretch (3 pts)</h2>
+<h3>Challenge 4: Improved Bid Estimation</h3>
+<p>Upgrade <code>getBidDecision(hand)</code> to produce a more nuanced estimate:</p>
+<p>Instead of a simple 4-tier formula, count separately:
+- High spades (Q or better: getValue() &gt;= 12) — strong trump winners
+- Low spades (below Q) — likely tricks only if high spades are gone
+- Off-suit aces (getValue() === 14, not Spades) — very likely to win a trick
+- Off-suit kings — likely to win if their ace has been played (use <code>seenCards</code>)</p>
+<p>Combine these into a bid of 0–5. Write tests showing that:
+- A hand with 2 high spades + 1 ace bids at least 3
+- A hand with 0 spades and no face cards bids 1</p>
+<h3>Challenge 5: Integration Test</h3>
+<p>Call <code>game.startRound()</code> and run an automated game (using AI for all 4 players) that plays all 13 tricks with the upgraded <code>getCardDecision</code>. Log each play and verify no errors occur.</p>
+<hr />
+<h2>Level 3 – Advanced (2 pts)</h2>
+<h3>Challenge 6: Anti-Bag Strategy</h3>
+<p>After <code>tricksWon &gt;= bid</code>, the AI should prefer to <strong>lose</strong> tricks on purpose. Extend the goal-aware strategy:
+- When dumping (made bid): sort valid cards by value ascending and return the lowest
+- When the AI leads and has already made its bid: prefer leading a suit where it is likely to lose (use <code>seenCards</code> to check if high cards in that suit are still out)</p>
+<p>Write a test that verifies an AI that has made its bid plays its lowest card when any card would win the trick.</p>
+</body>
+</html>

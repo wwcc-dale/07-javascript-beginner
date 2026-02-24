@@ -1,0 +1,139 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="identifier" content="i94bb2c839dec4c42"/>
+<meta name="editing_roles" content="teachers"/>
+<meta name="workflow_state" content="active"/>
+<title>Session 25: Final Project — Spades</title>
+</head>
+<body>
+<h1>Session 25: Final Project — Spades</h1>
+<h2>Learning Outcomes</h2>
+<p>By the end of this session, you will be able to:
+- Assemble all course skills into one complete, working application
+- Verify a multi-class system end-to-end through systematic testing
+- Write clear documentation that explains your architecture and design decisions
+- Reflect on the skills demonstrated across the course</p>
+<hr />
+<h2>Introduction (5 minutes)</h2>
+<p>This session has no new technical content. Instead, you review what you have built across sessions 16–24 and prepare it for final submission.</p>
+<p>Your Spades game is a non-trivial piece of software:</p>
+<ul>
+<li><strong>7+ classes</strong> each with a single clear responsibility</li>
+<li><strong>OOP with inheritance</strong> — <code>AIPlayer extends Player</code></li>
+<li><strong>Async orchestration</strong> — <code>GameRunner</code> drives the game loop with <code>await</code></li>
+<li><strong>Promise-based UI</strong> — <code>GameBoard</code> turns clicks into awaitable values</li>
+<li><strong>Complex scoring rules</strong> — bids, bags, nil bonuses, penalties</li>
+<li><strong>Optional advanced features</strong> — smarter AI, localStorage persistence, theming, ES6 modules</li>
+</ul>
+<p>The final assignment asks you to submit a polished, fully playable version of the game.</p>
+<hr />
+<h2>Review: The Architecture (30 minutes)</h2>
+<h3>How the Pieces Fit Together</h3>
+<pre class="codehilite"><code>app.js
+  └── Creates: Player, AIPlayer×3, SpadesGame, GameBoard, GameRunner
+        └── GameRunner.run()
+              ├── SpadesGame.startRound()         → deals + sorts hands
+              ├── GameRunner.collectBid()          → AI: instant; Human: Promise
+              │     └── GameBoard.getBidFromUser() → waits for click
+              ├── GameRunner.playTrick() × 13
+              │     ├── SpadesGame.getValidCards() → enforces follow-suit / spades-breaking
+              │     ├── Player.getCardDecision()   → AI strategy (AIPlayer only)
+              │     ├── GameBoard.getCardFromUser() → waits for click (human only)
+              │     ├── SpadesGame.playCard()      → removes from hand, sets spadesBroken
+              │     └── SpadesGame.determineTrickWinner() → trump/led-suit logic
+              ├── SpadesGame.scoreRound()          → bids, overtricks, nil, bag penalty
+              └── SpadesGame.isGameOver()          → ≥ 500 pts or ≤ -200 pts
+                    └── isTied()                  → extra round if both teams at ≥ 500
+</code></pre>
+
+<h3>Key Design Decisions</h3>
+<p><strong>Why a separate <code>GameRunner</code>?</strong>
+<code>SpadesGame</code> manages state and rules — it has no idea how to display anything or wait for a click. <code>GameBoard</code> manages display and user input — it has no idea what the game rules are. <code>GameRunner</code> is the glue: it calls the right methods in the right order. This separation makes each class independently testable.</p>
+<p><strong>Why return Promises from <code>GameBoard</code>?</strong>
+<code>GameRunner</code> is written top-to-bottom as sequential code. Without Promises (and <code>await</code>), the only way to pause for user input is callback nesting — which makes the logic very hard to follow. Returning a Promise lets <code>GameRunner</code> write <code>const card = await board.getCardFromUser(...)</code> and have it feel like a normal synchronous return value.</p>
+<p><strong>Why does nil bid scoring exclude the player's tricks from teamTricks?</strong>
+If a nil player's tricks counted toward the team contract, a successful nil bid would <em>help</em> the partner — but the nil rule specifically says the nil player takes no tricks independently. Their tricks only affect the nil bonus/penalty, not the contract math.</p>
+<hr />
+<h2>Testing Checklist</h2>
+<p>Before submitting, verify each of these:</p>
+<p><strong>Dealing and Setup</strong>
+- [ ] Each of 4 players receives exactly 13 cards per round
+- [ ] All 52 cards are dealt with no duplicates (verify with a <code>Set</code>)
+- [ ] Dealer rotation advances each round
+- [ ] Hands are sorted (Spades first, then suit, then high-to-low within suit)</p>
+<p><strong>Bidding</strong>
+- [ ] Human player sees bid buttons (0–13) and can click one
+- [ ] AI players bid automatically with a brief delay
+- [ ] All 4 bids are recorded before play begins</p>
+<p><strong>Playing</strong>
+- [ ] Valid cards are highlighted; invalid cards are not clickable
+- [ ] Spades cannot be led until broken (unless player has only spades)
+- [ ] Player must follow led suit if they have it
+- [ ] Spades break when a spade is played for the first time</p>
+<p><strong>Trick Winning</strong>
+- [ ] A spade always beats a non-spade
+- [ ] Highest spade wins when multiple spades are played
+- [ ] Highest card of led suit wins when no spades played
+- [ ] Winner leads the next trick</p>
+<p><strong>Scoring</strong>
+- [ ] Made bid: team earns <code>bid × 10 + overtricks</code>
+- [ ] Set (failed bid): team loses <code>bid × 10</code>
+- [ ] Nil bid made (0 tricks): +100
+- [ ] Nil bid failed (1+ tricks): −100; nil player's tricks excluded from team contract
+- [ ] Every 10 bags: −100 penalty (fires multiple times if needed)</p>
+<p><strong>Game End</strong>
+- [ ] Game ends when a team reaches 500+ or goes below −200
+- [ ] If both teams reach 500 on the same round: one extra round is played
+- [ ] Winning team is correctly identified and displayed</p>
+<hr />
+<h2>Documentation Requirements</h2>
+<p>Your submission must include a brief <code>README.md</code> with:</p>
+<p><strong>1. Project Overview</strong> (2–3 sentences)
+What is the game and what does the project demonstrate?</p>
+<p><strong>2. How to Play</strong>
+Step-by-step from opening the file to winning a game</p>
+<p><strong>3. Architecture</strong>
+A list of each JS file and its single responsibility (1 sentence each)</p>
+<p><strong>4. Advanced Features Implemented</strong>
+List which of the following you added (required: at least 2):
+- Improved AIPlayer (card tracking, goal-aware strategy)
+- localStorage statistics persistence
+- Light/dark theme toggle
+- CSS card animations
+- ES6 module structure</p>
+<p><strong>5. Known Limitations</strong>
+Any bugs, edge cases, or incomplete features — be honest</p>
+<hr />
+<h2>Video Tutorial: Final Project Prep (20 minutes)</h2>
+<p>Watch: <code>assets/videos/25-final-project-prep.mp4</code></p>
+<p>Covers:
+- Walking through the testing checklist live
+- How to write a good README for a JavaScript project
+- Common last-minute bugs (script load order, nil scoring, spades-breaking edge cases)</p>
+<hr />
+<h2>Knowledge Check Quiz (15 minutes)</h2>
+<p>Take the <strong>Session 25 Final Review Quiz</strong> in Canvas.</p>
+<p>This quiz covers material from all sessions — use it to identify any gaps before your final submission.</p>
+<hr />
+<h2>Hands-On Assignment (open-ended)</h2>
+<p>Open <strong>"Session 25: Final Project"</strong> in Canvas.</p>
+<p>Submit a polished, fully playable Spades game. Full rubric is in the assignment.</p>
+<hr />
+<h2>Wrap-Up</h2>
+<h3>What You Built</h3>
+<p>Over 10 sessions you built a complete, playable, four-player Spades card game entirely in browser-based JavaScript. You used:</p>
+<ul>
+<li><strong>Classes and constructors</strong> — Card, Deck, Player, SpadesGame</li>
+<li><strong>Inheritance</strong> — AIPlayer extends Player</li>
+<li><strong>Array methods</strong> — <code>filter</code>, <code>findIndex</code>, <code>splice</code>, <code>sort</code>, <code>map</code>, <code>flatMap</code>, <code>reduce</code></li>
+<li><strong>Async/await</strong> — GameRunner orchestrates human input and AI delays</li>
+<li><strong>Promises</strong> — GameBoard returns awaitable values from click events</li>
+<li><strong>Complex conditional logic</strong> — Spades rules, scoring, game-over checks</li>
+<li><strong>Optional: localStorage</strong> — persistence across page loads</li>
+<li><strong>Optional: CSS custom properties</strong> — theming and animation</li>
+<li><strong>Optional: ES6 modules</strong> — professional code organization</li>
+</ul>
+<p>Every concept from the first two modules of this course appeared in the game code. That is what culminating projects are for.</p>
+</body>
+</html>

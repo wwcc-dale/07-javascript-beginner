@@ -1,0 +1,862 @@
+<?xml version="1.0" ?>
+<modules xmlns="http://canvas.instructure.com/xsd/cccv1p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://canvas.instructure.com/xsd/cccv1p0 https://canvas.instructure.com/xsd/cccv1p0.xsd">
+  <module identifier="i59b7eaa042eaeab3">
+    <title>planning</title>
+    <workflow_state>active</workflow_state>
+    <position>1</position>
+    <locked>false</locked>
+    <items>
+      <item identifier="item_i9668a072ad43c316">
+        <content_type>ExternalUrl</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Test Link</title>
+        <identifierref>i9668a072ad43c316</identifierref>
+        <url>https://google.com</url>
+        <position>1</position>
+        <new_tab>true</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+    </items>
+  </module>
+  <module identifier="i5f2584298ad5f3c2">
+    <title>Foundations</title>
+    <workflow_state>active</workflow_state>
+    <position>2</position>
+    <locked>false</locked>
+    <items>
+      <item identifier="item_icba739462ee675f9">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 1: JavaScript Fundamentals</title>
+        <identifierref>icba739462ee675f9</identifierref>
+        <position>1</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i7924be4ab0aae5bf">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 1 Quiz – Variables, Data Types, and Operators</title>
+        <identifierref>i7924be4ab0aae5bf</identifierref>
+        <position>2</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i02c0c59b9ac71d40">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 1: Comparing Scores and Totals</title>
+        <identifierref>i02c0c59b9ac71d40</identifierref>
+        <position>3</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_ib5f18b26ff41f453">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 2: Functions and Reusable Code</title>
+        <identifierref>ib5f18b26ff41f453</identifierref>
+        <position>4</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i2ea3e5e3ba48fc84">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 2 Quiz – Control Flow (if/else, loops)</title>
+        <identifierref>i2ea3e5e3ba48fc84</identifierref>
+        <position>5</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i463cb5775eae3110">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 2: Building Functions for Everyday Tasks</title>
+        <identifierref>i463cb5775eae3110</identifierref>
+        <position>6</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i1d2df1f460f894ce">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 3: Arrays and Objects</title>
+        <identifierref>i1d2df1f460f894ce</identifierref>
+        <position>7</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_ib855fa949bd0f0d1">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 3 Quiz – Functions and Scope</title>
+        <identifierref>ib855fa949bd0f0d1</identifierref>
+        <position>8</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_id1a5b19605616ce7">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 3: Building Objects for Real Data</title>
+        <identifierref>id1a5b19605616ce7</identifierref>
+        <position>9</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i0901349fbcf2a3da">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 4: Loops and Iteration</title>
+        <identifierref>i0901349fbcf2a3da</identifierref>
+        <position>10</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_iea8faf3f56d43eed">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 4 Quiz – Arrays and Array Methods</title>
+        <identifierref>iea8faf3f56d43eed</identifierref>
+        <position>11</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i955ec1213647dbeb">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 4: Processing Data with Loops</title>
+        <identifierref>i955ec1213647dbeb</identifierref>
+        <position>12</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i8ad760ab74df911f">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 5: Algorithmic Thinking</title>
+        <identifierref>i8ad760ab74df911f</identifierref>
+        <position>13</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i498a76e8734468c9">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 5 Quiz – Objects and Object Methods</title>
+        <identifierref>i498a76e8734468c9</identifierref>
+        <position>14</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i4d7f77638e7c3b30">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 5: Solving Problems with Algorithms</title>
+        <identifierref>i4d7f77638e7c3b30</identifierref>
+        <position>15</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+    </items>
+  </module>
+  <module identifier="i8b584bcad42c8d4f">
+    <title>Object Oriented Programming</title>
+    <workflow_state>active</workflow_state>
+    <position>3</position>
+    <locked>false</locked>
+    <items>
+      <item identifier="item_i01463ec5ce1694f6">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 6: Introduction to Classes</title>
+        <identifierref>i01463ec5ce1694f6</identifierref>
+        <position>1</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i533ffe7d29f4a1d1">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 6 Quiz – String Methods and Template Literals</title>
+        <identifierref>i533ffe7d29f4a1d1</identifierref>
+        <position>2</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i51dc37ec7e398e44">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 6: Building Your First Classes</title>
+        <identifierref>i51dc37ec7e398e44</identifierref>
+        <position>3</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i950205cb6a2c9014">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 7: Math Methods and Encapsulation</title>
+        <identifierref>i950205cb6a2c9014</identifierref>
+        <position>4</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i3e878c1aab5557d1">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 7 Quiz – Math and Number Methods</title>
+        <identifierref>i3e878c1aab5557d1</identifierref>
+        <position>5</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i513e2355a247f06d">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 7: Encapsulation and Data Protection</title>
+        <identifierref>i513e2355a247f06d</identifierref>
+        <position>6</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i53abfbcc2cffd0d1">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 8: Working with Multiple Objects</title>
+        <identifierref>i53abfbcc2cffd0d1</identifierref>
+        <position>7</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_ib0c1b95b4d0a29c2">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 8 Quiz – Classes and Object-Oriented Programming</title>
+        <identifierref>ib0c1b95b4d0a29c2</identifierref>
+        <position>8</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i11248ee23a727338">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 8: Library Management System</title>
+        <identifierref>i11248ee23a727338</identifierref>
+        <position>9</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_ic38ace5c1a7261c9">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 9: Inheritance and Composition</title>
+        <identifierref>ic38ace5c1a7261c9</identifierref>
+        <position>10</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i87737840e4b78e6e">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 9 Quiz – Inheritance and Method Overriding</title>
+        <identifierref>i87737840e4b78e6e</identifierref>
+        <position>11</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i196274b620ac5cd5">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 9: Inheritance and Composition Patterns</title>
+        <identifierref>i196274b620ac5cd5</identifierref>
+        <position>12</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i0baec4cf9d809ca0">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 10: Advanced Array Methods and Node.js Modules</title>
+        <identifierref>i0baec4cf9d809ca0</identifierref>
+        <position>13</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i999b7972dcfa3a85">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 10 Quiz – Advanced Array and Object Techniques</title>
+        <identifierref>i999b7972dcfa3a85</identifierref>
+        <position>14</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i5cea1ebe55ee323c">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 10: Building with Node.js and Modules</title>
+        <identifierref>i5cea1ebe55ee323c</identifierref>
+        <position>15</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+    </items>
+  </module>
+  <module identifier="ibfb8fa9d6071b0b9">
+    <title>HTML, CSS and DOM Interactions</title>
+    <workflow_state>active</workflow_state>
+    <position>4</position>
+    <locked>false</locked>
+    <items>
+      <item identifier="item_i6f932875923e8408">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 11: JavaScript and the DOM</title>
+        <identifierref>i6f932875923e8408</identifierref>
+        <position>1</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i5315a91072b3c31d">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 11: DOM Selection and Modification</title>
+        <identifierref>i5315a91072b3c31d</identifierref>
+        <position>2</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i5ac0566cca104465">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 12: DOM Manipulation and Event Basics</title>
+        <identifierref>i5ac0566cca104465</identifierref>
+        <position>3</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_iefae68d3c0615b43">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 12 Quiz – CSS Styling and Selectors</title>
+        <identifierref>iefae68d3c0615b43</identifierref>
+        <position>4</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i0a03213d8a3beabd">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 12: Dynamic Content Builder</title>
+        <identifierref>i0a03213d8a3beabd</identifierref>
+        <position>5</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_if958ad15911f3e23">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 12 Practice Quiz</title>
+        <identifierref>if958ad15911f3e23</identifierref>
+        <position>6</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i8b63080ad7e5c7f6">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 13: CSS Manipulation with JavaScript</title>
+        <identifierref>i8b63080ad7e5c7f6</identifierref>
+        <position>7</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i3894067069f259f9">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 13 Quiz – Responsive Design and Media Queries</title>
+        <identifierref>i3894067069f259f9</identifierref>
+        <position>8</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i59c254bc88bbf938">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 13: Dynamic Styling and Themes</title>
+        <identifierref>i59c254bc88bbf938</identifierref>
+        <position>9</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i5ad1b3999cddc9d4">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 14: Event Handling and Interactivity</title>
+        <identifierref>i5ad1b3999cddc9d4</identifierref>
+        <position>10</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i4f987df1591f8100">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 14 Quiz – DOM Manipulation and Selection</title>
+        <identifierref>i4f987df1591f8100</identifierref>
+        <position>11</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i7890257e58748dfe">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 14: Interactive Applications</title>
+        <identifierref>i7890257e58748dfe</identifierref>
+        <position>12</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i7a1e10f06d62d4fc">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 15: Midterm Review and Assessment</title>
+        <identifierref>i7a1e10f06d62d4fc</identifierref>
+        <position>13</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i2038a080a34849f8">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 15 Quiz – Event Handling and Forms</title>
+        <identifierref>i2038a080a34849f8</identifierref>
+        <position>14</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+    </items>
+  </module>
+  <module identifier="ib064a4be914fd9f4">
+    <title>Card Game Implementation</title>
+    <workflow_state>active</workflow_state>
+    <position>5</position>
+    <locked>false</locked>
+    <items>
+      <item identifier="item_i3e6a2ad5ecb7b309">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 16: Classes, Constructors, and Collections</title>
+        <identifierref>i3e6a2ad5ecb7b309</identifierref>
+        <position>1</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i11e0b0b012a6daa2">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 16 Quiz – Card Game Foundation (Card &amp; Deck)</title>
+        <identifierref>i11e0b0b012a6daa2</identifierref>
+        <position>2</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_idac212dbea691e34">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 16: Card and Deck Implementation</title>
+        <identifierref>idac212dbea691e34</identifierref>
+        <position>3</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i24a61e54423d176d">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 17: Inheritance, Subclasses, and Object Graphs</title>
+        <identifierref>i24a61e54423d176d</identifierref>
+        <position>4</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i6498f3711970889a">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 17 Quiz – Player and Hand Management</title>
+        <identifierref>i6498f3711970889a</identifierref>
+        <position>5</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_if7bc0ac0576db189">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 17: Player, AIPlayer, and Dealing</title>
+        <identifierref>if7bc0ac0576db189</identifierref>
+        <position>6</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_ifd5a2c65cecd2f98">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 18: Filtering, Conditionals, and State Transitions</title>
+        <identifierref>ifd5a2c65cecd2f98</identifierref>
+        <position>7</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i52cc8c430bd2966e">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 18 Quiz – Game State and UI Foundation</title>
+        <identifierref>i52cc8c430bd2966e</identifierref>
+        <position>8</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i2d2a76c7b5c376b9">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 18: Spades Rules Implementation</title>
+        <identifierref>i2d2a76c7b5c376b9</identifierref>
+        <position>9</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i5cb6ff94103a1b11">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 19: Accumulation, Conditional Scoring, and Promise-Based Input</title>
+        <identifierref>i5cb6ff94103a1b11</identifierref>
+        <position>10</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_ife3102bf8898d736">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 19 Quiz – Event Handling and Animations</title>
+        <identifierref>ife3102bf8898d736</identifierref>
+        <position>11</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i2ff6d29fe0c93ac9">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 19: Scoring and GameBoard</title>
+        <identifierref>i2ff6d29fe0c93ac9</identifierref>
+        <position>12</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_if6090573002de67c">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 20: Async/Await and Orchestrating Multi-Step Processes</title>
+        <identifierref>if6090573002de67c</identifierref>
+        <position>13</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_iada909e97cdfaf50">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 20 Quiz – Polish, Testing, and Deployment</title>
+        <identifierref>iada909e97cdfaf50</identifierref>
+        <position>14</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i8043a390e9b64c93">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 20: GameRunner and Full Integration</title>
+        <identifierref>i8043a390e9b64c93</identifierref>
+        <position>15</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+    </items>
+  </module>
+  <module identifier="i1e34188a911dfaa0">
+    <title>Card Game Advanced Features</title>
+    <workflow_state>active</workflow_state>
+    <position>6</position>
+    <locked>false</locked>
+    <items>
+      <item identifier="item_i43c18a468733062c">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 21: Decision Trees and Heuristic AI</title>
+        <identifierref>i43c18a468733062c</identifierref>
+        <position>1</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i094c08830355844b">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 21 Quiz – AI Strategies</title>
+        <identifierref>i094c08830355844b</identifierref>
+        <position>2</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_ia6780493d59ef0cf">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 21: Improving the AIPlayer</title>
+        <identifierref>ia6780493d59ef0cf</identifierref>
+        <position>3</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i447f1d569262c3ee">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 22: localStorage — Persisting Data Across Sessions</title>
+        <identifierref>i447f1d569262c3ee</identifierref>
+        <position>4</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_icf5d5b6f63f98e00">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 22: Persistence and Stats</title>
+        <identifierref>icf5d5b6f63f98e00</identifierref>
+        <position>5</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i9a628b7000944422">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 23: CSS Custom Properties, Theming, and Transitions</title>
+        <identifierref>i9a628b7000944422</identifierref>
+        <position>6</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_ia44a4b80adb83e9c">
+        <content_type>Assignment</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 22: Persistence and Stats</title>
+        <identifierref>ia44a4b80adb83e9c</identifierref>
+        <position>7</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i74228d76e3064bcb">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 23 Quiz – Advanced UI (Settings, Themes, Leaderboards)</title>
+        <identifierref>i74228d76e3064bcb</identifierref>
+        <position>8</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i2549865fcb35bbe5">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 23: Visual Polish</title>
+        <identifierref>i2549865fcb35bbe5</identifierref>
+        <position>9</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_iec61aa66f41334c5">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 24: ES6 Modules and Professional Code Organization</title>
+        <identifierref>iec61aa66f41334c5</identifierref>
+        <position>10</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i94bb2c839dec4c42">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 25: Final Project — Spades</title>
+        <identifierref>i94bb2c839dec4c42</identifierref>
+        <position>11</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_ie3a787cd5ecf68af">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 25 Quiz – Final Project: Professional Card Game</title>
+        <identifierref>ie3a787cd5ecf68af</identifierref>
+        <position>12</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i724335b2ac81f61a">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 25: Final Project — Complete Spades Game</title>
+        <identifierref>i724335b2ac81f61a</identifierref>
+        <position>13</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i5674d7216aefa273">
+        <content_type>WikiPage</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 22: Local Storage and UI Enhancements</title>
+        <identifierref>i5674d7216aefa273</identifierref>
+        <position>14</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i69b3e1bf262274d2">
+        <content_type>WikiPage</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 24: Code Modularization and Project Structure</title>
+        <identifierref>i69b3e1bf262274d2</identifierref>
+        <position>15</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i4eecde3b844ac117">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 22: Local Storage and Game Persistence</title>
+        <identifierref>i4eecde3b844ac117</identifierref>
+        <position>16</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i1e79b6ced1deb390">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 22 Quiz – Local Storage and Game Persistence</title>
+        <identifierref>i1e79b6ced1deb390</identifierref>
+        <position>17</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i753e399d08d57785">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 22: Add Data Persistence</title>
+        <identifierref>i753e399d08d57785</identifierref>
+        <position>18</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i15225d5ff9804102">
+        <content_type>WikiPage</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 24: Testing, Debugging, and Code Quality</title>
+        <identifierref>i15225d5ff9804102</identifierref>
+        <position>19</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_if3d27573e5513c9b">
+        <content_type>Quizzes::Quiz</content_type>
+        <workflow_state>unpublished</workflow_state>
+        <title>Session 24 Quiz – Testing, Debugging, and Code Quality</title>
+        <identifierref>if3d27573e5513c9b</identifierref>
+        <position>20</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+      <item identifier="item_i3e4b4bc4d92f4d07">
+        <content_type>Assignment</content_type>
+        <workflow_state>active</workflow_state>
+        <title>Session 24: Write Tests and Documentation</title>
+        <identifierref>i3e4b4bc4d92f4d07</identifierref>
+        <position>21</position>
+        <new_tab>false</new_tab>
+        <indent>0</indent>
+        <link_settings_json>null</link_settings_json>
+      </item>
+    </items>
+  </module>
+</modules>

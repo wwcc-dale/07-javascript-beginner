@@ -1,0 +1,224 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="identifier" content="i5cb6ff94103a1b11"/>
+<meta name="editing_roles" content="teachers"/>
+<meta name="workflow_state" content="active"/>
+<title>Session 19: Accumulation, Conditional Scoring, and Promise-Based Input</title>
+</head>
+<body>
+<h1>Session 19: Accumulation, Conditional Scoring, and Promise-Based Input</h1>
+<h2>Learning Outcomes</h2>
+<p>By the end of this session, you will be able to:
+- Accumulate results across a collection of objects using a loop
+- Apply bonus/penalty logic that adds to a running total
+- Use <code>while</code> to handle a threshold that may trigger multiple times
+- Return a Promise from a function that waits for a DOM event
+- Explain why Promises let async game loops wait for user clicks</p>
+<hr />
+<h2>Introduction (5 minutes)</h2>
+<p>Two skills come together today: <strong>scoring</strong> (collecting results and applying rules to produce a number) and <strong>Promise-based user input</strong> (making a function "pause" until the user does something in the browser).</p>
+<p>These look very different on the surface, but both share the same structure: a process that waits, gathers, and returns a result.</p>
+<hr />
+<h2>Reading: Scoring and Promises (35 minutes)</h2>
+<h3>Accumulation Loops</h3>
+<p>An <strong>accumulation loop</strong> collects a total from a collection:</p>
+<pre class="codehilite"><code class="language-js">const employees = [
+  { name: 'Alice',   salary: 80000, department: 'Engineering' },
+  { name: 'Bob',     salary: 60000, department: 'Marketing'   },
+  { name: 'Carol',   salary: 90000, department: 'Engineering' },
+  { name: 'Dave',    salary: 55000, department: 'Marketing'   }
+];
+
+// Total payroll for Engineering
+let total = 0;
+let count = 0;
+for (const emp of employees) {
+  if (emp.department === 'Engineering') {
+    total += emp.salary;
+    count++;
+  }
+}
+console.log(`Engineering payroll: $${total}, ${count} staff`);
+</code></pre>
+
+<p>The pattern is always the same: initialize counters to zero before the loop, conditionally add to them inside the loop, use the final values after.</p>
+<hr />
+<h3>Conditional Bonuses and Penalties</h3>
+<p>Many scoring systems have special cases layered on top of the base calculation:</p>
+<pre class="codehilite"><code class="language-js">function calculateGrade(student) {
+  let grade = student.examScore;  // Base grade from exam
+
+  // Attendance bonus/penalty
+  if (student.attendanceRate &gt;= 0.95) {
+    grade += 5;   // Bonus: perfect attendance
+  } else if (student.attendanceRate &lt; 0.75) {
+    grade -= 10;  // Penalty: poor attendance
+  }
+
+  // Extra credit (only adds if they completed extra work)
+  if (student.extraCredit) {
+    grade += student.extraCredit;
+  }
+
+  // Cap at 100
+  return Math.min(grade, 100);
+}
+</code></pre>
+
+<p>The pattern: start with the base value, then apply each special rule as an adjustment. The order of adjustments can matter — bonus before cap behaves differently than cap before bonus.</p>
+<hr />
+<h3><code>while</code> for Threshold-Based Penalties</h3>
+<p>Some rules trigger every time an accumulator crosses a threshold — possibly multiple times in one scoring calculation. Use <code>while</code> (not <code>if</code>) for this:</p>
+<pre class="codehilite"><code class="language-js">function applyOverageCharges(account) {
+  // Each time messages exceed 1000, charge $5 and subtract 1000
+  while (account.messageSurplus &gt;= 1000) {
+    account.balance -= 5;
+    account.messageSurplus -= 1000;
+  }
+}
+
+const account = { balance: 100, messageSurplus: 2750 };
+applyOverageCharges(account);
+console.log(account.balance);          // 85  (charged 3 times: 2750→1750→750)
+console.log(account.messageSurplus);   // 750
+</code></pre>
+
+<p>Using <code>if</code> instead of <code>while</code> would only catch the first threshold crossing. <code>while</code> keeps firing until the surplus is below 1000.</p>
+<hr />
+<h3>What is a Promise?</h3>
+<p>A <strong>Promise</strong> represents a value that will be available in the future. You create one with <code>new Promise((resolve, reject) =&gt; { ... })</code>:</p>
+<pre class="codehilite"><code class="language-js">// A Promise that resolves after 2 seconds
+const timer = new Promise(resolve =&gt; {
+  setTimeout(resolve, 2000);
+});
+
+timer.then(() =&gt; console.log('2 seconds passed'));
+</code></pre>
+
+<p><code>resolve(value)</code> is called when the result is ready. Whatever you pass to <code>resolve</code> becomes the value of the Promise.</p>
+<hr />
+<h3>Waiting for a User Click with a Promise</h3>
+<p>The key insight: you can create a Promise that only resolves when the user does something in the DOM. This turns an event listener into a one-time awaitable value:</p>
+<pre class="codehilite"><code class="language-js">function waitForButtonClick(buttonId) {
+  return new Promise(resolve =&gt; {
+    const button = document.getElementById(buttonId);
+
+    const handler = (event) =&gt; {
+      button.removeEventListener('click', handler);  // Clean up — only fire once
+      resolve(event.target.textContent);             // Resolve with the button's text
+    };
+
+    button.addEventListener('click', handler);
+    // The Promise is now &quot;pending&quot; — it will resolve only when the user clicks
+  });
+}
+
+// Usage with async/await:
+async function confirmAction() {
+  const choice = await waitForButtonClick('confirm-btn');
+  console.log('User clicked:', choice);
+  // Everything here waits until the button is clicked
+}
+</code></pre>
+
+<p>The Promise stays <strong>pending</strong> until the handler runs. When the user clicks, <code>resolve()</code> is called, and any code <code>await</code>-ing the Promise resumes.</p>
+<hr />
+<h3>Why This Pattern Matters for Game Loops</h3>
+<p>Without Promises, you can't write sequential-looking code that waits for user input. Compare:</p>
+<p><strong>Without Promises (callback hell):</strong></p>
+<pre class="codehilite"><code class="language-js">function startBidding() {
+  showBidButtons();
+  bidButton.addEventListener('click', function(e) {
+    const bid = parseInt(e.target.dataset.bid);
+    hideBidButtons();
+    startPlayPhase(bid);  // Must nest the next step
+  });
+}
+</code></pre>
+
+<p><strong>With Promises + async/await:</strong></p>
+<pre class="codehilite"><code class="language-js">async function startBidding() {
+  showBidButtons();
+  const bid = await waitForBidClick();   // Pauses here
+  hideBidButtons();
+  await startPlayPhase(bid);             // Then continues here
+}
+</code></pre>
+
+<p>The second version reads top-to-bottom like synchronous code, even though it's waiting for asynchronous user input at each <code>await</code>.</p>
+<hr />
+<h3>Attaching Data to DOM Elements with <code>dataset</code></h3>
+<p>When many similar elements can be clicked (like buttons or items in a list), <code>dataset</code> attributes let the click handler identify which one was clicked without complex logic:</p>
+<pre class="codehilite"><code class="language-js">// Create buttons dynamically
+const options = ['Small', 'Medium', 'Large'];
+options.forEach(size =&gt; {
+  const btn = document.createElement('button');
+  btn.textContent = size;
+  btn.dataset.size = size;       // Attach data to the element
+  btn.dataset.price = size === 'Large' ? 5 : size === 'Medium' ? 3 : 1;
+  container.appendChild(btn);
+});
+
+// Single handler for all buttons
+container.addEventListener('click', (e) =&gt; {
+  const btn = e.target.closest('button');
+  if (!btn) return;
+  console.log('Size:', btn.dataset.size);    // 'Large'
+  console.log('Price:', btn.dataset.price);  // '5'
+});
+</code></pre>
+
+<p><code>dataset.size</code> reads the <code>data-size</code> attribute. <code>e.target.closest('button')</code> handles clicks on child elements inside the button. This avoids maintaining a parallel index or closure variable.</p>
+<hr />
+<h2>Video Tutorial: Scoring and Promises (20 minutes)</h2>
+<p>Watch: <code>assets/videos/19-scoring-promises.mp4</code></p>
+<p>Covers:
+- Building an accumulation loop from scratch
+- <code>while</code> vs. <code>if</code> for threshold-based penalties
+- Creating a Promise that resolves on a click
+- <code>e.target.closest()</code> and <code>dataset</code> attributes</p>
+<hr />
+<h2>Supplemental Practice (25 minutes)</h2>
+<h3>Exercise 1: Payroll with Special Rules</h3>
+<p>Given an array of employees with <code>{ name, salary, hoursOvertime, isManager }</code>:
+- Base total = sum of all salaries
+- Overtime bonus: +$50 per overtime hour per employee
+- Manager bonus: +5% of their salary
+- Return an object <code>{ totalPayroll, bonusesPaid }</code></p>
+<h3>Exercise 2: Threshold Penalty with <code>while</code></h3>
+<p>Write a function <code>applyLateCharges(account)</code> where:
+- <code>account.daysLate</code> accumulates
+- Every 30 days late adds a $25 charge and decrements <code>daysLate</code> by 30
+- Test with <code>daysLate = 95</code> (should charge 3 times: $75, leaving daysLate at 5)</p>
+<h3>Exercise 3: Click Promise</h3>
+<p>Create an HTML page with three color buttons (Red, Green, Blue). Write a function <code>waitForColorChoice()</code> that returns a Promise resolving with the text of whichever button is clicked first. Use <code>async/await</code> to log "You chose: [color]" after the click.</p>
+<h3>Exercise 4: dataset Identification</h3>
+<p>Create 5 product buttons dynamically using a <code>forEach</code> loop. Each button should have <code>data-id</code>, <code>data-name</code>, and <code>data-price</code> attributes. Add a single click listener to the container that logs all three attributes when any button is clicked.</p>
+<hr />
+<h2>Knowledge Check Quiz (15 minutes)</h2>
+<p>Take the <strong>Session 19 Practice Quiz</strong> in Canvas.</p>
+<p>Focus on:
+- The accumulation loop pattern (initialize → accumulate → use)
+- Why <code>while</code> is required when a threshold may trigger more than once
+- What it means for a Promise to be "pending" vs. "resolved"
+- Why removing the event listener inside the handler prevents it from firing again</p>
+<hr />
+<h2>Hands-On Assignment (60–90 minutes)</h2>
+<p>Open <strong>"Session 19: Scoring and GameBoard"</strong>.</p>
+<p>You will apply accumulation and Promise-based input to complete Spades scoring and build the <code>GameBoard</code> class.</p>
+<hr />
+<h2>Wrap-Up (10 minutes)</h2>
+<h3>Key Takeaways</h3>
+<ul>
+<li><strong>Accumulation loops</strong> initialize to zero, accumulate conditionally inside the loop, and use the result after</li>
+<li><strong><code>while</code> for thresholds</strong> handles the case where a rule fires multiple times in one calculation</li>
+<li><strong>Promises</strong> represent a future value; <code>resolve(value)</code> delivers it; <code>await</code> pauses until it arrives</li>
+<li><strong><code>dataset</code> attributes</strong> attach identifying data to DOM elements for use in event handlers</li>
+<li><strong>Removing the listener</strong> inside the handler makes a Promise-based listener fire exactly once</li>
+</ul>
+<h3>How This Connects to the Assignment</h3>
+<p>The assignment asks you to implement Spades scoring (accumulation with special rules and threshold penalties) and <code>GameBoard</code> methods that return Promises resolving on bid and card clicks.</p>
+<p>Next session: <strong>Session 20 — Async/Await and Orchestrating a Multi-Step Process</strong></p>
+</body>
+</html>

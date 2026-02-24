@@ -137,46 +137,46 @@ console.log(waitlist);          // ["Jordan", "Casey", "Alex"]
 
 An object is a container that holds related information (properties) and actions (methods). Properties are key-value pairs.
 
-**Real-world analogy:** A student profile has properties like name, email, GPA. An object groups these together.
+**Real-world analogy:** An event listing has properties like name, date, and attendees. An object groups these together.
 
 ### Creating a Simple Object
 
 ```js
-const student = {
-  name: "Alex",
-  email: "alex@school.edu",
-  grade: 85,
-  enrolled: true
+const event = {
+  name: "Web Dev Workshop",
+  date: "2026-03-15",
+  attendees: 42,
+  isPublic: true
 };
 
-console.log(student.name);   // "Alex"
-console.log(student.grade);  // 85
+console.log(event.name);      // "Web Dev Workshop"
+console.log(event.attendees); // 42
 ```
 
 ### Accessing Properties
 
 **Dot notation** (most common):
 ```js
-let theName = student.name;
-console.log(theName);  // "Alex"
+let eventName = event.name;
+console.log(eventName);  // "Web Dev Workshop"
 ```
 
 **Bracket notation** (useful with variable keys):
 ```js
-let theName = student["name"];
-console.log(theName);  // "Alex"
+let eventName = event["name"];
+console.log(eventName);  // "Web Dev Workshop"
 ```
 
 ### Modifying Properties
 
 ```js
-const student = {
-  name: "Alex",
-  grade: 85
+const event = {
+  name: "Web Dev Workshop",
+  attendees: 42
 };
 
-student.grade = 92;  // Update the grade
-console.log(student.grade);  // 92
+event.attendees = 50;  // Update the attendees
+console.log(event.attendees);  // 50
 ```
 
 ### Objects in Real Scenarios
@@ -196,18 +196,18 @@ console.log(user.loginCount);    // 15
 user.loginCount = 16;            // Update it
 ```
 
-**Example 2: Shopping Cart Item**
+**Example 2: Flight Info**
 
 ```js
-const item = {
-  productName: "JavaScript Book",
-  price: 45.99,
-  quantity: 2,
-  inStock: true
+const flight = {
+  airline: "SkyLine",
+  destination: "Denver",
+  durationHours: 2.5,
+  onTime: true
 };
 
-console.log(item.productName);           // "JavaScript Book"
-console.log(item.price * item.quantity); // 91.98 (total cost)
+console.log(flight.airline);              // "SkyLine"
+console.log(flight.durationHours * 60);  // 150 (minutes)
 ```
 
 **Example 3: Quiz Result**
@@ -289,52 +289,50 @@ console.log(students.length);    // 3
 
 ## Supplemental Practice: Real Objects (25 minutes)
 
-### Scenario 1: Book in a Library
+### Scenario 1: Recipe Card
 
 ```js
-const book = {
-  title: "Web Development 101",
-  author: "Jane Doe",
-  year: 2024,
-  pages: 450,
-  available: true
+const recipe = {
+  name: "Spaghetti Carbonara",
+  servings: 4,
+  cookTimeMinutes: 30,
+  vegetarian: false
 };
 
-console.log(book.title);        // "Web Development 101"
-console.log(book.author);       // "Jane Doe"
-console.log(book.available);    // true
+console.log(recipe.name);            // "Spaghetti Carbonara"
+console.log(recipe.cookTimeMinutes); // 30
+console.log(recipe.vegetarian);      // false
 ```
 
-Try adding a `category` property and updating the `available` property.
+Try adding a `difficulty` property and updating the `servings` property.
 
-### Scenario 2: Online Store Product
+### Scenario 2: Athlete Profile
 
 ```js
-const product = {
-  name: "Laptop Stand",
-  price: 29.99,
-  stock: 15,
-  rating: 4.5,
-  inSale: true,
-  discount: 10
+const athlete = {
+  name: "Maya Chen",
+  sport: "tennis",
+  wins: 47,
+  losses: 12
 };
 
-let finalPrice = product.price - (product.price * product.discount / 100);
-console.log("Final price:", finalPrice);  // 26.99
+let totalMatches = athlete.wins + athlete.losses;
+let winRate = (athlete.wins / totalMatches * 100).toFixed(1);
+console.log("Win rate:", winRate + "%");  // "79.7%"
 ```
 
-### Scenario 3: Bank Account
+### Scenario 3: Hotel Listing
 
 ```js
-const account = {
-  accountHolder: "Morgan",
-  balance: 2500.75,
-  accountType: "Checking",
-  interestRate: 0.02
+const hotel = {
+  name: "Seaside Inn",
+  pricePerNight: 129.99,
+  roomsAvailable: 8,
+  hasPool: true
 };
 
-account.balance = account.balance + 100;  // Deposit $100
-console.log("New balance:", account.balance);  // 2600.75
+hotel.roomsAvailable = hotel.roomsAvailable - 1;  // Book a room
+console.log("Rooms left:", hotel.roomsAvailable);  // 7
 ```
 
 ---

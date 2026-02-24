@@ -1,0 +1,280 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="identifier" content="i01463ec5ce1694f6"/>
+<meta name="editing_roles" content="teachers"/>
+<meta name="workflow_state" content="active"/>
+<title>Session 6: Introduction to Classes</title>
+</head>
+<body>
+<h1>Session 6: Introduction to Classes</h1>
+<h2>Learning Outcomes</h2>
+<p>By the end of this session, you will be able to:
+- Define classes with constructors and properties.
+- Create instances of classes using the <code>new</code> keyword.
+- Understand the difference between classes and objects.
+- Use instance methods to add behavior to objects.</p>
+<hr />
+<h2>Introduction (5 minutes)</h2>
+<p>You've already worked with objects like <code>{name: "Alex", phone: "555-1234"}</code>. Classes are blueprints that let you create many similar objects easily. Instead of manually creating each contact entry, you define a <code>Contact</code> class once and create as many contacts as you need. Today you'll learn to build and use classes.</p>
+<hr />
+<h2>Reading: Classes Fundamentals (35 minutes)</h2>
+<h3>What Is a Class?</h3>
+<p>A class is a template for creating objects. It defines what properties and methods objects of that type will have.</p>
+<p><strong>Real-world analogy:</strong> A class is like a cookie cutter. The class is the cutter shape, and each cookie you make is an instance (object).</p>
+<h3>Creating a Simple Class</h3>
+<pre class="codehilite"><code class="language-js">class Contact {
+  constructor(name, phone) {
+    this.name = name;
+    this.phone = phone;
+  }
+}
+
+// Create instances:
+const contact1 = new Contact(&quot;Alex&quot;, &quot;555-1234&quot;);
+const contact2 = new Contact(&quot;Jordan&quot;, &quot;555-5678&quot;);
+
+console.log(contact1.name);   // &quot;Alex&quot;
+console.log(contact2.phone);  // &quot;555-5678&quot;
+</code></pre>
+
+<p><strong>Breaking it down:</strong>
+- <code>class Contact</code> – Define a new class
+- <code>constructor()</code> – Special method that runs when creating an instance
+- <code>this.name</code> – Creates a property on the instance
+- <code>new Contact()</code> – Creates a new instance of the class</p>
+<h3>Why Use Classes?</h3>
+<p>Without classes (tedious):</p>
+<pre class="codehilite"><code class="language-js">const contact1 = {name: &quot;Alex&quot;, phone: &quot;555-1234&quot;};
+const contact2 = {name: &quot;Jordan&quot;, phone: &quot;555-5678&quot;};
+const contact3 = {name: &quot;Casey&quot;, phone: &quot;555-9012&quot;};
+// Repeat for every contact...
+</code></pre>
+
+<p>With classes (clean):</p>
+<pre class="codehilite"><code class="language-js">class Contact {
+  constructor(name, phone) {
+    this.name = name;
+    this.phone = phone;
+  }
+}
+
+const contact1 = new Contact(&quot;Alex&quot;, &quot;555-1234&quot;);
+const contact2 = new Contact(&quot;Jordan&quot;, &quot;555-5678&quot;);
+const contact3 = new Contact(&quot;Casey&quot;, &quot;555-9012&quot;);
+</code></pre>
+
+<h3>Adding Methods to Classes</h3>
+<p>Methods are functions that belong to a class. They define what objects can do.</p>
+<pre class="codehilite"><code class="language-js">class Track {
+  constructor(title, artist, durationSeconds) {
+    this.title = title;
+    this.artist = artist;
+    this.durationSeconds = durationSeconds;
+  }
+
+  isLong() {
+    return this.durationSeconds &gt; 240;  // longer than 4 minutes
+  }
+
+  getMinutes() {
+    return Math.floor(this.durationSeconds / 60);
+  }
+}
+
+const track1 = new Track(&quot;Stairway to Heaven&quot;, &quot;Led Zeppelin&quot;, 482);
+console.log(track1.isLong());     // true
+console.log(track1.getMinutes()); // 8
+
+const track2 = new Track(&quot;Happy Birthday&quot;, &quot;Traditional&quot;, 20);
+console.log(track2.isLong());     // false
+console.log(track2.getMinutes()); // 0
+</code></pre>
+
+<h3>Classes vs Objects</h3>
+<p><strong>Object:</strong> A single instance with specific values</p>
+<pre class="codehilite"><code class="language-js">const alex = {name: &quot;Alex&quot;, phone: &quot;555-1234&quot;};
+</code></pre>
+
+<p><strong>Class:</strong> A blueprint for creating many objects</p>
+<pre class="codehilite"><code class="language-js">class Contact {
+  constructor(name, phone) {
+    this.name = name;
+    this.phone = phone;
+  }
+}
+
+const alex = new Contact(&quot;Alex&quot;, &quot;555-1234&quot;);
+const jordan = new Contact(&quot;Jordan&quot;, &quot;555-5678&quot;);
+</code></pre>
+
+<h3>Real-World Example: Recipe Class</h3>
+<pre class="codehilite"><code class="language-js">class Recipe {
+  constructor(name, servings, caloriesPerServing) {
+    this.name = name;
+    this.servings = servings;
+    this.caloriesPerServing = caloriesPerServing;
+  }
+
+  totalCalories() {
+    return this.servings * this.caloriesPerServing;
+  }
+
+  scale(factor) {
+    this.servings = this.servings * factor;
+  }
+
+  summary() {
+    return `${this.name}: ${this.servings} servings, ${this.totalCalories()} cal total`;
+  }
+}
+
+const soup = new Recipe(&quot;Tomato Soup&quot;, 4, 120);
+console.log(soup.summary());      // &quot;Tomato Soup: 4 servings, 480 cal total&quot;
+soup.scale(2);
+console.log(soup.servings);       // 8
+console.log(soup.totalCalories()); // 960
+</code></pre>
+
+<h3>The <code>this</code> Keyword</h3>
+<p>Inside a class method, <code>this</code> refers to the specific instance you're working with.</p>
+<pre class="codehilite"><code class="language-js">class Counter {
+  constructor(startValue) {
+    this.count = startValue;
+  }
+
+  increment() {
+    this.count++;  // this.count refers to THIS counter's count
+  }
+}
+
+const counter1 = new Counter(0);
+const counter2 = new Counter(10);
+
+counter1.increment();
+console.log(counter1.count);  // 1
+console.log(counter2.count);  // 10 (unchanged)
+</code></pre>
+
+<hr />
+<h2>Video Tutorial: Classes and Instances (20 minutes)</h2>
+<p>Watch: <code>assets/videos/06-classes-intro.mp4</code></p>
+<p>This video covers:
+- Defining classes with constructors
+- Creating instances with <code>new</code>
+- Adding methods to classes
+- Understanding <code>this</code>
+- Real examples with Contact and Track classes</p>
+<p>Pause and type each example.</p>
+<hr />
+<h2>Supplemental Practice: Building Classes (25 minutes)</h2>
+<h3>Scenario 1: Movie Class</h3>
+<pre class="codehilite"><code class="language-js">class Movie {
+  constructor(title, director, durationMinutes) {
+    this.title = title;
+    this.director = director;
+    this.durationMinutes = durationMinutes;
+  }
+
+  isFeatureLength() {
+    return this.durationMinutes &gt;= 60;
+  }
+
+  getSummary() {
+    return `${this.title} by ${this.director} (${this.durationMinutes} min)`;
+  }
+}
+
+const film = new Movie(&quot;Inception&quot;, &quot;Nolan&quot;, 148);
+console.log(film.isFeatureLength());  // true
+console.log(film.getSummary());       // &quot;Inception by Nolan (148 min)&quot;
+</code></pre>
+
+<h3>Scenario 2: Vehicle Class</h3>
+<pre class="codehilite"><code class="language-js">class Vehicle {
+  constructor(make, model, mileage) {
+    this.make = make;
+    this.model = model;
+    this.mileage = mileage;
+  }
+
+  drive(miles) {
+    this.mileage += miles;
+  }
+
+  isHighMileage() {
+    return this.mileage &gt; 100000;
+  }
+}
+
+const car = new Vehicle(&quot;Toyota&quot;, &quot;Camry&quot;, 45000);
+car.drive(5000);
+console.log(car.mileage);          // 50000
+console.log(car.isHighMileage());  // false
+</code></pre>
+
+<h3>Scenario 3: Scoreboard Class</h3>
+<pre class="codehilite"><code class="language-js">class Scoreboard {
+  constructor(team1, team2) {
+    this.team1 = team1;
+    this.team2 = team2;
+    this.score1 = 0;
+    this.score2 = 0;
+  }
+
+  addPoints(team, points) {
+    if (team === 1) this.score1 += points;
+    if (team === 2) this.score2 += points;
+  }
+
+  getLeader() {
+    if (this.score1 &gt; this.score2) return this.team1;
+    if (this.score2 &gt; this.score1) return this.team2;
+    return &quot;Tied&quot;;
+  }
+}
+
+const board = new Scoreboard(&quot;Lions&quot;, &quot;Tigers&quot;);
+board.addPoints(1, 7);
+board.addPoints(2, 3);
+console.log(board.score1);      // 7
+console.log(board.getLeader()); // &quot;Lions&quot;
+</code></pre>
+
+<hr />
+<h2>Knowledge Check Quiz (15 minutes)</h2>
+<p>Take the <strong>Session 6 Practice Quiz</strong> in Canvas.</p>
+<p>Focus on:
+- Class syntax and constructors
+- Creating instances with <code>new</code>
+- Using <code>this</code> in methods
+- Difference between classes and objects</p>
+<hr />
+<h2>Hands-On Assignment (60–90 minutes)</h2>
+<p>Open the assignment <strong>"Session 6: Building Your First Classes"</strong>.</p>
+<p>You will:
+- Define classes with constructors
+- Create multiple instances
+- Add methods that use <code>this</code>
+- Build practical classes for real scenarios</p>
+<hr />
+<h2>Wrap-Up (10 minutes)</h2>
+<h3>Key Takeaways</h3>
+<ul>
+<li><strong>Classes are blueprints</strong> for creating objects with shared structure.</li>
+<li><strong>Constructors</strong> initialize new instances with starting values.</li>
+<li><strong>Methods</strong> define what objects can do.</li>
+<li><strong><code>this</code></strong> refers to the specific instance you're working with.</li>
+<li><strong>Instances</strong> are individual objects created from a class.</li>
+</ul>
+<h3>How This Connects to Your Learning</h3>
+<p>Next session, you'll dive deeper into methods and learn about <strong>encapsulation</strong>—hiding internal details and controlling how data is accessed and modified.</p>
+<h3>Questions?</h3>
+<ul>
+<li>Try creating your own class for something you know (Movie, Recipe, Contact).</li>
+<li>Experiment with different methods.</li>
+<li>Ask your instructor if anything is unclear.</li>
+</ul>
+<p>Next session: <strong>Methods and Encapsulation</strong></p>
+</body>
+</html>

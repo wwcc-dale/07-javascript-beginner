@@ -1,16 +1,17 @@
 ---
-name: "Session 25 Quiz – Final Project: Professional Card Game"
-quiztype: practice_quiz
+allowed_attempts: 2
 indent: 1
-timelimit: 30
-allowedattempts: 2
-shuffleanswers: true
-showcorrectanswers: true
+name: 'Session 25 Quiz – Final Project: Professional Card Game'
 published: false
-questiongroups:
-  - bankid: PLACEHOLDER_REPLACE_AFTER_SYNC
-    pick: 16
-    pointsperquestion: 1
+question_groups:
+- bank: s25-final-project.bank
+  bank_id: 35301472
+  pick: 16
+  points_per_question: 1
+quiz_type: practice_quiz
+show_correct_answers: true
+shuffle_answers: true
+time_limit: 30
 ---
 
 # Session 25 Quiz – Final Project: Professional Card Game

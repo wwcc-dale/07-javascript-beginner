@@ -1,0 +1,873 @@
+<?xml version="1.0" ?>
+<questestinterop xmlns="http://www.imsglobal.org/xsd/ims_qtiasiv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/ims_qtiasiv1p2 http://www.imsglobal.org/xsd/ims_qtiasiv1p2p1.xsd">
+  <assessment ident="i87737840e4b78e6e" title="Session 9 Quiz – Inheritance and Method Overriding">
+    <qtimetadata>
+      <qtimetadatafield>
+        <fieldlabel>qmd_timelimit</fieldlabel>
+        <fieldentry>20</fieldentry>
+      </qtimetadatafield>
+      <qtimetadatafield>
+        <fieldlabel>cc_maxattempts</fieldlabel>
+        <fieldentry>3</fieldentry>
+      </qtimetadatafield>
+    </qtimetadata>
+    <section ident="root_section">
+      <section ident="i87737840e4b78e6e_questions" title="Session 9 Quiz – Inheritance and Method Overriding">
+        <item ident="i87737840e4b78e6e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What does the `extends` keyword do?&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Creates a subclass that inherits from a parent class</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Deletes a class</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Creates a new file</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Exports a class</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i87737840e4b78e6e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What is the `super()` function used for?&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Calls the parent class constructor</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Deletes the parent</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Creates a superclass</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Returns a value</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i87737840e4b78e6e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What is inheritance?&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">A mechanism where a class acquires properties and methods from another class</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">A type of loop</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">A way to delete classes</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">A debugging tool</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i87737840e4b78e6e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What will this code output? ```js class Animal { speak() { return &amp;quot;sound&amp;quot;; } } class Dog extends Animal { speak() { return &amp;quot;bark&amp;quot;; } } const dog = new Dog(); console.log(dog.speak()); ```&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">"bark"</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">"sound"</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Error</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">undefined</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i87737840e4b78e6e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What is method overriding?&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Providing a new implementation of a parent's method in the child class</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Deleting a method</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Calling a method twice</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">A syntax error</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i87737840e4b78e6e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What&amp;#x27;s the difference between &amp;quot;is-a&amp;quot; and &amp;quot;has-a&amp;quot; relationships?&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">"is-a" uses inheritance, "has-a" uses composition</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">They are the same</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">"is-a" is faster</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">"has-a" is deprecated</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i87737840e4b78e6e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;When should you use inheritance?&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Always</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Never</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">When there's a clear "is-a" relationship</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Only for math</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer2</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i87737840e4b78e6e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What is composition?&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">When a class contains instances of other classes</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">A type of inheritance</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">A looping method</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">A syntax error</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i87737840e4b78e6e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;Can a child class have additional properties not in the parent?&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Yes</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">No</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Only if you use special syntax</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Only numbers</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i87737840e4b78e6e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What does this represent? ```js class Car { constructor() { this.engine = new Engine(); } } ```&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Composition (Car has-an Engine)</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Inheritance (Car is-an Engine)</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">An error</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Method overriding</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i87737840e4b78e6e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>true_false_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;True or false: A child class inherits all parent methods.&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">True</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">False</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i87737840e4b78e6e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What&amp;#x27;s wrong with this code? ```js class Student extends Person { constructor(name, grade) { this.name = name; this.grade = grade; } } ```&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Missing super() call to parent constructor</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Nothing is wrong</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">extends is spelled wrong</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Cannot use this</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i87737840e4b78e6e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;Can you call a parent method from a child class?&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Yes, using super.methodName()</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">No, parent methods are hidden</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Only sometimes</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">You must override it</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i87737840e4b78e6e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;Which is better: inheritance or composition?&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">Always inheritance</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">Always composition</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Depends on the relationship (is-a vs has-a)</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">They are identical</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer2</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i87737840e4b78e6e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;What will this output? ```js class Person { constructor(name) { this.name = name; } } class Student extends Person { constructor(name, grade) { super(name); this.grade = grade; } } const s = new Student(&amp;quot;Alex&amp;quot;, 85); console.log(s.name); ```&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">"Alex"</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">undefined</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Error</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">85</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+        <item ident="i87737840e4b78e6e_q1" title="Question 1">
+          <itemmetadata>
+            <qtimetadata>
+              <qtimetadatafield>
+                <fieldlabel>cc_profile</fieldlabel>
+                <fieldentry>multiple_choice_question</fieldentry>
+              </qtimetadatafield>
+              <qtimetadatafield>
+                <fieldlabel>cc_weighting</fieldlabel>
+                <fieldentry>1.0</fieldentry>
+              </qtimetadatafield>
+            </qtimetadata>
+          </itemmetadata>
+          <presentation>
+            <material>
+              <mattext texttype="text/html">&lt;p&gt;Why might composition be preferred over inheritance?&lt;/p&gt;</mattext>
+            </material>
+            <response_lid ident="response1" rcardinality="Single">
+              <render_choice>
+                <response_label ident="answer0">
+                  <material>
+                    <mattext texttype="text/plain">More flexible, avoids deep inheritance hierarchies</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer1">
+                  <material>
+                    <mattext texttype="text/plain">It's always faster</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer2">
+                  <material>
+                    <mattext texttype="text/plain">Inheritance is deprecated</mattext>
+                  </material>
+                </response_label>
+                <response_label ident="answer3">
+                  <material>
+                    <mattext texttype="text/plain">Composition uses less memory</mattext>
+                  </material>
+                </response_label>
+              </render_choice>
+            </response_lid>
+          </presentation>
+          <resprocessing>
+            <outcomes>
+              <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+            </outcomes>
+            <respcondition continue="No">
+              <conditionvar>
+                <varequal respident="response1">answer0</varequal>
+              </conditionvar>
+              <setvar action="Set" varname="SCORE">100</setvar>
+            </respcondition>
+          </resprocessing>
+        </item>
+      </section>
+    </section>
+  </assessment>
+</questestinterop>

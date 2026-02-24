@@ -372,5 +372,180 @@
     "uploaded_at": "2026-02-01 23:17:55",
     "migration_id": 14213674,
     "bank_id": null
+  },
+  "question-banks/s1-javascript-basics.bank.md": {
+    "hash": "6d14ac44d4f2",
+    "bank_name": "Session 1: JavaScript Fundamentals",
+    "uploaded_at": "2026-02-21 08:53:32",
+    "migration_id": 14358934,
+    "bank_id": null
+  },
+  "question-banks/s2-functions.bank.md": {
+    "hash": "09c4ce208703",
+    "bank_name": "Session 2: Functions and Reusable Code",
+    "uploaded_at": "2026-02-21 07:31:12",
+    "migration_id": 14358400,
+    "bank_id": null
+  },
+  "question-banks/s3-arrays-objects.bank.md": {
+    "hash": "778ef2904600",
+    "bank_name": "Session 3: Arrays and Objects",
+    "uploaded_at": "2026-02-21 07:31:20",
+    "migration_id": 14358402,
+    "bank_id": null
+  },
+  "question-banks/s4-loops.bank.md": {
+    "hash": "915073f0a234",
+    "bank_name": "Session 4: Loops and Iteration",
+    "uploaded_at": "2026-02-21 07:31:29",
+    "migration_id": 14358404,
+    "bank_id": null
+  },
+  "question-banks/s5-algorithms.bank.md": {
+    "hash": "3ef691060ab8",
+    "bank_name": "Session 5: Algorithmic Thinking",
+    "uploaded_at": "2026-02-21 07:31:41",
+    "migration_id": 14358406,
+    "bank_id": null
+  },
+  "question-banks/s6-classes-intro.bank.md": {
+    "hash": "87fa2f9055b0",
+    "bank_name": "Session 6: Introduction to Classes",
+    "uploaded_at": "2026-02-21 07:31:47",
+    "migration_id": 14358408,
+    "bank_id": null
+  },
+  "question-banks/s7-math-encapsulation.bank.md": {
+    "hash": "0b51194524e3",
+    "bank_name": "Session 7: Math Methods and Encapsulation",
+    "uploaded_at": "2026-02-21 07:31:56",
+    "migration_id": 14358410,
+    "bank_id": null
+  },
+  "question-banks/s8-advanced-oop.bank.md": {
+    "hash": "2a1e5c6213bb",
+    "bank_name": "Session 8: Working with Multiple Objects",
+    "uploaded_at": "2026-02-21 07:32:02",
+    "migration_id": 14358412,
+    "bank_id": null
+  },
+  "question-banks/s9-inheritance.bank.md": {
+    "hash": "0a8543960755",
+    "bank_name": "Session 9: Inheritance and Composition",
+    "uploaded_at": "2026-02-21 07:32:13",
+    "migration_id": 14358414,
+    "bank_id": null
+  },
+  "question-banks/s10-advanced-arrays-nodejs.bank.md": {
+    "hash": "d67e74cb18d1",
+    "bank_name": "Session 10: Advanced Arrays and Node.js",
+    "uploaded_at": "2026-02-21 07:32:19",
+    "migration_id": 14358416,
+    "bank_id": null
+  },
+  "question-banks/s11-dom-basics.bank.md": {
+    "hash": "16902abe75d6",
+    "bank_name": "Session 11: HTML Structure and DOM Basics",
+    "uploaded_at": "2026-02-21 07:32:28",
+    "migration_id": 14358418,
+    "bank_id": null
+  },
+  "question-banks/s12-dom-creation.bank.md": {
+    "hash": "bfba77060505",
+    "bank_name": "Session 12: CSS Styling and DOM Creation",
+    "uploaded_at": "2026-02-21 07:32:37",
+    "migration_id": 14358420,
+    "bank_id": null
+  },
+  "question-banks/s13-css-manipulation.bank.md": {
+    "hash": "61b119b5eee7",
+    "bank_name": "Session 13: CSS Manipulation with JavaScript",
+    "uploaded_at": "2026-02-21 07:32:43",
+    "migration_id": 14358422,
+    "bank_id": null
+  },
+  "question-banks/s14-event-handling.bank.md": {
+    "hash": "e13b9e5a03fc",
+    "bank_name": "Session 14: DOM Manipulation and Selection",
+    "uploaded_at": "2026-02-21 07:32:50",
+    "migration_id": 14358424,
+    "bank_id": null
+  },
+  "question-banks/s15-event-handling.bank.md": {
+    "hash": "2883b920801b",
+    "bank_name": "Session 15: Event Handling and Forms",
+    "uploaded_at": "2026-02-21 07:32:56",
+    "migration_id": 14358426,
+    "bank_id": null
+  },
+  "question-banks/s16-card-deck.bank.md": {
+    "hash": "77ef7290f60f",
+    "bank_name": "Session 16: Card Game Foundation - Card and Deck Classes",
+    "uploaded_at": "2026-02-21 07:33:02",
+    "migration_id": 14358428,
+    "bank_id": null
+  },
+  "question-banks/s17-player-hand.bank.md": {
+    "hash": "d23ae35f9d8d",
+    "bank_name": "Session 17: Player and Hand Management",
+    "uploaded_at": "2026-02-21 07:33:09",
+    "migration_id": 14358430,
+    "bank_id": null
+  },
+  "question-banks/s18-game-ui.bank.md": {
+    "hash": "a7ad21b3d469",
+    "bank_name": "Session 18: Game State and UI Foundation",
+    "uploaded_at": "2026-02-21 07:33:16",
+    "migration_id": 14358432,
+    "bank_id": null
+  },
+  "question-banks/s19-events-animations.bank.md": {
+    "hash": "176a2e7a23ef",
+    "bank_name": "Session 19: Event Handling and Animations",
+    "uploaded_at": "2026-02-21 07:33:24",
+    "migration_id": 14358434,
+    "bank_id": null
+  },
+  "question-banks/s20-polish-testing.bank.md": {
+    "hash": "c839ce29e2ff",
+    "bank_name": "Session 20: Polish, Testing, and Deployment",
+    "uploaded_at": "2026-02-21 07:33:36",
+    "migration_id": 14358436,
+    "bank_id": null
+  },
+  "question-banks/s21-ai-strategies.bank.md": {
+    "hash": "a435cfd33035",
+    "bank_name": "Session 21: Advanced Game Features - AI Strategies",
+    "uploaded_at": "2026-02-21 07:33:47",
+    "migration_id": 14358438,
+    "bank_id": null
+  },
+  "question-banks/s22-storage-ui.bank.md": {
+    "hash": "cad1dd3a7233",
+    "bank_name": "Session 22: Local Storage and Game Persistence",
+    "uploaded_at": "2026-02-21 07:33:53",
+    "migration_id": 14358440,
+    "bank_id": null
+  },
+  "question-banks/s23-advanced-ui.bank.md": {
+    "hash": "53320f6b8eae",
+    "bank_name": "Session 23: Advanced UI - Settings, Themes, Leaderboards",
+    "uploaded_at": "2026-02-21 07:34:00",
+    "migration_id": 14358442,
+    "bank_id": null
+  },
+  "question-banks/s24-testing-quality.bank.md": {
+    "hash": "62990eb35570",
+    "bank_name": "Session 24: Testing, Debugging, and Code Quality",
+    "uploaded_at": "2026-02-21 07:34:06",
+    "migration_id": 14358444,
+    "bank_id": null
+  },
+  "question-banks/s25-final-project.bank.md": {
+    "hash": "80df5c814081",
+    "bank_name": "Session 25: Final Project - Complete Professional Card Game",
+    "uploaded_at": "2026-02-21 07:34:12",
+    "migration_id": 14358446,
+    "bank_id": null
   }
 }

@@ -28,49 +28,51 @@ Sometimes classes share common properties and behaviors. **Inheritance** lets yo
 ### Basic Inheritance
 
 ```js
-class Person {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
+class Appliance {
+  constructor(brand, powerWatts) {
+    this.brand = brand;
+    this.powerWatts = powerWatts;
   }
-  
-  introduce() {
-    return `Hi, I'm ${this.name}`;
+
+  describe() {
+    return `${this.brand} appliance, ${this.powerWatts}W`;
   }
 }
 
-class Student extends Person {
-  constructor(name, age, grade) {
-    super(name, age);  // Call parent constructor
-    this.grade = grade;
+class Refrigerator extends Appliance {
+  constructor(brand, powerWatts, liters) {
+    super(brand, powerWatts);  // Call parent constructor
+    this.liters = liters;
   }
-  
-  study() {
-    return `${this.name} is studying`;
+
+  cool() {
+    return `${this.brand} cooling ${this.liters}L`;
   }
 }
 
-const student = new Student("Alex", 20, 85);
-console.log(student.introduce()); // Inherited from Person
-console.log(student.study());     // Student-specific
+const fridge = new Refrigerator("Samsung", 150, 400);
+console.log(fridge.describe()); // Inherited from Appliance
+console.log(fridge.cool());     // Refrigerator-specific
 ```
 
 ### Overriding Methods
 
+A child class can replace a parent method with its own version.
+
 ```js
-class Employee extends Person {
-  constructor(name, age, position) {
-    super(name, age);
-    this.position = position;
+class Washer extends Appliance {
+  constructor(brand, powerWatts, loadKg) {
+    super(brand, powerWatts);
+    this.loadKg = loadKg;
   }
-  
-  introduce() {
-    return `Hi, I'm ${this.name}, ${this.position}`;
+
+  describe() {
+    return `${this.brand} washer, ${this.loadKg}kg load capacity`;
   }
 }
 
-const emp = new Employee("Jordan", 30, "Developer");
-console.log(emp.introduce()); // Overridden version
+const washer = new Washer("LG", 500, 8);
+console.log(washer.describe()); // Overridden version — Washer's own describe()
 ```
 
 ### Composition Over Inheritance
@@ -78,32 +80,40 @@ console.log(emp.introduce()); // Overridden version
 Sometimes composition (has-a) is better than inheritance (is-a).
 
 ```js
-class Engine {
-  start() {
-    return "Engine started";
+class Battery {
+  charge() {
+    return "Battery charging";
+  }
+
+  getLevel() {
+    return "80%";
   }
 }
 
-class Car {
-  constructor() {
-    this.engine = new Engine(); // Composition
+class Laptop {
+  constructor(brand) {
+    this.brand = brand;
+    this.battery = new Battery(); // Composition
   }
-  
-  start() {
-    return this.engine.start();
+
+  charge() {
+    return this.battery.charge();
   }
 }
+
+const laptop = new Laptop("Dell");
+console.log(laptop.charge()); // "Battery charging"
 ```
 
 ### When to Use Each
 
 **Inheritance:** When there's a clear "is-a" relationship
-- Student IS A Person
-- Employee IS A Person
+- Refrigerator IS AN Appliance
+- Washer IS AN Appliance
 
 **Composition:** When there's a "has-a" relationship
-- Car HAS AN Engine
-- Player HAS A Score
+- Laptop HAS A Battery
+- Playlist HAS Songs
 
 ---
 

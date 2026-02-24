@@ -1,0 +1,94 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Session 7: Encapsulation and Data Protection</title>
+</head>
+<body>
+<h1>Session 7: Encapsulation and Data Protection</h1>
+<p>Build classes with proper encapsulation, validation, and controlled data access.</p>
+<p><strong>Time:</strong> 60–90 minutes | <strong>Points:</strong> 20 | <strong>Submit:</strong> <code>07-assignment.js</code></p>
+<h2>Level 1 – Core Tasks (15 points)</h2>
+<h3>Challenge 1: BankAccount with Validation</h3>
+<pre class="codehilite"><code class="language-js">// TODO: Create a BankAccount class with:
+// - Constructor: owner, balance
+// - Properties: _owner, _balance (use underscore convention)
+// - Method deposit(amount): adds to balance if amount &gt; 0
+// - Method withdraw(amount): subtracts if amount &lt;= balance
+// - Getter for balance
+// Both methods should return true/false for success
+
+// Test:
+// const acc = new BankAccount(&quot;Alex&quot;, 1000);
+// acc.deposit(500);   // balance: 1500
+// acc.withdraw(2000); // fails, balance stays 1500
+</code></pre>
+
+<h3>Challenge 2: Product with Price Validation</h3>
+<pre class="codehilite"><code class="language-js">// TODO: Create a Product class with:
+// - Constructor: name, price, stock
+// - Properties: _name, _price, _stock
+// - Setter for price that rejects values &lt; 0
+// - Setter for stock that rejects values &lt; 0
+// - Getter for each property
+// - Method buy(quantity) that reduces stock if available
+
+// Test:
+// const item = new Product(&quot;Laptop&quot;, 999, 10);
+// item.price = -50;  // rejected
+// item.buy(3);       // stock becomes 7
+</code></pre>
+
+<h3>Challenge 3: User with Login Attempts</h3>
+<pre class="codehilite"><code class="language-js">// TODO: Create a User class with:
+// - Constructor: username, password
+// - Properties: _username, _password, _loginAttempts (starts at 0)
+// - Method attemptLogin(inputPassword):
+//   - If _loginAttempts &gt;= 3, return &quot;locked&quot;
+//   - If password matches, reset attempts and return &quot;success&quot;
+//   - If password wrong, increment attempts and return &quot;failed&quot;
+// - Method resetAttempts()
+
+// Test:
+// const user = new User(&quot;alex&quot;, &quot;secret123&quot;);
+// user.attemptLogin(&quot;wrong&quot;); // &quot;failed&quot;, attempts = 1
+// user.attemptLogin(&quot;wrong&quot;); // &quot;failed&quot;, attempts = 2
+</code></pre>
+
+<h3>Challenge 4: Temperature with Unit Conversion</h3>
+<pre class="codehilite"><code class="language-js">// TODO: Create a Temperature class with:
+// - Constructor: celsius
+// - Property: _celsius
+// - Getter celsius: returns _celsius
+// - Setter celsius: validates &gt; -273.15 (absolute zero)
+// - Getter fahrenheit: returns (celsius * 9/5) + 32
+// - Setter fahrenheit: converts to celsius and stores
+
+// Test:
+// const temp = new Temperature(0);
+// console.log(temp.fahrenheit); // 32
+// temp.fahrenheit = 212;
+// console.log(temp.celsius);    // 100
+</code></pre>
+
+<h2>Level 2 – Stretch (3 points)</h2>
+<h3>Challenge 5: ShoppingCart with Total</h3>
+<p>Create ShoppingCart class with:
+- Array of items (each item: {name, price, quantity})
+- Method addItem(name, price, quantity) with validation
+- Method removeItem(name)
+- Getter total that calculates sum</p>
+<h3>Challenge 6: Age Validation</h3>
+<p>Create Person class with _age property and setter that only accepts ages 0-120.</p>
+<h2>Level 3 – Advanced (2 points)</h2>
+<h3>Challenge 7: Complete Validation System</h3>
+<p>Create a Student class with:
+- Properties: _name, _email, _grades (array)
+- Setters that validate:
+  - name: must be non-empty string
+  - email: must contain "@"
+  - grades: array of numbers 0-100
+- Method addGrade(grade) with validation
+- Getter average that calculates grade average
+- Method getStatus() returns "Passing" or "Failing" based on average</p>
+</body>
+</html>

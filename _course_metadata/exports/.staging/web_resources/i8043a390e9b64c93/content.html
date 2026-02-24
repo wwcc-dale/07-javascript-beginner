@@ -1,0 +1,95 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Session 20: GameRunner and Full Integration</title>
+</head>
+<body>
+<h1>Session 20: GameRunner and Full Integration</h1>
+<p>Build <code>GameRunner.js</code>, write <code>app.js</code>, and assemble a complete, playable Spades game in <code>index.html</code>.</p>
+<p><strong>Time:</strong> 60–90 minutes | <strong>Points:</strong> 20 | <strong>Submit:</strong> ZIP containing all JS files, <code>index.html</code>, and <code>style.css</code></p>
+<hr />
+<h2>Level 1 – Core (15 pts)</h2>
+<h3>Challenge 1: <code>GameRunner</code> Constructor and <code>delay()</code></h3>
+<p>Create <code>GameRunner.js</code> with:</p>
+<ul>
+<li><code>constructor(game, board)</code> — stores <code>this.game</code>, <code>this.board</code>, and <code>this.running = false</code></li>
+<li><code>delay(ms)</code> — returns <code>new Promise(resolve =&gt; setTimeout(resolve, ms))</code></li>
+<li><code>stop()</code> — sets <code>this.running = false</code></li>
+</ul>
+<h3>Challenge 2: <code>async collectBid(player)</code></h3>
+<p>Add this method to <code>GameRunner</code>:</p>
+<ul>
+<li>If <code>player.isAI</code>: call <code>player.getBidDecision(player.hand)</code>, await <code>delay(400)</code>, return the bid</li>
+<li>If human: update status via <code>board.setStatus(...)</code>, return <code>await board.getBidFromUser(player.hand)</code></li>
+</ul>
+<h3>Challenge 3: <code>async playTrick()</code></h3>
+<p>Add this method to <code>GameRunner</code>. For each of the 4 players (starting from <code>this.game.trickLeaderIndex</code>):</p>
+<ol>
+<li>Get valid cards from <code>this.game.getValidCards(player)</code></li>
+<li>If AI: update status, await <code>delay(600)</code>, call <code>player.getCardDecision(validCards, trickCards)</code></li>
+<li>If human: update status, await <code>board.getCardFromUser(player.hand, validCards)</code></li>
+<li>Call <code>this.game.playCard(player, card)</code></li>
+<li>Call <code>board.showCardInTrick(playerIndex, player, card)</code> and <code>board.updatePlayerHand(...)</code></li>
+<li>Log the play</li>
+</ol>
+<p>After all 4 plays:
+- Call <code>this.game.determineTrickWinner()</code> and <code>winner.incrementTricks()</code>
+- Show the winner via <code>board.showTrickWinner(winner.name)</code>
+- Update bid info, log the result
+- Set <code>this.game.trickLeaderIndex</code> to the winner's index
+- Call <code>this.game.clearTrick()</code></p>
+<h3>Challenge 4: <code>async playRound()</code> and <code>async run()</code></h3>
+<p>Implement <code>playRound()</code> to:
+1. Call <code>this.game.startRound()</code> and update the board
+2. Run the bidding loop (4 players from <code>trickLeaderIndex</code>)
+3. Run 13 trick loops using <code>await this.playTrick()</code>; after each trick, <code>await delay(900)</code> then <code>board.clearTrick()</code>
+4. Call <code>this.game.scoreRound()</code> and log the results</p>
+<p>Implement <code>run()</code> with:
+- <code>while (this.running)</code> loop calling <code>await this.playRound()</code>
+- After each round, check <code>this.game.isGameOver(500)</code>:
+  - If <code>isTied(500)</code>: log a tie message, <code>await delay(1500)</code>, and <code>continue</code>
+  - Otherwise: display the winner, log final scores, and <code>break</code>
+- <code>await delay(1500)</code> between rounds</p>
+<h3>Challenge 5: <code>app.js</code> and <code>index.html</code></h3>
+<p>Write <code>app.js</code> that:
+1. Creates the four players: <code>Player('You', false)</code>, <code>AIPlayer('West')</code>, <code>AIPlayer('Partner')</code>, <code>AIPlayer('East')</code>
+2. Creates <code>SpadesGame</code>, <code>GameBoard</code>, and <code>GameRunner</code>
+3. Calls <code>runner.run()</code></p>
+<p>Write <code>index.html</code> that:
+- Links to <code>style.css</code>
+- Has all required DOM elements: <code>#game-status</code>, <code>#player-hand</code>, <code>#bidding-area</code>, <code>#bid-buttons</code>, <code>#bid-hand-summary</code>, <code>#play-hint</code>, <code>#trick-winner-msg</code>, <code>#trick-number</code>, <code>#log-content</code>, plus trick card slots (<code>#trick-card-0</code> through <code>#trick-card-3</code>), team scoreboard elements
+- Loads scripts in dependency order: <code>Card.js</code> → <code>Deck.js</code> → <code>Player.js</code> → <code>AIPlayer.js</code> → <code>SpadesGame.js</code> → <code>GameBoard.js</code> → <code>GameRunner.js</code> → <code>app.js</code></p>
+<hr />
+<h2>Level 2 – Stretch (3 pts)</h2>
+<h3>Challenge 6: Compass Layout</h3>
+<p>Arrange the four player positions in a compass layout (Partner at top, West left, East right, You at bottom) using CSS <code>flexbox</code> or <code>grid</code>. The trick area should be in the center with card slots for each player direction.</p>
+<h3>Challenge 7: Stop Button</h3>
+<p>Add a "Stop Game" button to <code>index.html</code> and wire it in <code>app.js</code>:</p>
+<pre class="codehilite"><code class="language-js">document.getElementById('stop-btn').addEventListener('click', () =&gt; {
+  runner.stop();
+  board.setStatus('Game stopped by user.');
+});
+</code></pre>
+
+<hr />
+<h2>Level 3 – Advanced (2 pts)</h2>
+<h3>Challenge 8: Complete Playable Game</h3>
+<p>The game must be fully playable from start to finish:</p>
+<ul>
+<li>Each round deals, bids, and plays 13 tricks</li>
+<li>Human player sees their hand, highlighted valid cards, and clicks to play</li>
+<li>AI players play automatically with brief delays</li>
+<li>Scores update after each round</li>
+<li>Game ends correctly at 500 points (with tie-break support)</li>
+<li>No JavaScript errors in the browser console during normal play</li>
+<li>Reloading the page starts a fresh game</li>
+</ul>
+<p><strong>Testing checklist:</strong>
+- Each player receives exactly 13 cards per round
+- Human bid buttons appear and resolve correctly
+- Valid cards are highlighted; invalid cards are unclickable
+- Trick winner is shown before the next trick starts
+- Scores accumulate correctly across multiple rounds
+- Game-over message appears with the winning team name</p>
+</body>
+</html>

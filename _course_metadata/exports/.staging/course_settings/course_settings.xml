@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<course xmlns="http://canvas.instructure.com/xsd/cccv1p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="cc_12997d29f83f" xsi:schemaLocation="http://canvas.instructure.com/xsd/cccv1p0 https://canvas.instructure.com/xsd/cccv1p0.xsd">
+  <title>CS 140 Javascript (Cards)</title>
+  <course_code>CS 140 Javascript (Cards)</course_code>
+  <start_at/>
+  <conclude_at/>
+  <is_public>false</is_public>
+  <allow_student_wiki_edits>false</allow_student_wiki_edits>
+  <lock_all_announcements>false</lock_all_announcements>
+  <default_view>modules</default_view>
+  <workflow_state>available</workflow_state>
+</course>

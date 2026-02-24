@@ -1,0 +1,719 @@
+<?xml version="1.0" ?>
+<manifest xmlns="http://www.imsglobal.org/xsd/imsccv1p1/imscp_v1p1" xmlns:lomimscc="http://ltsc.ieee.org/xsd/imsccv1p1/LOM/manifest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="cc_12997d29f83f" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsccv1p1/imscp_v1p1 http://www.imsglobal.org/profile/cc/ccv1p1/ccv1p1_imscp_v1p2_v1p0.xsd http://ltsc.ieee.org/xsd/imsccv1p1/LOM/resource http://www.imsglobal.org/profile/cc/ccv1p1/LOM/ccv1p1_lomresource_v1p0.xsd http://ltsc.ieee.org/xsd/imsccv1p1/LOM/manifest http://www.imsglobal.org/profile/cc/ccv1p1/LOM/ccv1p1_lommanifest_v1p0.xsd">
+  <metadata>
+    <schema>IMS Common Cartridge</schema>
+    <schemaversion>1.1.0</schemaversion>
+    <lomimscc:lom>
+      <lomimscc:general>
+        <lomimscc:title>
+          <lomimscc:string>CS 140 Javascript (Cards)</lomimscc:string>
+        </lomimscc:title>
+      </lomimscc:general>
+    </lomimscc:lom>
+  </metadata>
+  <organizations>
+    <organization identifier="org_1" structure="rooted-hierarchy">
+      <item identifier="LearningModules">
+        <item identifier="i59b7eaa042eaeab3">
+          <title>planning</title>
+          <item identifier="item_i9668a072ad43c316" identifierref="i9668a072ad43c316">
+            <title>Test Link</title>
+          </item>
+        </item>
+        <item identifier="i5f2584298ad5f3c2">
+          <title>Foundations</title>
+          <item identifier="item_icba739462ee675f9" identifierref="icba739462ee675f9">
+            <title>Session 1: JavaScript Fundamentals</title>
+          </item>
+          <item identifier="item_i7924be4ab0aae5bf" identifierref="i7924be4ab0aae5bf">
+            <title>Session 1 Quiz – Variables, Data Types, and Operators</title>
+          </item>
+          <item identifier="item_i02c0c59b9ac71d40" identifierref="i02c0c59b9ac71d40">
+            <title>Session 1: Comparing Scores and Totals</title>
+          </item>
+          <item identifier="item_ib5f18b26ff41f453" identifierref="ib5f18b26ff41f453">
+            <title>Session 2: Functions and Reusable Code</title>
+          </item>
+          <item identifier="item_i2ea3e5e3ba48fc84" identifierref="i2ea3e5e3ba48fc84">
+            <title>Session 2 Quiz – Control Flow (if/else, loops)</title>
+          </item>
+          <item identifier="item_i463cb5775eae3110" identifierref="i463cb5775eae3110">
+            <title>Session 2: Building Functions for Everyday Tasks</title>
+          </item>
+          <item identifier="item_i1d2df1f460f894ce" identifierref="i1d2df1f460f894ce">
+            <title>Session 3: Arrays and Objects</title>
+          </item>
+          <item identifier="item_ib855fa949bd0f0d1" identifierref="ib855fa949bd0f0d1">
+            <title>Session 3 Quiz – Functions and Scope</title>
+          </item>
+          <item identifier="item_id1a5b19605616ce7" identifierref="id1a5b19605616ce7">
+            <title>Session 3: Building Objects for Real Data</title>
+          </item>
+          <item identifier="item_i0901349fbcf2a3da" identifierref="i0901349fbcf2a3da">
+            <title>Session 4: Loops and Iteration</title>
+          </item>
+          <item identifier="item_iea8faf3f56d43eed" identifierref="iea8faf3f56d43eed">
+            <title>Session 4 Quiz – Arrays and Array Methods</title>
+          </item>
+          <item identifier="item_i955ec1213647dbeb" identifierref="i955ec1213647dbeb">
+            <title>Session 4: Processing Data with Loops</title>
+          </item>
+          <item identifier="item_i8ad760ab74df911f" identifierref="i8ad760ab74df911f">
+            <title>Session 5: Algorithmic Thinking</title>
+          </item>
+          <item identifier="item_i498a76e8734468c9" identifierref="i498a76e8734468c9">
+            <title>Session 5 Quiz – Objects and Object Methods</title>
+          </item>
+          <item identifier="item_i4d7f77638e7c3b30" identifierref="i4d7f77638e7c3b30">
+            <title>Session 5: Solving Problems with Algorithms</title>
+          </item>
+        </item>
+        <item identifier="i8b584bcad42c8d4f">
+          <title>Object Oriented Programming</title>
+          <item identifier="item_i01463ec5ce1694f6" identifierref="i01463ec5ce1694f6">
+            <title>Session 6: Introduction to Classes</title>
+          </item>
+          <item identifier="item_i533ffe7d29f4a1d1" identifierref="i533ffe7d29f4a1d1">
+            <title>Session 6 Quiz – String Methods and Template Literals</title>
+          </item>
+          <item identifier="item_i51dc37ec7e398e44" identifierref="i51dc37ec7e398e44">
+            <title>Session 6: Building Your First Classes</title>
+          </item>
+          <item identifier="item_i950205cb6a2c9014" identifierref="i950205cb6a2c9014">
+            <title>Session 7: Math Methods and Encapsulation</title>
+          </item>
+          <item identifier="item_i3e878c1aab5557d1" identifierref="i3e878c1aab5557d1">
+            <title>Session 7 Quiz – Math and Number Methods</title>
+          </item>
+          <item identifier="item_i513e2355a247f06d" identifierref="i513e2355a247f06d">
+            <title>Session 7: Encapsulation and Data Protection</title>
+          </item>
+          <item identifier="item_i53abfbcc2cffd0d1" identifierref="i53abfbcc2cffd0d1">
+            <title>Session 8: Working with Multiple Objects</title>
+          </item>
+          <item identifier="item_ib0c1b95b4d0a29c2" identifierref="ib0c1b95b4d0a29c2">
+            <title>Session 8 Quiz – Classes and Object-Oriented Programming</title>
+          </item>
+          <item identifier="item_i11248ee23a727338" identifierref="i11248ee23a727338">
+            <title>Session 8: Library Management System</title>
+          </item>
+          <item identifier="item_ic38ace5c1a7261c9" identifierref="ic38ace5c1a7261c9">
+            <title>Session 9: Inheritance and Composition</title>
+          </item>
+          <item identifier="item_i87737840e4b78e6e" identifierref="i87737840e4b78e6e">
+            <title>Session 9 Quiz – Inheritance and Method Overriding</title>
+          </item>
+          <item identifier="item_i196274b620ac5cd5" identifierref="i196274b620ac5cd5">
+            <title>Session 9: Inheritance and Composition Patterns</title>
+          </item>
+          <item identifier="item_i0baec4cf9d809ca0" identifierref="i0baec4cf9d809ca0">
+            <title>Session 10: Advanced Array Methods and Node.js Modules</title>
+          </item>
+          <item identifier="item_i999b7972dcfa3a85" identifierref="i999b7972dcfa3a85">
+            <title>Session 10 Quiz – Advanced Array and Object Techniques</title>
+          </item>
+          <item identifier="item_i5cea1ebe55ee323c" identifierref="i5cea1ebe55ee323c">
+            <title>Session 10: Building with Node.js and Modules</title>
+          </item>
+        </item>
+        <item identifier="ibfb8fa9d6071b0b9">
+          <title>HTML, CSS and DOM Interactions</title>
+          <item identifier="item_i6f932875923e8408" identifierref="i6f932875923e8408">
+            <title>Session 11: JavaScript and the DOM</title>
+          </item>
+          <item identifier="item_i5315a91072b3c31d" identifierref="i5315a91072b3c31d">
+            <title>Session 11: DOM Selection and Modification</title>
+          </item>
+          <item identifier="item_i5ac0566cca104465" identifierref="i5ac0566cca104465">
+            <title>Session 12: DOM Manipulation and Event Basics</title>
+          </item>
+          <item identifier="item_iefae68d3c0615b43" identifierref="iefae68d3c0615b43">
+            <title>Session 12 Quiz – CSS Styling and Selectors</title>
+          </item>
+          <item identifier="item_i0a03213d8a3beabd" identifierref="i0a03213d8a3beabd">
+            <title>Session 12: Dynamic Content Builder</title>
+          </item>
+          <item identifier="item_if958ad15911f3e23" identifierref="if958ad15911f3e23">
+            <title>Session 12 Practice Quiz</title>
+          </item>
+          <item identifier="item_i8b63080ad7e5c7f6" identifierref="i8b63080ad7e5c7f6">
+            <title>Session 13: CSS Manipulation with JavaScript</title>
+          </item>
+          <item identifier="item_i3894067069f259f9" identifierref="i3894067069f259f9">
+            <title>Session 13 Quiz – Responsive Design and Media Queries</title>
+          </item>
+          <item identifier="item_i59c254bc88bbf938" identifierref="i59c254bc88bbf938">
+            <title>Session 13: Dynamic Styling and Themes</title>
+          </item>
+          <item identifier="item_i5ad1b3999cddc9d4" identifierref="i5ad1b3999cddc9d4">
+            <title>Session 14: Event Handling and Interactivity</title>
+          </item>
+          <item identifier="item_i4f987df1591f8100" identifierref="i4f987df1591f8100">
+            <title>Session 14 Quiz – DOM Manipulation and Selection</title>
+          </item>
+          <item identifier="item_i7890257e58748dfe" identifierref="i7890257e58748dfe">
+            <title>Session 14: Interactive Applications</title>
+          </item>
+          <item identifier="item_i7a1e10f06d62d4fc" identifierref="i7a1e10f06d62d4fc">
+            <title>Session 15: Midterm Review and Assessment</title>
+          </item>
+          <item identifier="item_i2038a080a34849f8" identifierref="i2038a080a34849f8">
+            <title>Session 15 Quiz – Event Handling and Forms</title>
+          </item>
+        </item>
+        <item identifier="ib064a4be914fd9f4">
+          <title>Card Game Implementation</title>
+          <item identifier="item_i3e6a2ad5ecb7b309" identifierref="i3e6a2ad5ecb7b309">
+            <title>Session 16: Classes, Constructors, and Collections</title>
+          </item>
+          <item identifier="item_i11e0b0b012a6daa2" identifierref="i11e0b0b012a6daa2">
+            <title>Session 16 Quiz – Card Game Foundation (Card &amp; Deck)</title>
+          </item>
+          <item identifier="item_idac212dbea691e34" identifierref="idac212dbea691e34">
+            <title>Session 16: Card and Deck Implementation</title>
+          </item>
+          <item identifier="item_i24a61e54423d176d" identifierref="i24a61e54423d176d">
+            <title>Session 17: Inheritance, Subclasses, and Object Graphs</title>
+          </item>
+          <item identifier="item_i6498f3711970889a" identifierref="i6498f3711970889a">
+            <title>Session 17 Quiz – Player and Hand Management</title>
+          </item>
+          <item identifier="item_if7bc0ac0576db189" identifierref="if7bc0ac0576db189">
+            <title>Session 17: Player, AIPlayer, and Dealing</title>
+          </item>
+          <item identifier="item_ifd5a2c65cecd2f98" identifierref="ifd5a2c65cecd2f98">
+            <title>Session 18: Filtering, Conditionals, and State Transitions</title>
+          </item>
+          <item identifier="item_i52cc8c430bd2966e" identifierref="i52cc8c430bd2966e">
+            <title>Session 18 Quiz – Game State and UI Foundation</title>
+          </item>
+          <item identifier="item_i2d2a76c7b5c376b9" identifierref="i2d2a76c7b5c376b9">
+            <title>Session 18: Spades Rules Implementation</title>
+          </item>
+          <item identifier="item_i5cb6ff94103a1b11" identifierref="i5cb6ff94103a1b11">
+            <title>Session 19: Accumulation, Conditional Scoring, and Promise-Based Input</title>
+          </item>
+          <item identifier="item_ife3102bf8898d736" identifierref="ife3102bf8898d736">
+            <title>Session 19 Quiz – Event Handling and Animations</title>
+          </item>
+          <item identifier="item_i2ff6d29fe0c93ac9" identifierref="i2ff6d29fe0c93ac9">
+            <title>Session 19: Scoring and GameBoard</title>
+          </item>
+          <item identifier="item_if6090573002de67c" identifierref="if6090573002de67c">
+            <title>Session 20: Async/Await and Orchestrating Multi-Step Processes</title>
+          </item>
+          <item identifier="item_iada909e97cdfaf50" identifierref="iada909e97cdfaf50">
+            <title>Session 20 Quiz – Polish, Testing, and Deployment</title>
+          </item>
+          <item identifier="item_i8043a390e9b64c93" identifierref="i8043a390e9b64c93">
+            <title>Session 20: GameRunner and Full Integration</title>
+          </item>
+        </item>
+        <item identifier="i1e34188a911dfaa0">
+          <title>Card Game Advanced Features</title>
+          <item identifier="item_i43c18a468733062c" identifierref="i43c18a468733062c">
+            <title>Session 21: Decision Trees and Heuristic AI</title>
+          </item>
+          <item identifier="item_i094c08830355844b" identifierref="i094c08830355844b">
+            <title>Session 21 Quiz – AI Strategies</title>
+          </item>
+          <item identifier="item_ia6780493d59ef0cf" identifierref="ia6780493d59ef0cf">
+            <title>Session 21: Improving the AIPlayer</title>
+          </item>
+          <item identifier="item_i447f1d569262c3ee" identifierref="i447f1d569262c3ee">
+            <title>Session 22: localStorage — Persisting Data Across Sessions</title>
+          </item>
+          <item identifier="item_icf5d5b6f63f98e00" identifierref="icf5d5b6f63f98e00">
+            <title>Session 22: Persistence and Stats</title>
+          </item>
+          <item identifier="item_i9a628b7000944422" identifierref="i9a628b7000944422">
+            <title>Session 23: CSS Custom Properties, Theming, and Transitions</title>
+          </item>
+          <item identifier="item_ia44a4b80adb83e9c" identifierref="ia44a4b80adb83e9c">
+            <title>Session 22: Persistence and Stats</title>
+          </item>
+          <item identifier="item_i74228d76e3064bcb" identifierref="i74228d76e3064bcb">
+            <title>Session 23 Quiz – Advanced UI (Settings, Themes, Leaderboards)</title>
+          </item>
+          <item identifier="item_i2549865fcb35bbe5" identifierref="i2549865fcb35bbe5">
+            <title>Session 23: Visual Polish</title>
+          </item>
+          <item identifier="item_iec61aa66f41334c5" identifierref="iec61aa66f41334c5">
+            <title>Session 24: ES6 Modules and Professional Code Organization</title>
+          </item>
+          <item identifier="item_i94bb2c839dec4c42" identifierref="i94bb2c839dec4c42">
+            <title>Session 25: Final Project — Spades</title>
+          </item>
+          <item identifier="item_ie3a787cd5ecf68af" identifierref="ie3a787cd5ecf68af">
+            <title>Session 25 Quiz – Final Project: Professional Card Game</title>
+          </item>
+          <item identifier="item_i724335b2ac81f61a" identifierref="i724335b2ac81f61a">
+            <title>Session 25: Final Project — Complete Spades Game</title>
+          </item>
+          <item identifier="item_i5674d7216aefa273" identifierref="i5674d7216aefa273">
+            <title>Session 22: Local Storage and UI Enhancements</title>
+          </item>
+          <item identifier="item_i69b3e1bf262274d2" identifierref="i69b3e1bf262274d2">
+            <title>Session 24: Code Modularization and Project Structure</title>
+          </item>
+          <item identifier="item_i4eecde3b844ac117" identifierref="i4eecde3b844ac117">
+            <title>Session 22: Local Storage and Game Persistence</title>
+          </item>
+          <item identifier="item_i1e79b6ced1deb390" identifierref="i1e79b6ced1deb390">
+            <title>Session 22 Quiz – Local Storage and Game Persistence</title>
+          </item>
+          <item identifier="item_i753e399d08d57785" identifierref="i753e399d08d57785">
+            <title>Session 22: Add Data Persistence</title>
+          </item>
+          <item identifier="item_i15225d5ff9804102" identifierref="i15225d5ff9804102">
+            <title>Session 24: Testing, Debugging, and Code Quality</title>
+          </item>
+          <item identifier="item_if3d27573e5513c9b" identifierref="if3d27573e5513c9b">
+            <title>Session 24 Quiz – Testing, Debugging, and Code Quality</title>
+          </item>
+          <item identifier="item_i3e4b4bc4d92f4d07" identifierref="i3e4b4bc4d92f4d07">
+            <title>Session 24: Write Tests and Documentation</title>
+          </item>
+        </item>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="cc_12997d29f83f_settings" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="course_settings/canvas_export.txt">
+      <file href="course_settings/module_meta.xml"/>
+      <file href="course_settings/canvas_export.txt"/>
+      <file href="course_settings/course_settings.xml"/>
+      <file href="course_settings/assignment_groups.xml"/>
+    </resource>
+    <resource identifier="icba739462ee675f9" type="webcontent" href="wiki_content/icba739462ee675f9.html">
+      <file href="wiki_content/icba739462ee675f9.html"/>
+    </resource>
+    <resource identifier="ib5f18b26ff41f453" type="webcontent" href="wiki_content/ib5f18b26ff41f453.html">
+      <file href="wiki_content/ib5f18b26ff41f453.html"/>
+    </resource>
+    <resource identifier="i1d2df1f460f894ce" type="webcontent" href="wiki_content/i1d2df1f460f894ce.html">
+      <file href="wiki_content/i1d2df1f460f894ce.html"/>
+    </resource>
+    <resource identifier="i0901349fbcf2a3da" type="webcontent" href="wiki_content/i0901349fbcf2a3da.html">
+      <file href="wiki_content/i0901349fbcf2a3da.html"/>
+    </resource>
+    <resource identifier="i8ad760ab74df911f" type="webcontent" href="wiki_content/i8ad760ab74df911f.html">
+      <file href="wiki_content/i8ad760ab74df911f.html"/>
+    </resource>
+    <resource identifier="i01463ec5ce1694f6" type="webcontent" href="wiki_content/i01463ec5ce1694f6.html">
+      <file href="wiki_content/i01463ec5ce1694f6.html"/>
+    </resource>
+    <resource identifier="i950205cb6a2c9014" type="webcontent" href="wiki_content/i950205cb6a2c9014.html">
+      <file href="wiki_content/i950205cb6a2c9014.html"/>
+    </resource>
+    <resource identifier="i53abfbcc2cffd0d1" type="webcontent" href="wiki_content/i53abfbcc2cffd0d1.html">
+      <file href="wiki_content/i53abfbcc2cffd0d1.html"/>
+    </resource>
+    <resource identifier="ic38ace5c1a7261c9" type="webcontent" href="wiki_content/ic38ace5c1a7261c9.html">
+      <file href="wiki_content/ic38ace5c1a7261c9.html"/>
+    </resource>
+    <resource identifier="i0baec4cf9d809ca0" type="webcontent" href="wiki_content/i0baec4cf9d809ca0.html">
+      <file href="wiki_content/i0baec4cf9d809ca0.html"/>
+    </resource>
+    <resource identifier="i6f932875923e8408" type="webcontent" href="wiki_content/i6f932875923e8408.html">
+      <file href="wiki_content/i6f932875923e8408.html"/>
+    </resource>
+    <resource identifier="i5ac0566cca104465" type="webcontent" href="wiki_content/i5ac0566cca104465.html">
+      <file href="wiki_content/i5ac0566cca104465.html"/>
+    </resource>
+    <resource identifier="i8b63080ad7e5c7f6" type="webcontent" href="wiki_content/i8b63080ad7e5c7f6.html">
+      <file href="wiki_content/i8b63080ad7e5c7f6.html"/>
+    </resource>
+    <resource identifier="i5ad1b3999cddc9d4" type="webcontent" href="wiki_content/i5ad1b3999cddc9d4.html">
+      <file href="wiki_content/i5ad1b3999cddc9d4.html"/>
+    </resource>
+    <resource identifier="i7a1e10f06d62d4fc" type="webcontent" href="wiki_content/i7a1e10f06d62d4fc.html">
+      <file href="wiki_content/i7a1e10f06d62d4fc.html"/>
+    </resource>
+    <resource identifier="i3e6a2ad5ecb7b309" type="webcontent" href="wiki_content/i3e6a2ad5ecb7b309.html">
+      <file href="wiki_content/i3e6a2ad5ecb7b309.html"/>
+    </resource>
+    <resource identifier="i24a61e54423d176d" type="webcontent" href="wiki_content/i24a61e54423d176d.html">
+      <file href="wiki_content/i24a61e54423d176d.html"/>
+    </resource>
+    <resource identifier="ifd5a2c65cecd2f98" type="webcontent" href="wiki_content/ifd5a2c65cecd2f98.html">
+      <file href="wiki_content/ifd5a2c65cecd2f98.html"/>
+    </resource>
+    <resource identifier="i5cb6ff94103a1b11" type="webcontent" href="wiki_content/i5cb6ff94103a1b11.html">
+      <file href="wiki_content/i5cb6ff94103a1b11.html"/>
+    </resource>
+    <resource identifier="if6090573002de67c" type="webcontent" href="wiki_content/if6090573002de67c.html">
+      <file href="wiki_content/if6090573002de67c.html"/>
+    </resource>
+    <resource identifier="i43c18a468733062c" type="webcontent" href="wiki_content/i43c18a468733062c.html">
+      <file href="wiki_content/i43c18a468733062c.html"/>
+    </resource>
+    <resource identifier="i447f1d569262c3ee" type="webcontent" href="wiki_content/i447f1d569262c3ee.html">
+      <file href="wiki_content/i447f1d569262c3ee.html"/>
+    </resource>
+    <resource identifier="i9a628b7000944422" type="webcontent" href="wiki_content/i9a628b7000944422.html">
+      <file href="wiki_content/i9a628b7000944422.html"/>
+    </resource>
+    <resource identifier="iec61aa66f41334c5" type="webcontent" href="wiki_content/iec61aa66f41334c5.html">
+      <file href="wiki_content/iec61aa66f41334c5.html"/>
+    </resource>
+    <resource identifier="i94bb2c839dec4c42" type="webcontent" href="wiki_content/i94bb2c839dec4c42.html">
+      <file href="wiki_content/i94bb2c839dec4c42.html"/>
+    </resource>
+    <resource identifier="i5674d7216aefa273" type="webcontent" href="wiki_content/i5674d7216aefa273.html">
+      <file href="wiki_content/i5674d7216aefa273.html"/>
+    </resource>
+    <resource identifier="i69b3e1bf262274d2" type="webcontent" href="wiki_content/i69b3e1bf262274d2.html">
+      <file href="wiki_content/i69b3e1bf262274d2.html"/>
+    </resource>
+    <resource identifier="i4eecde3b844ac117" type="webcontent" href="wiki_content/i4eecde3b844ac117.html">
+      <file href="wiki_content/i4eecde3b844ac117.html"/>
+    </resource>
+    <resource identifier="i15225d5ff9804102" type="webcontent" href="wiki_content/i15225d5ff9804102.html">
+      <file href="wiki_content/i15225d5ff9804102.html"/>
+    </resource>
+    <resource identifier="i9668a072ad43c316" type="imswl_xmlv1p1" href="https://google.com"/>
+    <resource identifier="i02c0c59b9ac71d40" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/i02c0c59b9ac71d40/content.html">
+      <file href="web_resources/i02c0c59b9ac71d40/content.html"/>
+      <file href="web_resources/i02c0c59b9ac71d40/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="i463cb5775eae3110" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/i463cb5775eae3110/content.html">
+      <file href="web_resources/i463cb5775eae3110/content.html"/>
+      <file href="web_resources/i463cb5775eae3110/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="id1a5b19605616ce7" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/id1a5b19605616ce7/content.html">
+      <file href="web_resources/id1a5b19605616ce7/content.html"/>
+      <file href="web_resources/id1a5b19605616ce7/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="i955ec1213647dbeb" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/i955ec1213647dbeb/content.html">
+      <file href="web_resources/i955ec1213647dbeb/content.html"/>
+      <file href="web_resources/i955ec1213647dbeb/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="i4d7f77638e7c3b30" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/i4d7f77638e7c3b30/content.html">
+      <file href="web_resources/i4d7f77638e7c3b30/content.html"/>
+      <file href="web_resources/i4d7f77638e7c3b30/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="i51dc37ec7e398e44" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/i51dc37ec7e398e44/content.html">
+      <file href="web_resources/i51dc37ec7e398e44/content.html"/>
+      <file href="web_resources/i51dc37ec7e398e44/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="i513e2355a247f06d" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/i513e2355a247f06d/content.html">
+      <file href="web_resources/i513e2355a247f06d/content.html"/>
+      <file href="web_resources/i513e2355a247f06d/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="i11248ee23a727338" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/i11248ee23a727338/content.html">
+      <file href="web_resources/i11248ee23a727338/content.html"/>
+      <file href="web_resources/i11248ee23a727338/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="i196274b620ac5cd5" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/i196274b620ac5cd5/content.html">
+      <file href="web_resources/i196274b620ac5cd5/content.html"/>
+      <file href="web_resources/i196274b620ac5cd5/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="i5cea1ebe55ee323c" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/i5cea1ebe55ee323c/content.html">
+      <file href="web_resources/i5cea1ebe55ee323c/content.html"/>
+      <file href="web_resources/i5cea1ebe55ee323c/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="i5315a91072b3c31d" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/i5315a91072b3c31d/content.html">
+      <file href="web_resources/i5315a91072b3c31d/content.html"/>
+      <file href="web_resources/i5315a91072b3c31d/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="i0a03213d8a3beabd" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/i0a03213d8a3beabd/content.html">
+      <file href="web_resources/i0a03213d8a3beabd/content.html"/>
+      <file href="web_resources/i0a03213d8a3beabd/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="i59c254bc88bbf938" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/i59c254bc88bbf938/content.html">
+      <file href="web_resources/i59c254bc88bbf938/content.html"/>
+      <file href="web_resources/i59c254bc88bbf938/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="i7890257e58748dfe" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/i7890257e58748dfe/content.html">
+      <file href="web_resources/i7890257e58748dfe/content.html"/>
+      <file href="web_resources/i7890257e58748dfe/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="idac212dbea691e34" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/idac212dbea691e34/content.html">
+      <file href="web_resources/idac212dbea691e34/content.html"/>
+      <file href="web_resources/idac212dbea691e34/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="if7bc0ac0576db189" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/if7bc0ac0576db189/content.html">
+      <file href="web_resources/if7bc0ac0576db189/content.html"/>
+      <file href="web_resources/if7bc0ac0576db189/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="i2d2a76c7b5c376b9" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/i2d2a76c7b5c376b9/content.html">
+      <file href="web_resources/i2d2a76c7b5c376b9/content.html"/>
+      <file href="web_resources/i2d2a76c7b5c376b9/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="i2ff6d29fe0c93ac9" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/i2ff6d29fe0c93ac9/content.html">
+      <file href="web_resources/i2ff6d29fe0c93ac9/content.html"/>
+      <file href="web_resources/i2ff6d29fe0c93ac9/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="i8043a390e9b64c93" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/i8043a390e9b64c93/content.html">
+      <file href="web_resources/i8043a390e9b64c93/content.html"/>
+      <file href="web_resources/i8043a390e9b64c93/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="ia6780493d59ef0cf" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/ia6780493d59ef0cf/content.html">
+      <file href="web_resources/ia6780493d59ef0cf/content.html"/>
+      <file href="web_resources/ia6780493d59ef0cf/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="icf5d5b6f63f98e00" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/icf5d5b6f63f98e00/content.html">
+      <file href="web_resources/icf5d5b6f63f98e00/content.html"/>
+      <file href="web_resources/icf5d5b6f63f98e00/assignment_settings.xml"/>
+      <file href="web_resources/icf5d5b6f63f98e00/rubric.xml"/>
+    </resource>
+    <resource identifier="i2549865fcb35bbe5" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/i2549865fcb35bbe5/content.html">
+      <file href="web_resources/i2549865fcb35bbe5/content.html"/>
+      <file href="web_resources/i2549865fcb35bbe5/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="i724335b2ac81f61a" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/i724335b2ac81f61a/content.html">
+      <file href="web_resources/i724335b2ac81f61a/content.html"/>
+      <file href="web_resources/i724335b2ac81f61a/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="ia44a4b80adb83e9c" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/ia44a4b80adb83e9c/content.html">
+      <file href="web_resources/ia44a4b80adb83e9c/content.html"/>
+      <file href="web_resources/ia44a4b80adb83e9c/assignment_settings.xml"/>
+      <file href="web_resources/ia44a4b80adb83e9c/rubric.xml"/>
+    </resource>
+    <resource identifier="i753e399d08d57785" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/i753e399d08d57785/content.html">
+      <file href="web_resources/i753e399d08d57785/content.html"/>
+      <file href="web_resources/i753e399d08d57785/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="i3e4b4bc4d92f4d07" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="web_resources/i3e4b4bc4d92f4d07/content.html">
+      <file href="web_resources/i3e4b4bc4d92f4d07/content.html"/>
+      <file href="web_resources/i3e4b4bc4d92f4d07/assignment_settings.xml"/>
+    </resource>
+    <resource identifier="i7924be4ab0aae5bf" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/i7924be4ab0aae5bf/assessment_qti.xml"/>
+      <dependency identifierref="i7924be4ab0aae5bf_meta"/>
+    </resource>
+    <resource identifier="i7924be4ab0aae5bf_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/i7924be4ab0aae5bf/assessment_meta.xml">
+      <file href="assessments/i7924be4ab0aae5bf/assessment_meta.xml"/>
+      <file href="non_cc_assessments/i7924be4ab0aae5bf.xml.qti"/>
+    </resource>
+    <resource identifier="i2ea3e5e3ba48fc84" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/i2ea3e5e3ba48fc84/assessment_qti.xml"/>
+      <dependency identifierref="i2ea3e5e3ba48fc84_meta"/>
+    </resource>
+    <resource identifier="i2ea3e5e3ba48fc84_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/i2ea3e5e3ba48fc84/assessment_meta.xml">
+      <file href="assessments/i2ea3e5e3ba48fc84/assessment_meta.xml"/>
+      <file href="non_cc_assessments/i2ea3e5e3ba48fc84.xml.qti"/>
+    </resource>
+    <resource identifier="ib855fa949bd0f0d1" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/ib855fa949bd0f0d1/assessment_qti.xml"/>
+      <dependency identifierref="ib855fa949bd0f0d1_meta"/>
+    </resource>
+    <resource identifier="ib855fa949bd0f0d1_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/ib855fa949bd0f0d1/assessment_meta.xml">
+      <file href="assessments/ib855fa949bd0f0d1/assessment_meta.xml"/>
+      <file href="non_cc_assessments/ib855fa949bd0f0d1.xml.qti"/>
+    </resource>
+    <resource identifier="iea8faf3f56d43eed" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/iea8faf3f56d43eed/assessment_qti.xml"/>
+      <dependency identifierref="iea8faf3f56d43eed_meta"/>
+    </resource>
+    <resource identifier="iea8faf3f56d43eed_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/iea8faf3f56d43eed/assessment_meta.xml">
+      <file href="assessments/iea8faf3f56d43eed/assessment_meta.xml"/>
+      <file href="non_cc_assessments/iea8faf3f56d43eed.xml.qti"/>
+    </resource>
+    <resource identifier="i498a76e8734468c9" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/i498a76e8734468c9/assessment_qti.xml"/>
+      <dependency identifierref="i498a76e8734468c9_meta"/>
+    </resource>
+    <resource identifier="i498a76e8734468c9_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/i498a76e8734468c9/assessment_meta.xml">
+      <file href="assessments/i498a76e8734468c9/assessment_meta.xml"/>
+      <file href="non_cc_assessments/i498a76e8734468c9.xml.qti"/>
+    </resource>
+    <resource identifier="i533ffe7d29f4a1d1" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/i533ffe7d29f4a1d1/assessment_qti.xml"/>
+      <dependency identifierref="i533ffe7d29f4a1d1_meta"/>
+    </resource>
+    <resource identifier="i533ffe7d29f4a1d1_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/i533ffe7d29f4a1d1/assessment_meta.xml">
+      <file href="assessments/i533ffe7d29f4a1d1/assessment_meta.xml"/>
+      <file href="non_cc_assessments/i533ffe7d29f4a1d1.xml.qti"/>
+    </resource>
+    <resource identifier="i3e878c1aab5557d1" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/i3e878c1aab5557d1/assessment_qti.xml"/>
+      <dependency identifierref="i3e878c1aab5557d1_meta"/>
+    </resource>
+    <resource identifier="i3e878c1aab5557d1_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/i3e878c1aab5557d1/assessment_meta.xml">
+      <file href="assessments/i3e878c1aab5557d1/assessment_meta.xml"/>
+      <file href="non_cc_assessments/i3e878c1aab5557d1.xml.qti"/>
+    </resource>
+    <resource identifier="ib0c1b95b4d0a29c2" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/ib0c1b95b4d0a29c2/assessment_qti.xml"/>
+      <dependency identifierref="ib0c1b95b4d0a29c2_meta"/>
+    </resource>
+    <resource identifier="ib0c1b95b4d0a29c2_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/ib0c1b95b4d0a29c2/assessment_meta.xml">
+      <file href="assessments/ib0c1b95b4d0a29c2/assessment_meta.xml"/>
+      <file href="non_cc_assessments/ib0c1b95b4d0a29c2.xml.qti"/>
+    </resource>
+    <resource identifier="i87737840e4b78e6e" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/i87737840e4b78e6e/assessment_qti.xml"/>
+      <dependency identifierref="i87737840e4b78e6e_meta"/>
+    </resource>
+    <resource identifier="i87737840e4b78e6e_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/i87737840e4b78e6e/assessment_meta.xml">
+      <file href="assessments/i87737840e4b78e6e/assessment_meta.xml"/>
+      <file href="non_cc_assessments/i87737840e4b78e6e.xml.qti"/>
+    </resource>
+    <resource identifier="i999b7972dcfa3a85" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/i999b7972dcfa3a85/assessment_qti.xml"/>
+      <dependency identifierref="i999b7972dcfa3a85_meta"/>
+    </resource>
+    <resource identifier="i999b7972dcfa3a85_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/i999b7972dcfa3a85/assessment_meta.xml">
+      <file href="assessments/i999b7972dcfa3a85/assessment_meta.xml"/>
+      <file href="non_cc_assessments/i999b7972dcfa3a85.xml.qti"/>
+    </resource>
+    <resource identifier="iefae68d3c0615b43" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/iefae68d3c0615b43/assessment_qti.xml"/>
+      <dependency identifierref="iefae68d3c0615b43_meta"/>
+    </resource>
+    <resource identifier="iefae68d3c0615b43_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/iefae68d3c0615b43/assessment_meta.xml">
+      <file href="assessments/iefae68d3c0615b43/assessment_meta.xml"/>
+      <file href="non_cc_assessments/iefae68d3c0615b43.xml.qti"/>
+    </resource>
+    <resource identifier="if958ad15911f3e23" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/if958ad15911f3e23/assessment_qti.xml"/>
+      <dependency identifierref="if958ad15911f3e23_meta"/>
+    </resource>
+    <resource identifier="if958ad15911f3e23_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/if958ad15911f3e23/assessment_meta.xml">
+      <file href="assessments/if958ad15911f3e23/assessment_meta.xml"/>
+      <file href="non_cc_assessments/if958ad15911f3e23.xml.qti"/>
+    </resource>
+    <resource identifier="i3894067069f259f9" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/i3894067069f259f9/assessment_qti.xml"/>
+      <dependency identifierref="i3894067069f259f9_meta"/>
+    </resource>
+    <resource identifier="i3894067069f259f9_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/i3894067069f259f9/assessment_meta.xml">
+      <file href="assessments/i3894067069f259f9/assessment_meta.xml"/>
+      <file href="non_cc_assessments/i3894067069f259f9.xml.qti"/>
+    </resource>
+    <resource identifier="i4f987df1591f8100" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/i4f987df1591f8100/assessment_qti.xml"/>
+      <dependency identifierref="i4f987df1591f8100_meta"/>
+    </resource>
+    <resource identifier="i4f987df1591f8100_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/i4f987df1591f8100/assessment_meta.xml">
+      <file href="assessments/i4f987df1591f8100/assessment_meta.xml"/>
+      <file href="non_cc_assessments/i4f987df1591f8100.xml.qti"/>
+    </resource>
+    <resource identifier="i2038a080a34849f8" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/i2038a080a34849f8/assessment_qti.xml"/>
+      <dependency identifierref="i2038a080a34849f8_meta"/>
+    </resource>
+    <resource identifier="i2038a080a34849f8_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/i2038a080a34849f8/assessment_meta.xml">
+      <file href="assessments/i2038a080a34849f8/assessment_meta.xml"/>
+      <file href="non_cc_assessments/i2038a080a34849f8.xml.qti"/>
+    </resource>
+    <resource identifier="i11e0b0b012a6daa2" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/i11e0b0b012a6daa2/assessment_qti.xml"/>
+      <dependency identifierref="i11e0b0b012a6daa2_meta"/>
+    </resource>
+    <resource identifier="i11e0b0b012a6daa2_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/i11e0b0b012a6daa2/assessment_meta.xml">
+      <file href="assessments/i11e0b0b012a6daa2/assessment_meta.xml"/>
+      <file href="non_cc_assessments/i11e0b0b012a6daa2.xml.qti"/>
+    </resource>
+    <resource identifier="i6498f3711970889a" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/i6498f3711970889a/assessment_qti.xml"/>
+      <dependency identifierref="i6498f3711970889a_meta"/>
+    </resource>
+    <resource identifier="i6498f3711970889a_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/i6498f3711970889a/assessment_meta.xml">
+      <file href="assessments/i6498f3711970889a/assessment_meta.xml"/>
+      <file href="non_cc_assessments/i6498f3711970889a.xml.qti"/>
+    </resource>
+    <resource identifier="i52cc8c430bd2966e" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/i52cc8c430bd2966e/assessment_qti.xml"/>
+      <dependency identifierref="i52cc8c430bd2966e_meta"/>
+    </resource>
+    <resource identifier="i52cc8c430bd2966e_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/i52cc8c430bd2966e/assessment_meta.xml">
+      <file href="assessments/i52cc8c430bd2966e/assessment_meta.xml"/>
+      <file href="non_cc_assessments/i52cc8c430bd2966e.xml.qti"/>
+    </resource>
+    <resource identifier="ife3102bf8898d736" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/ife3102bf8898d736/assessment_qti.xml"/>
+      <dependency identifierref="ife3102bf8898d736_meta"/>
+    </resource>
+    <resource identifier="ife3102bf8898d736_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/ife3102bf8898d736/assessment_meta.xml">
+      <file href="assessments/ife3102bf8898d736/assessment_meta.xml"/>
+      <file href="non_cc_assessments/ife3102bf8898d736.xml.qti"/>
+    </resource>
+    <resource identifier="iada909e97cdfaf50" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/iada909e97cdfaf50/assessment_qti.xml"/>
+      <dependency identifierref="iada909e97cdfaf50_meta"/>
+    </resource>
+    <resource identifier="iada909e97cdfaf50_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/iada909e97cdfaf50/assessment_meta.xml">
+      <file href="assessments/iada909e97cdfaf50/assessment_meta.xml"/>
+      <file href="non_cc_assessments/iada909e97cdfaf50.xml.qti"/>
+    </resource>
+    <resource identifier="i094c08830355844b" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/i094c08830355844b/assessment_qti.xml"/>
+      <dependency identifierref="i094c08830355844b_meta"/>
+    </resource>
+    <resource identifier="i094c08830355844b_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/i094c08830355844b/assessment_meta.xml">
+      <file href="assessments/i094c08830355844b/assessment_meta.xml"/>
+      <file href="non_cc_assessments/i094c08830355844b.xml.qti"/>
+    </resource>
+    <resource identifier="i74228d76e3064bcb" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/i74228d76e3064bcb/assessment_qti.xml"/>
+      <dependency identifierref="i74228d76e3064bcb_meta"/>
+    </resource>
+    <resource identifier="i74228d76e3064bcb_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/i74228d76e3064bcb/assessment_meta.xml">
+      <file href="assessments/i74228d76e3064bcb/assessment_meta.xml"/>
+      <file href="non_cc_assessments/i74228d76e3064bcb.xml.qti"/>
+    </resource>
+    <resource identifier="ie3a787cd5ecf68af" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/ie3a787cd5ecf68af/assessment_qti.xml"/>
+      <dependency identifierref="ie3a787cd5ecf68af_meta"/>
+    </resource>
+    <resource identifier="ie3a787cd5ecf68af_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/ie3a787cd5ecf68af/assessment_meta.xml">
+      <file href="assessments/ie3a787cd5ecf68af/assessment_meta.xml"/>
+      <file href="non_cc_assessments/ie3a787cd5ecf68af.xml.qti"/>
+    </resource>
+    <resource identifier="i1e79b6ced1deb390" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/i1e79b6ced1deb390/assessment_qti.xml"/>
+      <dependency identifierref="i1e79b6ced1deb390_meta"/>
+    </resource>
+    <resource identifier="i1e79b6ced1deb390_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/i1e79b6ced1deb390/assessment_meta.xml">
+      <file href="assessments/i1e79b6ced1deb390/assessment_meta.xml"/>
+      <file href="non_cc_assessments/i1e79b6ced1deb390.xml.qti"/>
+    </resource>
+    <resource identifier="if3d27573e5513c9b" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment">
+      <file href="assessments/if3d27573e5513c9b/assessment_qti.xml"/>
+      <dependency identifierref="if3d27573e5513c9b_meta"/>
+    </resource>
+    <resource identifier="if3d27573e5513c9b_meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="assessments/if3d27573e5513c9b/assessment_meta.xml">
+      <file href="assessments/if3d27573e5513c9b/assessment_meta.xml"/>
+      <file href="non_cc_assessments/if3d27573e5513c9b.xml.qti"/>
+    </resource>
+    <resource identifier="asset_fc2b217c15a1" type="webcontent" href="web_resources/assets/spades_codebase.zip">
+      <file href="web_resources/assets/spades_codebase.zip"/>
+    </resource>
+    <resource identifier="asset_58e33d091a59" type="webcontent" href="web_resources/assets/spades_codebase/AIPlayer.js">
+      <file href="web_resources/assets/spades_codebase/AIPlayer.js"/>
+    </resource>
+    <resource identifier="asset_d6f41f3d4b5f" type="webcontent" href="web_resources/assets/spades_codebase/index.html">
+      <file href="web_resources/assets/spades_codebase/index.html"/>
+    </resource>
+    <resource identifier="asset_1cc45009553c" type="webcontent" href="web_resources/assets/spades_codebase/GameState.js">
+      <file href="web_resources/assets/spades_codebase/GameState.js"/>
+    </resource>
+    <resource identifier="asset_297aebcbba10" type="webcontent" href="web_resources/assets/spades_codebase/Deck.js">
+      <file href="web_resources/assets/spades_codebase/Deck.js"/>
+    </resource>
+    <resource identifier="asset_0a625d5020ce" type="webcontent" href="web_resources/assets/spades_codebase/style.css">
+      <file href="web_resources/assets/spades_codebase/style.css"/>
+    </resource>
+    <resource identifier="asset_e66d2e0ca4db" type="webcontent" href="web_resources/assets/spades_codebase/Player.js">
+      <file href="web_resources/assets/spades_codebase/Player.js"/>
+    </resource>
+    <resource identifier="asset_f04f45510f59" type="webcontent" href="web_resources/assets/spades_codebase/GameRunner.js">
+      <file href="web_resources/assets/spades_codebase/GameRunner.js"/>
+    </resource>
+    <resource identifier="asset_18f76919f10a" type="webcontent" href="web_resources/assets/spades_codebase/GameBoard.js">
+      <file href="web_resources/assets/spades_codebase/GameBoard.js"/>
+    </resource>
+    <resource identifier="asset_253c0533ea6a" type="webcontent" href="web_resources/assets/spades_codebase/Card.js">
+      <file href="web_resources/assets/spades_codebase/Card.js"/>
+    </resource>
+    <resource identifier="asset_15473aacf1af" type="webcontent" href="web_resources/assets/spades_codebase/SpadesGame.js">
+      <file href="web_resources/assets/spades_codebase/SpadesGame.js"/>
+    </resource>
+    <resource identifier="asset_8e1e844576ba" type="webcontent" href="web_resources/assets/spades_codebase/app.js">
+      <file href="web_resources/assets/spades_codebase/app.js"/>
+    </resource>
+  </resources>
+</manifest>

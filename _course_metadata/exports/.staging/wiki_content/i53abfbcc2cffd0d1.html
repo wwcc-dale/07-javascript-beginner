@@ -1,0 +1,126 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="identifier" content="i53abfbcc2cffd0d1"/>
+<meta name="editing_roles" content="teachers"/>
+<meta name="workflow_state" content="active"/>
+<title>Session 8: Working with Multiple Objects</title>
+</head>
+<body>
+<h1>Session 8: Working with Multiple Objects</h1>
+<h2>Learning Outcomes</h2>
+<ul>
+<li>Manage arrays of object instances</li>
+<li>Iterate through collections of objects</li>
+<li>Use class methods to work with multiple related objects</li>
+<li>Build systems that coordinate multiple objects</li>
+</ul>
+<hr />
+<h2>Introduction (5 minutes)</h2>
+<p>Real programs rarely work with just one object. You'll have arrays of tasks, events, or contacts. Today you'll learn to manage collections of objects and build systems where objects work together.</p>
+<hr />
+<h2>Reading: Managing Object Collections (35 minutes)</h2>
+<h3>Arrays of Objects</h3>
+<pre class="codehilite"><code class="language-js">class Task {
+  constructor(description, priority, done) {
+    this.description = description;
+    this.priority = priority;
+    this.done = done;
+  }
+
+  isUrgent() {
+    return this.priority === &quot;high&quot; &amp;&amp; !this.done;
+  }
+}
+
+const tasks = [
+  new Task(&quot;Fix login bug&quot;, &quot;high&quot;, false),
+  new Task(&quot;Update readme&quot;, &quot;low&quot;, true),
+  new Task(&quot;Deploy to prod&quot;, &quot;high&quot;, false)
+];
+
+// Loop through all tasks
+for (let i = 0; i &lt; tasks.length; i++) {
+  console.log(tasks[i].description, tasks[i].isUrgent());
+}
+</code></pre>
+
+<h3>Container Classes</h3>
+<p>A container class manages a collection of other objects.</p>
+<pre class="codehilite"><code class="language-js">class Project {
+  constructor(name) {
+    this.name = name;
+    this.tasks = [];
+  }
+
+  addTask(task) {
+    this.tasks.push(task);
+  }
+
+  getOpenCount() {
+    let count = 0;
+    for (let i = 0; i &lt; this.tasks.length; i++) {
+      if (!this.tasks[i].done) {
+        count++;
+      }
+    }
+    return count;
+  }
+
+  getUrgentCount() {
+    let count = 0;
+    for (let i = 0; i &lt; this.tasks.length; i++) {
+      if (this.tasks[i].isUrgent()) {
+        count++;
+      }
+    }
+    return count;
+  }
+}
+
+const project = new Project(&quot;Website Relaunch&quot;);
+project.addTask(new Task(&quot;Fix login bug&quot;, &quot;high&quot;, false));
+project.addTask(new Task(&quot;Update readme&quot;, &quot;low&quot;, false));
+project.addTask(new Task(&quot;Write tests&quot;, &quot;high&quot;, true));
+console.log(project.getOpenCount());  // 2
+console.log(project.getUrgentCount()); // 1
+</code></pre>
+
+<h3>Objects Working Together</h3>
+<pre class="codehilite"><code class="language-js">class Song {
+  constructor(title, durationSeconds) {
+    this.title = title;
+    this.durationSeconds = durationSeconds;
+  }
+}
+
+class Playlist {
+  constructor(name) {
+    this.name = name;
+    this.songs = [];
+  }
+
+  addSong(song) {
+    this.songs.push(song);
+  }
+
+  getTotalDuration() {
+    let total = 0;
+    for (let i = 0; i &lt; this.songs.length; i++) {
+      total += this.songs[i].durationSeconds;
+    }
+    return total;
+  }
+}
+
+const playlist = new Playlist(&quot;Morning Mix&quot;);
+playlist.addSong(new Song(&quot;Rise Up&quot;, 210));
+playlist.addSong(new Song(&quot;Good Day&quot;, 185));
+console.log(playlist.getTotalDuration()); // 395
+</code></pre>
+
+<hr />
+<h2>Assignment (60–90 minutes)</h2>
+<p>Build a Library system with Book and Library classes that manage multiple books.</p>
+</body>
+</html>

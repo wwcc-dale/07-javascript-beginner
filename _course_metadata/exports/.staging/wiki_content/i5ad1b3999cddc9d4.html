@@ -1,0 +1,221 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="identifier" content="i5ad1b3999cddc9d4"/>
+<meta name="editing_roles" content="teachers"/>
+<meta name="workflow_state" content="active"/>
+<title>Session 14: Event Handling and Interactivity</title>
+</head>
+<body>
+<h1>Session 14: Event Handling and Interactivity</h1>
+<h2>Learning Outcomes</h2>
+<ul>
+<li>Attach event listeners to DOM elements with <code>addEventListener</code>.</li>
+<li>Handle common events: <code>click</code>, <code>input</code>, <code>change</code>, <code>submit</code>, <code>keydown</code>.</li>
+<li>Use the event object: <code>event.target</code>, <code>event.key</code>, <code>event.preventDefault()</code>, <code>event.stopPropagation()</code>.</li>
+<li>Read user input from <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements using <code>.value</code>.</li>
+<li>Apply event delegation to handle clicks on dynamically created elements.</li>
+<li>Build fully interactive web applications.</li>
+</ul>
+<hr />
+<h2>Introduction (5 minutes)</h2>
+<p>Your pages are now dynamic with DOM manipulation and styling. The final piece is <strong>interactivity</strong>—responding to user actions like clicks and input.</p>
+<hr />
+<h2>Reading: Event Handling (35 minutes)</h2>
+<h3>Basic Event Listener</h3>
+<pre class="codehilite"><code class="language-js">const button = document.querySelector('button');
+
+button.addEventListener('click', () =&gt; {
+  console.log('Button was clicked!');
+});
+</code></pre>
+
+<h3>Common Events</h3>
+<pre class="codehilite"><code class="language-js">// Click events
+element.addEventListener('click', (event) =&gt; {});
+
+// Input events
+input.addEventListener('input', (event) =&gt; {});
+input.addEventListener('change', (event) =&gt; {});
+
+// Form events
+form.addEventListener('submit', (event) =&gt; {});
+
+// Keyboard events
+document.addEventListener('keydown', (event) =&gt; {});
+document.addEventListener('keyup', (event) =&gt; {});
+
+// Mouse events
+element.addEventListener('mouseover', (event) =&gt; {});
+element.addEventListener('mouseout', (event) =&gt; {});
+element.addEventListener('mousemove', (event) =&gt; {});
+</code></pre>
+
+<h3>The Event Object</h3>
+<pre class="codehilite"><code class="language-js">button.addEventListener('click', (event) =&gt; {
+  console.log(event.target);        // Which element was clicked
+  console.log(event.type);          // &quot;click&quot;
+  console.log(event.clientX);       // Mouse X position
+  console.log(event.key);           // Key pressed (if keyboard event)
+});
+</code></pre>
+
+<h3>Real Example: Feedback Form</h3>
+<pre class="codehilite"><code class="language-html">&lt;form id=&quot;feedbackForm&quot;&gt;
+  &lt;input id=&quot;subjectInput&quot; type=&quot;text&quot; placeholder=&quot;Subject&quot;&gt;
+  &lt;select id=&quot;categorySelect&quot;&gt;
+    &lt;option value=&quot;&quot;&gt;Select category&lt;/option&gt;
+    &lt;option value=&quot;bug&quot;&gt;Bug Report&lt;/option&gt;
+    &lt;option value=&quot;feature&quot;&gt;Feature Request&lt;/option&gt;
+    &lt;option value=&quot;other&quot;&gt;Other&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;button type=&quot;submit&quot;&gt;Send Feedback&lt;/button&gt;
+  &lt;div id=&quot;confirmation&quot;&gt;&lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+
+<pre class="codehilite"><code class="language-js">const form = document.querySelector('#feedbackForm');
+const subjectInput = document.querySelector('#subjectInput');
+const categorySelect = document.querySelector('#categorySelect');
+const confirmation = document.querySelector('#confirmation');
+
+form.addEventListener('submit', (event) =&gt; {
+  event.preventDefault();  // Stop page reload
+
+  const subject = subjectInput.value;
+  const category = categorySelect.value;
+
+  if (subject &amp;&amp; category) {
+    confirmation.textContent = `Thanks! Your &quot;${category}&quot; feedback has been received.`;
+    form.reset();  // Clear form
+  }
+});
+</code></pre>
+
+<h3>Real Example: Rating Widget</h3>
+<pre class="codehilite"><code class="language-html">&lt;div class=&quot;rating&quot;&gt;
+  &lt;h2 id=&quot;stars&quot;&gt;★★★☆☆&lt;/h2&gt;
+  &lt;p id=&quot;ratingValue&quot;&gt;3 / 5&lt;/p&gt;
+  &lt;button id=&quot;rateUp&quot;&gt;▲ Better&lt;/button&gt;
+  &lt;button id=&quot;rateDown&quot;&gt;▼ Worse&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre class="codehilite"><code class="language-js">let rating = 3;
+const starsDisplay = document.querySelector('#stars');
+const ratingValue = document.querySelector('#ratingValue');
+const rateUpBtn = document.querySelector('#rateUp');
+const rateDownBtn = document.querySelector('#rateDown');
+
+function updateDisplay() {
+  const filled = '★'.repeat(rating);
+  const empty = '☆'.repeat(5 - rating);
+  starsDisplay.textContent = filled + empty;
+  ratingValue.textContent = `${rating} / 5`;
+}
+
+rateUpBtn.addEventListener('click', () =&gt; {
+  if (rating &lt; 5) { rating++; updateDisplay(); }
+});
+
+rateDownBtn.addEventListener('click', () =&gt; {
+  if (rating &gt; 1) { rating--; updateDisplay(); }
+});
+</code></pre>
+
+<h3>Event Delegation</h3>
+<p>Handle events on many elements efficiently by attaching one listener to a parent:</p>
+<pre class="codehilite"><code class="language-js">const gallery = document.querySelector('#photoGallery');
+
+gallery.addEventListener('click', (event) =&gt; {
+  if (event.target.tagName === 'BUTTON') {
+    console.log('Removing:', event.target.textContent);
+    event.target.parentElement.remove();
+  }
+});
+</code></pre>
+
+<p>This is more efficient than attaching a listener to every button individually, and it works for elements added to the gallery later.</p>
+<h3>Reading Form Element Values</h3>
+<p>All interactive form elements expose a <code>.value</code> property. The behavior is the same regardless of the element type:</p>
+<p><strong>Text input and textarea:</strong></p>
+<pre class="codehilite"><code class="language-js">const textInput = document.querySelector('#nameInput');   // &lt;input type=&quot;text&quot;&gt;
+const textarea = document.querySelector('#bio');           // &lt;textarea&gt;
+
+console.log(textInput.value);  // whatever the user typed
+console.log(textarea.value);   // multi-line text content
+</code></pre>
+
+<p><strong>Select (dropdown):</strong></p>
+<pre class="codehilite"><code class="language-js">const dropdown = document.querySelector('#colorSelect');  // &lt;select&gt;
+
+console.log(dropdown.value);  // the value of the currently selected &lt;option&gt;
+</code></pre>
+
+<pre class="codehilite"><code class="language-html">&lt;select id=&quot;colorSelect&quot;&gt;
+  &lt;option value=&quot;red&quot;&gt;Red&lt;/option&gt;
+  &lt;option value=&quot;blue&quot;&gt;Blue&lt;/option&gt;
+  &lt;option value=&quot;green&quot;&gt;Green&lt;/option&gt;
+&lt;/select&gt;
+</code></pre>
+
+<pre class="codehilite"><code class="language-js">const select = document.querySelector('#colorSelect');
+
+select.addEventListener('change', () =&gt; {
+  const chosen = select.value;   // &quot;red&quot;, &quot;blue&quot;, or &quot;green&quot;
+  document.body.style.backgroundColor = chosen;
+});
+</code></pre>
+
+<p>Listen for <code>'change'</code> on selects (fires when selection changes), or <code>'input'</code> for live updates on text fields.</p>
+<h3><code>event.preventDefault()</code> and <code>event.stopPropagation()</code></h3>
+<p>You've seen <code>preventDefault()</code> — it stops the browser's default behavior (e.g., form submission reloading the page).</p>
+<p><code>stopPropagation()</code> stops the event from <strong>bubbling up</strong> to parent elements.</p>
+<p><strong>Event bubbling:</strong> When you click an element, the click event fires on that element first, then propagates (bubbles) up through every ancestor element to the document root.</p>
+<pre class="codehilite"><code class="language-html">&lt;div id=&quot;outer&quot;&gt;
+  &lt;button id=&quot;inner&quot;&gt;Click me&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre class="codehilite"><code class="language-js">document.querySelector('#outer').addEventListener('click', () =&gt; {
+  console.log('Outer clicked');
+});
+
+document.querySelector('#inner').addEventListener('click', (event) =&gt; {
+  console.log('Inner clicked');
+  event.stopPropagation();  // prevents &quot;Outer clicked&quot; from also firing
+});
+</code></pre>
+
+<p>Without <code>stopPropagation()</code>, clicking the button logs both "Inner clicked" and "Outer clicked". With it, only "Inner clicked" logs.</p>
+<p><strong>When to use it:</strong> When you have a clickable container but also clickable children inside it and you don't want both handlers to fire.</p>
+<hr />
+<h2>Video Tutorial: Event Handling (20 minutes)</h2>
+<p>Watch: <code>assets/videos/14-events.mp4</code></p>
+<p>This video covers:
+- <code>addEventListener</code> with common events
+- The event object: <code>target</code>, <code>key</code>, <code>clientX/Y</code>, <code>preventDefault()</code>
+- Event bubbling and <code>stopPropagation()</code>
+- Form element values: <code>input.value</code>, <code>textarea.value</code>, <code>select.value</code>
+- Event delegation</p>
+<hr />
+<h2>Assignment (60–90 minutes)</h2>
+<p>Open <strong>"Session 14: Building Interactive Applications"</strong>.</p>
+<p>Build fully interactive apps with event handling.</p>
+<hr />
+<h2>Wrap-Up (10 minutes)</h2>
+<h3>Key Takeaways</h3>
+<ul>
+<li><strong><code>addEventListener(event, callback)</code></strong> attaches a handler that runs when the event fires.</li>
+<li><strong>Common events:</strong> <code>click</code>, <code>input</code>, <code>change</code>, <code>submit</code>, <code>keydown</code>, <code>mouseover</code></li>
+<li><strong><code>event.preventDefault()</code></strong> — stops default browser behavior (e.g., form reload)</li>
+<li><strong><code>event.stopPropagation()</code></strong> — stops the event from bubbling to parent elements</li>
+<li><strong><code>event.target</code></strong> — the element that triggered the event</li>
+<li><strong><code>.value</code></strong> — reads the current text from <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, or <code>&lt;select&gt;</code> elements</li>
+<li><strong>Event delegation</strong> — attach one listener to a parent; check <code>event.target</code> to know which child fired it</li>
+</ul>
+<h3>How This Connects</h3>
+<p>Session 15 reviews everything from Module 3 in preparation for the midterm. Module 4 immediately applies all of these DOM and event skills to building the card game interface.</p>
+<p>Next session: <strong>Midterm Review</strong></p>
+</body>
+</html>

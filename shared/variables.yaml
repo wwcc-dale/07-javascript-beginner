@@ -1,21 +1,7 @@
-# Course-wide variables
-# These are available in all pages using {{var:variable_name}}
-# Page frontmatter can override any of these values.
-
-# Course information
-course_code: "CS 101"
-course_title: "Introduction to Computer Science"
-semester: "Spring 2026"
-
-# Instructor information
-instructor_name: "Dr. Ada Lovelace"
-instructor_email: "lovelace@university.edu"
-instructor_office: "Engineering Building, Room 142"
-office_hours: "Tuesday/Thursday 2-4pm"
-
-# TA information (optional)
-# ta_name: "Charles Babbage"
-# ta_email: "babbage@university.edu"
-
-# Common phrases
-late_penalty: "10% per day, up to 3 days"
+course_code: CS 140
+course_title: Javascript
+semester: Spring 2026
+instructor_name: Dale Chapman
+instructor_email: dale.chapman@wwcc.edu
+instructor_office: WSP South Complex, Classroom 1
+office_hours: Weekdays, 7:50-10:30am | 12:30-3:30pm

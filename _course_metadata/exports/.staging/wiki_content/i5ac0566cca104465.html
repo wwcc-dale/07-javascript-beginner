@@ -1,0 +1,276 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="identifier" content="i5ac0566cca104465"/>
+<meta name="editing_roles" content="teachers"/>
+<meta name="workflow_state" content="active"/>
+<title>Session 12: DOM Manipulation and Event Basics</title>
+</head>
+<body>
+<h1>Session 12: DOM Manipulation and Event Basics</h1>
+<h2>Learning Outcomes</h2>
+<p>By the end of this session, you will be able to:
+- Create new DOM elements with <code>createElement</code> and add them to the page.
+- Remove elements with <code>.remove()</code>.
+- Attach a click listener to a button with <code>addEventListener</code>.
+- Read a user's text input using the <code>.value</code> property.
+- Use template literals to build strings from variables.
+- Work with dates and timestamps using the <code>Date</code> object.</p>
+<hr />
+<h2>Introduction (5 minutes)</h2>
+<p>Last session you selected and modified existing elements. Today you'll go further — creating entirely new elements, removing them, and responding to user clicks. This is the foundation of every interactive web app: buttons that do things, inputs that capture text, and a page that updates dynamically.</p>
+<hr />
+<h2>Reading: Creating and Managing Elements (20 minutes)</h2>
+<h3>Creating Elements</h3>
+<pre class="codehilite"><code class="language-js">const newParagraph = document.createElement('p');
+newParagraph.textContent = 'Hello, new element!';
+newParagraph.className = 'highlight';
+
+// Add to page
+document.body.appendChild(newParagraph);
+</code></pre>
+
+<h3>Adding Elements</h3>
+<p><strong>appendChild (add at end):</strong></p>
+<pre class="codehilite"><code class="language-js">const container = document.querySelector('#app');
+const newDiv = document.createElement('div');
+newDiv.textContent = 'New content';
+container.appendChild(newDiv);
+</code></pre>
+
+<p><strong>insertBefore (add before specific element):</strong></p>
+<pre class="codehilite"><code class="language-js">const container = document.querySelector('#app');
+const firstChild = container.querySelector('p');
+const newDiv = document.createElement('div');
+container.insertBefore(newDiv, firstChild);
+</code></pre>
+
+<h3>Removing Elements</h3>
+<pre class="codehilite"><code class="language-js">const element = document.querySelector('#oldItem');
+element.remove();
+
+// Or via the parent:
+element.parentElement.removeChild(element);
+</code></pre>
+
+<hr />
+<h2>Reading: Responding to User Actions (25 minutes)</h2>
+<h3><code>addEventListener</code> — Reacting to Clicks</h3>
+<p>Every DOM element can listen for user actions. The most common is a click:</p>
+<pre class="codehilite"><code class="language-js">const button = document.querySelector('#myButton');
+
+button.addEventListener('click', () =&gt; {
+  console.log('The button was clicked!');
+});
+</code></pre>
+
+<p><strong>Breaking it down:</strong>
+- <code>button.addEventListener(...)</code> — attach a listener to this element
+- <code>'click'</code> — the event type to listen for
+- <code>() =&gt; { ... }</code> — the <strong>callback</strong>: the code that runs when the event fires</p>
+<p>The callback runs every time the user clicks the button. Nothing happens until they do.</p>
+<p><strong>Example: toggle a message</strong></p>
+<pre class="codehilite"><code class="language-js">const toggleBtn = document.querySelector('#toggleBtn');
+const message = document.querySelector('#message');
+let visible = true;
+
+toggleBtn.addEventListener('click', () =&gt; {
+  if (visible) {
+    message.style.display = 'none';
+    toggleBtn.textContent = 'Show';
+  } else {
+    message.style.display = 'block';
+    toggleBtn.textContent = 'Hide';
+  }
+  visible = !visible;
+});
+</code></pre>
+
+<h3>Reading Text Input with <code>.value</code></h3>
+<p>Every <code>&lt;input&gt;</code> element has a <code>.value</code> property that holds whatever the user has typed.</p>
+<pre class="codehilite"><code class="language-html">&lt;input id=&quot;nameInput&quot; type=&quot;text&quot; placeholder=&quot;Enter your name&quot;&gt;
+&lt;button id=&quot;greetBtn&quot;&gt;Greet&lt;/button&gt;
+&lt;p id=&quot;output&quot;&gt;&lt;/p&gt;
+</code></pre>
+
+<pre class="codehilite"><code class="language-js">const nameInput = document.querySelector('#nameInput');
+const greetBtn = document.querySelector('#greetBtn');
+const output = document.querySelector('#output');
+
+greetBtn.addEventListener('click', () =&gt; {
+  const name = nameInput.value;   // read what the user typed
+  output.textContent = 'Hello, ' + name + '!';
+  nameInput.value = '';           // clear the input after reading
+});
+</code></pre>
+
+<p><strong>Key points:</strong>
+- <code>.value</code> is a string — always
+- Read it inside the callback so you get the current typed text
+- Set <code>.value = ''</code> to clear the field</p>
+<h3>Template Literals — Cleaner String Building</h3>
+<p>Instead of concatenating strings with <code>+</code>, template literals use backticks and <code>${}</code> to embed values directly:</p>
+<pre class="codehilite"><code class="language-js">const name = 'Alex';
+const score = 92;
+
+// Old way — concatenation
+console.log('Student ' + name + ' scored ' + score + ' points.');
+
+// Template literal — cleaner
+console.log(`Student ${name} scored ${score} points.`);
+</code></pre>
+
+<p>Use backticks (<code>`</code>) not quotes. Put any expression inside <code>${}</code>.</p>
+<pre class="codehilite"><code class="language-js">const greetBtn = document.querySelector('#greetBtn');
+const output = document.querySelector('#output');
+
+greetBtn.addEventListener('click', () =&gt; {
+  const name = document.querySelector('#nameInput').value;
+  output.textContent = `Hello, ${name}! Welcome aboard.`;
+});
+</code></pre>
+
+<h3>Putting It Together: Button That Creates Elements</h3>
+<pre class="codehilite"><code class="language-html">&lt;input id=&quot;quoteInput&quot; placeholder=&quot;Enter a quote&quot;&gt;
+&lt;button id=&quot;addQuoteBtn&quot;&gt;Add&lt;/button&gt;
+&lt;ul id=&quot;quoteBoard&quot;&gt;&lt;/ul&gt;
+</code></pre>
+
+<pre class="codehilite"><code class="language-js">const quoteInput = document.querySelector('#quoteInput');
+const addQuoteBtn = document.querySelector('#addQuoteBtn');
+const quoteBoard = document.querySelector('#quoteBoard');
+
+addQuoteBtn.addEventListener('click', () =&gt; {
+  const text = quoteInput.value;
+  if (text === '') return;   // do nothing on empty input
+
+  const li = document.createElement('li');
+  li.textContent = text;
+
+  const removeBtn = document.createElement('button');
+  removeBtn.textContent = 'Remove';
+  removeBtn.addEventListener('click', () =&gt; {
+    li.remove();   // each remove button removes its own li
+  });
+
+  li.appendChild(removeBtn);
+  quoteBoard.appendChild(li);
+  quoteInput.value = '';   // clear after adding
+});
+</code></pre>
+
+<p>This is the <strong>core pattern</strong> for interactive list apps: read input → create element → append → clear.</p>
+<hr />
+<h2>Reading: Working with Dates (10 minutes)</h2>
+<h3>The <code>Date</code> Object</h3>
+<p>JavaScript has a built-in <code>Date</code> object for working with dates and times. Create one with <code>new Date()</code>:</p>
+<pre class="codehilite"><code class="language-js">const now = new Date();
+console.log(now);  // Wed Feb 19 2026 10:34:00 ...
+</code></pre>
+
+<h3>Formatting Dates as Readable Strings</h3>
+<pre class="codehilite"><code class="language-js">const now = new Date();
+
+// Locale-aware formatting
+console.log(now.toLocaleDateString());   // &quot;2/19/2026&quot;
+console.log(now.toLocaleTimeString());   // &quot;10:34:00 AM&quot;
+console.log(now.toLocaleString());       // &quot;2/19/2026, 10:34:00 AM&quot;
+</code></pre>
+
+<p><strong>Real-world use: timestamped activity log</strong></p>
+<pre class="codehilite"><code class="language-js">const activityInput = document.querySelector('#activityInput');
+const logBtn = document.querySelector('#logBtn');
+const activityLog = document.querySelector('#activityLog');
+
+logBtn.addEventListener('click', () =&gt; {
+  const note = activityInput.value;
+  if (note === '') return;
+
+  const timestamp = new Date().toLocaleString();   // current time as string
+
+  const li = document.createElement('li');
+  li.textContent = `${note}  —  ${timestamp}`;
+
+  activityLog.appendChild(li);
+  activityInput.value = '';
+});
+</code></pre>
+
+<hr />
+<h2>Video Tutorial: DOM Creation and Event Basics (20 minutes)</h2>
+<p>Watch: <code>assets/videos/12-dom-creation.mp4</code></p>
+<p>This video covers:
+- <code>createElement</code>, <code>appendChild</code>, <code>.remove()</code>
+- <code>addEventListener('click', callback)</code>
+- Reading <code>.value</code> from an input
+- Template literals
+- Building the add/delete pattern</p>
+<hr />
+<h2>Supplemental Practice (25 minutes)</h2>
+<h3>Practice 1: Click Counter</h3>
+<pre class="codehilite"><code class="language-html">&lt;h2 id=&quot;count&quot;&gt;0&lt;/h2&gt;
+&lt;button id=&quot;btn&quot;&gt;Click me&lt;/button&gt;
+</code></pre>
+
+<pre class="codehilite"><code class="language-js">let count = 0;
+const countDisplay = document.querySelector('#count');
+
+document.querySelector('#btn').addEventListener('click', () =&gt; {
+  count++;
+  countDisplay.textContent = count;
+});
+</code></pre>
+
+<h3>Practice 2: Name Display</h3>
+<pre class="codehilite"><code class="language-html">&lt;input id=&quot;nameInput&quot; placeholder=&quot;Your name&quot;&gt;
+&lt;button id=&quot;btn&quot;&gt;Show&lt;/button&gt;
+&lt;p id=&quot;output&quot;&gt;&lt;/p&gt;
+</code></pre>
+
+<pre class="codehilite"><code class="language-js">document.querySelector('#btn').addEventListener('click', () =&gt; {
+  const name = document.querySelector('#nameInput').value;
+  document.querySelector('#output').textContent = `Hello, ${name}!`;
+});
+</code></pre>
+
+<h3>Practice 3: Timestamped Log</h3>
+<pre class="codehilite"><code class="language-html">&lt;button id=&quot;logBtn&quot;&gt;Log event&lt;/button&gt;
+&lt;ul id=&quot;log&quot;&gt;&lt;/ul&gt;
+</code></pre>
+
+<pre class="codehilite"><code class="language-js">document.querySelector('#logBtn').addEventListener('click', () =&gt; {
+  const li = document.createElement('li');
+  li.textContent = `Event at ${new Date().toLocaleTimeString()}`;
+  document.querySelector('#log').appendChild(li);
+});
+</code></pre>
+
+<hr />
+<h2>Knowledge Check Quiz (15 minutes)</h2>
+<p>Take the <strong>Session 12 Practice Quiz</strong> in Canvas.</p>
+<p>Focus on:
+- <code>createElement</code>, <code>appendChild</code>, <code>.remove()</code>
+- <code>addEventListener('click', callback)</code> syntax and purpose
+- Reading user input with <code>.value</code>
+- Template literal syntax (backticks, <code>${}</code>)
+- Building elements dynamically from input</p>
+<hr />
+<h2>Hands-On Assignment (60–90 minutes)</h2>
+<p>Open <strong>"Session 12: Building Dynamic Content"</strong>.</p>
+<p>Build interactive content that creates and removes elements using event listeners and input values.</p>
+<hr />
+<h2>Wrap-Up (10 minutes)</h2>
+<h3>Key Takeaways</h3>
+<ul>
+<li><strong><code>document.createElement(tag)</code></strong> creates a new element; <strong><code>parent.appendChild(el)</code></strong> adds it to the page.</li>
+<li><strong><code>element.remove()</code></strong> removes an element from the DOM.</li>
+<li><strong><code>addEventListener('click', () =&gt; {})</code></strong> runs code when a user clicks.</li>
+<li><strong><code>input.value</code></strong> is a string containing whatever the user typed; set it to <code>''</code> to clear.</li>
+<li><strong>Template literals</strong> (<code>`Hello, ${name}!`</code>) are cleaner than string concatenation.</li>
+<li><strong><code>new Date().toLocaleString()</code></strong> gives a human-readable timestamp.</li>
+</ul>
+<h3>How This Connects</h3>
+<p>Next session you'll control visual styling dynamically using <code>classList</code>. The session after that (Session 14) goes deep on the full range of events — form submission, keyboard events, mouse position, and more.</p>
+<p>Next session: <strong>CSS Manipulation with JavaScript</strong></p>
+</body>
+</html>

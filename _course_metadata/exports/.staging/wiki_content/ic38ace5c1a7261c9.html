@@ -1,0 +1,106 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="identifier" content="ic38ace5c1a7261c9"/>
+<meta name="editing_roles" content="teachers"/>
+<meta name="workflow_state" content="active"/>
+<title>Session 9: Inheritance and Composition</title>
+</head>
+<body>
+<h1>Session 9: Inheritance and Composition</h1>
+<h2>Learning Outcomes</h2>
+<ul>
+<li>Use class inheritance with <code>extends</code></li>
+<li>Override parent methods</li>
+<li>Understand when to use inheritance vs composition</li>
+<li>Build class hierarchies</li>
+</ul>
+<hr />
+<h2>Introduction (5 minutes)</h2>
+<p>Sometimes classes share common properties and behaviors. <strong>Inheritance</strong> lets you create specialized classes based on general ones. Today you'll learn when and how to use inheritance and composition.</p>
+<hr />
+<h2>Reading: Inheritance (35 minutes)</h2>
+<h3>Basic Inheritance</h3>
+<pre class="codehilite"><code class="language-js">class Appliance {
+  constructor(brand, powerWatts) {
+    this.brand = brand;
+    this.powerWatts = powerWatts;
+  }
+
+  describe() {
+    return `${this.brand} appliance, ${this.powerWatts}W`;
+  }
+}
+
+class Refrigerator extends Appliance {
+  constructor(brand, powerWatts, liters) {
+    super(brand, powerWatts);  // Call parent constructor
+    this.liters = liters;
+  }
+
+  cool() {
+    return `${this.brand} cooling ${this.liters}L`;
+  }
+}
+
+const fridge = new Refrigerator(&quot;Samsung&quot;, 150, 400);
+console.log(fridge.describe()); // Inherited from Appliance
+console.log(fridge.cool());     // Refrigerator-specific
+</code></pre>
+
+<h3>Overriding Methods</h3>
+<p>A child class can replace a parent method with its own version.</p>
+<pre class="codehilite"><code class="language-js">class Washer extends Appliance {
+  constructor(brand, powerWatts, loadKg) {
+    super(brand, powerWatts);
+    this.loadKg = loadKg;
+  }
+
+  describe() {
+    return `${this.brand} washer, ${this.loadKg}kg load capacity`;
+  }
+}
+
+const washer = new Washer(&quot;LG&quot;, 500, 8);
+console.log(washer.describe()); // Overridden version — Washer's own describe()
+</code></pre>
+
+<h3>Composition Over Inheritance</h3>
+<p>Sometimes composition (has-a) is better than inheritance (is-a).</p>
+<pre class="codehilite"><code class="language-js">class Battery {
+  charge() {
+    return &quot;Battery charging&quot;;
+  }
+
+  getLevel() {
+    return &quot;80%&quot;;
+  }
+}
+
+class Laptop {
+  constructor(brand) {
+    this.brand = brand;
+    this.battery = new Battery(); // Composition
+  }
+
+  charge() {
+    return this.battery.charge();
+  }
+}
+
+const laptop = new Laptop(&quot;Dell&quot;);
+console.log(laptop.charge()); // &quot;Battery charging&quot;
+</code></pre>
+
+<h3>When to Use Each</h3>
+<p><strong>Inheritance:</strong> When there's a clear "is-a" relationship
+- Refrigerator IS AN Appliance
+- Washer IS AN Appliance</p>
+<p><strong>Composition:</strong> When there's a "has-a" relationship
+- Laptop HAS A Battery
+- Playlist HAS Songs</p>
+<hr />
+<h2>Assignment (60–90 minutes)</h2>
+<p>Build an inheritance hierarchy and use composition patterns.</p>
+</body>
+</html>

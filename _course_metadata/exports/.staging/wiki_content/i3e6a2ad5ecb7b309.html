@@ -1,0 +1,191 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="identifier" content="i3e6a2ad5ecb7b309"/>
+<meta name="editing_roles" content="teachers"/>
+<meta name="workflow_state" content="active"/>
+<title>Session 16: Classes, Constructors, and Collections</title>
+</head>
+<body>
+<h1>Session 16: Classes, Constructors, and Collections</h1>
+<h2>Learning Outcomes</h2>
+<p>By the end of this session, you will be able to:
+- Write a class with a constructor, properties, and methods
+- Build a collection class that manages an array of objects
+- Implement a statistically unbiased shuffle using Fisher-Yates
+- Write an <code>equals()</code> method that compares two objects by value, not identity
+- Explain why <code>===</code> fails to match two objects with identical data</p>
+<hr />
+<h2>Introduction (5 minutes)</h2>
+<p>Over the next five sessions you build a Spades card game. The game has many moving parts — players, bids, tricks, scores — but every game built in code starts the same way: with small, well-defined objects that represent the things in the game.</p>
+<p>Today you learn the <strong>class patterns</strong> those objects use: constructor initialization, getter methods, value equality, shuffling a collection, and drawing from it one at a time.</p>
+<hr />
+<h2>Reading: Classes and Collections (35 minutes)</h2>
+<h3>Classes and Constructors</h3>
+<p>A <strong>class</strong> is a blueprint for creating objects with the same structure. The <code>constructor</code> runs automatically when you use <code>new</code>.</p>
+<pre class="codehilite"><code class="language-js">class Book {
+  constructor(title, author, year) {
+    this.title  = title;
+    this.author = author;
+    this.year   = year;
+  }
+
+  getTitle()  { return this.title; }
+  getAuthor() { return this.author; }
+
+  describe() {
+    return `${this.title} by ${this.author} (${this.year})`;
+  }
+}
+
+const b = new Book('Dune', 'Herbert', 1965);
+console.log(b.describe());  // &quot;Dune by Herbert (1965)&quot;
+console.log(b.getTitle());  // &quot;Dune&quot;
+</code></pre>
+
+<p>The <code>constructor</code> is called once at creation. Getter methods like <code>getTitle()</code> provide controlled read access to the properties.</p>
+<hr />
+<h3>Object Identity vs. Value Equality</h3>
+<p>JavaScript's <code>===</code> tests <strong>identity</strong> — whether two variables point to the same object in memory:</p>
+<pre class="codehilite"><code class="language-js">const b1 = new Book('Dune', 'Herbert', 1965);
+const b2 = new Book('Dune', 'Herbert', 1965);
+
+console.log(b1 === b2);  // false — different objects in memory
+</code></pre>
+
+<p>Even though <code>b1</code> and <code>b2</code> have identical data, they are different objects. To compare by <strong>value</strong> you need an <code>equals()</code> method:</p>
+<pre class="codehilite"><code class="language-js">class Book {
+  // ... (constructor and other methods above)
+
+  equals(other) {
+    return this.title === other.title &amp;&amp; this.author === other.author;
+  }
+}
+
+console.log(b1.equals(b2));  // true — same title and author
+</code></pre>
+
+<p><code>equals()</code> is essential whenever you need to find and remove a specific item from an array — searching by value, not by reference.</p>
+<hr />
+<h3>Collection Classes and Nested Loops</h3>
+<p>A <strong>collection class</strong> owns an array of objects and provides methods to manage them.</p>
+<pre class="codehilite"><code class="language-js">class Catalog {
+  constructor() {
+    this.books = [];
+    this.buildSampleCatalog();
+  }
+
+  buildSampleCatalog() {
+    const authors = ['Tolkien', 'Herbert', 'Le Guin'];
+    const titles  = ['Fellowship', 'Dune', 'Wizard'];
+
+    for (let a = 0; a &lt; authors.length; a++) {
+      for (let t = 0; t &lt; titles.length; t++) {
+        this.books.push(new Book(`${titles[t]}-${a}`, authors[a], 1960 + t));
+      }
+    }
+  }
+
+  size()   { return this.books.length; }
+
+  draw()   { return this.books.pop(); }  // Remove and return last item
+
+  reset() {
+    this.books = [];
+    this.buildSampleCatalog();
+  }
+}
+</code></pre>
+
+<p><strong>Nested loops</strong> (one <code>for</code> inside another) are the standard way to generate all combinations of two sets — every author paired with every title in this example.</p>
+<hr />
+<h3>Fisher-Yates Shuffle</h3>
+<p>A naive shuffle (pick two random positions and swap, repeated many times) produces <strong>biased distributions</strong> — some orderings appear more often than others. The Fisher-Yates algorithm gives every permutation exactly equal probability.</p>
+<pre class="codehilite"><code class="language-js">function shuffle(array) {
+  // Work backward from the end of the array
+  for (let i = array.length - 1; i &gt; 0; i--) {
+    // Pick any position from 0 up to and including i
+    const j = Math.floor(Math.random() * (i + 1));
+    // Swap positions i and j
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+const items = [1, 2, 3, 4, 5];
+shuffle(items);
+console.log(items);  // Some random permutation
+</code></pre>
+
+<p><strong>Why it works:</strong> On each pass, each remaining element has an equal chance of landing in the current position. By the time you reach the beginning, every possible order is equally likely.</p>
+<hr />
+<h3>Finding and Removing with <code>findIndex</code></h3>
+<p>When you need to locate a specific item in an array and remove it, use <code>findIndex()</code> with your <code>equals()</code> method:</p>
+<pre class="codehilite"><code class="language-js">class Catalog {
+  // ...
+
+  removeBook(target) {
+    const i = this.books.findIndex(b =&gt; b.equals(target));
+    if (i !== -1) {
+      return this.books.splice(i, 1)[0];  // Remove and return
+    }
+    return null;  // Not found
+  }
+}
+</code></pre>
+
+<p><code>splice(i, 1)</code> removes one element at index <code>i</code> and returns it as an array — the <code>[0]</code> gets the item itself. This is the same pattern you will use when a player plays a card from their hand.</p>
+<hr />
+<h3>Verifying Uniqueness with a Set</h3>
+<p>After generating a collection of objects, you can verify no duplicates exist by checking that the number of unique string representations equals the total count:</p>
+<pre class="codehilite"><code class="language-js">const catalog = new Catalog();
+const titles = catalog.books.map(b =&gt; b.describe());
+const unique = new Set(titles);
+console.log('All unique:', unique.size === catalog.size());  // true
+</code></pre>
+
+<p>A <code>Set</code> automatically discards duplicates. If <code>unique.size</code> equals the total count, every item is distinct.</p>
+<hr />
+<h2>Video Tutorial: Classes and Collections (20 minutes)</h2>
+<p>Watch: <code>assets/videos/16-classes-collections.mp4</code></p>
+<p>Covers:
+- Building a class with a constructor step by step
+- Why <code>===</code> fails for object comparison and how <code>equals()</code> fixes it
+- Fisher-Yates walkthrough on a small array
+- The <code>findIndex</code> + <code>splice</code> pattern for removal</p>
+<hr />
+<h2>Supplemental Practice (25 minutes)</h2>
+<h3>Exercise 1: Build a <code>Movie</code> Class</h3>
+<p>Write a <code>Movie</code> class with <code>title</code>, <code>director</code>, and <code>releaseYear</code> properties. Add <code>describe()</code> and <code>equals(other)</code> methods. Create two <code>Movie</code> objects with the same data and verify <code>equals()</code> returns <code>true</code> while <code>===</code> returns <code>false</code>.</p>
+<h3>Exercise 2: Shuffle and Verify</h3>
+<p>Create an array of 10 numbers (1–10). Run Fisher-Yates on it and <code>console.log</code> the result. Run it 5 more times. Is it always in a different order?</p>
+<h3>Exercise 3: Find and Remove</h3>
+<p>Create an array of 5 <code>Book</code> objects. Write a function <code>removeByTitle(books, title)</code> that uses <code>findIndex</code> to locate the book by title and <code>splice</code> to remove it. Verify the array is shorter after calling it.</p>
+<h3>Exercise 4: Uniqueness Check</h3>
+<p>Generate a collection of 20 items using a nested loop (e.g., 4 categories × 5 types). Use a <code>Set</code> to verify all 20 are unique.</p>
+<hr />
+<h2>Knowledge Check Quiz (15 minutes)</h2>
+<p>Take the <strong>Session 16 Practice Quiz</strong> in Canvas.</p>
+<p>Focus on:
+- Constructor syntax and <code>this</code> keyword
+- <code>===</code> vs. <code>equals()</code> for object comparison
+- How Fisher-Yates achieves an unbiased shuffle
+- <code>findIndex</code> + <code>splice</code> for locate-and-remove</p>
+<hr />
+<h2>Hands-On Assignment (60–90 minutes)</h2>
+<p>Open <strong>"Session 16: Card and Deck Implementation"</strong>.</p>
+<p>You will apply these patterns to build two classes that the Spades game depends on.</p>
+<hr />
+<h2>Wrap-Up (10 minutes)</h2>
+<h3>Key Takeaways</h3>
+<ul>
+<li><strong>Classes</strong> bundle data and behavior; the <code>constructor</code> sets initial state</li>
+<li><strong><code>===</code> fails</strong> for object comparison — <code>equals()</code> compares by value instead</li>
+<li><strong>Nested loops</strong> generate all combinations of two sets</li>
+<li><strong>Fisher-Yates</strong> shuffles an array so every permutation is equally likely</li>
+<li><strong><code>findIndex</code> + <code>splice</code></strong> is the pattern for finding and removing by value</li>
+</ul>
+<h3>How This Connects to the Assignment</h3>
+<p>The assignment asks you to build two classes following these exact patterns. The classes you build today become the foundation that every subsequent session depends on — everything else in Spades uses them.</p>
+<p>Next session: <strong>Session 17 — Players, Inheritance, and Dealing</strong></p>
+</body>
+</html>

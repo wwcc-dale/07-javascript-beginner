@@ -248,15 +248,15 @@ Pause and type along with examples.
 
 ## Supplemental Practice: Real Loops (25 minutes)
 
-### Scenario 1: Print Numbers 1-10
+### Scenario 1: Print Even Numbers 2–20
 
 ```js
-for (let i = 1; i <= 10; i++) {
+for (let i = 2; i <= 20; i += 2) {
   console.log(i);
 }
 ```
 
-Try changing the start value, end condition, or increment.
+Try changing the increment to 3 to print every third number instead.
 
 ### Scenario 2: Sum All Prices in a List
 
@@ -271,19 +271,19 @@ for (let i = 0; i < prices.length; i++) {
 console.log("Total:", total);  // 70
 ```
 
-### Scenario 3: Count How Many Pass
+### Scenario 3: Count Warm Days
 
 ```js
-const scores = [92, 65, 78, 95, 55];
-let passingCount = 0;
+const temperatures = [28, 35, 22, 41, 19, 38];
+let warmDays = 0;
 
-for (let i = 0; i < scores.length; i++) {
-  if (scores[i] >= 70) {
-    passingCount++;
+for (let i = 0; i < temperatures.length; i++) {
+  if (temperatures[i] > 32) {
+    warmDays++;
   }
 }
 
-console.log("Students passing:", passingCount);  // 3
+console.log("Warm days:", warmDays);  // 3
 ```
 
 ### Scenario 3b: Build a New Array Inside a Loop
@@ -327,7 +327,20 @@ for (const product of products) {
 }
 ```
 
-Try rewriting Scenarios 2 and 3 using `for...of` instead of a classic `for` loop.
+Try rewriting Scenarios 2 and 3 using `for...of` instead of a classic `for` loop. For example, Scenario 3 with `for...of`:
+
+```js
+const temperatures = [28, 35, 22, 41, 19, 38];
+let warmDays = 0;
+
+for (const temp of temperatures) {
+  if (temp > 32) {
+    warmDays++;
+  }
+}
+
+console.log("Warm days:", warmDays);  // 3
+```
 
 ### Scenario 5: `while` — Keep Rolling Until Six
 

@@ -1,0 +1,223 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="identifier" content="iec61aa66f41334c5"/>
+<meta name="editing_roles" content="teachers"/>
+<meta name="workflow_state" content="active"/>
+<title>Session 24: ES6 Modules and Professional Code Organization</title>
+</head>
+<body>
+<h1>Session 24: ES6 Modules and Professional Code Organization</h1>
+<h2>Learning Outcomes</h2>
+<p>By the end of this session, you will be able to:
+- Export classes and functions from a module file using <code>export</code>
+- Import named and default exports from other modules
+- Organize a multi-file project into logical folders by responsibility
+- Run a local development server to satisfy browser module requirements
+- Diagnose and fix common module errors (CORS, path issues, circular dependencies)</p>
+<hr />
+<h2>Introduction (5 minutes)</h2>
+<p>Your Spades game currently loads all scripts with sequential <code>&lt;script&gt;</code> tags. That works — but as projects grow, it becomes hard to manage. <strong>ES6 modules</strong> solve this with <code>import</code> and <code>export</code> syntax that makes dependencies explicit and files self-contained.</p>
+<p>Professional JavaScript projects always use modules. Today you learn the syntax and how to organize a project to use them well.</p>
+<hr />
+<h2>Reading: ES6 Modules (35 minutes)</h2>
+<h3>Why Modules?</h3>
+<p>A single large file becomes hard to navigate, difficult to test, and impossible for a team to work on simultaneously. Modules give each file a clear, single responsibility and make dependencies explicit:</p>
+<pre class="codehilite"><code>Before: one 800-line game.js
+After:
+  src/
+    classes/Card.js
+    classes/Deck.js
+    classes/Player.js
+    classes/AIPlayer.js
+    game/SpadesGame.js
+    game/GameRunner.js
+    ui/GameBoard.js
+    main.js
+</code></pre>
+
+<hr />
+<h3><code>export</code> — Making Code Available</h3>
+<p>Add <code>export</code> before any class, function, or variable to make it importable by other files:</p>
+<pre class="codehilite"><code class="language-js">// src/classes/Card.js
+
+export class Card {
+  constructor(suit, rank) {
+    this.suit = suit;
+    this.rank = rank;
+  }
+
+  getSuit() { return this.suit; }
+  getRank() { return this.rank; }
+  // ... rest of methods
+}
+</code></pre>
+
+<p><strong>Default export</strong> — used when a file has one primary thing to share:</p>
+<pre class="codehilite"><code class="language-js">// src/utils/helpers.js
+export default function getSuitSymbol(suit) {
+  return { Spades: '♠', Hearts: '♥', Diamonds: '♦', Clubs: '♣' }[suit];
+}
+</code></pre>
+
+<hr />
+<h3><code>import</code> — Using Code from Other Files</h3>
+<pre class="codehilite"><code class="language-js">// Named import — matches the exported name exactly
+import { Card } from './Card.js';
+import { Deck } from './Deck.js';
+
+// Default import — any name you choose
+import getSuitSymbol from '../utils/helpers.js';
+
+// Import everything as a namespace
+import * as Classes from './classes/index.js';
+const c = new Classes.Card('Spades', 'A');
+</code></pre>
+
+<p><strong>Path rules:</strong>
+- <code>./Card.js</code> — same folder
+- <code>../utils/helpers.js</code> — one folder up, then into utils
+- Always include the <code>.js</code> extension
+- Paths are relative to the file doing the importing</p>
+<hr />
+<h3>Project Folder Structure</h3>
+<p>Organize by <strong>responsibility</strong>, not by file type:</p>
+<pre class="codehilite"><code>spades/
+├── index.html
+├── style.css
+└── src/
+    ├── classes/
+    │   ├── Card.js         (Card class)
+    │   ├── Deck.js         (Deck class — imports Card)
+    │   ├── Player.js       (Player class)
+    │   └── AIPlayer.js     (AIPlayer — imports Player)
+    ├── game/
+    │   ├── SpadesGame.js   (imports Player, Deck)
+    │   └── GameRunner.js   (imports SpadesGame, GameBoard)
+    ├── ui/
+    │   └── GameBoard.js    (imports Card)
+    └── main.js             (entry point — imports everything)
+</code></pre>
+
+<p><strong>Guidelines:</strong>
+- One class per file, file named after the class
+- Imports flow in one direction — avoid circular imports
+- <code>main.js</code> is the only file that wires everything together</p>
+<hr />
+<h3>Loading Modules in HTML</h3>
+<p>Add <code>type="module"</code> to the script tag for your entry point. The browser then handles all imports automatically:</p>
+<pre class="codehilite"><code class="language-html">&lt;!-- Old way: list all files manually in order --&gt;
+&lt;script src=&quot;Card.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;Deck.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;Player.js&quot;&gt;&lt;/script&gt;
+&lt;!-- ... 5 more script tags --&gt;
+
+&lt;!-- New way: just the entry point --&gt;
+&lt;script type=&quot;module&quot; src=&quot;src/main.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>The browser fetches and evaluates all imported files automatically, in dependency order.</p>
+<hr />
+<h3>Common Errors and Fixes</h3>
+<p><strong>CORS error when opening <code>file://</code> in the browser:</strong></p>
+<pre class="codehilite"><code>Access to script blocked by CORS policy
+</code></pre>
+
+<p>Modules cannot be loaded from <code>file://</code> — they require an HTTP server. Run a local server:</p>
+<ul>
+<li><strong>VS Code Live Server</strong> extension: right-click <code>index.html</code> → Open with Live Server</li>
+<li><strong>Python</strong>: <code>python -m http.server 8000</code> → open <code>http://localhost:8000</code></li>
+<li><strong>Node.js</strong>: <code>npx http-server -p 8000</code></li>
+</ul>
+<p><strong>Module not found (404):</strong></p>
+<pre class="codehilite"><code>GET http://localhost:8000/Card.js 404 Not Found
+</code></pre>
+
+<p>Fix: use correct relative path starting with <code>./</code> or <code>../</code>:</p>
+<pre class="codehilite"><code class="language-js">import { Card } from './classes/Card.js';  // ✅ Correct
+import { Card } from 'Card.js';            // ✗ Missing ./
+</code></pre>
+
+<p><strong>Circular dependency:</strong></p>
+<pre class="codehilite"><code class="language-js">// Player.js imports Deck.js, and Deck.js imports Player.js → circular!
+</code></pre>
+
+<p>Fix: pass instances as method parameters instead of importing the class:</p>
+<pre class="codehilite"><code class="language-js">// Player.js — no import of Deck
+class Player {
+  receiveCard(card) { this.hand.push(card); }
+}
+
+// main.js — creates both and connects them
+const deck   = new Deck();
+const player = new Player('You');
+player.receiveCard(deck.draw());
+</code></pre>
+
+<hr />
+<h3>Refactoring a Script-Tag Project to Modules</h3>
+<p>The mechanical steps are straightforward:</p>
+<ol>
+<li>Add <code>export</code> before each class definition</li>
+<li>Add <code>import { ClassName } from './path.js'</code> at the top of each file that uses it</li>
+<li>Replace all <code>&lt;script src="..."&gt;</code> tags in HTML with one <code>&lt;script type="module" src="src/main.js"&gt;</code></li>
+<li>Run a local server</li>
+<li>Fix any CORS or path errors in the console</li>
+</ol>
+<hr />
+<h2>Video Tutorial: ES6 Modules (20 minutes)</h2>
+<p>Watch: <code>assets/videos/24-es6-modules.mp4</code></p>
+<p>Covers:
+- Named vs. default exports
+- <code>import</code> path syntax and common mistakes
+- Setting up VS Code Live Server
+- Refactoring a simple two-file project to use modules</p>
+<hr />
+<h2>Supplemental Practice (25 minutes)</h2>
+<h3>Exercise 1: Export/Import Round-Trip</h3>
+<p>Create two files: <code>math.js</code> (exports <code>add</code>, <code>subtract</code>, <code>multiply</code> as named exports) and <code>app.js</code> (imports all three and logs results). Load <code>app.js</code> as a module in a minimal HTML file and verify it works via a local server.</p>
+<h3>Exercise 2: Default Export</h3>
+<p>Create <code>greeting.js</code> with a default export function <code>greet(name)</code> that returns <code>"Hello, [name]!"</code>. Import and use it in <code>main.js</code>.</p>
+<h3>Exercise 3: Folder Organization</h3>
+<p>Take the two-file project from Exercise 1 and reorganize it into:</p>
+<pre class="codehilite"><code>src/
+  utils/math.js
+  utils/greeting.js
+  main.js
+index.html
+</code></pre>
+
+<p>Update all import paths to use the new structure.</p>
+<h3>Exercise 4: Diagnose a Broken Import</h3>
+<p>Given this import in <code>game/SpadesGame.js</code>:</p>
+<pre class="codehilite"><code class="language-js">import { Card } from 'classes/Card.js';
+</code></pre>
+
+<p>Identify the error and write the corrected import path. (Hint: the path needs to be relative to <code>game/SpadesGame.js</code>'s location.)</p>
+<hr />
+<h2>Knowledge Check Quiz (15 minutes)</h2>
+<p>Take the <strong>Session 24 Practice Quiz</strong> in Canvas.</p>
+<p>Focus on:
+- <code>export</code> syntax (named vs. default)
+- <code>import</code> path syntax (must start with <code>./</code> or <code>../</code>)
+- Why modules require an HTTP server (not <code>file://</code>)
+- How to identify and resolve circular dependency problems</p>
+<hr />
+<h2>Hands-On Assignment (60–90 minutes)</h2>
+<p>Open <strong>"Session 24: Modularize the Spades Game"</strong>.</p>
+<p>You will refactor your Spades game from <code>&lt;script&gt;</code> tags to ES6 modules and organize the files into a professional folder structure.</p>
+<hr />
+<h2>Wrap-Up (10 minutes)</h2>
+<h3>Key Takeaways</h3>
+<ul>
+<li><strong><code>export</code></strong> makes a class, function, or variable available to other files</li>
+<li><strong><code>import</code></strong> uses relative paths; always include the <code>.js</code> extension</li>
+<li><strong>One class per file</strong> with the file named after the class is the standard convention</li>
+<li><strong>Modules require an HTTP server</strong> — use VS Code Live Server or Python's <code>http.server</code></li>
+<li><strong>Circular imports</strong> are solved by passing instances as arguments rather than importing the class</li>
+</ul>
+<h3>How This Connects to the Assignment</h3>
+<p>The assignment asks you to refactor the Spades game into ES6 modules with a proper folder structure. The resulting project will be the codebase you submit for the Session 25 final project.</p>
+<p>Next session: <strong>Session 25 — Final Project: Complete Spades Game</strong></p>
+</body>
+</html>

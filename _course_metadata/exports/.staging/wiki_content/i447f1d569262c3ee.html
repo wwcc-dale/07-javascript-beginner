@@ -1,0 +1,264 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="identifier" content="i447f1d569262c3ee"/>
+<meta name="editing_roles" content="teachers"/>
+<meta name="workflow_state" content="active"/>
+<title>Session 22: localStorage — Persisting Data Across Sessions</title>
+</head>
+<body>
+<h1>Session 22: localStorage — Persisting Data Across Sessions</h1>
+<h2>Learning Outcomes</h2>
+<p>By the end of this session, you will be able to:
+- Store and retrieve strings from <code>localStorage</code> using <code>setItem</code> and <code>getItem</code>
+- Serialize JavaScript objects to JSON strings and deserialize them back
+- Handle the case where saved data doesn't exist or is malformed
+- Design a simple stats-tracking object that persists across page loads
+- Apply versioning to avoid errors when your data format changes</p>
+<hr />
+<h2>Introduction (5 minutes)</h2>
+<p>Every time a user reloads your Spades game, all progress is lost — scores, round history, player preferences. The browser provides a built-in solution: <strong>localStorage</strong>, a simple key-value store that survives page refreshes and browser closes.</p>
+<p>Today you learn how to use localStorage to save and restore complex JavaScript objects.</p>
+<hr />
+<h2>Reading: localStorage (35 minutes)</h2>
+<h3>localStorage Basics</h3>
+<p><code>localStorage</code> stores <strong>strings</strong> only. It provides four operations:</p>
+<pre class="codehilite"><code class="language-js">// Save
+localStorage.setItem('username', 'alice');
+
+// Retrieve (returns null if the key doesn't exist)
+const name = localStorage.getItem('username');
+console.log(name);  // 'alice'
+
+// Delete one key
+localStorage.removeItem('username');
+
+// Delete everything
+localStorage.clear();
+</code></pre>
+
+<p>Data persists until you explicitly remove it or the user clears their browser data. There is no automatic expiration.</p>
+<hr />
+<h3>Storing Objects with JSON</h3>
+<p>Since localStorage only stores strings, objects must be serialized with <code>JSON.stringify()</code> and deserialized with <code>JSON.parse()</code>:</p>
+<pre class="codehilite"><code class="language-js">const settings = {
+  theme: 'dark',
+  language: 'en',
+  notifications: true,
+  fontSize: 16
+};
+
+// Save: object → string
+localStorage.setItem('appSettings', JSON.stringify(settings));
+
+// Load: string → object
+const raw     = localStorage.getItem('appSettings');
+const loaded  = JSON.parse(raw);
+
+console.log(loaded.theme);  // 'dark'
+console.log(loaded.fontSize);  // 16
+</code></pre>
+
+<p><strong>JSON limitations:</strong> Functions, <code>undefined</code>, and circular references cannot be serialized. Date objects serialize as strings and must be reconstructed with <code>new Date(loaded.date)</code>.</p>
+<hr />
+<h3>Defensive Loading</h3>
+<p><code>localStorage.getItem()</code> returns <code>null</code> if the key doesn't exist. Always handle this:</p>
+<pre class="codehilite"><code class="language-js">function loadSettings() {
+  const raw = localStorage.getItem('appSettings');
+
+  if (!raw) {
+    // Key doesn't exist — return defaults
+    return { theme: 'light', language: 'en', notifications: true, fontSize: 14 };
+  }
+
+  try {
+    return JSON.parse(raw);
+  } catch (e) {
+    // Data is corrupted (e.g., from a bug in a previous version)
+    console.warn('Saved settings corrupted, using defaults');
+    localStorage.removeItem('appSettings');
+    return { theme: 'light', language: 'en', notifications: true, fontSize: 14 };
+  }
+}
+</code></pre>
+
+<p>Wrapping <code>JSON.parse()</code> in <code>try/catch</code> prevents a corrupt save from crashing the app.</p>
+<hr />
+<h3>A Stats Tracker with localStorage</h3>
+<p>Here is a complete pattern for persisting statistics across page loads:</p>
+<pre class="codehilite"><code class="language-js">class ReadingLog {
+  constructor() {
+    this.data = this.load();
+  }
+
+  load() {
+    const raw = localStorage.getItem('readingLog');
+    if (!raw) return this.defaults();
+    try {
+      return JSON.parse(raw);
+    } catch {
+      return this.defaults();
+    }
+  }
+
+  defaults() {
+    return {
+      booksRead:     0,
+      pagesRead:     0,
+      longestStreak: 0,
+      currentStreak: 0,
+      lastReadDate:  null
+    };
+  }
+
+  save() {
+    localStorage.setItem('readingLog', JSON.stringify(this.data));
+  }
+
+  logBook(pageCount) {
+    this.data.booksRead++;
+    this.data.pagesRead += pageCount;
+
+    const today = new Date().toDateString();
+    const last  = this.data.lastReadDate;
+
+    if (last) {
+      const daysSince = (new Date(today) - new Date(last)) / 86400000;
+      if (daysSince &lt;= 1) {
+        this.data.currentStreak++;
+      } else {
+        this.data.currentStreak = 1;  // Streak broken
+      }
+    } else {
+      this.data.currentStreak = 1;  // First book
+    }
+
+    this.data.longestStreak = Math.max(
+      this.data.longestStreak,
+      this.data.currentStreak
+    );
+    this.data.lastReadDate = today;
+
+    this.save();  // Always save after modifying
+  }
+
+  getAvgPages() {
+    return this.data.booksRead &gt; 0
+      ? (this.data.pagesRead / this.data.booksRead).toFixed(0)
+      : 0;
+  }
+}
+
+const log = new ReadingLog();
+log.logBook(312);
+console.log(log.data.booksRead);  // 1
+// Reload the page — log persists!
+</code></pre>
+
+<hr />
+<h3>Data Versioning</h3>
+<p>When you change the format of your saved data, old saves can cause errors. A version field lets you detect and handle this:</p>
+<pre class="codehilite"><code class="language-js">const CURRENT_VERSION = 2;
+
+function loadData() {
+  const raw = localStorage.getItem('myAppData');
+  if (!raw) return null;
+
+  const data = JSON.parse(raw);
+
+  if (data.version !== CURRENT_VERSION) {
+    console.log(`Old data format (v${data.version}), clearing...`);
+    localStorage.removeItem('myAppData');
+    return null;
+  }
+
+  return data;
+}
+
+function saveData(payload) {
+  localStorage.setItem('myAppData', JSON.stringify({
+    version: CURRENT_VERSION,
+    ...payload
+  }));
+}
+</code></pre>
+
+<p>Increment <code>CURRENT_VERSION</code> whenever you change the saved data structure. Old saves will be discarded rather than causing <code>TypeError: Cannot read property 'x' of undefined</code>.</p>
+<hr />
+<h3>Inspecting localStorage in the Browser</h3>
+<p>In Chrome/Firefox DevTools → <strong>Application</strong> tab → <strong>Local Storage</strong> → your domain. You can view, edit, and delete keys directly. This is invaluable for debugging.</p>
+<p>You can also inspect from the console:</p>
+<pre class="codehilite"><code class="language-js">// View all keys
+Object.keys(localStorage).forEach(key =&gt; {
+  console.log(key, ':', localStorage.getItem(key));
+});
+
+// Clear everything (useful when testing)
+localStorage.clear();
+</code></pre>
+
+<hr />
+<h3>Namespacing Keys</h3>
+<p>If multiple apps or features use localStorage on the same domain, prefix your keys to avoid collisions:</p>
+<pre class="codehilite"><code class="language-js">// Bad: generic key
+localStorage.setItem('settings', data);
+
+// Good: namespaced key
+localStorage.setItem('spadesGame_settings', data);
+localStorage.setItem('spadesGame_stats', data);
+localStorage.setItem('spadesGame_playerName', data);
+</code></pre>
+
+<hr />
+<h2>Video Tutorial: localStorage (20 minutes)</h2>
+<p>Watch: <code>assets/videos/22-localstorage.mp4</code></p>
+<p>Covers:
+- <code>setItem</code>/<code>getItem</code>/<code>removeItem</code> in the console
+- JSON serialization and the DevTools Application tab
+- The defensive loading pattern with <code>try/catch</code>
+- A complete stats-tracker class walkthrough</p>
+<hr />
+<h2>Supplemental Practice (25 minutes)</h2>
+<h3>Exercise 1: Round-Trip Test</h3>
+<p>Open your browser console. Create an object <code>{ name: 'Test', values: [1, 2, 3], active: true }</code>. Store it in localStorage, reload the page, retrieve it, and verify all properties are present.</p>
+<h3>Exercise 2: Save and Load</h3>
+<p>Build a <code>NotepadStorage</code> class with:
+- <code>save(title, content)</code> — stores a note under <code>notepad_[title]</code>
+- <code>load(title)</code> — returns the note or <code>null</code>
+- <code>listAll()</code> — returns an array of all saved note titles (filter localStorage keys by your prefix)
+- <code>delete(title)</code> — removes a note</p>
+<h3>Exercise 3: Versioned Data</h3>
+<p>Write <code>saveProfile(profile)</code> and <code>loadProfile()</code> functions. Include <code>version: 1</code> in the saved data. Then change the format (add a new required field) and update to <code>version: 2</code>. Verify that loading a v1 save returns <code>null</code> and saves a fresh v2 default.</p>
+<h3>Exercise 4: Stats with Persistence</h3>
+<p>Build a <code>QuizStats</code> class that persists across reloads:
+- <code>recordAnswer(correct)</code> — increments total and (if correct) correct count
+- <code>getAccuracy()</code> — returns correct/total as a percentage string
+- <code>reset()</code> — clears the stats and removes from localStorage</p>
+<p>Verify that calling <code>recordAnswer()</code> 5 times, reloading, and calling <code>recordAnswer()</code> 2 more times shows 7 total.</p>
+<hr />
+<h2>Knowledge Check Quiz (15 minutes)</h2>
+<p>Take the <strong>Session 22 Practice Quiz</strong> in Canvas.</p>
+<p>Focus on:
+- Why <code>JSON.stringify()</code> is required when saving objects
+- What <code>getItem()</code> returns when the key does not exist
+- Why <code>try/catch</code> is necessary around <code>JSON.parse()</code>
+- How versioning prevents crashes when the data format changes</p>
+<hr />
+<h2>Hands-On Assignment (60–90 minutes)</h2>
+<p>Open <strong>"Session 22: Persistence and Stats"</strong>.</p>
+<p>You will apply localStorage patterns to add session-to-session statistics to your Spades game.</p>
+<hr />
+<h2>Wrap-Up (10 minutes)</h2>
+<h3>Key Takeaways</h3>
+<ul>
+<li><strong><code>localStorage</code></strong> stores only strings — serialize objects with <code>JSON.stringify()</code>, deserialize with <code>JSON.parse()</code></li>
+<li><strong>Defensive loading</strong> handles missing keys (<code>null</code>) and corrupted data (<code>try/catch</code>)</li>
+<li><strong>Version fields</strong> prevent old saves from crashing newer code</li>
+<li><strong>Prefix keys</strong> to avoid collisions with other apps on the same domain</li>
+<li><strong>Always call <code>save()</code></strong> after modifying the data — localStorage doesn't auto-sync</li>
+</ul>
+<h3>How This Connects to the Assignment</h3>
+<p>The assignment asks you to apply the load/defaults/save pattern to the Spades game, creating a stats-tracking class that persists data across page reloads.</p>
+<p>Next session: <strong>Session 23 — CSS Themes, Variables, and Visual Polish</strong></p>
+</body>
+</html>

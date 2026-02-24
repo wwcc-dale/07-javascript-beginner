@@ -1,16 +1,16 @@
 ---
 name: "Session 24 Quiz – Testing, Debugging, and Code Quality"
-quiztype: practice_quiz
+quiz_type: practice_quiz
 indent: 1
-timelimit: 20
-allowedattempts: 3
-shuffleanswers: true
-showcorrectanswers: true
+time_limit: 20
+allowed_attempts: 3
+shuffle_answers: true
+show_correct_answers: true
 published: false
-questiongroups:
-  - bankid: PLACEHOLDER_REPLACE_AFTER_SYNC
+question_groups:
+  - bank_id: PLACEHOLDER_REPLACE_AFTER_SYNC
     pick: 16
-    pointsperquestion: 1
+    points_per_question: 1
 ---
 
 # Session 24 Quiz – Testing, Debugging, and Code Quality

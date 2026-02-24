@@ -1,0 +1,388 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="identifier" content="i950205cb6a2c9014"/>
+<meta name="editing_roles" content="teachers"/>
+<meta name="workflow_state" content="active"/>
+<title>Session 7: Math Methods and Encapsulation</title>
+</head>
+<body>
+<h1>Session 7: Math Methods and Encapsulation</h1>
+<h2>Learning Outcomes</h2>
+<p>By the end of this session, you will be able to:
+- Use <code>Math</code> methods to round numbers, generate random values, and find min/max.
+- Use <code>Number</code> methods to parse and format numeric strings.
+- Apply the underscore convention to signal private properties.
+- Write getters and setters to control how class properties are read and written.
+- Add validation logic inside setters to protect object state.</p>
+<hr />
+<h2>Introduction (5 minutes)</h2>
+<p>Two important topics today. First, JavaScript's built-in <code>Math</code> object gives you a toolkit of numeric operations you'll reach for constantly — rounding prices, generating random IDs, clamping values to a range. Second, you'll learn <strong>encapsulation</strong>: how to hide the internal details of a class so that outside code can only interact with data the way you intend.</p>
+<hr />
+<h2>Reading: Math Methods (25 minutes)</h2>
+<h3>The <code>Math</code> Object</h3>
+<p><code>Math</code> is a built-in JavaScript object that comes pre-loaded with mathematical constants and functions. You use it like <code>Math.methodName()</code> — no need to create or import it.</p>
+<h3>Rounding Numbers</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>What It Does</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Math.round(x)</code></td>
+<td>Round to nearest integer</td>
+<td><code>Math.round(4.6)</code> → <code>5</code></td>
+</tr>
+<tr>
+<td><code>Math.floor(x)</code></td>
+<td>Always round <strong>down</strong></td>
+<td><code>Math.floor(4.9)</code> → <code>4</code></td>
+</tr>
+<tr>
+<td><code>Math.ceil(x)</code></td>
+<td>Always round <strong>up</strong></td>
+<td><code>Math.ceil(4.1)</code> → <code>5</code></td>
+</tr>
+</tbody>
+</table>
+<pre class="codehilite"><code class="language-js">const price = 9.74;
+
+console.log(Math.round(price));  // 10 (nearest integer)
+console.log(Math.floor(price));  // 9  (down to the dollar)
+console.log(Math.ceil(price));   // 10 (up to the dollar)
+</code></pre>
+
+<p><strong>Real-world use:</strong> Tax calculations, displaying star ratings, pagination:</p>
+<pre class="codehilite"><code class="language-js">const totalItems = 53;
+const itemsPerPage = 10;
+const pages = Math.ceil(totalItems / itemsPerPage);
+console.log(pages);  // 6 (you need 6 pages, not 5.3)
+</code></pre>
+
+<h3><code>Math.random()</code> — Random Numbers</h3>
+<p><code>Math.random()</code> returns a random decimal between <strong>0 (inclusive) and 1 (exclusive)</strong>.</p>
+<pre class="codehilite"><code class="language-js">console.log(Math.random());  // something like 0.7342...
+</code></pre>
+
+<p>Alone it's not very useful. Combine it with <code>Math.floor</code> to get a random integer in a range:</p>
+<pre class="codehilite"><code class="language-js">// Random integer from 0 to 5 (six possible values: 0,1,2,3,4,5)
+const roll = Math.floor(Math.random() * 6);
+
+// Random integer from 1 to 6 (like a die)
+const die = Math.floor(Math.random() * 6) + 1;
+
+// Random integer from min to max (inclusive)
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+console.log(randomInt(1, 100));   // anywhere from 1 to 100
+console.log(randomInt(50, 60));   // anywhere from 50 to 60
+</code></pre>
+
+<h3><code>Math.max()</code> and <code>Math.min()</code></h3>
+<p>Find the largest or smallest value in a list of arguments:</p>
+<pre class="codehilite"><code class="language-js">console.log(Math.max(10, 45, 23, 7));   // 45
+console.log(Math.min(10, 45, 23, 7));   // 7
+</code></pre>
+
+<p><strong>Real-world use:</strong> Clamping a value to stay within bounds:</p>
+<pre class="codehilite"><code class="language-js">function clamp(value, min, max) {
+  return Math.max(min, Math.min(max, value));
+}
+
+console.log(clamp(150, 0, 100));  // 100 (too high, capped at 100)
+console.log(clamp(-5, 0, 100));   // 0   (too low, floored at 0)
+console.log(clamp(42, 0, 100));   // 42  (within range, unchanged)
+</code></pre>
+
+<h3><code>Math.abs()</code> — Absolute Value</h3>
+<p>Returns the distance from zero (removes the negative sign):</p>
+<pre class="codehilite"><code class="language-js">console.log(Math.abs(-15));   // 15
+console.log(Math.abs(15));    // 15
+console.log(Math.abs(-3.7));  // 3.7
+</code></pre>
+
+<p><strong>Real-world use:</strong> Calculate the difference between two values regardless of order:</p>
+<pre class="codehilite"><code class="language-js">const budget = 500;
+const spent = 620;
+const difference = Math.abs(budget - spent);
+console.log(&quot;Over budget by:&quot;, difference);  // 120
+</code></pre>
+
+<h3>Number Methods</h3>
+<p>These format and parse numbers:</p>
+<pre class="codehilite"><code class="language-js">// toFixed — round to N decimal places, returns a string
+const price = 9.999;
+console.log(price.toFixed(2));   // &quot;10.00&quot;
+console.log(price.toFixed(0));   // &quot;10&quot;
+
+// parseInt — convert a string to a whole number
+console.log(parseInt(&quot;42px&quot;));   // 42
+console.log(parseInt(&quot;3.7&quot;));    // 3
+
+// parseFloat — convert a string to a decimal number
+console.log(parseFloat(&quot;3.14 meters&quot;));  // 3.14
+
+// isNaN — check if something is &quot;Not a Number&quot;
+console.log(isNaN(&quot;hello&quot;));  // true
+console.log(isNaN(42));       // false
+console.log(isNaN(&quot;42&quot;));     // false (coerces to number first)
+
+// Number.isInteger — check if a number has no decimal part
+console.log(Number.isInteger(5));    // true
+console.log(Number.isInteger(5.0));  // true
+console.log(Number.isInteger(5.5));  // false
+</code></pre>
+
+<hr />
+<h2>Reading: Encapsulation (25 minutes)</h2>
+<h3>What Is Encapsulation?</h3>
+<p>Encapsulation means <strong>bundling data with the methods that operate on it, and controlling access to that data</strong>. The goal is to prevent outside code from putting objects into invalid states.</p>
+<p><strong>Problem without encapsulation:</strong></p>
+<pre class="codehilite"><code class="language-js">class MusicPlayer {
+  constructor(volume) {
+    this.volume = volume;
+  }
+}
+
+const player = new MusicPlayer(50);
+player.volume = 9999;  // Anyone can set any value — no limits enforced!
+console.log(player.volume);  // 9999
+</code></pre>
+
+<p><strong>Solution:</strong> hide the data and expose controlled access points.</p>
+<h3>The Underscore Convention</h3>
+<p>JavaScript doesn't enforce true privacy by default. Developers use an underscore prefix (<code>_volume</code>) as a signal: "this property is internal — don't touch it directly from outside the class."</p>
+<pre class="codehilite"><code class="language-js">class MusicPlayer {
+  constructor(volume) {
+    this._volume = volume;  // _ means &quot;treat as private&quot;
+  }
+}
+</code></pre>
+
+<p>The underscore is just a naming convention — it's a message to other developers, not a technical lock.</p>
+<h3>Getters — Controlled Reading</h3>
+<p>A <strong>getter</strong> is a special method that looks like a property when you read it. Define it with <code>get</code>:</p>
+<pre class="codehilite"><code class="language-js">class MusicPlayer {
+  constructor(volume) {
+    this._volume = volume;
+  }
+
+  get volume() {
+    return this._volume;
+  }
+}
+
+const player = new MusicPlayer(50);
+console.log(player.volume);  // 50  (calls the getter, no parentheses needed)
+</code></pre>
+
+<p>You read <code>player.volume</code> like a property, but under the hood it's calling the getter method.</p>
+<h3>Setters — Controlled Writing with Validation</h3>
+<p>A <strong>setter</strong> runs code whenever you assign to a property. This is where you add validation:</p>
+<pre class="codehilite"><code class="language-js">class MusicPlayer {
+  constructor(volume) {
+    this._volume = volume;
+  }
+
+  get volume() {
+    return this._volume;
+  }
+
+  set volume(level) {
+    if (level &lt; 0 || level &gt; 100) {
+      console.log(&quot;Volume must be between 0 and 100.&quot;);
+      return;
+    }
+    this._volume = level;
+  }
+}
+
+const player = new MusicPlayer(50);
+player.volume = 80;    // calls the setter — valid, accepted
+console.log(player.volume);  // 80
+
+player.volume = 150;   // calls the setter — rejected
+console.log(player.volume);  // 80 (unchanged)
+</code></pre>
+
+<h3>Real Example: Stopwatch</h3>
+<pre class="codehilite"><code class="language-js">class Stopwatch {
+  constructor(seconds) {
+    this._seconds = seconds;
+  }
+
+  get seconds() {
+    return this._seconds;
+  }
+
+  set seconds(value) {
+    if (value &lt; 0) {
+      console.log(&quot;Time cannot be negative.&quot;);
+      return;
+    }
+    this._seconds = value;
+  }
+
+  get minutes() {
+    return (this._seconds / 60).toFixed(2);
+  }
+
+  set minutes(value) {
+    this.seconds = value * 60;  // uses the seconds setter for validation
+  }
+}
+
+const watch = new Stopwatch(0);
+watch.seconds = 90;
+console.log(watch.seconds);  // 90
+console.log(watch.minutes);  // &quot;1.50&quot;
+
+watch.minutes = 2;
+console.log(watch.seconds);  // 120
+
+watch.seconds = -10;         // rejected — cannot be negative
+console.log(watch.seconds);  // 120 (unchanged)
+</code></pre>
+
+<h3>Example: Artwork with Price Validation</h3>
+<pre class="codehilite"><code class="language-js">class Artwork {
+  constructor(title, price) {
+    this._title = title;
+    this._price = price;
+  }
+
+  get title() { return this._title; }
+  get price() { return this._price; }
+
+  set price(value) {
+    if (typeof value !== &quot;number&quot; || value &lt; 0) {
+      console.log(&quot;Price must be a non-negative number.&quot;);
+      return;
+    }
+    this._price = value;
+  }
+
+  formattedPrice() {
+    return &quot;$&quot; + this._price.toFixed(2);
+  }
+}
+
+const piece = new Artwork(&quot;Starry Night Print&quot;, 49.99);
+console.log(piece.formattedPrice());  // &quot;$49.99&quot;
+
+piece.price = 59.99;
+console.log(piece.price);   // 59.99
+
+piece.price = -10;          // rejected
+console.log(piece.price);   // 59.99
+</code></pre>
+
+<h3>Why Encapsulation Matters</h3>
+<ol>
+<li><strong>Prevents invalid state</strong> — you control what values are acceptable</li>
+<li><strong>Hides implementation</strong> — callers don't need to know how data is stored</li>
+<li><strong>Easier to change later</strong> — you can update internal logic without breaking callers</li>
+<li><strong>Self-documenting</strong> — getters/setters make the interface explicit</li>
+</ol>
+<hr />
+<h2>Video Tutorial: Math and Encapsulation (20 minutes)</h2>
+<p>Watch: <code>assets/videos/07-math-encapsulation.mp4</code></p>
+<p>This video covers:
+- Using <code>Math.floor</code>, <code>Math.random</code>, <code>Math.max</code>, <code>Math.min</code>
+- The underscore naming convention
+- Writing getters and setters
+- Adding validation in setters
+- Real examples with MusicPlayer and Stopwatch</p>
+<p>Pause and type each example.</p>
+<hr />
+<h2>Supplemental Practice (25 minutes)</h2>
+<h3>Practice 1: Random Number Utilities</h3>
+<pre class="codehilite"><code class="language-js">// Roll a 6-sided die
+const die = Math.floor(Math.random() * 6) + 1;
+console.log(&quot;Rolled:&quot;, die);
+
+// Pick a random item from an array
+const options = [&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;];
+const choice = options[Math.floor(Math.random() * options.length)];
+console.log(&quot;Computer chose:&quot;, choice);
+
+// Generate a random percentage (0–100)
+const pct = Math.round(Math.random() * 100);
+console.log(&quot;Random %:&quot;, pct);
+</code></pre>
+
+<h3>Practice 2: Rounding and Formatting</h3>
+<pre class="codehilite"><code class="language-js">const subtotal = 47.856;
+const tax = subtotal * 0.08;
+const total = subtotal + tax;
+
+console.log(&quot;Subtotal:&quot;, subtotal.toFixed(2));  // &quot;47.86&quot;
+console.log(&quot;Tax:&quot;, tax.toFixed(2));             // &quot;3.83&quot;
+console.log(&quot;Total:&quot;, total.toFixed(2));          // &quot;51.69&quot;
+</code></pre>
+
+<h3>Practice 3: Add a Getter/Setter</h3>
+<p>Start with this class and add a getter and setter for <code>_score</code> that rejects values outside 0–100:</p>
+<pre class="codehilite"><code class="language-js">class Student {
+  constructor(name, score) {
+    this._name = name;
+    this._score = score;
+  }
+
+  get name() { return this._name; }
+
+  // TODO: add get score() and set score(value) with validation
+}
+
+const s = new Student(&quot;Alex&quot;, 85);
+s.score = 110;  // should be rejected
+s.score = 72;   // should be accepted
+console.log(s.score);  // 72
+</code></pre>
+
+<hr />
+<h2>Knowledge Check Quiz (15 minutes)</h2>
+<p>Take the <strong>Session 7 Practice Quiz</strong> in Canvas.</p>
+<p>Focus on:
+- <code>Math.floor</code>, <code>Math.ceil</code>, <code>Math.round</code>, <code>Math.random</code>
+- <code>Math.max</code>, <code>Math.min</code>, <code>Math.abs</code>
+- <code>Number</code> methods: <code>toFixed</code>, <code>parseInt</code>, <code>parseFloat</code>, <code>isNaN</code>
+- Underscore convention for private properties
+- Getter syntax and behavior
+- Setter validation patterns</p>
+<hr />
+<h2>Hands-On Assignment (60–90 minutes)</h2>
+<p>Open the assignment <strong>"Session 7: Encapsulation and Data Protection"</strong>.</p>
+<p>You will:
+- Use <code>_</code> prefix to signal private properties
+- Write getters for controlled reading
+- Write setters with validation logic
+- Build classes that protect their internal state</p>
+<hr />
+<h2>Wrap-Up (10 minutes)</h2>
+<h3>Key Takeaways</h3>
+<ul>
+<li><strong><code>Math</code> methods</strong> give you rounding (<code>floor</code>/<code>ceil</code>/<code>round</code>), random numbers, min/max, and absolute value.</li>
+<li><strong><code>Math.floor(Math.random() * N)</code></strong> is the standard pattern for a random integer 0 to N-1.</li>
+<li><strong>Underscore prefix</strong> (<code>_balance</code>) signals a property is private — convention, not enforcement.</li>
+<li><strong>Getters</strong> (<code>get balance()</code>) let you read internal data with property-like syntax.</li>
+<li><strong>Setters</strong> (<code>set balance(v)</code>) let you intercept and validate assignments.</li>
+<li>Together, getters and setters are the primary tools for <strong>encapsulation</strong> in JavaScript classes.</li>
+</ul>
+<h3>How This Connects to Your Learning</h3>
+<p>Next session (Session 8) goes deeper into OOP: static methods, and more sophisticated class design. Your classes are becoming real software.</p>
+<h3>Questions?</h3>
+<ul>
+<li>Try adding a setter to one of the classes you built in Session 6.</li>
+<li>Experiment with <code>Math.random()</code> to build a small guessing game.</li>
+<li>Ask your instructor if anything is unclear.</li>
+</ul>
+<p>Next session: <strong>Advanced OOP</strong></p>
+</body>
+</html>

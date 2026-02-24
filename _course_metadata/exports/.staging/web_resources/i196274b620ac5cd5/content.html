@@ -1,0 +1,91 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Session 9: Inheritance and Composition Patterns</title>
+</head>
+<body>
+<h1>Session 9: Inheritance and Composition Patterns</h1>
+<p>Build class hierarchies using inheritance and composition.</p>
+<p><strong>Time:</strong> 60–90 minutes | <strong>Points:</strong> 20 | <strong>Submit:</strong> <code>09-assignment.js</code></p>
+<h2>Level 1 – Core Tasks (15 points)</h2>
+<h3>Challenge 1: Basic Inheritance</h3>
+<pre class="codehilite"><code class="language-js">// TODO: Create a Person class with:
+// - Constructor: name, age
+// - Method introduce(): returns &quot;Hi, I'm [name]&quot;
+
+// TODO: Create a Student class that extends Person with:
+// - Constructor: name, age, grade
+// - Override introduce(): returns &quot;Hi, I'm [name], a student&quot;
+// - Method study(): returns &quot;[name] is studying&quot;
+
+// Test:
+// const student = new Student(&quot;Alex&quot;, 20, 85);
+// console.log(student.introduce());
+// console.log(student.study());
+</code></pre>
+
+<h3>Challenge 2: Employee Hierarchy</h3>
+<pre class="codehilite"><code class="language-js">// TODO: Create Employee class that extends Person with:
+// - Constructor: name, age, position
+// - Override introduce(): returns &quot;Hi, I'm [name], [position]&quot;
+// - Method work(): returns &quot;[name] is working&quot;
+
+// Test:
+// const emp = new Employee(&quot;Jordan&quot;, 30, &quot;Developer&quot;);
+// console.log(emp.introduce());
+</code></pre>
+
+<h3>Challenge 3: Composition Example</h3>
+<pre class="codehilite"><code class="language-js">// TODO: Create Engine class with:
+// - Constructor: horsepower
+// - Method start(): returns &quot;Engine started&quot;
+
+// TODO: Create Car class with:
+// - Constructor: make, model, horsepower
+// - Property: engine (new Engine instance using composition)
+// - Method start(): calls this.engine.start()
+
+// Test:
+// const car = new Car(&quot;Toyota&quot;, &quot;Camry&quot;, 200);
+// console.log(car.start()); // &quot;Engine started&quot;
+</code></pre>
+
+<h3>Challenge 4: Shape Hierarchy</h3>
+<pre class="codehilite"><code class="language-js">// TODO: Create Shape class with:
+// - Constructor: color
+// - Method describe(): returns &quot;A [color] shape&quot;
+
+// TODO: Create Circle class that extends Shape with:
+// - Constructor: color, radius
+// - Method getArea(): returns Math.PI * radius * radius
+// - Override describe(): returns &quot;A [color] circle&quot;
+
+// Test:
+// const circle = new Circle(&quot;red&quot;, 5);
+// console.log(circle.describe());
+// console.log(circle.getArea());
+</code></pre>
+
+<h2>Level 2 – Stretch (3 points)</h2>
+<h3>Challenge 5: Animal Hierarchy</h3>
+<p>Create:
+- Animal class (name, sound)
+- Dog extends Animal (overrides sound to "bark")
+- Cat extends Animal (overrides sound to "meow")
+- Method makeSound() that returns the sound</p>
+<h3>Challenge 6: Vehicle Composition</h3>
+<p>Create:
+- GPS class with method getLocation()
+- Radio class with method playMusic()
+- Luxury Car that uses composition to include both GPS and Radio</p>
+<h2>Level 3 – Advanced (2 points)</h2>
+<h3>Challenge 7: Complete System</h3>
+<p>Build an education system:
+- Person base class
+- Student extends Person (adds grades array, method addGrade)
+- GraduateStudent extends Student (adds thesis property)
+- Teacher extends Person (adds subject)
+- Classroom class that uses composition to manage Students and Teacher</p>
+<p>Test with multiple students, a graduate student, and a teacher.</p>
+</body>
+</html>

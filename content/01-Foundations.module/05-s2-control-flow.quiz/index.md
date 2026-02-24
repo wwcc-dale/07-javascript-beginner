@@ -1,16 +1,17 @@
 ---
-name: "Session 2 Quiz – Control Flow (if/else, loops)"
-quiztype: practice_quiz
+allowed_attempts: 3
 indent: 1
-timelimit: 20
-allowedattempts: 3
-shuffleanswers: true
-showcorrectanswers: true
+name: Session 2 Quiz – Control Flow (if/else, loops)
 published: false
-questiongroups:
-  - bankid: PLACEHOLDER_REPLACE_AFTER_SYNC
-    pick: 16
-    pointsperquestion: 1
+question_groups:
+- bank: s2-functions.bank
+  bank_id: 35301426
+  pick: 16
+  points_per_question: 1
+quiz_type: practice_quiz
+show_correct_answers: true
+shuffle_answers: true
+time_limit: 20
 ---
 
 # Session 2 Quiz – Control Flow (if/else, loops)

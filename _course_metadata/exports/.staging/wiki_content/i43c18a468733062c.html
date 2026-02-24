@@ -1,0 +1,233 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="identifier" content="i43c18a468733062c"/>
+<meta name="editing_roles" content="teachers"/>
+<meta name="workflow_state" content="active"/>
+<title>Session 21: Decision Trees and Heuristic AI</title>
+</head>
+<body>
+<h1>Session 21: Decision Trees and Heuristic AI</h1>
+<h2>Learning Outcomes</h2>
+<p>By the end of this session, you will be able to:
+- Build a decision tree as a series of prioritized <code>if/else</code> conditions
+- Use a <code>Set</code> to track items that have been seen or used
+- Compute a heuristic score from multiple weighted factors
+- Design an AI that adjusts behavior based on its current goal vs. actual progress
+- Explain the difference between greedy, conservative, and goal-aware strategies</p>
+<hr />
+<h2>Introduction (5 minutes)</h2>
+<p>Most game AI is not magical — it is a well-structured series of <code>if/else</code> rules that consider the current situation and return the best available choice. The art is in choosing <em>which</em> conditions to check and in what order.</p>
+<p>Today you learn the patterns used to build this kind of rule-based AI: decision trees, heuristic scoring, and goal tracking.</p>
+<hr />
+<h2>Reading: AI Strategy Patterns (35 minutes)</h2>
+<h3>The Decision Tree Pattern</h3>
+<p>A <strong>decision tree</strong> is a series of questions answered in priority order. Each branch either returns a decision or falls through to the next question:</p>
+<pre class="codehilite"><code class="language-js">function chooseSetting(room) {
+  // Priority 1: Safety override
+  if (room.smokeDetected) return 'EVACUATE';
+
+  // Priority 2: Comfort preferences
+  if (room.temperature &gt; 78) return 'COOL';
+  if (room.temperature &lt; 65) return 'HEAT';
+
+  // Priority 3: Energy saving (only if comfort is already satisfied)
+  if (room.occupants === 0 &amp;&amp; room.hvacOn) return 'OFF';
+
+  // Default: no change needed
+  return 'MAINTAIN';
+}
+</code></pre>
+
+<p><strong>Structure rules:</strong>
+- Most important conditions come first
+- Each branch returns immediately (no need for <code>else</code> after <code>return</code>)
+- The final return is the default/fallback</p>
+<hr />
+<h3>Tracking History with a <code>Set</code></h3>
+<p>A <code>Set</code> is perfect for "have I seen this before?" tracking:</p>
+<pre class="codehilite"><code class="language-js">class ContentRecommender {
+  constructor() {
+    this.viewedItems = new Set();  // Tracks IDs of viewed items
+  }
+
+  recordView(itemId) {
+    this.viewedItems.add(itemId);
+  }
+
+  hasViewed(itemId) {
+    return this.viewedItems.has(itemId);
+  }
+
+  getUnseenRecommendations(catalog) {
+    return catalog.filter(item =&gt; !this.viewedItems.has(item.id));
+  }
+
+  resetHistory() {
+    this.viewedItems = new Set();
+  }
+}
+
+const rec = new ContentRecommender();
+rec.recordView('movie-42');
+rec.recordView('movie-7');
+
+const fresh = rec.getUnseenRecommendations([
+  { id: 'movie-42', title: 'Interstellar' },
+  { id: 'movie-15', title: 'Arrival' }
+]);
+console.log(fresh[0].title);  // 'Arrival' — movie-42 was filtered out
+</code></pre>
+
+<p><code>Set.has()</code> is O(1) — much faster than searching an array with <code>includes()</code>.</p>
+<hr />
+<h3>Heuristic Scoring</h3>
+<p>A <strong>heuristic</strong> is a formula that estimates value without computing it exactly. Multiple factors are often weighted and combined:</p>
+<pre class="codehilite"><code class="language-js">function scoreCandidate(candidate, requirements) {
+  let score = 0;
+
+  // Required skills — high weight
+  const skillMatch = requirements.skills.filter(
+    s =&gt; candidate.skills.includes(s)
+  ).length;
+  score += skillMatch * 10;
+
+  // Experience — medium weight
+  score += Math.min(candidate.yearsExp, 10) * 3;
+
+  // Location preference — low weight
+  if (candidate.city === requirements.preferredCity) score += 5;
+
+  // Penalty: overqualified candidates may not accept lower roles
+  if (candidate.yearsExp &gt; requirements.maxExperience) score -= 8;
+
+  return score;
+}
+
+const candidates = [alice, bob, carol];
+const best = candidates.reduce((top, c) =&gt;
+  scoreCandidate(c, requirements) &gt; scoreCandidate(top, requirements) ? c : top
+);
+</code></pre>
+
+<p>Weights communicate priorities: skills matter most, location least. The penalty models an important negative factor.</p>
+<hr />
+<h3>Goal-Aware Strategy: Progress vs. Target</h3>
+<p>One of the most useful AI improvements is making decisions based on <strong>current progress relative to the goal</strong>, rather than always trying to maximize:</p>
+<pre class="codehilite"><code class="language-js">class SalesAgent {
+  constructor(quota) {
+    this.quota      = quota;
+    this.salesMade  = 0;
+  }
+
+  chooseLead(leads) {
+    const remaining = this.quota - this.salesMade;
+
+    if (remaining &lt;= 0) {
+      // Already hit quota — pursue smallest leads (low risk)
+      return leads.reduce((min, lead) =&gt;
+        lead.value &lt; min.value ? lead : min
+      );
+    }
+
+    if (remaining &gt; this.quota * 0.7) {
+      // Far from quota — pursue highest-value leads
+      return leads.reduce((max, lead) =&gt;
+        lead.value &gt; max.value ? lead : max
+      );
+    }
+
+    // Close to quota — take the cheapest lead that closes the gap
+    const sufficient = leads.filter(l =&gt; l.value &gt;= remaining);
+    if (sufficient.length &gt; 0) {
+      return sufficient.reduce((min, lead) =&gt;
+        lead.value &lt; min.value ? lead : min
+      );
+    }
+
+    return this.chooseLead(leads);  // Fallback: repeat with original strategy
+  }
+}
+</code></pre>
+
+<p><strong>The insight:</strong> the optimal action depends not just on the options available, but on how far you are from your goal. Having exceeded your goal flips the strategy entirely.</p>
+<hr />
+<h3>Combining Filtering and Scoring</h3>
+<p>In practice, AI decision-making first <strong>filters</strong> to valid options, then <strong>scores</strong> them to pick the best:</p>
+<pre class="codehilite"><code class="language-js">function bestAvailableAction(options, context) {
+  // Step 1: Filter to valid options only
+  const valid = options.filter(opt =&gt; isLegalMove(opt, context));
+
+  if (valid.length === 0) return null;  // No valid moves
+
+  // Step 2: Score each valid option
+  const scored = valid.map(opt =&gt; ({
+    option: opt,
+    score:  scoreOption(opt, context)
+  }));
+
+  // Step 3: Pick the highest scorer
+  return scored.reduce((best, s) =&gt;
+    s.score &gt; best.score ? s : best
+  ).option;
+}
+</code></pre>
+
+<p>This three-step structure (filter → score → select) is the backbone of most game AI.</p>
+<hr />
+<h2>Video Tutorial: Decision Trees and Heuristic AI (20 minutes)</h2>
+<p>Watch: <code>assets/videos/21-decision-trees-heuristics.mp4</code></p>
+<p>Covers:
+- Decision tree structure and priority ordering
+- <code>Set</code> for O(1) membership checking
+- Building a heuristic scoring function
+- Goal-aware strategy: adjusting behavior based on progress</p>
+<hr />
+<h2>Supplemental Practice (25 minutes)</h2>
+<h3>Exercise 1: Build a Decision Tree</h3>
+<p>Write a <code>chooseTactic(situation)</code> function for a board game. The function receives <code>{ myScore, opponentScore, roundsLeft, availableMoves }</code>. It should:
+1. If <code>myScore &gt; opponentScore + 10</code> (comfortable lead): return the lowest-risk move
+2. If <code>roundsLeft &lt; 3</code> (almost out of time): return the highest-value move
+3. If <code>opponentScore &gt; myScore</code> (losing): return the most aggressive move
+4. Default: return the move with the best risk-adjusted value</p>
+<h3>Exercise 2: Seen-Items Tracking</h3>
+<p>Build a <code>BrowsingHistory</code> class with a <code>Set</code>. Add <code>visit(url)</code>, <code>hasVisited(url)</code>, <code>getNewLinks(urls)</code> (returns only unvisited URLs), and <code>clearHistory()</code> methods. Test each.</p>
+<h3>Exercise 3: Multi-Factor Scoring</h3>
+<p>Write a <code>scoreProduct(product, userPrefs)</code> function that scores products based on:
+- Category match: +15 if matches preferred category
+- Price fit: +10 if under budget, -5 if over by 10%, -15 if over by 25%+
+- Rating: +rating × 2 (rating is 0–5)
+- Already purchased: -50 penalty</p>
+<p>Test it on a list of 5 products and return the top 2.</p>
+<h3>Exercise 4: Goal-Aware Selection</h3>
+<p>Write a <code>selectItem(inventory, goal, currentProgress)</code> function that:
+- If <code>currentProgress &gt;= goal</code>: selects the item with the lowest cost
+- If <code>currentProgress &lt; goal * 0.5</code>: selects the item with the highest value
+- Otherwise: selects the cheapest item whose value brings <code>currentProgress</code> to <code>goal</code></p>
+<hr />
+<h2>Knowledge Check Quiz (15 minutes)</h2>
+<p>Take the <strong>Session 21 Practice Quiz</strong> in Canvas.</p>
+<p>Focus on:
+- How priority order in a decision tree affects the result
+- Why <code>Set.has()</code> is faster than <code>Array.includes()</code> for large collections
+- How to structure a heuristic score from multiple weighted factors
+- Why the goal-aware pattern inverts strategy when the goal is already met</p>
+<hr />
+<h2>Hands-On Assignment (60–90 minutes)</h2>
+<p>Open <strong>"Session 21: Improving the AIPlayer"</strong>.</p>
+<p>You will apply decision trees, <code>Set</code>-based tracking, and goal-aware strategy to upgrade <code>AIPlayer.js</code> in your Spades game.</p>
+<hr />
+<h2>Wrap-Up (10 minutes)</h2>
+<h3>Key Takeaways</h3>
+<ul>
+<li><strong>Decision trees</strong> are <code>if/else</code> chains in priority order — most critical conditions first</li>
+<li><strong><code>Set</code></strong> provides fast membership testing and automatic deduplication</li>
+<li><strong>Heuristic scoring</strong> combines multiple weighted factors into a single comparable number</li>
+<li><strong>Goal-aware strategy</strong> checks current progress against target and adjusts behavior accordingly</li>
+<li><strong>Filter → score → select</strong> is the standard three-step structure for AI decision-making</li>
+</ul>
+<h3>How This Connects to the Assignment</h3>
+<p>The assignment asks you to upgrade <code>AIPlayer</code> using these patterns: a decision tree for card selection, a <code>Set</code> for tracking played cards, and goal-aware logic that changes strategy once the AI has made its bid.</p>
+<p>Next session: <strong>Session 22 — localStorage: Persisting Data Across Sessions</strong></p>
+</body>
+</html>

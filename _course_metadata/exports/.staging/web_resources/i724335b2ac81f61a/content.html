@@ -1,0 +1,127 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Session 25: Final Project — Complete Spades Game</title>
+</head>
+<body>
+<h1>Session 25: Final Project — Complete Spades Game</h1>
+<p>Submit a complete, polished, fully playable Spades game demonstrating mastery of the JavaScript skills taught in this course.</p>
+<p><strong>Time:</strong> Open-ended | <strong>Points:</strong> 100 | <strong>Submit:</strong> ZIP of your complete project</p>
+<hr />
+<h2>Mandatory Features (60 pts)</h2>
+<h3>Core Game — Must Work End-to-End (40 pts)</h3>
+<p>Your game must be fully playable from opening <code>index.html</code> to seeing a game-over message. The following must work correctly:</p>
+<ul>
+<li>All 4 players receive exactly 13 cards per round, with no duplicates</li>
+<li>Human player sees their hand sorted by suit and rank</li>
+<li>AI players bid automatically; human player clicks a bid button</li>
+<li>Spades cannot be led until broken; follow-suit is enforced</li>
+<li>Trick winner is determined correctly (highest spade; or highest of led suit)</li>
+<li>Rounds score correctly: made bids, sets, nil bids, overtricks, bag penalties</li>
+<li>Game ends at 500 points or −200 points; ties result in an extra round</li>
+<li>Winning team is announced at the end</li>
+</ul>
+<h3>User Interface (20 pts)</h3>
+<ul>
+<li>Valid cards are visually highlighted; invalid cards are not clickable</li>
+<li>The trick table shows the current trick as cards are played</li>
+<li>The trick winner is announced before the next trick begins</li>
+<li>Bids and tricks-won are visible for all 4 players throughout each round</li>
+<li>Scores update after each round</li>
+<li>Game-over screen shows the winning team and final scores</li>
+</ul>
+<hr />
+<h2>Advanced Features — Choose at Least 2 (20 pts)</h2>
+<p>Each implemented feature earns up to 10 points:</p>
+<p><strong>AI Improvement (10 pts)</strong>
+- <code>AIPlayer</code> tracks played cards using a <code>Set</code>
+- Goal-aware strategy: once bid is made, AI avoids winning more tricks
+- Improved bidding estimation</p>
+<p><strong>localStorage Stats (10 pts)</strong>
+- <code>GameStats</code> class persists across page reloads
+- Tracks and displays: games played, win rate, best round score
+- Stats survive page refresh</p>
+<p><strong>Light/Dark Theme (10 pts)</strong>
+- CSS custom properties used throughout <code>style.css</code>
+- Theme toggle button switches between light and dark
+- Theme preference persists via localStorage</p>
+<p><strong>CSS Animations (10 pts)</strong>
+- Cards animate in when dealt
+- Trick winner announcement has an entrance animation
+- Playable cards lift on hover using CSS transitions</p>
+<p><strong>ES6 Modules (10 pts)</strong>
+- All files use <code>export</code>/<code>import</code> correctly
+- Professional folder structure (<code>src/classes/</code>, <code>src/game/</code>, <code>src/ui/</code>)
+- Single <code>&lt;script type="module"&gt;</code> entry point in <code>index.html</code></p>
+<hr />
+<h2>Code Quality and Documentation (20 pts)</h2>
+<h3>Code Quality (10 pts)</h3>
+<ul>
+<li>No JavaScript errors in the browser console during normal play</li>
+<li>Each class has a single clear responsibility</li>
+<li>Variable and method names clearly describe their purpose</li>
+<li>No dead code (unused variables, functions, or commented-out blocks)</li>
+</ul>
+<h3>Documentation: <code>README.md</code> (10 pts)</h3>
+<p>Your submission must include a <code>README.md</code> containing:</p>
+<ol>
+<li><strong>Project title and brief description</strong> (2–3 sentences)</li>
+<li><strong>How to open and play</strong> — step-by-step, starting from opening the file</li>
+<li><strong>File/class list</strong> — one sentence per file explaining its responsibility</li>
+<li><strong>Advanced features implemented</strong> — list which you chose and describe briefly</li>
+<li><strong>Challenges and solutions</strong> — one paragraph on the hardest part and how you solved it</li>
+</ol>
+<hr />
+<h2>Submission</h2>
+<p>Before submitting:
+- [ ] Game plays correctly start to finish without errors
+- [ ] All scoring rules verified (use the testing checklist from Session 25 reading)
+- [ ] At least 2 advanced features implemented and working
+- [ ] <code>README.md</code> complete
+- [ ] No <code>console.error</code> during normal play</p>
+<p>Create a ZIP file of your entire project folder and submit to Canvas.</p>
+<hr />
+<h2>Evaluation Rubric</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Points</th>
+<th>What We Look For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Core game works end-to-end</td>
+<td>40</td>
+<td>Playable from deal through game-over; all rules correct</td>
+</tr>
+<tr>
+<td>User interface</td>
+<td>20</td>
+<td>Correct highlighting, trick display, score updates</td>
+</tr>
+<tr>
+<td>Advanced features (2+)</td>
+<td>20</td>
+<td>Features work correctly and add value</td>
+</tr>
+<tr>
+<td>Code quality</td>
+<td>10</td>
+<td>No errors, clear names, single-responsibility classes</td>
+</tr>
+<tr>
+<td>README.md</td>
+<td>10</td>
+<td>Complete, accurate, and well-written</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>100</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

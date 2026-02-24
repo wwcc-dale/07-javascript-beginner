@@ -20,7 +20,7 @@ By the end of this session, you will be able to:
 
 ## Introduction (5 minutes)
 
-You've already worked with objects like `{name: "Alex", grade: 85}`. Classes are blueprints that let you create many similar objects easily. Instead of manually creating each student object, you define a `Student` class once and create as many students as you need. Today you'll learn to build and use classes.
+You've already worked with objects like `{name: "Alex", phone: "555-1234"}`. Classes are blueprints that let you create many similar objects easily. Instead of manually creating each contact entry, you define a `Contact` class once and create as many contacts as you need. Today you'll learn to build and use classes.
 
 ---
 
@@ -35,49 +35,49 @@ A class is a template for creating objects. It defines what properties and metho
 ### Creating a Simple Class
 
 ```js
-class Student {
-  constructor(name, grade) {
+class Contact {
+  constructor(name, phone) {
     this.name = name;
-    this.grade = grade;
+    this.phone = phone;
   }
 }
 
 // Create instances:
-const student1 = new Student("Alex", 85);
-const student2 = new Student("Jordan", 92);
+const contact1 = new Contact("Alex", "555-1234");
+const contact2 = new Contact("Jordan", "555-5678");
 
-console.log(student1.name);   // "Alex"
-console.log(student2.grade);  // 92
+console.log(contact1.name);   // "Alex"
+console.log(contact2.phone);  // "555-5678"
 ```
 
 **Breaking it down:**
-- `class Student` – Define a new class
+- `class Contact` – Define a new class
 - `constructor()` – Special method that runs when creating an instance
 - `this.name` – Creates a property on the instance
-- `new Student()` – Creates a new instance of the class
+- `new Contact()` – Creates a new instance of the class
 
 ### Why Use Classes?
 
 Without classes (tedious):
 ```js
-const student1 = {name: "Alex", grade: 85};
-const student2 = {name: "Jordan", grade: 92};
-const student3 = {name: "Casey", grade: 78};
-// Repeat for every student...
+const contact1 = {name: "Alex", phone: "555-1234"};
+const contact2 = {name: "Jordan", phone: "555-5678"};
+const contact3 = {name: "Casey", phone: "555-9012"};
+// Repeat for every contact...
 ```
 
 With classes (clean):
 ```js
-class Student {
-  constructor(name, grade) {
+class Contact {
+  constructor(name, phone) {
     this.name = name;
-    this.grade = grade;
+    this.phone = phone;
   }
 }
 
-const student1 = new Student("Alex", 85);
-const student2 = new Student("Jordan", 92);
-const student3 = new Student("Casey", 78);
+const contact1 = new Contact("Alex", "555-1234");
+const contact2 = new Contact("Jordan", "555-5678");
+const contact3 = new Contact("Casey", "555-9012");
 ```
 
 ### Adding Methods to Classes
@@ -85,51 +85,49 @@ const student3 = new Student("Casey", 78);
 Methods are functions that belong to a class. They define what objects can do.
 
 ```js
-class Student {
-  constructor(name, grade) {
-    this.name = name;
-    this.grade = grade;
+class Track {
+  constructor(title, artist, durationSeconds) {
+    this.title = title;
+    this.artist = artist;
+    this.durationSeconds = durationSeconds;
   }
 
-  isPassing() {
-    return this.grade >= 70;
+  isLong() {
+    return this.durationSeconds > 240;  // longer than 4 minutes
   }
 
-  getGradeLetter() {
-    if (this.grade >= 90) return "A";
-    if (this.grade >= 80) return "B";
-    if (this.grade >= 70) return "C";
-    return "F";
+  getMinutes() {
+    return Math.floor(this.durationSeconds / 60);
   }
 }
 
-const student1 = new Student("Alex", 85);
-console.log(student1.isPassing());      // true
-console.log(student1.getGradeLetter()); // "B"
+const track1 = new Track("Stairway to Heaven", "Led Zeppelin", 482);
+console.log(track1.isLong());     // true
+console.log(track1.getMinutes()); // 8
 
-const student2 = new Student("Jordan", 65);
-console.log(student2.isPassing());      // false
-console.log(student2.getGradeLetter()); // "F"
+const track2 = new Track("Happy Birthday", "Traditional", 20);
+console.log(track2.isLong());     // false
+console.log(track2.getMinutes()); // 0
 ```
 
 ### Classes vs Objects
 
 **Object:** A single instance with specific values
 ```js
-const alex = {name: "Alex", grade: 85};
+const alex = {name: "Alex", phone: "555-1234"};
 ```
 
 **Class:** A blueprint for creating many objects
 ```js
-class Student {
-  constructor(name, grade) {
+class Contact {
+  constructor(name, phone) {
     this.name = name;
-    this.grade = grade;
+    this.phone = phone;
   }
 }
 
-const alex = new Student("Alex", 85);
-const jordan = new Student("Jordan", 92);
+const alex = new Contact("Alex", "555-1234");
+const jordan = new Contact("Jordan", "555-5678");
 ```
 
 ### Real-World Example: Recipe Class
@@ -196,7 +194,7 @@ This video covers:
 - Creating instances with `new`
 - Adding methods to classes
 - Understanding `this`
-- Real examples with Student and Movie classes
+- Real examples with Contact and Track classes
 
 Pause and type each example.
 
@@ -325,7 +323,7 @@ Next session, you'll dive deeper into methods and learn about **encapsulation**�
 
 ### Questions?
 
-- Try creating your own class for something you know (Movie, Recipe, Car).
+- Try creating your own class for something you know (Movie, Recipe, Contact).
 - Experiment with different methods.
 - Ask your instructor if anything is unclear.
 

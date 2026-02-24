@@ -1,0 +1,78 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Session 10: Building with Node.js and Modules</title>
+</head>
+<body>
+<h1>Session 10: Building with Node.js and Modules</h1>
+<p>Set up Node.js project, create modules, use npm packages, build a CLI utility.</p>
+<p><strong>Time:</strong> 60–90 minutes | <strong>Points:</strong> 20 | <strong>Submit:</strong> ZIP file with all project files</p>
+<h2>Setup</h2>
+<ol>
+<li>Create a new directory: <code>session-10-project</code></li>
+<li>Navigate into it: <code>cd session-10-project</code></li>
+<li>Initialize: <code>npm init -y</code></li>
+<li>Add <code>"type": "module"</code> to package.json</li>
+</ol>
+<h2>Level 1 – Core Tasks (15 points)</h2>
+<h3>Challenge 1: Create a Math Module</h3>
+<p>Create <code>math.js</code>:</p>
+<pre class="codehilite"><code class="language-js">// TODO: Export functions add, subtract, multiply, divide
+// Each takes two parameters and returns the result
+</code></pre>
+
+<p>Create <code>app.js</code>:</p>
+<pre class="codehilite"><code class="language-js">// TODO: Import your math functions
+// Test each one and log results
+</code></pre>
+
+<p>Run: <code>node app.js</code></p>
+<h3>Challenge 2: Create a Student Module</h3>
+<p>Create <code>Student.js</code>:</p>
+<pre class="codehilite"><code class="language-js">// TODO: Export a Student class with constructor(name, grade)
+// Include isPassing() method
+</code></pre>
+
+<p>Create <code>classroom.js</code>:</p>
+<pre class="codehilite"><code class="language-js">// TODO: Import Student class
+// Create 3 students and log their passing status
+</code></pre>
+
+<h3>Challenge 3: Use an npm Package</h3>
+<p>Install chalk:</p>
+<pre class="codehilite"><code class="language-bash">npm install chalk
+</code></pre>
+
+<p>Create <code>colored.js</code>:</p>
+<pre class="codehilite"><code class="language-js">// TODO: Import chalk
+// Print 3 messages in different colors
+</code></pre>
+
+<h3>Challenge 4: File System Module</h3>
+<p>Create <code>file-writer.js</code>:</p>
+<pre class="codehilite"><code class="language-js">// TODO: Import fs from 'fs'
+// Write &quot;Hello from Node.js!&quot; to output.txt
+// Read and log the file contents
+</code></pre>
+
+<h2>Level 2 – Stretch (3 points)</h2>
+<h3>Challenge 5: Utility Module</h3>
+<p>Create <code>utils.js</code> with functions:
+- capitalize(str)
+- reverse(str)<br />
+- isPalindrome(str)</p>
+<p>Use them in <code>utils-test.js</code></p>
+<h3>Challenge 6: npm Package Exploration</h3>
+<p>Install and use <code>validator</code> package to validate:
+- Email addresses
+- URLs
+- Credit card numbers (test format only)</p>
+<h2>Level 3 – Advanced (2 points)</h2>
+<h3>Challenge 7: CLI Calculator</h3>
+<p>Build <code>calculator.js</code> that:
+- Reads command line arguments
+- Performs calculations based on input
+- Usage: <code>node calculator.js add 5 3</code> → outputs 8</p>
+<p>Use <code>process.argv</code> to read arguments.</p>
+</body>
+</html>
