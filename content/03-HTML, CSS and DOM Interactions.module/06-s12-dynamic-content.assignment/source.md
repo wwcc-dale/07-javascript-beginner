@@ -1,0 +1,40 @@
+# Session 12: Dynamic Content Builder
+
+Create and remove elements dynamically. Build interactive todo list.
+
+**Time:** 60–90 minutes | **Points:** 20 | **Submit:** `12-assignment.html`
+
+## Level 1 – Core (15 pts)
+
+### Challenge 1: Card Builder
+- Button "Add Card"
+- Clicking creates div.card with h3 title, p content, "Delete" button
+- Delete button removes that card
+
+### Challenge 2: Todo List
+- Input field, "Add" button, ul#todoList
+- Adding creates li with text + delete button
+- Delete removes that todo
+
+### Challenge 3: Dynamic Table
+- Array of 5 products: {name, price, stock}
+- Create table dynamically with thead, tbody
+- Each row has product data
+
+### Challenge 4: Comment System
+- Input + button for comments
+- Each comment shows: text, timestamp, delete button
+- Uses createElement for all elements
+
+## Level 2 – Stretch (3 pts)
+
+### Challenge 5: Photo Gallery
+Dynamically create image grid from array of objects
+
+### Challenge 6: Shopping List
+Add items with quantity, mark as bought (toggle class), delete
+
+## Level 3 – Advanced (2 pts)
+
+### Challenge 7: Complete CRUD App
+Create, Read, Update, Delete items with full interface

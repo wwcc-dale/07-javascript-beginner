@@ -1,0 +1,45 @@
+{
+  "milestone_mini": 20,
+  "milestone_cert": 45,
+  "milestone_degree": 90,
+  "program_short_name": "Graphic Design Essentials",
+  "program_short_title": "(Short Certificate)",
+  "program_cert_name": "Digital Design",
+  "program_cert_title": "(Certificate)",
+  "program_degree_name": "Graphic Design & Web Development",
+  "program_degree_title": "(AAS Degree)",
+  "course_code": "CS 140",
+  "course_title": "Javascript",
+  "course_name": "Javascript <small>(CS 140)</small>",
+  "course_order": 7,
+  "semester": "Spring 2026",
+  "instructor_name": "Dale Chapman",
+  "instructor_email": "dale.chapman@wwcc.edu",
+  "instructor_office": "WSP South Complex, Classroom 1",
+  "office_hours": "Weekdays, 7:50-10:30am | 12:30-3:30pm",
+  "allowed_extensions": [
+    "html",
+    "js",
+    "css",
+    "zip"
+  ],
+  "assignment_type": "online",
+  "module": 5,
+  "name": "Session 21: Betting System",
+  "points": 20,
+  "position": 3,
+  "published": true,
+  "related_outcomes": [
+    "CLO-2",
+    "CLO-3",
+    "CLO-4"
+  ],
+  "session": 21.3,
+  "submission_types": [
+    "online_upload"
+  ],
+  "type": "assignment",
+  "modules": [
+    "Blackjack Advanced Features"
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "assets": {
     "content-hash-71f7441949e5": {
-      "canvas_file_id": 336322697,
-      "canvas_url": "https://canvas.instructure.com/files/336322697/download?download_frd=1&verifier=pZk5sP1oge7NayabIxJJYzTVHeL1tA3lPamT07P2",
+      "canvas_file_id": 339279107,
+      "canvas_url": "https://canvas.instructure.com/files/339279107/download?download_frd=1&verifier=FfZzbIJwe9WPwaizddA3XYgI1pCnSLikpe5wi4Lq",
       "content_hash": "71f7441949e5",
       "file_size": 8494,
       "filename": "spades_codebase.zip",
@@ -10,7 +10,7 @@
         "assets/spades_codebase.zip",
         "../../assets/spades_codebase.zip"
       ],
-      "uploaded_at": "2026-02-21T15:30:56.367025+00:00"
+      "uploaded_at": "2026-03-10T14:04:35.910057+00:00"
     }
   },
   "path_lookup": {
