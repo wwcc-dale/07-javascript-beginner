@@ -5,7 +5,7 @@ assignment_type: online
 module: 3
 name: 'Session 11: DOM Selection and Modification'
 points: 20
-position: 2
+position: 3
 published: true
 related_outcomes:
 - CLO-1
