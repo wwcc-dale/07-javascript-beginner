@@ -21,76 +21,76 @@
 <hr />
 <h2>Reading: Inheritance (35 minutes)</h2>
 <h3>Basic Inheritance</h3>
-<pre class="codehilite"><code class="language-js">class Appliance {
-  constructor(brand, powerWatts) {
-    this.brand = brand;
-    this.powerWatts = powerWatts;
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Appliance</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">brand</span><span class="p">,</span><span class="w"> </span><span class="nx">powerWatts</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">brand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">brand</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">powerWatts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">powerWatts</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  describe() {
-    return `${this.brand} appliance, ${this.powerWatts}W`;
-  }
-}
+<span class="w">  </span><span class="nx">describe</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">brand</span><span class="si">}</span><span class="sb"> appliance, </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">powerWatts</span><span class="si">}</span><span class="sb">W`</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Refrigerator extends Appliance {
-  constructor(brand, powerWatts, liters) {
-    super(brand, powerWatts);  // Call parent constructor
-    this.liters = liters;
-  }
+<span class="kd">class</span><span class="w"> </span><span class="nx">Refrigerator</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Appliance</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">brand</span><span class="p">,</span><span class="w"> </span><span class="nx">powerWatts</span><span class="p">,</span><span class="w"> </span><span class="nx">liters</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">super</span><span class="p">(</span><span class="nx">brand</span><span class="p">,</span><span class="w"> </span><span class="nx">powerWatts</span><span class="p">);</span><span class="w">  </span><span class="c1">// Call parent constructor</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">liters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">liters</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  cool() {
-    return `${this.brand} cooling ${this.liters}L`;
-  }
-}
+<span class="w">  </span><span class="nx">cool</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">brand</span><span class="si">}</span><span class="sb"> cooling </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">liters</span><span class="si">}</span><span class="sb">L`</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const fridge = new Refrigerator(&quot;Samsung&quot;, 150, 400);
-console.log(fridge.describe()); // Inherited from Appliance
-console.log(fridge.cool());     // Refrigerator-specific
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">fridge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Refrigerator</span><span class="p">(</span><span class="s2">&quot;Samsung&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">150</span><span class="p">,</span><span class="w"> </span><span class="mf">400</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fridge</span><span class="p">.</span><span class="nx">describe</span><span class="p">());</span><span class="w"> </span><span class="c1">// Inherited from Appliance</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fridge</span><span class="p">.</span><span class="nx">cool</span><span class="p">());</span><span class="w">     </span><span class="c1">// Refrigerator-specific</span>
+</code></pre></div>
 
 <h3>Overriding Methods</h3>
 <p>A child class can replace a parent method with its own version.</p>
-<pre class="codehilite"><code class="language-js">class Washer extends Appliance {
-  constructor(brand, powerWatts, loadKg) {
-    super(brand, powerWatts);
-    this.loadKg = loadKg;
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Washer</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Appliance</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">brand</span><span class="p">,</span><span class="w"> </span><span class="nx">powerWatts</span><span class="p">,</span><span class="w"> </span><span class="nx">loadKg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">super</span><span class="p">(</span><span class="nx">brand</span><span class="p">,</span><span class="w"> </span><span class="nx">powerWatts</span><span class="p">);</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">loadKg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">loadKg</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  describe() {
-    return `${this.brand} washer, ${this.loadKg}kg load capacity`;
-  }
-}
+<span class="w">  </span><span class="nx">describe</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">brand</span><span class="si">}</span><span class="sb"> washer, </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">loadKg</span><span class="si">}</span><span class="sb">kg load capacity`</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const washer = new Washer(&quot;LG&quot;, 500, 8);
-console.log(washer.describe()); // Overridden version — Washer's own describe()
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">washer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Washer</span><span class="p">(</span><span class="s2">&quot;LG&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">washer</span><span class="p">.</span><span class="nx">describe</span><span class="p">());</span><span class="w"> </span><span class="c1">// Overridden version — Washer&#39;s own describe()</span>
+</code></pre></div>
 
 <h3>Composition Over Inheritance</h3>
 <p>Sometimes composition (has-a) is better than inheritance (is-a).</p>
-<pre class="codehilite"><code class="language-js">class Battery {
-  charge() {
-    return &quot;Battery charging&quot;;
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Battery</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">charge</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Battery charging&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  getLevel() {
-    return &quot;80%&quot;;
-  }
-}
+<span class="w">  </span><span class="nx">getLevel</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;80%&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Laptop {
-  constructor(brand) {
-    this.brand = brand;
-    this.battery = new Battery(); // Composition
-  }
+<span class="kd">class</span><span class="w"> </span><span class="nx">Laptop</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">brand</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">brand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">brand</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">battery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Battery</span><span class="p">();</span><span class="w"> </span><span class="c1">// Composition</span>
+<span class="w">  </span><span class="p">}</span>
 
-  charge() {
-    return this.battery.charge();
-  }
-}
+<span class="w">  </span><span class="nx">charge</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">battery</span><span class="p">.</span><span class="nx">charge</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const laptop = new Laptop(&quot;Dell&quot;);
-console.log(laptop.charge()); // &quot;Battery charging&quot;
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">laptop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Laptop</span><span class="p">(</span><span class="s2">&quot;Dell&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">laptop</span><span class="p">.</span><span class="nx">charge</span><span class="p">());</span><span class="w"> </span><span class="c1">// &quot;Battery charging&quot;</span>
+</code></pre></div>
 
 <h3>When to Use Each</h3>
 <p><strong>Inheritance:</strong> When there's a clear "is-a" relationship

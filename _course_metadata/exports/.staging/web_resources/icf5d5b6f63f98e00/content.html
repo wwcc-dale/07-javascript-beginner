@@ -35,26 +35,26 @@
 - The best round score persists across reloads</p>
 <h3>Challenge 4: Persistence Verification</h3>
 <p>In <code>test.html</code>, verify the round-trip:</p>
-<pre class="codehilite"><code class="language-js">const stats = new GameStats();
-stats.reset();
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">stats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">GameStats</span><span class="p">();</span>
+<span class="nx">stats</span><span class="p">.</span><span class="nx">reset</span><span class="p">();</span>
 
-stats.recordGameResult(true);
-stats.recordRound(120);
+<span class="nx">stats</span><span class="p">.</span><span class="nx">recordGameResult</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">stats</span><span class="p">.</span><span class="nx">recordRound</span><span class="p">(</span><span class="mf">120</span><span class="p">);</span>
 
-// Simulate reload by reading directly from localStorage
-const raw = localStorage.getItem('spades_stats');
-const restored = JSON.parse(raw);
-console.log('Games played persisted:', restored.gamesPlayed === 1);  // true
-console.log('Best score persisted:', restored.bestRoundScore === 120);  // true
-</code></pre>
+<span class="c1">// Simulate reload by reading directly from localStorage</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;spades_stats&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">restored</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">raw</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Games played persisted:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">restored</span><span class="p">.</span><span class="nx">gamesPlayed</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span><span class="w">  </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Best score persisted:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">restored</span><span class="p">.</span><span class="nx">bestRoundScore</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">120</span><span class="p">);</span><span class="w">  </span><span class="c1">// true</span>
+</code></pre></div>
 
 <hr />
 <h2>Level 2 – Stretch (3 pts)</h2>
 <h3>Challenge 5: Player Name Setting</h3>
 <p>Add a player name input to <code>index.html</code>. Store the name in localStorage under <code>spades_playerName</code>. Load it on startup and use it as the human player's name in <code>SpadesGame</code>:</p>
-<pre class="codehilite"><code class="language-js">const savedName = localStorage.getItem('spades_playerName') || 'You';
-const players = [new Player(savedName, false), ...];
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">savedName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;spades_playerName&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;You&#39;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">players</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="ow">new</span><span class="w"> </span><span class="nx">Player</span><span class="p">(</span><span class="nx">savedName</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span><span class="w"> </span><span class="p">...];</span>
+</code></pre></div>
 
 <h3>Challenge 6: Stats Display Panel</h3>
 <p>Add a collapsible stats panel to <code>index.html</code> that shows:

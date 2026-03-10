@@ -25,18 +25,18 @@
 </ul>
 <h3>Challenge 2: <code>isGameOver()</code>, <code>isTied()</code>, <code>getWinner()</code></h3>
 <p>Add these three methods to <code>SpadesGame</code>:</p>
-<pre class="codehilite"><code class="language-js">isGameOver(targetScore = 500) {
-  return this.teams.some(t =&gt; t.score &gt;= targetScore || t.score &lt;= -200);
-}
+<div class="codehilite"><pre><span></span><code><span class="nx">isGameOver</span><span class="p">(</span><span class="nx">targetScore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">500</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">teams</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">t</span><span class="p">.</span><span class="nx">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">targetScore</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">t</span><span class="p">.</span><span class="nx">score</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="o">-</span><span class="mf">200</span><span class="p">);</span>
+<span class="p">}</span>
 
-isTied(targetScore = 500) {
-  return this.teams.every(t =&gt; t.score &gt;= targetScore);
-}
+<span class="nx">isTied</span><span class="p">(</span><span class="nx">targetScore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">500</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">teams</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">t</span><span class="p">.</span><span class="nx">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">targetScore</span><span class="p">);</span>
+<span class="p">}</span>
 
-getWinner() {
-  return this.teams[0].score &gt; this.teams[1].score ? this.teams[0] : this.teams[1];
-}
-</code></pre>
+<span class="nx">getWinner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">teams</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">score</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">teams</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">score</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">teams</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">teams</span><span class="p">[</span><span class="mf">1</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <h3>Challenge 3: <code>GameBoard</code> — Core Display Methods</h3>
 <p>Create <code>GameBoard.js</code> with these methods:</p>
@@ -70,49 +70,49 @@ getWinner() {
 <h2>Level 2 – Stretch (3 pts)</h2>
 <h3>Challenge 5: Remaining Display Methods</h3>
 <p>Add these display helpers to <code>GameBoard</code>:</p>
-<pre class="codehilite"><code class="language-js">showCardInTrick(playerIndex, player, card)  // Put card in #trick-card-{i}
-showTrickWinner(playerName)                 // Set text in #trick-winner-msg
-clearTrick()                                // Clear all trick slots and winner msg
-setTrickNumber(num)                         // Set #trick-number text to &quot;{num} / 13&quot;
-updateScoreboard(teams)                     // Update #team0-score, #team1-score, etc.
-updateBidInfo(players, teams)               // Update #team0-bids, #team1-bids
-setStatus(message)                          // Set #game-status text
-log(message)                               // Append entry to #log-content, scroll to bottom
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nx">showCardInTrick</span><span class="p">(</span><span class="nx">playerIndex</span><span class="p">,</span><span class="w"> </span><span class="nx">player</span><span class="p">,</span><span class="w"> </span><span class="nx">card</span><span class="p">)</span><span class="w">  </span><span class="c1">// Put card in #trick-card-{i}</span>
+<span class="nx">showTrickWinner</span><span class="p">(</span><span class="nx">playerName</span><span class="p">)</span><span class="w">                 </span><span class="c1">// Set text in #trick-winner-msg</span>
+<span class="nx">clearTrick</span><span class="p">()</span><span class="w">                                </span><span class="c1">// Clear all trick slots and winner msg</span>
+<span class="nx">setTrickNumber</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span><span class="w">                         </span><span class="c1">// Set #trick-number text to &quot;{num} / 13&quot;</span>
+<span class="nx">updateScoreboard</span><span class="p">(</span><span class="nx">teams</span><span class="p">)</span><span class="w">                     </span><span class="c1">// Update #team0-score, #team1-score, etc.</span>
+<span class="nx">updateBidInfo</span><span class="p">(</span><span class="nx">players</span><span class="p">,</span><span class="w"> </span><span class="nx">teams</span><span class="p">)</span><span class="w">               </span><span class="c1">// Update #team0-bids, #team1-bids</span>
+<span class="nx">setStatus</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span><span class="w">                          </span><span class="c1">// Set #game-status text</span>
+<span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span><span class="w">                               </span><span class="c1">// Append entry to #log-content, scroll to bottom</span>
+</code></pre></div>
 
 <h3>Challenge 6: Score Verification</h3>
 <p>Write a test in <code>test.html</code> that manually sets bids and tricks, calls <code>scoreRound()</code>, and verifies the score calculation:</p>
-<pre class="codehilite"><code class="language-js">// Scenario: Team 0 bid 5, took 7 (2 bags), starting with 8 bags already
-const game = new SpadesGame([...]);
-game.startRound();
-game.teams[0].bags = 8;
-players[0].bid = 3; players[0].tricksWon = 4;
-players[2].bid = 2; players[2].tricksWon = 3;
-// Expected: 50 + 2 bags = 52, bags go from 8→10, trigger penalty: -100
-// Net: 52 - 100 = -48, bags reset to 0
-const results = game.scoreRound();
-console.log('Score:', results[0].roundScore);  // -48
-console.log('Bags after:', game.teams[0].bags);  // 0
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="c1">// Scenario: Team 0 bid 5, took 7 (2 bags), starting with 8 bags already</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">game</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">SpadesGame</span><span class="p">([...]);</span>
+<span class="nx">game</span><span class="p">.</span><span class="nx">startRound</span><span class="p">();</span>
+<span class="nx">game</span><span class="p">.</span><span class="nx">teams</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">bags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">8</span><span class="p">;</span>
+<span class="nx">players</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">bid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="nx">players</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">tricksWon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span>
+<span class="nx">players</span><span class="p">[</span><span class="mf">2</span><span class="p">].</span><span class="nx">bid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"> </span><span class="nx">players</span><span class="p">[</span><span class="mf">2</span><span class="p">].</span><span class="nx">tricksWon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
+<span class="c1">// Expected: 50 + 2 bags = 52, bags go from 8→10, trigger penalty: -100</span>
+<span class="c1">// Net: 52 - 100 = -48, bags reset to 0</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">scoreRound</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Score:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">results</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">roundScore</span><span class="p">);</span><span class="w">  </span><span class="c1">// -48</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Bags after:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">teams</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">bags</span><span class="p">);</span><span class="w">  </span><span class="c1">// 0</span>
+</code></pre></div>
 
 <hr />
 <h2>Level 3 – Advanced (2 pts)</h2>
 <h3>Challenge 7: Full Nil Bid Test</h3>
 <p>Simulate a round where one player goes nil and succeeds, and verify that their tricks are excluded from the team contract:</p>
-<pre class="codehilite"><code class="language-js">game.startRound();
-// Partner goes nil (bid=0) and takes 0 tricks
-players[2].bid = 0; players[2].tricksWon = 0;
-// You bid 4 and take 4 (made exactly)
-players[0].bid = 4; players[0].tricksWon = 4;
-// Opponents bid 5 combined and take 9 (set)
-players[1].bid = 3; players[1].tricksWon = 4;
-players[3].bid = 2; players[3].tricksWon = 5;
+<div class="codehilite"><pre><span></span><code><span class="nx">game</span><span class="p">.</span><span class="nx">startRound</span><span class="p">();</span>
+<span class="c1">// Partner goes nil (bid=0) and takes 0 tricks</span>
+<span class="nx">players</span><span class="p">[</span><span class="mf">2</span><span class="p">].</span><span class="nx">bid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">players</span><span class="p">[</span><span class="mf">2</span><span class="p">].</span><span class="nx">tricksWon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="c1">// You bid 4 and take 4 (made exactly)</span>
+<span class="nx">players</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">bid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span><span class="w"> </span><span class="nx">players</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">tricksWon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span>
+<span class="c1">// Opponents bid 5 combined and take 9 (set)</span>
+<span class="nx">players</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">bid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="nx">players</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">tricksWon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span>
+<span class="nx">players</span><span class="p">[</span><span class="mf">3</span><span class="p">].</span><span class="nx">bid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"> </span><span class="nx">players</span><span class="p">[</span><span class="mf">3</span><span class="p">].</span><span class="nx">tricksWon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
 
-const r = game.scoreRound();
-console.log('Your team:', r[0].teamBid, r[0].teamTricks, r[0].roundScore);
-// teamBid=4, teamTricks=4 (partner's 0 excluded), roundScore=40 + 100 nil = 140
-console.log('Opponents:', r[1].teamBid, r[1].teamTricks, r[1].roundScore);
-// teamBid=5, teamTricks=9 → set → -50
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">scoreRound</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Your team:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">r</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">teamBid</span><span class="p">,</span><span class="w"> </span><span class="nx">r</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">teamTricks</span><span class="p">,</span><span class="w"> </span><span class="nx">r</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">roundScore</span><span class="p">);</span>
+<span class="c1">// teamBid=4, teamTricks=4 (partner&#39;s 0 excluded), roundScore=40 + 100 nil = 140</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Opponents:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">r</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">teamBid</span><span class="p">,</span><span class="w"> </span><span class="nx">r</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">teamTricks</span><span class="p">,</span><span class="w"> </span><span class="nx">r</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">roundScore</span><span class="p">);</span>
+<span class="c1">// teamBid=5, teamTricks=9 → set → -50</span>
+</code></pre></div>
 </body>
 </html>

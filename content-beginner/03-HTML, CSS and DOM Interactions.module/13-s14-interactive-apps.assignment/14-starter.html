@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 14: Interactive Applications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        .counter-display {
+            font-size: 48px;
+            text-align: center;
+            margin: 20px;
+        }
+        .color-box {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #ddd;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Challenge 1: Counter App -->
+    <div class="section">
+        <h2>Challenge 1: Counter App</h2>
+        <div class="counter-display" id="counterDisplay">0</div>
+        <button id="plus1">+1</button>
+        <button id="minus1">-1</button>
+        <button id="plus5">+5</button>
+        <button id="minus5">-5</button>
+        <button id="resetCounter">Reset</button>
+    </div>
+
+    <!-- Challenge 2: Form Handler -->
+    <div class="section">
+        <h2>Challenge 2: Form Handler</h2>
+        <form id="userForm">
+            <input type="text" id="nameInput" placeholder="Name" required>
+            <input type="email" id="emailInput" placeholder="Email" required>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="welcomeMessage"></div>
+    </div>
+
+    <!-- Challenge 3: Interactive List -->
+    <div class="section">
+        <h2>Challenge 3: Interactive List</h2>
+        <input type="text" id="listInput" placeholder="Enter item">
+        <button id="addItemBtn">Add</button>
+        <ul id="itemList"></ul>
+    </div>
+
+    <!-- Challenge 4: Color Picker -->
+    <div class="section">
+        <h2>Challenge 4: Color Picker</h2>
+        <div class="color-box" id="colorBox"></div>
+        <button class="colorBtn" data-color="red">Red</button>
+        <button class="colorBtn" data-color="blue">Blue</button>
+        <button class="colorBtn" data-color="green">Green</button>
+        <button class="colorBtn" data-color="yellow">Yellow</button>
+        <button class="colorBtn" data-color="purple">Purple</button>
+        <button class="colorBtn" data-color="orange">Orange</button>
+        <div id="colorDisplay">Current color: none</div>
+    </div>
+
+    <script>
+        // Challenge 1: Counter App
+        let counter = 0;
+        // TODO: Get all counter buttons and display
+        // TODO: Add click listeners to each button
+        // Update counter variable and display
+
+
+        // Challenge 2: Form Handler
+        // TODO: Get form, inputs, and welcomeMessage div
+        // TODO: Add submit event listener
+        // Prevent default, validate fields, show welcome, clear form
+
+
+        // Challenge 3: Interactive List
+        // TODO: Get listInput, addItemBtn, itemList
+        // TODO: Add click listener to button
+        // Create li with delete button, append to list
+
+
+        // Challenge 4: Color Picker
+        // TODO: Get all colorBtn elements and colorBox
+        // TODO: Add click listener to each button
+        // Get data-color attribute, update box background and display text
+    </script>
+</body>
+</html>

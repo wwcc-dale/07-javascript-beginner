@@ -23,191 +23,191 @@
 <h2>Reading: localStorage (35 minutes)</h2>
 <h3>localStorage Basics</h3>
 <p><code>localStorage</code> stores <strong>strings</strong> only. It provides four operations:</p>
-<pre class="codehilite"><code class="language-js">// Save
-localStorage.setItem('username', 'alice');
+<div class="codehilite"><pre><span></span><code><span class="c1">// Save</span>
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;alice&#39;</span><span class="p">);</span>
 
-// Retrieve (returns null if the key doesn't exist)
-const name = localStorage.getItem('username');
-console.log(name);  // 'alice'
+<span class="c1">// Retrieve (returns null if the key doesn&#39;t exist)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span><span class="w">  </span><span class="c1">// &#39;alice&#39;</span>
 
-// Delete one key
-localStorage.removeItem('username');
+<span class="c1">// Delete one key</span>
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">removeItem</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">);</span>
 
-// Delete everything
-localStorage.clear();
-</code></pre>
+<span class="c1">// Delete everything</span>
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+</code></pre></div>
 
 <p>Data persists until you explicitly remove it or the user clears their browser data. There is no automatic expiration.</p>
 <hr />
 <h3>Storing Objects with JSON</h3>
 <p>Since localStorage only stores strings, objects must be serialized with <code>JSON.stringify()</code> and deserialized with <code>JSON.parse()</code>:</p>
-<pre class="codehilite"><code class="language-js">const settings = {
-  theme: 'dark',
-  language: 'en',
-  notifications: true,
-  fontSize: 16
-};
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">settings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">theme</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;dark&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">language</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;en&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">notifications</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">fontSize</span><span class="o">:</span><span class="w"> </span><span class="mf">16</span>
+<span class="p">};</span>
 
-// Save: object → string
-localStorage.setItem('appSettings', JSON.stringify(settings));
+<span class="c1">// Save: object → string</span>
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;appSettings&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">settings</span><span class="p">));</span>
 
-// Load: string → object
-const raw     = localStorage.getItem('appSettings');
-const loaded  = JSON.parse(raw);
+<span class="c1">// Load: string → object</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">raw</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;appSettings&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">loaded</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">raw</span><span class="p">);</span>
 
-console.log(loaded.theme);  // 'dark'
-console.log(loaded.fontSize);  // 16
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">loaded</span><span class="p">.</span><span class="nx">theme</span><span class="p">);</span><span class="w">  </span><span class="c1">// &#39;dark&#39;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">loaded</span><span class="p">.</span><span class="nx">fontSize</span><span class="p">);</span><span class="w">  </span><span class="c1">// 16</span>
+</code></pre></div>
 
 <p><strong>JSON limitations:</strong> Functions, <code>undefined</code>, and circular references cannot be serialized. Date objects serialize as strings and must be reconstructed with <code>new Date(loaded.date)</code>.</p>
 <hr />
 <h3>Defensive Loading</h3>
 <p><code>localStorage.getItem()</code> returns <code>null</code> if the key doesn't exist. Always handle this:</p>
-<pre class="codehilite"><code class="language-js">function loadSettings() {
-  const raw = localStorage.getItem('appSettings');
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">loadSettings</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;appSettings&#39;</span><span class="p">);</span>
 
-  if (!raw) {
-    // Key doesn't exist — return defaults
-    return { theme: 'light', language: 'en', notifications: true, fontSize: 14 };
-  }
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">raw</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Key doesn&#39;t exist — return defaults</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">theme</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;light&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">language</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;en&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">notifications</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">fontSize</span><span class="o">:</span><span class="w"> </span><span class="mf">14</span><span class="w"> </span><span class="p">};</span>
+<span class="w">  </span><span class="p">}</span>
 
-  try {
-    return JSON.parse(raw);
-  } catch (e) {
-    // Data is corrupted (e.g., from a bug in a previous version)
-    console.warn('Saved settings corrupted, using defaults');
-    localStorage.removeItem('appSettings');
-    return { theme: 'light', language: 'en', notifications: true, fontSize: 14 };
-  }
-}
-</code></pre>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">raw</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Data is corrupted (e.g., from a bug in a previous version)</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s1">&#39;Saved settings corrupted, using defaults&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">removeItem</span><span class="p">(</span><span class="s1">&#39;appSettings&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">theme</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;light&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">language</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;en&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">notifications</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">fontSize</span><span class="o">:</span><span class="w"> </span><span class="mf">14</span><span class="w"> </span><span class="p">};</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>Wrapping <code>JSON.parse()</code> in <code>try/catch</code> prevents a corrupt save from crashing the app.</p>
 <hr />
 <h3>A Stats Tracker with localStorage</h3>
 <p>Here is a complete pattern for persisting statistics across page loads:</p>
-<pre class="codehilite"><code class="language-js">class ReadingLog {
-  constructor() {
-    this.data = this.load();
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">ReadingLog</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
 
-  load() {
-    const raw = localStorage.getItem('readingLog');
-    if (!raw) return this.defaults();
-    try {
-      return JSON.parse(raw);
-    } catch {
-      return this.defaults();
-    }
-  }
+<span class="w">  </span><span class="nx">load</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;readingLog&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">raw</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">defaults</span><span class="p">();</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">raw</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">defaults</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 
-  defaults() {
-    return {
-      booksRead:     0,
-      pagesRead:     0,
-      longestStreak: 0,
-      currentStreak: 0,
-      lastReadDate:  null
-    };
-  }
+<span class="w">  </span><span class="nx">defaults</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">booksRead</span><span class="o">:</span><span class="w">     </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">pagesRead</span><span class="o">:</span><span class="w">     </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">longestStreak</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">currentStreak</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">lastReadDate</span><span class="o">:</span><span class="w">  </span><span class="kc">null</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">  </span><span class="p">}</span>
 
-  save() {
-    localStorage.setItem('readingLog', JSON.stringify(this.data));
-  }
+<span class="w">  </span><span class="nx">save</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;readingLog&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="w">  </span><span class="p">}</span>
 
-  logBook(pageCount) {
-    this.data.booksRead++;
-    this.data.pagesRead += pageCount;
+<span class="w">  </span><span class="nx">logBook</span><span class="p">(</span><span class="nx">pageCount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">booksRead</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">pagesRead</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">pageCount</span><span class="p">;</span>
 
-    const today = new Date().toDateString();
-    const last  = this.data.lastReadDate;
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">today</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">().</span><span class="nx">toDateString</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">last</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">lastReadDate</span><span class="p">;</span>
 
-    if (last) {
-      const daysSince = (new Date(today) - new Date(last)) / 86400000;
-      if (daysSince &lt;= 1) {
-        this.data.currentStreak++;
-      } else {
-        this.data.currentStreak = 1;  // Streak broken
-      }
-    } else {
-      this.data.currentStreak = 1;  // First book
-    }
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">last</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">daysSince</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="nx">today</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="nx">last</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">86400000</span><span class="p">;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">daysSince</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">currentStreak</span><span class="o">++</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">currentStreak</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// Streak broken</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">currentStreak</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// First book</span>
+<span class="w">    </span><span class="p">}</span>
 
-    this.data.longestStreak = Math.max(
-      this.data.longestStreak,
-      this.data.currentStreak
-    );
-    this.data.lastReadDate = today;
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">longestStreak</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">longestStreak</span><span class="p">,</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">currentStreak</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">lastReadDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">today</span><span class="p">;</span>
 
-    this.save();  // Always save after modifying
-  }
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span><span class="w">  </span><span class="c1">// Always save after modifying</span>
+<span class="w">  </span><span class="p">}</span>
 
-  getAvgPages() {
-    return this.data.booksRead &gt; 0
-      ? (this.data.pagesRead / this.data.booksRead).toFixed(0)
-      : 0;
-  }
-}
+<span class="w">  </span><span class="nx">getAvgPages</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">booksRead</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">      </span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">pagesRead</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">booksRead</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">0</span><span class="p">)</span>
+<span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const log = new ReadingLog();
-log.logBook(312);
-console.log(log.data.booksRead);  // 1
-// Reload the page — log persists!
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ReadingLog</span><span class="p">();</span>
+<span class="nx">log</span><span class="p">.</span><span class="nx">logBook</span><span class="p">(</span><span class="mf">312</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">log</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">booksRead</span><span class="p">);</span><span class="w">  </span><span class="c1">// 1</span>
+<span class="c1">// Reload the page — log persists!</span>
+</code></pre></div>
 
 <hr />
 <h3>Data Versioning</h3>
 <p>When you change the format of your saved data, old saves can cause errors. A version field lets you detect and handle this:</p>
-<pre class="codehilite"><code class="language-js">const CURRENT_VERSION = 2;
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">CURRENT_VERSION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
 
-function loadData() {
-  const raw = localStorage.getItem('myAppData');
-  if (!raw) return null;
+<span class="kd">function</span><span class="w"> </span><span class="nx">loadData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;myAppData&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">raw</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 
-  const data = JSON.parse(raw);
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">raw</span><span class="p">);</span>
 
-  if (data.version !== CURRENT_VERSION) {
-    console.log(`Old data format (v${data.version}), clearing...`);
-    localStorage.removeItem('myAppData');
-    return null;
-  }
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">version</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">CURRENT_VERSION</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Old data format (v</span><span class="si">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">version</span><span class="si">}</span><span class="sb">), clearing...`</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">removeItem</span><span class="p">(</span><span class="s1">&#39;myAppData&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  return data;
-}
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">data</span><span class="p">;</span>
+<span class="p">}</span>
 
-function saveData(payload) {
-  localStorage.setItem('myAppData', JSON.stringify({
-    version: CURRENT_VERSION,
-    ...payload
-  }));
-}
-</code></pre>
+<span class="kd">function</span><span class="w"> </span><span class="nx">saveData</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;myAppData&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">version</span><span class="o">:</span><span class="w"> </span><span class="nx">CURRENT_VERSION</span><span class="p">,</span>
+<span class="w">    </span><span class="p">...</span><span class="nx">payload</span>
+<span class="w">  </span><span class="p">}));</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>Increment <code>CURRENT_VERSION</code> whenever you change the saved data structure. Old saves will be discarded rather than causing <code>TypeError: Cannot read property 'x' of undefined</code>.</p>
 <hr />
 <h3>Inspecting localStorage in the Browser</h3>
 <p>In Chrome/Firefox DevTools → <strong>Application</strong> tab → <strong>Local Storage</strong> → your domain. You can view, edit, and delete keys directly. This is invaluable for debugging.</p>
 <p>You can also inspect from the console:</p>
-<pre class="codehilite"><code class="language-js">// View all keys
-Object.keys(localStorage).forEach(key =&gt; {
-  console.log(key, ':', localStorage.getItem(key));
-});
+<div class="codehilite"><pre><span></span><code><span class="c1">// View all keys</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="nx">key</span><span class="p">));</span>
+<span class="p">});</span>
 
-// Clear everything (useful when testing)
-localStorage.clear();
-</code></pre>
+<span class="c1">// Clear everything (useful when testing)</span>
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+</code></pre></div>
 
 <hr />
 <h3>Namespacing Keys</h3>
 <p>If multiple apps or features use localStorage on the same domain, prefix your keys to avoid collisions:</p>
-<pre class="codehilite"><code class="language-js">// Bad: generic key
-localStorage.setItem('settings', data);
+<div class="codehilite"><pre><span></span><code><span class="c1">// Bad: generic key</span>
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;settings&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">);</span>
 
-// Good: namespaced key
-localStorage.setItem('spadesGame_settings', data);
-localStorage.setItem('spadesGame_stats', data);
-localStorage.setItem('spadesGame_playerName', data);
-</code></pre>
+<span class="c1">// Good: namespaced key</span>
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;spadesGame_settings&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">);</span>
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;spadesGame_stats&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">);</span>
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;spadesGame_playerName&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">);</span>
+</code></pre></div>
 
 <hr />
 <h2>Video Tutorial: localStorage (20 minutes)</h2>

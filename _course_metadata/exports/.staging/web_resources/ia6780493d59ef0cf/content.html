@@ -16,13 +16,13 @@
 - Add a <code>hasSeenCard(card)</code> method that returns <code>true</code> if the card has been recorded
 - Override <code>resetForRound()</code> to call <code>super.resetForRound()</code> and also reset <code>seenCards</code> to a new empty Set</p>
 <p>Verify in <code>test.html</code>:</p>
-<pre class="codehilite"><code class="language-js">const ai = new AIPlayer('West');
-ai.recordCard(new Card('Spades', 'A'));
-console.log('Ace of Spades seen:', ai.hasSeenCard(new Card('Spades', 'A')));  // true
-console.log('King of Spades seen:', ai.hasSeenCard(new Card('Spades', 'K'))); // false
-ai.resetForRound();
-console.log('After reset:', ai.seenCards.size);  // 0
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">ai</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">AIPlayer</span><span class="p">(</span><span class="s1">&#39;West&#39;</span><span class="p">);</span>
+<span class="nx">ai</span><span class="p">.</span><span class="nx">recordCard</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Spades&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Ace of Spades seen:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">ai</span><span class="p">.</span><span class="nx">hasSeenCard</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Spades&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="p">)));</span><span class="w">  </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;King of Spades seen:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">ai</span><span class="p">.</span><span class="nx">hasSeenCard</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Spades&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;K&#39;</span><span class="p">)));</span><span class="w"> </span><span class="c1">// false</span>
+<span class="nx">ai</span><span class="p">.</span><span class="nx">resetForRound</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;After reset:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">ai</span><span class="p">.</span><span class="nx">seenCards</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span><span class="w">  </span><span class="c1">// 0</span>
+</code></pre></div>
 
 <h3>Challenge 2: Goal-Aware Card Decision</h3>
 <p>Update <code>getCardDecision(validCards, trick)</code> to check the current goal state:</p>
@@ -33,14 +33,14 @@ console.log('After reset:', ai.seenCards.size);  // 0
 <li>Otherwise: try to win with the cheapest winning card; if no winner, return the lowest card</li>
 </ul>
 <p>Verify in <code>test.html</code>:</p>
-<pre class="codehilite"><code class="language-js">const ai = new AIPlayer('West');
-ai.bid = 2;
-ai.tricksWon = 2;  // Already made bid
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">ai</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">AIPlayer</span><span class="p">(</span><span class="s1">&#39;West&#39;</span><span class="p">);</span>
+<span class="nx">ai</span><span class="p">.</span><span class="nx">bid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="nx">ai</span><span class="p">.</span><span class="nx">tricksWon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w">  </span><span class="c1">// Already made bid</span>
 
-const options = [new Card('Spades', 'A'), new Card('Clubs', '3')];
-const choice = ai.getCardDecision(options, []);
-console.log('Should dump lowest:', choice.toString());  // '3 of Clubs'
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="ow">new</span><span class="w"> </span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Spades&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="p">),</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Clubs&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="p">)];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">choice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ai</span><span class="p">.</span><span class="nx">getCardDecision</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span><span class="w"> </span><span class="p">[]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Should dump lowest:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">choice</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span><span class="w">  </span><span class="c1">// &#39;3 of Clubs&#39;</span>
+</code></pre></div>
 
 <h3>Challenge 3: Test Page</h3>
 <p>Write <code>test.html</code> that loads all game files and runs tests covering:

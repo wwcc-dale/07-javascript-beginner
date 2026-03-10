@@ -1,17 +1,20 @@
 ---
-name: "Session 17: Player, AIPlayer, and Dealing"
-assignment_type: "online"
+allowed_extensions:
+- js
+- html
+- zip
+assignment_type: online
+module: 4
+name: 'Session 17: Player, AIPlayer, and Dealing'
 points: 20
+position: 6
 published: true
 related_outcomes:
-  - "CLO-1"
-  - "CLO-2"
+- CLO-1
+- CLO-2
+session: 17.3
 submission_types:
-  - "online_upload"
-allowed_extensions:
-  - "js"
-  - "html"
-  - "zip"
+- online_upload
 ---
 
 # Session 17: Player, AIPlayer, and Dealing

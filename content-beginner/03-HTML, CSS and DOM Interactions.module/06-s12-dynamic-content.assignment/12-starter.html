@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 12: Dynamic Content Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        button {
+            padding: 8px 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        input {
+            padding: 8px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Challenge 1: Card Builder -->
+    <div class="section">
+        <h2>Challenge 1: Card Builder</h2>
+        <button id="addCardBtn">Add Card</button>
+        <div id="cardContainer"></div>
+    </div>
+
+    <!-- Challenge 2: Todo List -->
+    <div class="section">
+        <h2>Challenge 2: Todo List</h2>
+        <input type="text" id="todoInput" placeholder="Enter todo">
+        <button id="addTodoBtn">Add</button>
+        <ul id="todoList"></ul>
+    </div>
+
+    <!-- Challenge 3: Dynamic Table -->
+    <div class="section">
+        <h2>Challenge 3: Dynamic Table</h2>
+        <div id="tableContainer"></div>
+    </div>
+
+    <!-- Challenge 4: Comment System -->
+    <div class="section">
+        <h2>Challenge 4: Comment System</h2>
+        <input type="text" id="commentInput" placeholder="Enter comment">
+        <button id="addCommentBtn">Add Comment</button>
+        <div id="commentsList"></div>
+    </div>
+
+    <script>
+        // Challenge 1: Card Builder
+        // TODO: Get addCardBtn
+        // TODO: Add click listener that creates a new card
+        // Card should have: h3 title, p content, delete button
+        // Append to cardContainer
+
+
+        // Challenge 2: Todo List
+        // TODO: Get todoInput, addTodoBtn, todoList
+        // TODO: Add click listener to addTodoBtn
+        // Create li with input value + delete button
+        // Delete button removes the li
+
+
+        // Challenge 3: Dynamic Table
+        // TODO: Create array of products: [{name: 'Laptop', price: 999, stock: 10}, ...]
+        // TODO: Create table element with thead and tbody
+        // Add header row with Name, Price, Stock
+        // Loop through products, create row for each
+        // Append table to tableContainer
+
+
+        // Challenge 4: Comment System
+        // TODO: Get commentInput, addCommentBtn, commentsList
+        // TODO: Add click listener
+        // Create div for each comment with: text, timestamp, delete button
+        // Timestamp: new Date().toLocaleString()
+    </script>
+</body>
+</html>

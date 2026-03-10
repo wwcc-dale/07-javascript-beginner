@@ -1,15 +1,18 @@
 ---
-name: "Session 11: DOM Selection and Modification"
-assignment_type: "online"
+allowed_extensions:
+- html
+assignment_type: online
+module: 3
+name: 'Session 11: DOM Selection and Modification'
 points: 20
+position: 2
 published: true
 related_outcomes:
-  - "CLO-1"
-  - "CLO-5"
+- CLO-1
+- CLO-5
+session: 11.2
 submission_types:
-  - "online_upload"
-allowed_extensions:
-  - "html"
+- online_upload
 ---
 
 # Session 11: DOM Selection and Modification

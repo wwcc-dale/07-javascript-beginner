@@ -23,35 +23,35 @@
 <h2>Reading: Filtering, Conditions, and Winner-Finding (35 minutes)</h2>
 <h3><code>Array.filter()</code> and Conditional Logic</h3>
 <p><code>filter()</code> returns a new array containing only the elements that pass a test function:</p>
-<pre class="codehilite"><code class="language-js">const products = [
-  { name: 'Laptop',  price: 999, inStock: true,  category: 'electronics' },
-  { name: 'Mouse',   price: 29,  inStock: true,  category: 'electronics' },
-  { name: 'Desk',    price: 349, inStock: false, category: 'furniture'   },
-  { name: 'Monitor', price: 399, inStock: true,  category: 'electronics' }
-];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">products</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Laptop&#39;</span><span class="p">,</span><span class="w">  </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="mf">999</span><span class="p">,</span><span class="w"> </span><span class="nx">inStock</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">  </span><span class="nx">category</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;electronics&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Mouse&#39;</span><span class="p">,</span><span class="w">   </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="mf">29</span><span class="p">,</span><span class="w">  </span><span class="nx">inStock</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">  </span><span class="nx">category</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;electronics&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Desk&#39;</span><span class="p">,</span><span class="w">    </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="mf">349</span><span class="p">,</span><span class="w"> </span><span class="nx">inStock</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nx">category</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;furniture&#39;</span><span class="w">   </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Monitor&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="mf">399</span><span class="p">,</span><span class="w"> </span><span class="nx">inStock</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">  </span><span class="nx">category</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;electronics&#39;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
 
-// Only electronics that are in stock
-const available = products.filter(
-  p =&gt; p.category === 'electronics' &amp;&amp; p.inStock
-);
-console.log(available.length);  // 2 (Laptop, Mouse — Monitor is $399 which passes)
-</code></pre>
+<span class="c1">// Only electronics that are in stock</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">available</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">products</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span>
+<span class="w">  </span><span class="nx">p</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">category</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;electronics&#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">inStock</span>
+<span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">available</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span><span class="w">  </span><span class="c1">// 2 (Laptop, Mouse — Monitor is $399 which passes)</span>
+</code></pre></div>
 
 <p>The function inside <code>filter()</code> is called for each element. If it returns <code>true</code>, the element is included in the result; if <code>false</code>, it is excluded. The original array is never modified.</p>
 <hr />
 <h3>Two-Path Conditional Filtering</h3>
 <p>Many eligibility rules have two distinct cases: a <strong>restricted</strong> case and an <strong>unrestricted</strong> case. The structure looks like this:</p>
-<pre class="codehilite"><code class="language-js">function getEligibleItems(inventory, currentBudget, inSaleMode) {
-  if (inSaleMode) {
-    // Restricted: only sale items within budget
-    const saleItems = inventory.filter(item =&gt; item.onSale &amp;&amp; item.price &lt;= currentBudget);
-    // Fallback: if nothing qualifies under restriction, allow everything
-    return saleItems.length &gt; 0 ? saleItems : inventory.filter(i =&gt; i.price &lt;= currentBudget);
-  }
-  // Unrestricted: anything within budget
-  return inventory.filter(item =&gt; item.price &lt;= currentBudget);
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">getEligibleItems</span><span class="p">(</span><span class="nx">inventory</span><span class="p">,</span><span class="w"> </span><span class="nx">currentBudget</span><span class="p">,</span><span class="w"> </span><span class="nx">inSaleMode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">inSaleMode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Restricted: only sale items within budget</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">saleItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">inventory</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">onSale</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">price</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nx">currentBudget</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Fallback: if nothing qualifies under restriction, allow everything</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">saleItems</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">saleItems</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">inventory</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">i</span><span class="p">.</span><span class="nx">price</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nx">currentBudget</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="c1">// Unrestricted: anything within budget</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">inventory</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">price</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nx">currentBudget</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p><strong>Pattern to notice:</strong>
 1. Check the outer condition first (<code>inSaleMode</code>)
@@ -61,73 +61,73 @@ console.log(available.length);  // 2 (Laptop, Mouse — Monitor is $399 which pa
 <hr />
 <h3>Guard Clauses and Early Returns</h3>
 <p>A <strong>guard clause</strong> is a conditional at the start of a function that returns early when the operation cannot or should not proceed:</p>
-<pre class="codehilite"><code class="language-js">function purchaseItem(cart, item, availableCredit) {
-  if (!item.inStock) return false;              // Can't buy out-of-stock item
-  if (item.price &gt; availableCredit) return false;  // Not enough credit
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">purchaseItem</span><span class="p">(</span><span class="nx">cart</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">,</span><span class="w"> </span><span class="nx">availableCredit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">item</span><span class="p">.</span><span class="nx">inStock</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">              </span><span class="c1">// Can&#39;t buy out-of-stock item</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">price</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">availableCredit</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">  </span><span class="c1">// Not enough credit</span>
 
-  // Safe to proceed
-  cart.push(item);
-  availableCredit -= item.price;
-  return true;
-}
-</code></pre>
+<span class="w">  </span><span class="c1">// Safe to proceed</span>
+<span class="w">  </span><span class="nx">cart</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">availableCredit</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">price</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>Guard clauses keep the "happy path" logic at the normal indentation level and make failure conditions explicit. Without them, you end up with deeply nested <code>if/else</code> blocks.</p>
 <hr />
 <h3>Side Effects: Modifying State During an Action</h3>
 <p>Some methods need to <strong>modify state</strong> as a side effect. The pattern is: perform the action, update affected state, return a result:</p>
-<pre class="codehilite"><code class="language-js">class Warehouse {
-  constructor() {
-    this.inventory = { apples: 50, oranges: 30, bananas: 20 };
-    this.hasRefrigeration = false;
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Warehouse</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">inventory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">apples</span><span class="o">:</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="nx">oranges</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="nx">bananas</span><span class="o">:</span><span class="w"> </span><span class="mf">20</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">hasRefrigeration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  shipItem(item, quantity) {
-    if (this.inventory[item] === undefined) return false;   // Guard: unknown item
-    if (this.inventory[item] &lt; quantity)   return false;   // Guard: insufficient stock
+<span class="w">  </span><span class="nx">shipItem</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span><span class="w"> </span><span class="nx">quantity</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">inventory</span><span class="p">[</span><span class="nx">item</span><span class="p">]</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">undefined</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">   </span><span class="c1">// Guard: unknown item</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">inventory</span><span class="p">[</span><span class="nx">item</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">quantity</span><span class="p">)</span><span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">   </span><span class="c1">// Guard: insufficient stock</span>
 
-    // Perform the action
-    const shipped = quantity;
-    this.inventory[item] -= quantity;                      // Modify state
+<span class="w">    </span><span class="c1">// Perform the action</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">shipped</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">quantity</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">inventory</span><span class="p">[</span><span class="nx">item</span><span class="p">]</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="nx">quantity</span><span class="p">;</span><span class="w">                      </span><span class="c1">// Modify state</span>
 
-    // Side effect: check if refrigeration is needed now
-    if (item === 'apples' || item === 'oranges') {
-      this.hasRefrigeration = this.inventory.apples &gt; 0
-                           || this.inventory.oranges &gt; 0;
-    }
+<span class="w">    </span><span class="c1">// Side effect: check if refrigeration is needed now</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;apples&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;oranges&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">hasRefrigeration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">inventory</span><span class="p">.</span><span class="nx">apples</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">                           </span><span class="o">||</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">inventory</span><span class="p">.</span><span class="nx">oranges</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    return shipped;  // Return the result
-  }
-}
-</code></pre>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">shipped</span><span class="p">;</span><span class="w">  </span><span class="c1">// Return the result</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>The method modifies <code>this.inventory</code> and <code>this.hasRefrigeration</code> as side effects of the shipment — analogous to how a game action might modify shared game state.</p>
 <hr />
 <h3>Finding the "Winner" in a Collection</h3>
 <p>To find the element with the highest value according to some rule, iterate through the collection keeping track of the current best:</p>
-<pre class="codehilite"><code class="language-js">function findWinningBid(bids) {
-  // bids = [{ bidder, amount, timestamp }, ...]
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">findWinningBid</span><span class="p">(</span><span class="nx">bids</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// bids = [{ bidder, amount, timestamp }, ...]</span>
 
-  let winning = bids[0];  // Start with the first bid
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">winning</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">bids</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span><span class="w">  </span><span class="c1">// Start with the first bid</span>
 
-  for (let i = 1; i &lt; bids.length; i++) {
-    const bid = bids[i];
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">bids</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">bid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">bids</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
 
-    // A bid placed by a premium member automatically beats a standard bid
-    if (bid.isPremiumMember &amp;&amp; !winning.isPremiumMember) {
-      winning = bid;
-    } else if (bid.isPremiumMember === winning.isPremiumMember) {
-      // Same tier: higher amount wins
-      if (bid.amount &gt; winning.amount) {
-        winning = bid;
-      }
-    }
-    // Otherwise current bid doesn't beat the winner — do nothing
-  }
+<span class="w">    </span><span class="c1">// A bid placed by a premium member automatically beats a standard bid</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">bid</span><span class="p">.</span><span class="nx">isPremiumMember</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="nx">winning</span><span class="p">.</span><span class="nx">isPremiumMember</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">winning</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">bid</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">bid</span><span class="p">.</span><span class="nx">isPremiumMember</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">winning</span><span class="p">.</span><span class="nx">isPremiumMember</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Same tier: higher amount wins</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">bid</span><span class="p">.</span><span class="nx">amount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">winning</span><span class="p">.</span><span class="nx">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">winning</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">bid</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// Otherwise current bid doesn&#39;t beat the winner — do nothing</span>
+<span class="w">  </span><span class="p">}</span>
 
-  return winning;
-}
-</code></pre>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">winning</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p><strong>Key structure:</strong>
 1. Start with index 0 as the tentative winner
@@ -138,22 +138,22 @@ console.log(available.length);  // 2 (Laptop, Mouse — Monitor is $399 which pa
 <hr />
 <h3>Resetting State</h3>
 <p>After a unit of work is complete (a purchase, a round, a game), you often need to reset a subset of state while preserving other state:</p>
-<pre class="codehilite"><code class="language-js">class AuctionRound {
-  constructor() {
-    this.bids           = [];
-    this.roundNumber    = 0;
-    this.totalRevenue   = 0;   // Persists across rounds
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">AuctionRound</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">bids</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">roundNumber</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">totalRevenue</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w">   </span><span class="c1">// Persists across rounds</span>
+<span class="w">  </span><span class="p">}</span>
 
-  closeRound(winner) {
-    this.totalRevenue += winner.amount;  // Accumulate persisted data
-    this.roundNumber++;
+<span class="w">  </span><span class="nx">closeRound</span><span class="p">(</span><span class="nx">winner</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">totalRevenue</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">winner</span><span class="p">.</span><span class="nx">amount</span><span class="p">;</span><span class="w">  </span><span class="c1">// Accumulate persisted data</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">roundNumber</span><span class="o">++</span><span class="p">;</span>
 
-    // Reset transient state for next round
-    this.bids = [];
-  }
-}
-</code></pre>
+<span class="w">    </span><span class="c1">// Reset transient state for next round</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">bids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>Notice that <code>bids</code> resets to empty but <code>totalRevenue</code> and <code>roundNumber</code> keep accumulating. Identifying which state is <strong>round-level</strong> vs. <strong>game-level</strong> is a key design decision.</p>
 <hr />
@@ -170,22 +170,22 @@ console.log(available.length);  // 2 (Laptop, Mouse — Monitor is $399 which pa
 <p>Given an array of products with <code>{ name, price, category, inStock }</code>, write a function <code>getAvailable(products, maxPrice, category)</code> that returns only products that are in stock, match the category, and cost at most <code>maxPrice</code>. If nothing matches, return all in-stock products regardless of price.</p>
 <h3>Exercise 2: Guard Clauses</h3>
 <p>Rewrite the following function using guard clauses to avoid the nested if/else:</p>
-<pre class="codehilite"><code class="language-js">function processOrder(order) {
-  if (order.items.length &gt; 0) {
-    if (order.paymentConfirmed) {
-      if (order.shippingAddress) {
-        return 'Order processed';
-      } else {
-        return 'Missing address';
-      }
-    } else {
-      return 'Payment not confirmed';
-    }
-  } else {
-    return 'Empty order';
-  }
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">processOrder</span><span class="p">(</span><span class="nx">order</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">order</span><span class="p">.</span><span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">order</span><span class="p">.</span><span class="nx">paymentConfirmed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">order</span><span class="p">.</span><span class="nx">shippingAddress</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;Order processed&#39;</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;Missing address&#39;</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;Payment not confirmed&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;Empty order&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <h3>Exercise 3: Find the Strongest</h3>
 <p>Given an array of competitors <code>{ name, score, isPro }</code>, write a function <code>findWinner(competitors)</code> that returns the winning competitor, where a Pro always beats a non-Pro at the same score, and within the same tier the higher score wins.</p>

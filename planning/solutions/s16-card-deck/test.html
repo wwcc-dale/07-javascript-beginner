@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- Session 16: Card and Deck Test — Example Solution -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>S16 Deck Test</title>
+</head>
+<body>
+  <h1>Deck Test</h1>
+  <pre id="output"></pre>
+  <script type="module">
+    import { Card } from './Card.js';
+    import { Deck } from './Deck.js';
+
+    const out = [];
+    const deck = new Deck();
+
+    out.push(`Total cards: ${deck.cardsLeft()}`);    // 52
+    deck.shuffle();
+    out.push(`After shuffle, cards: ${deck.cardsLeft()}`); // 52
+
+    const hand = [];
+    for (let i = 0; i < 5; i++) hand.push(deck.draw());
+    out.push(`Drew 5 cards: ${hand.map(c => c.toString()).join(", ")}`);
+    out.push(`Cards remaining: ${deck.cardsLeft()}`); // 47
+
+    // Verify 52 unique cards
+    deck.reset();
+    const seen = new Set();
+    while (deck.cardsLeft() > 0) seen.add(deck.draw().toString());
+    out.push(`Unique cards: ${seen.size}`); // 52
+
+    document.getElementById("output").textContent = out.join("\n");
+  </script>
+</body>
+</html>

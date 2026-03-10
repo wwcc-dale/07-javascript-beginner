@@ -21,103 +21,103 @@
 <hr />
 <h2>Reading: Managing Object Collections (35 minutes)</h2>
 <h3>Arrays of Objects</h3>
-<pre class="codehilite"><code class="language-js">class Task {
-  constructor(description, priority, done) {
-    this.description = description;
-    this.priority = priority;
-    this.done = done;
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Task</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">description</span><span class="p">,</span><span class="w"> </span><span class="nx">priority</span><span class="p">,</span><span class="w"> </span><span class="nx">done</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">description</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">priority</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">priority</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">done</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">done</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  isUrgent() {
-    return this.priority === &quot;high&quot; &amp;&amp; !this.done;
-  }
-}
+<span class="w">  </span><span class="nx">isUrgent</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">priority</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;high&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">done</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const tasks = [
-  new Task(&quot;Fix login bug&quot;, &quot;high&quot;, false),
-  new Task(&quot;Update readme&quot;, &quot;low&quot;, true),
-  new Task(&quot;Deploy to prod&quot;, &quot;high&quot;, false)
-];
+<span class="kd">const</span><span class="w"> </span><span class="nx">tasks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">Task</span><span class="p">(</span><span class="s2">&quot;Fix login bug&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;high&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">Task</span><span class="p">(</span><span class="s2">&quot;Update readme&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;low&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">),</span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">Task</span><span class="p">(</span><span class="s2">&quot;Deploy to prod&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;high&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
+<span class="p">];</span>
 
-// Loop through all tasks
-for (let i = 0; i &lt; tasks.length; i++) {
-  console.log(tasks[i].description, tasks[i].isUrgent());
-}
-</code></pre>
+<span class="c1">// Loop through all tasks</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">tasks</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tasks</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">description</span><span class="p">,</span><span class="w"> </span><span class="nx">tasks</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">isUrgent</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <h3>Container Classes</h3>
 <p>A container class manages a collection of other objects.</p>
-<pre class="codehilite"><code class="language-js">class Project {
-  constructor(name) {
-    this.name = name;
-    this.tasks = [];
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Project</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="w">  </span><span class="p">}</span>
 
-  addTask(task) {
-    this.tasks.push(task);
-  }
+<span class="w">  </span><span class="nx">addTask</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">task</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
 
-  getOpenCount() {
-    let count = 0;
-    for (let i = 0; i &lt; this.tasks.length; i++) {
-      if (!this.tasks[i].done) {
-        count++;
-      }
-    }
-    return count;
-  }
+<span class="w">  </span><span class="nx">getOpenCount</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">done</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">count</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  getUrgentCount() {
-    let count = 0;
-    for (let i = 0; i &lt; this.tasks.length; i++) {
-      if (this.tasks[i].isUrgent()) {
-        count++;
-      }
-    }
-    return count;
-  }
-}
+<span class="w">  </span><span class="nx">getUrgentCount</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">tasks</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">isUrgent</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">count</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const project = new Project(&quot;Website Relaunch&quot;);
-project.addTask(new Task(&quot;Fix login bug&quot;, &quot;high&quot;, false));
-project.addTask(new Task(&quot;Update readme&quot;, &quot;low&quot;, false));
-project.addTask(new Task(&quot;Write tests&quot;, &quot;high&quot;, true));
-console.log(project.getOpenCount());  // 2
-console.log(project.getUrgentCount()); // 1
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">project</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Project</span><span class="p">(</span><span class="s2">&quot;Website Relaunch&quot;</span><span class="p">);</span>
+<span class="nx">project</span><span class="p">.</span><span class="nx">addTask</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Task</span><span class="p">(</span><span class="s2">&quot;Fix login bug&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;high&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">));</span>
+<span class="nx">project</span><span class="p">.</span><span class="nx">addTask</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Task</span><span class="p">(</span><span class="s2">&quot;Update readme&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;low&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">));</span>
+<span class="nx">project</span><span class="p">.</span><span class="nx">addTask</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Task</span><span class="p">(</span><span class="s2">&quot;Write tests&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;high&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">project</span><span class="p">.</span><span class="nx">getOpenCount</span><span class="p">());</span><span class="w">  </span><span class="c1">// 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">project</span><span class="p">.</span><span class="nx">getUrgentCount</span><span class="p">());</span><span class="w"> </span><span class="c1">// 1</span>
+</code></pre></div>
 
 <h3>Objects Working Together</h3>
-<pre class="codehilite"><code class="language-js">class Song {
-  constructor(title, durationSeconds) {
-    this.title = title;
-    this.durationSeconds = durationSeconds;
-  }
-}
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Song</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">durationSeconds</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">title</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">durationSeconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">durationSeconds</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-class Playlist {
-  constructor(name) {
-    this.name = name;
-    this.songs = [];
-  }
+<span class="kd">class</span><span class="w"> </span><span class="nx">Playlist</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">songs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="w">  </span><span class="p">}</span>
 
-  addSong(song) {
-    this.songs.push(song);
-  }
+<span class="w">  </span><span class="nx">addSong</span><span class="p">(</span><span class="nx">song</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">songs</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">song</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
 
-  getTotalDuration() {
-    let total = 0;
-    for (let i = 0; i &lt; this.songs.length; i++) {
-      total += this.songs[i].durationSeconds;
-    }
-    return total;
-  }
-}
+<span class="w">  </span><span class="nx">getTotalDuration</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">songs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">songs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">durationSeconds</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">total</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const playlist = new Playlist(&quot;Morning Mix&quot;);
-playlist.addSong(new Song(&quot;Rise Up&quot;, 210));
-playlist.addSong(new Song(&quot;Good Day&quot;, 185));
-console.log(playlist.getTotalDuration()); // 395
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">playlist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Playlist</span><span class="p">(</span><span class="s2">&quot;Morning Mix&quot;</span><span class="p">);</span>
+<span class="nx">playlist</span><span class="p">.</span><span class="nx">addSong</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Song</span><span class="p">(</span><span class="s2">&quot;Rise Up&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">210</span><span class="p">));</span>
+<span class="nx">playlist</span><span class="p">.</span><span class="nx">addSong</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Song</span><span class="p">(</span><span class="s2">&quot;Good Day&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">185</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">playlist</span><span class="p">.</span><span class="nx">getTotalDuration</span><span class="p">());</span><span class="w"> </span><span class="c1">// 395</span>
+</code></pre></div>
 
 <hr />
 <h2>Assignment (60–90 minutes)</h2>

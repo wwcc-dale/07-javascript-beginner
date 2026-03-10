@@ -1,11 +1,14 @@
 ---
-name: "Session 21: Decision Trees and Heuristic AI"
+module: 5
+name: 'Session 21: Decision Trees and Heuristic AI'
+position: 1
 published: true
 related_outcomes:
-  - "CLO-1"
-  - "CLO-2"
-  - "CLO-3"
-  - "CLO-5"
+- CLO-1
+- CLO-2
+- CLO-3
+- CLO-5
+session: 21.1
 ---
 
 # Session 21: Decision Trees and Heuristic AI

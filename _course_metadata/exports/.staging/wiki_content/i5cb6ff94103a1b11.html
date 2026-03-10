@@ -23,151 +23,151 @@
 <h2>Reading: Scoring and Promises (35 minutes)</h2>
 <h3>Accumulation Loops</h3>
 <p>An <strong>accumulation loop</strong> collects a total from a collection:</p>
-<pre class="codehilite"><code class="language-js">const employees = [
-  { name: 'Alice',   salary: 80000, department: 'Engineering' },
-  { name: 'Bob',     salary: 60000, department: 'Marketing'   },
-  { name: 'Carol',   salary: 90000, department: 'Engineering' },
-  { name: 'Dave',    salary: 55000, department: 'Marketing'   }
-];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">employees</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span><span class="w">   </span><span class="nx">salary</span><span class="o">:</span><span class="w"> </span><span class="mf">80000</span><span class="p">,</span><span class="w"> </span><span class="nx">department</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Engineering&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span><span class="w">     </span><span class="nx">salary</span><span class="o">:</span><span class="w"> </span><span class="mf">60000</span><span class="p">,</span><span class="w"> </span><span class="nx">department</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Marketing&#39;</span><span class="w">   </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Carol&#39;</span><span class="p">,</span><span class="w">   </span><span class="nx">salary</span><span class="o">:</span><span class="w"> </span><span class="mf">90000</span><span class="p">,</span><span class="w"> </span><span class="nx">department</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Engineering&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Dave&#39;</span><span class="p">,</span><span class="w">    </span><span class="nx">salary</span><span class="o">:</span><span class="w"> </span><span class="mf">55000</span><span class="p">,</span><span class="w"> </span><span class="nx">department</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Marketing&#39;</span><span class="w">   </span><span class="p">}</span>
+<span class="p">];</span>
 
-// Total payroll for Engineering
-let total = 0;
-let count = 0;
-for (const emp of employees) {
-  if (emp.department === 'Engineering') {
-    total += emp.salary;
-    count++;
-  }
-}
-console.log(`Engineering payroll: $${total}, ${count} staff`);
-</code></pre>
+<span class="c1">// Total payroll for Engineering</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">emp</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">employees</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">emp</span><span class="p">.</span><span class="nx">department</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;Engineering&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">emp</span><span class="p">.</span><span class="nx">salary</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Engineering payroll: $</span><span class="si">${</span><span class="nx">total</span><span class="si">}</span><span class="sb">, </span><span class="si">${</span><span class="nx">count</span><span class="si">}</span><span class="sb"> staff`</span><span class="p">);</span>
+</code></pre></div>
 
 <p>The pattern is always the same: initialize counters to zero before the loop, conditionally add to them inside the loop, use the final values after.</p>
 <hr />
 <h3>Conditional Bonuses and Penalties</h3>
 <p>Many scoring systems have special cases layered on top of the base calculation:</p>
-<pre class="codehilite"><code class="language-js">function calculateGrade(student) {
-  let grade = student.examScore;  // Base grade from exam
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">calculateGrade</span><span class="p">(</span><span class="nx">student</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">grade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">student</span><span class="p">.</span><span class="nx">examScore</span><span class="p">;</span><span class="w">  </span><span class="c1">// Base grade from exam</span>
 
-  // Attendance bonus/penalty
-  if (student.attendanceRate &gt;= 0.95) {
-    grade += 5;   // Bonus: perfect attendance
-  } else if (student.attendanceRate &lt; 0.75) {
-    grade -= 10;  // Penalty: poor attendance
-  }
+<span class="w">  </span><span class="c1">// Attendance bonus/penalty</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">student</span><span class="p">.</span><span class="nx">attendanceRate</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">0.95</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">grade</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w">   </span><span class="c1">// Bonus: perfect attendance</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">student</span><span class="p">.</span><span class="nx">attendanceRate</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.75</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">grade</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w">  </span><span class="c1">// Penalty: poor attendance</span>
+<span class="w">  </span><span class="p">}</span>
 
-  // Extra credit (only adds if they completed extra work)
-  if (student.extraCredit) {
-    grade += student.extraCredit;
-  }
+<span class="w">  </span><span class="c1">// Extra credit (only adds if they completed extra work)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">student</span><span class="p">.</span><span class="nx">extraCredit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">grade</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">student</span><span class="p">.</span><span class="nx">extraCredit</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  // Cap at 100
-  return Math.min(grade, 100);
-}
-</code></pre>
+<span class="w">  </span><span class="c1">// Cap at 100</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">grade</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>The pattern: start with the base value, then apply each special rule as an adjustment. The order of adjustments can matter — bonus before cap behaves differently than cap before bonus.</p>
 <hr />
 <h3><code>while</code> for Threshold-Based Penalties</h3>
 <p>Some rules trigger every time an accumulator crosses a threshold — possibly multiple times in one scoring calculation. Use <code>while</code> (not <code>if</code>) for this:</p>
-<pre class="codehilite"><code class="language-js">function applyOverageCharges(account) {
-  // Each time messages exceed 1000, charge $5 and subtract 1000
-  while (account.messageSurplus &gt;= 1000) {
-    account.balance -= 5;
-    account.messageSurplus -= 1000;
-  }
-}
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">applyOverageCharges</span><span class="p">(</span><span class="nx">account</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Each time messages exceed 1000, charge $5 and subtract 1000</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">account</span><span class="p">.</span><span class="nx">messageSurplus</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">account</span><span class="p">.</span><span class="nx">balance</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">account</span><span class="p">.</span><span class="nx">messageSurplus</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mf">1000</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const account = { balance: 100, messageSurplus: 2750 };
-applyOverageCharges(account);
-console.log(account.balance);          // 85  (charged 3 times: 2750→1750→750)
-console.log(account.messageSurplus);   // 750
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">balance</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="nx">messageSurplus</span><span class="o">:</span><span class="w"> </span><span class="mf">2750</span><span class="w"> </span><span class="p">};</span>
+<span class="nx">applyOverageCharges</span><span class="p">(</span><span class="nx">account</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">account</span><span class="p">.</span><span class="nx">balance</span><span class="p">);</span><span class="w">          </span><span class="c1">// 85  (charged 3 times: 2750→1750→750)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">account</span><span class="p">.</span><span class="nx">messageSurplus</span><span class="p">);</span><span class="w">   </span><span class="c1">// 750</span>
+</code></pre></div>
 
 <p>Using <code>if</code> instead of <code>while</code> would only catch the first threshold crossing. <code>while</code> keeps firing until the surplus is below 1000.</p>
 <hr />
 <h3>What is a Promise?</h3>
 <p>A <strong>Promise</strong> represents a value that will be available in the future. You create one with <code>new Promise((resolve, reject) =&gt; { ... })</code>:</p>
-<pre class="codehilite"><code class="language-js">// A Promise that resolves after 2 seconds
-const timer = new Promise(resolve =&gt; {
-  setTimeout(resolve, 2000);
-});
+<div class="codehilite"><pre><span></span><code><span class="c1">// A Promise that resolves after 2 seconds</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
+<span class="p">});</span>
 
-timer.then(() =&gt; console.log('2 seconds passed'));
-</code></pre>
+<span class="nx">timer</span><span class="p">.</span><span class="nx">then</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;2 seconds passed&#39;</span><span class="p">));</span>
+</code></pre></div>
 
 <p><code>resolve(value)</code> is called when the result is ready. Whatever you pass to <code>resolve</code> becomes the value of the Promise.</p>
 <hr />
 <h3>Waiting for a User Click with a Promise</h3>
 <p>The key insight: you can create a Promise that only resolves when the user does something in the DOM. This turns an event listener into a one-time awaitable value:</p>
-<pre class="codehilite"><code class="language-js">function waitForButtonClick(buttonId) {
-  return new Promise(resolve =&gt; {
-    const button = document.getElementById(buttonId);
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">waitForButtonClick</span><span class="p">(</span><span class="nx">buttonId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">buttonId</span><span class="p">);</span>
 
-    const handler = (event) =&gt; {
-      button.removeEventListener('click', handler);  // Clean up — only fire once
-      resolve(event.target.textContent);             // Resolve with the button's text
-    };
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">handler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">button</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">handler</span><span class="p">);</span><span class="w">  </span><span class="c1">// Clean up — only fire once</span>
+<span class="w">      </span><span class="nx">resolve</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">textContent</span><span class="p">);</span><span class="w">             </span><span class="c1">// Resolve with the button&#39;s text</span>
+<span class="w">    </span><span class="p">};</span>
 
-    button.addEventListener('click', handler);
-    // The Promise is now &quot;pending&quot; — it will resolve only when the user clicks
-  });
-}
+<span class="w">    </span><span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">handler</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// The Promise is now &quot;pending&quot; — it will resolve only when the user clicks</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
 
-// Usage with async/await:
-async function confirmAction() {
-  const choice = await waitForButtonClick('confirm-btn');
-  console.log('User clicked:', choice);
-  // Everything here waits until the button is clicked
-}
-</code></pre>
+<span class="c1">// Usage with async/await:</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">confirmAction</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">choice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">waitForButtonClick</span><span class="p">(</span><span class="s1">&#39;confirm-btn&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;User clicked:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">choice</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// Everything here waits until the button is clicked</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>The Promise stays <strong>pending</strong> until the handler runs. When the user clicks, <code>resolve()</code> is called, and any code <code>await</code>-ing the Promise resumes.</p>
 <hr />
 <h3>Why This Pattern Matters for Game Loops</h3>
 <p>Without Promises, you can't write sequential-looking code that waits for user input. Compare:</p>
 <p><strong>Without Promises (callback hell):</strong></p>
-<pre class="codehilite"><code class="language-js">function startBidding() {
-  showBidButtons();
-  bidButton.addEventListener('click', function(e) {
-    const bid = parseInt(e.target.dataset.bid);
-    hideBidButtons();
-    startPlayPhase(bid);  // Must nest the next step
-  });
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">startBidding</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">showBidButtons</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">bidButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">bid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">bid</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">hideBidButtons</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">startPlayPhase</span><span class="p">(</span><span class="nx">bid</span><span class="p">);</span><span class="w">  </span><span class="c1">// Must nest the next step</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p><strong>With Promises + async/await:</strong></p>
-<pre class="codehilite"><code class="language-js">async function startBidding() {
-  showBidButtons();
-  const bid = await waitForBidClick();   // Pauses here
-  hideBidButtons();
-  await startPlayPhase(bid);             // Then continues here
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">startBidding</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">showBidButtons</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">bid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">waitForBidClick</span><span class="p">();</span><span class="w">   </span><span class="c1">// Pauses here</span>
+<span class="w">  </span><span class="nx">hideBidButtons</span><span class="p">();</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">startPlayPhase</span><span class="p">(</span><span class="nx">bid</span><span class="p">);</span><span class="w">             </span><span class="c1">// Then continues here</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>The second version reads top-to-bottom like synchronous code, even though it's waiting for asynchronous user input at each <code>await</code>.</p>
 <hr />
 <h3>Attaching Data to DOM Elements with <code>dataset</code></h3>
 <p>When many similar elements can be clicked (like buttons or items in a list), <code>dataset</code> attributes let the click handler identify which one was clicked without complex logic:</p>
-<pre class="codehilite"><code class="language-js">// Create buttons dynamically
-const options = ['Small', 'Medium', 'Large'];
-options.forEach(size =&gt; {
-  const btn = document.createElement('button');
-  btn.textContent = size;
-  btn.dataset.size = size;       // Attach data to the element
-  btn.dataset.price = size === 'Large' ? 5 : size === 'Medium' ? 3 : 1;
-  container.appendChild(btn);
-});
+<div class="codehilite"><pre><span></span><code><span class="c1">// Create buttons dynamically</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Small&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Medium&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Large&#39;</span><span class="p">];</span>
+<span class="nx">options</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">size</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">btn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">btn</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">size</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">btn</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">size</span><span class="p">;</span><span class="w">       </span><span class="c1">// Attach data to the element</span>
+<span class="w">  </span><span class="nx">btn</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">size</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;Large&#39;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">size</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;Medium&#39;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">container</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">btn</span><span class="p">);</span>
+<span class="p">});</span>
 
-// Single handler for all buttons
-container.addEventListener('click', (e) =&gt; {
-  const btn = e.target.closest('button');
-  if (!btn) return;
-  console.log('Size:', btn.dataset.size);    // 'Large'
-  console.log('Price:', btn.dataset.price);  // '5'
-});
-</code></pre>
+<span class="c1">// Single handler for all buttons</span>
+<span class="nx">container</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">btn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">btn</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Size:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">btn</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span><span class="w">    </span><span class="c1">// &#39;Large&#39;</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Price:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">btn</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">price</span><span class="p">);</span><span class="w">  </span><span class="c1">// &#39;5&#39;</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <p><code>dataset.size</code> reads the <code>data-size</code> attribute. <code>e.target.closest('button')</code> handles clicks on child elements inside the button. This avoids maintaining a parallel index or closure variable.</p>
 <hr />

@@ -65,11 +65,11 @@
 <p>Arrange the four player positions in a compass layout (Partner at top, West left, East right, You at bottom) using CSS <code>flexbox</code> or <code>grid</code>. The trick area should be in the center with card slots for each player direction.</p>
 <h3>Challenge 7: Stop Button</h3>
 <p>Add a "Stop Game" button to <code>index.html</code> and wire it in <code>app.js</code>:</p>
-<pre class="codehilite"><code class="language-js">document.getElementById('stop-btn').addEventListener('click', () =&gt; {
-  runner.stop();
-  board.setStatus('Game stopped by user.');
-});
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;stop-btn&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">runner</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">board</span><span class="p">.</span><span class="nx">setStatus</span><span class="p">(</span><span class="s1">&#39;Game stopped by user.&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <hr />
 <h2>Level 3 – Advanced (2 pts)</h2>

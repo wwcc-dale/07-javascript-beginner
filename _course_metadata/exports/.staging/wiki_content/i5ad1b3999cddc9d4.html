@@ -23,169 +23,169 @@
 <hr />
 <h2>Reading: Event Handling (35 minutes)</h2>
 <h3>Basic Event Listener</h3>
-<pre class="codehilite"><code class="language-js">const button = document.querySelector('button');
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">);</span>
 
-button.addEventListener('click', () =&gt; {
-  console.log('Button was clicked!');
-});
-</code></pre>
+<span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Button was clicked!&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <h3>Common Events</h3>
-<pre class="codehilite"><code class="language-js">// Click events
-element.addEventListener('click', (event) =&gt; {});
+<div class="codehilite"><pre><span></span><code><span class="c1">// Click events</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{});</span>
 
-// Input events
-input.addEventListener('input', (event) =&gt; {});
-input.addEventListener('change', (event) =&gt; {});
+<span class="c1">// Input events</span>
+<span class="nx">input</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{});</span>
+<span class="nx">input</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;change&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{});</span>
 
-// Form events
-form.addEventListener('submit', (event) =&gt; {});
+<span class="c1">// Form events</span>
+<span class="nx">form</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;submit&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{});</span>
 
-// Keyboard events
-document.addEventListener('keydown', (event) =&gt; {});
-document.addEventListener('keyup', (event) =&gt; {});
+<span class="c1">// Keyboard events</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;keydown&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{});</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;keyup&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{});</span>
 
-// Mouse events
-element.addEventListener('mouseover', (event) =&gt; {});
-element.addEventListener('mouseout', (event) =&gt; {});
-element.addEventListener('mousemove', (event) =&gt; {});
-</code></pre>
+<span class="c1">// Mouse events</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;mouseover&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{});</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;mouseout&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{});</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;mousemove&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{});</span>
+</code></pre></div>
 
 <h3>The Event Object</h3>
-<pre class="codehilite"><code class="language-js">button.addEventListener('click', (event) =&gt; {
-  console.log(event.target);        // Which element was clicked
-  console.log(event.type);          // &quot;click&quot;
-  console.log(event.clientX);       // Mouse X position
-  console.log(event.key);           // Key pressed (if keyboard event)
-});
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span><span class="w">        </span><span class="c1">// Which element was clicked</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">type</span><span class="p">);</span><span class="w">          </span><span class="c1">// &quot;click&quot;</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">clientX</span><span class="p">);</span><span class="w">       </span><span class="c1">// Mouse X position</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">key</span><span class="p">);</span><span class="w">           </span><span class="c1">// Key pressed (if keyboard event)</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <h3>Real Example: Feedback Form</h3>
-<pre class="codehilite"><code class="language-html">&lt;form id=&quot;feedbackForm&quot;&gt;
-  &lt;input id=&quot;subjectInput&quot; type=&quot;text&quot; placeholder=&quot;Subject&quot;&gt;
-  &lt;select id=&quot;categorySelect&quot;&gt;
-    &lt;option value=&quot;&quot;&gt;Select category&lt;/option&gt;
-    &lt;option value=&quot;bug&quot;&gt;Bug Report&lt;/option&gt;
-    &lt;option value=&quot;feature&quot;&gt;Feature Request&lt;/option&gt;
-    &lt;option value=&quot;other&quot;&gt;Other&lt;/option&gt;
-  &lt;/select&gt;
-  &lt;button type=&quot;submit&quot;&gt;Send Feedback&lt;/button&gt;
-  &lt;div id=&quot;confirmation&quot;&gt;&lt;/div&gt;
-&lt;/form&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;feedbackForm&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;subjectInput&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Subject&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">select</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;categorySelect&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Select category<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;bug&quot;</span><span class="p">&gt;</span>Bug Report<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;feature&quot;</span><span class="p">&gt;</span>Feature Request<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;other&quot;</span><span class="p">&gt;</span>Other<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Send Feedback<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;confirmation&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
 
-<pre class="codehilite"><code class="language-js">const form = document.querySelector('#feedbackForm');
-const subjectInput = document.querySelector('#subjectInput');
-const categorySelect = document.querySelector('#categorySelect');
-const confirmation = document.querySelector('#confirmation');
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">form</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#feedbackForm&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">subjectInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#subjectInput&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">categorySelect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#categorySelect&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">confirmation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#confirmation&#39;</span><span class="p">);</span>
 
-form.addEventListener('submit', (event) =&gt; {
-  event.preventDefault();  // Stop page reload
+<span class="nx">form</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;submit&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span><span class="w">  </span><span class="c1">// Stop page reload</span>
 
-  const subject = subjectInput.value;
-  const category = categorySelect.value;
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">subject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">subjectInput</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">categorySelect</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
 
-  if (subject &amp;&amp; category) {
-    confirmation.textContent = `Thanks! Your &quot;${category}&quot; feedback has been received.`;
-    form.reset();  // Clear form
-  }
-});
-</code></pre>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">subject</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">category</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">confirmation</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Thanks! Your &quot;</span><span class="si">${</span><span class="nx">category</span><span class="si">}</span><span class="sb">&quot; feedback has been received.`</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">form</span><span class="p">.</span><span class="nx">reset</span><span class="p">();</span><span class="w">  </span><span class="c1">// Clear form</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <h3>Real Example: Rating Widget</h3>
-<pre class="codehilite"><code class="language-html">&lt;div class=&quot;rating&quot;&gt;
-  &lt;h2 id=&quot;stars&quot;&gt;★★★☆☆&lt;/h2&gt;
-  &lt;p id=&quot;ratingValue&quot;&gt;3 / 5&lt;/p&gt;
-  &lt;button id=&quot;rateUp&quot;&gt;▲ Better&lt;/button&gt;
-  &lt;button id=&quot;rateDown&quot;&gt;▼ Worse&lt;/button&gt;
-&lt;/div&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;rating&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;stars&quot;</span><span class="p">&gt;</span>★★★☆☆<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;ratingValue&quot;</span><span class="p">&gt;</span>3 / 5<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;rateUp&quot;</span><span class="p">&gt;</span>▲ Better<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;rateDown&quot;</span><span class="p">&gt;</span>▼ Worse<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
 
-<pre class="codehilite"><code class="language-js">let rating = 3;
-const starsDisplay = document.querySelector('#stars');
-const ratingValue = document.querySelector('#ratingValue');
-const rateUpBtn = document.querySelector('#rateUp');
-const rateDownBtn = document.querySelector('#rateDown');
+<div class="codehilite"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">rating</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">starsDisplay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#stars&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">ratingValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#ratingValue&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">rateUpBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#rateUp&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">rateDownBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#rateDown&#39;</span><span class="p">);</span>
 
-function updateDisplay() {
-  const filled = '★'.repeat(rating);
-  const empty = '☆'.repeat(5 - rating);
-  starsDisplay.textContent = filled + empty;
-  ratingValue.textContent = `${rating} / 5`;
-}
+<span class="kd">function</span><span class="w"> </span><span class="nx">updateDisplay</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">filled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;★&#39;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="nx">rating</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">empty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;☆&#39;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mf">5</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">rating</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">starsDisplay</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">filled</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">empty</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">ratingValue</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">rating</span><span class="si">}</span><span class="sb"> / 5`</span><span class="p">;</span>
+<span class="p">}</span>
 
-rateUpBtn.addEventListener('click', () =&gt; {
-  if (rating &lt; 5) { rating++; updateDisplay(); }
-});
+<span class="nx">rateUpBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">rating</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">rating</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="nx">updateDisplay</span><span class="p">();</span><span class="w"> </span><span class="p">}</span>
+<span class="p">});</span>
 
-rateDownBtn.addEventListener('click', () =&gt; {
-  if (rating &gt; 1) { rating--; updateDisplay(); }
-});
-</code></pre>
+<span class="nx">rateDownBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">rating</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">rating</span><span class="o">--</span><span class="p">;</span><span class="w"> </span><span class="nx">updateDisplay</span><span class="p">();</span><span class="w"> </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <h3>Event Delegation</h3>
 <p>Handle events on many elements efficiently by attaching one listener to a parent:</p>
-<pre class="codehilite"><code class="language-js">const gallery = document.querySelector('#photoGallery');
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">gallery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#photoGallery&#39;</span><span class="p">);</span>
 
-gallery.addEventListener('click', (event) =&gt; {
-  if (event.target.tagName === 'BUTTON') {
-    console.log('Removing:', event.target.textContent);
-    event.target.parentElement.remove();
-  }
-});
-</code></pre>
+<span class="nx">gallery</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">tagName</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;BUTTON&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Removing:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">textContent</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <p>This is more efficient than attaching a listener to every button individually, and it works for elements added to the gallery later.</p>
 <h3>Reading Form Element Values</h3>
 <p>All interactive form elements expose a <code>.value</code> property. The behavior is the same regardless of the element type:</p>
 <p><strong>Text input and textarea:</strong></p>
-<pre class="codehilite"><code class="language-js">const textInput = document.querySelector('#nameInput');   // &lt;input type=&quot;text&quot;&gt;
-const textarea = document.querySelector('#bio');           // &lt;textarea&gt;
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">textInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#nameInput&#39;</span><span class="p">);</span><span class="w">   </span><span class="c1">// &lt;input type=&quot;text&quot;&gt;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">textarea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#bio&#39;</span><span class="p">);</span><span class="w">           </span><span class="c1">// &lt;textarea&gt;</span>
 
-console.log(textInput.value);  // whatever the user typed
-console.log(textarea.value);   // multi-line text content
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">textInput</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w">  </span><span class="c1">// whatever the user typed</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">textarea</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w">   </span><span class="c1">// multi-line text content</span>
+</code></pre></div>
 
 <p><strong>Select (dropdown):</strong></p>
-<pre class="codehilite"><code class="language-js">const dropdown = document.querySelector('#colorSelect');  // &lt;select&gt;
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">dropdown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#colorSelect&#39;</span><span class="p">);</span><span class="w">  </span><span class="c1">// &lt;select&gt;</span>
 
-console.log(dropdown.value);  // the value of the currently selected &lt;option&gt;
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dropdown</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w">  </span><span class="c1">// the value of the currently selected &lt;option&gt;</span>
+</code></pre></div>
 
-<pre class="codehilite"><code class="language-html">&lt;select id=&quot;colorSelect&quot;&gt;
-  &lt;option value=&quot;red&quot;&gt;Red&lt;/option&gt;
-  &lt;option value=&quot;blue&quot;&gt;Blue&lt;/option&gt;
-  &lt;option value=&quot;green&quot;&gt;Green&lt;/option&gt;
-&lt;/select&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">select</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;colorSelect&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">&gt;</span>Red<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">&gt;</span>Blue<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;green&quot;</span><span class="p">&gt;</span>Green<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+</code></pre></div>
 
-<pre class="codehilite"><code class="language-js">const select = document.querySelector('#colorSelect');
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">select</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#colorSelect&#39;</span><span class="p">);</span>
 
-select.addEventListener('change', () =&gt; {
-  const chosen = select.value;   // &quot;red&quot;, &quot;blue&quot;, or &quot;green&quot;
-  document.body.style.backgroundColor = chosen;
-});
-</code></pre>
+<span class="nx">select</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;change&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">chosen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">select</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span><span class="w">   </span><span class="c1">// &quot;red&quot;, &quot;blue&quot;, or &quot;green&quot;</span>
+<span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">chosen</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <p>Listen for <code>'change'</code> on selects (fires when selection changes), or <code>'input'</code> for live updates on text fields.</p>
 <h3><code>event.preventDefault()</code> and <code>event.stopPropagation()</code></h3>
 <p>You've seen <code>preventDefault()</code> — it stops the browser's default behavior (e.g., form submission reloading the page).</p>
 <p><code>stopPropagation()</code> stops the event from <strong>bubbling up</strong> to parent elements.</p>
 <p><strong>Event bubbling:</strong> When you click an element, the click event fires on that element first, then propagates (bubbles) up through every ancestor element to the document root.</p>
-<pre class="codehilite"><code class="language-html">&lt;div id=&quot;outer&quot;&gt;
-  &lt;button id=&quot;inner&quot;&gt;Click me&lt;/button&gt;
-&lt;/div&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;outer&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;inner&quot;</span><span class="p">&gt;</span>Click me<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
 
-<pre class="codehilite"><code class="language-js">document.querySelector('#outer').addEventListener('click', () =&gt; {
-  console.log('Outer clicked');
-});
+<div class="codehilite"><pre><span></span><code><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#outer&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Outer clicked&#39;</span><span class="p">);</span>
+<span class="p">});</span>
 
-document.querySelector('#inner').addEventListener('click', (event) =&gt; {
-  console.log('Inner clicked');
-  event.stopPropagation();  // prevents &quot;Outer clicked&quot; from also firing
-});
-</code></pre>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#inner&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Inner clicked&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span><span class="w">  </span><span class="c1">// prevents &quot;Outer clicked&quot; from also firing</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <p>Without <code>stopPropagation()</code>, clicking the button logs both "Inner clicked" and "Outer clicked". With it, only "Inner clicked" logs.</p>
 <p><strong>When to use it:</strong> When you have a clickable container but also clickable children inside it and you don't want both handlers to fire.</p>

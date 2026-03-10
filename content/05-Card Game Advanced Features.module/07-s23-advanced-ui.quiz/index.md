@@ -1,7 +1,9 @@
 ---
 allowed_attempts: 3
 indent: 1
+module: 5
 name: Session 23 Quiz – Advanced UI (Settings, Themes, Leaderboards)
+position: 7
 published: false
 question_groups:
 - bank: s23-advanced-ui.bank
@@ -9,6 +11,7 @@ question_groups:
   pick: 16
   points_per_question: 1
 quiz_type: practice_quiz
+session: 23.2
 show_correct_answers: true
 shuffle_answers: true
 time_limit: 20

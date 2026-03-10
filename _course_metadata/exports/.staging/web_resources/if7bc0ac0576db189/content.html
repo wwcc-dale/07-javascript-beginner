@@ -42,99 +42,99 @@
 </ul>
 <h3>Challenge 3: SpadesGame Setup</h3>
 <p>Copy the <code>SpadesGame</code> class skeleton below into <code>SpadesGame.js</code>. Implement the <code>constructor</code> and <code>startRound()</code> using what you learned in the reading:</p>
-<pre class="codehilite"><code class="language-js">class SpadesGame {
-  constructor(players) {
-    // players[0] = You (South), players[1] = West,
-    // players[2] = Partner (North), players[3] = East
-    // Team 0: players[0] + players[2]
-    // Team 1: players[1] + players[3]
-    this.players = players;
-    this.teams = [
-      { name: 'You &amp; Partner', players: [players[0], players[2]], score: 0, bags: 0 },
-      { name: 'Opponents',     players: [players[1], players[3]], score: 0, bags: 0 }
-    ];
-    // TODO: create a Deck, set roundNumber=0, dealerIndex=3,
-    //       spadesBroken=false, currentTrick=[], trickLeaderIndex=0
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">SpadesGame</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">players</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// players[0] = You (South), players[1] = West,</span>
+<span class="w">    </span><span class="c1">// players[2] = Partner (North), players[3] = East</span>
+<span class="w">    </span><span class="c1">// Team 0: players[0] + players[2]</span>
+<span class="w">    </span><span class="c1">// Team 1: players[1] + players[3]</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">players</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">players</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">teams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;You &amp; Partner&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">players</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">players</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="nx">players</span><span class="p">[</span><span class="mf">2</span><span class="p">]],</span><span class="w"> </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">bags</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Opponents&#39;</span><span class="p">,</span><span class="w">     </span><span class="nx">players</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">players</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="nx">players</span><span class="p">[</span><span class="mf">3</span><span class="p">]],</span><span class="w"> </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">bags</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">];</span>
+<span class="w">    </span><span class="c1">// TODO: create a Deck, set roundNumber=0, dealerIndex=3,</span>
+<span class="w">    </span><span class="c1">//       spadesBroken=false, currentTrick=[], trickLeaderIndex=0</span>
+<span class="w">  </span><span class="p">}</span>
 
-  startRound() {
-    // TODO: increment roundNumber, advance dealerIndex (mod 4),
-    //       set trickLeaderIndex = (dealerIndex + 1) % 4,
-    //       reset spadesBroken and currentTrick,
-    //       call resetForRound() on all players,
-    //       call deck.reset(), deal 13 cards to each player in rotation,
-    //       sort each player's hand
-  }
+<span class="w">  </span><span class="nx">startRound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// TODO: increment roundNumber, advance dealerIndex (mod 4),</span>
+<span class="w">    </span><span class="c1">//       set trickLeaderIndex = (dealerIndex + 1) % 4,</span>
+<span class="w">    </span><span class="c1">//       reset spadesBroken and currentTrick,</span>
+<span class="w">    </span><span class="c1">//       call resetForRound() on all players,</span>
+<span class="w">    </span><span class="c1">//       call deck.reset(), deal 13 cards to each player in rotation,</span>
+<span class="w">    </span><span class="c1">//       sort each player&#39;s hand</span>
+<span class="w">  </span><span class="p">}</span>
 
-  sortHand(hand) {
-    const suitOrder = { 'Spades': 4, 'Hearts': 3, 'Diamonds': 2, 'Clubs': 1 };
-    hand.sort((a, b) =&gt; {
-      const suitDiff = suitOrder[b.getSuit()] - suitOrder[a.getSuit()];
-      if (suitDiff !== 0) return suitDiff;
-      return b.getValue() - a.getValue();
-    });
-  }
-}
-</code></pre>
+<span class="w">  </span><span class="nx">sortHand</span><span class="p">(</span><span class="nx">hand</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">suitOrder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;Spades&#39;</span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Hearts&#39;</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Diamonds&#39;</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Clubs&#39;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="nx">hand</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">suitDiff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">suitOrder</span><span class="p">[</span><span class="nx">b</span><span class="p">.</span><span class="nx">getSuit</span><span class="p">()]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">suitOrder</span><span class="p">[</span><span class="nx">a</span><span class="p">.</span><span class="nx">getSuit</span><span class="p">()];</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">suitDiff</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">suitDiff</span><span class="p">;</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">getValue</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">getValue</span><span class="p">();</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <h3>Challenge 4: Test Page</h3>
 <p>Create <code>test.html</code> that loads <code>Card.js</code>, <code>Deck.js</code>, <code>Player.js</code>, <code>AIPlayer.js</code>, and <code>SpadesGame.js</code> and runs these checks in the console:</p>
-<pre class="codehilite"><code class="language-js">const players = [
-  new Player('You', false),
-  new AIPlayer('West'),
-  new AIPlayer('Partner'),
-  new AIPlayer('East')
-];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">players</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">Player</span><span class="p">(</span><span class="s1">&#39;You&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">AIPlayer</span><span class="p">(</span><span class="s1">&#39;West&#39;</span><span class="p">),</span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">AIPlayer</span><span class="p">(</span><span class="s1">&#39;Partner&#39;</span><span class="p">),</span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">AIPlayer</span><span class="p">(</span><span class="s1">&#39;East&#39;</span><span class="p">)</span>
+<span class="p">];</span>
 
-const game = new SpadesGame(players);
-game.startRound();
+<span class="kd">const</span><span class="w"> </span><span class="nx">game</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">SpadesGame</span><span class="p">(</span><span class="nx">players</span><span class="p">);</span>
+<span class="nx">game</span><span class="p">.</span><span class="nx">startRound</span><span class="p">();</span>
 
-// Each player gets 13 cards
-players.forEach(p =&gt; console.log(`${p.name}: ${p.hand.length} cards`));
+<span class="c1">// Each player gets 13 cards</span>
+<span class="nx">players</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">p</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="nx">p</span><span class="p">.</span><span class="nx">hand</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb"> cards`</span><span class="p">));</span>
 
-// All 52 cards dealt with no duplicates
-const allCards = players.flatMap(p =&gt; p.hand.map(c =&gt; c.toString()));
-console.log('Unique:', new Set(allCards).size === 52);  // true
+<span class="c1">// All 52 cards dealt with no duplicates</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">allCards</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">players</span><span class="p">.</span><span class="nx">flatMap</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">hand</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">toString</span><span class="p">()));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Unique:&#39;</span><span class="p">,</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">(</span><span class="nx">allCards</span><span class="p">).</span><span class="nx">size</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">52</span><span class="p">);</span><span class="w">  </span><span class="c1">// true</span>
 
-// AI bid decisions
-players.filter(p =&gt; p.isAI).forEach(p =&gt; {
-  console.log(`${p.name} bids: ${p.getBidDecision(p.hand)}`);
-});
-</code></pre>
+<span class="c1">// AI bid decisions</span>
+<span class="nx">players</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">isAI</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">p</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> bids: </span><span class="si">${</span><span class="nx">p</span><span class="p">.</span><span class="nx">getBidDecision</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">hand</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <hr />
 <h2>Level 2 – Stretch (3 pts)</h2>
 <h3>Challenge 5: Play a Card</h3>
 <p>Verify <code>playCard()</code> removes the correct card:</p>
-<pre class="codehilite"><code class="language-js">game.startRound();
-const you = players[0];
-const cardToPlay = you.hand[0];
-const played = you.playCard(cardToPlay);
-console.log('Played:', played.toString());
-console.log('Hand size after play:', you.hand.length);  // 12
-console.log('Card removed from hand:', !you.hand.some(c =&gt; c.equals(played)));  // true
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nx">game</span><span class="p">.</span><span class="nx">startRound</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">you</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">players</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">cardToPlay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">you</span><span class="p">.</span><span class="nx">hand</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">played</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">you</span><span class="p">.</span><span class="nx">playCard</span><span class="p">(</span><span class="nx">cardToPlay</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Played:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">played</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Hand size after play:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">you</span><span class="p">.</span><span class="nx">hand</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span><span class="w">  </span><span class="c1">// 12</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Card removed from hand:&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">!</span><span class="nx">you</span><span class="p">.</span><span class="nx">hand</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">equals</span><span class="p">(</span><span class="nx">played</span><span class="p">)));</span><span class="w">  </span><span class="c1">// true</span>
+</code></pre></div>
 
 <h3>Challenge 6: Multiple Rounds</h3>
 <p>Call <code>startRound()</code> twice and confirm hands are fully reset:</p>
-<pre class="codehilite"><code class="language-js">game.startRound();
-game.startRound();
-players.forEach(p =&gt; console.log(`${p.name}: ${p.hand.length} cards`));  // All 13
-console.log('Round number:', game.roundNumber);  // 2
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nx">game</span><span class="p">.</span><span class="nx">startRound</span><span class="p">();</span>
+<span class="nx">game</span><span class="p">.</span><span class="nx">startRound</span><span class="p">();</span>
+<span class="nx">players</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">p</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="nx">p</span><span class="p">.</span><span class="nx">hand</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb"> cards`</span><span class="p">));</span><span class="w">  </span><span class="c1">// All 13</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Round number:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">roundNumber</span><span class="p">);</span><span class="w">  </span><span class="c1">// 2</span>
+</code></pre></div>
 
 <hr />
 <h2>Level 3 – Advanced (2 pts)</h2>
 <h3>Challenge 7: Team Lookup</h3>
 <p>Write a <code>teamOf(game, player)</code> function and verify it returns the correct team for all four players:</p>
-<pre class="codehilite"><code class="language-js">function teamOf(game, player) {
-  return game.teams.find(t =&gt; t.players.includes(player));
-}
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">teamOf</span><span class="p">(</span><span class="nx">game</span><span class="p">,</span><span class="w"> </span><span class="nx">player</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">teams</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">t</span><span class="p">.</span><span class="nx">players</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">player</span><span class="p">));</span>
+<span class="p">}</span>
 
-console.log(teamOf(game, players[0]).name);  // 'You &amp; Partner'
-console.log(teamOf(game, players[1]).name);  // 'Opponents'
-console.log(teamOf(game, players[2]).name);  // 'You &amp; Partner'
-console.log(teamOf(game, players[3]).name);  // 'Opponents'
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">teamOf</span><span class="p">(</span><span class="nx">game</span><span class="p">,</span><span class="w"> </span><span class="nx">players</span><span class="p">[</span><span class="mf">0</span><span class="p">]).</span><span class="nx">name</span><span class="p">);</span><span class="w">  </span><span class="c1">// &#39;You &amp; Partner&#39;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">teamOf</span><span class="p">(</span><span class="nx">game</span><span class="p">,</span><span class="w"> </span><span class="nx">players</span><span class="p">[</span><span class="mf">1</span><span class="p">]).</span><span class="nx">name</span><span class="p">);</span><span class="w">  </span><span class="c1">// &#39;Opponents&#39;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">teamOf</span><span class="p">(</span><span class="nx">game</span><span class="p">,</span><span class="w"> </span><span class="nx">players</span><span class="p">[</span><span class="mf">2</span><span class="p">]).</span><span class="nx">name</span><span class="p">);</span><span class="w">  </span><span class="c1">// &#39;You &amp; Partner&#39;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">teamOf</span><span class="p">(</span><span class="nx">game</span><span class="p">,</span><span class="w"> </span><span class="nx">players</span><span class="p">[</span><span class="mf">3</span><span class="p">]).</span><span class="nx">name</span><span class="p">);</span><span class="w">  </span><span class="c1">// &#39;Opponents&#39;</span>
+</code></pre></div>
 </body>
 </html>

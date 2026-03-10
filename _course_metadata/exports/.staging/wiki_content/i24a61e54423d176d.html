@@ -22,45 +22,45 @@
 <h2>Reading: Inheritance and Object Graphs (35 minutes)</h2>
 <h3>Inheritance with <code>extends</code> and <code>super</code></h3>
 <p>Inheritance lets you define a more specialized version of an existing class without rewriting everything:</p>
-<pre class="codehilite"><code class="language-js">class Vehicle {
-  constructor(make, model, year) {
-    this.make  = make;
-    this.model = model;
-    this.year  = year;
-    this.speed = 0;
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">make</span><span class="p">,</span><span class="w"> </span><span class="nx">model</span><span class="p">,</span><span class="w"> </span><span class="nx">year</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">make</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nx">make</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">model</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">year</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nx">year</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">speed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  describe() {
-    return `${this.year} ${this.make} ${this.model}`;
-  }
+<span class="w">  </span><span class="nx">describe</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">year</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">make</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">model</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  accelerate(amount) {
-    this.speed += amount;
-  }
-}
+<span class="w">  </span><span class="nx">accelerate</span><span class="p">(</span><span class="nx">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">speed</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">amount</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-class ElectricVehicle extends Vehicle {
-  constructor(make, model, year, batteryKwh) {
-    super(make, model, year);   // Must call super() first — runs parent constructor
-    this.batteryKwh  = batteryKwh;
-    this.chargeLevel = 100;     // Additional property only on ElectricVehicle
-  }
+<span class="kd">class</span><span class="w"> </span><span class="nx">ElectricVehicle</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">make</span><span class="p">,</span><span class="w"> </span><span class="nx">model</span><span class="p">,</span><span class="w"> </span><span class="nx">year</span><span class="p">,</span><span class="w"> </span><span class="nx">batteryKwh</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">super</span><span class="p">(</span><span class="nx">make</span><span class="p">,</span><span class="w"> </span><span class="nx">model</span><span class="p">,</span><span class="w"> </span><span class="nx">year</span><span class="p">);</span><span class="w">   </span><span class="c1">// Must call super() first — runs parent constructor</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">batteryKwh</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nx">batteryKwh</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">chargeLevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span><span class="w">     </span><span class="c1">// Additional property only on ElectricVehicle</span>
+<span class="w">  </span><span class="p">}</span>
 
-  describe() {
-    // Override parent method and extend it
-    return `${super.describe()} [Electric, ${this.batteryKwh} kWh]`;
-  }
+<span class="w">  </span><span class="nx">describe</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Override parent method and extend it</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="k">super</span><span class="p">.</span><span class="nx">describe</span><span class="p">()</span><span class="si">}</span><span class="sb"> [Electric, </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">batteryKwh</span><span class="si">}</span><span class="sb"> kWh]`</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  charge() {
-    this.chargeLevel = 100;
-  }
-}
+<span class="w">  </span><span class="nx">charge</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">chargeLevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const car = new ElectricVehicle('Tesla', 'Model 3', 2023, 82);
-console.log(car.describe());    // &quot;2023 Tesla Model 3 [Electric, 82 kWh]&quot;
-car.accelerate(30);             // Inherited from Vehicle
-console.log(car.speed);         // 30
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ElectricVehicle</span><span class="p">(</span><span class="s1">&#39;Tesla&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Model 3&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">2023</span><span class="p">,</span><span class="w"> </span><span class="mf">82</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">car</span><span class="p">.</span><span class="nx">describe</span><span class="p">());</span><span class="w">    </span><span class="c1">// &quot;2023 Tesla Model 3 [Electric, 82 kWh]&quot;</span>
+<span class="nx">car</span><span class="p">.</span><span class="nx">accelerate</span><span class="p">(</span><span class="mf">30</span><span class="p">);</span><span class="w">             </span><span class="c1">// Inherited from Vehicle</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">car</span><span class="p">.</span><span class="nx">speed</span><span class="p">);</span><span class="w">         </span><span class="c1">// 30</span>
+</code></pre></div>
 
 <p><strong>Rules:</strong>
 - <code>super(...)</code> in the constructor calls the parent constructor and must come before <code>this</code>
@@ -69,101 +69,101 @@ console.log(car.speed);         // 30
 <hr />
 <h3>The <code>instanceof</code> Check</h3>
 <p>You can check whether an object is an instance of a particular class (or its parent):</p>
-<pre class="codehilite"><code class="language-js">const ev = new ElectricVehicle('Rivian', 'R1T', 2024, 135);
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">ev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ElectricVehicle</span><span class="p">(</span><span class="s1">&#39;Rivian&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;R1T&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">2024</span><span class="p">,</span><span class="w"> </span><span class="mf">135</span><span class="p">);</span>
 
-console.log(ev instanceof ElectricVehicle);  // true
-console.log(ev instanceof Vehicle);           // true (it IS a Vehicle too)
-console.log(ev instanceof Object);            // true (everything is an Object)
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ev</span><span class="w"> </span><span class="ow">instanceof</span><span class="w"> </span><span class="nx">ElectricVehicle</span><span class="p">);</span><span class="w">  </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ev</span><span class="w"> </span><span class="ow">instanceof</span><span class="w"> </span><span class="nx">Vehicle</span><span class="p">);</span><span class="w">           </span><span class="c1">// true (it IS a Vehicle too)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ev</span><span class="w"> </span><span class="ow">instanceof</span><span class="w"> </span><span class="nb">Object</span><span class="p">);</span><span class="w">            </span><span class="c1">// true (everything is an Object)</span>
+</code></pre></div>
 
 <p>This is useful when you have a mixed array and need to handle subclass instances differently:</p>
-<pre class="codehilite"><code class="language-js">const fleet = [
-  new Vehicle('Ford', 'F-150', 2022),
-  new ElectricVehicle('Tesla', 'Model Y', 2023, 75)
-];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">fleet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">Vehicle</span><span class="p">(</span><span class="s1">&#39;Ford&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;F-150&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">2022</span><span class="p">),</span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">ElectricVehicle</span><span class="p">(</span><span class="s1">&#39;Tesla&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Model Y&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">2023</span><span class="p">,</span><span class="w"> </span><span class="mf">75</span><span class="p">)</span>
+<span class="p">];</span>
 
-fleet.forEach(v =&gt; {
-  if (v instanceof ElectricVehicle) {
-    v.charge();
-    console.log(`${v.describe()} — charged`);
-  } else {
-    console.log(`${v.describe()} — gas vehicle`);
-  }
-});
-</code></pre>
+<span class="nx">fleet</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="ow">instanceof</span><span class="w"> </span><span class="nx">ElectricVehicle</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">v</span><span class="p">.</span><span class="nx">charge</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">v</span><span class="p">.</span><span class="nx">describe</span><span class="p">()</span><span class="si">}</span><span class="sb"> — charged`</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">v</span><span class="p">.</span><span class="nx">describe</span><span class="p">()</span><span class="si">}</span><span class="sb"> — gas vehicle`</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <hr />
 <h3>Object Graphs: One Object Owns Arrays of Others</h3>
 <p>Real programs are rarely a single object — they form <strong>graphs</strong> where objects own references to other objects. A fleet manager owns an array of vehicles; each vehicle owns a maintenance log:</p>
-<pre class="codehilite"><code class="language-js">class FleetManager {
-  constructor(companyName) {
-    this.companyName = companyName;
-    this.vehicles    = [];     // Owns an array of Vehicle objects
-    this.teamSize    = 0;
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">FleetManager</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">companyName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">companyName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">companyName</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">vehicles</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span><span class="w">     </span><span class="c1">// Owns an array of Vehicle objects</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">teamSize</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  addVehicle(vehicle) {
-    this.vehicles.push(vehicle);
-  }
+<span class="w">  </span><span class="nx">addVehicle</span><span class="p">(</span><span class="nx">vehicle</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">vehicles</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">vehicle</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
 
-  assignVehicle(vehicle, driverName) {
-    vehicle.driver = driverName;  // Add a property to an owned object
-  }
+<span class="w">  </span><span class="nx">assignVehicle</span><span class="p">(</span><span class="nx">vehicle</span><span class="p">,</span><span class="w"> </span><span class="nx">driverName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">vehicle</span><span class="p">.</span><span class="nx">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">driverName</span><span class="p">;</span><span class="w">  </span><span class="c1">// Add a property to an owned object</span>
+<span class="w">  </span><span class="p">}</span>
 
-  totalVehicles() {
-    return this.vehicles.length;
-  }
+<span class="w">  </span><span class="nx">totalVehicles</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">vehicles</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  // Find all vehicles by a specific driver
-  vehiclesForDriver(name) {
-    return this.vehicles.filter(v =&gt; v.driver === name);
-  }
-}
-</code></pre>
+<span class="w">  </span><span class="c1">// Find all vehicles by a specific driver</span>
+<span class="w">  </span><span class="nx">vehiclesForDriver</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">vehicles</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">v</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">v</span><span class="p">.</span><span class="nx">driver</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">name</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <hr />
 <h3>Rotation Loops</h3>
 <p>A <strong>rotation loop</strong> distributes items across multiple buckets in a round-robin pattern. This is how cards are dealt in real card games — one to each player in order, repeatedly:</p>
-<pre class="codehilite"><code class="language-js">// Distribute 20 tasks across 4 workers
-const tasks   = Array.from({ length: 20 }, (_, i) =&gt; `Task-${i + 1}`);
-const workers = [[], [], [], []];
+<div class="codehilite"><pre><span></span><code><span class="c1">// Distribute 20 tasks across 4 workers</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">tasks</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">({</span><span class="w"> </span><span class="nx">length</span><span class="o">:</span><span class="w"> </span><span class="mf">20</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">(</span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="sb">`Task-</span><span class="si">${</span><span class="nx">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">workers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[],</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="p">[]];</span>
 
-for (const task of tasks) {
-  // (index of current task) % 4 determines which worker gets it
-}
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">task</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">tasks</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// (index of current task) % 4 determines which worker gets it</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>A simpler way to think about it: use a nested loop — outer loop repeats N times, inner loop goes through each bucket once:</p>
-<pre class="codehilite"><code class="language-js">for (let round = 0; round &lt; 5; round++) {      // 5 rounds
-  for (const worker of workers) {
-    worker.push(tasks.shift());                  // Give next task to each worker
-  }
-}
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">round</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">round</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="nx">round</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">      </span><span class="c1">// 5 rounds</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">worker</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">workers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">worker</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">tasks</span><span class="p">.</span><span class="nx">shift</span><span class="p">());</span><span class="w">                  </span><span class="c1">// Give next task to each worker</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-workers.forEach((w, i) =&gt; console.log(`Worker ${i}: ${w.length} tasks`));
-// Each worker gets exactly 5 tasks
-</code></pre>
+<span class="nx">workers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">w</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Worker </span><span class="si">${</span><span class="nx">i</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="nx">w</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb"> tasks`</span><span class="p">));</span>
+<span class="c1">// Each worker gets exactly 5 tasks</span>
+</code></pre></div>
 
 <hr />
 <h3>Sorting Objects with a Custom Comparator</h3>
 <p><code>Array.sort()</code> takes an optional comparator function that returns a negative, zero, or positive number:</p>
-<pre class="codehilite"><code class="language-js">const books = [
-  { title: 'Dune',       year: 1965, pages: 412 },
-  { title: 'Foundation', year: 1951, pages: 255 },
-  { title: 'Neuromancer',year: 1984, pages: 271 }
-];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">books</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Dune&#39;</span><span class="p">,</span><span class="w">       </span><span class="nx">year</span><span class="o">:</span><span class="w"> </span><span class="mf">1965</span><span class="p">,</span><span class="w"> </span><span class="nx">pages</span><span class="o">:</span><span class="w"> </span><span class="mf">412</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Foundation&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">year</span><span class="o">:</span><span class="w"> </span><span class="mf">1951</span><span class="p">,</span><span class="w"> </span><span class="nx">pages</span><span class="o">:</span><span class="w"> </span><span class="mf">255</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Neuromancer&#39;</span><span class="p">,</span><span class="nx">year</span><span class="o">:</span><span class="w"> </span><span class="mf">1984</span><span class="p">,</span><span class="w"> </span><span class="nx">pages</span><span class="o">:</span><span class="w"> </span><span class="mf">271</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
 
-// Sort by year (oldest first)
-books.sort((a, b) =&gt; a.year - b.year);
-console.log(books[0].title);  // &quot;Foundation&quot; (1951)
+<span class="c1">// Sort by year (oldest first)</span>
+<span class="nx">books</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">year</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">year</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">books</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">title</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;Foundation&quot; (1951)</span>
 
-// Sort by pages (largest first), then by year as tiebreaker
-books.sort((a, b) =&gt; {
-  const pageDiff = b.pages - a.pages;
-  if (pageDiff !== 0) return pageDiff;
-  return a.year - b.year;   // Tiebreaker
-});
-</code></pre>
+<span class="c1">// Sort by pages (largest first), then by year as tiebreaker</span>
+<span class="nx">books</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">pageDiff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">pages</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">pages</span><span class="p">;</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">pageDiff</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">pageDiff</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">year</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">year</span><span class="p">;</span><span class="w">   </span><span class="c1">// Tiebreaker</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <p><strong>Key rule:</strong> <code>a - b</code> sorts ascending; <code>b - a</code> sorts descending. For a multi-level sort, compute the primary difference first — if it's zero, fall through to the secondary difference.</p>
 <hr />

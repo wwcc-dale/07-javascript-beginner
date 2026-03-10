@@ -1,18 +1,21 @@
 ---
-name: "Session 23: Visual Polish"
-assignment_type: "online"
+allowed_extensions:
+- html
+- css
+- js
+- zip
+assignment_type: online
+module: 5
+name: 'Session 23: Visual Polish'
 points: 20
+position: 8
 published: true
 related_outcomes:
-  - "CLO-1"
-  - "CLO-5"
+- CLO-1
+- CLO-5
+session: 23.3
 submission_types:
-  - "online_upload"
-allowed_extensions:
-  - "html"
-  - "css"
-  - "js"
-  - "zip"
+- online_upload
 ---
 
 # Session 23: Visual Polish

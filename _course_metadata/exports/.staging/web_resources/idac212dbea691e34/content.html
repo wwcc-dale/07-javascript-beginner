@@ -39,10 +39,10 @@
 - Tests <code>equals()</code> with matching and non-matching cards</p>
 <h3>Challenge 4: Verify 52 Unique Cards</h3>
 <p>In your test, confirm every card is unique:</p>
-<pre class="codehilite"><code class="language-js">const descriptions = deck.cards.map(c =&gt; c.toString());
-const unique = new Set(descriptions);
-console.log('All unique:', unique.size === 52);  // must be true
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">descriptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">deck</span><span class="p">.</span><span class="nx">cards</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">unique</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">(</span><span class="nx">descriptions</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;All unique:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">unique</span><span class="p">.</span><span class="nx">size</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">52</span><span class="p">);</span><span class="w">  </span><span class="c1">// must be true</span>
+</code></pre></div>
 
 <hr />
 <h2>Level 2 – Stretch (3 pts)</h2>
@@ -54,14 +54,14 @@ console.log('All unique:', unique.size === 52);  // must be true
 <h2>Level 3 – Advanced (2 pts)</h2>
 <h3>Challenge 7: Shuffle Quality Test</h3>
 <p>Write a test that shuffles the deck 100 times and checks that the first card is not always the same. A good shuffle should rarely produce the same result twice.</p>
-<pre class="codehilite"><code class="language-js">const firstCards = [];
-for (let i = 0; i &lt; 100; i++) {
-  deck.reset();
-  firstCards.push(deck.cards[0].toString());
-}
-const unique = new Set(firstCards);
-console.log('Unique first cards across 100 shuffles:', unique.size);
-// A good shuffle should produce many different results
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">firstCards</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">deck</span><span class="p">.</span><span class="nx">reset</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">firstCards</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">deck</span><span class="p">.</span><span class="nx">cards</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">toString</span><span class="p">());</span>
+<span class="p">}</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">unique</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">(</span><span class="nx">firstCards</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Unique first cards across 100 shuffles:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">unique</span><span class="p">.</span><span class="nx">size</span><span class="p">);</span>
+<span class="c1">// A good shuffle should produce many different results</span>
+</code></pre></div>
 </body>
 </html>

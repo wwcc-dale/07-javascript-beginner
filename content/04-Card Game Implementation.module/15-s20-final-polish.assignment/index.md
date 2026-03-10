@@ -1,19 +1,22 @@
 ---
-name: "Session 20: GameRunner and Full Integration"
-assignment_type: "online"
+allowed_extensions:
+- html
+- css
+- js
+- zip
+assignment_type: online
+module: 4
+name: 'Session 20: GameRunner and Full Integration'
 points: 20
+position: 15
 published: true
 related_outcomes:
-  - "CLO-1"
-  - "CLO-2"
-  - "CLO-5"
+- CLO-1
+- CLO-2
+- CLO-5
+session: 20.3
 submission_types:
-  - "online_upload"
-allowed_extensions:
-  - "html"
-  - "css"
-  - "js"
-  - "zip"
+- online_upload
 ---
 
 # Session 20: GameRunner and Full Integration

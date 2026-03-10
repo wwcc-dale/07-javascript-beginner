@@ -22,47 +22,47 @@
 <hr />
 <h2>Reading: Creating and Managing Elements (20 minutes)</h2>
 <h3>Creating Elements</h3>
-<pre class="codehilite"><code class="language-js">const newParagraph = document.createElement('p');
-newParagraph.textContent = 'Hello, new element!';
-newParagraph.className = 'highlight';
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">newParagraph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">);</span>
+<span class="nx">newParagraph</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hello, new element!&#39;</span><span class="p">;</span>
+<span class="nx">newParagraph</span><span class="p">.</span><span class="nx">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;highlight&#39;</span><span class="p">;</span>
 
-// Add to page
-document.body.appendChild(newParagraph);
-</code></pre>
+<span class="c1">// Add to page</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">newParagraph</span><span class="p">);</span>
+</code></pre></div>
 
 <h3>Adding Elements</h3>
 <p><strong>appendChild (add at end):</strong></p>
-<pre class="codehilite"><code class="language-js">const container = document.querySelector('#app');
-const newDiv = document.createElement('div');
-newDiv.textContent = 'New content';
-container.appendChild(newDiv);
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">newDiv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
+<span class="nx">newDiv</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;New content&#39;</span><span class="p">;</span>
+<span class="nx">container</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">newDiv</span><span class="p">);</span>
+</code></pre></div>
 
 <p><strong>insertBefore (add before specific element):</strong></p>
-<pre class="codehilite"><code class="language-js">const container = document.querySelector('#app');
-const firstChild = container.querySelector('p');
-const newDiv = document.createElement('div');
-container.insertBefore(newDiv, firstChild);
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">firstChild</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">container</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">newDiv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
+<span class="nx">container</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">newDiv</span><span class="p">,</span><span class="w"> </span><span class="nx">firstChild</span><span class="p">);</span>
+</code></pre></div>
 
 <h3>Removing Elements</h3>
-<pre class="codehilite"><code class="language-js">const element = document.querySelector('#oldItem');
-element.remove();
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#oldItem&#39;</span><span class="p">);</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
 
-// Or via the parent:
-element.parentElement.removeChild(element);
-</code></pre>
+<span class="c1">// Or via the parent:</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">element</span><span class="p">);</span>
+</code></pre></div>
 
 <hr />
 <h2>Reading: Responding to User Actions (25 minutes)</h2>
 <h3><code>addEventListener</code> — Reacting to Clicks</h3>
 <p>Every DOM element can listen for user actions. The most common is a click:</p>
-<pre class="codehilite"><code class="language-js">const button = document.querySelector('#myButton');
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#myButton&#39;</span><span class="p">);</span>
 
-button.addEventListener('click', () =&gt; {
-  console.log('The button was clicked!');
-});
-</code></pre>
+<span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;The button was clicked!&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <p><strong>Breaking it down:</strong>
 - <code>button.addEventListener(...)</code> — attach a listener to this element
@@ -70,39 +70,39 @@ button.addEventListener('click', () =&gt; {
 - <code>() =&gt; { ... }</code> — the <strong>callback</strong>: the code that runs when the event fires</p>
 <p>The callback runs every time the user clicks the button. Nothing happens until they do.</p>
 <p><strong>Example: toggle a message</strong></p>
-<pre class="codehilite"><code class="language-js">const toggleBtn = document.querySelector('#toggleBtn');
-const message = document.querySelector('#message');
-let visible = true;
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">toggleBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#toggleBtn&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#message&#39;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
 
-toggleBtn.addEventListener('click', () =&gt; {
-  if (visible) {
-    message.style.display = 'none';
-    toggleBtn.textContent = 'Show';
-  } else {
-    message.style.display = 'block';
-    toggleBtn.textContent = 'Hide';
-  }
-  visible = !visible;
-});
-</code></pre>
+<span class="nx">toggleBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">visible</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">message</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;none&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">toggleBtn</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Show&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">message</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;block&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">toggleBtn</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hide&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="nx">visible</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <h3>Reading Text Input with <code>.value</code></h3>
 <p>Every <code>&lt;input&gt;</code> element has a <code>.value</code> property that holds whatever the user has typed.</p>
-<pre class="codehilite"><code class="language-html">&lt;input id=&quot;nameInput&quot; type=&quot;text&quot; placeholder=&quot;Enter your name&quot;&gt;
-&lt;button id=&quot;greetBtn&quot;&gt;Greet&lt;/button&gt;
-&lt;p id=&quot;output&quot;&gt;&lt;/p&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;nameInput&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter your name&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;greetBtn&quot;</span><span class="p">&gt;</span>Greet<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;output&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
 
-<pre class="codehilite"><code class="language-js">const nameInput = document.querySelector('#nameInput');
-const greetBtn = document.querySelector('#greetBtn');
-const output = document.querySelector('#output');
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">nameInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#nameInput&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">greetBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#greetBtn&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#output&#39;</span><span class="p">);</span>
 
-greetBtn.addEventListener('click', () =&gt; {
-  const name = nameInput.value;   // read what the user typed
-  output.textContent = 'Hello, ' + name + '!';
-  nameInput.value = '';           // clear the input after reading
-});
-</code></pre>
+<span class="nx">greetBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nameInput</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span><span class="w">   </span><span class="c1">// read what the user typed</span>
+<span class="w">  </span><span class="nx">output</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hello, &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;!&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">nameInput</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span><span class="w">           </span><span class="c1">// clear the input after reading</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <p><strong>Key points:</strong>
 - <code>.value</code> is a string — always
@@ -110,91 +110,91 @@ greetBtn.addEventListener('click', () =&gt; {
 - Set <code>.value = ''</code> to clear the field</p>
 <h3>Template Literals — Cleaner String Building</h3>
 <p>Instead of concatenating strings with <code>+</code>, template literals use backticks and <code>${}</code> to embed values directly:</p>
-<pre class="codehilite"><code class="language-js">const name = 'Alex';
-const score = 92;
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Alex&#39;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">92</span><span class="p">;</span>
 
-// Old way — concatenation
-console.log('Student ' + name + ' scored ' + score + ' points.');
+<span class="c1">// Old way — concatenation</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Student &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; scored &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; points.&#39;</span><span class="p">);</span>
 
-// Template literal — cleaner
-console.log(`Student ${name} scored ${score} points.`);
-</code></pre>
+<span class="c1">// Template literal — cleaner</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Student </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb"> scored </span><span class="si">${</span><span class="nx">score</span><span class="si">}</span><span class="sb"> points.`</span><span class="p">);</span>
+</code></pre></div>
 
 <p>Use backticks (<code>`</code>) not quotes. Put any expression inside <code>${}</code>.</p>
-<pre class="codehilite"><code class="language-js">const greetBtn = document.querySelector('#greetBtn');
-const output = document.querySelector('#output');
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">greetBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#greetBtn&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#output&#39;</span><span class="p">);</span>
 
-greetBtn.addEventListener('click', () =&gt; {
-  const name = document.querySelector('#nameInput').value;
-  output.textContent = `Hello, ${name}! Welcome aboard.`;
-});
-</code></pre>
+<span class="nx">greetBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#nameInput&#39;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">output</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">! Welcome aboard.`</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <h3>Putting It Together: Button That Creates Elements</h3>
-<pre class="codehilite"><code class="language-html">&lt;input id=&quot;quoteInput&quot; placeholder=&quot;Enter a quote&quot;&gt;
-&lt;button id=&quot;addQuoteBtn&quot;&gt;Add&lt;/button&gt;
-&lt;ul id=&quot;quoteBoard&quot;&gt;&lt;/ul&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;quoteInput&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter a quote&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;addQuoteBtn&quot;</span><span class="p">&gt;</span>Add<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;quoteBoard&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
 
-<pre class="codehilite"><code class="language-js">const quoteInput = document.querySelector('#quoteInput');
-const addQuoteBtn = document.querySelector('#addQuoteBtn');
-const quoteBoard = document.querySelector('#quoteBoard');
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">quoteInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#quoteInput&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">addQuoteBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#addQuoteBtn&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">quoteBoard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#quoteBoard&#39;</span><span class="p">);</span>
 
-addQuoteBtn.addEventListener('click', () =&gt; {
-  const text = quoteInput.value;
-  if (text === '') return;   // do nothing on empty input
+<span class="nx">addQuoteBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">quoteInput</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">text</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w">   </span><span class="c1">// do nothing on empty input</span>
 
-  const li = document.createElement('li');
-  li.textContent = text;
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">li</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">li</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">text</span><span class="p">;</span>
 
-  const removeBtn = document.createElement('button');
-  removeBtn.textContent = 'Remove';
-  removeBtn.addEventListener('click', () =&gt; {
-    li.remove();   // each remove button removes its own li
-  });
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">removeBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">removeBtn</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Remove&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">removeBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">li</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span><span class="w">   </span><span class="c1">// each remove button removes its own li</span>
+<span class="w">  </span><span class="p">});</span>
 
-  li.appendChild(removeBtn);
-  quoteBoard.appendChild(li);
-  quoteInput.value = '';   // clear after adding
-});
-</code></pre>
+<span class="w">  </span><span class="nx">li</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">removeBtn</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">quoteBoard</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">quoteInput</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span><span class="w">   </span><span class="c1">// clear after adding</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <p>This is the <strong>core pattern</strong> for interactive list apps: read input → create element → append → clear.</p>
 <hr />
 <h2>Reading: Working with Dates (10 minutes)</h2>
 <h3>The <code>Date</code> Object</h3>
 <p>JavaScript has a built-in <code>Date</code> object for working with dates and times. Create one with <code>new Date()</code>:</p>
-<pre class="codehilite"><code class="language-js">const now = new Date();
-console.log(now);  // Wed Feb 19 2026 10:34:00 ...
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">now</span><span class="p">);</span><span class="w">  </span><span class="c1">// Wed Feb 19 2026 10:34:00 ...</span>
+</code></pre></div>
 
 <h3>Formatting Dates as Readable Strings</h3>
-<pre class="codehilite"><code class="language-js">const now = new Date();
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span>
 
-// Locale-aware formatting
-console.log(now.toLocaleDateString());   // &quot;2/19/2026&quot;
-console.log(now.toLocaleTimeString());   // &quot;10:34:00 AM&quot;
-console.log(now.toLocaleString());       // &quot;2/19/2026, 10:34:00 AM&quot;
-</code></pre>
+<span class="c1">// Locale-aware formatting</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleDateString</span><span class="p">());</span><span class="w">   </span><span class="c1">// &quot;2/19/2026&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleTimeString</span><span class="p">());</span><span class="w">   </span><span class="c1">// &quot;10:34:00 AM&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">());</span><span class="w">       </span><span class="c1">// &quot;2/19/2026, 10:34:00 AM&quot;</span>
+</code></pre></div>
 
 <p><strong>Real-world use: timestamped activity log</strong></p>
-<pre class="codehilite"><code class="language-js">const activityInput = document.querySelector('#activityInput');
-const logBtn = document.querySelector('#logBtn');
-const activityLog = document.querySelector('#activityLog');
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">activityInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#activityInput&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">logBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#logBtn&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">activityLog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#activityLog&#39;</span><span class="p">);</span>
 
-logBtn.addEventListener('click', () =&gt; {
-  const note = activityInput.value;
-  if (note === '') return;
+<span class="nx">logBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">note</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">activityInput</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">note</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
 
-  const timestamp = new Date().toLocaleString();   // current time as string
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">timestamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">().</span><span class="nx">toLocaleString</span><span class="p">();</span><span class="w">   </span><span class="c1">// current time as string</span>
 
-  const li = document.createElement('li');
-  li.textContent = `${note}  —  ${timestamp}`;
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">li</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">li</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">note</span><span class="si">}</span><span class="sb">  —  </span><span class="si">${</span><span class="nx">timestamp</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
 
-  activityLog.appendChild(li);
-  activityInput.value = '';
-});
-</code></pre>
+<span class="w">  </span><span class="nx">activityLog</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">activityInput</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <hr />
 <h2>Video Tutorial: DOM Creation and Event Basics (20 minutes)</h2>
@@ -208,42 +208,42 @@ logBtn.addEventListener('click', () =&gt; {
 <hr />
 <h2>Supplemental Practice (25 minutes)</h2>
 <h3>Practice 1: Click Counter</h3>
-<pre class="codehilite"><code class="language-html">&lt;h2 id=&quot;count&quot;&gt;0&lt;/h2&gt;
-&lt;button id=&quot;btn&quot;&gt;Click me&lt;/button&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h2</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;count&quot;</span><span class="p">&gt;</span>0<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;btn&quot;</span><span class="p">&gt;</span>Click me<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
 
-<pre class="codehilite"><code class="language-js">let count = 0;
-const countDisplay = document.querySelector('#count');
+<div class="codehilite"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">countDisplay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#count&#39;</span><span class="p">);</span>
 
-document.querySelector('#btn').addEventListener('click', () =&gt; {
-  count++;
-  countDisplay.textContent = count;
-});
-</code></pre>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#btn&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">countDisplay</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">count</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <h3>Practice 2: Name Display</h3>
-<pre class="codehilite"><code class="language-html">&lt;input id=&quot;nameInput&quot; placeholder=&quot;Your name&quot;&gt;
-&lt;button id=&quot;btn&quot;&gt;Show&lt;/button&gt;
-&lt;p id=&quot;output&quot;&gt;&lt;/p&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;nameInput&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Your name&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;btn&quot;</span><span class="p">&gt;</span>Show<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;output&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
 
-<pre class="codehilite"><code class="language-js">document.querySelector('#btn').addEventListener('click', () =&gt; {
-  const name = document.querySelector('#nameInput').value;
-  document.querySelector('#output').textContent = `Hello, ${name}!`;
-});
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#btn&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#nameInput&#39;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+<span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#output&#39;</span><span class="p">).</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <h3>Practice 3: Timestamped Log</h3>
-<pre class="codehilite"><code class="language-html">&lt;button id=&quot;logBtn&quot;&gt;Log event&lt;/button&gt;
-&lt;ul id=&quot;log&quot;&gt;&lt;/ul&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;logBtn&quot;</span><span class="p">&gt;</span>Log event<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;log&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
 
-<pre class="codehilite"><code class="language-js">document.querySelector('#logBtn').addEventListener('click', () =&gt; {
-  const li = document.createElement('li');
-  li.textContent = `Event at ${new Date().toLocaleTimeString()}`;
-  document.querySelector('#log').appendChild(li);
-});
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#logBtn&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">li</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">li</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Event at </span><span class="si">${</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">().</span><span class="nx">toLocaleTimeString</span><span class="p">()</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#log&#39;</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <hr />
 <h2>Knowledge Check Quiz (15 minutes)</h2>

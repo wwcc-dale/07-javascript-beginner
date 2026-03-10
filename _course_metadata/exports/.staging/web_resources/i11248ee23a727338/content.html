@@ -9,51 +9,51 @@
 <p><strong>Time:</strong> 60–90 minutes | <strong>Points:</strong> 20 | <strong>Submit:</strong> <code>08-assignment.js</code></p>
 <h2>Level 1 – Core Tasks (15 points)</h2>
 <h3>Challenge 1: Book Class</h3>
-<pre class="codehilite"><code class="language-js">// TODO: Create a Book class with:
-// - Constructor: title, author, pages, isCheckedOut (default false)
-// - Method checkout(): sets isCheckedOut to true
-// - Method returnBook(): sets isCheckedOut to false
-// - Method getInfo(): returns string with book details
+<div class="codehilite"><pre><span></span><code><span class="c1">// TODO: Create a Book class with:</span>
+<span class="c1">// - Constructor: title, author, pages, isCheckedOut (default false)</span>
+<span class="c1">// - Method checkout(): sets isCheckedOut to true</span>
+<span class="c1">// - Method returnBook(): sets isCheckedOut to false</span>
+<span class="c1">// - Method getInfo(): returns string with book details</span>
 
-// Test:
-// const book = new Book(&quot;JS Guide&quot;, &quot;Jane Dev&quot;, 300);
-// book.checkout();
-// console.log(book.isCheckedOut); // true
-</code></pre>
+<span class="c1">// Test:</span>
+<span class="c1">// const book = new Book(&quot;JS Guide&quot;, &quot;Jane Dev&quot;, 300);</span>
+<span class="c1">// book.checkout();</span>
+<span class="c1">// console.log(book.isCheckedOut); // true</span>
+</code></pre></div>
 
 <h3>Challenge 2: Library Class (Container)</h3>
-<pre class="codehilite"><code class="language-js">// TODO: Create a Library class with:
-// - Constructor: name
-// - Property: books (empty array)
-// - Method addBook(book): adds book to array
-// - Method getTotalBooks(): returns books.length
-// - Method getAvailableBooks(): counts books where isCheckedOut is false
+<div class="codehilite"><pre><span></span><code><span class="c1">// TODO: Create a Library class with:</span>
+<span class="c1">// - Constructor: name</span>
+<span class="c1">// - Property: books (empty array)</span>
+<span class="c1">// - Method addBook(book): adds book to array</span>
+<span class="c1">// - Method getTotalBooks(): returns books.length</span>
+<span class="c1">// - Method getAvailableBooks(): counts books where isCheckedOut is false</span>
 
-// Test:
-// const lib = new Library(&quot;City Library&quot;);
-// lib.addBook(new Book(&quot;Book 1&quot;, &quot;Author 1&quot;, 200));
-// lib.addBook(new Book(&quot;Book 2&quot;, &quot;Author 2&quot;, 150));
-// console.log(lib.getTotalBooks()); // 2
-</code></pre>
+<span class="c1">// Test:</span>
+<span class="c1">// const lib = new Library(&quot;City Library&quot;);</span>
+<span class="c1">// lib.addBook(new Book(&quot;Book 1&quot;, &quot;Author 1&quot;, 200));</span>
+<span class="c1">// lib.addBook(new Book(&quot;Book 2&quot;, &quot;Author 2&quot;, 150));</span>
+<span class="c1">// console.log(lib.getTotalBooks()); // 2</span>
+</code></pre></div>
 
 <h3>Challenge 3: Find Books by Author</h3>
-<pre class="codehilite"><code class="language-js">// TODO: Add method to Library class:
-// - findByAuthor(authorName): returns array of books by that author
+<div class="codehilite"><pre><span></span><code><span class="c1">// TODO: Add method to Library class:</span>
+<span class="c1">// - findByAuthor(authorName): returns array of books by that author</span>
 
-// Test:
-// const books = lib.findByAuthor(&quot;Jane Dev&quot;);
-// books should be an array of matching books
-</code></pre>
+<span class="c1">// Test:</span>
+<span class="c1">// const books = lib.findByAuthor(&quot;Jane Dev&quot;);</span>
+<span class="c1">// books should be an array of matching books</span>
+</code></pre></div>
 
 <h3>Challenge 4: Checkout System</h3>
-<pre class="codehilite"><code class="language-js">// TODO: Add method to Library class:
-// - checkoutBook(title): finds book by title and checks it out
-// - Returns true if successful, false if not found or already checked out
+<div class="codehilite"><pre><span></span><code><span class="c1">// TODO: Add method to Library class:</span>
+<span class="c1">// - checkoutBook(title): finds book by title and checks it out</span>
+<span class="c1">// - Returns true if successful, false if not found or already checked out</span>
 
-// Test:
-// lib.checkoutBook(&quot;JS Guide&quot;); // true
-// lib.checkoutBook(&quot;JS Guide&quot;); // false (already out)
-</code></pre>
+<span class="c1">// Test:</span>
+<span class="c1">// lib.checkoutBook(&quot;JS Guide&quot;); // true</span>
+<span class="c1">// lib.checkoutBook(&quot;JS Guide&quot;); // false (already out)</span>
+</code></pre></div>
 
 <h2>Level 2 – Stretch (3 points)</h2>
 <h3>Challenge 5: Statistics</h3>

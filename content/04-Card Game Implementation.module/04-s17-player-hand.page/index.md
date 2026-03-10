@@ -1,10 +1,13 @@
 ---
-name: "Session 17: Inheritance, Subclasses, and Object Graphs"
+module: 4
+name: 'Session 17: Inheritance, Subclasses, and Object Graphs'
+position: 4
 published: true
 related_outcomes:
-  - "CLO-1"
-  - "CLO-2"
-  - "CLO-5"
+- CLO-1
+- CLO-2
+- CLO-5
+session: 17.1
 ---
 
 # Session 17: Inheritance, Subclasses, and Object Graphs

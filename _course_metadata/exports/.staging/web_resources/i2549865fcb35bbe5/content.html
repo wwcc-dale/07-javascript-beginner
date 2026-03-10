@@ -38,9 +38,9 @@
 <h2>Level 2 – Stretch (3 pts)</h2>
 <h3>Challenge 5: Card Deal Animation</h3>
 <p>When <code>updatePlayerHand()</code> renders cards, add the animation class to each card with a staggered delay:</p>
-<pre class="codehilite"><code class="language-js">cardEl.style.animationDelay = `${index * 50}ms`;
-cardEl.classList.add('deal-in');
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nx">cardEl</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">animationDelay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">index</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">50</span><span class="si">}</span><span class="sb">ms`</span><span class="p">;</span>
+<span class="nx">cardEl</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;deal-in&#39;</span><span class="p">);</span>
+</code></pre></div>
 
 <p>Define <code>@keyframes deal-in</code> in CSS to make cards slide up from below when dealt.</p>
 <h3>Challenge 6: Score Change Highlight</h3>

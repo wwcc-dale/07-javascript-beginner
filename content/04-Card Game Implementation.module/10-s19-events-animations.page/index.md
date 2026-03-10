@@ -1,10 +1,13 @@
 ---
-name: "Session 19: Accumulation, Conditional Scoring, and Promise-Based Input"
+module: 4
+name: 'Session 19: Accumulation, Conditional Scoring, and Promise-Based Input'
+position: 10
 published: true
 related_outcomes:
-  - "CLO-1"
-  - "CLO-2"
-  - "CLO-5"
+- CLO-1
+- CLO-2
+- CLO-5
+session: 19.1
 ---
 
 # Session 19: Accumulation, Conditional Scoring, and Promise-Based Input
@@ -164,23 +167,23 @@ Without Promises, you can't write sequential-looking code that waits for user in
 
 **Without Promises (callback hell):**
 ```js
-function startBidding() {
-  showBidButtons();
-  bidButton.addEventListener('click', function(e) {
-    const bid = parseInt(e.target.dataset.bid);
-    hideBidButtons();
-    startPlayPhase(bid);  // Must nest the next step
+function runQuiz() {
+  showAnswerOptions();
+  answerButton.addEventListener('click', function(e) {
+    const answer = e.target.dataset.value;
+    hideAnswerOptions();
+    processAnswer(answer);  // Must nest the next step
   });
 }
 ```
 
 **With Promises + async/await:**
 ```js
-async function startBidding() {
-  showBidButtons();
-  const bid = await waitForBidClick();   // Pauses here
-  hideBidButtons();
-  await startPlayPhase(bid);             // Then continues here
+async function runQuiz() {
+  showAnswerOptions();
+  const answer = await waitForAnswerClick();   // Pauses here
+  hideAnswerOptions();
+  await processAnswer(answer);                 // Then continues here
 }
 ```
 

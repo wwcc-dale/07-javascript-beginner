@@ -23,70 +23,70 @@
 <p>An algorithm is a well-defined series of steps to solve a problem. In programming, it usually combines loops, conditionals, and functions.</p>
 <h3>Algorithm 1: Find Largest</h3>
 <p>Find the largest number in a list.</p>
-<pre class="codehilite"><code class="language-js">function getLargest(values) {
-  let largest = values[0];  // Start with first number
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">getLargest</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">largest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">values</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span><span class="w">  </span><span class="c1">// Start with first number</span>
 
-  for (let i = 1; i &lt; values.length; i++) {
-    if (values[i] &gt; largest) {
-      largest = values[i];  // Update if we find larger
-    }
-  }
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">values</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">values</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">largest</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">largest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">values</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span><span class="w">  </span><span class="c1">// Update if we find larger</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 
-  return largest;
-}
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">largest</span><span class="p">;</span>
+<span class="p">}</span>
 
-console.log(getLargest([3, 9, 2, 7, 5]));  // 9
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getLargest</span><span class="p">([</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">9</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">]));</span><span class="w">  </span><span class="c1">// 9</span>
+</code></pre></div>
 
 <h3>Algorithm 2: Count Matching</h3>
 <p>Count how many items match a condition.</p>
-<pre class="codehilite"><code class="language-js">function countAffordable(prices) {
-  let count = 0;
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">countAffordable</span><span class="p">(</span><span class="nx">prices</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
 
-  for (let i = 0; i &lt; prices.length; i++) {
-    if (prices[i] &lt;= 25) {
-      count++;
-    }
-  }
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">prices</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">prices</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">25</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 
-  return count;
-}
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">count</span><span class="p">;</span>
+<span class="p">}</span>
 
-console.log(countAffordable([12, 30, 8, 22, 45]));  // 3
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">countAffordable</span><span class="p">([</span><span class="mf">12</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">,</span><span class="w"> </span><span class="mf">22</span><span class="p">,</span><span class="w"> </span><span class="mf">45</span><span class="p">]));</span><span class="w">  </span><span class="c1">// 3</span>
+</code></pre></div>
 
 <h3>Algorithm 3: Calculate Average</h3>
 <p>Sum all values and divide by count.</p>
-<pre class="codehilite"><code class="language-js">function calculateAverage(numbers) {
-  let sum = 0;
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">calculateAverage</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
 
-  for (let i = 0; i &lt; numbers.length; i++) {
-    sum = sum + numbers[i];
-  }
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">numbers</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="w">  </span><span class="p">}</span>
 
-  let average = sum / numbers.length;
-  return average;
-}
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">average</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">average</span><span class="p">;</span>
+<span class="p">}</span>
 
-console.log(calculateAverage([80, 90, 100]));  // 90
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calculateAverage</span><span class="p">([</span><span class="mf">80</span><span class="p">,</span><span class="w"> </span><span class="mf">90</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">]));</span><span class="w">  </span><span class="c1">// 90</span>
+</code></pre></div>
 
 <h3>Algorithm 4: Find Smallest</h3>
 <p>Find the smallest number.</p>
-<pre class="codehilite"><code class="language-js">function getSmallest(values) {
-  let smallest = values[0];
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">getSmallest</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">smallest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">values</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
 
-  for (let i = 1; i &lt; values.length; i++) {
-    if (values[i] &lt; smallest) {
-      smallest = values[i];
-    }
-  }
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">values</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">values</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">smallest</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">smallest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">values</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 
-  return smallest;
-}
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">smallest</span><span class="p">;</span>
+<span class="p">}</span>
 
-console.log(getSmallest([25, 10, 30, 5, 15]));  // 5
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getSmallest</span><span class="p">([</span><span class="mf">25</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">15</span><span class="p">]));</span><span class="w">  </span><span class="c1">// 5</span>
+</code></pre></div>
 
 <h3>Algorithm Patterns</h3>
 <p>Many algorithms follow the same pattern:</p>
@@ -110,52 +110,52 @@ console.log(getSmallest([25, 10, 30, 5, 15]));  // 5
 <hr />
 <h2>Supplemental Practice: Real Algorithms (25 minutes)</h2>
 <h3>Scenario 1: Find Highest Temperature</h3>
-<pre class="codehilite"><code class="language-js">const temps = [72, 85, 68, 91, 77];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">temps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">72</span><span class="p">,</span><span class="w"> </span><span class="mf">85</span><span class="p">,</span><span class="w"> </span><span class="mf">68</span><span class="p">,</span><span class="w"> </span><span class="mf">91</span><span class="p">,</span><span class="w"> </span><span class="mf">77</span><span class="p">];</span>
 
-function findHottest(temperatures) {
-  let hottest = temperatures[0];
-  for (let i = 1; i &lt; temperatures.length; i++) {
-    if (temperatures[i] &gt; hottest) {
-      hottest = temperatures[i];
-    }
-  }
-  return hottest;
-}
+<span class="kd">function</span><span class="w"> </span><span class="nx">findHottest</span><span class="p">(</span><span class="nx">temperatures</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">hottest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">temperatures</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">temperatures</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">temperatures</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">hottest</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">hottest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">temperatures</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">hottest</span><span class="p">;</span>
+<span class="p">}</span>
 
-console.log(findHottest(temps));  // 91
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">findHottest</span><span class="p">(</span><span class="nx">temps</span><span class="p">));</span><span class="w">  </span><span class="c1">// 91</span>
+</code></pre></div>
 
 <h3>Scenario 2: Count Late Assignments</h3>
-<pre class="codehilite"><code class="language-js">const submissions = [true, false, true, false, false, true];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">submissions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">];</span>
 
-function countLate(arr) {
-  let lateCount = 0;
-  for (let i = 0; i &lt; arr.length; i++) {
-    if (arr[i] === false) {
-      lateCount++;
-    }
-  }
-  return lateCount;
-}
+<span class="kd">function</span><span class="w"> </span><span class="nx">countLate</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">lateCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">lateCount</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">lateCount</span><span class="p">;</span>
+<span class="p">}</span>
 
-console.log(countLate(submissions));  // 3
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">countLate</span><span class="p">(</span><span class="nx">submissions</span><span class="p">));</span><span class="w">  </span><span class="c1">// 3</span>
+</code></pre></div>
 
 <h3>Scenario 3: Find Best Test Score</h3>
-<pre class="codehilite"><code class="language-js">const allScores = [78, 92, 85, 88, 95, 80];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">allScores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">78</span><span class="p">,</span><span class="w"> </span><span class="mf">92</span><span class="p">,</span><span class="w"> </span><span class="mf">85</span><span class="p">,</span><span class="w"> </span><span class="mf">88</span><span class="p">,</span><span class="w"> </span><span class="mf">95</span><span class="p">,</span><span class="w"> </span><span class="mf">80</span><span class="p">];</span>
 
-function getBestScore(scores) {
-  let best = scores[0];
-  for (let i = 1; i &lt; scores.length; i++) {
-    if (scores[i] &gt; best) {
-      best = scores[i];
-    }
-  }
-  return best;
-}
+<span class="kd">function</span><span class="w"> </span><span class="nx">getBestScore</span><span class="p">(</span><span class="nx">scores</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">scores</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">scores</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">scores</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">best</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">scores</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">best</span><span class="p">;</span>
+<span class="p">}</span>
 
-console.log(getBestScore(allScores));  // 95
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getBestScore</span><span class="p">(</span><span class="nx">allScores</span><span class="p">));</span><span class="w">  </span><span class="c1">// 95</span>
+</code></pre></div>
 
 <hr />
 <h2>Knowledge Check Quiz (15 minutes)</h2>

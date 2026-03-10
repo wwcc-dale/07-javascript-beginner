@@ -1,10 +1,13 @@
 ---
-name: "Session 24: ES6 Modules and Professional Code Organization"
+module: 5
+name: 'Session 24: ES6 Modules and Professional Code Organization'
+position: 9
 published: true
 related_outcomes:
-  - "CLO-1"
-  - "CLO-2"
-  - "CLO-5"
+- CLO-1
+- CLO-2
+- CLO-5
+session: 24
 ---
 
 # Session 24: ES6 Modules and Professional Code Organization

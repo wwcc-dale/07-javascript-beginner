@@ -33,94 +33,94 @@
 - Cards of a non-led, non-trump suit never win</p>
 <h3>Challenge 4: Test Page</h3>
 <p>Create <code>test.html</code> that loads all your JS files and verifies each method. At minimum, test:</p>
-<pre class="codehilite"><code class="language-js">const players = [
-  new Player('You', false),
-  new AIPlayer('West'),
-  new AIPlayer('Partner'),
-  new AIPlayer('East')
-];
-const game = new SpadesGame(players);
-game.startRound();
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">players</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">Player</span><span class="p">(</span><span class="s1">&#39;You&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">AIPlayer</span><span class="p">(</span><span class="s1">&#39;West&#39;</span><span class="p">),</span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">AIPlayer</span><span class="p">(</span><span class="s1">&#39;Partner&#39;</span><span class="p">),</span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">AIPlayer</span><span class="p">(</span><span class="s1">&#39;East&#39;</span><span class="p">)</span>
+<span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">game</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">SpadesGame</span><span class="p">(</span><span class="nx">players</span><span class="p">);</span>
+<span class="nx">game</span><span class="p">.</span><span class="nx">startRound</span><span class="p">();</span>
 
-// --- getValidCards: no spades before breaking ---
-const you = players[0];
-if (you.hand.some(c =&gt; c.getSuit() !== 'Spades')) {
-  const valid = game.getValidCards(you);
-  console.log('No spades in valid before breaking:', !valid.some(c =&gt; c.getSuit() === 'Spades'));
-}
+<span class="c1">// --- getValidCards: no spades before breaking ---</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">you</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">players</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">you</span><span class="p">.</span><span class="nx">hand</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">getSuit</span><span class="p">()</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s1">&#39;Spades&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">valid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">getValidCards</span><span class="p">(</span><span class="nx">you</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;No spades in valid before breaking:&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">!</span><span class="nx">valid</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">getSuit</span><span class="p">()</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;Spades&#39;</span><span class="p">));</span>
+<span class="p">}</span>
 
-// --- playCard and spadesBroken ---
-const spadeCard = new Card('Spades', '2');
-you.hand = [spadeCard];
-game.playCard(you, spadeCard);
-console.log('Spades broken:', game.spadesBroken);  // true
-game.clearTrick();
+<span class="c1">// --- playCard and spadesBroken ---</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">spadeCard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Spades&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="p">);</span>
+<span class="nx">you</span><span class="p">.</span><span class="nx">hand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">spadeCard</span><span class="p">];</span>
+<span class="nx">game</span><span class="p">.</span><span class="nx">playCard</span><span class="p">(</span><span class="nx">you</span><span class="p">,</span><span class="w"> </span><span class="nx">spadeCard</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Spades broken:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">spadesBroken</span><span class="p">);</span><span class="w">  </span><span class="c1">// true</span>
+<span class="nx">game</span><span class="p">.</span><span class="nx">clearTrick</span><span class="p">();</span>
 
-// --- determineTrickWinner: trump beats led suit ---
-game.startRound();
-const [p0, p1, p2, p3] = game.players;
-p0.hand = [new Card('Hearts', 'A')];
-p1.hand = [new Card('Hearts', 'K')];
-p2.hand = [new Card('Spades', '3')];
-p3.hand = [new Card('Hearts', 'Q')];
-game.playCard(p0, p0.hand[0]);
-game.playCard(p1, p1.hand[0]);
-game.playCard(p2, p2.hand[0]);
-game.playCard(p3, p3.hand[0]);
-const winner = game.determineTrickWinner();
-console.log('Winner:', winner.name);  // 'Partner' — 3 of Spades trumps Ace of Hearts
-game.clearTrick();
-</code></pre>
+<span class="c1">// --- determineTrickWinner: trump beats led suit ---</span>
+<span class="nx">game</span><span class="p">.</span><span class="nx">startRound</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">p0</span><span class="p">,</span><span class="w"> </span><span class="nx">p1</span><span class="p">,</span><span class="w"> </span><span class="nx">p2</span><span class="p">,</span><span class="w"> </span><span class="nx">p3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">players</span><span class="p">;</span>
+<span class="nx">p0</span><span class="p">.</span><span class="nx">hand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="ow">new</span><span class="w"> </span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Hearts&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="p">)];</span>
+<span class="nx">p1</span><span class="p">.</span><span class="nx">hand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="ow">new</span><span class="w"> </span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Hearts&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;K&#39;</span><span class="p">)];</span>
+<span class="nx">p2</span><span class="p">.</span><span class="nx">hand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="ow">new</span><span class="w"> </span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Spades&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="p">)];</span>
+<span class="nx">p3</span><span class="p">.</span><span class="nx">hand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="ow">new</span><span class="w"> </span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Hearts&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Q&#39;</span><span class="p">)];</span>
+<span class="nx">game</span><span class="p">.</span><span class="nx">playCard</span><span class="p">(</span><span class="nx">p0</span><span class="p">,</span><span class="w"> </span><span class="nx">p0</span><span class="p">.</span><span class="nx">hand</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+<span class="nx">game</span><span class="p">.</span><span class="nx">playCard</span><span class="p">(</span><span class="nx">p1</span><span class="p">,</span><span class="w"> </span><span class="nx">p1</span><span class="p">.</span><span class="nx">hand</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+<span class="nx">game</span><span class="p">.</span><span class="nx">playCard</span><span class="p">(</span><span class="nx">p2</span><span class="p">,</span><span class="w"> </span><span class="nx">p2</span><span class="p">.</span><span class="nx">hand</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+<span class="nx">game</span><span class="p">.</span><span class="nx">playCard</span><span class="p">(</span><span class="nx">p3</span><span class="p">,</span><span class="w"> </span><span class="nx">p3</span><span class="p">.</span><span class="nx">hand</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">winner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">determineTrickWinner</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Winner:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">winner</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w">  </span><span class="c1">// &#39;Partner&#39; — 3 of Spades trumps Ace of Hearts</span>
+<span class="nx">game</span><span class="p">.</span><span class="nx">clearTrick</span><span class="p">();</span>
+</code></pre></div>
 
 <hr />
 <h2>Level 2 – Stretch (3 pts)</h2>
 <h3>Challenge 5: <code>isTrickComplete()</code></h3>
 <p>Add a helper method:</p>
-<pre class="codehilite"><code class="language-js">isTrickComplete() {
-  return this.currentTrick.length === 4;
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nx">isTrickComplete</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">currentTrick</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>Test it by playing 4 cards and confirming it returns <code>true</code>.</p>
 <h3>Challenge 6: Full 13-Trick Simulation</h3>
 <p>Write a loop in <code>test.html</code> that plays all 13 tricks using AI decisions for all four players and verifies that each player ends with 0 cards:</p>
-<pre class="codehilite"><code class="language-js">game.startRound();
-// Give all players AI decision capability for testing:
-for (let trick = 0; trick &lt; 13; trick++) {
-  for (let i = 0; i &lt; 4; i++) {
-    const p = game.players[i];
-    const valid = game.getValidCards(p);
-    // Use the first valid card for simplicity
-    game.playCard(p, valid[0]);
-  }
-  game.determineTrickWinner();
-  game.clearTrick();
-}
-game.players.forEach(p =&gt; console.log(`${p.name} hand: ${p.hand.length}`));  // All 0
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nx">game</span><span class="p">.</span><span class="nx">startRound</span><span class="p">();</span>
+<span class="c1">// Give all players AI decision capability for testing:</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">trick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">trick</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">13</span><span class="p">;</span><span class="w"> </span><span class="nx">trick</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">players</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">valid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">getValidCards</span><span class="p">(</span><span class="nx">p</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Use the first valid card for simplicity</span>
+<span class="w">    </span><span class="nx">game</span><span class="p">.</span><span class="nx">playCard</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="w"> </span><span class="nx">valid</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">game</span><span class="p">.</span><span class="nx">determineTrickWinner</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">game</span><span class="p">.</span><span class="nx">clearTrick</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="nx">game</span><span class="p">.</span><span class="nx">players</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">p</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> hand: </span><span class="si">${</span><span class="nx">p</span><span class="p">.</span><span class="nx">hand</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb">`</span><span class="p">));</span><span class="w">  </span><span class="c1">// All 0</span>
+</code></pre></div>
 
 <hr />
 <h2>Level 3 – Advanced (2 pts)</h2>
 <h3>Challenge 7: Verify Follow-Suit Enforcement</h3>
 <p>Write a test that deals specific cards and confirms that <code>getValidCards()</code> correctly restricts choices when following suit:</p>
-<pre class="codehilite"><code class="language-js">game.startRound();
-const [p0, p1] = game.players;
+<div class="codehilite"><pre><span></span><code><span class="nx">game</span><span class="p">.</span><span class="nx">startRound</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">p0</span><span class="p">,</span><span class="w"> </span><span class="nx">p1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">players</span><span class="p">;</span>
 
-// Lead with Diamonds
-p0.hand = [new Card('Diamonds', 'K')];
-game.playCard(p0, p0.hand[0]);
+<span class="c1">// Lead with Diamonds</span>
+<span class="nx">p0</span><span class="p">.</span><span class="nx">hand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="ow">new</span><span class="w"> </span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Diamonds&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;K&#39;</span><span class="p">)];</span>
+<span class="nx">game</span><span class="p">.</span><span class="nx">playCard</span><span class="p">(</span><span class="nx">p0</span><span class="p">,</span><span class="w"> </span><span class="nx">p0</span><span class="p">.</span><span class="nx">hand</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
 
-// Player 1 has one Diamond and one Spade — must play Diamond
-p1.hand = [new Card('Diamonds', '5'), new Card('Spades', 'A')];
-const valid = game.getValidCards(p1);
-console.log('Valid count:', valid.length);  // 1
-console.log('Must follow:', valid[0].getSuit());  // 'Diamonds'
+<span class="c1">// Player 1 has one Diamond and one Spade — must play Diamond</span>
+<span class="nx">p1</span><span class="p">.</span><span class="nx">hand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="ow">new</span><span class="w"> </span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Diamonds&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5&#39;</span><span class="p">),</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Spades&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="p">)];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">valid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">getValidCards</span><span class="p">(</span><span class="nx">p1</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Valid count:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">valid</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span><span class="w">  </span><span class="c1">// 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Must follow:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">valid</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">getSuit</span><span class="p">());</span><span class="w">  </span><span class="c1">// &#39;Diamonds&#39;</span>
 
-// Player 1 has NO Diamonds — anything is valid
-p1.hand = [new Card('Clubs', '9'), new Card('Spades', 'A')];
-const validAll = game.getValidCards(p1);
-console.log('No-follow valid count:', validAll.length);  // 2
-game.clearTrick();
-</code></pre>
+<span class="c1">// Player 1 has NO Diamonds — anything is valid</span>
+<span class="nx">p1</span><span class="p">.</span><span class="nx">hand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="ow">new</span><span class="w"> </span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Clubs&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;9&#39;</span><span class="p">),</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Spades&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="p">)];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">validAll</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">getValidCards</span><span class="p">(</span><span class="nx">p1</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;No-follow valid count:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">validAll</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span><span class="w">  </span><span class="c1">// 2</span>
+<span class="nx">game</span><span class="p">.</span><span class="nx">clearTrick</span><span class="p">();</span>
+</code></pre></div>
 </body>
 </html>

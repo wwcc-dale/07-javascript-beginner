@@ -29,269 +29,269 @@
 <h2>Reading: Higher-Order Array Methods (40 minutes)</h2>
 <h3>What Makes These Methods "Higher-Order"?</h3>
 <p>Each method accepts a <strong>callback function</strong> — a function you write that the method calls once per element. The method provides the element; your function decides what to do with it.</p>
-<pre class="codehilite"><code class="language-js">const numbers = [1, 2, 3, 4, 5];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
 
-numbers.forEach(function(num) {
-  console.log(num);
-});
-</code></pre>
+<span class="nx">numbers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
 
 <p>In practice, callbacks are almost always written as <strong>arrow functions</strong> — a shorter syntax:</p>
-<pre class="codehilite"><code class="language-js">// Regular function
-function double(x) { return x * 2; }
+<div class="codehilite"><pre><span></span><code><span class="c1">// Regular function</span>
+<span class="kd">function</span><span class="w"> </span><span class="kr">double</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 
-// Arrow function equivalent
-const double = (x) =&gt; x * 2;
+<span class="c1">// Arrow function equivalent</span>
+<span class="kd">const</span><span class="w"> </span><span class="kr">double</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
 
-// Single parameter — parentheses optional
-const double = x =&gt; x * 2;
+<span class="c1">// Single parameter — parentheses optional</span>
+<span class="kd">const</span><span class="w"> </span><span class="kr">double</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
 
-// With a body (curly braces) when you need multiple lines
-const double = x =&gt; {
-  const result = x * 2;
-  return result;
-};
-</code></pre>
+<span class="c1">// With a body (curly braces) when you need multiple lines</span>
+<span class="kd">const</span><span class="w"> </span><span class="kr">double</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">result</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
 
 <p>You'll see arrow functions constantly in the examples below.</p>
 <hr />
 <h3><code>.filter()</code> — Keep Matching Elements</h3>
 <p><code>.filter()</code> returns a <strong>new array</strong> containing only elements where your callback returns <code>true</code>.</p>
-<pre class="codehilite"><code>original array → [callback tests each] → new array with matches only
-</code></pre>
+<div class="codehilite"><pre><span></span><code>original array → [callback tests each] → new array with matches only
+</code></pre></div>
 
-<pre class="codehilite"><code class="language-js">const prices = [5, 12, 3, 29, 8, 45];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">prices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">12</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">29</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">,</span><span class="w"> </span><span class="mf">45</span><span class="p">];</span>
 
-const affordable = prices.filter(price =&gt; price &lt; 10);
-console.log(affordable);  // [5, 3, 8]
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">affordable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prices</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">price</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">price</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">affordable</span><span class="p">);</span><span class="w">  </span><span class="c1">// [5, 3, 8]</span>
+</code></pre></div>
 
 <p>The original array is <strong>not changed</strong>. <code>.filter()</code> always produces a new array.</p>
 <p><strong>Example: filter an array of objects</strong></p>
-<pre class="codehilite"><code class="language-js">const students = [
-  { name: &quot;Alex&quot;, grade: 85 },
-  { name: &quot;Jordan&quot;, grade: 62 },
-  { name: &quot;Casey&quot;, grade: 91 },
-  { name: &quot;Morgan&quot;, grade: 55 }
-];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">students</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">grade</span><span class="o">:</span><span class="w"> </span><span class="mf">85</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Jordan&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">grade</span><span class="o">:</span><span class="w"> </span><span class="mf">62</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Casey&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">grade</span><span class="o">:</span><span class="w"> </span><span class="mf">91</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Morgan&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">grade</span><span class="o">:</span><span class="w"> </span><span class="mf">55</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
 
-const passing = students.filter(student =&gt; student.grade &gt;= 70);
-console.log(passing);
-// [{ name: &quot;Alex&quot;, grade: 85 }, { name: &quot;Casey&quot;, grade: 91 }]
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">passing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">students</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">student</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">student</span><span class="p">.</span><span class="nx">grade</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">70</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">passing</span><span class="p">);</span>
+<span class="c1">// [{ name: &quot;Alex&quot;, grade: 85 }, { name: &quot;Casey&quot;, grade: 91 }]</span>
+</code></pre></div>
 
 <p><strong>Example: remove an item by value</strong></p>
-<pre class="codehilite"><code class="language-js">const tasks = [&quot;email&quot;, &quot;report&quot;, &quot;meeting&quot;, &quot;email&quot;];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">tasks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;email&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;meeting&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;email&quot;</span><span class="p">];</span>
 
-const withoutEmail = tasks.filter(task =&gt; task !== &quot;email&quot;);
-console.log(withoutEmail);  // [&quot;report&quot;, &quot;meeting&quot;]
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">withoutEmail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tasks</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">task</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">task</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;email&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">withoutEmail</span><span class="p">);</span><span class="w">  </span><span class="c1">// [&quot;report&quot;, &quot;meeting&quot;]</span>
+</code></pre></div>
 
 <hr />
 <h3><code>.map()</code> — Transform Every Element</h3>
 <p><code>.map()</code> returns a <strong>new array</strong> where every element has been transformed by your callback.</p>
-<pre class="codehilite"><code>original array → [callback transforms each] → new array of results
-</code></pre>
+<div class="codehilite"><pre><span></span><code>original array → [callback transforms each] → new array of results
+</code></pre></div>
 
-<pre class="codehilite"><code class="language-js">const prices = [10, 20, 30];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">prices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">];</span>
 
-const withTax = prices.map(price =&gt; price * 1.08);
-console.log(withTax);  // [10.8, 21.6, 32.4]
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">withTax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prices</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">price</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.08</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">withTax</span><span class="p">);</span><span class="w">  </span><span class="c1">// [10.8, 21.6, 32.4]</span>
+</code></pre></div>
 
 <p>The original array is <strong>not changed</strong>.</p>
 <p><strong>Example: extract a property from each object</strong></p>
-<pre class="codehilite"><code class="language-js">const students = [
-  { name: &quot;Alex&quot;, grade: 85 },
-  { name: &quot;Jordan&quot;, grade: 92 },
-  { name: &quot;Casey&quot;, grade: 78 }
-];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">students</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">grade</span><span class="o">:</span><span class="w"> </span><span class="mf">85</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Jordan&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">grade</span><span class="o">:</span><span class="w"> </span><span class="mf">92</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Casey&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">grade</span><span class="o">:</span><span class="w"> </span><span class="mf">78</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
 
-const names = students.map(student =&gt; student.name);
-console.log(names);  // [&quot;Alex&quot;, &quot;Jordan&quot;, &quot;Casey&quot;]
+<span class="kd">const</span><span class="w"> </span><span class="nx">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">students</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">student</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">student</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">names</span><span class="p">);</span><span class="w">  </span><span class="c1">// [&quot;Alex&quot;, &quot;Jordan&quot;, &quot;Casey&quot;]</span>
 
-const grades = students.map(student =&gt; student.grade);
-console.log(grades);  // [85, 92, 78]
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">grades</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">students</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">student</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">student</span><span class="p">.</span><span class="nx">grade</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">grades</span><span class="p">);</span><span class="w">  </span><span class="c1">// [85, 92, 78]</span>
+</code></pre></div>
 
 <p><strong>Example: add a computed property to each object</strong></p>
-<pre class="codehilite"><code class="language-js">const products = [
-  { name: &quot;Keyboard&quot;, price: 79 },
-  { name: &quot;Mouse&quot;, price: 29 },
-  { name: &quot;Monitor&quot;, price: 299 }
-];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">products</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Keyboard&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="mf">79</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mouse&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="mf">29</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Monitor&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="mf">299</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
 
-const withSale = products.map(product =&gt; ({
-  name: product.name,
-  price: product.price,
-  salePrice: Math.round(product.price * 0.9)
-}));
+<span class="kd">const</span><span class="w"> </span><span class="nx">withSale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">products</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">product</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="nx">product</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="nx">product</span><span class="p">.</span><span class="nx">price</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">salePrice</span><span class="o">:</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">product</span><span class="p">.</span><span class="nx">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.9</span><span class="p">)</span>
+<span class="p">}));</span>
 
-console.log(withSale[0]);  // { name: &quot;Keyboard&quot;, price: 79, salePrice: 71 }
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">withSale</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span><span class="w">  </span><span class="c1">// { name: &quot;Keyboard&quot;, price: 79, salePrice: 71 }</span>
+</code></pre></div>
 
 <hr />
 <h3><code>.find()</code> and <code>.findIndex()</code> — Locate Elements</h3>
 <p><code>.find()</code> returns the <strong>first element</strong> where the callback returns <code>true</code>. Returns <code>undefined</code> if nothing matches.</p>
-<pre class="codehilite"><code class="language-js">const users = [
-  { id: 1, name: &quot;Alex&quot; },
-  { id: 2, name: &quot;Jordan&quot; },
-  { id: 3, name: &quot;Casey&quot; }
-];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alex&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Jordan&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Casey&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
 
-const user = users.find(u =&gt; u.id === 2);
-console.log(user);  // { id: 2, name: &quot;Jordan&quot; }
+<span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">users</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">u</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">u</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span><span class="w">  </span><span class="c1">// { id: 2, name: &quot;Jordan&quot; }</span>
 
-const missing = users.find(u =&gt; u.id === 99);
-console.log(missing);  // undefined
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">missing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">users</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">u</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">u</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">99</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">missing</span><span class="p">);</span><span class="w">  </span><span class="c1">// undefined</span>
+</code></pre></div>
 
 <p><code>.findIndex()</code> returns the <strong>index</strong> of the first match, or <code>-1</code> if not found. Useful when you need to remove or replace an item:</p>
-<pre class="codehilite"><code class="language-js">const tasks = [&quot;email&quot;, &quot;report&quot;, &quot;meeting&quot;];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">tasks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;email&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;meeting&quot;</span><span class="p">];</span>
 
-const idx = tasks.findIndex(task =&gt; task === &quot;report&quot;);
-console.log(idx);  // 1
+<span class="kd">const</span><span class="w"> </span><span class="nx">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tasks</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span><span class="nx">task</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">task</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">idx</span><span class="p">);</span><span class="w">  </span><span class="c1">// 1</span>
 
-// Remove that item using splice
-if (idx !== -1) {
-  tasks.splice(idx, 1);
-}
-console.log(tasks);  // [&quot;email&quot;, &quot;meeting&quot;]
-</code></pre>
+<span class="c1">// Remove that item using splice</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">idx</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">tasks</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">idx</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tasks</span><span class="p">);</span><span class="w">  </span><span class="c1">// [&quot;email&quot;, &quot;meeting&quot;]</span>
+</code></pre></div>
 
 <hr />
 <h3><code>.sort()</code> — Sort Arrays</h3>
 <p><code>.sort()</code> sorts an array <strong>in place</strong> (modifies the original) and also returns it.</p>
 <p><strong>Default sort — alphabetical (dangerous for numbers):</strong></p>
-<pre class="codehilite"><code class="language-js">const letters = [&quot;banana&quot;, &quot;apple&quot;, &quot;cherry&quot;];
-letters.sort();
-console.log(letters);  // [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">letters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;banana&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;apple&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cherry&quot;</span><span class="p">];</span>
+<span class="nx">letters</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">letters</span><span class="p">);</span><span class="w">  </span><span class="c1">// [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]</span>
 
-const nums = [10, 9, 2, 100];
-nums.sort();            // BAD — sorts as strings!
-console.log(nums);      // [10, 100, 2, 9]  ← wrong!
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">nums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">9</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">];</span>
+<span class="nx">nums</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span><span class="w">            </span><span class="c1">// BAD — sorts as strings!</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nums</span><span class="p">);</span><span class="w">      </span><span class="c1">// [10, 100, 2, 9]  ← wrong!</span>
+</code></pre></div>
 
 <p><strong>Numeric sort — use a comparator function:</strong></p>
 <p>The comparator receives two elements (<code>a</code> and <code>b</code>). Return:
 - <strong>negative</strong> → <code>a</code> comes first
 - <strong>positive</strong> → <code>b</code> comes first
 - <strong>zero</strong> → order doesn't matter</p>
-<pre class="codehilite"><code class="language-js">const scores = [10, 9, 2, 100, 45];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">scores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">9</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">45</span><span class="p">];</span>
 
-// Ascending (low to high)
-scores.sort((a, b) =&gt; a - b);
-console.log(scores);  // [2, 9, 10, 45, 100]
+<span class="c1">// Ascending (low to high)</span>
+<span class="nx">scores</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">scores</span><span class="p">);</span><span class="w">  </span><span class="c1">// [2, 9, 10, 45, 100]</span>
 
-// Descending (high to low)
-scores.sort((a, b) =&gt; b - a);
-console.log(scores);  // [100, 45, 10, 9, 2]
-</code></pre>
+<span class="c1">// Descending (high to low)</span>
+<span class="nx">scores</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">a</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">scores</span><span class="p">);</span><span class="w">  </span><span class="c1">// [100, 45, 10, 9, 2]</span>
+</code></pre></div>
 
 <p><strong>Sort objects by a property:</strong></p>
-<pre class="codehilite"><code class="language-js">const students = [
-  { name: &quot;Casey&quot;, grade: 78 },
-  { name: &quot;Alex&quot;, grade: 92 },
-  { name: &quot;Jordan&quot;, grade: 85 }
-];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">students</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Casey&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">grade</span><span class="o">:</span><span class="w"> </span><span class="mf">78</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">grade</span><span class="o">:</span><span class="w"> </span><span class="mf">92</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Jordan&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">grade</span><span class="o">:</span><span class="w"> </span><span class="mf">85</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
 
-// Sort by grade descending
-students.sort((a, b) =&gt; b.grade - a.grade);
-console.log(students[0].name);  // &quot;Alex&quot; (highest grade)
-</code></pre>
+<span class="c1">// Sort by grade descending</span>
+<span class="nx">students</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">grade</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">grade</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">students</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">name</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;Alex&quot; (highest grade)</span>
+</code></pre></div>
 
 <p><strong>Sort by string property:</strong></p>
-<pre class="codehilite"><code class="language-js">students.sort((a, b) =&gt; a.name.localeCompare(b.name));
-console.log(students.map(s =&gt; s.name));  // [&quot;Alex&quot;, &quot;Casey&quot;, &quot;Jordan&quot;]
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nx">students</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">localeCompare</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">name</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">students</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">name</span><span class="p">));</span><span class="w">  </span><span class="c1">// [&quot;Alex&quot;, &quot;Casey&quot;, &quot;Jordan&quot;]</span>
+</code></pre></div>
 
 <hr />
 <h3>Spread Operator — Copy Arrays</h3>
 <p>The spread operator (<code>...</code>) expands an array's elements. Use it to make a <strong>shallow copy</strong> of an array before sorting or modifying, so the original stays intact:</p>
-<pre class="codehilite"><code class="language-js">const original = [3, 1, 4, 1, 5];
-const sorted = [...original].sort((a, b) =&gt; a - b);
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">original</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">sorted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nx">original</span><span class="p">].</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span>
 
-console.log(original);  // [3, 1, 4, 1, 5]  — unchanged
-console.log(sorted);    // [1, 1, 3, 4, 5]
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">original</span><span class="p">);</span><span class="w">  </span><span class="c1">// [3, 1, 4, 1, 5]  — unchanged</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sorted</span><span class="p">);</span><span class="w">    </span><span class="c1">// [1, 1, 3, 4, 5]</span>
+</code></pre></div>
 
 <p><strong>Combine two arrays:</strong></p>
-<pre class="codehilite"><code class="language-js">const front = [1, 2, 3];
-const back = [4, 5, 6];
-const combined = [...front, ...back];
-console.log(combined);  // [1, 2, 3, 4, 5, 6]
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">front</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">back</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">combined</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nx">front</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">back</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">combined</span><span class="p">);</span><span class="w">  </span><span class="c1">// [1, 2, 3, 4, 5, 6]</span>
+</code></pre></div>
 
 <p><strong>Add an element without mutating:</strong></p>
-<pre class="codehilite"><code class="language-js">const items = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];
-const withD = [...items, &quot;d&quot;];
-console.log(items);   // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]  — unchanged
-console.log(withD);   // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;]
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">withD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nx">items</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;d&quot;</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">items</span><span class="p">);</span><span class="w">   </span><span class="c1">// [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]  — unchanged</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">withD</span><span class="p">);</span><span class="w">   </span><span class="c1">// [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;]</span>
+</code></pre></div>
 
 <p><strong>Spread with objects (<code>Object.assign</code> alternative):</strong></p>
-<pre class="codehilite"><code class="language-js">const base = { name: &quot;Alex&quot;, grade: 85 };
-const updated = { ...base, grade: 92 };  // override grade
-console.log(updated);  // { name: &quot;Alex&quot;, grade: 92 }
-console.log(base);     // { name: &quot;Alex&quot;, grade: 85 }  — unchanged
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">grade</span><span class="o">:</span><span class="w"> </span><span class="mf">85</span><span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">updated</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">base</span><span class="p">,</span><span class="w"> </span><span class="nx">grade</span><span class="o">:</span><span class="w"> </span><span class="mf">92</span><span class="w"> </span><span class="p">};</span><span class="w">  </span><span class="c1">// override grade</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">updated</span><span class="p">);</span><span class="w">  </span><span class="c1">// { name: &quot;Alex&quot;, grade: 92 }</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">base</span><span class="p">);</span><span class="w">     </span><span class="c1">// { name: &quot;Alex&quot;, grade: 85 }  — unchanged</span>
+</code></pre></div>
 
 <hr />
 <h3>Method Chaining</h3>
 <p>Because <code>.filter()</code> and <code>.map()</code> return new arrays, you can chain them together:</p>
-<pre class="codehilite"><code class="language-js">const students = [
-  { name: &quot;Alex&quot;, grade: 85 },
-  { name: &quot;Jordan&quot;, grade: 62 },
-  { name: &quot;Casey&quot;, grade: 91 },
-  { name: &quot;Morgan&quot;, grade: 55 }
-];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">students</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">grade</span><span class="o">:</span><span class="w"> </span><span class="mf">85</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Jordan&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">grade</span><span class="o">:</span><span class="w"> </span><span class="mf">62</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Casey&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">grade</span><span class="o">:</span><span class="w"> </span><span class="mf">91</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Morgan&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">grade</span><span class="o">:</span><span class="w"> </span><span class="mf">55</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
 
-// Get names of passing students, sorted alphabetically
-const result = students
-  .filter(s =&gt; s.grade &gt;= 70)      // keep passing students
-  .sort((a, b) =&gt; a.name.localeCompare(b.name))  // sort by name
-  .map(s =&gt; s.name);               // extract just the name
+<span class="c1">// Get names of passing students, sorted alphabetically</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">students</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">grade</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">70</span><span class="p">)</span><span class="w">      </span><span class="c1">// keep passing students</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">localeCompare</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">name</span><span class="p">))</span><span class="w">  </span><span class="c1">// sort by name</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w">               </span><span class="c1">// extract just the name</span>
 
-console.log(result);  // [&quot;Alex&quot;, &quot;Casey&quot;]
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w">  </span><span class="c1">// [&quot;Alex&quot;, &quot;Casey&quot;]</span>
+</code></pre></div>
 
 <p>Read chained methods top-to-bottom like a pipeline: filter → sort → map.</p>
 <p><strong>Example: top 3 products by price</strong></p>
-<pre class="codehilite"><code class="language-js">const products = [
-  { name: &quot;Keyboard&quot;, price: 79 },
-  { name: &quot;Mouse&quot;, price: 29 },
-  { name: &quot;Monitor&quot;, price: 299 },
-  { name: &quot;Webcam&quot;, price: 89 },
-  { name: &quot;Headset&quot;, price: 149 }
-];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">products</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Keyboard&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="mf">79</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mouse&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="mf">29</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Monitor&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="mf">299</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Webcam&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="mf">89</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Headset&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="mf">149</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
 
-const top3 = [...products]
-  .sort((a, b) =&gt; b.price - a.price)   // most expensive first
-  .slice(0, 3)                          // take first 3
-  .map(p =&gt; p.name);                   // extract names
+<span class="kd">const</span><span class="w"> </span><span class="nx">top3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nx">products</span><span class="p">]</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">price</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">price</span><span class="p">)</span><span class="w">   </span><span class="c1">// most expensive first</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">)</span><span class="w">                          </span><span class="c1">// take first 3</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w">                   </span><span class="c1">// extract names</span>
 
-console.log(top3);  // [&quot;Monitor&quot;, &quot;Headset&quot;, &quot;Webcam&quot;]
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">top3</span><span class="p">);</span><span class="w">  </span><span class="c1">// [&quot;Monitor&quot;, &quot;Headset&quot;, &quot;Webcam&quot;]</span>
+</code></pre></div>
 
 <hr />
 <h3>Nested Array and Object Access</h3>
 <p>When arrays contain objects (or objects contain arrays), you chain the accesses:</p>
-<pre class="codehilite"><code class="language-js">const library = {
-  name: &quot;City Library&quot;,
-  books: [
-    { title: &quot;Dune&quot;, genre: &quot;sci-fi&quot;, available: true },
-    { title: &quot;1984&quot;, genre: &quot;dystopia&quot;, available: false },
-    { title: &quot;Foundation&quot;, genre: &quot;sci-fi&quot;, available: true }
-  ]
-};
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">library</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;City Library&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">books</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Dune&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">genre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;sci-fi&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">available</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1984&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">genre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;dystopia&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">available</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Foundation&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">genre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;sci-fi&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">available</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">};</span>
 
-// Available sci-fi books
-const availableSciFi = library.books
-  .filter(book =&gt; book.genre === &quot;sci-fi&quot; &amp;&amp; book.available)
-  .map(book =&gt; book.title);
+<span class="c1">// Available sci-fi books</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">availableSciFi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">library</span><span class="p">.</span><span class="nx">books</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">book</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">book</span><span class="p">.</span><span class="nx">genre</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;sci-fi&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">book</span><span class="p">.</span><span class="nx">available</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">book</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">book</span><span class="p">.</span><span class="nx">title</span><span class="p">);</span>
 
-console.log(availableSciFi);  // [&quot;Dune&quot;, &quot;Foundation&quot;]
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">availableSciFi</span><span class="p">);</span><span class="w">  </span><span class="c1">// [&quot;Dune&quot;, &quot;Foundation&quot;]</span>
+</code></pre></div>
 
 <hr />
 <h2>Video Tutorial: Advanced Array Methods (20 minutes)</h2>
@@ -306,57 +306,57 @@ console.log(availableSciFi);  // [&quot;Dune&quot;, &quot;Foundation&quot;]
 <hr />
 <h2>Supplemental Practice (25 minutes)</h2>
 <h3>Practice 1: Filter and Map</h3>
-<pre class="codehilite"><code class="language-js">const inventory = [
-  { item: &quot;Pen&quot;, qty: 5, price: 1.50 },
-  { item: &quot;Notebook&quot;, qty: 0, price: 3.99 },
-  { item: &quot;Stapler&quot;, qty: 12, price: 8.99 },
-  { item: &quot;Tape&quot;, qty: 0, price: 2.49 }
-];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">inventory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">item</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Pen&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">qty</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="mf">1.50</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">item</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Notebook&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">qty</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="mf">3.99</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">item</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Stapler&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">qty</span><span class="o">:</span><span class="w"> </span><span class="mf">12</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="mf">8.99</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">item</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Tape&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">qty</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="mf">2.49</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
 
-// 1. Get only in-stock items (qty &gt; 0)
-const inStock = inventory.filter(i =&gt; i.qty &gt; 0);
-console.log(inStock.length);  // 2
+<span class="c1">// 1. Get only in-stock items (qty &gt; 0)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">inStock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">inventory</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">i</span><span class="p">.</span><span class="nx">qty</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">inStock</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span><span class="w">  </span><span class="c1">// 2</span>
 
-// 2. Get the names of all items
-const names = inventory.map(i =&gt; i.item);
-console.log(names);  // [&quot;Pen&quot;, &quot;Notebook&quot;, &quot;Stapler&quot;, &quot;Tape&quot;]
+<span class="c1">// 2. Get the names of all items</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">inventory</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">i</span><span class="p">.</span><span class="nx">item</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">names</span><span class="p">);</span><span class="w">  </span><span class="c1">// [&quot;Pen&quot;, &quot;Notebook&quot;, &quot;Stapler&quot;, &quot;Tape&quot;]</span>
 
-// 3. Get names of in-stock items only (chain it)
-const inStockNames = inventory
-  .filter(i =&gt; i.qty &gt; 0)
-  .map(i =&gt; i.item);
-console.log(inStockNames);  // [&quot;Pen&quot;, &quot;Stapler&quot;]
-</code></pre>
+<span class="c1">// 3. Get names of in-stock items only (chain it)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">inStockNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">inventory</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">i</span><span class="p">.</span><span class="nx">qty</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">i</span><span class="p">.</span><span class="nx">item</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">inStockNames</span><span class="p">);</span><span class="w">  </span><span class="c1">// [&quot;Pen&quot;, &quot;Stapler&quot;]</span>
+</code></pre></div>
 
 <h3>Practice 2: Find and Sort</h3>
-<pre class="codehilite"><code class="language-js">const roster = [
-  { id: 101, name: &quot;Alex&quot;, score: 88 },
-  { id: 102, name: &quot;Jordan&quot;, score: 72 },
-  { id: 103, name: &quot;Casey&quot;, score: 95 }
-];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">roster</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">101</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">88</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">102</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Jordan&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">72</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">103</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Casey&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">95</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
 
-// Find player 102
-const player = roster.find(p =&gt; p.id === 102);
-console.log(player.name);  // &quot;Jordan&quot;
+<span class="c1">// Find player 102</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">roster</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">102</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;Jordan&quot;</span>
 
-// Sort by score descending
-const ranked = [...roster].sort((a, b) =&gt; b.score - a.score);
-console.log(ranked[0].name);  // &quot;Casey&quot;
-</code></pre>
+<span class="c1">// Sort by score descending</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">ranked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nx">roster</span><span class="p">].</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">score</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">score</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ranked</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">name</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;Casey&quot;</span>
+</code></pre></div>
 
 <h3>Practice 3: Spread</h3>
-<pre class="codehilite"><code class="language-js">const hand = [&quot;Ace&quot;, &quot;King&quot;, &quot;3&quot;];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">hand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Ace&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;King&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">];</span>
 
-// Add a card without mutating
-const newHand = [...hand, &quot;7&quot;];
-console.log(hand);     // [&quot;Ace&quot;, &quot;King&quot;, &quot;3&quot;]
-console.log(newHand);  // [&quot;Ace&quot;, &quot;King&quot;, &quot;3&quot;, &quot;7&quot;]
+<span class="c1">// Add a card without mutating</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">newHand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nx">hand</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;7&quot;</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hand</span><span class="p">);</span><span class="w">     </span><span class="c1">// [&quot;Ace&quot;, &quot;King&quot;, &quot;3&quot;]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newHand</span><span class="p">);</span><span class="w">  </span><span class="c1">// [&quot;Ace&quot;, &quot;King&quot;, &quot;3&quot;, &quot;7&quot;]</span>
 
-// Copy and sort without mutating
-const sorted = [...hand].sort();
-console.log(hand);    // [&quot;Ace&quot;, &quot;King&quot;, &quot;3&quot;]  — still original order
-console.log(sorted);  // [&quot;3&quot;, &quot;Ace&quot;, &quot;King&quot;]
-</code></pre>
+<span class="c1">// Copy and sort without mutating</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">sorted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nx">hand</span><span class="p">].</span><span class="nx">sort</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hand</span><span class="p">);</span><span class="w">    </span><span class="c1">// [&quot;Ace&quot;, &quot;King&quot;, &quot;3&quot;]  — still original order</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sorted</span><span class="p">);</span><span class="w">  </span><span class="c1">// [&quot;3&quot;, &quot;Ace&quot;, &quot;King&quot;]</span>
+</code></pre></div>
 
 <hr />
 <h2>Knowledge Check Quiz (15 minutes)</h2>
@@ -387,166 +387,166 @@ console.log(sorted);  // [&quot;3&quot;, &quot;Ace&quot;, &quot;King&quot;]
 - Using thousands of community packages (npm)</p>
 <h3>Setting Up a Node.js Project</h3>
 <p>Every Node.js project starts with a <strong>package.json</strong> file that describes the project and its dependencies.</p>
-<pre class="codehilite"><code class="language-bash"># Create a new folder and initialize a project
-mkdir my-project
-cd my-project
-npm init -y        # creates package.json with default values
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Create a new folder and initialize a project</span>
+mkdir<span class="w"> </span>my-project
+<span class="nb">cd</span><span class="w"> </span>my-project
+npm<span class="w"> </span>init<span class="w"> </span>-y<span class="w">        </span><span class="c1"># creates package.json with default values</span>
+</code></pre></div>
 
 <p>To use modern ES6 module syntax (<code>import</code>/<code>export</code>), add one line to <code>package.json</code>:</p>
-<pre class="codehilite"><code class="language-json">{
-  &quot;name&quot;: &quot;my-project&quot;,
-  &quot;version&quot;: &quot;1.0.0&quot;,
-  &quot;type&quot;: &quot;module&quot;
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my-project&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;module&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p><code>"type": "module"</code> tells Node.js to treat <code>.js</code> files as ES6 modules.</p>
 <p>To run a file:</p>
-<pre class="codehilite"><code class="language-bash">node app.js
-</code></pre>
+<div class="codehilite"><pre><span></span><code>node<span class="w"> </span>app.js
+</code></pre></div>
 
 <h3>ES6 Modules — Export and Import</h3>
 <p>Modules let you split your code across multiple files. One file <strong>exports</strong> things; another <strong>imports</strong> them.</p>
 <p><strong>Exporting from a file (<code>math.js</code>):</strong></p>
-<pre class="codehilite"><code class="language-js">// Named exports — export multiple things
-export function add(a, b) {
-  return a + b;
-}
+<div class="codehilite"><pre><span></span><code><span class="c1">// Named exports — export multiple things</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
 
-export function multiply(a, b) {
-  return a * b;
-}
+<span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">multiply</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
 
-export const PI = 3.14159;
-</code></pre>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159</span><span class="p">;</span>
+</code></pre></div>
 
 <p><strong>Importing in another file (<code>app.js</code>):</strong></p>
-<pre class="codehilite"><code class="language-js">// Named imports — must use the exact exported name
-import { add, multiply, PI } from './math.js';
+<div class="codehilite"><pre><span></span><code><span class="c1">// Named imports — must use the exact exported name</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">add</span><span class="p">,</span><span class="w"> </span><span class="nx">multiply</span><span class="p">,</span><span class="w"> </span><span class="nx">PI</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./math.js&#39;</span><span class="p">;</span>
 
-console.log(add(3, 4));       // 7
-console.log(multiply(2, 5));  // 10
-console.log(PI);              // 3.14159
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">));</span><span class="w">       </span><span class="c1">// 7</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">multiply</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">));</span><span class="w">  </span><span class="c1">// 10</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">PI</span><span class="p">);</span><span class="w">              </span><span class="c1">// 3.14159</span>
+</code></pre></div>
 
 <p><strong>Exporting a class:</strong></p>
-<pre class="codehilite"><code class="language-js">// Student.js
-export class Student {
-  constructor(name, grade) {
-    this.name = name;
-    this.grade = grade;
-  }
+<div class="codehilite"><pre><span></span><code><span class="c1">// Student.js</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">Student</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">grade</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">grade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">grade</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  isPassing() {
-    return this.grade &gt;= 70;
-  }
-}
-</code></pre>
+<span class="w">  </span><span class="nx">isPassing</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">grade</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">70</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
-<pre class="codehilite"><code class="language-js">// classroom.js
-import { Student } from './Student.js';
+<div class="codehilite"><pre><span></span><code><span class="c1">// classroom.js</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Student</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./Student.js&#39;</span><span class="p">;</span>
 
-const s1 = new Student(&quot;Alex&quot;, 85);
-console.log(s1.isPassing());  // true
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Student</span><span class="p">(</span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">85</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">s1</span><span class="p">.</span><span class="nx">isPassing</span><span class="p">());</span><span class="w">  </span><span class="c1">// true</span>
+</code></pre></div>
 
 <blockquote>
 <p><strong>Important:</strong> When importing from your own files, always include <code>./</code> at the start of the path and <code>.js</code> at the end. <code>'./math.js'</code> not <code>'math'</code>.</p>
 </blockquote>
 <h3>Installing and Using npm Packages</h3>
 <p>npm (Node Package Manager) gives you access to hundreds of thousands of open-source packages. Install one with:</p>
-<pre class="codehilite"><code class="language-bash">npm install chalk
-</code></pre>
+<div class="codehilite"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>chalk
+</code></pre></div>
 
 <p>This downloads the package into a <code>node_modules</code> folder and records it in <code>package.json</code>.</p>
 <p>Use it in your code:</p>
-<pre class="codehilite"><code class="language-js">// colored.js
-import chalk from 'chalk';
+<div class="codehilite"><pre><span></span><code><span class="c1">// colored.js</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">chalk</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;chalk&#39;</span><span class="p">;</span>
 
-console.log(chalk.green('Success!'));
-console.log(chalk.red('Error!'));
-console.log(chalk.blue('Info'));
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">chalk</span><span class="p">.</span><span class="nx">green</span><span class="p">(</span><span class="s1">&#39;Success!&#39;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">chalk</span><span class="p">.</span><span class="nx">red</span><span class="p">(</span><span class="s1">&#39;Error!&#39;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">chalk</span><span class="p">.</span><span class="nx">blue</span><span class="p">(</span><span class="s1">&#39;Info&#39;</span><span class="p">));</span>
+</code></pre></div>
 
 <p>Run it:</p>
-<pre class="codehilite"><code class="language-bash">node colored.js
-</code></pre>
+<div class="codehilite"><pre><span></span><code>node<span class="w"> </span>colored.js
+</code></pre></div>
 
 <h3>The <code>fs</code> Module — Reading and Writing Files</h3>
 <p>Node.js has a built-in <code>fs</code> (file system) module. Import it like any other module:</p>
-<pre class="codehilite"><code class="language-js">import fs from 'fs';
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;fs&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 <p><strong>Write to a file:</strong></p>
-<pre class="codehilite"><code class="language-js">import fs from 'fs';
+<div class="codehilite"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;fs&#39;</span><span class="p">;</span>
 
-fs.writeFileSync('output.txt', 'Hello from Node.js!');
-console.log('File written.');
-</code></pre>
+<span class="nx">fs</span><span class="p">.</span><span class="nx">writeFileSync</span><span class="p">(</span><span class="s1">&#39;output.txt&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Hello from Node.js!&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;File written.&#39;</span><span class="p">);</span>
+</code></pre></div>
 
 <p><code>writeFileSync</code> creates the file if it doesn't exist, or overwrites it if it does.</p>
 <p><strong>Read from a file:</strong></p>
-<pre class="codehilite"><code class="language-js">import fs from 'fs';
+<div class="codehilite"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;fs&#39;</span><span class="p">;</span>
 
-const content = fs.readFileSync('output.txt', 'utf8');
-console.log(content);  // &quot;Hello from Node.js!&quot;
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;output.txt&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;utf8&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">content</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;Hello from Node.js!&quot;</span>
+</code></pre></div>
 
 <p>The <code>'utf8'</code> argument tells Node to return the content as a string (rather than raw bytes).</p>
 <p><strong>Full example:</strong></p>
-<pre class="codehilite"><code class="language-js">import fs from 'fs';
+<div class="codehilite"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;fs&#39;</span><span class="p">;</span>
 
-// Write a list of students to a file
-const students = [&quot;Alex&quot;, &quot;Jordan&quot;, &quot;Casey&quot;];
-const text = students.join('\n');       // one name per line
-fs.writeFileSync('students.txt', text);
+<span class="c1">// Write a list of students to a file</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">students</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jordan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Casey&quot;</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">students</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;\n&#39;</span><span class="p">);</span><span class="w">       </span><span class="c1">// one name per line</span>
+<span class="nx">fs</span><span class="p">.</span><span class="nx">writeFileSync</span><span class="p">(</span><span class="s1">&#39;students.txt&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="p">);</span>
 
-// Read it back
-const data = fs.readFileSync('students.txt', 'utf8');
-const lines = data.split('\n');
-console.log('Students:', lines);        // [&quot;Alex&quot;, &quot;Jordan&quot;, &quot;Casey&quot;]
-</code></pre>
+<span class="c1">// Read it back</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;students.txt&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;utf8&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;\n&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Students:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">lines</span><span class="p">);</span><span class="w">        </span><span class="c1">// [&quot;Alex&quot;, &quot;Jordan&quot;, &quot;Casey&quot;]</span>
+</code></pre></div>
 
 <h3>Command-Line Arguments with <code>process.argv</code></h3>
 <p><code>process.argv</code> is an array of strings that Node.js fills with the command-line arguments when you run a script.</p>
-<pre class="codehilite"><code class="language-bash">node calculator.js add 5 3
-</code></pre>
+<div class="codehilite"><pre><span></span><code>node<span class="w"> </span>calculator.js<span class="w"> </span>add<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">3</span>
+</code></pre></div>
 
 <p>Inside <code>calculator.js</code>:</p>
-<pre class="codehilite"><code class="language-js">console.log(process.argv);
-// [
-//   '/path/to/node',   // [0] — the node executable
-//   '/path/calculator.js', // [1] — the script path
-//   'add',            // [2] — first user argument
-//   '5',              // [3] — second user argument
-//   '3'               // [4] — third user argument
-// ]
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">argv</span><span class="p">);</span>
+<span class="c1">// [</span>
+<span class="c1">//   &#39;/path/to/node&#39;,   // [0] — the node executable</span>
+<span class="c1">//   &#39;/path/calculator.js&#39;, // [1] — the script path</span>
+<span class="c1">//   &#39;add&#39;,            // [2] — first user argument</span>
+<span class="c1">//   &#39;5&#39;,              // [3] — second user argument</span>
+<span class="c1">//   &#39;3&#39;               // [4] — third user argument</span>
+<span class="c1">// ]</span>
+</code></pre></div>
 
 <p>Your arguments always start at index <code>2</code>. A complete example:</p>
-<pre class="codehilite"><code class="language-js">// calculator.js
-const operation = process.argv[2];   // &quot;add&quot;
-const a = Number(process.argv[3]);   // 5
-const b = Number(process.argv[4]);   // 3
+<div class="codehilite"><pre><span></span><code><span class="c1">// calculator.js</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">argv</span><span class="p">[</span><span class="mf">2</span><span class="p">];</span><span class="w">   </span><span class="c1">// &quot;add&quot;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">argv</span><span class="p">[</span><span class="mf">3</span><span class="p">]);</span><span class="w">   </span><span class="c1">// 5</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">argv</span><span class="p">[</span><span class="mf">4</span><span class="p">]);</span><span class="w">   </span><span class="c1">// 3</span>
 
-if (operation === 'add') {
-  console.log(a + b);          // 8
-} else if (operation === 'subtract') {
-  console.log(a - b);
-} else if (operation === 'multiply') {
-  console.log(a * b);
-} else if (operation === 'divide') {
-  console.log(a / b);
-} else {
-  console.log('Unknown operation. Use: add, subtract, multiply, divide');
-}
-</code></pre>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">operation</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;add&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span><span class="w">          </span><span class="c1">// 8</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">operation</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;subtract&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">operation</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;multiply&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">operation</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;divide&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Unknown operation. Use: add, subtract, multiply, divide&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>Run:</p>
-<pre class="codehilite"><code class="language-bash">node calculator.js add 5 3      # 8
-node calculator.js multiply 4 7 # 28
-</code></pre>
+<div class="codehilite"><pre><span></span><code>node<span class="w"> </span>calculator.js<span class="w"> </span>add<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">3</span><span class="w">      </span><span class="c1"># 8</span>
+node<span class="w"> </span>calculator.js<span class="w"> </span>multiply<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="c1"># 28</span>
+</code></pre></div>
 
 <p>Note: <code>process.argv</code> values are always <strong>strings</strong> — use <code>Number()</code> to convert them before doing arithmetic.</p>
 <hr />
@@ -563,40 +563,40 @@ node calculator.js multiply 4 7 # 28
 <h2>Supplemental Practice: Node.js</h2>
 <h3>Practice 1: Your First Module</h3>
 <p>Create <code>greeting.js</code>:</p>
-<pre class="codehilite"><code class="language-js">export function greet(name) {
-  return `Hello, ${name}!`;
-}
+<div class="codehilite"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span>
+<span class="p">}</span>
 
-export const defaultName = &quot;World&quot;;
-</code></pre>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">defaultName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;World&quot;</span><span class="p">;</span>
+</code></pre></div>
 
 <p>Create <code>main.js</code>:</p>
-<pre class="codehilite"><code class="language-js">import { greet, defaultName } from './greeting.js';
+<div class="codehilite"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">greet</span><span class="p">,</span><span class="w"> </span><span class="nx">defaultName</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./greeting.js&#39;</span><span class="p">;</span>
 
-console.log(greet(&quot;Alex&quot;));         // &quot;Hello, Alex!&quot;
-console.log(greet(defaultName));    // &quot;Hello, World!&quot;
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greet</span><span class="p">(</span><span class="s2">&quot;Alex&quot;</span><span class="p">));</span><span class="w">         </span><span class="c1">// &quot;Hello, Alex!&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greet</span><span class="p">(</span><span class="nx">defaultName</span><span class="p">));</span><span class="w">    </span><span class="c1">// &quot;Hello, World!&quot;</span>
+</code></pre></div>
 
 <p>Run: <code>node main.js</code></p>
 <h3>Practice 2: File Round-Trip</h3>
-<pre class="codehilite"><code class="language-js">import fs from 'fs';
+<div class="codehilite"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;fs&#39;</span><span class="p">;</span>
 
-const scores = [88, 92, 75, 61, 95];
-fs.writeFileSync('scores.txt', scores.join(','));
+<span class="kd">const</span><span class="w"> </span><span class="nx">scores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">88</span><span class="p">,</span><span class="w"> </span><span class="mf">92</span><span class="p">,</span><span class="w"> </span><span class="mf">75</span><span class="p">,</span><span class="w"> </span><span class="mf">61</span><span class="p">,</span><span class="w"> </span><span class="mf">95</span><span class="p">];</span>
+<span class="nx">fs</span><span class="p">.</span><span class="nx">writeFileSync</span><span class="p">(</span><span class="s1">&#39;scores.txt&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">scores</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">));</span>
 
-const raw = fs.readFileSync('scores.txt', 'utf8');
-const loaded = raw.split(',').map(Number);
-console.log(loaded);  // [88, 92, 75, 61, 95]
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;scores.txt&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;utf8&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">loaded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">raw</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nb">Number</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">loaded</span><span class="p">);</span><span class="w">  </span><span class="c1">// [88, 92, 75, 61, 95]</span>
+</code></pre></div>
 
 <h3>Practice 3: CLI Echo</h3>
-<pre class="codehilite"><code class="language-js">// echo.js
-const message = process.argv.slice(2).join(' ');
-console.log('You said:', message);
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="c1">// echo.js</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">argv</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">2</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;You said:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">message</span><span class="p">);</span>
+</code></pre></div>
 
-<pre class="codehilite"><code class="language-bash">node echo.js hello world    # &quot;You said: hello world&quot;
-</code></pre>
+<div class="codehilite"><pre><span></span><code>node<span class="w"> </span>echo.js<span class="w"> </span>hello<span class="w"> </span>world<span class="w">    </span><span class="c1"># &quot;You said: hello world&quot;</span>
+</code></pre></div>
 
 <hr />
 <h2>Wrap-Up (10 minutes)</h2>

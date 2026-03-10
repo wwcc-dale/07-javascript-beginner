@@ -1,13 +1,19 @@
-- description: "Writing clarity and mechanics"
-  long_description: "Grammar, syntax, and organization support readability."
-  points: 10
+- description: Writing clarity and mechanics
+  points: 10.0
+  long_description: Grammar, syntax, and organization support readability.
   ratings:
-    - description: "Excellent"
-      long_description: "Clear, fluent writing; virtually no errors."
-      points: 10
-    - description: "Minor issues"
-      long_description: "Generally clear; minor errors do not impede understanding."
-      points: 8
-    - description: "Major issues"
-      long_description: "Frequent errors or disorganization impede understanding."
-      points: 5
+  - points: 5.0
+    description: Excelling
+    long_description: Clear, fluent writing; virtually no errors.
+  - points: 4.0
+    description: Achieving
+    long_description: Generally clear; minor errors do not impede understanding.
+  - points: 3.0
+    description: Developing
+    long_description: Occasional errors or disorganization impede understanding.
+  - points: 2.0
+    description: Beginning
+    long_description: Frequent errors or disorganization impede understanding.
+  - points: 0.0
+    description: No Evidence
+    long_description: Work never submitted, empty or unchanged

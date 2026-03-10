@@ -1,7 +1,9 @@
 ---
 allowed_attempts: 3
 indent: 1
+module: 2
 name: Session 9 Quiz – Inheritance and Method Overriding
+position: 11
 published: false
 question_groups:
 - bank: s9-inheritance.bank
@@ -9,6 +11,7 @@ question_groups:
   pick: 16
   points_per_question: 1
 quiz_type: practice_quiz
+session: 9.2
 show_correct_answers: true
 shuffle_answers: true
 time_limit: 20

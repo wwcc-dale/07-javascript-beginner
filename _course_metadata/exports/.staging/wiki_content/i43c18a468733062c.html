@@ -23,21 +23,21 @@
 <h2>Reading: AI Strategy Patterns (35 minutes)</h2>
 <h3>The Decision Tree Pattern</h3>
 <p>A <strong>decision tree</strong> is a series of questions answered in priority order. Each branch either returns a decision or falls through to the next question:</p>
-<pre class="codehilite"><code class="language-js">function chooseSetting(room) {
-  // Priority 1: Safety override
-  if (room.smokeDetected) return 'EVACUATE';
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">chooseSetting</span><span class="p">(</span><span class="nx">room</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Priority 1: Safety override</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">room</span><span class="p">.</span><span class="nx">smokeDetected</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;EVACUATE&#39;</span><span class="p">;</span>
 
-  // Priority 2: Comfort preferences
-  if (room.temperature &gt; 78) return 'COOL';
-  if (room.temperature &lt; 65) return 'HEAT';
+<span class="w">  </span><span class="c1">// Priority 2: Comfort preferences</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">room</span><span class="p">.</span><span class="nx">temperature</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">78</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;COOL&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">room</span><span class="p">.</span><span class="nx">temperature</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">65</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;HEAT&#39;</span><span class="p">;</span>
 
-  // Priority 3: Energy saving (only if comfort is already satisfied)
-  if (room.occupants === 0 &amp;&amp; room.hvacOn) return 'OFF';
+<span class="w">  </span><span class="c1">// Priority 3: Energy saving (only if comfort is already satisfied)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">room</span><span class="p">.</span><span class="nx">occupants</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">room</span><span class="p">.</span><span class="nx">hvacOn</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;OFF&#39;</span><span class="p">;</span>
 
-  // Default: no change needed
-  return 'MAINTAIN';
-}
-</code></pre>
+<span class="w">  </span><span class="c1">// Default: no change needed</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;MAINTAIN&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p><strong>Structure rules:</strong>
 - Most important conditions come first
@@ -46,132 +46,132 @@
 <hr />
 <h3>Tracking History with a <code>Set</code></h3>
 <p>A <code>Set</code> is perfect for "have I seen this before?" tracking:</p>
-<pre class="codehilite"><code class="language-js">class ContentRecommender {
-  constructor() {
-    this.viewedItems = new Set();  // Tracks IDs of viewed items
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">ContentRecommender</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">viewedItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">();</span><span class="w">  </span><span class="c1">// Tracks IDs of viewed items</span>
+<span class="w">  </span><span class="p">}</span>
 
-  recordView(itemId) {
-    this.viewedItems.add(itemId);
-  }
+<span class="w">  </span><span class="nx">recordView</span><span class="p">(</span><span class="nx">itemId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">viewedItems</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">itemId</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
 
-  hasViewed(itemId) {
-    return this.viewedItems.has(itemId);
-  }
+<span class="w">  </span><span class="nx">hasViewed</span><span class="p">(</span><span class="nx">itemId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">viewedItems</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">itemId</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
 
-  getUnseenRecommendations(catalog) {
-    return catalog.filter(item =&gt; !this.viewedItems.has(item.id));
-  }
+<span class="w">  </span><span class="nx">getUnseenRecommendations</span><span class="p">(</span><span class="nx">catalog</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">catalog</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">viewedItems</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">));</span>
+<span class="w">  </span><span class="p">}</span>
 
-  resetHistory() {
-    this.viewedItems = new Set();
-  }
-}
+<span class="w">  </span><span class="nx">resetHistory</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">viewedItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const rec = new ContentRecommender();
-rec.recordView('movie-42');
-rec.recordView('movie-7');
+<span class="kd">const</span><span class="w"> </span><span class="nx">rec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ContentRecommender</span><span class="p">();</span>
+<span class="nx">rec</span><span class="p">.</span><span class="nx">recordView</span><span class="p">(</span><span class="s1">&#39;movie-42&#39;</span><span class="p">);</span>
+<span class="nx">rec</span><span class="p">.</span><span class="nx">recordView</span><span class="p">(</span><span class="s1">&#39;movie-7&#39;</span><span class="p">);</span>
 
-const fresh = rec.getUnseenRecommendations([
-  { id: 'movie-42', title: 'Interstellar' },
-  { id: 'movie-15', title: 'Arrival' }
-]);
-console.log(fresh[0].title);  // 'Arrival' — movie-42 was filtered out
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">fresh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">rec</span><span class="p">.</span><span class="nx">getUnseenRecommendations</span><span class="p">([</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;movie-42&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Interstellar&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;movie-15&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Arrival&#39;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fresh</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">title</span><span class="p">);</span><span class="w">  </span><span class="c1">// &#39;Arrival&#39; — movie-42 was filtered out</span>
+</code></pre></div>
 
 <p><code>Set.has()</code> is O(1) — much faster than searching an array with <code>includes()</code>.</p>
 <hr />
 <h3>Heuristic Scoring</h3>
 <p>A <strong>heuristic</strong> is a formula that estimates value without computing it exactly. Multiple factors are often weighted and combined:</p>
-<pre class="codehilite"><code class="language-js">function scoreCandidate(candidate, requirements) {
-  let score = 0;
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">scoreCandidate</span><span class="p">(</span><span class="nx">candidate</span><span class="p">,</span><span class="w"> </span><span class="nx">requirements</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
 
-  // Required skills — high weight
-  const skillMatch = requirements.skills.filter(
-    s =&gt; candidate.skills.includes(s)
-  ).length;
-  score += skillMatch * 10;
+<span class="w">  </span><span class="c1">// Required skills — high weight</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">skillMatch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">requirements</span><span class="p">.</span><span class="nx">skills</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">s</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">candidate</span><span class="p">.</span><span class="nx">skills</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
+<span class="w">  </span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">skillMatch</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
 
-  // Experience — medium weight
-  score += Math.min(candidate.yearsExp, 10) * 3;
+<span class="w">  </span><span class="c1">// Experience — medium weight</span>
+<span class="w">  </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">candidate</span><span class="p">.</span><span class="nx">yearsExp</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
 
-  // Location preference — low weight
-  if (candidate.city === requirements.preferredCity) score += 5;
+<span class="w">  </span><span class="c1">// Location preference — low weight</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">candidate</span><span class="p">.</span><span class="nx">city</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">requirements</span><span class="p">.</span><span class="nx">preferredCity</span><span class="p">)</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
 
-  // Penalty: overqualified candidates may not accept lower roles
-  if (candidate.yearsExp &gt; requirements.maxExperience) score -= 8;
+<span class="w">  </span><span class="c1">// Penalty: overqualified candidates may not accept lower roles</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">candidate</span><span class="p">.</span><span class="nx">yearsExp</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">requirements</span><span class="p">.</span><span class="nx">maxExperience</span><span class="p">)</span><span class="w"> </span><span class="nx">score</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mf">8</span><span class="p">;</span>
 
-  return score;
-}
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">score</span><span class="p">;</span>
+<span class="p">}</span>
 
-const candidates = [alice, bob, carol];
-const best = candidates.reduce((top, c) =&gt;
-  scoreCandidate(c, requirements) &gt; scoreCandidate(top, requirements) ? c : top
-);
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">candidates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">alice</span><span class="p">,</span><span class="w"> </span><span class="nx">bob</span><span class="p">,</span><span class="w"> </span><span class="nx">carol</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">candidates</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">top</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span>
+<span class="w">  </span><span class="nx">scoreCandidate</span><span class="p">(</span><span class="nx">c</span><span class="p">,</span><span class="w"> </span><span class="nx">requirements</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">scoreCandidate</span><span class="p">(</span><span class="nx">top</span><span class="p">,</span><span class="w"> </span><span class="nx">requirements</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">top</span>
+<span class="p">);</span>
+</code></pre></div>
 
 <p>Weights communicate priorities: skills matter most, location least. The penalty models an important negative factor.</p>
 <hr />
 <h3>Goal-Aware Strategy: Progress vs. Target</h3>
 <p>One of the most useful AI improvements is making decisions based on <strong>current progress relative to the goal</strong>, rather than always trying to maximize:</p>
-<pre class="codehilite"><code class="language-js">class SalesAgent {
-  constructor(quota) {
-    this.quota      = quota;
-    this.salesMade  = 0;
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">SalesAgent</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">quota</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">quota</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nx">quota</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">salesMade</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  chooseLead(leads) {
-    const remaining = this.quota - this.salesMade;
+<span class="w">  </span><span class="nx">chooseLead</span><span class="p">(</span><span class="nx">leads</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">remaining</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">quota</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">salesMade</span><span class="p">;</span>
 
-    if (remaining &lt;= 0) {
-      // Already hit quota — pursue smallest leads (low risk)
-      return leads.reduce((min, lead) =&gt;
-        lead.value &lt; min.value ? lead : min
-      );
-    }
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">remaining</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Already hit quota — pursue smallest leads (low risk)</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">leads</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">min</span><span class="p">,</span><span class="w"> </span><span class="nx">lead</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span>
+<span class="w">        </span><span class="nx">lead</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">min</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">lead</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">min</span>
+<span class="w">      </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    if (remaining &gt; this.quota * 0.7) {
-      // Far from quota — pursue highest-value leads
-      return leads.reduce((max, lead) =&gt;
-        lead.value &gt; max.value ? lead : max
-      );
-    }
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">remaining</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">quota</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.7</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Far from quota — pursue highest-value leads</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">leads</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">max</span><span class="p">,</span><span class="w"> </span><span class="nx">lead</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span>
+<span class="w">        </span><span class="nx">lead</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">max</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">lead</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">max</span>
+<span class="w">      </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // Close to quota — take the cheapest lead that closes the gap
-    const sufficient = leads.filter(l =&gt; l.value &gt;= remaining);
-    if (sufficient.length &gt; 0) {
-      return sufficient.reduce((min, lead) =&gt;
-        lead.value &lt; min.value ? lead : min
-      );
-    }
+<span class="w">    </span><span class="c1">// Close to quota — take the cheapest lead that closes the gap</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">sufficient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">leads</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">l</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">l</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">remaining</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">sufficient</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">sufficient</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">min</span><span class="p">,</span><span class="w"> </span><span class="nx">lead</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span>
+<span class="w">        </span><span class="nx">lead</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">min</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">lead</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">min</span>
+<span class="w">      </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    return this.chooseLead(leads);  // Fallback: repeat with original strategy
-  }
-}
-</code></pre>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">chooseLead</span><span class="p">(</span><span class="nx">leads</span><span class="p">);</span><span class="w">  </span><span class="c1">// Fallback: repeat with original strategy</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p><strong>The insight:</strong> the optimal action depends not just on the options available, but on how far you are from your goal. Having exceeded your goal flips the strategy entirely.</p>
 <hr />
 <h3>Combining Filtering and Scoring</h3>
 <p>In practice, AI decision-making first <strong>filters</strong> to valid options, then <strong>scores</strong> them to pick the best:</p>
-<pre class="codehilite"><code class="language-js">function bestAvailableAction(options, context) {
-  // Step 1: Filter to valid options only
-  const valid = options.filter(opt =&gt; isLegalMove(opt, context));
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">bestAvailableAction</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span><span class="w"> </span><span class="nx">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Step 1: Filter to valid options only</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">valid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">options</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">opt</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">isLegalMove</span><span class="p">(</span><span class="nx">opt</span><span class="p">,</span><span class="w"> </span><span class="nx">context</span><span class="p">));</span>
 
-  if (valid.length === 0) return null;  // No valid moves
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">valid</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">  </span><span class="c1">// No valid moves</span>
 
-  // Step 2: Score each valid option
-  const scored = valid.map(opt =&gt; ({
-    option: opt,
-    score:  scoreOption(opt, context)
-  }));
+<span class="w">  </span><span class="c1">// Step 2: Score each valid option</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">scored</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valid</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">opt</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span>
+<span class="w">    </span><span class="nx">option</span><span class="o">:</span><span class="w"> </span><span class="nx">opt</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">score</span><span class="o">:</span><span class="w">  </span><span class="nx">scoreOption</span><span class="p">(</span><span class="nx">opt</span><span class="p">,</span><span class="w"> </span><span class="nx">context</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}));</span>
 
-  // Step 3: Pick the highest scorer
-  return scored.reduce((best, s) =&gt;
-    s.score &gt; best.score ? s : best
-  ).option;
-}
-</code></pre>
+<span class="w">  </span><span class="c1">// Step 3: Pick the highest scorer</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">scored</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">best</span><span class="p">,</span><span class="w"> </span><span class="nx">s</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span>
+<span class="w">    </span><span class="nx">s</span><span class="p">.</span><span class="nx">score</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">best</span><span class="p">.</span><span class="nx">score</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">best</span>
+<span class="w">  </span><span class="p">).</span><span class="nx">option</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>This three-step structure (filter → score → select) is the backbone of most game AI.</p>
 <hr />

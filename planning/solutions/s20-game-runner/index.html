@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- Session 20: Full Game Integration — Example Solution -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spades Card Game</title>
+  <style>
+    body { font-family: sans-serif; background: #1b5e20; color: #fff; padding: 16px; }
+    h1 { text-align: center; }
+    #scoreboard { background: rgba(0,0,0,0.4); padding: 8px; border-radius: 4px; margin-bottom: 12px; }
+    #biddingArea { margin: 10px 0; }
+    #biddingArea button { margin: 4px; padding: 6px 12px; cursor: pointer; font-size: 1rem; }
+    .player-area { margin: 8px 0; }
+    .player-area h3 { margin: 4px 0; }
+    .hand { display: flex; flex-wrap: wrap; gap: 4px; }
+    .card {
+      background: #fff; color: #000; border-radius: 6px;
+      width: 48px; height: 68px; display: flex; align-items: center;
+      justify-content: center; font-size: 0.9rem; font-weight: bold;
+      border: 1px solid #999; user-select: none;
+    }
+    .card.playable { cursor: pointer; border: 2px solid gold; transform: translateY(-4px); }
+    #trickArea { display: flex; gap: 8px; justify-content: center; margin: 12px 0; }
+    #trickWinner { background: gold; color: #000; padding: 6px 12px;
+                   border-radius: 4px; display: none; text-align: center; font-weight: bold; }
+    #gameOverMsg { font-size: 1.5rem; text-align: center; display: none; }
+    #stopBtn { display: block; margin: 8px auto; padding: 6px 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Spades</h1>
+  <div id="scoreboard">Score loading...</div>
+  <div id="biddingArea"></div>
+  <div id="bids"></div>
+
+  <div id="trickArea"></div>
+  <div id="trickWinner"></div>
+
+  <!-- Player hands (only human hand visible in full UI) -->
+  <div class="player-area">
+    <h3>Your Hand (Player 1)</h3>
+    <div class="hand" id="hand-Player1"></div>
+  </div>
+
+  <div id="gameOverMsg"></div>
+  <button id="stopBtn" onclick="runner.stop()">Stop Game</button>
+
+  <script type="module">
+    import { Card } from '../s16-card-deck/Card.js';
+    import { Deck } from '../s16-card-deck/Deck.js';
+    import { Player } from '../s17-player-game/Player.js';
+    import { AIPlayer } from '../s21-ai-strategies/AIPlayer.js';
+    import { SpadesGame } from '../s19-scoring-ui/SpadesGame.js';
+    import { GameBoard } from '../s19-scoring-ui/GameBoard.js';
+    import { GameRunner } from './GameRunner.js';
+
+    // Extend GameBoard with showPlayedCard and showBids
+    class FullGameBoard extends GameBoard {
+      showPlayedCard(playerName, card) {
+        const trickArea = document.getElementById("trickArea");
+        const el = this.createCardElement(card);
+        el.title = playerName;
+        trickArea.appendChild(el);
+      }
+      clearTrickDisplay() {
+        document.getElementById("trickArea").innerHTML = "";
+      }
+      showBids(players) {
+        const el = document.getElementById("bids");
+        el.textContent = "Bids: " + players.map(p =>
+          `${p.name}: ${p.isNil ? "Nil" : p.bid}`
+        ).join(" | ");
+      }
+      showGameOver(winningTeam) {
+        const el = document.getElementById("gameOverMsg");
+        el.textContent = winningTeam === -1
+          ? "It's a tie!"
+          : `Team ${winningTeam + 1} wins!`;
+        el.style.display = "block";
+      }
+    }
+
+    const players = [
+      new Player("Player1"),
+      new AIPlayer("AI-2"),
+      new AIPlayer("AI-3"),
+      new AIPlayer("AI-4")
+    ];
+
+    const game = new SpadesGame(players);
+    const board = new FullGameBoard("scoreboard");
+    window.runner = new GameRunner(game, board, 0);
+    runner.run();
+  </script>
+</body>
+</html>

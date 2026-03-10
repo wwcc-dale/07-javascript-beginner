@@ -1,18 +1,21 @@
 ---
-name: "Session 25: Final Project — Complete Spades Game"
-assignment_type: "online"
+allowed_extensions:
+- zip
+assignment_type: online
+module: 5
+name: 'Session 25: Final Project — Complete Spades Game'
 points: 100
+position: 12
 published: true
 related_outcomes:
-  - "CLO-1"
-  - "CLO-2"
-  - "CLO-3"
-  - "CLO-4"
-  - "CLO-5"
+- CLO-1
+- CLO-2
+- CLO-3
+- CLO-4
+- CLO-5
+session: 25.3
 submission_types:
-  - "online_upload"
-allowed_extensions:
-  - "zip"
+- online_upload
 ---
 
 # Session 25: Final Project — Complete Spades Game

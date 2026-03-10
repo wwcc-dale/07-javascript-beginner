@@ -1,12 +1,15 @@
 ---
-name: "Session 25: Final Project — Spades"
+module: 5
+name: 'Session 25: Final Project — Spades'
+position: 10
 published: true
 related_outcomes:
-  - "CLO-1"
-  - "CLO-2"
-  - "CLO-3"
-  - "CLO-4"
-  - "CLO-5"
+- CLO-1
+- CLO-2
+- CLO-3
+- CLO-4
+- CLO-5
+session: 25.1
 ---
 
 # Session 25: Final Project — Spades

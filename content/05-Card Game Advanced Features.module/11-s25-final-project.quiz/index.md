@@ -1,7 +1,9 @@
 ---
 allowed_attempts: 2
 indent: 1
+module: 5
 name: 'Session 25 Quiz – Final Project: Professional Card Game'
+position: 11
 published: false
 question_groups:
 - bank: s25-final-project.bank
@@ -9,6 +11,7 @@ question_groups:
   pick: 16
   points_per_question: 1
 quiz_type: practice_quiz
+session: 25.2
 show_correct_answers: true
 shuffle_answers: true
 time_limit: 30

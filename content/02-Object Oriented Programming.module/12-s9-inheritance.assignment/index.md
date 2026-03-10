@@ -1,15 +1,18 @@
 ---
-name: "Session 9: Inheritance and Composition Patterns"
-assignment_type: "online"
+allowed_extensions:
+- js
+assignment_type: online
+module: 2
+name: 'Session 9: Inheritance and Composition Patterns'
 points: 20
+position: 12
 published: true
 related_outcomes:
-  - "CLO-2"
-  - "CLO-3"
+- CLO-2
+- CLO-3
+session: 9.3
 submission_types:
-  - "online_upload"
-allowed_extensions:
-  - "js"
+- online_upload
 ---
 
 # Session 9: Inheritance and Composition Patterns

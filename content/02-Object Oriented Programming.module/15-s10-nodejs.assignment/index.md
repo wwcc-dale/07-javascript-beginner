@@ -1,16 +1,19 @@
 ---
-name: "Session 10: Building with Node.js and Modules"
-assignment_type: "online"
+allowed_extensions:
+- js
+- zip
+assignment_type: online
+module: 2
+name: 'Session 10: Building with Node.js and Modules'
 points: 20
+position: 15
 published: true
 related_outcomes:
-  - "CLO-4"
-  - "CLO-5"
+- CLO-4
+- CLO-5
+session: 10.3
 submission_types:
-  - "online_upload"
-allowed_extensions:
-  - "js"
-  - "zip"
+- online_upload
 ---
 
 # Session 10: Building with Node.js and Modules

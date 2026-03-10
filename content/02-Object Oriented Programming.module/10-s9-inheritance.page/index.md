@@ -1,9 +1,12 @@
 ---
-name: "Session 9: Inheritance and Composition"
+module: 2
+name: 'Session 9: Inheritance and Composition'
+position: 10
 published: true
 related_outcomes:
-  - "CLO-2"
-  - "CLO-3"
+- CLO-2
+- CLO-3
+session: 9.1
 ---
 
 # Session 9: Inheritance and Composition

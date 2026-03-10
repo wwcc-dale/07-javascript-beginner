@@ -23,125 +23,125 @@
 <h2>Reading: Classes and Collections (35 minutes)</h2>
 <h3>Classes and Constructors</h3>
 <p>A <strong>class</strong> is a blueprint for creating objects with the same structure. The <code>constructor</code> runs automatically when you use <code>new</code>.</p>
-<pre class="codehilite"><code class="language-js">class Book {
-  constructor(title, author, year) {
-    this.title  = title;
-    this.author = author;
-    this.year   = year;
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Book</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">author</span><span class="p">,</span><span class="w"> </span><span class="nx">year</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">title</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nx">title</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">author</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">author</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">year</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nx">year</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  getTitle()  { return this.title; }
-  getAuthor() { return this.author; }
+<span class="w">  </span><span class="nx">getTitle</span><span class="p">()</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">title</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">getAuthor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">author</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 
-  describe() {
-    return `${this.title} by ${this.author} (${this.year})`;
-  }
-}
+<span class="w">  </span><span class="nx">describe</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb"> by </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">author</span><span class="si">}</span><span class="sb"> (</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">year</span><span class="si">}</span><span class="sb">)`</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const b = new Book('Dune', 'Herbert', 1965);
-console.log(b.describe());  // &quot;Dune by Herbert (1965)&quot;
-console.log(b.getTitle());  // &quot;Dune&quot;
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Book</span><span class="p">(</span><span class="s1">&#39;Dune&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Herbert&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1965</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">describe</span><span class="p">());</span><span class="w">  </span><span class="c1">// &quot;Dune by Herbert (1965)&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">getTitle</span><span class="p">());</span><span class="w">  </span><span class="c1">// &quot;Dune&quot;</span>
+</code></pre></div>
 
 <p>The <code>constructor</code> is called once at creation. Getter methods like <code>getTitle()</code> provide controlled read access to the properties.</p>
 <hr />
 <h3>Object Identity vs. Value Equality</h3>
 <p>JavaScript's <code>===</code> tests <strong>identity</strong> — whether two variables point to the same object in memory:</p>
-<pre class="codehilite"><code class="language-js">const b1 = new Book('Dune', 'Herbert', 1965);
-const b2 = new Book('Dune', 'Herbert', 1965);
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">b1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Book</span><span class="p">(</span><span class="s1">&#39;Dune&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Herbert&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1965</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">b2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Book</span><span class="p">(</span><span class="s1">&#39;Dune&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Herbert&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1965</span><span class="p">);</span>
 
-console.log(b1 === b2);  // false — different objects in memory
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b1</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">b2</span><span class="p">);</span><span class="w">  </span><span class="c1">// false — different objects in memory</span>
+</code></pre></div>
 
 <p>Even though <code>b1</code> and <code>b2</code> have identical data, they are different objects. To compare by <strong>value</strong> you need an <code>equals()</code> method:</p>
-<pre class="codehilite"><code class="language-js">class Book {
-  // ... (constructor and other methods above)
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Book</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// ... (constructor and other methods above)</span>
 
-  equals(other) {
-    return this.title === other.title &amp;&amp; this.author === other.author;
-  }
-}
+<span class="w">  </span><span class="nx">equals</span><span class="p">(</span><span class="nx">other</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">title</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">other</span><span class="p">.</span><span class="nx">title</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">author</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">other</span><span class="p">.</span><span class="nx">author</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-console.log(b1.equals(b2));  // true — same title and author
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b1</span><span class="p">.</span><span class="nx">equals</span><span class="p">(</span><span class="nx">b2</span><span class="p">));</span><span class="w">  </span><span class="c1">// true — same title and author</span>
+</code></pre></div>
 
 <p><code>equals()</code> is essential whenever you need to find and remove a specific item from an array — searching by value, not by reference.</p>
 <hr />
 <h3>Collection Classes and Nested Loops</h3>
 <p>A <strong>collection class</strong> owns an array of objects and provides methods to manage them.</p>
-<pre class="codehilite"><code class="language-js">class Catalog {
-  constructor() {
-    this.books = [];
-    this.buildSampleCatalog();
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Catalog</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">books</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">buildSampleCatalog</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
 
-  buildSampleCatalog() {
-    const authors = ['Tolkien', 'Herbert', 'Le Guin'];
-    const titles  = ['Fellowship', 'Dune', 'Wizard'];
+<span class="w">  </span><span class="nx">buildSampleCatalog</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Tolkien&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Herbert&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Le Guin&#39;</span><span class="p">];</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">titles</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Fellowship&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Dune&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Wizard&#39;</span><span class="p">];</span>
 
-    for (let a = 0; a &lt; authors.length; a++) {
-      for (let t = 0; t &lt; titles.length; t++) {
-        this.books.push(new Book(`${titles[t]}-${a}`, authors[a], 1960 + t));
-      }
-    }
-  }
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">authors</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">a</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">t</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">titles</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">t</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">books</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Book</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">titles</span><span class="p">[</span><span class="nx">t</span><span class="p">]</span><span class="si">}</span><span class="sb">-</span><span class="si">${</span><span class="nx">a</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span><span class="w"> </span><span class="nx">authors</span><span class="p">[</span><span class="nx">a</span><span class="p">],</span><span class="w"> </span><span class="mf">1960</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">t</span><span class="p">));</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 
-  size()   { return this.books.length; }
+<span class="w">  </span><span class="nx">size</span><span class="p">()</span><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">books</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 
-  draw()   { return this.books.pop(); }  // Remove and return last item
+<span class="w">  </span><span class="nx">draw</span><span class="p">()</span><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">books</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// Remove and return last item</span>
 
-  reset() {
-    this.books = [];
-    this.buildSampleCatalog();
-  }
-}
-</code></pre>
+<span class="w">  </span><span class="nx">reset</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">books</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">buildSampleCatalog</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p><strong>Nested loops</strong> (one <code>for</code> inside another) are the standard way to generate all combinations of two sets — every author paired with every title in this example.</p>
 <hr />
 <h3>Fisher-Yates Shuffle</h3>
 <p>A naive shuffle (pick two random positions and swap, repeated many times) produces <strong>biased distributions</strong> — some orderings appear more often than others. The Fisher-Yates algorithm gives every permutation exactly equal probability.</p>
-<pre class="codehilite"><code class="language-js">function shuffle(array) {
-  // Work backward from the end of the array
-  for (let i = array.length - 1; i &gt; 0; i--) {
-    // Pick any position from 0 up to and including i
-    const j = Math.floor(Math.random() * (i + 1));
-    // Swap positions i and j
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-}
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">shuffle</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Work backward from the end of the array</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Pick any position from 0 up to and including i</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">));</span>
+<span class="w">    </span><span class="c1">// Swap positions i and j</span>
+<span class="w">    </span><span class="p">[</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span><span class="w"> </span><span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span><span class="w"> </span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]];</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const items = [1, 2, 3, 4, 5];
-shuffle(items);
-console.log(items);  // Some random permutation
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+<span class="nx">shuffle</span><span class="p">(</span><span class="nx">items</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">items</span><span class="p">);</span><span class="w">  </span><span class="c1">// Some random permutation</span>
+</code></pre></div>
 
 <p><strong>Why it works:</strong> On each pass, each remaining element has an equal chance of landing in the current position. By the time you reach the beginning, every possible order is equally likely.</p>
 <hr />
 <h3>Finding and Removing with <code>findIndex</code></h3>
 <p>When you need to locate a specific item in an array and remove it, use <code>findIndex()</code> with your <code>equals()</code> method:</p>
-<pre class="codehilite"><code class="language-js">class Catalog {
-  // ...
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Catalog</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// ...</span>
 
-  removeBook(target) {
-    const i = this.books.findIndex(b =&gt; b.equals(target));
-    if (i !== -1) {
-      return this.books.splice(i, 1)[0];  // Remove and return
-    }
-    return null;  // Not found
-  }
-}
-</code></pre>
+<span class="w">  </span><span class="nx">removeBook</span><span class="p">(</span><span class="nx">target</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">books</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">equals</span><span class="p">(</span><span class="nx">target</span><span class="p">));</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">books</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">)[</span><span class="mf">0</span><span class="p">];</span><span class="w">  </span><span class="c1">// Remove and return</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">  </span><span class="c1">// Not found</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p><code>splice(i, 1)</code> removes one element at index <code>i</code> and returns it as an array — the <code>[0]</code> gets the item itself. This is the same pattern you will use when a player plays a card from their hand.</p>
 <hr />
 <h3>Verifying Uniqueness with a Set</h3>
 <p>After generating a collection of objects, you can verify no duplicates exist by checking that the number of unique string representations equals the total count:</p>
-<pre class="codehilite"><code class="language-js">const catalog = new Catalog();
-const titles = catalog.books.map(b =&gt; b.describe());
-const unique = new Set(titles);
-console.log('All unique:', unique.size === catalog.size());  // true
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">catalog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Catalog</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">titles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">catalog</span><span class="p">.</span><span class="nx">books</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">describe</span><span class="p">());</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">unique</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">(</span><span class="nx">titles</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;All unique:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">unique</span><span class="p">.</span><span class="nx">size</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">catalog</span><span class="p">.</span><span class="nx">size</span><span class="p">());</span><span class="w">  </span><span class="c1">// true</span>
+</code></pre></div>
 
 <p>A <code>Set</code> automatically discards duplicates. If <code>unique.size</code> equals the total count, every item is distinct.</p>
 <hr />

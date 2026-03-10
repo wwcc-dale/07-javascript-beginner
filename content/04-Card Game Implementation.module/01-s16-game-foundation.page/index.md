@@ -1,10 +1,13 @@
 ---
-name: "Session 16: Classes, Constructors, and Collections"
+module: 4
+name: 'Session 16: Classes, Constructors, and Collections'
+position: 1
 published: true
 related_outcomes:
-  - "CLO-1"
-  - "CLO-2"
-  - "CLO-5"
+- CLO-1
+- CLO-2
+- CLO-5
+session: 16.1
 ---
 
 # Session 16: Classes, Constructors, and Collections

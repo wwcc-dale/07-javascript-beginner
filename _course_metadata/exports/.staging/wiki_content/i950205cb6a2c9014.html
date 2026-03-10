@@ -49,239 +49,239 @@
 </tr>
 </tbody>
 </table>
-<pre class="codehilite"><code class="language-js">const price = 9.74;
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9.74</span><span class="p">;</span>
 
-console.log(Math.round(price));  // 10 (nearest integer)
-console.log(Math.floor(price));  // 9  (down to the dollar)
-console.log(Math.ceil(price));   // 10 (up to the dollar)
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">price</span><span class="p">));</span><span class="w">  </span><span class="c1">// 10 (nearest integer)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">price</span><span class="p">));</span><span class="w">  </span><span class="c1">// 9  (down to the dollar)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nx">price</span><span class="p">));</span><span class="w">   </span><span class="c1">// 10 (up to the dollar)</span>
+</code></pre></div>
 
 <p><strong>Real-world use:</strong> Tax calculations, displaying star ratings, pagination:</p>
-<pre class="codehilite"><code class="language-js">const totalItems = 53;
-const itemsPerPage = 10;
-const pages = Math.ceil(totalItems / itemsPerPage);
-console.log(pages);  // 6 (you need 6 pages, not 5.3)
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">totalItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">53</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">itemsPerPage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">pages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nx">totalItems</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">itemsPerPage</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pages</span><span class="p">);</span><span class="w">  </span><span class="c1">// 6 (you need 6 pages, not 5.3)</span>
+</code></pre></div>
 
 <h3><code>Math.random()</code> — Random Numbers</h3>
 <p><code>Math.random()</code> returns a random decimal between <strong>0 (inclusive) and 1 (exclusive)</strong>.</p>
-<pre class="codehilite"><code class="language-js">console.log(Math.random());  // something like 0.7342...
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">());</span><span class="w">  </span><span class="c1">// something like 0.7342...</span>
+</code></pre></div>
 
 <p>Alone it's not very useful. Combine it with <code>Math.floor</code> to get a random integer in a range:</p>
-<pre class="codehilite"><code class="language-js">// Random integer from 0 to 5 (six possible values: 0,1,2,3,4,5)
-const roll = Math.floor(Math.random() * 6);
+<div class="codehilite"><pre><span></span><code><span class="c1">// Random integer from 0 to 5 (six possible values: 0,1,2,3,4,5)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">roll</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">6</span><span class="p">);</span>
 
-// Random integer from 1 to 6 (like a die)
-const die = Math.floor(Math.random() * 6) + 1;
+<span class="c1">// Random integer from 1 to 6 (like a die)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">die</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">6</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
 
-// Random integer from min to max (inclusive)
-function randomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+<span class="c1">// Random integer from min to max (inclusive)</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">randomInt</span><span class="p">(</span><span class="nx">min</span><span class="p">,</span><span class="w"> </span><span class="nx">max</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="nx">max</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">min</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">min</span><span class="p">;</span>
+<span class="p">}</span>
 
-console.log(randomInt(1, 100));   // anywhere from 1 to 100
-console.log(randomInt(50, 60));   // anywhere from 50 to 60
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">randomInt</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">));</span><span class="w">   </span><span class="c1">// anywhere from 1 to 100</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">randomInt</span><span class="p">(</span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">60</span><span class="p">));</span><span class="w">   </span><span class="c1">// anywhere from 50 to 60</span>
+</code></pre></div>
 
 <h3><code>Math.max()</code> and <code>Math.min()</code></h3>
 <p>Find the largest or smallest value in a list of arguments:</p>
-<pre class="codehilite"><code class="language-js">console.log(Math.max(10, 45, 23, 7));   // 45
-console.log(Math.min(10, 45, 23, 7));   // 7
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">45</span><span class="p">,</span><span class="w"> </span><span class="mf">23</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">));</span><span class="w">   </span><span class="c1">// 45</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">45</span><span class="p">,</span><span class="w"> </span><span class="mf">23</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">));</span><span class="w">   </span><span class="c1">// 7</span>
+</code></pre></div>
 
 <p><strong>Real-world use:</strong> Clamping a value to stay within bounds:</p>
-<pre class="codehilite"><code class="language-js">function clamp(value, min, max) {
-  return Math.max(min, Math.min(max, value));
-}
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">clamp</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">min</span><span class="p">,</span><span class="w"> </span><span class="nx">max</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="nx">min</span><span class="p">,</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">max</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">));</span>
+<span class="p">}</span>
 
-console.log(clamp(150, 0, 100));  // 100 (too high, capped at 100)
-console.log(clamp(-5, 0, 100));   // 0   (too low, floored at 0)
-console.log(clamp(42, 0, 100));   // 42  (within range, unchanged)
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">clamp</span><span class="p">(</span><span class="mf">150</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">));</span><span class="w">  </span><span class="c1">// 100 (too high, capped at 100)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">clamp</span><span class="p">(</span><span class="o">-</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">));</span><span class="w">   </span><span class="c1">// 0   (too low, floored at 0)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">clamp</span><span class="p">(</span><span class="mf">42</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">));</span><span class="w">   </span><span class="c1">// 42  (within range, unchanged)</span>
+</code></pre></div>
 
 <h3><code>Math.abs()</code> — Absolute Value</h3>
 <p>Returns the distance from zero (removes the negative sign):</p>
-<pre class="codehilite"><code class="language-js">console.log(Math.abs(-15));   // 15
-console.log(Math.abs(15));    // 15
-console.log(Math.abs(-3.7));  // 3.7
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="o">-</span><span class="mf">15</span><span class="p">));</span><span class="w">   </span><span class="c1">// 15</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="mf">15</span><span class="p">));</span><span class="w">    </span><span class="c1">// 15</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="o">-</span><span class="mf">3.7</span><span class="p">));</span><span class="w">  </span><span class="c1">// 3.7</span>
+</code></pre></div>
 
 <p><strong>Real-world use:</strong> Calculate the difference between two values regardless of order:</p>
-<pre class="codehilite"><code class="language-js">const budget = 500;
-const spent = 620;
-const difference = Math.abs(budget - spent);
-console.log(&quot;Over budget by:&quot;, difference);  // 120
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">budget</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">500</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">spent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">620</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">difference</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">budget</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">spent</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Over budget by:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">difference</span><span class="p">);</span><span class="w">  </span><span class="c1">// 120</span>
+</code></pre></div>
 
 <h3>Number Methods</h3>
 <p>These format and parse numbers:</p>
-<pre class="codehilite"><code class="language-js">// toFixed — round to N decimal places, returns a string
-const price = 9.999;
-console.log(price.toFixed(2));   // &quot;10.00&quot;
-console.log(price.toFixed(0));   // &quot;10&quot;
+<div class="codehilite"><pre><span></span><code><span class="c1">// toFixed — round to N decimal places, returns a string</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9.999</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">price</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">));</span><span class="w">   </span><span class="c1">// &quot;10.00&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">price</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">0</span><span class="p">));</span><span class="w">   </span><span class="c1">// &quot;10&quot;</span>
 
-// parseInt — convert a string to a whole number
-console.log(parseInt(&quot;42px&quot;));   // 42
-console.log(parseInt(&quot;3.7&quot;));    // 3
+<span class="c1">// parseInt — convert a string to a whole number</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;42px&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// 42</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;3.7&quot;</span><span class="p">));</span><span class="w">    </span><span class="c1">// 3</span>
 
-// parseFloat — convert a string to a decimal number
-console.log(parseFloat(&quot;3.14 meters&quot;));  // 3.14
+<span class="c1">// parseFloat — convert a string to a decimal number</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseFloat</span><span class="p">(</span><span class="s2">&quot;3.14 meters&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// 3.14</span>
 
-// isNaN — check if something is &quot;Not a Number&quot;
-console.log(isNaN(&quot;hello&quot;));  // true
-console.log(isNaN(42));       // false
-console.log(isNaN(&quot;42&quot;));     // false (coerces to number first)
+<span class="c1">// isNaN — check if something is &quot;Not a Number&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="mf">42</span><span class="p">));</span><span class="w">       </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="s2">&quot;42&quot;</span><span class="p">));</span><span class="w">     </span><span class="c1">// false (coerces to number first)</span>
 
-// Number.isInteger — check if a number has no decimal part
-console.log(Number.isInteger(5));    // true
-console.log(Number.isInteger(5.0));  // true
-console.log(Number.isInteger(5.5));  // false
-</code></pre>
+<span class="c1">// Number.isInteger — check if a number has no decimal part</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nx">isInteger</span><span class="p">(</span><span class="mf">5</span><span class="p">));</span><span class="w">    </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nx">isInteger</span><span class="p">(</span><span class="mf">5.0</span><span class="p">));</span><span class="w">  </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nx">isInteger</span><span class="p">(</span><span class="mf">5.5</span><span class="p">));</span><span class="w">  </span><span class="c1">// false</span>
+</code></pre></div>
 
 <hr />
 <h2>Reading: Encapsulation (25 minutes)</h2>
 <h3>What Is Encapsulation?</h3>
 <p>Encapsulation means <strong>bundling data with the methods that operate on it, and controlling access to that data</strong>. The goal is to prevent outside code from putting objects into invalid states.</p>
 <p><strong>Problem without encapsulation:</strong></p>
-<pre class="codehilite"><code class="language-js">class MusicPlayer {
-  constructor(volume) {
-    this.volume = volume;
-  }
-}
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">MusicPlayer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">volume</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">volume</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const player = new MusicPlayer(50);
-player.volume = 9999;  // Anyone can set any value — no limits enforced!
-console.log(player.volume);  // 9999
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MusicPlayer</span><span class="p">(</span><span class="mf">50</span><span class="p">);</span>
+<span class="nx">player</span><span class="p">.</span><span class="nx">volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9999</span><span class="p">;</span><span class="w">  </span><span class="c1">// Anyone can set any value — no limits enforced!</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">volume</span><span class="p">);</span><span class="w">  </span><span class="c1">// 9999</span>
+</code></pre></div>
 
 <p><strong>Solution:</strong> hide the data and expose controlled access points.</p>
 <h3>The Underscore Convention</h3>
 <p>JavaScript doesn't enforce true privacy by default. Developers use an underscore prefix (<code>_volume</code>) as a signal: "this property is internal — don't touch it directly from outside the class."</p>
-<pre class="codehilite"><code class="language-js">class MusicPlayer {
-  constructor(volume) {
-    this._volume = volume;  // _ means &quot;treat as private&quot;
-  }
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">MusicPlayer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">volume</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">_volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">volume</span><span class="p">;</span><span class="w">  </span><span class="c1">// _ means &quot;treat as private&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>The underscore is just a naming convention — it's a message to other developers, not a technical lock.</p>
 <h3>Getters — Controlled Reading</h3>
 <p>A <strong>getter</strong> is a special method that looks like a property when you read it. Define it with <code>get</code>:</p>
-<pre class="codehilite"><code class="language-js">class MusicPlayer {
-  constructor(volume) {
-    this._volume = volume;
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">MusicPlayer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">volume</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">_volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">volume</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  get volume() {
-    return this._volume;
-  }
-}
+<span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">volume</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">_volume</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const player = new MusicPlayer(50);
-console.log(player.volume);  // 50  (calls the getter, no parentheses needed)
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MusicPlayer</span><span class="p">(</span><span class="mf">50</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">volume</span><span class="p">);</span><span class="w">  </span><span class="c1">// 50  (calls the getter, no parentheses needed)</span>
+</code></pre></div>
 
 <p>You read <code>player.volume</code> like a property, but under the hood it's calling the getter method.</p>
 <h3>Setters — Controlled Writing with Validation</h3>
 <p>A <strong>setter</strong> runs code whenever you assign to a property. This is where you add validation:</p>
-<pre class="codehilite"><code class="language-js">class MusicPlayer {
-  constructor(volume) {
-    this._volume = volume;
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">MusicPlayer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">volume</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">_volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">volume</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  get volume() {
-    return this._volume;
-  }
+<span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">volume</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">_volume</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  set volume(level) {
-    if (level &lt; 0 || level &gt; 100) {
-      console.log(&quot;Volume must be between 0 and 100.&quot;);
-      return;
-    }
-    this._volume = level;
-  }
-}
+<span class="w">  </span><span class="nx">set</span><span class="w"> </span><span class="nx">volume</span><span class="p">(</span><span class="nx">level</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">level</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">level</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Volume must be between 0 and 100.&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">_volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">level</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const player = new MusicPlayer(50);
-player.volume = 80;    // calls the setter — valid, accepted
-console.log(player.volume);  // 80
+<span class="kd">const</span><span class="w"> </span><span class="nx">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MusicPlayer</span><span class="p">(</span><span class="mf">50</span><span class="p">);</span>
+<span class="nx">player</span><span class="p">.</span><span class="nx">volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">80</span><span class="p">;</span><span class="w">    </span><span class="c1">// calls the setter — valid, accepted</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">volume</span><span class="p">);</span><span class="w">  </span><span class="c1">// 80</span>
 
-player.volume = 150;   // calls the setter — rejected
-console.log(player.volume);  // 80 (unchanged)
-</code></pre>
+<span class="nx">player</span><span class="p">.</span><span class="nx">volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">150</span><span class="p">;</span><span class="w">   </span><span class="c1">// calls the setter — rejected</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">volume</span><span class="p">);</span><span class="w">  </span><span class="c1">// 80 (unchanged)</span>
+</code></pre></div>
 
 <h3>Real Example: Stopwatch</h3>
-<pre class="codehilite"><code class="language-js">class Stopwatch {
-  constructor(seconds) {
-    this._seconds = seconds;
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Stopwatch</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">seconds</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">_seconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">seconds</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  get seconds() {
-    return this._seconds;
-  }
+<span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">seconds</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">_seconds</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  set seconds(value) {
-    if (value &lt; 0) {
-      console.log(&quot;Time cannot be negative.&quot;);
-      return;
-    }
-    this._seconds = value;
-  }
+<span class="w">  </span><span class="nx">set</span><span class="w"> </span><span class="nx">seconds</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Time cannot be negative.&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">_seconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  get minutes() {
-    return (this._seconds / 60).toFixed(2);
-  }
+<span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">minutes</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_seconds</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">60</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
 
-  set minutes(value) {
-    this.seconds = value * 60;  // uses the seconds setter for validation
-  }
-}
+<span class="w">  </span><span class="nx">set</span><span class="w"> </span><span class="nx">minutes</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">seconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">60</span><span class="p">;</span><span class="w">  </span><span class="c1">// uses the seconds setter for validation</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const watch = new Stopwatch(0);
-watch.seconds = 90;
-console.log(watch.seconds);  // 90
-console.log(watch.minutes);  // &quot;1.50&quot;
+<span class="kd">const</span><span class="w"> </span><span class="nx">watch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Stopwatch</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+<span class="nx">watch</span><span class="p">.</span><span class="nx">seconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">90</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">watch</span><span class="p">.</span><span class="nx">seconds</span><span class="p">);</span><span class="w">  </span><span class="c1">// 90</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">watch</span><span class="p">.</span><span class="nx">minutes</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;1.50&quot;</span>
 
-watch.minutes = 2;
-console.log(watch.seconds);  // 120
+<span class="nx">watch</span><span class="p">.</span><span class="nx">minutes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">watch</span><span class="p">.</span><span class="nx">seconds</span><span class="p">);</span><span class="w">  </span><span class="c1">// 120</span>
 
-watch.seconds = -10;         // rejected — cannot be negative
-console.log(watch.seconds);  // 120 (unchanged)
-</code></pre>
+<span class="nx">watch</span><span class="p">.</span><span class="nx">seconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">10</span><span class="p">;</span><span class="w">         </span><span class="c1">// rejected — cannot be negative</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">watch</span><span class="p">.</span><span class="nx">seconds</span><span class="p">);</span><span class="w">  </span><span class="c1">// 120 (unchanged)</span>
+</code></pre></div>
 
 <h3>Example: Artwork with Price Validation</h3>
-<pre class="codehilite"><code class="language-js">class Artwork {
-  constructor(title, price) {
-    this._title = title;
-    this._price = price;
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Artwork</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">price</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">_title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">title</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">_price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">price</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  get title() { return this._title; }
-  get price() { return this._price; }
+<span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">title</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">_title</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">price</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">_price</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 
-  set price(value) {
-    if (typeof value !== &quot;number&quot; || value &lt; 0) {
-      console.log(&quot;Price must be a non-negative number.&quot;);
-      return;
-    }
-    this._price = value;
-  }
+<span class="w">  </span><span class="nx">set</span><span class="w"> </span><span class="nx">price</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;number&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Price must be a non-negative number.&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">_price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  formattedPrice() {
-    return &quot;$&quot; + this._price.toFixed(2);
-  }
-}
+<span class="w">  </span><span class="nx">formattedPrice</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;$&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">_price</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const piece = new Artwork(&quot;Starry Night Print&quot;, 49.99);
-console.log(piece.formattedPrice());  // &quot;$49.99&quot;
+<span class="kd">const</span><span class="w"> </span><span class="nx">piece</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Artwork</span><span class="p">(</span><span class="s2">&quot;Starry Night Print&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">49.99</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">piece</span><span class="p">.</span><span class="nx">formattedPrice</span><span class="p">());</span><span class="w">  </span><span class="c1">// &quot;$49.99&quot;</span>
 
-piece.price = 59.99;
-console.log(piece.price);   // 59.99
+<span class="nx">piece</span><span class="p">.</span><span class="nx">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">59.99</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">piece</span><span class="p">.</span><span class="nx">price</span><span class="p">);</span><span class="w">   </span><span class="c1">// 59.99</span>
 
-piece.price = -10;          // rejected
-console.log(piece.price);   // 59.99
-</code></pre>
+<span class="nx">piece</span><span class="p">.</span><span class="nx">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">10</span><span class="p">;</span><span class="w">          </span><span class="c1">// rejected</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">piece</span><span class="p">.</span><span class="nx">price</span><span class="p">);</span><span class="w">   </span><span class="c1">// 59.99</span>
+</code></pre></div>
 
 <h3>Why Encapsulation Matters</h3>
 <ol>
@@ -303,48 +303,48 @@ console.log(piece.price);   // 59.99
 <hr />
 <h2>Supplemental Practice (25 minutes)</h2>
 <h3>Practice 1: Random Number Utilities</h3>
-<pre class="codehilite"><code class="language-js">// Roll a 6-sided die
-const die = Math.floor(Math.random() * 6) + 1;
-console.log(&quot;Rolled:&quot;, die);
+<div class="codehilite"><pre><span></span><code><span class="c1">// Roll a 6-sided die</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">die</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">6</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Rolled:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">die</span><span class="p">);</span>
 
-// Pick a random item from an array
-const options = [&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;];
-const choice = options[Math.floor(Math.random() * options.length)];
-console.log(&quot;Computer chose:&quot;, choice);
+<span class="c1">// Pick a random item from an array</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;rock&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;paper&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;scissors&quot;</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">choice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">options</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">options</span><span class="p">.</span><span class="nx">length</span><span class="p">)];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Computer chose:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">choice</span><span class="p">);</span>
 
-// Generate a random percentage (0–100)
-const pct = Math.round(Math.random() * 100);
-console.log(&quot;Random %:&quot;, pct);
-</code></pre>
+<span class="c1">// Generate a random percentage (0–100)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">pct</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Random %:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">pct</span><span class="p">);</span>
+</code></pre></div>
 
 <h3>Practice 2: Rounding and Formatting</h3>
-<pre class="codehilite"><code class="language-js">const subtotal = 47.856;
-const tax = subtotal * 0.08;
-const total = subtotal + tax;
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">subtotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">47.856</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">tax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">subtotal</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.08</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">subtotal</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">tax</span><span class="p">;</span>
 
-console.log(&quot;Subtotal:&quot;, subtotal.toFixed(2));  // &quot;47.86&quot;
-console.log(&quot;Tax:&quot;, tax.toFixed(2));             // &quot;3.83&quot;
-console.log(&quot;Total:&quot;, total.toFixed(2));          // &quot;51.69&quot;
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Subtotal:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">subtotal</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">));</span><span class="w">  </span><span class="c1">// &quot;47.86&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Tax:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">tax</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">));</span><span class="w">             </span><span class="c1">// &quot;3.83&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Total:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">total</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">));</span><span class="w">          </span><span class="c1">// &quot;51.69&quot;</span>
+</code></pre></div>
 
 <h3>Practice 3: Add a Getter/Setter</h3>
 <p>Start with this class and add a getter and setter for <code>_score</code> that rejects values outside 0–100:</p>
-<pre class="codehilite"><code class="language-js">class Student {
-  constructor(name, score) {
-    this._name = name;
-    this._score = score;
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Student</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">score</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">score</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  get name() { return this._name; }
+<span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">name</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">_name</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 
-  // TODO: add get score() and set score(value) with validation
-}
+<span class="w">  </span><span class="c1">// TODO: add get score() and set score(value) with validation</span>
+<span class="p">}</span>
 
-const s = new Student(&quot;Alex&quot;, 85);
-s.score = 110;  // should be rejected
-s.score = 72;   // should be accepted
-console.log(s.score);  // 72
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Student</span><span class="p">(</span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">85</span><span class="p">);</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">110</span><span class="p">;</span><span class="w">  </span><span class="c1">// should be rejected</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">72</span><span class="p">;</span><span class="w">   </span><span class="c1">// should be accepted</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">score</span><span class="p">);</span><span class="w">  </span><span class="c1">// 72</span>
+</code></pre></div>
 
 <hr />
 <h2>Knowledge Check Quiz (15 minutes)</h2>

@@ -19,152 +19,152 @@
 <hr />
 <h2>Reading: Testing and Quality (35 minutes)</h2>
 <h3>Unit Testing Pattern</h3>
-<pre class="codehilite"><code class="language-js">// Simple test framework
-class TestRunner {
-  constructor(name) {
-    this.name = name;
-    this.tests = [];
-    this.passed = 0;
-    this.failed = 0;
-  }
+<div class="codehilite"><pre><span></span><code><span class="c1">// Simple test framework</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">TestRunner</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">tests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">passed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">failed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  test(description, fn) {
-    this.tests.push({ description, fn });
-  }
+<span class="w">  </span><span class="nx">test</span><span class="p">(</span><span class="nx">description</span><span class="p">,</span><span class="w"> </span><span class="nx">fn</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">tests</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="w"> </span><span class="nx">description</span><span class="p">,</span><span class="w"> </span><span class="nx">fn</span><span class="w"> </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span>
 
-  run() {
-    console.log(`\n=== ${this.name} ===`);
-    this.tests.forEach(test =&gt; {
-      try {
-        test.fn();
-        console.log(`✓ ${test.description}`);
-        this.passed++;
-      } catch (error) {
-        console.error(`✗ ${test.description}`);
-        console.error(`  ${error.message}`);
-        this.failed++;
-      }
-    });
-    console.log(`\nPassed: ${this.passed}/${this.tests.length}`);
-  }
-}
+<span class="w">  </span><span class="nx">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n=== </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> ===`</span><span class="p">);</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">tests</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">test</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">test</span><span class="p">.</span><span class="nx">fn</span><span class="p">();</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`✓ </span><span class="si">${</span><span class="nx">test</span><span class="p">.</span><span class="nx">description</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">passed</span><span class="o">++</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="sb">`✗ </span><span class="si">${</span><span class="nx">test</span><span class="p">.</span><span class="nx">description</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="sb">`  </span><span class="si">${</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">failed</span><span class="o">++</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\nPassed: </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">passed</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">tests</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-function assert(condition, message) {
-  if (!condition) throw new Error(message);
-}
-</code></pre>
+<span class="kd">function</span><span class="w"> </span><span class="nx">assert</span><span class="p">(</span><span class="nx">condition</span><span class="p">,</span><span class="w"> </span><span class="nx">message</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">condition</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <h3>Testing Card Class</h3>
-<pre class="codehilite"><code class="language-js">const cardTests = new TestRunner('Card Tests');
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">cardTests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">TestRunner</span><span class="p">(</span><span class="s1">&#39;Card Tests&#39;</span><span class="p">);</span>
 
-cardTests.test('Card constructor sets properties', () =&gt; {
-  const card = new Card('Hearts', 'K');
-  assert(card.suit === 'Hearts', 'Suit should be Hearts');
-  assert(card.rank === 'K', 'Rank should be K');
-  assert(card.value === 13, 'King value should be 13');
-  assert(card.color === 'red', 'Hearts should be red');
-});
+<span class="nx">cardTests</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s1">&#39;Card constructor sets properties&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">card</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Hearts&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;K&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">assert</span><span class="p">(</span><span class="nx">card</span><span class="p">.</span><span class="nx">suit</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;Hearts&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Suit should be Hearts&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">assert</span><span class="p">(</span><span class="nx">card</span><span class="p">.</span><span class="nx">rank</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;K&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Rank should be K&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">assert</span><span class="p">(</span><span class="nx">card</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">13</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;King value should be 13&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">assert</span><span class="p">(</span><span class="nx">card</span><span class="p">.</span><span class="nx">color</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Hearts should be red&#39;</span><span class="p">);</span>
+<span class="p">});</span>
 
-cardTests.test('Card.compare works correctly', () =&gt; {
-  const card1 = new Card('Hearts', 'K');
-  const card2 = new Card('Spades', '5');
-  assert(card1.compare(card2) &gt; 0, 'K should beat 5');
-});
+<span class="nx">cardTests</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s1">&#39;Card.compare works correctly&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">card1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Hearts&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;K&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">card2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Spades&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;5&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">assert</span><span class="p">(</span><span class="nx">card1</span><span class="p">.</span><span class="nx">compare</span><span class="p">(</span><span class="nx">card2</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;K should beat 5&#39;</span><span class="p">);</span>
+<span class="p">});</span>
 
-cardTests.test('Ace has highest value', () =&gt; {
-  const ace = new Card('Hearts', 'A');
-  const king = new Card('Spades', 'K');
-  assert(ace.value &gt; king.value, 'Ace should have higher value than King');
-});
+<span class="nx">cardTests</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s1">&#39;Ace has highest value&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">ace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Hearts&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">king</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Spades&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;K&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">assert</span><span class="p">(</span><span class="nx">ace</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">king</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Ace should have higher value than King&#39;</span><span class="p">);</span>
+<span class="p">});</span>
 
-cardTests.run();
-</code></pre>
+<span class="nx">cardTests</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
+</code></pre></div>
 
 <h3>Testing Deck Class</h3>
-<pre class="codehilite"><code class="language-js">const deckTests = new TestRunner('Deck Tests');
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">deckTests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">TestRunner</span><span class="p">(</span><span class="s1">&#39;Deck Tests&#39;</span><span class="p">);</span>
 
-deckTests.test('Deck initializes with 52 cards', () =&gt; {
-  const deck = new Deck();
-  assert(deck.cardsRemaining() === 52, 'Should have 52 cards');
-});
+<span class="nx">deckTests</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s1">&#39;Deck initializes with 52 cards&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">deck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Deck</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">assert</span><span class="p">(</span><span class="nx">deck</span><span class="p">.</span><span class="nx">cardsRemaining</span><span class="p">()</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">52</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Should have 52 cards&#39;</span><span class="p">);</span>
+<span class="p">});</span>
 
-deckTests.test('Draw removes card from deck', () =&gt; {
-  const deck = new Deck();
-  const card = deck.draw();
-  assert(card !== null, 'Should draw a card');
-  assert(deck.cardsRemaining() === 51, 'Should have 51 cards left');
-});
+<span class="nx">deckTests</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s1">&#39;Draw removes card from deck&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">deck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Deck</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">card</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">deck</span><span class="p">.</span><span class="nx">draw</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">assert</span><span class="p">(</span><span class="nx">card</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Should draw a card&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">assert</span><span class="p">(</span><span class="nx">deck</span><span class="p">.</span><span class="nx">cardsRemaining</span><span class="p">()</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">51</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Should have 51 cards left&#39;</span><span class="p">);</span>
+<span class="p">});</span>
 
-deckTests.test('Empty deck returns null', () =&gt; {
-  const deck = new Deck();
-  for (let i = 0; i &lt; 52; i++) {
-    deck.draw();
-  }
-  const card = deck.draw();
-  assert(card === null, 'Empty deck should return null');
-});
+<span class="nx">deckTests</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s1">&#39;Empty deck returns null&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">deck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Deck</span><span class="p">();</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">52</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">deck</span><span class="p">.</span><span class="nx">draw</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">card</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">deck</span><span class="p">.</span><span class="nx">draw</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">assert</span><span class="p">(</span><span class="nx">card</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Empty deck should return null&#39;</span><span class="p">);</span>
+<span class="p">});</span>
 
-deckTests.test('Shuffle randomizes order', () =&gt; {
-  const deck1 = new Deck();
-  const original = deck1.cards.map(c =&gt; c.toString()).join(',');
+<span class="nx">deckTests</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s1">&#39;Shuffle randomizes order&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">deck1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Deck</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">original</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">deck1</span><span class="p">.</span><span class="nx">cards</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">toString</span><span class="p">()).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">);</span>
 
-  const deck2 = new Deck();
-  deck2.shuffle();
-  const shuffled = deck2.cards.map(c =&gt; c.toString()).join(',');
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">deck2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Deck</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">deck2</span><span class="p">.</span><span class="nx">shuffle</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">shuffled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">deck2</span><span class="p">.</span><span class="nx">cards</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">toString</span><span class="p">()).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">);</span>
 
-  assert(original !== shuffled, 'Shuffled deck should differ from original');
-});
+<span class="w">  </span><span class="nx">assert</span><span class="p">(</span><span class="nx">original</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">shuffled</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Shuffled deck should differ from original&#39;</span><span class="p">);</span>
+<span class="p">});</span>
 
-deckTests.run();
-</code></pre>
+<span class="nx">deckTests</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
+</code></pre></div>
 
 <h3>JSDoc Comments</h3>
-<pre class="codehilite"><code class="language-js">/**
- * Represents a playing card
- * @class Card
- * @param {string} suit - The suit (Hearts, Diamonds, Clubs, Spades)
- * @param {string} rank - The rank (A, 2-10, J, Q, K)
- */
-class Card {
-  constructor(suit, rank) {
-    /** @type {string} */
-    this.suit = suit;
-    /** @type {string} */
-    this.rank = rank;
-    /** @type {number} */
-    this.value = this.calculateValue();
-    /** @type {string} */
-    this.color = this.calculateColor();
-  }
+<div class="codehilite"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm"> * Represents a playing card</span>
+<span class="cm"> * @class Card</span>
+<span class="cm"> * @param {string} suit - The suit (Hearts, Diamonds, Clubs, Spades)</span>
+<span class="cm"> * @param {string} rank - The rank (A, 2-10, J, Q, K)</span>
+<span class="cm"> */</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Card</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">suit</span><span class="p">,</span><span class="w"> </span><span class="nx">rank</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/** @type {string} */</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">suit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">suit</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** @type {string} */</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">rank</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** @type {number} */</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">calculateValue</span><span class="p">();</span>
+<span class="w">    </span><span class="cm">/** @type {string} */</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">calculateColor</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
 
-  /**
-   * Compares this card to another card
-   * @param {Card} otherCard - Card to compare against
-   * @returns {number} 1 if greater, -1 if less, 0 if equal
-   */
-  compare(otherCard) {
-    if (this.value &gt; otherCard.value) return 1;
-    if (this.value &lt; otherCard.value) return -1;
-    return 0;
-  }
-}
-</code></pre>
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * Compares this card to another card</span>
+<span class="cm">   * @param {Card} otherCard - Card to compare against</span>
+<span class="cm">   * @returns {number} 1 if greater, -1 if less, 0 if equal</span>
+<span class="cm">   */</span>
+<span class="w">  </span><span class="nx">compare</span><span class="p">(</span><span class="nx">otherCard</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">otherCard</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">otherCard</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <h3>Debugging with Console</h3>
-<pre class="codehilite"><code class="language-js">// Logging helper
-function log(label, data) {
-  console.log(`[${label}]`, data);
-}
+<div class="codehilite"><pre><span></span><code><span class="c1">// Logging helper</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">log</span><span class="p">(</span><span class="nx">label</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`[</span><span class="si">${</span><span class="nx">label</span><span class="si">}</span><span class="sb">]`</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">);</span>
+<span class="p">}</span>
 
-// Debug game state
-function debugGameState(game) {
-  log('Player Hand', game.player.getHand().map(c =&gt; c.toString()));
-  log('Computer Hand', game.computer.getHand().map(c =&gt; c.toString()));
-  log('Player Score', game.player.score);
-  log('Computer Score', game.computer.score);
-  log('Game Over', game.gameOver);
-}
-</code></pre>
+<span class="c1">// Debug game state</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">debugGameState</span><span class="p">(</span><span class="nx">game</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Player Hand&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">player</span><span class="p">.</span><span class="nx">getHand</span><span class="p">().</span><span class="nx">map</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">toString</span><span class="p">()));</span>
+<span class="w">  </span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Computer Hand&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">computer</span><span class="p">.</span><span class="nx">getHand</span><span class="p">().</span><span class="nx">map</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">toString</span><span class="p">()));</span>
+<span class="w">  </span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Player Score&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">player</span><span class="p">.</span><span class="nx">score</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Computer Score&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">computer</span><span class="p">.</span><span class="nx">score</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Game Over&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">gameOver</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <hr />
 <h2>Assignment: Add Tests and Documentation</h2>

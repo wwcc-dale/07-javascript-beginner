@@ -21,7 +21,7 @@
 <h2>Reading: Selecting and Modifying Elements (35 minutes)</h2>
 <h3>What Is the DOM?</h3>
 <p>The DOM is a tree structure representing your HTML. JavaScript can access and modify it.</p>
-<pre class="codehilite"><code>Document
+<div class="codehilite"><pre><span></span><code>Document
 ├── html
     ├── head
     │   └── title
@@ -29,93 +29,93 @@
         ├── h1
         ├── p
         └── button
-</code></pre>
+</code></pre></div>
 
 <h3>Selecting Elements</h3>
 <p><strong>querySelector (single element):</strong></p>
-<pre class="codehilite"><code class="language-js">const heading = document.querySelector('h1');
-const button = document.querySelector('#myButton');
-const firstBox = document.querySelector('.box');
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">heading</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;h1&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#myButton&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">firstBox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.box&#39;</span><span class="p">);</span>
+</code></pre></div>
 
 <p><strong>querySelectorAll (multiple elements):</strong></p>
-<pre class="codehilite"><code class="language-js">const boxes = document.querySelectorAll('.box');
-const paragraphs = document.querySelectorAll('p');
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">boxes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;.box&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">paragraphs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">);</span>
 
-for (let i = 0; i &lt; boxes.length; i++) {
-  console.log(boxes[i]);
-}
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">boxes</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">boxes</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p><strong>getElementById, getElementsByClassName (older methods):</strong></p>
-<pre class="codehilite"><code class="language-js">const header = document.getElementById('header');
-const items = document.getElementsByClassName('item');
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;header&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
+</code></pre></div>
 
 <h3>Reading Content</h3>
 <p><strong>textContent (just text):</strong></p>
-<pre class="codehilite"><code class="language-js">const h1 = document.querySelector('h1');
-console.log(h1.textContent);  // The text inside
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">h1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;h1&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">h1</span><span class="p">.</span><span class="nx">textContent</span><span class="p">);</span><span class="w">  </span><span class="c1">// The text inside</span>
+</code></pre></div>
 
 <p><strong>innerHTML (HTML and text):</strong></p>
-<pre class="codehilite"><code class="language-js">const box = document.querySelector('.box');
-console.log(box.innerHTML);  // &lt;p&gt;Hello&lt;/p&gt;&lt;span&gt;World&lt;/span&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">box</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.box&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">box</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">);</span><span class="w">  </span><span class="c1">// &lt;p&gt;Hello&lt;/p&gt;&lt;span&gt;World&lt;/span&gt;</span>
+</code></pre></div>
 
 <h3>Modifying Content</h3>
-<pre class="codehilite"><code class="language-js">const h1 = document.querySelector('h1');
-h1.textContent = 'New Title';  // Change text
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">h1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;h1&#39;</span><span class="p">);</span>
+<span class="nx">h1</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;New Title&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1">// Change text</span>
 
-const box = document.querySelector('.box');
-box.innerHTML = '&lt;p&gt;New content&lt;/p&gt;';  // Change HTML
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">box</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.box&#39;</span><span class="p">);</span>
+<span class="nx">box</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;p&gt;New content&lt;/p&gt;&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1">// Change HTML</span>
+</code></pre></div>
 
 <h3>Working with Attributes</h3>
-<pre class="codehilite"><code class="language-js">const link = document.querySelector('a');
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">link</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span>
 
-// Read attribute
-console.log(link.getAttribute('href'));
+<span class="c1">// Read attribute</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">));</span>
 
-// Set attribute
-link.setAttribute('href', 'https://example.com');
+<span class="c1">// Set attribute</span>
+<span class="nx">link</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;https://example.com&#39;</span><span class="p">);</span>
 
-// Direct property access
-const image = document.querySelector('img');
-image.src = 'new-image.jpg';
-image.alt = 'A new image';
-</code></pre>
+<span class="c1">// Direct property access</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">);</span>
+<span class="nx">image</span><span class="p">.</span><span class="nx">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;new-image.jpg&#39;</span><span class="p">;</span>
+<span class="nx">image</span><span class="p">.</span><span class="nx">alt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;A new image&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 <h3>Real Example: Dynamic Todo List</h3>
 <p><strong>HTML:</strong></p>
-<pre class="codehilite"><code class="language-html">&lt;div id=&quot;app&quot;&gt;
-  &lt;h1&gt;Todos&lt;/h1&gt;
-  &lt;ul id=&quot;todoList&quot;&gt;&lt;/ul&gt;
-&lt;/div&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Todos<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;todoList&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
 
 <p><strong>JavaScript:</strong></p>
-<pre class="codehilite"><code class="language-js">const todoList = document.querySelector('#todoList');
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">todoList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#todoList&#39;</span><span class="p">);</span>
 
-const todos = ['Buy milk', 'Study JavaScript', 'Exercise'];
+<span class="kd">const</span><span class="w"> </span><span class="nx">todos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Buy milk&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Study JavaScript&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Exercise&#39;</span><span class="p">];</span>
 
-for (let i = 0; i &lt; todos.length; i++) {
-  let li = document.createElement('li');
-  li.textContent = todos[i];
-  todoList.appendChild(li);
-}
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">todos</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">li</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">li</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">todos</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="w">  </span><span class="nx">todoList</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <h3>Common Properties</h3>
-<pre class="codehilite"><code class="language-js">const element = document.querySelector('p');
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">);</span>
 
-element.textContent = 'Change text';
-element.innerHTML = '&lt;strong&gt;Bold text&lt;/strong&gt;';
-element.className = 'highlight';
-element.id = 'mainParagraph';
-element.style.color = 'red';
-element.style.fontSize = '20px';
-</code></pre>
+<span class="nx">element</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Change text&#39;</span><span class="p">;</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;strong&gt;Bold text&lt;/strong&gt;&#39;</span><span class="p">;</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;highlight&#39;</span><span class="p">;</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mainParagraph&#39;</span><span class="p">;</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;red&#39;</span><span class="p">;</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;20px&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 <hr />
 <h2>Video Tutorial: Selecting and Modifying DOM Elements (20 minutes)</h2>
@@ -129,107 +129,107 @@ element.style.fontSize = '20px';
 <hr />
 <h2>Supplemental Practice (25 minutes)</h2>
 <h3>Exercise 1: Select and Modify</h3>
-<pre class="codehilite"><code class="language-html">&lt;h1&gt;Hello World&lt;/h1&gt;
-&lt;p class=&quot;intro&quot;&gt;Welcome&lt;/p&gt;
-&lt;button id=&quot;myBtn&quot;&gt;Click me&lt;/button&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello World<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;intro&quot;</span><span class="p">&gt;</span>Welcome<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;myBtn&quot;</span><span class="p">&gt;</span>Click me<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
 
-<pre class="codehilite"><code class="language-js">// Select and modify
-const heading = document.querySelector('h1');
-heading.textContent = 'Welcome to JavaScript';
+<div class="codehilite"><pre><span></span><code><span class="c1">// Select and modify</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">heading</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;h1&#39;</span><span class="p">);</span>
+<span class="nx">heading</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Welcome to JavaScript&#39;</span><span class="p">;</span>
 
-const intro = document.querySelector('.intro');
-intro.innerHTML = '&lt;em&gt;You are welcome!&lt;/em&gt;';
+<span class="kd">const</span><span class="w"> </span><span class="nx">intro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.intro&#39;</span><span class="p">);</span>
+<span class="nx">intro</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;em&gt;You are welcome!&lt;/em&gt;&#39;</span><span class="p">;</span>
 
-const btn = document.querySelector('#myBtn');
-btn.textContent = 'Click Me!';
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">btn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#myBtn&#39;</span><span class="p">);</span>
+<span class="nx">btn</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Click Me!&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 <h3>Exercise 2: List Builder</h3>
-<pre class="codehilite"><code class="language-html">&lt;div id=&quot;app&quot;&gt;
-  &lt;h2&gt;My List&lt;/h2&gt;
-  &lt;ul id=&quot;list&quot;&gt;&lt;/ul&gt;
-&lt;/div&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>My List<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;list&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
 
-<pre class="codehilite"><code class="language-js">const list = document.querySelector('#list');
-const items = ['JavaScript', 'HTML', 'CSS', 'Web Design'];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#list&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;JavaScript&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;HTML&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;CSS&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Web Design&#39;</span><span class="p">];</span>
 
-for (let i = 0; i &lt; items.length; i++) {
-  const li = document.createElement('li');
-  li.textContent = items[i];
-  list.appendChild(li);
-}
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">li</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">li</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">items</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="w">  </span><span class="nx">list</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <h3>Exercise 4: Building a Table Dynamically</h3>
 <p><code>createElement</code> works for any HTML tag — including table elements. The pattern is the same: create, set content, append.</p>
-<pre class="codehilite"><code class="language-html">&lt;div id=&quot;app&quot;&gt;
-  &lt;table id=&quot;scoreTable&quot;&gt;&lt;/table&gt;
-&lt;/div&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">table</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;scoreTable&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
 
-<pre class="codehilite"><code class="language-js">const students = [
-  { name: 'Alex', score: 88 },
-  { name: 'Jordan', score: 72 },
-  { name: 'Casey', score: 95 }
-];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">students</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Alex&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">88</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Jordan&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">72</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Casey&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">95</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
 
-const table = document.querySelector('#scoreTable');
+<span class="kd">const</span><span class="w"> </span><span class="nx">table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#scoreTable&#39;</span><span class="p">);</span>
 
-// Create and add the header row
-const thead = document.createElement('thead');
-const headerRow = document.createElement('tr');
+<span class="c1">// Create and add the header row</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">thead</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;thead&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">headerRow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">);</span>
 
-const th1 = document.createElement('th');
-th1.textContent = 'Name';
-const th2 = document.createElement('th');
-th2.textContent = 'Score';
+<span class="kd">const</span><span class="w"> </span><span class="nx">th1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;th&#39;</span><span class="p">);</span>
+<span class="nx">th1</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Name&#39;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">th2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;th&#39;</span><span class="p">);</span>
+<span class="nx">th2</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Score&#39;</span><span class="p">;</span>
 
-headerRow.appendChild(th1);
-headerRow.appendChild(th2);
-thead.appendChild(headerRow);
-table.appendChild(thead);
+<span class="nx">headerRow</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">th1</span><span class="p">);</span>
+<span class="nx">headerRow</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">th2</span><span class="p">);</span>
+<span class="nx">thead</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">headerRow</span><span class="p">);</span>
+<span class="nx">table</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">thead</span><span class="p">);</span>
 
-// Create and add the data rows
-const tbody = document.createElement('tbody');
+<span class="c1">// Create and add the data rows</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">tbody</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;tbody&#39;</span><span class="p">);</span>
 
-for (const student of students) {
-  const row = document.createElement('tr');
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">student</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">students</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">);</span>
 
-  const tdName = document.createElement('td');
-  tdName.textContent = student.name;
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">tdName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">tdName</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">student</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
 
-  const tdScore = document.createElement('td');
-  tdScore.textContent = student.score;
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">tdScore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">tdScore</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">student</span><span class="p">.</span><span class="nx">score</span><span class="p">;</span>
 
-  row.appendChild(tdName);
-  row.appendChild(tdScore);
-  tbody.appendChild(row);
-}
+<span class="w">  </span><span class="nx">row</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">tdName</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">row</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">tdScore</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">tbody</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">row</span><span class="p">);</span>
+<span class="p">}</span>
 
-table.appendChild(tbody);
-</code></pre>
+<span class="nx">table</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">tbody</span><span class="p">);</span>
+</code></pre></div>
 
 <p><strong>The pattern is always:</strong> <code>createElement</code> → set content → <code>appendChild</code> to parent. It works identically for <code>table</code>, <code>thead</code>, <code>tbody</code>, <code>tr</code>, <code>td</code>, <code>th</code>, <code>div</code>, <code>li</code>, <code>p</code>, or any other HTML tag.</p>
 <h3>Exercise 3: Update User Profile</h3>
-<pre class="codehilite"><code class="language-html">&lt;div class=&quot;profile&quot;&gt;
-  &lt;h2 id=&quot;name&quot;&gt;&lt;/h2&gt;
-  &lt;p id=&quot;email&quot;&gt;&lt;/p&gt;
-  &lt;p id=&quot;status&quot;&gt;&lt;/p&gt;
-&lt;/div&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;profile&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;name&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;email&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;status&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
 
-<pre class="codehilite"><code class="language-js">const user = {
-  name: 'Alex',
-  email: 'alex@example.com',
-  online: true
-};
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Alex&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;alex@example.com&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">online</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">};</span>
 
-document.querySelector('#name').textContent = user.name;
-document.querySelector('#email').textContent = user.email;
-document.querySelector('#status').textContent = user.online ? 'Online' : 'Offline';
-</code></pre>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#name&#39;</span><span class="p">).</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#email&#39;</span><span class="p">).</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">email</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#status&#39;</span><span class="p">).</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">online</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;Online&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Offline&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 <hr />
 <h2>Knowledge Check Quiz (15 minutes)</h2>

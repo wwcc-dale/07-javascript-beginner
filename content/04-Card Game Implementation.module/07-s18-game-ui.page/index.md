@@ -1,10 +1,13 @@
 ---
-name: "Session 18: Filtering, Conditionals, and State Transitions"
+module: 4
+name: 'Session 18: Filtering, Conditionals, and State Transitions'
+position: 7
 published: true
 related_outcomes:
-  - "CLO-1"
-  - "CLO-2"
-  - "CLO-5"
+- CLO-1
+- CLO-2
+- CLO-5
+session: 18.1
 ---
 
 # Session 18: Filtering, Conditionals, and State Transitions

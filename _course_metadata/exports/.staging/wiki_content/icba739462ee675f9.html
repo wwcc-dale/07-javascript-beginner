@@ -26,10 +26,10 @@ Today you will start with the most basic building blocks: variables and decision
 - A box for a quiz score.
 - A box for a username.
 - A box for whether homework is finished.</p>
-<pre class="codehilite"><code class="language-js">let quizScore = 0;           // A number that can change
-const studentName = &quot;Alex&quot;;  // Text that stays the same
-let isLoggedIn = false;      // True or false value
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">quizScore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w">           </span><span class="c1">// A number that can change</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">studentName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Alex&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// Text that stays the same</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">isLoggedIn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">      </span><span class="c1">// True or false value</span>
+</code></pre></div>
 
 <p>Use:
 - <code>let</code> when the value might change.
@@ -58,14 +58,14 @@ let isLoggedIn = false;      // True or false value
 </ol>
 <h3>Conditionals: Making Decisions</h3>
 <p>Programs often need to choose what to do.</p>
-<pre class="codehilite"><code class="language-js">let temperature = 28;
+<div class="codehilite"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">28</span><span class="p">;</span>
 
-if (temperature &gt;= 30) {
-  console.log(&quot;Stay hydrated — it's very hot outside!&quot;);
-} else {
-  console.log(&quot;Nice weather today, enjoy your day.&quot;);
-}
-</code></pre>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">temperature</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">30</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Stay hydrated — it&#39;s very hot outside!&quot;</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Nice weather today, enjoy your day.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>Common comparison operators:
 - <code>===</code> equal to
@@ -75,15 +75,15 @@ if (temperature &gt;= 30) {
 - <code>&gt;=</code> greater than or equal to
 - <code>&lt;=</code> less than or equal to</p>
 <h3>Everyday Example: Discount Check</h3>
-<pre class="codehilite"><code class="language-js">const total = 45;
-const discountLimit = 50;
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">45</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">discountLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">50</span><span class="p">;</span>
 
-if (total &gt;= discountLimit) {
-  console.log(&quot;You get a discount!&quot;);
-} else {
-  console.log(&quot;Add more items to unlock a discount.&quot;);
-}
-</code></pre>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">total</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">discountLimit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;You get a discount!&quot;</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Add more items to unlock a discount.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <hr />
 <h2>Video Tutorial: JavaScript Basics (20 minutes)</h2>
@@ -97,46 +97,46 @@ if (total &gt;= discountLimit) {
 <hr />
 <h2>Supplemental Practice: Simple Scenarios (25 minutes)</h2>
 <h3>Scenario 1: Speed Check</h3>
-<pre class="codehilite"><code class="language-js">const speedLimit = 65;
-let vehicleSpeed = 80;
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">speedLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">65</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">vehicleSpeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">80</span><span class="p">;</span>
 
-if (vehicleSpeed &gt; speedLimit) {
-  console.log(&quot;Slow down — you are over the speed limit.&quot;);
-} else {
-  console.log(&quot;Speed looks good.&quot;);
-}
-</code></pre>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">vehicleSpeed</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">speedLimit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Slow down — you are over the speed limit.&quot;</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Speed looks good.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>Try changing <code>vehicleSpeed</code> to 50. What happens?</p>
 <h3>Scenario 2: Membership Check</h3>
-<pre class="codehilite"><code class="language-js">const minAge = 18;
-let visitorAge = 15;
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">minAge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">18</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">visitorAge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">15</span><span class="p">;</span>
 
-if (visitorAge &gt;= minAge) {
-  console.log(&quot;Access granted. Welcome!&quot;);
-} else {
-  console.log(&quot;Sorry, you must be 18 or older.&quot;);
-}
-</code></pre>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">visitorAge</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">minAge</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Access granted. Welcome!&quot;</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Sorry, you must be 18 or older.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>Practice: change <code>visitorAge</code> to 21. Predict the message before you run it.</p>
 <h3>Scenario 3: Battery Alert</h3>
-<pre class="codehilite"><code class="language-js">let batteryLow = true;
+<div class="codehilite"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">batteryLow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
 
-if (batteryLow === true) {
-  console.log(&quot;Plug in your device — battery is low.&quot;);
-} else {
-  console.log(&quot;Battery level is fine.&quot;);
-}
-</code></pre>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">batteryLow</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Plug in your device — battery is low.&quot;</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Battery level is fine.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>Shorter version:</p>
-<pre class="codehilite"><code class="language-js">if (batteryLow) {
-  console.log(&quot;Plug in soon.&quot;);
-} else {
-  console.log(&quot;Battery is fine.&quot;);
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">batteryLow</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Plug in soon.&quot;</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Battery is fine.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <hr />
 <h2>Knowledge Check Quiz (15 minutes)</h2>

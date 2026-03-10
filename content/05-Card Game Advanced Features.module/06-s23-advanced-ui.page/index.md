@@ -1,9 +1,12 @@
 ---
-name: "Session 23: CSS Custom Properties, Theming, and Transitions"
+module: 5
+name: 'Session 23: CSS Custom Properties, Theming, and Transitions'
+position: 6
 published: true
 related_outcomes:
-  - "CLO-1"
-  - "CLO-5"
+- CLO-1
+- CLO-5
+session: 23.1
 ---
 
 # Session 23: CSS Custom Properties, Theming, and Transitions
@@ -70,25 +73,25 @@ A **theme** is a complete set of values for all design variables. Switch themes 
 ```css
 /* Default (light) theme — declared on :root */
 :root {
-  --bg: #f5f5f5;
-  --surface: #ffffff;
-  --text: #222222;
-  --accent: #2c5aa0;
-  --felt: #35654d;     /* Table felt color */
+  --page-bg:    #f0f4f8;
+  --panel-bg:   #ffffff;
+  --body-text:  #2d3748;
+  --link-color: #3182ce;
+  --nav-bg:     #1a202c;
 }
 
 /* Dark theme — overrides when class is present */
 :root.dark {
-  --bg: #1a1a2e;
-  --surface: #16213e;
-  --text: #e0e0e0;
-  --accent: #4a90e2;
-  --felt: #1a3a2a;
+  --page-bg:    #1a202c;
+  --panel-bg:   #2d3748;
+  --body-text:  #e2e8f0;
+  --link-color: #63b3ed;
+  --nav-bg:     #0d1117;
 }
 
 body {
-  background-color: var(--bg);
-  color: var(--text);
+  background-color: var(--page-bg);
+  color: var(--body-text);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 ```
@@ -98,15 +101,15 @@ Toggle the theme from JavaScript:
 ```js
 const root = document.documentElement;  // The <html> element
 
-function toggleTheme() {
+function switchColorScheme() {
   root.classList.toggle('dark');
   const isDark = root.classList.contains('dark');
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  localStorage.setItem('colorScheme', isDark ? 'dark' : 'light');
 }
 
-// Apply saved theme on load
-function applySavedTheme() {
-  const saved = localStorage.getItem('theme');
+// Apply saved scheme on load
+function applyStoredScheme() {
+  const saved = localStorage.getItem('colorScheme');
   if (saved === 'dark') root.classList.add('dark');
 }
 ```
@@ -270,9 +273,9 @@ Covers:
 
 Create a simple webpage with at least 5 UI elements. Define 6 custom properties (background, surface, text, accent, border-radius, shadow). Apply them across all elements. Change one property and verify that every element using it updates.
 
-### Exercise 2: Theme Toggle
+### Exercise 2: Reading Mode Toggle
 
-Extend Exercise 1 with a dark theme. Add a Toggle button that switches between `light` and `dark` by toggling a class on `:root`. Save the preference to localStorage and apply it on page load.
+Extend Exercise 1 with a "reading mode." Add a Toggle button that switches between a bright mode (white background, dark text) and a calm reading mode (warm sepia tones — e.g. `#fdf6e3` background, `#4a3728` text). Toggle it by adding or removing a class on `:root`. Save the user's choice to localStorage under a key of your own choosing, and restore it on page load.
 
 ### Exercise 3: Notification Animation
 

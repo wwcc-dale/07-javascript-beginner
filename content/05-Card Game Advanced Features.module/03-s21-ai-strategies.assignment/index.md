@@ -1,17 +1,20 @@
 ---
-name: "Session 21: Improving the AIPlayer"
-assignment_type: "online"
+allowed_extensions:
+- js
+- html
+- zip
+assignment_type: online
+module: 5
+name: 'Session 21: Improving the AIPlayer'
 points: 20
+position: 3
 published: true
 related_outcomes:
-  - "CLO-2"
-  - "CLO-3"
+- CLO-2
+- CLO-3
+session: 21.3
 submission_types:
-  - "online_upload"
-allowed_extensions:
-  - "js"
-  - "html"
-  - "zip"
+- online_upload
 ---
 
 # Session 21: Improving the AIPlayer

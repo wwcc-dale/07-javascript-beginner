@@ -1,10 +1,13 @@
 ---
-name: "Session 20: Async/Await and Orchestrating Multi-Step Processes"
+module: 4
+name: 'Session 20: Async/Await and Orchestrating Multi-Step Processes'
+position: 13
 published: true
 related_outcomes:
-  - "CLO-1"
-  - "CLO-2"
-  - "CLO-5"
+- CLO-1
+- CLO-2
+- CLO-5
+session: 20.1
 ---
 
 # Session 20: Async/Await and Orchestrating Multi-Step Processes

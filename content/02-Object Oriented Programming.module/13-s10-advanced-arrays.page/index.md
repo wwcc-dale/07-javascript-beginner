@@ -1,11 +1,14 @@
 ---
-name: "Session 10: Advanced Array Methods and Node.js Modules"
+module: 2
+name: 'Session 10: Advanced Array Methods and Node.js Modules'
+position: 13
 published: true
 related_outcomes:
-  - "CLO-1"
-  - "CLO-3"
-  - "CLO-4"
-  - "CLO-5"
+- CLO-1
+- CLO-3
+- CLO-4
+- CLO-5
+session: 10.1
 ---
 
 # Session 10: Advanced Array Methods and Node.js Modules

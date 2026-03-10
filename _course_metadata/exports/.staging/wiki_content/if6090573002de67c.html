@@ -27,105 +27,105 @@
 <h2>Reading: Async/Await and Orchestration (35 minutes)</h2>
 <h3><code>async</code> Functions and <code>await</code></h3>
 <p>Any function declared <code>async</code> automatically returns a Promise. Inside it, <code>await</code> pauses execution until another Promise resolves:</p>
-<pre class="codehilite"><code class="language-js">async function loadUserData(userId) {
-  const user    = await fetchUser(userId);       // Pause until user is loaded
-  const orders  = await fetchOrders(user.id);   // Then pause until orders are loaded
-  const profile = await buildProfile(user, orders);
-  return profile;  // The async function's Promise resolves with this value
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">loadUserData</span><span class="p">(</span><span class="nx">userId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetchUser</span><span class="p">(</span><span class="nx">userId</span><span class="p">);</span><span class="w">       </span><span class="c1">// Pause until user is loaded</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">orders</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetchOrders</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span><span class="w">   </span><span class="c1">// Then pause until orders are loaded</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">profile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">buildProfile</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">orders</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">profile</span><span class="p">;</span><span class="w">  </span><span class="c1">// The async function&#39;s Promise resolves with this value</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>From the caller's perspective, <code>await loadUserData(42)</code> pauses the caller until <code>loadUserData</code> finishes — just like synchronous code. But the browser's event loop is not blocked; other events (clicks, timers) can still fire.</p>
 <hr />
 <h3>Orchestrating a Sequence</h3>
 <p>The classic pattern for an orchestrator is a <code>while</code> loop that runs a unit of work, then checks a completion condition:</p>
-<pre class="codehilite"><code class="language-js">async function runWorkflow(steps) {
-  let stepIndex = 0;
+<div class="codehilite"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">runWorkflow</span><span class="p">(</span><span class="nx">steps</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">stepIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
 
-  while (stepIndex &lt; steps.length) {
-    const step = steps[stepIndex];
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">stepIndex</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">steps</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">steps</span><span class="p">[</span><span class="nx">stepIndex</span><span class="p">];</span>
 
-    await executeStep(step);         // Wait for this step to finish
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">executeStep</span><span class="p">(</span><span class="nx">step</span><span class="p">);</span><span class="w">         </span><span class="c1">// Wait for this step to finish</span>
 
-    if (step.requiresApproval) {
-      const approved = await waitForManagerApproval(step);
-      if (!approved) {
-        await notifyRejection(step);
-        break;                       // Exit on rejection
-      }
-    }
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">step</span><span class="p">.</span><span class="nx">requiresApproval</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">approved</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">waitForManagerApproval</span><span class="p">(</span><span class="nx">step</span><span class="p">);</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">approved</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">notifyRejection</span><span class="p">(</span><span class="nx">step</span><span class="p">);</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w">                       </span><span class="c1">// Exit on rejection</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
-    stepIndex++;
-    await delay(500);                // Brief pause between steps
-  }
+<span class="w">    </span><span class="nx">stepIndex</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">delay</span><span class="p">(</span><span class="mf">500</span><span class="p">);</span><span class="w">                </span><span class="c1">// Brief pause between steps</span>
+<span class="w">  </span><span class="p">}</span>
 
-  await finalizeWorkflow();
-}
-</code></pre>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">finalizeWorkflow</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>This reads exactly like a synchronous process — but every <code>await</code> is a true pause that allows the browser to breathe.</p>
 <hr />
 <h3>Condition-Based vs. Count-Based Loops</h3>
 <p>A <code>for</code> loop is appropriate when you know the number of iterations in advance. Use <code>while</code> when the loop ends on a <strong>condition</strong> that may not be predictable:</p>
-<pre class="codehilite"><code class="language-js">// Count-based: always runs exactly 13 times
-for (let i = 0; i &lt; 13; i++) {
-  await processItem(items[i]);
-}
+<div class="codehilite"><pre><span></span><code><span class="c1">// Count-based: always runs exactly 13 times</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">13</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">processItem</span><span class="p">(</span><span class="nx">items</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="p">}</span>
 
-// Condition-based: runs until score threshold is reached
-while (!isGameOver(state)) {
-  await playRound(state);
-  await delay(1500);  // Pause between rounds
-}
-</code></pre>
+<span class="c1">// Condition-based: runs until score threshold is reached</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">isGameOver</span><span class="p">(</span><span class="nx">state</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">playRound</span><span class="p">(</span><span class="nx">state</span><span class="p">);</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">delay</span><span class="p">(</span><span class="mf">1500</span><span class="p">);</span><span class="w">  </span><span class="c1">// Pause between rounds</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>A condition-based loop also naturally handles <strong>extra iterations</strong> — for example, if both teams hit the target on the same round, you continue rather than stopping. <code>continue</code> goes back to the condition check; <code>break</code> exits immediately.</p>
 <hr />
 <h3>Creating Delays with <code>setTimeout</code></h3>
 <p><code>await delay(ms)</code> is a standard pattern for inserting a timed pause in an async sequence:</p>
-<pre class="codehilite"><code class="language-js">function delay(ms) {
-  return new Promise(resolve =&gt; setTimeout(resolve, ms));
-}
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">delay</span><span class="p">(</span><span class="nx">ms</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span><span class="w"> </span><span class="nx">ms</span><span class="p">));</span>
+<span class="p">}</span>
 
-async function showMessageSequence(messages) {
-  for (const msg of messages) {
-    displayMessage(msg);
-    await delay(2000);  // Wait 2 seconds before showing the next message
-    clearMessage();
-  }
-}
-</code></pre>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">showMessageSequence</span><span class="p">(</span><span class="nx">messages</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">msg</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">messages</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">displayMessage</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">delay</span><span class="p">(</span><span class="mf">2000</span><span class="p">);</span><span class="w">  </span><span class="c1">// Wait 2 seconds before showing the next message</span>
+<span class="w">    </span><span class="nx">clearMessage</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p><code>setTimeout</code> fires after <code>ms</code> milliseconds and calls <code>resolve</code>, which allows the <code>await</code> to complete and execution to continue.</p>
 <hr />
 <h3>Mixing Human Input and Automated Steps</h3>
 <p>The orchestrator pattern shines when some steps are human-driven and others are automated:</p>
-<pre class="codehilite"><code class="language-js">async function runApprovalProcess(items) {
-  for (const item of items) {
-    if (item.requiresHumanReview) {
-      displayItemForReview(item);
-      const decision = await waitForHumanDecision();  // Pauses for user
-      item.approved = decision === 'approve';
-    } else {
-      await delay(300);  // Simulate automated processing
-      item.approved = autoApprove(item);
-    }
+<div class="codehilite"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">runApprovalProcess</span><span class="p">(</span><span class="nx">items</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">items</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">requiresHumanReview</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">displayItemForReview</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">decision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">waitForHumanDecision</span><span class="p">();</span><span class="w">  </span><span class="c1">// Pauses for user</span>
+<span class="w">      </span><span class="nx">item</span><span class="p">.</span><span class="nx">approved</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">decision</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;approve&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">await</span><span class="w"> </span><span class="nx">delay</span><span class="p">(</span><span class="mf">300</span><span class="p">);</span><span class="w">  </span><span class="c1">// Simulate automated processing</span>
+<span class="w">      </span><span class="nx">item</span><span class="p">.</span><span class="nx">approved</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">autoApprove</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    logDecision(item);
-  }
-}
-</code></pre>
+<span class="w">    </span><span class="nx">logDecision</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p>The loop iterates at the same pace regardless of whether each step is human or automated. Human steps block until clicked; automated steps unblock after a timer.</p>
 <hr />
 <h3>Script Load Order</h3>
 <p>In a multi-file browser project (without a module bundler), the order of <code>&lt;script&gt;</code> tags determines what is available when. Each file can only use names defined by scripts loaded before it:</p>
-<pre class="codehilite"><code class="language-html">&lt;!-- Correct order: dependencies first --&gt;
-&lt;script src=&quot;models/User.js&quot;&gt;&lt;/script&gt;       &lt;!-- No dependencies --&gt;
-&lt;script src=&quot;services/Auth.js&quot;&gt;&lt;/script&gt;     &lt;!-- Uses User --&gt;
-&lt;script src=&quot;controllers/App.js&quot;&gt;&lt;/script&gt;   &lt;!-- Uses Auth --&gt;
-&lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;              &lt;!-- Uses everything --&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="cm">&lt;!-- Correct order: dependencies first --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;models/User.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>       <span class="cm">&lt;!-- No dependencies --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;services/Auth.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>     <span class="cm">&lt;!-- Uses User --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;controllers/App.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>   <span class="cm">&lt;!-- Uses Auth --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;main.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>              <span class="cm">&lt;!-- Uses everything --&gt;</span>
+</code></pre></div>
 
 <p>A <code>ReferenceError: ClassName is not defined</code> in the console usually means a script tried to use a class before its file was loaded. Fix it by moving that <code>&lt;script&gt;</code> tag earlier.</p>
 <hr />
@@ -140,18 +140,18 @@ async function showMessageSequence(messages) {
 <h2>Supplemental Practice (25 minutes)</h2>
 <h3>Exercise 1: Trace Async Execution</h3>
 <p>Given this code, write out the order in which the console logs appear, including the approximate time in milliseconds when each fires:</p>
-<pre class="codehilite"><code class="language-js">async function workflow() {
-  console.log('A');
-  await delay(1000);
-  console.log('B');
-  await delay(500);
-  console.log('C');
-}
+<div class="codehilite"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">workflow</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">delay</span><span class="p">(</span><span class="mf">1000</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">delay</span><span class="p">(</span><span class="mf">500</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">);</span>
+<span class="p">}</span>
 
-console.log('start');
-workflow();
-console.log('end');
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">);</span>
+<span class="nx">workflow</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">);</span>
+</code></pre></div>
 
 <h3>Exercise 2: Condition-Based Loop</h3>
 <p>Write an <code>async</code> function <code>drainQueue(queue, processItem)</code> that calls <code>await processItem(queue.shift())</code> in a loop until <code>queue.length === 0</code>. After each item, <code>await delay(200)</code>. Test it with an array of 5 items.</p>

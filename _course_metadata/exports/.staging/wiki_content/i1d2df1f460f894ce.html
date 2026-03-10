@@ -25,30 +25,30 @@
 <p>An array is an ordered list of values stored in a single variable. Each value is called an <strong>element</strong>, and each element has a position called an <strong>index</strong> (starting at 0).</p>
 <p><strong>Real-world analogy:</strong> A to-do list is an array — items are in order, and you can add or remove items from either end.</p>
 <h3>Creating an Array</h3>
-<pre class="codehilite"><code class="language-js">const fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;];
-const scores = [85, 92, 78, 88];
-const mixed = [&quot;hello&quot;, 42, true];   // arrays can hold any type
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">fruits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;banana&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cherry&quot;</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">scores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">85</span><span class="p">,</span><span class="w"> </span><span class="mf">92</span><span class="p">,</span><span class="w"> </span><span class="mf">78</span><span class="p">,</span><span class="w"> </span><span class="mf">88</span><span class="p">];</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">mixed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">42</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">];</span><span class="w">   </span><span class="c1">// arrays can hold any type</span>
+</code></pre></div>
 
 <p>Use square brackets <code>[]</code> with items separated by commas.</p>
 <h3>Accessing Elements by Index</h3>
 <p>Indexes start at <strong>0</strong>, not 1.</p>
-<pre class="codehilite"><code class="language-js">const colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;green&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;blue&quot;</span><span class="p">];</span>
 
-console.log(colors[0]);  // &quot;red&quot;
-console.log(colors[1]);  // &quot;green&quot;
-console.log(colors[2]);  // &quot;blue&quot;
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">colors</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span><span class="w">  </span><span class="c1">// &quot;red&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">colors</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span><span class="w">  </span><span class="c1">// &quot;green&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">colors</span><span class="p">[</span><span class="mf">2</span><span class="p">]);</span><span class="w">  </span><span class="c1">// &quot;blue&quot;</span>
+</code></pre></div>
 
 <p><strong>Common mistake:</strong> Asking for <code>colors[3]</code> on a 3-item array returns <code>undefined</code> — there is no fourth slot.</p>
 <h3>The <code>.length</code> Property</h3>
 <p><code>.length</code> tells you how many elements are in the array.</p>
-<pre class="codehilite"><code class="language-js">const cities = [&quot;Austin&quot;, &quot;Denver&quot;, &quot;Portland&quot;];
-console.log(cities.length);   // 3
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">cities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Austin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Denver&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Portland&quot;</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">cities</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span><span class="w">   </span><span class="c1">// 3</span>
 
-// Last element — works for any length:
-console.log(cities[cities.length - 1]);  // &quot;Portland&quot;
-</code></pre>
+<span class="c1">// Last element — works for any length:</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">cities</span><span class="p">[</span><span class="nx">cities</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">]);</span><span class="w">  </span><span class="c1">// &quot;Portland&quot;</span>
+</code></pre></div>
 
 <h3>Mutating an Array</h3>
 <p>Arrays are <strong>mutable</strong> — you can change them after creation.</p>
@@ -78,17 +78,17 @@ console.log(cities[cities.length - 1]);  // &quot;Portland&quot;
 </tr>
 </tbody>
 </table>
-<pre class="codehilite"><code class="language-js">const tasks = [&quot;email&quot;, &quot;report&quot;];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">tasks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;email&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">];</span>
 
-tasks.push(&quot;meeting&quot;);
-console.log(tasks);  // [&quot;email&quot;, &quot;report&quot;, &quot;meeting&quot;]
+<span class="nx">tasks</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">&quot;meeting&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tasks</span><span class="p">);</span><span class="w">  </span><span class="c1">// [&quot;email&quot;, &quot;report&quot;, &quot;meeting&quot;]</span>
 
-tasks.pop();
-console.log(tasks);  // [&quot;email&quot;, &quot;report&quot;]
+<span class="nx">tasks</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tasks</span><span class="p">);</span><span class="w">  </span><span class="c1">// [&quot;email&quot;, &quot;report&quot;]</span>
 
-tasks.unshift(&quot;standup&quot;);
-console.log(tasks);  // [&quot;standup&quot;, &quot;email&quot;, &quot;report&quot;]
-</code></pre>
+<span class="nx">tasks</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="s2">&quot;standup&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tasks</span><span class="p">);</span><span class="w">  </span><span class="c1">// [&quot;standup&quot;, &quot;email&quot;, &quot;report&quot;]</span>
+</code></pre></div>
 
 <h3>Why Use Arrays?</h3>
 <ol>
@@ -98,25 +98,25 @@ console.log(tasks);  // [&quot;standup&quot;, &quot;email&quot;, &quot;report&qu
 </ol>
 <h3>Real-World Array Examples</h3>
 <p><strong>Example 1: Shopping Cart</strong></p>
-<pre class="codehilite"><code class="language-js">const cart = [&quot;shirt&quot;, &quot;shoes&quot;, &quot;hat&quot;];
-console.log(&quot;Items in cart:&quot;, cart.length);  // 3
-cart.push(&quot;socks&quot;);
-console.log(cart[3]);  // &quot;socks&quot;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">cart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;shirt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;shoes&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;hat&quot;</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Items in cart:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">cart</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span><span class="w">  </span><span class="c1">// 3</span>
+<span class="nx">cart</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">&quot;socks&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">cart</span><span class="p">[</span><span class="mf">3</span><span class="p">]);</span><span class="w">  </span><span class="c1">// &quot;socks&quot;</span>
+</code></pre></div>
 
 <p><strong>Example 2: Quiz Scores</strong></p>
-<pre class="codehilite"><code class="language-js">const scores = [92, 85, 78, 90];
-console.log(&quot;First score:&quot;, scores[0]);   // 92
-console.log(&quot;Last score:&quot;, scores[scores.length - 1]);  // 90
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">scores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">92</span><span class="p">,</span><span class="w"> </span><span class="mf">85</span><span class="p">,</span><span class="w"> </span><span class="mf">78</span><span class="p">,</span><span class="w"> </span><span class="mf">90</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;First score:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">scores</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span><span class="w">   </span><span class="c1">// 92</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Last score:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">scores</span><span class="p">[</span><span class="nx">scores</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">]);</span><span class="w">  </span><span class="c1">// 90</span>
+</code></pre></div>
 
 <p><strong>Example 3: Waiting List</strong></p>
-<pre class="codehilite"><code class="language-js">const waitlist = [&quot;Morgan&quot;, &quot;Jordan&quot;, &quot;Casey&quot;];
-waitlist.push(&quot;Alex&quot;);          // Alex joins end
-const served = waitlist.shift(); // Morgan is served (removes first)
-console.log(served);            // &quot;Morgan&quot;
-console.log(waitlist);          // [&quot;Jordan&quot;, &quot;Casey&quot;, &quot;Alex&quot;]
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">waitlist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Morgan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jordan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Casey&quot;</span><span class="p">];</span>
+<span class="nx">waitlist</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">&quot;Alex&quot;</span><span class="p">);</span><span class="w">          </span><span class="c1">// Alex joins end</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">served</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">waitlist</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span><span class="w"> </span><span class="c1">// Morgan is served (removes first)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">served</span><span class="p">);</span><span class="w">            </span><span class="c1">// &quot;Morgan&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">waitlist</span><span class="p">);</span><span class="w">          </span><span class="c1">// [&quot;Jordan&quot;, &quot;Casey&quot;, &quot;Alex&quot;]</span>
+</code></pre></div>
 
 <blockquote>
 <p><strong>Note:</strong> <code>.shift()</code> removes and returns the first element — the counterpart to <code>.unshift()</code>.</p>
@@ -127,76 +127,76 @@ console.log(waitlist);          // [&quot;Jordan&quot;, &quot;Casey&quot;, &quot
 <p>An object is a container that holds related information (properties) and actions (methods). Properties are key-value pairs.</p>
 <p><strong>Real-world analogy:</strong> An event listing has properties like name, date, and attendees. An object groups these together.</p>
 <h3>Creating a Simple Object</h3>
-<pre class="codehilite"><code class="language-js">const event = {
-  name: &quot;Web Dev Workshop&quot;,
-  date: &quot;2026-03-15&quot;,
-  attendees: 42,
-  isPublic: true
-};
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Web Dev Workshop&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">date</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2026-03-15&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">attendees</span><span class="o">:</span><span class="w"> </span><span class="mf">42</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">isPublic</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">};</span>
 
-console.log(event.name);      // &quot;Web Dev Workshop&quot;
-console.log(event.attendees); // 42
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w">      </span><span class="c1">// &quot;Web Dev Workshop&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">attendees</span><span class="p">);</span><span class="w"> </span><span class="c1">// 42</span>
+</code></pre></div>
 
 <h3>Accessing Properties</h3>
 <p><strong>Dot notation</strong> (most common):</p>
-<pre class="codehilite"><code class="language-js">let eventName = event.name;
-console.log(eventName);  // &quot;Web Dev Workshop&quot;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">eventName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eventName</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;Web Dev Workshop&quot;</span>
+</code></pre></div>
 
 <p><strong>Bracket notation</strong> (useful with variable keys):</p>
-<pre class="codehilite"><code class="language-js">let eventName = event[&quot;name&quot;];
-console.log(eventName);  // &quot;Web Dev Workshop&quot;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">eventName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">event</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">eventName</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;Web Dev Workshop&quot;</span>
+</code></pre></div>
 
 <h3>Modifying Properties</h3>
-<pre class="codehilite"><code class="language-js">const event = {
-  name: &quot;Web Dev Workshop&quot;,
-  attendees: 42
-};
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Web Dev Workshop&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">attendees</span><span class="o">:</span><span class="w"> </span><span class="mf">42</span>
+<span class="p">};</span>
 
-event.attendees = 50;  // Update the attendees
-console.log(event.attendees);  // 50
-</code></pre>
+<span class="nx">event</span><span class="p">.</span><span class="nx">attendees</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">50</span><span class="p">;</span><span class="w">  </span><span class="c1">// Update the attendees</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">attendees</span><span class="p">);</span><span class="w">  </span><span class="c1">// 50</span>
+</code></pre></div>
 
 <h3>Objects in Real Scenarios</h3>
 <p><strong>Example 1: User Profile</strong></p>
-<pre class="codehilite"><code class="language-js">const user = {
-  username: &quot;jordan_codes&quot;,
-  password: &quot;secret123&quot;,
-  loginCount: 15,
-  lastLogin: &quot;2026-01-31&quot;
-};
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;jordan_codes&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;secret123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">loginCount</span><span class="o">:</span><span class="w"> </span><span class="mf">15</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">lastLogin</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2026-01-31&quot;</span>
+<span class="p">};</span>
 
-console.log(user.username);      // &quot;jordan_codes&quot;
-console.log(user.loginCount);    // 15
-user.loginCount = 16;            // Update it
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">username</span><span class="p">);</span><span class="w">      </span><span class="c1">// &quot;jordan_codes&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">loginCount</span><span class="p">);</span><span class="w">    </span><span class="c1">// 15</span>
+<span class="nx">user</span><span class="p">.</span><span class="nx">loginCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">16</span><span class="p">;</span><span class="w">            </span><span class="c1">// Update it</span>
+</code></pre></div>
 
 <p><strong>Example 2: Flight Info</strong></p>
-<pre class="codehilite"><code class="language-js">const flight = {
-  airline: &quot;SkyLine&quot;,
-  destination: &quot;Denver&quot;,
-  durationHours: 2.5,
-  onTime: true
-};
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">flight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">airline</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;SkyLine&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">destination</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Denver&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">durationHours</span><span class="o">:</span><span class="w"> </span><span class="mf">2.5</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">onTime</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">};</span>
 
-console.log(flight.airline);              // &quot;SkyLine&quot;
-console.log(flight.durationHours * 60);  // 150 (minutes)
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">flight</span><span class="p">.</span><span class="nx">airline</span><span class="p">);</span><span class="w">              </span><span class="c1">// &quot;SkyLine&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">flight</span><span class="p">.</span><span class="nx">durationHours</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">60</span><span class="p">);</span><span class="w">  </span><span class="c1">// 150 (minutes)</span>
+</code></pre></div>
 
 <p><strong>Example 3: Quiz Result</strong></p>
-<pre class="codehilite"><code class="language-js">const quizResult = {
-  studentName: &quot;Casey&quot;,
-  score: 92,
-  totalQuestions: 10,
-  questionsCorrect: 9,
-  passingScore: 70
-};
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">quizResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">studentName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Casey&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">92</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">totalQuestions</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">questionsCorrect</span><span class="o">:</span><span class="w"> </span><span class="mf">9</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">passingScore</span><span class="o">:</span><span class="w"> </span><span class="mf">70</span>
+<span class="p">};</span>
 
-console.log(&quot;Student:&quot;, quizResult.studentName);
-console.log(&quot;Passed:&quot;, quizResult.score &gt;= quizResult.passingScore);
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Student:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">quizResult</span><span class="p">.</span><span class="nx">studentName</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Passed:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">quizResult</span><span class="p">.</span><span class="nx">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">quizResult</span><span class="p">.</span><span class="nx">passingScore</span><span class="p">);</span>
+</code></pre></div>
 
 <h3>Why Use Objects?</h3>
 <ol>
@@ -219,72 +219,72 @@ console.log(&quot;Passed:&quot;, quizResult.score &gt;= quizResult.passingScore)
 <hr />
 <h2>Supplemental Practice: Arrays and Objects (25 minutes)</h2>
 <h3>Scenario 0: Array Warm-Up</h3>
-<pre class="codehilite"><code class="language-js">const grades = [88, 95, 72, 61, 90];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">grades</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">88</span><span class="p">,</span><span class="w"> </span><span class="mf">95</span><span class="p">,</span><span class="w"> </span><span class="mf">72</span><span class="p">,</span><span class="w"> </span><span class="mf">61</span><span class="p">,</span><span class="w"> </span><span class="mf">90</span><span class="p">];</span>
 
-console.log(grades[0]);               // 88 (first)
-console.log(grades[grades.length - 1]); // 90 (last)
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">grades</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span><span class="w">               </span><span class="c1">// 88 (first)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">grades</span><span class="p">[</span><span class="nx">grades</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">]);</span><span class="w"> </span><span class="c1">// 90 (last)</span>
 
-grades.push(100);
-console.log(grades.length);           // 6
+<span class="nx">grades</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mf">100</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">grades</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span><span class="w">           </span><span class="c1">// 6</span>
 
-grades.pop();
-console.log(grades.length);           // 5
-</code></pre>
+<span class="nx">grades</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">grades</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span><span class="w">           </span><span class="c1">// 5</span>
+</code></pre></div>
 
 <p>Try: add your own score to the front of the list using <code>.unshift()</code>.</p>
 <h3>Scenario 0b: Arrays of Objects</h3>
 <p>Arrays can hold objects — this pattern is everywhere:</p>
-<pre class="codehilite"><code class="language-js">const students = [
-  { name: &quot;Alex&quot;, grade: 85 },
-  { name: &quot;Jordan&quot;, grade: 92 },
-  { name: &quot;Casey&quot;, grade: 78 }
-];
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">students</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">grade</span><span class="o">:</span><span class="w"> </span><span class="mf">85</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Jordan&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">grade</span><span class="o">:</span><span class="w"> </span><span class="mf">92</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Casey&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">grade</span><span class="o">:</span><span class="w"> </span><span class="mf">78</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
 
-console.log(students[0].name);   // &quot;Alex&quot;
-console.log(students[1].grade);  // 92
-console.log(students.length);    // 3
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">students</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">name</span><span class="p">);</span><span class="w">   </span><span class="c1">// &quot;Alex&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">students</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">grade</span><span class="p">);</span><span class="w">  </span><span class="c1">// 92</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">students</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span><span class="w">    </span><span class="c1">// 3</span>
+</code></pre></div>
 
 <hr />
 <h2>Supplemental Practice: Real Objects (25 minutes)</h2>
 <h3>Scenario 1: Recipe Card</h3>
-<pre class="codehilite"><code class="language-js">const recipe = {
-  name: &quot;Spaghetti Carbonara&quot;,
-  servings: 4,
-  cookTimeMinutes: 30,
-  vegetarian: false
-};
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">recipe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Spaghetti Carbonara&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">servings</span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">cookTimeMinutes</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">vegetarian</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">};</span>
 
-console.log(recipe.name);            // &quot;Spaghetti Carbonara&quot;
-console.log(recipe.cookTimeMinutes); // 30
-console.log(recipe.vegetarian);      // false
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">recipe</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w">            </span><span class="c1">// &quot;Spaghetti Carbonara&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">recipe</span><span class="p">.</span><span class="nx">cookTimeMinutes</span><span class="p">);</span><span class="w"> </span><span class="c1">// 30</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">recipe</span><span class="p">.</span><span class="nx">vegetarian</span><span class="p">);</span><span class="w">      </span><span class="c1">// false</span>
+</code></pre></div>
 
 <p>Try adding a <code>difficulty</code> property and updating the <code>servings</code> property.</p>
 <h3>Scenario 2: Athlete Profile</h3>
-<pre class="codehilite"><code class="language-js">const athlete = {
-  name: &quot;Maya Chen&quot;,
-  sport: &quot;tennis&quot;,
-  wins: 47,
-  losses: 12
-};
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">athlete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Maya Chen&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">sport</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;tennis&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">wins</span><span class="o">:</span><span class="w"> </span><span class="mf">47</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">losses</span><span class="o">:</span><span class="w"> </span><span class="mf">12</span>
+<span class="p">};</span>
 
-let totalMatches = athlete.wins + athlete.losses;
-let winRate = (athlete.wins / totalMatches * 100).toFixed(1);
-console.log(&quot;Win rate:&quot;, winRate + &quot;%&quot;);  // &quot;79.7%&quot;
-</code></pre>
+<span class="kd">let</span><span class="w"> </span><span class="nx">totalMatches</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">athlete</span><span class="p">.</span><span class="nx">wins</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">athlete</span><span class="p">.</span><span class="nx">losses</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">winRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">athlete</span><span class="p">.</span><span class="nx">wins</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">totalMatches</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">100</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Win rate:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">winRate</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;%&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;79.7%&quot;</span>
+</code></pre></div>
 
 <h3>Scenario 3: Hotel Listing</h3>
-<pre class="codehilite"><code class="language-js">const hotel = {
-  name: &quot;Seaside Inn&quot;,
-  pricePerNight: 129.99,
-  roomsAvailable: 8,
-  hasPool: true
-};
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">hotel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Seaside Inn&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">pricePerNight</span><span class="o">:</span><span class="w"> </span><span class="mf">129.99</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">roomsAvailable</span><span class="o">:</span><span class="w"> </span><span class="mf">8</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">hasPool</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">};</span>
 
-hotel.roomsAvailable = hotel.roomsAvailable - 1;  // Book a room
-console.log(&quot;Rooms left:&quot;, hotel.roomsAvailable);  // 7
-</code></pre>
+<span class="nx">hotel</span><span class="p">.</span><span class="nx">roomsAvailable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hotel</span><span class="p">.</span><span class="nx">roomsAvailable</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// Book a room</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Rooms left:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">hotel</span><span class="p">.</span><span class="nx">roomsAvailable</span><span class="p">);</span><span class="w">  </span><span class="c1">// 7</span>
+</code></pre></div>
 
 <hr />
 <h2>Knowledge Check Quiz (15 minutes)</h2>

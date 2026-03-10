@@ -19,134 +19,134 @@
 <hr />
 <h2>Reading: Data Persistence (35 minutes)</h2>
 <h3>Local Storage Basics</h3>
-<pre class="codehilite"><code class="language-js">// Save data
-localStorage.setItem('key', JSON.stringify(data));
+<div class="codehilite"><pre><span></span><code><span class="c1">// Save data</span>
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
 
-// Load data
-const data = JSON.parse(localStorage.getItem('key'));
+<span class="c1">// Load data</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">));</span>
 
-// Remove data
-localStorage.removeItem('key');
+<span class="c1">// Remove data</span>
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">removeItem</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">);</span>
 
-// Clear all
-localStorage.clear();
-</code></pre>
+<span class="c1">// Clear all</span>
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+</code></pre></div>
 
 <h3>Saving Game Statistics</h3>
-<pre class="codehilite"><code class="language-js">class GameStats {
-  constructor() {
-    this.load();
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">GameStats</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
 
-  load() {
-    const saved = localStorage.getItem('cardGameStats');
-    if (saved) {
-      const data = JSON.parse(saved);
-      this.gamesPlayed = data.gamesPlayed || 0;
-      this.gamesWon = data.gamesWon || 0;
-      this.gamesLost = data.gamesLost || 0;
-      this.gamesTied = data.gamesTied || 0;
-      this.totalScore = data.totalScore || 0;
-    } else {
-      this.gamesPlayed = 0;
-      this.gamesWon = 0;
-      this.gamesLost = 0;
-      this.gamesTied = 0;
-      this.totalScore = 0;
-    }
-  }
+<span class="w">  </span><span class="nx">load</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">saved</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;cardGameStats&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">saved</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">saved</span><span class="p">);</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">gamesPlayed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">gamesPlayed</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">gamesWon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">gamesWon</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">gamesLost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">gamesLost</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">gamesTied</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">gamesTied</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">totalScore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">totalScore</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">gamesPlayed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">gamesWon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">gamesLost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">gamesTied</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">totalScore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 
-  save() {
-    localStorage.setItem('cardGameStats', JSON.stringify({
-      gamesPlayed: this.gamesPlayed,
-      gamesWon: this.gamesWon,
-      gamesLost: this.gamesLost,
-      gamesTied: this.gamesTied,
-      totalScore: this.totalScore
-    }));
-  }
+<span class="w">  </span><span class="nx">save</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;cardGameStats&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">gamesPlayed</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">gamesPlayed</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">gamesWon</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">gamesWon</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">gamesLost</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">gamesLost</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">gamesTied</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">gamesTied</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">totalScore</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">totalScore</span>
+<span class="w">    </span><span class="p">}));</span>
+<span class="w">  </span><span class="p">}</span>
 
-  recordGame(winner, playerScore, computerScore) {
-    this.gamesPlayed++;
-    this.totalScore += playerScore;
+<span class="w">  </span><span class="nx">recordGame</span><span class="p">(</span><span class="nx">winner</span><span class="p">,</span><span class="w"> </span><span class="nx">playerScore</span><span class="p">,</span><span class="w"> </span><span class="nx">computerScore</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">gamesPlayed</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">totalScore</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">playerScore</span><span class="p">;</span>
 
-    if (winner === 'player') this.gamesWon++;
-    else if (winner === 'computer') this.gamesLost++;
-    else this.gamesTied++;
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">winner</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;player&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">gamesWon</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">winner</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;computer&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">gamesLost</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">gamesTied</span><span class="o">++</span><span class="p">;</span>
 
-    this.save();
-  }
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
 
-  getWinRate() {
-    if (this.gamesPlayed === 0) return 0;
-    return (this.gamesWon / this.gamesPlayed * 100).toFixed(2);
-  }
-}
-</code></pre>
+<span class="w">  </span><span class="nx">getWinRate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">gamesPlayed</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">gamesWon</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">gamesPlayed</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">100</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <h3>Game History</h3>
-<pre class="codehilite"><code class="language-js">class GameHistory {
-  constructor() {
-    this.load();
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">GameHistory</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
 
-  load() {
-    const saved = localStorage.getItem('cardGameHistory');
-    this.games = saved ? JSON.parse(saved) : [];
-  }
+<span class="w">  </span><span class="nx">load</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">saved</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;cardGameHistory&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">games</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">saved</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">saved</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">[];</span>
+<span class="w">  </span><span class="p">}</span>
 
-  save() {
-    localStorage.setItem('cardGameHistory', JSON.stringify(this.games));
-  }
+<span class="w">  </span><span class="nx">save</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;cardGameHistory&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">games</span><span class="p">));</span>
+<span class="w">  </span><span class="p">}</span>
 
-  addGame(gameRecord) {
-    this.games.push({
-      date: new Date().toISOString(),
-      winner: gameRecord.winner,
-      playerScore: gameRecord.playerScore,
-      computerScore: gameRecord.computerScore,
-      rounds: gameRecord.rounds,
-      difficulty: gameRecord.difficulty
-    });
+<span class="w">  </span><span class="nx">addGame</span><span class="p">(</span><span class="nx">gameRecord</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">games</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">date</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">().</span><span class="nx">toISOString</span><span class="p">(),</span>
+<span class="w">      </span><span class="nx">winner</span><span class="o">:</span><span class="w"> </span><span class="nx">gameRecord</span><span class="p">.</span><span class="nx">winner</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">playerScore</span><span class="o">:</span><span class="w"> </span><span class="nx">gameRecord</span><span class="p">.</span><span class="nx">playerScore</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">computerScore</span><span class="o">:</span><span class="w"> </span><span class="nx">gameRecord</span><span class="p">.</span><span class="nx">computerScore</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">rounds</span><span class="o">:</span><span class="w"> </span><span class="nx">gameRecord</span><span class="p">.</span><span class="nx">rounds</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">difficulty</span><span class="o">:</span><span class="w"> </span><span class="nx">gameRecord</span><span class="p">.</span><span class="nx">difficulty</span>
+<span class="w">    </span><span class="p">});</span>
 
-    // Keep only last 50 games
-    if (this.games.length &gt; 50) {
-      this.games.shift();
-    }
+<span class="w">    </span><span class="c1">// Keep only last 50 games</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">games</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">50</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">games</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
-    this.save();
-  }
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
 
-  getRecentGames(count = 10) {
-    return this.games.slice(-count).reverse();
-  }
-}
-</code></pre>
+<span class="w">  </span><span class="nx">getRecentGames</span><span class="p">(</span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">games</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="o">-</span><span class="nx">count</span><span class="p">).</span><span class="nx">reverse</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <h3>Displaying Statistics</h3>
-<pre class="codehilite"><code class="language-js">function displayStats() {
-  const stats = new GameStats();
-  const html = `
-    &lt;div id=&quot;stats-panel&quot;&gt;
-      &lt;h3&gt;Your Statistics&lt;/h3&gt;
-      &lt;p&gt;Games Played: ${stats.gamesPlayed}&lt;/p&gt;
-      &lt;p&gt;Won: ${stats.gamesWon} | Lost: ${stats.gamesLost} | Tied: ${stats.gamesTied}&lt;/p&gt;
-      &lt;p&gt;Win Rate: ${stats.getWinRate()}%&lt;/p&gt;
-      &lt;p&gt;Total Score: ${stats.totalScore}&lt;/p&gt;
-      &lt;button onclick=&quot;clearStats()&quot;&gt;Reset Stats&lt;/button&gt;
-    &lt;/div&gt;
-  `;
-  document.querySelector('#stats-container').innerHTML = html;
-}
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">displayStats</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">stats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">GameStats</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">html</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span>
+<span class="sb">    &lt;div id=&quot;stats-panel&quot;&gt;</span>
+<span class="sb">      &lt;h3&gt;Your Statistics&lt;/h3&gt;</span>
+<span class="sb">      &lt;p&gt;Games Played: </span><span class="si">${</span><span class="nx">stats</span><span class="p">.</span><span class="nx">gamesPlayed</span><span class="si">}</span><span class="sb">&lt;/p&gt;</span>
+<span class="sb">      &lt;p&gt;Won: </span><span class="si">${</span><span class="nx">stats</span><span class="p">.</span><span class="nx">gamesWon</span><span class="si">}</span><span class="sb"> | Lost: </span><span class="si">${</span><span class="nx">stats</span><span class="p">.</span><span class="nx">gamesLost</span><span class="si">}</span><span class="sb"> | Tied: </span><span class="si">${</span><span class="nx">stats</span><span class="p">.</span><span class="nx">gamesTied</span><span class="si">}</span><span class="sb">&lt;/p&gt;</span>
+<span class="sb">      &lt;p&gt;Win Rate: </span><span class="si">${</span><span class="nx">stats</span><span class="p">.</span><span class="nx">getWinRate</span><span class="p">()</span><span class="si">}</span><span class="sb">%&lt;/p&gt;</span>
+<span class="sb">      &lt;p&gt;Total Score: </span><span class="si">${</span><span class="nx">stats</span><span class="p">.</span><span class="nx">totalScore</span><span class="si">}</span><span class="sb">&lt;/p&gt;</span>
+<span class="sb">      &lt;button onclick=&quot;clearStats()&quot;&gt;Reset Stats&lt;/button&gt;</span>
+<span class="sb">    &lt;/div&gt;</span>
+<span class="sb">  `</span><span class="p">;</span>
+<span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#stats-container&#39;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">html</span><span class="p">;</span>
+<span class="p">}</span>
 
-function clearStats() {
-  if (confirm('Clear all statistics?')) {
-    localStorage.removeItem('cardGameStats');
-    localStorage.removeItem('cardGameHistory');
-    displayStats();
-  }
-}
-</code></pre>
+<span class="kd">function</span><span class="w"> </span><span class="nx">clearStats</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">confirm</span><span class="p">(</span><span class="s1">&#39;Clear all statistics?&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">removeItem</span><span class="p">(</span><span class="s1">&#39;cardGameStats&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">removeItem</span><span class="p">(</span><span class="s1">&#39;cardGameHistory&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">displayStats</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <hr />
 <h2>Assignment: Implement Data Persistence</h2>

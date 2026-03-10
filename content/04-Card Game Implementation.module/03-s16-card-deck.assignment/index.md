@@ -1,17 +1,20 @@
 ---
-name: "Session 16: Card and Deck Implementation"
-assignment_type: "online"
+allowed_extensions:
+- js
+- html
+- zip
+assignment_type: online
+module: 4
+name: 'Session 16: Card and Deck Implementation'
 points: 20
+position: 3
 published: true
 related_outcomes:
-  - "CLO-1"
-  - "CLO-2"
+- CLO-1
+- CLO-2
+session: 16.3
 submission_types:
-  - "online_upload"
-allowed_extensions:
-  - "js"
-  - "html"
-  - "zip"
+- online_upload
 ---
 
 # Session 16: Card and Deck Implementation

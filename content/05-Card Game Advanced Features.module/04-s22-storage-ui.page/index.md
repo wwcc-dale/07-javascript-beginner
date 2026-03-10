@@ -1,9 +1,12 @@
 ---
-name: "Session 22: localStorage — Persisting Data Across Sessions"
+module: 5
+name: 'Session 22: localStorage — Persisting Data Across Sessions'
+position: 4
 published: true
 related_outcomes:
-  - "CLO-1"
-  - "CLO-5"
+- CLO-1
+- CLO-5
+session: 22.1
 ---
 
 # Session 22: localStorage — Persisting Data Across Sessions

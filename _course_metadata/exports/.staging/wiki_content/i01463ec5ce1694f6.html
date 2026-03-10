@@ -23,20 +23,20 @@
 <p>A class is a template for creating objects. It defines what properties and methods objects of that type will have.</p>
 <p><strong>Real-world analogy:</strong> A class is like a cookie cutter. The class is the cutter shape, and each cookie you make is an instance (object).</p>
 <h3>Creating a Simple Class</h3>
-<pre class="codehilite"><code class="language-js">class Contact {
-  constructor(name, phone) {
-    this.name = name;
-    this.phone = phone;
-  }
-}
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Contact</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">phone</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">phone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">phone</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-// Create instances:
-const contact1 = new Contact(&quot;Alex&quot;, &quot;555-1234&quot;);
-const contact2 = new Contact(&quot;Jordan&quot;, &quot;555-5678&quot;);
+<span class="c1">// Create instances:</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">contact1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Contact</span><span class="p">(</span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;555-1234&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">contact2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Contact</span><span class="p">(</span><span class="s2">&quot;Jordan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;555-5678&quot;</span><span class="p">);</span>
 
-console.log(contact1.name);   // &quot;Alex&quot;
-console.log(contact2.phone);  // &quot;555-5678&quot;
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">contact1</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w">   </span><span class="c1">// &quot;Alex&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">contact2</span><span class="p">.</span><span class="nx">phone</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;555-5678&quot;</span>
+</code></pre></div>
 
 <p><strong>Breaking it down:</strong>
 - <code>class Contact</code> – Define a new class
@@ -45,116 +45,116 @@ console.log(contact2.phone);  // &quot;555-5678&quot;
 - <code>new Contact()</code> – Creates a new instance of the class</p>
 <h3>Why Use Classes?</h3>
 <p>Without classes (tedious):</p>
-<pre class="codehilite"><code class="language-js">const contact1 = {name: &quot;Alex&quot;, phone: &quot;555-1234&quot;};
-const contact2 = {name: &quot;Jordan&quot;, phone: &quot;555-5678&quot;};
-const contact3 = {name: &quot;Casey&quot;, phone: &quot;555-9012&quot;};
-// Repeat for every contact...
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">contact1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">phone</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;555-1234&quot;</span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">contact2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Jordan&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">phone</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;555-5678&quot;</span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">contact3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Casey&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">phone</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;555-9012&quot;</span><span class="p">};</span>
+<span class="c1">// Repeat for every contact...</span>
+</code></pre></div>
 
 <p>With classes (clean):</p>
-<pre class="codehilite"><code class="language-js">class Contact {
-  constructor(name, phone) {
-    this.name = name;
-    this.phone = phone;
-  }
-}
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Contact</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">phone</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">phone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">phone</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const contact1 = new Contact(&quot;Alex&quot;, &quot;555-1234&quot;);
-const contact2 = new Contact(&quot;Jordan&quot;, &quot;555-5678&quot;);
-const contact3 = new Contact(&quot;Casey&quot;, &quot;555-9012&quot;);
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">contact1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Contact</span><span class="p">(</span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;555-1234&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">contact2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Contact</span><span class="p">(</span><span class="s2">&quot;Jordan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;555-5678&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">contact3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Contact</span><span class="p">(</span><span class="s2">&quot;Casey&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;555-9012&quot;</span><span class="p">);</span>
+</code></pre></div>
 
 <h3>Adding Methods to Classes</h3>
 <p>Methods are functions that belong to a class. They define what objects can do.</p>
-<pre class="codehilite"><code class="language-js">class Track {
-  constructor(title, artist, durationSeconds) {
-    this.title = title;
-    this.artist = artist;
-    this.durationSeconds = durationSeconds;
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Track</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">artist</span><span class="p">,</span><span class="w"> </span><span class="nx">durationSeconds</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">title</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">artist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">artist</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">durationSeconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">durationSeconds</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  isLong() {
-    return this.durationSeconds &gt; 240;  // longer than 4 minutes
-  }
+<span class="w">  </span><span class="nx">isLong</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">durationSeconds</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">240</span><span class="p">;</span><span class="w">  </span><span class="c1">// longer than 4 minutes</span>
+<span class="w">  </span><span class="p">}</span>
 
-  getMinutes() {
-    return Math.floor(this.durationSeconds / 60);
-  }
-}
+<span class="w">  </span><span class="nx">getMinutes</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">durationSeconds</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">60</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const track1 = new Track(&quot;Stairway to Heaven&quot;, &quot;Led Zeppelin&quot;, 482);
-console.log(track1.isLong());     // true
-console.log(track1.getMinutes()); // 8
+<span class="kd">const</span><span class="w"> </span><span class="nx">track1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Track</span><span class="p">(</span><span class="s2">&quot;Stairway to Heaven&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Led Zeppelin&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">482</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">track1</span><span class="p">.</span><span class="nx">isLong</span><span class="p">());</span><span class="w">     </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">track1</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">());</span><span class="w"> </span><span class="c1">// 8</span>
 
-const track2 = new Track(&quot;Happy Birthday&quot;, &quot;Traditional&quot;, 20);
-console.log(track2.isLong());     // false
-console.log(track2.getMinutes()); // 0
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">track2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Track</span><span class="p">(</span><span class="s2">&quot;Happy Birthday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Traditional&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">track2</span><span class="p">.</span><span class="nx">isLong</span><span class="p">());</span><span class="w">     </span><span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">track2</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">());</span><span class="w"> </span><span class="c1">// 0</span>
+</code></pre></div>
 
 <h3>Classes vs Objects</h3>
 <p><strong>Object:</strong> A single instance with specific values</p>
-<pre class="codehilite"><code class="language-js">const alex = {name: &quot;Alex&quot;, phone: &quot;555-1234&quot;};
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">alex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">phone</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;555-1234&quot;</span><span class="p">};</span>
+</code></pre></div>
 
 <p><strong>Class:</strong> A blueprint for creating many objects</p>
-<pre class="codehilite"><code class="language-js">class Contact {
-  constructor(name, phone) {
-    this.name = name;
-    this.phone = phone;
-  }
-}
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Contact</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">phone</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">phone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">phone</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const alex = new Contact(&quot;Alex&quot;, &quot;555-1234&quot;);
-const jordan = new Contact(&quot;Jordan&quot;, &quot;555-5678&quot;);
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">alex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Contact</span><span class="p">(</span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;555-1234&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">jordan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Contact</span><span class="p">(</span><span class="s2">&quot;Jordan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;555-5678&quot;</span><span class="p">);</span>
+</code></pre></div>
 
 <h3>Real-World Example: Recipe Class</h3>
-<pre class="codehilite"><code class="language-js">class Recipe {
-  constructor(name, servings, caloriesPerServing) {
-    this.name = name;
-    this.servings = servings;
-    this.caloriesPerServing = caloriesPerServing;
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Recipe</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">servings</span><span class="p">,</span><span class="w"> </span><span class="nx">caloriesPerServing</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">servings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">servings</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">caloriesPerServing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">caloriesPerServing</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  totalCalories() {
-    return this.servings * this.caloriesPerServing;
-  }
+<span class="w">  </span><span class="nx">totalCalories</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">servings</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">caloriesPerServing</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  scale(factor) {
-    this.servings = this.servings * factor;
-  }
+<span class="w">  </span><span class="nx">scale</span><span class="p">(</span><span class="nx">factor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">servings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">servings</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">factor</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  summary() {
-    return `${this.name}: ${this.servings} servings, ${this.totalCalories()} cal total`;
-  }
-}
+<span class="w">  </span><span class="nx">summary</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">servings</span><span class="si">}</span><span class="sb"> servings, </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">totalCalories</span><span class="p">()</span><span class="si">}</span><span class="sb"> cal total`</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const soup = new Recipe(&quot;Tomato Soup&quot;, 4, 120);
-console.log(soup.summary());      // &quot;Tomato Soup: 4 servings, 480 cal total&quot;
-soup.scale(2);
-console.log(soup.servings);       // 8
-console.log(soup.totalCalories()); // 960
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">soup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Recipe</span><span class="p">(</span><span class="s2">&quot;Tomato Soup&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">120</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">soup</span><span class="p">.</span><span class="nx">summary</span><span class="p">());</span><span class="w">      </span><span class="c1">// &quot;Tomato Soup: 4 servings, 480 cal total&quot;</span>
+<span class="nx">soup</span><span class="p">.</span><span class="nx">scale</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">soup</span><span class="p">.</span><span class="nx">servings</span><span class="p">);</span><span class="w">       </span><span class="c1">// 8</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">soup</span><span class="p">.</span><span class="nx">totalCalories</span><span class="p">());</span><span class="w"> </span><span class="c1">// 960</span>
+</code></pre></div>
 
 <h3>The <code>this</code> Keyword</h3>
 <p>Inside a class method, <code>this</code> refers to the specific instance you're working with.</p>
-<pre class="codehilite"><code class="language-js">class Counter {
-  constructor(startValue) {
-    this.count = startValue;
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Counter</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">startValue</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">startValue</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  increment() {
-    this.count++;  // this.count refers to THIS counter's count
-  }
-}
+<span class="w">  </span><span class="nx">increment</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">count</span><span class="o">++</span><span class="p">;</span><span class="w">  </span><span class="c1">// this.count refers to THIS counter&#39;s count</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const counter1 = new Counter(0);
-const counter2 = new Counter(10);
+<span class="kd">const</span><span class="w"> </span><span class="nx">counter1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Counter</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">counter2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Counter</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
 
-counter1.increment();
-console.log(counter1.count);  // 1
-console.log(counter2.count);  // 10 (unchanged)
-</code></pre>
+<span class="nx">counter1</span><span class="p">.</span><span class="nx">increment</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">counter1</span><span class="p">.</span><span class="nx">count</span><span class="p">);</span><span class="w">  </span><span class="c1">// 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">counter2</span><span class="p">.</span><span class="nx">count</span><span class="p">);</span><span class="w">  </span><span class="c1">// 10 (unchanged)</span>
+</code></pre></div>
 
 <hr />
 <h2>Video Tutorial: Classes and Instances (20 minutes)</h2>
@@ -169,77 +169,77 @@ console.log(counter2.count);  // 10 (unchanged)
 <hr />
 <h2>Supplemental Practice: Building Classes (25 minutes)</h2>
 <h3>Scenario 1: Movie Class</h3>
-<pre class="codehilite"><code class="language-js">class Movie {
-  constructor(title, director, durationMinutes) {
-    this.title = title;
-    this.director = director;
-    this.durationMinutes = durationMinutes;
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Movie</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">director</span><span class="p">,</span><span class="w"> </span><span class="nx">durationMinutes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">title</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">director</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">director</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">durationMinutes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">durationMinutes</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  isFeatureLength() {
-    return this.durationMinutes &gt;= 60;
-  }
+<span class="w">  </span><span class="nx">isFeatureLength</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">durationMinutes</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">60</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  getSummary() {
-    return `${this.title} by ${this.director} (${this.durationMinutes} min)`;
-  }
-}
+<span class="w">  </span><span class="nx">getSummary</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb"> by </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">director</span><span class="si">}</span><span class="sb"> (</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">durationMinutes</span><span class="si">}</span><span class="sb"> min)`</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const film = new Movie(&quot;Inception&quot;, &quot;Nolan&quot;, 148);
-console.log(film.isFeatureLength());  // true
-console.log(film.getSummary());       // &quot;Inception by Nolan (148 min)&quot;
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">film</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Movie</span><span class="p">(</span><span class="s2">&quot;Inception&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Nolan&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">148</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">film</span><span class="p">.</span><span class="nx">isFeatureLength</span><span class="p">());</span><span class="w">  </span><span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">film</span><span class="p">.</span><span class="nx">getSummary</span><span class="p">());</span><span class="w">       </span><span class="c1">// &quot;Inception by Nolan (148 min)&quot;</span>
+</code></pre></div>
 
 <h3>Scenario 2: Vehicle Class</h3>
-<pre class="codehilite"><code class="language-js">class Vehicle {
-  constructor(make, model, mileage) {
-    this.make = make;
-    this.model = model;
-    this.mileage = mileage;
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Vehicle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">make</span><span class="p">,</span><span class="w"> </span><span class="nx">model</span><span class="p">,</span><span class="w"> </span><span class="nx">mileage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">make</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">make</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">model</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">mileage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">mileage</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  drive(miles) {
-    this.mileage += miles;
-  }
+<span class="w">  </span><span class="nx">drive</span><span class="p">(</span><span class="nx">miles</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">mileage</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">miles</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  isHighMileage() {
-    return this.mileage &gt; 100000;
-  }
-}
+<span class="w">  </span><span class="nx">isHighMileage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">mileage</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">100000</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const car = new Vehicle(&quot;Toyota&quot;, &quot;Camry&quot;, 45000);
-car.drive(5000);
-console.log(car.mileage);          // 50000
-console.log(car.isHighMileage());  // false
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Vehicle</span><span class="p">(</span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Camry&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">45000</span><span class="p">);</span>
+<span class="nx">car</span><span class="p">.</span><span class="nx">drive</span><span class="p">(</span><span class="mf">5000</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">car</span><span class="p">.</span><span class="nx">mileage</span><span class="p">);</span><span class="w">          </span><span class="c1">// 50000</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">car</span><span class="p">.</span><span class="nx">isHighMileage</span><span class="p">());</span><span class="w">  </span><span class="c1">// false</span>
+</code></pre></div>
 
 <h3>Scenario 3: Scoreboard Class</h3>
-<pre class="codehilite"><code class="language-js">class Scoreboard {
-  constructor(team1, team2) {
-    this.team1 = team1;
-    this.team2 = team2;
-    this.score1 = 0;
-    this.score2 = 0;
-  }
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Scoreboard</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">team1</span><span class="p">,</span><span class="w"> </span><span class="nx">team2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">team1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">team1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">team2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">team2</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">score1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">score2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  addPoints(team, points) {
-    if (team === 1) this.score1 += points;
-    if (team === 2) this.score2 += points;
-  }
+<span class="w">  </span><span class="nx">addPoints</span><span class="p">(</span><span class="nx">team</span><span class="p">,</span><span class="w"> </span><span class="nx">points</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">team</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">score1</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">points</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">team</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">score2</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">points</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  getLeader() {
-    if (this.score1 &gt; this.score2) return this.team1;
-    if (this.score2 &gt; this.score1) return this.team2;
-    return &quot;Tied&quot;;
-  }
-}
+<span class="w">  </span><span class="nx">getLeader</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">score1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">score2</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">team1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">score2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">score1</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">team2</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Tied&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-const board = new Scoreboard(&quot;Lions&quot;, &quot;Tigers&quot;);
-board.addPoints(1, 7);
-board.addPoints(2, 3);
-console.log(board.score1);      // 7
-console.log(board.getLeader()); // &quot;Lions&quot;
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">board</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Scoreboard</span><span class="p">(</span><span class="s2">&quot;Lions&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Tigers&quot;</span><span class="p">);</span>
+<span class="nx">board</span><span class="p">.</span><span class="nx">addPoints</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">);</span>
+<span class="nx">board</span><span class="p">.</span><span class="nx">addPoints</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">board</span><span class="p">.</span><span class="nx">score1</span><span class="p">);</span><span class="w">      </span><span class="c1">// 7</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">board</span><span class="p">.</span><span class="nx">getLeader</span><span class="p">());</span><span class="w"> </span><span class="c1">// &quot;Lions&quot;</span>
+</code></pre></div>
 
 <hr />
 <h2>Knowledge Check Quiz (15 minutes)</h2>

@@ -1,17 +1,20 @@
 ---
-name: "Session 22: Persistence and Stats"
-assignment_type: "online"
+allowed_extensions:
+- js
+- html
+- zip
+assignment_type: online
+module: 5
+name: 'Session 22: Persistence and Stats'
 points: 20
+position: 5
 published: true
 related_outcomes:
-  - "CLO-1"
-  - "CLO-5"
+- CLO-1
+- CLO-5
+session: 22.2
 submission_types:
-  - "online_upload"
-allowed_extensions:
-  - "js"
-  - "html"
-  - "zip"
+- online_upload
 ---
 
 # Session 22: Persistence and Stats

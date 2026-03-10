@@ -23,56 +23,56 @@
 <h2>Reading: ES6 Modules (35 minutes)</h2>
 <h3>Why Modules?</h3>
 <p>A single large file becomes hard to navigate, difficult to test, and impossible for a team to work on simultaneously. Modules give each file a clear, single responsibility and make dependencies explicit:</p>
-<pre class="codehilite"><code>Before: one 800-line game.js
-After:
-  src/
-    classes/Card.js
-    classes/Deck.js
-    classes/Player.js
-    classes/AIPlayer.js
-    game/SpadesGame.js
-    game/GameRunner.js
-    ui/GameBoard.js
-    main.js
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n">Before</span><span class="o">:</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="mi">800</span><span class="o">-</span><span class="n">line</span><span class="w"> </span><span class="n">game</span><span class="o">.</span><span class="na">js</span>
+<span class="n">After</span><span class="o">:</span>
+<span class="w">  </span><span class="n">src</span><span class="o">/</span>
+<span class="w">    </span><span class="n">classes</span><span class="o">/</span><span class="n">Card</span><span class="o">.</span><span class="na">js</span>
+<span class="w">    </span><span class="n">classes</span><span class="o">/</span><span class="n">Deck</span><span class="o">.</span><span class="na">js</span>
+<span class="w">    </span><span class="n">classes</span><span class="o">/</span><span class="n">Player</span><span class="o">.</span><span class="na">js</span>
+<span class="w">    </span><span class="n">classes</span><span class="o">/</span><span class="n">AIPlayer</span><span class="o">.</span><span class="na">js</span>
+<span class="w">    </span><span class="n">game</span><span class="o">/</span><span class="n">SpadesGame</span><span class="o">.</span><span class="na">js</span>
+<span class="w">    </span><span class="n">game</span><span class="o">/</span><span class="n">GameRunner</span><span class="o">.</span><span class="na">js</span>
+<span class="w">    </span><span class="n">ui</span><span class="o">/</span><span class="n">GameBoard</span><span class="o">.</span><span class="na">js</span>
+<span class="w">    </span><span class="n">main</span><span class="o">.</span><span class="na">js</span>
+</code></pre></div>
 
 <hr />
 <h3><code>export</code> — Making Code Available</h3>
 <p>Add <code>export</code> before any class, function, or variable to make it importable by other files:</p>
-<pre class="codehilite"><code class="language-js">// src/classes/Card.js
+<div class="codehilite"><pre><span></span><code><span class="c1">// src/classes/Card.js</span>
 
-export class Card {
-  constructor(suit, rank) {
-    this.suit = suit;
-    this.rank = rank;
-  }
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">Card</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">suit</span><span class="p">,</span><span class="w"> </span><span class="nx">rank</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">suit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">suit</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">rank</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  getSuit() { return this.suit; }
-  getRank() { return this.rank; }
-  // ... rest of methods
-}
-</code></pre>
+<span class="w">  </span><span class="nx">getSuit</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">suit</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">getRank</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">rank</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="c1">// ... rest of methods</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p><strong>Default export</strong> — used when a file has one primary thing to share:</p>
-<pre class="codehilite"><code class="language-js">// src/utils/helpers.js
-export default function getSuitSymbol(suit) {
-  return { Spades: '♠', Hearts: '♥', Diamonds: '♦', Clubs: '♣' }[suit];
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="c1">// src/utils/helpers.js</span>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">getSuitSymbol</span><span class="p">(</span><span class="nx">suit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Spades</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;♠&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">Hearts</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;♥&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">Diamonds</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;♦&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">Clubs</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;♣&#39;</span><span class="w"> </span><span class="p">}[</span><span class="nx">suit</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <hr />
 <h3><code>import</code> — Using Code from Other Files</h3>
-<pre class="codehilite"><code class="language-js">// Named import — matches the exported name exactly
-import { Card } from './Card.js';
-import { Deck } from './Deck.js';
+<div class="codehilite"><pre><span></span><code><span class="c1">// Named import — matches the exported name exactly</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Card</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./Card.js&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Deck</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./Deck.js&#39;</span><span class="p">;</span>
 
-// Default import — any name you choose
-import getSuitSymbol from '../utils/helpers.js';
+<span class="c1">// Default import — any name you choose</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">getSuitSymbol</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../utils/helpers.js&#39;</span><span class="p">;</span>
 
-// Import everything as a namespace
-import * as Classes from './classes/index.js';
-const c = new Classes.Card('Spades', 'A');
-</code></pre>
+<span class="c1">// Import everything as a namespace</span>
+<span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">Classes</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./classes/index.js&#39;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Classes</span><span class="p">.</span><span class="nx">Card</span><span class="p">(</span><span class="s1">&#39;Spades&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="p">);</span>
+</code></pre></div>
 
 <p><strong>Path rules:</strong>
 - <code>./Card.js</code> — same folder
@@ -82,7 +82,7 @@ const c = new Classes.Card('Spades', 'A');
 <hr />
 <h3>Project Folder Structure</h3>
 <p>Organize by <strong>responsibility</strong>, not by file type:</p>
-<pre class="codehilite"><code>spades/
+<div class="codehilite"><pre><span></span><code>spades/
 ├── index.html
 ├── style.css
 └── src/
@@ -97,7 +97,7 @@ const c = new Classes.Card('Spades', 'A');
     ├── ui/
     │   └── GameBoard.js    (imports Card)
     └── main.js             (entry point — imports everything)
-</code></pre>
+</code></pre></div>
 
 <p><strong>Guidelines:</strong>
 - One class per file, file named after the class
@@ -106,22 +106,22 @@ const c = new Classes.Card('Spades', 'A');
 <hr />
 <h3>Loading Modules in HTML</h3>
 <p>Add <code>type="module"</code> to the script tag for your entry point. The browser then handles all imports automatically:</p>
-<pre class="codehilite"><code class="language-html">&lt;!-- Old way: list all files manually in order --&gt;
-&lt;script src=&quot;Card.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;Deck.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;Player.js&quot;&gt;&lt;/script&gt;
-&lt;!-- ... 5 more script tags --&gt;
+<div class="codehilite"><pre><span></span><code><span class="cm">&lt;!-- Old way: list all files manually in order --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;Card.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;Deck.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;Player.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="cm">&lt;!-- ... 5 more script tags --&gt;</span>
 
-&lt;!-- New way: just the entry point --&gt;
-&lt;script type=&quot;module&quot; src=&quot;src/main.js&quot;&gt;&lt;/script&gt;
-</code></pre>
+<span class="cm">&lt;!-- New way: just the entry point --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;src/main.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
 
 <p>The browser fetches and evaluates all imported files automatically, in dependency order.</p>
 <hr />
 <h3>Common Errors and Fixes</h3>
 <p><strong>CORS error when opening <code>file://</code> in the browser:</strong></p>
-<pre class="codehilite"><code>Access to script blocked by CORS policy
-</code></pre>
+<div class="codehilite"><pre><span></span><code>Access to script blocked by CORS policy
+</code></pre></div>
 
 <p>Modules cannot be loaded from <code>file://</code> — they require an HTTP server. Run a local server:</p>
 <ul>
@@ -130,29 +130,29 @@ const c = new Classes.Card('Spades', 'A');
 <li><strong>Node.js</strong>: <code>npx http-server -p 8000</code></li>
 </ul>
 <p><strong>Module not found (404):</strong></p>
-<pre class="codehilite"><code>GET http://localhost:8000/Card.js 404 Not Found
-</code></pre>
+<div class="codehilite"><pre><span></span><code>GET http://localhost:8000/Card.js 404 Not Found
+</code></pre></div>
 
 <p>Fix: use correct relative path starting with <code>./</code> or <code>../</code>:</p>
-<pre class="codehilite"><code class="language-js">import { Card } from './classes/Card.js';  // ✅ Correct
-import { Card } from 'Card.js';            // ✗ Missing ./
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Card</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./classes/Card.js&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1">// ✅ Correct</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Card</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;Card.js&#39;</span><span class="p">;</span><span class="w">            </span><span class="c1">// ✗ Missing ./</span>
+</code></pre></div>
 
 <p><strong>Circular dependency:</strong></p>
-<pre class="codehilite"><code class="language-js">// Player.js imports Deck.js, and Deck.js imports Player.js → circular!
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="c1">// Player.js imports Deck.js, and Deck.js imports Player.js → circular!</span>
+</code></pre></div>
 
 <p>Fix: pass instances as method parameters instead of importing the class:</p>
-<pre class="codehilite"><code class="language-js">// Player.js — no import of Deck
-class Player {
-  receiveCard(card) { this.hand.push(card); }
-}
+<div class="codehilite"><pre><span></span><code><span class="c1">// Player.js — no import of Deck</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Player</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">receiveCard</span><span class="p">(</span><span class="nx">card</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">hand</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">card</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 
-// main.js — creates both and connects them
-const deck   = new Deck();
-const player = new Player('You');
-player.receiveCard(deck.draw());
-</code></pre>
+<span class="c1">// main.js — creates both and connects them</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">deck</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Deck</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Player</span><span class="p">(</span><span class="s1">&#39;You&#39;</span><span class="p">);</span>
+<span class="nx">player</span><span class="p">.</span><span class="nx">receiveCard</span><span class="p">(</span><span class="nx">deck</span><span class="p">.</span><span class="nx">draw</span><span class="p">());</span>
+</code></pre></div>
 
 <hr />
 <h3>Refactoring a Script-Tag Project to Modules</h3>
@@ -180,18 +180,18 @@ player.receiveCard(deck.draw());
 <p>Create <code>greeting.js</code> with a default export function <code>greet(name)</code> that returns <code>"Hello, [name]!"</code>. Import and use it in <code>main.js</code>.</p>
 <h3>Exercise 3: Folder Organization</h3>
 <p>Take the two-file project from Exercise 1 and reorganize it into:</p>
-<pre class="codehilite"><code>src/
+<div class="codehilite"><pre><span></span><code>src/
   utils/math.js
   utils/greeting.js
   main.js
 index.html
-</code></pre>
+</code></pre></div>
 
 <p>Update all import paths to use the new structure.</p>
 <h3>Exercise 4: Diagnose a Broken Import</h3>
 <p>Given this import in <code>game/SpadesGame.js</code>:</p>
-<pre class="codehilite"><code class="language-js">import { Card } from 'classes/Card.js';
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Card</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;classes/Card.js&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 <p>Identify the error and write the corrected import path. (Hint: the path needs to be relative to <code>game/SpadesGame.js</code>'s location.)</p>
 <hr />

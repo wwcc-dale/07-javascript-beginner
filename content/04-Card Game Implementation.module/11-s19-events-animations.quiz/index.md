@@ -1,7 +1,9 @@
 ---
 allowed_attempts: 3
 indent: 1
+module: 4
 name: Session 19 Quiz – Event Handling and Animations
+position: 11
 published: false
 question_groups:
 - bank: s19-events-animations.bank
@@ -9,6 +11,7 @@ question_groups:
   pick: 16
   points_per_question: 1
 quiz_type: practice_quiz
+session: 19.2
 show_correct_answers: true
 shuffle_answers: true
 time_limit: 20

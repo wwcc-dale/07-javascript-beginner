@@ -23,62 +23,62 @@
 <p>A function is a reusable block of code that does a specific job. You write it once, then call it as many times as you need.</p>
 <p><strong>Real-world analogy:</strong> A recipe is a function. You write it down once, then follow those instructions whenever you want to make the dish.</p>
 <h3>Simple Function (No Parameters, No Return)</h3>
-<pre class="codehilite"><code class="language-js">function showWelcome() {
-  console.log(&quot;Welcome to the app!&quot;);
-}
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">showWelcome</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Welcome to the app!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 
-// Call the function:
-showWelcome();
-showWelcome();  // Can call it multiple times
-</code></pre>
+<span class="c1">// Call the function:</span>
+<span class="nx">showWelcome</span><span class="p">();</span>
+<span class="nx">showWelcome</span><span class="p">();</span><span class="w">  </span><span class="c1">// Can call it multiple times</span>
+</code></pre></div>
 
 <p>Output:</p>
-<pre class="codehilite"><code>Welcome to the app!
+<div class="codehilite"><pre><span></span><code>Welcome to the app!
 Welcome to the app!
-</code></pre>
+</code></pre></div>
 
 <h3>Function with Parameters</h3>
 <p>Parameters are inputs. They let you pass information into a function.</p>
-<pre class="codehilite"><code class="language-js">function greetByName(name) {
-  console.log(&quot;Hello, &quot; + name + &quot;!&quot;);
-}
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">greetByName</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello, &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 
-greetByName(&quot;Alex&quot;);     // Hello, Alex!
-greetByName(&quot;Jordan&quot;);   // Hello, Jordan!
-greetByName(&quot;Casey&quot;);    // Hello, Casey!
-</code></pre>
+<span class="nx">greetByName</span><span class="p">(</span><span class="s2">&quot;Alex&quot;</span><span class="p">);</span><span class="w">     </span><span class="c1">// Hello, Alex!</span>
+<span class="nx">greetByName</span><span class="p">(</span><span class="s2">&quot;Jordan&quot;</span><span class="p">);</span><span class="w">   </span><span class="c1">// Hello, Jordan!</span>
+<span class="nx">greetByName</span><span class="p">(</span><span class="s2">&quot;Casey&quot;</span><span class="p">);</span><span class="w">    </span><span class="c1">// Hello, Casey!</span>
+</code></pre></div>
 
 <h3>Function with Return Value</h3>
 <p>A return value is the output. The function sends back a result for you to use.</p>
-<pre class="codehilite"><code class="language-js">function addNumbers(num1, num2) {
-  let sum = num1 + num2;
-  return sum;
-}
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">addNumbers</span><span class="p">(</span><span class="nx">num1</span><span class="p">,</span><span class="w"> </span><span class="nx">num2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">num1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">num2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">sum</span><span class="p">;</span>
+<span class="p">}</span>
 
-let result = addNumbers(5, 3);
-console.log(result);  // 8
-console.log(addNumbers(10, 20));  // 30
-</code></pre>
+<span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">addNumbers</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w">  </span><span class="c1">// 8</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">addNumbers</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">));</span><span class="w">  </span><span class="c1">// 30</span>
+</code></pre></div>
 
 <h3>Example: Checking if Someone Passed</h3>
 <p>Remember Challenge 1 from Session 1? Let's turn it into a function:</p>
-<pre class="codehilite"><code class="language-js">function didStudentPass(score, passingScore) {
-  if (score &gt;= passingScore) {
-    return true;
-  } else {
-    return false;
-  }
-}
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">didStudentPass</span><span class="p">(</span><span class="nx">score</span><span class="p">,</span><span class="w"> </span><span class="nx">passingScore</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">passingScore</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-// Use it with different students:
-let alex_passed = didStudentPass(85, 70);    // true
-let jordan_passed = didStudentPass(65, 70);  // false
-let casey_passed = didStudentPass(92, 70);   // true
+<span class="c1">// Use it with different students:</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">alex_passed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">didStudentPass</span><span class="p">(</span><span class="mf">85</span><span class="p">,</span><span class="w"> </span><span class="mf">70</span><span class="p">);</span><span class="w">    </span><span class="c1">// true</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">jordan_passed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">didStudentPass</span><span class="p">(</span><span class="mf">65</span><span class="p">,</span><span class="w"> </span><span class="mf">70</span><span class="p">);</span><span class="w">  </span><span class="c1">// false</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">casey_passed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">didStudentPass</span><span class="p">(</span><span class="mf">92</span><span class="p">,</span><span class="w"> </span><span class="mf">70</span><span class="p">);</span><span class="w">   </span><span class="c1">// true</span>
 
-console.log(&quot;Alex passed:&quot;, alex_passed);
-console.log(&quot;Jordan passed:&quot;, jordan_passed);
-console.log(&quot;Casey passed:&quot;, casey_passed);
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Alex passed:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">alex_passed</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Jordan passed:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">jordan_passed</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Casey passed:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">casey_passed</span><span class="p">);</span>
+</code></pre></div>
 
 <h3>Why Use Functions?</h3>
 <ol>
@@ -100,35 +100,35 @@ console.log(&quot;Casey passed:&quot;, casey_passed);
 <hr />
 <h2>Supplemental Practice: Real-World Scenarios (25 minutes)</h2>
 <h3>Scenario 1: Calculate Star Rating</h3>
-<pre class="codehilite"><code class="language-js">function calcRating(review1, review2, review3) {
-  let total = review1 + review2 + review3;
-  let average = total / 3;
-  return average;
-}
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">calcRating</span><span class="p">(</span><span class="nx">review1</span><span class="p">,</span><span class="w"> </span><span class="nx">review2</span><span class="p">,</span><span class="w"> </span><span class="nx">review3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">review1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">review2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">review3</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">average</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">average</span><span class="p">;</span>
+<span class="p">}</span>
 
-let restaurantRating = calcRating(4, 5, 3);
-console.log(&quot;Rating:&quot;, restaurantRating);  // 4
-</code></pre>
+<span class="kd">let</span><span class="w"> </span><span class="nx">restaurantRating</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">calcRating</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Rating:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">restaurantRating</span><span class="p">);</span><span class="w">  </span><span class="c1">// 4</span>
+</code></pre></div>
 
 <p>Try with different review scores.</p>
 <h3>Scenario 2: Calculate Tip Amount</h3>
-<pre class="codehilite"><code class="language-js">function calcTip(billAmount, tipPercent) {
-  let tipAmount = billAmount * (tipPercent / 100);
-  return tipAmount;
-}
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">calcTip</span><span class="p">(</span><span class="nx">billAmount</span><span class="p">,</span><span class="w"> </span><span class="nx">tipPercent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">tipAmount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">billAmount</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="nx">tipPercent</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">tipAmount</span><span class="p">;</span>
+<span class="p">}</span>
 
-console.log(calcTip(40, 15));   // 6  (15% tip on $40)
-console.log(calcTip(80, 20));   // 16 (20% tip on $80)
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calcTip</span><span class="p">(</span><span class="mf">40</span><span class="p">,</span><span class="w"> </span><span class="mf">15</span><span class="p">));</span><span class="w">   </span><span class="c1">// 6  (15% tip on $40)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calcTip</span><span class="p">(</span><span class="mf">80</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">));</span><span class="w">   </span><span class="c1">// 16 (20% tip on $80)</span>
+</code></pre></div>
 
 <h3>Scenario 3: Convert Celsius to Fahrenheit</h3>
-<pre class="codehilite"><code class="language-js">function celsiusToFahrenheit(celsius) {
-  return (celsius * 9 / 5) + 32;
-}
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">celsiusToFahrenheit</span><span class="p">(</span><span class="nx">celsius</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="nx">celsius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">9</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">32</span><span class="p">;</span>
+<span class="p">}</span>
 
-console.log(celsiusToFahrenheit(0));    // 32
-console.log(celsiusToFahrenheit(100));  // 212
-</code></pre>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">celsiusToFahrenheit</span><span class="p">(</span><span class="mf">0</span><span class="p">));</span><span class="w">    </span><span class="c1">// 32</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">celsiusToFahrenheit</span><span class="p">(</span><span class="mf">100</span><span class="p">));</span><span class="w">  </span><span class="c1">// 212</span>
+</code></pre></div>
 
 <hr />
 <h2>Knowledge Check Quiz (15 minutes)</h2>

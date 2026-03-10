@@ -9,66 +9,66 @@
 <p><strong>Time:</strong> 60–90 minutes | <strong>Points:</strong> 20 | <strong>Submit:</strong> <code>07-assignment.js</code></p>
 <h2>Level 1 – Core Tasks (15 points)</h2>
 <h3>Challenge 1: BankAccount with Validation</h3>
-<pre class="codehilite"><code class="language-js">// TODO: Create a BankAccount class with:
-// - Constructor: owner, balance
-// - Properties: _owner, _balance (use underscore convention)
-// - Method deposit(amount): adds to balance if amount &gt; 0
-// - Method withdraw(amount): subtracts if amount &lt;= balance
-// - Getter for balance
-// Both methods should return true/false for success
+<div class="codehilite"><pre><span></span><code><span class="c1">// TODO: Create a BankAccount class with:</span>
+<span class="c1">// - Constructor: owner, balance</span>
+<span class="c1">// - Properties: _owner, _balance (use underscore convention)</span>
+<span class="c1">// - Method deposit(amount): adds to balance if amount &gt; 0</span>
+<span class="c1">// - Method withdraw(amount): subtracts if amount &lt;= balance</span>
+<span class="c1">// - Getter for balance</span>
+<span class="c1">// Both methods should return true/false for success</span>
 
-// Test:
-// const acc = new BankAccount(&quot;Alex&quot;, 1000);
-// acc.deposit(500);   // balance: 1500
-// acc.withdraw(2000); // fails, balance stays 1500
-</code></pre>
+<span class="c1">// Test:</span>
+<span class="c1">// const acc = new BankAccount(&quot;Alex&quot;, 1000);</span>
+<span class="c1">// acc.deposit(500);   // balance: 1500</span>
+<span class="c1">// acc.withdraw(2000); // fails, balance stays 1500</span>
+</code></pre></div>
 
 <h3>Challenge 2: Product with Price Validation</h3>
-<pre class="codehilite"><code class="language-js">// TODO: Create a Product class with:
-// - Constructor: name, price, stock
-// - Properties: _name, _price, _stock
-// - Setter for price that rejects values &lt; 0
-// - Setter for stock that rejects values &lt; 0
-// - Getter for each property
-// - Method buy(quantity) that reduces stock if available
+<div class="codehilite"><pre><span></span><code><span class="c1">// TODO: Create a Product class with:</span>
+<span class="c1">// - Constructor: name, price, stock</span>
+<span class="c1">// - Properties: _name, _price, _stock</span>
+<span class="c1">// - Setter for price that rejects values &lt; 0</span>
+<span class="c1">// - Setter for stock that rejects values &lt; 0</span>
+<span class="c1">// - Getter for each property</span>
+<span class="c1">// - Method buy(quantity) that reduces stock if available</span>
 
-// Test:
-// const item = new Product(&quot;Laptop&quot;, 999, 10);
-// item.price = -50;  // rejected
-// item.buy(3);       // stock becomes 7
-</code></pre>
+<span class="c1">// Test:</span>
+<span class="c1">// const item = new Product(&quot;Laptop&quot;, 999, 10);</span>
+<span class="c1">// item.price = -50;  // rejected</span>
+<span class="c1">// item.buy(3);       // stock becomes 7</span>
+</code></pre></div>
 
 <h3>Challenge 3: User with Login Attempts</h3>
-<pre class="codehilite"><code class="language-js">// TODO: Create a User class with:
-// - Constructor: username, password
-// - Properties: _username, _password, _loginAttempts (starts at 0)
-// - Method attemptLogin(inputPassword):
-//   - If _loginAttempts &gt;= 3, return &quot;locked&quot;
-//   - If password matches, reset attempts and return &quot;success&quot;
-//   - If password wrong, increment attempts and return &quot;failed&quot;
-// - Method resetAttempts()
+<div class="codehilite"><pre><span></span><code><span class="c1">// TODO: Create a User class with:</span>
+<span class="c1">// - Constructor: username, password</span>
+<span class="c1">// - Properties: _username, _password, _loginAttempts (starts at 0)</span>
+<span class="c1">// - Method attemptLogin(inputPassword):</span>
+<span class="c1">//   - If _loginAttempts &gt;= 3, return &quot;locked&quot;</span>
+<span class="c1">//   - If password matches, reset attempts and return &quot;success&quot;</span>
+<span class="c1">//   - If password wrong, increment attempts and return &quot;failed&quot;</span>
+<span class="c1">// - Method resetAttempts()</span>
 
-// Test:
-// const user = new User(&quot;alex&quot;, &quot;secret123&quot;);
-// user.attemptLogin(&quot;wrong&quot;); // &quot;failed&quot;, attempts = 1
-// user.attemptLogin(&quot;wrong&quot;); // &quot;failed&quot;, attempts = 2
-</code></pre>
+<span class="c1">// Test:</span>
+<span class="c1">// const user = new User(&quot;alex&quot;, &quot;secret123&quot;);</span>
+<span class="c1">// user.attemptLogin(&quot;wrong&quot;); // &quot;failed&quot;, attempts = 1</span>
+<span class="c1">// user.attemptLogin(&quot;wrong&quot;); // &quot;failed&quot;, attempts = 2</span>
+</code></pre></div>
 
 <h3>Challenge 4: Temperature with Unit Conversion</h3>
-<pre class="codehilite"><code class="language-js">// TODO: Create a Temperature class with:
-// - Constructor: celsius
-// - Property: _celsius
-// - Getter celsius: returns _celsius
-// - Setter celsius: validates &gt; -273.15 (absolute zero)
-// - Getter fahrenheit: returns (celsius * 9/5) + 32
-// - Setter fahrenheit: converts to celsius and stores
+<div class="codehilite"><pre><span></span><code><span class="c1">// TODO: Create a Temperature class with:</span>
+<span class="c1">// - Constructor: celsius</span>
+<span class="c1">// - Property: _celsius</span>
+<span class="c1">// - Getter celsius: returns _celsius</span>
+<span class="c1">// - Setter celsius: validates &gt; -273.15 (absolute zero)</span>
+<span class="c1">// - Getter fahrenheit: returns (celsius * 9/5) + 32</span>
+<span class="c1">// - Setter fahrenheit: converts to celsius and stores</span>
 
-// Test:
-// const temp = new Temperature(0);
-// console.log(temp.fahrenheit); // 32
-// temp.fahrenheit = 212;
-// console.log(temp.celsius);    // 100
-</code></pre>
+<span class="c1">// Test:</span>
+<span class="c1">// const temp = new Temperature(0);</span>
+<span class="c1">// console.log(temp.fahrenheit); // 32</span>
+<span class="c1">// temp.fahrenheit = 212;</span>
+<span class="c1">// console.log(temp.celsius);    // 100</span>
+</code></pre></div>
 
 <h2>Level 2 – Stretch (3 points)</h2>
 <h3>Challenge 5: ShoppingCart with Total</h3>

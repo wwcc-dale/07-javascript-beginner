@@ -1,5 +1,10 @@
+# Course Structure
 course_code: CS 140
 course_title: Javascript
+course_name: Javascript <small>(CS 140)</small>
+course_order: 7
+
+# Course Session Logistics 
 semester: Spring 2026
 instructor_name: Dale Chapman
 instructor_email: dale.chapman@wwcc.edu
