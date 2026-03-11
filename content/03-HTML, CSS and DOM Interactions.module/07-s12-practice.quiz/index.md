@@ -6,7 +6,8 @@ name: Session 12 Practice Quiz
 position: 6
 published: true
 question_groups:
-- bank_id: XXXXX
+- bank: s12-dom-creation.bank
+  bank_id: 35301446
   pick: 6
   points_per_question: 1
 quiz_type: practice_quiz

@@ -1,99 +1,101 @@
 ---
-bank_name: "Session 16: Card Game Foundation - Card and Deck Classes"
+bank_name: "Session 16: Card and Deck Classes"
 ---
 
-1. What does this Card class do? `class Card { constructor(suit, value) { this.suit = suit; this.value = value; } }`
-*a) Creates card objects with suit and value properties
-b) Only stores suit
-c) Invalid syntax
-d) Creates multiple cards
+1. How many cards are in a standard deck?
+a) 48
+*b) 52
+c) 54
+d) 40
 
-1. Fix this: `const card = new Card('Hearts'); console.log(card.value);`
-*a) `const card = new Card('Hearts', 'A'); console.log(card.value);` (Card needs both suit and value)
-b) Code is correct
-c) Use lowercase 'card'
-d) Cannot create cards
+1. What does `c.toString()` return?
+```js
+class Card {
+  constructor(rank, suit) {
+    this._rank = rank;
+    this._suit = suit;
+  }
+  toString() { return `${this._rank} of ${this._suit}`; }
+}
+const c = new Card('King', 'Hearts');
+```
+a) `"King Hearts"`
+*b) `"King of Hearts"`
+c) `"Hearts of King"`
+d) `"card"`
 
-1. What's the result? `const deck = ['A', 'K', 'Q']; deck.push('J'); console.log(deck.length);`
-*a) 4 (array now has 4 elements)
-b) 3
-c) 5
-d) Error thrown
+1. In the Fisher-Yates shuffle, what does this line do?
+```js
+[this._cards[i], this._cards[j]] = [this._cards[j], this._cards[i]];
+```
+a) Creates a new array from two existing arrays
+b) Removes one element and inserts it elsewhere
+*c) Swaps two elements in the array without a temporary variable
+d) Sorts the two elements in ascending order
 
-1. What does this do? `class Deck { constructor() { this.cards = []; } }`
-*a) Creates empty Deck with cards array ready to be filled
-b) Creates 52 cards automatically
-c) Invalid syntax
-d) Error thrown
+1. What does `new Card('Queen', 'Clubs').getValue()` return?
+```js
+getValue() {
+  if (this._rank === 'Ace') return 11;
+  if (['Jack', 'Queen', 'King'].includes(this._rank)) return 10;
+  return parseInt(this._rank);
+}
+```
+a) `0`
+b) `12`
+*c) `10`
+d) `NaN`
 
-1. Fix this shuffle: `shuffle() { this.cards.sort(); }`
-*a) `shuffle() { this.cards.sort(() => Math.random() - 0.5); }` (need random comparator)
-b) Code is correct
-c) Use reverse() instead
-d) Cannot shuffle
+1. Why does `deal()` use `pop()` instead of `shift()`?
+a) `pop()` returns a random element; `shift()` always returns the first
+*b) `pop()` removes from the end in O(1); `shift()` removes from the start and is slower on large arrays
+c) `shift()` doesn't work on arrays inside classes
+d) There is no difference — either would work equally well
 
-1. What does this return? `class Card { constructor(suit, value) { this.suit = suit; this.value = value; } toString() { return `${this.value} of ${this.suit}`; } }` with `const card = new Card('Spades', 'A'); console.log(card.toString());`
-*a) "A of Spades"
-b) "[object Object]"
-c) Error thrown
-d) "Spades A"
+1. After creating `new Deck()` and calling `shuffle()`, then `deal()` twice, what is `deck.size`?
+a) 52
+b) 54
+*c) 50
+d) 48
 
-1. What's wrong? `const deck = new Deck(); deck.cards.push(new Card('Hearts'));`
-*a) Card constructor needs both suit and value parameters
-b) Nothing wrong
-c) Cannot push to array
-d) Deck doesn't have cards property
+1. The `_build()` method uses nested `for...of` loops. Why?
+a) `for...of` is faster than `for` loops for arrays
+*b) One loop for suits and one for ranks generates all 52 combinations
+c) Nested loops are required when working with classes
+d) `for...of` is the only loop that can push to an array
 
-1. How many cards? `const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']; const values = ['2', '3', '4']; const deck = []; suits.forEach(suit => values.forEach(value => deck.push(new Card(suit, value)))); console.log(deck.length);`
-*a) 12 (4 suits × 3 values)
-b) 7
-c) 52
-d) Error thrown
+1. What does `deal()` return when the deck is empty?
+```js
+deal() {
+  if (this._cards.length === 0) return null;
+  return this._cards.pop();
+}
+```
+a) `undefined`
+b) `0`
+*c) `null`
+d) It throws a RangeError
 
-1. What does this do? `drawCard() { return this.cards.pop(); }`
-*a) Removes and returns last card from deck
-b) Returns last card but keeps it in deck
-c) Removes first card
-d) Error thrown
+1. What value does `new Card('7', 'Diamonds').getValue()` return?
+*a) `7`
+b) `70`
+c) `NaN`
+d) `"7"`
 
-1. Fix this: `const card1 = new Card('Hearts', 'A'); const card2 = new Card('Hearts', 'A'); if (card1 === card2) { console.log('Same'); }`
-*a) `if (card1.suit === card2.suit && card1.value === card2.value)` (compare properties, not objects)
-b) Code is correct
-c) Use == instead
-d) Cannot compare cards
+1. Why should `_build()` be a separate private method instead of being written directly in the constructor?
+a) It runs faster as a separate method
+b) The constructor can only contain assignment statements
+*c) It keeps the constructor short and makes the build logic easier to read and test in isolation
+d) Methods starting with `_` are called automatically before the constructor
 
-1. What's the result? `class Deck { constructor() { this.cards = this.createDeck(); } createDeck() { return []; } }` with `const deck = new Deck(); console.log(deck.cards);`
-*a) [] (empty array)
-b) undefined
-c) null
-d) Error thrown
+1. After shuffling, is the order of cards predictable?
+a) Yes — `Math.random()` uses a fixed seed
+*b) No — `Math.random()` produces a different sequence each time
+c) Yes — cards are always in reverse alphabetical order after shuffling
+d) No — but only the first card is random; the rest stay in order
 
-1. How do you get remaining cards? `class Deck { constructor() { this.cards = []; } getRemainingCards() { return ____; } }`
-*a) `this.cards.length`
-b) `this.cards.count()`
-c) `this.length`
-d) `this.cards.size`
-
-1. What does this do? `deal(numCards) { return this.cards.splice(0, numCards); }`
-*a) Removes and returns first numCards cards from deck
-b) Returns cards but keeps them in deck
-c) Removes last numCards cards
-d) Error thrown
-
-1. Fix initialization: `class Deck { constructor() { this.cards = []; this.shuffle(); } }`
-*a) Nothing wrong if shuffle() method exists (initializes empty deck and shuffles)
-b) Cannot call shuffle in constructor
-c) cards should not be array
-d) Missing createDeck() call
-
-1. What's logged? `const deck = new Deck(); console.log(deck.cards[0] instanceof Card);`
-*a) true (if deck.cards[0] is a Card object) or false/error (if deck empty)
-b) Always true
-c) Always false
-d) Syntax error
-
-1. Complete this: `class Card { constructor(suit, value) { this.suit = suit; this.value = value; } getCardValue() { const faceCards = { 'J': 11, 'Q': 12, 'K': 13, 'A': 14 }; return faceCards[this.value] || ____; } }`
-*a) `parseInt(this.value)` (convert number strings to integers)
-b) `this.value`
+1. What does `parseInt('Jack')` return?
+a) `11`
+b) `10`
 c) `0`
-d) `faceCards[this.value]`
+*d) `NaN`
