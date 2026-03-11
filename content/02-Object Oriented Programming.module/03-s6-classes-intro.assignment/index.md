@@ -23,7 +23,7 @@ Define classes with constructors and methods, create instances, and build practi
 
 ## Getting Started
 
-**[Download starter file](06-starter.js)**
+**[Download starter file](06-starter.zip)**
 
 1. Open the starter file, save a copy as `06-assignment.js`, and complete each challenge.
 

@@ -24,7 +24,7 @@ Build classes with proper encapsulation, validation, and controlled data access.
 
 ## Getting Started
 
-**[Download starter file](07-starter.js)**
+**[Download starter file](07-starter.zip)**
 
 1. Open the starter file, save a copy as `07-assignment.js`, and complete each challenge.
 

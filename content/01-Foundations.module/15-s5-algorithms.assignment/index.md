@@ -22,7 +22,7 @@ Implement algorithmic patterns: find max/min, count matching items, calculate av
 
 ## Getting Started
 
-**[Download starter file](05-starter.js)**
+**[Download starter file](05-starter.zip)**
 
 1. Open the starter file, save a copy as `05-assignment.js`, and complete each challenge.
 
