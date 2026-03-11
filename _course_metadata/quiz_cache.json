@@ -148,8 +148,8 @@
     "canvas_id": 25099316
   },
   "content/03-HTML, CSS and DOM Interactions.module/07-s12-practice.quiz": {
-    "hash": "2c301174ef59",
-    "canvas_id": 25100332
+    "hash": "60294fffeeeb",
+    "canvas_id": 25369990
   },
   "content/03-HTML, CSS and DOM Interactions.module/09-s13-css-manipulation.quiz": {
     "hash": "c0cfc5409eed",
@@ -196,7 +196,7 @@
     "canvas_id": 25100354
   },
   "content/02-Object Oriented Programming.module/11-s9-oop-practice.quiz": {
-    "hash": "16dd983d6e12",
+    "hash": "2798d7ced271",
     "canvas_id": 25359826
   },
   "content/02-Object Oriented Programming.module/14-s10-inheritance.quiz": {
@@ -208,35 +208,35 @@
     "canvas_id": 25359830
   },
   "content/03-HTML, CSS and DOM Interactions.module/02-s11-dom-basics.quiz": {
-    "hash": "46ddf52d0b0c",
+    "hash": "0b3386036ccd",
     "canvas_id": 25359832
   },
   "content/04-Blackjack Game.module/02-s16-card-deck.quiz": {
-    "hash": "0797facaf663",
+    "hash": "7a865f70bfa8",
     "canvas_id": 25359834
   },
   "content/04-Blackjack Game.module/05-s17-hand-scoring.quiz": {
-    "hash": "66eb695608b7",
+    "hash": "b81b72334553",
     "canvas_id": 25359836
   },
   "content/04-Blackjack Game.module/08-s18-game-class.quiz": {
-    "hash": "471a4c884587",
+    "hash": "208adf60e953",
     "canvas_id": 25359838
   },
   "content/04-Blackjack Game.module/11-s19-game-ui.quiz": {
-    "hash": "37b61b6a8b02",
+    "hash": "10641f09daa5",
     "canvas_id": 25359840
   },
   "content/04-Blackjack Game.module/14-s20-polish-testing.quiz": {
-    "hash": "8465a1069e63",
+    "hash": "97f4e0b6b6c8",
     "canvas_id": 25359842
   },
   "content/05-Blackjack Advanced Features.module/02-s21-betting-system.quiz": {
-    "hash": "bab1a4b9bdea",
+    "hash": "6acac864e2b8",
     "canvas_id": 25359844
   },
   "content/05-Blackjack Advanced Features.module/05-s22-storage-stats.quiz": {
-    "hash": "a9cc6fd967dd",
+    "hash": "2adf156b216d",
     "canvas_id": 25359846
   },
   "content/05-Blackjack Advanced Features.module/08-s23-visual-polish.quiz": {
@@ -244,7 +244,7 @@
     "canvas_id": 25359848
   },
   "content/05-Blackjack Advanced Features.module/11-s24-modularization.quiz": {
-    "hash": "847b5172fe87",
+    "hash": "dd1b24150e70",
     "canvas_id": 25359850
   },
   "content/05-Blackjack Advanced Features.module/14-s25-final-project.quiz": {

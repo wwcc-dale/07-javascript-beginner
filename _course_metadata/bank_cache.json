@@ -444,10 +444,10 @@
     "bank_id": null
   },
   "question-banks/s11-dom-basics.bank.md": {
-    "hash": "16902abe75d6",
-    "bank_name": "Session 11: HTML Structure and DOM Basics",
-    "uploaded_at": "2026-02-21 07:32:28",
-    "migration_id": 14358418,
+    "hash": "ea1547bf14f0",
+    "bank_name": "Session 11: JavaScript and the DOM",
+    "uploaded_at": "2026-03-10 20:03:48",
+    "migration_id": 14489508,
     "bank_id": null
   },
   "question-banks/s12-dom-creation.bank.md": {
@@ -479,10 +479,10 @@
     "bank_id": null
   },
   "question-banks/s16-card-deck.bank.md": {
-    "hash": "77ef7290f60f",
-    "bank_name": "Session 16: Card Game Foundation - Card and Deck Classes",
-    "uploaded_at": "2026-02-21 07:33:02",
-    "migration_id": 14358428,
+    "hash": "a58444cd36cc",
+    "bank_name": "Session 16: Card and Deck Classes",
+    "uploaded_at": "2026-03-10 20:04:07",
+    "migration_id": 14489510,
     "bank_id": null
   },
   "question-banks/s17-player-hand.bank.md": {
@@ -507,10 +507,10 @@
     "bank_id": null
   },
   "question-banks/s20-polish-testing.bank.md": {
-    "hash": "c839ce29e2ff",
-    "bank_name": "Session 20: Polish, Testing, and Deployment",
-    "uploaded_at": "2026-02-21 07:33:36",
-    "migration_id": 14358436,
+    "hash": "163df9c4a4a8",
+    "bank_name": "Session 20: Polish, Async, and Debugging",
+    "uploaded_at": "2026-03-10 20:04:55",
+    "migration_id": 14489524,
     "bank_id": null
   },
   "question-banks/s21-ai-strategies.bank.md": {
@@ -546,6 +546,55 @@
     "bank_name": "Session 25: Final Project - Complete Professional Card Game",
     "uploaded_at": "2026-02-21 07:34:12",
     "migration_id": 14358446,
+    "bank_id": null
+  },
+  "question-banks/s9-oop-practice.bank.md": {
+    "hash": "ad710a995dc6",
+    "bank_name": "Session 9: OOP Practice and Container Patterns",
+    "uploaded_at": "2026-03-10 20:03:37",
+    "migration_id": 14489502,
+    "bank_id": null
+  },
+  "question-banks/s17-hand-scoring.bank.md": {
+    "hash": "cc6a535e1f2d",
+    "bank_name": "Session 17: Hand Class and Blackjack Scoring",
+    "uploaded_at": "2026-03-10 20:04:16",
+    "migration_id": 14489512,
+    "bank_id": null
+  },
+  "question-banks/s18-game-class.bank.md": {
+    "hash": "284bbdde07d0",
+    "bank_name": "Session 18: BlackjackGame Class",
+    "uploaded_at": "2026-03-10 20:04:25",
+    "migration_id": 14489516,
+    "bank_id": null
+  },
+  "question-banks/s19-game-ui.bank.md": {
+    "hash": "6447af5c4f3d",
+    "bank_name": "Session 19: Game UI and DOM Integration",
+    "uploaded_at": "2026-03-10 20:04:44",
+    "migration_id": 14489520,
+    "bank_id": null
+  },
+  "question-banks/s21-betting-system.bank.md": {
+    "hash": "5adb24a46f40",
+    "bank_name": "Session 21: Betting System",
+    "uploaded_at": "2026-03-10 20:05:05",
+    "migration_id": 14489526,
+    "bank_id": null
+  },
+  "question-banks/s22-localstorage.bank.md": {
+    "hash": "8d337a982475",
+    "bank_name": "Session 22: localStorage and Persistence",
+    "uploaded_at": "2026-03-10 20:05:16",
+    "migration_id": 14489528,
+    "bank_id": null
+  },
+  "question-banks/s24-modularization.bank.md": {
+    "hash": "c2be7f6013e8",
+    "bank_name": "Session 24: ES6 Modules and Code Organization",
+    "uploaded_at": "2026-03-10 20:05:28",
+    "migration_id": 14489530,
     "bank_id": null
   }
 }
