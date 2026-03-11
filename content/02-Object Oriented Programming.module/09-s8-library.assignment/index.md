@@ -23,7 +23,8 @@ Build a system with Book and Library classes that manage collections of objects.
 
 ## Getting Started
 
-**[Download starter file](08-starter.zip)**
+- buttons
+- Download Starter File | 08-starter.zip | primary | download
 
 1. Open the starter file, save a copy as `08-assignment.js`, and complete each challenge.
 

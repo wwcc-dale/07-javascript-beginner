@@ -30,7 +30,8 @@ In this assignment you will create objects that represent real-world things. You
 
 ## Getting Started
 
-**[Download starter file](03-starter.zip)**
+- buttons
+- Download Starter File | 03-starter.zip | primary | download
 
 1. Open the starter file.
 2. Save as `03-assignment.js`.

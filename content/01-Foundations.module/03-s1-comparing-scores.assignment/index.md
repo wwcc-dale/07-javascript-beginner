@@ -31,7 +31,8 @@ You will work with quiz scores, shopping totals, and other values, just like a r
 
 ## Getting Started
 
-**[Download starter file](01-starter.zip)**
+- buttons
+- Download Starter File | 01-starter.zip | primary | download
 
 1. Open the starter file.
 2. Save a copy as `01-assignment.js`.

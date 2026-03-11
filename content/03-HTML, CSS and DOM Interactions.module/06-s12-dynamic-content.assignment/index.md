@@ -23,7 +23,8 @@ Create and remove elements dynamically. Build interactive todo list.
 
 ## Getting Started
 
-**[Download starter file](12-starter.html)**
+- buttons
+- Download Starter File | 12-starter.html | primary | download
 
 1. Open the starter file, save a copy as `12-assignment.html`, and complete each challenge.
 

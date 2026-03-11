@@ -23,7 +23,8 @@ Select elements, modify content, and build dynamic updates.
 
 ## Getting Started
 
-**[Download starter file](11-starter.html)**
+- buttons
+- Download Starter File | 11-starter.html | primary | download
 
 1. Open the starter file, save a copy as `11-assignment.html`, and complete each challenge.
 

@@ -23,7 +23,8 @@ Write loops to process arrays, calculate totals, count items, and solve problems
 
 ## Getting Started
 
-**[Download starter file](04-starter.zip)**
+- buttons
+- Download Starter File | 04-starter.zip | primary | download
 
 1. Open the starter file, save a copy as `04-assignment.js`, and complete each challenge.
 

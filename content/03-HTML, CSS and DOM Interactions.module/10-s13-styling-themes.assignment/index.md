@@ -23,7 +23,8 @@ Use classList and style manipulation to build interactive UIs.
 
 ## Getting Started
 
-**[Download starter file](13-starter.html)**
+- buttons
+- Download Starter File | 13-starter.html | primary | download
 
 1. Open the starter file, save a copy as `13-assignment.html`, and complete each challenge.
 

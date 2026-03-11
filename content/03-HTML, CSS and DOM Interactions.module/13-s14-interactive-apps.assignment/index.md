@@ -23,7 +23,8 @@ Build fully interactive applications with event handling.
 
 ## Getting Started
 
-**[Download starter file](14-starter.html)**
+- buttons
+- Download Starter File | 14-starter.html | primary | download
 
 1. Open the starter file, save a copy as `14-assignment.html`, and complete each challenge.
 

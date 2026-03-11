@@ -30,7 +30,8 @@ In this assignment you will write functions to solve real-world problems. You'll
 
 ## Getting Started
 
-**[Download starter file](02-starter.zip)**
+- buttons
+- Download Starter File | 02-starter.zip | primary | download
 
 1. Open the starter file.
 2. Save as `02-assignment.js`.
