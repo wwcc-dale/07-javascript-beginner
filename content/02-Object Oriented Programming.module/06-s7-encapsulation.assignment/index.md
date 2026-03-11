@@ -22,6 +22,12 @@ Build classes with proper encapsulation, validation, and controlled data access.
 
 **Time:** 60–90 minutes | **Points:** 20 | **Submit:** `07-assignment.js`
 
+## Getting Started
+
+**[Download starter file](07-starter.js)**
+
+1. Open the starter file, save a copy as `07-assignment.js`, and complete each challenge.
+
 ## Level 1 – Core Tasks (15 points)
 
 ### Challenge 1: BankAccount with Validation

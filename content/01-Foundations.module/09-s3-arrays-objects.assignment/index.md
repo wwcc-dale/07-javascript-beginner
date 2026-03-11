@@ -30,7 +30,9 @@ In this assignment you will create objects that represent real-world things. You
 
 ## Getting Started
 
-1. Open `03-starter.js`.
+**[Download starter file](03-starter.js)**
+
+1. Open the starter file.
 2. Save as `03-assignment.js`.
 3. Create the objects as instructed.
 4. Test by accessing and logging properties.

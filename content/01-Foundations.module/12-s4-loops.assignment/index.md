@@ -21,6 +21,12 @@ Write loops to process arrays, calculate totals, count items, and solve problems
 
 **Time:** 60–90 minutes | **Points:** 20 | **Submit:** `04-assignment.js`
 
+## Getting Started
+
+**[Download starter file](04-starter.js)**
+
+1. Open the starter file, save a copy as `04-assignment.js`, and complete each challenge.
+
 ## Level 1 – Core Tasks (15 points)
 
 ### Challenge 1: Print Numbers

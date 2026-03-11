@@ -31,7 +31,9 @@ You will work with quiz scores, shopping totals, and other values, just like a r
 
 ## Getting Started
 
-1. Open the starter file: `01-starter.js`.
+**[Download starter file](01-starter.js)**
+
+1. Open the starter file.
 2. Save a copy as `01-assignment.js`.
 3. Follow the instructions for each challenge.
 4. Run your file and check the console output.

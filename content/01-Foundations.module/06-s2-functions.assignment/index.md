@@ -30,7 +30,9 @@ In this assignment you will write functions to solve real-world problems. You'll
 
 ## Getting Started
 
-1. Open `02-starter.js`.
+**[Download starter file](02-starter.js)**
+
+1. Open the starter file.
 2. Save as `02-assignment.js`.
 3. Complete each challenge by writing functions.
 4. Test by calling each function with different values.

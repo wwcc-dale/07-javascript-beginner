@@ -21,6 +21,12 @@ Define classes with constructors and methods, create instances, and build practi
 
 **Time:** 60–90 minutes | **Points:** 20 | **Submit:** `06-assignment.js`
 
+## Getting Started
+
+**[Download starter file](06-starter.js)**
+
+1. Open the starter file, save a copy as `06-assignment.js`, and complete each challenge.
+
 ## Level 1 – Core Tasks (15 points)
 
 ### Challenge 1: Student Class

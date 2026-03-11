@@ -21,6 +21,12 @@ Build fully interactive applications with event handling.
 
 **Time:** 60–90 minutes | **Points:** 20 | **Submit:** `14-assignment.html`
 
+## Getting Started
+
+**[Download starter file](14-starter.html)**
+
+1. Open the starter file, save a copy as `14-assignment.html`, and complete each challenge.
+
 ## Level 1 – Core (15 pts)
 
 ### Challenge 1: Counter App

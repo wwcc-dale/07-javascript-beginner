@@ -21,6 +21,12 @@ Build a system with Book and Library classes that manage collections of objects.
 
 **Time:** 60–90 minutes | **Points:** 20 | **Submit:** `08-assignment.js`
 
+## Getting Started
+
+**[Download starter file](08-starter.js)**
+
+1. Open the starter file, save a copy as `08-assignment.js`, and complete each challenge.
+
 ## Level 1 – Core Tasks (15 points)
 
 ### Challenge 1: Book Class

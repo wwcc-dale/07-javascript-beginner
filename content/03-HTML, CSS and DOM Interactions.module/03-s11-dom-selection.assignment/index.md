@@ -21,6 +21,12 @@ Select elements, modify content, and build dynamic updates.
 
 **Time:** 60–90 minutes | **Points:** 20 | **Submit:** `11-assignment.html`
 
+## Getting Started
+
+**[Download starter file](11-starter.html)**
+
+1. Open the starter file, save a copy as `11-assignment.html`, and complete each challenge.
+
 ## Level 1 – Core Tasks (15 points)
 
 Build an HTML file with embedded JavaScript that:

@@ -20,6 +20,12 @@ Implement algorithmic patterns: find max/min, count matching items, calculate av
 
 **Time:** 60–90 minutes | **Points:** 20 | **Submit:** `05-assignment.js`
 
+## Getting Started
+
+**[Download starter file](05-starter.js)**
+
+1. Open the starter file, save a copy as `05-assignment.js`, and complete each challenge.
+
 ## Level 1 – Core Tasks (15 points)
 
 ### Challenge 1: Find Maximum Score

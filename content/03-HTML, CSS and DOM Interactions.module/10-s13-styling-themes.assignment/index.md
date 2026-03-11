@@ -21,6 +21,12 @@ Use classList and style manipulation to build interactive UIs.
 
 **Time:** 60–90 minutes | **Points:** 20 | **Submit:** `13-assignment.html`
 
+## Getting Started
+
+**[Download starter file](13-starter.html)**
+
+1. Open the starter file, save a copy as `13-assignment.html`, and complete each challenge.
+
 ## Level 1 – Core (15 pts)
 
 ### Challenge 1: Class Toggle System

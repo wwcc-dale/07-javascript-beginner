@@ -21,6 +21,12 @@ Create and remove elements dynamically. Build interactive todo list.
 
 **Time:** 60–90 minutes | **Points:** 20 | **Submit:** `12-assignment.html`
 
+## Getting Started
+
+**[Download starter file](12-starter.html)**
+
+1. Open the starter file, save a copy as `12-assignment.html`, and complete each challenge.
+
 ## Level 1 – Core (15 pts)
 
 ### Challenge 1: Card Builder
