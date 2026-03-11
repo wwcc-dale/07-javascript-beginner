@@ -10,3 +10,15 @@ instructor_name: Dale Chapman
 instructor_email: dale.chapman@wwcc.edu
 instructor_office: WSP South Complex, Classroom 1
 office_hours: Weekdays, 7:50-10:30am | 12:30-3:30pm
+
+# Session structure (progress-dashboard)
+total_sessions: 25              # total class sessions in the course
+module: 0                       # current module number (0 = not shown)
+
+# Reading pace (pace-dashboard)
+total_pages: 0                  # total Canvas pages students are expected to read
+course_start: ""                # YYYY-MM-DD — first day of instruction
+course_end: ""                  # YYYY-MM-DD — last day of instruction
+
+# Per-page variable (set in each page's frontmatter, listed here for reference)
+# session: 1                   # current session number — set on every page
