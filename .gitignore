@@ -1,2 +1,9 @@
 CONTEXT*
+.DS_Store
 .DS_Srore
+
+# Zaphod build artifacts
+**/meta.json
+**/source.md
+_course_metadata/exports/
+quiz_cache.json
