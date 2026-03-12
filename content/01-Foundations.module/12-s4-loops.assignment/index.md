@@ -28,7 +28,7 @@ Write loops to process arrays, calculate totals, count items, and solve problems
 
 1. Open the starter file, save a copy as `04-assignment.js`, and complete each challenge.
 
-## Level 1 – Core Tasks (15 points)
+## Level 1 – Core Tasks [15 pts](#pill:accent)
 
 ### Challenge 1: Print Numbers
 ```js
@@ -53,7 +53,7 @@ const scores = [85, 65, 92, 72, 88];
 // TODO: Write a loop that counts how many scores are >= 80
 ```
 
-## Level 2 – Stretch (3 points)
+## Level 2 – Stretch [3 pts](#pill:cert)
 
 ### Challenge 5: Find Maximum
 Write a loop that finds the highest number in an array.
@@ -61,7 +61,7 @@ Write a loop that finds the highest number in an array.
 ### Challenge 6: Create New Array
 Write a loop that doubles every number in an array.
 
-## Level 3 – Advanced (2 points)
+## Level 3 – Advanced [2 pts](#pill:degree)
 
 ### Challenge 7: Grade Summary
 Create a function that takes an array of scores and returns a summary: total students, how many passed (>=70), how many failed, and the average score.

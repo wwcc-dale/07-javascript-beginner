@@ -22,11 +22,13 @@ Build the `Hand` class with Blackjack scoring rules, including ace adjustment.
 
 **Time:** 60–90 minutes | **Points:** 20 | **Submit:** `17-assignment.js`
 
-Copy your `Card` and `Deck` classes from Session 16 into the top of this file.
+> alert: warning
+>
+> Copy your `Card` and `Deck` classes from Session 16 into the top of this file before starting the challenges below.
 
 ---
 
-## Level 1 – Core Tasks (15 points)
+## Level 1 – Core Tasks [15 pts](#pill:accent)
 
 ### Challenge 1: Hand Constructor and addCard
 ```js
@@ -108,7 +110,7 @@ Copy your `Card` and `Deck` classes from Session 16 into the top of this file.
 
 ---
 
-## Level 2 – Stretch (3 points)
+## Level 2 – Stretch [3 pts](#pill:cert)
 
 ### Challenge 5: Dealer hidden card simulation
 ```js
@@ -140,7 +142,7 @@ Copy your `Card` and `Deck` classes from Session 16 into the top of this file.
 
 ---
 
-## Level 3 – Advanced (2 points)
+## Level 3 – Advanced [2 pts](#pill:degree)
 
 ### Challenge 7: Dealer auto-play
 ```js

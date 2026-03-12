@@ -25,11 +25,13 @@ Add a `Wallet` class to your Blackjack game and integrate chip betting and payou
 
 **Time:** 60–90 minutes | **Points:** 20 | **Submit:** Zip file of complete game folder
 
-Start from your Session 20 game. Add `wallet.js` and update `game.js` and `ui.js`.
+> alert: info
+>
+> Start from your Session 20 game. Add `wallet.js` and update `game.js` and `ui.js`.
 
 ---
 
-## Level 1 – Core Tasks (15 points)
+## Level 1 – Core Tasks [15 pts](#pill:accent)
 
 ### Challenge 1: Wallet class
 ```js
@@ -103,7 +105,7 @@ Start from your Session 20 game. Add `wallet.js` and update `game.js` and `ui.js
 
 ---
 
-## Level 2 – Stretch (3 points)
+## Level 2 – Stretch [3 pts](#pill:cert)
 
 ### Challenge 5: Bet quick-pick buttons
 Add preset bet buttons ($25, $50, $100, $500) that set the bet input value when clicked.
@@ -118,7 +120,7 @@ Use a CSS class + `setTimeout` to remove it after 600ms.
 
 ---
 
-## Level 3 – Advanced (2 points)
+## Level 3 – Advanced [2 pts](#pill:degree)
 
 ### Challenge 7: Bet history
 Track the last 5 bets in the Wallet (as an array). Add a method `getRecentBets()` that returns this array. Display the last 5 bets in the UI as a "Recent bets" list. This list updates after each round.

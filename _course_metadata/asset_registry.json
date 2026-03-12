@@ -1,5 +1,27 @@
 {
   "assets": {
+    "content-hash-45821686af30": {
+      "canvas_file_id": 339450307,
+      "canvas_url": "https://canvas.instructure.com/files/339450307/download?download_frd=1&verifier=1XYTPlWOp9Nks4Erjnto8q0ZnEWnCnDKHeAk7BWJ",
+      "content_hash": "45821686af30",
+      "file_size": 2948,
+      "filename": "12-starter.html",
+      "local_paths": [
+        "content/03-HTML, CSS and DOM Interactions.module/06-s12-dynamic-content.assignment/12-starter.html"
+      ],
+      "uploaded_at": "2026-03-11T13:49:06.332631+00:00"
+    },
+    "content-hash-712ca37361df": {
+      "canvas_file_id": 339450313,
+      "canvas_url": "https://canvas.instructure.com/files/339450313/download?download_frd=1&verifier=NpSkWjkh63yKsrbrFNUBgsXLDEdkXmC9fLQn2AkS",
+      "content_hash": "712ca37361df",
+      "file_size": 5771,
+      "filename": "11-starter.html",
+      "local_paths": [
+        "content/03-HTML, CSS and DOM Interactions.module/03-s11-dom-selection.assignment/11-starter.html"
+      ],
+      "uploaded_at": "2026-03-11T13:49:11.019219+00:00"
+    },
     "content-hash-71f7441949e5": {
       "canvas_file_id": 339279107,
       "canvas_url": "https://canvas.instructure.com/files/339279107/download?download_frd=1&verifier=FfZzbIJwe9WPwaizddA3XYgI1pCnSLikpe5wi4Lq",
@@ -11,11 +33,37 @@
         "../../assets/spades_codebase.zip"
       ],
       "uploaded_at": "2026-03-10T14:04:35.910057+00:00"
+    },
+    "content-hash-c900ceb615fe": {
+      "canvas_file_id": 339450297,
+      "canvas_url": "https://canvas.instructure.com/files/339450297/download?download_frd=1&verifier=68WQMyXgDBkLbWCjbwNkZt2kB2Irnxu6jZHBwUZ5",
+      "content_hash": "c900ceb615fe",
+      "file_size": 3695,
+      "filename": "14-starter.html",
+      "local_paths": [
+        "content/03-HTML, CSS and DOM Interactions.module/13-s14-interactive-apps.assignment/14-starter.html"
+      ],
+      "uploaded_at": "2026-03-11T13:49:03.669273+00:00"
+    },
+    "content-hash-d3178d65ee65": {
+      "canvas_file_id": 339450311,
+      "canvas_url": "https://canvas.instructure.com/files/339450311/download?download_frd=1&verifier=SvkUcqAgZKvRMONMfuBOejvlaSbg85kK7vpBk18J",
+      "content_hash": "d3178d65ee65",
+      "file_size": 4636,
+      "filename": "13-starter.html",
+      "local_paths": [
+        "content/03-HTML, CSS and DOM Interactions.module/10-s13-styling-themes.assignment/13-starter.html"
+      ],
+      "uploaded_at": "2026-03-11T13:49:08.676390+00:00"
     }
   },
   "path_lookup": {
     "../../assets/spades_codebase.zip": "content-hash-71f7441949e5",
-    "assets/spades_codebase.zip": "content-hash-71f7441949e5"
+    "assets/spades_codebase.zip": "content-hash-71f7441949e5",
+    "content/03-HTML, CSS and DOM Interactions.module/03-s11-dom-selection.assignment/11-starter.html": "content-hash-712ca37361df",
+    "content/03-HTML, CSS and DOM Interactions.module/06-s12-dynamic-content.assignment/12-starter.html": "content-hash-45821686af30",
+    "content/03-HTML, CSS and DOM Interactions.module/10-s13-styling-themes.assignment/13-starter.html": "content-hash-d3178d65ee65",
+    "content/03-HTML, CSS and DOM Interactions.module/13-s14-interactive-apps.assignment/14-starter.html": "content-hash-c900ceb615fe"
   },
   "version": "1.0"
 }

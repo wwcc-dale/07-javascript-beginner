@@ -28,7 +28,7 @@ Select elements, modify content, and build dynamic updates.
 
 1. Open the starter file, save a copy as `11-assignment.html`, and complete each challenge.
 
-## Level 1 – Core Tasks (15 points)
+## Level 1 – Core Tasks [15 pts](#pill:accent)
 
 Build an HTML file with embedded JavaScript that:
 
@@ -53,7 +53,7 @@ Build an HTML file with embedded JavaScript that:
 - Use JS to update src attributes to actual image URLs
 - Update alt text for each
 
-## Level 2 – Stretch (3 points)
+## Level 2 – Stretch [3 pts](#pill:cert)
 
 ### Challenge 5: Dynamic Table
 Build table with headers (Name, Score) and 5 student rows from array of objects
@@ -61,7 +61,7 @@ Build table with headers (Name, Score) and 5 student rows from array of objects
 ### Challenge 6: Attribute Manager
 Build form that shows/updates element attributes live
 
-## Level 3 – Advanced (2 points)
+## Level 3 – Advanced [2 pts](#pill:degree)
 
 ### Challenge 7: Mini Dashboard
 Build dashboard that displays:

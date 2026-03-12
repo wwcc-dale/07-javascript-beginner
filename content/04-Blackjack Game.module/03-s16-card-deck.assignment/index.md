@@ -24,7 +24,7 @@ Build the foundation of your Blackjack game: a `Card` class and a `Deck` class.
 
 ---
 
-## Level 1 – Core Tasks (15 points)
+## Level 1 – Core Tasks [15 pts](#pill:accent)
 
 ### Challenge 1: Card Class
 ```js
@@ -106,7 +106,7 @@ Build the foundation of your Blackjack game: a `Card` class and a `Deck` class.
 
 ---
 
-## Level 2 – Stretch (3 points)
+## Level 2 – Stretch [3 pts](#pill:cert)
 
 ### Challenge 5: isRed() and getSuitSymbol()
 ```js
@@ -139,7 +139,7 @@ Build the foundation of your Blackjack game: a `Card` class and a `Deck` class.
 
 ---
 
-## Level 3 – Advanced (2 points)
+## Level 3 – Advanced [2 pts](#pill:degree)
 
 ### Challenge 7: MultiDeck
 ```js

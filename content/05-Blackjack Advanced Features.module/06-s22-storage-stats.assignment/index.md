@@ -23,9 +23,13 @@ Add a statistics tracker to your Blackjack game that persists across page reload
 
 **Time:** 60–90 minutes | **Points:** 20 | **Submit:** ZIP containing all game files including `stats.js`
 
+> alert: info
+>
+> Start from your Session 21 game. Create a new `stats.js` (or `GameStats.js`) file alongside your existing game files.
+
 ---
 
-## Level 1 – Core Tasks (15 points)
+## Level 1 – Core Tasks [15 pts](#pill:accent)
 
 ### Challenge 1: GameStats Class
 ```js
@@ -103,7 +107,7 @@ Add a statistics tracker to your Blackjack game that persists across page reload
 
 ---
 
-## Level 2 – Stretch (3 points)
+## Level 2 – Stretch [3 pts](#pill:cert)
 
 ### Challenge 5: Player Name
 Add a text input for the player's name. Save it under `'bj_playerName'`. Load it on startup and display it as a greeting: "Welcome back, [name]!". Default to "Player" if not set.
@@ -115,7 +119,7 @@ Add a collapsible stats section (`<details><summary>Stats</summary>...`). Includ
 
 ---
 
-## Level 3 – Advanced (2 points)
+## Level 3 – Advanced [2 pts](#pill:degree)
 
 ### Challenge 7: Data Versioning
 Add a `version` field to the saved stats. Define `STATS_VERSION = 1` at the top of `stats.js`. In `_load()`, after parsing the JSON:

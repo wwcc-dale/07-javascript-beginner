@@ -29,7 +29,11 @@ Connect your `BlackjackGame` logic to a browser UI with cards, buttons, and scor
 
 ## Setup
 
-Start by downloading the starter files: `index.html`, `style.css`, and the `.js` files from your previous sessions (Card, Deck, Hand, BlackjackGame). The starter HTML already includes the `waitForClick()` helper function — you do not need to write it.
+Start by downloading the starter files: `index.html`, `style.css`, and the `.js` files from your previous sessions (Card, Deck, Hand, BlackjackGame).
+
+> alert: info
+>
+> The starter `index.html` already includes a `waitForClick()` helper function — you do **not** need to write it. Just copy your `.js` class files from Sessions 16–18 into the project folder.
 
 Folder structure:
 ```
@@ -57,7 +61,7 @@ The starter `index.html` has this structure already in place:
 
 ---
 
-## Level 1 – Core Tasks (15 points)
+## Level 1 – Core Tasks [15 pts](#pill:accent)
 
 ### Task 1: renderHand()
 In `ui.js`, write a function `renderHand(cards, containerId)` that:
@@ -102,7 +106,7 @@ Write `endRound()` that:
 
 ---
 
-## Level 2 – Stretch (3 points)
+## Level 2 – Stretch [3 pts](#pill:cert)
 
 ### Task 5: Hide the dealer's second card
 During the player's turn, show only the dealer's first card. The second card should display as `"?"`.
@@ -121,7 +125,7 @@ Style the cards so they look like playing cards:
 
 ---
 
-## Level 3 – Advanced (2 points)
+## Level 3 – Advanced [2 pts](#pill:degree)
 
 ### Task 7: Win/loss counter
 Add a scoreboard that tracks wins, losses, and pushes across all rounds.

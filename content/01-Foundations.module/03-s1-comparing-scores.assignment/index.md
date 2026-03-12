@@ -43,7 +43,7 @@ You will work with quiz scores, shopping totals, and other values, just like a r
 
 ---
 
-## Level 1 – Core Tasks (15 points)
+## Level 1 – Core Tasks [15 pts](#pill:accent)
 
 ### Challenge 1: Quiz Pass Check (15 points)
 
@@ -117,7 +117,7 @@ Test with different values for `grade` (for example: 95, 83, 72, 60).
 
 ---
 
-## Level 2 – Stretch Tasks (3 points)
+## Level 2 – Stretch Tasks [3 pts](#pill:cert)
 
 ### Challenge 5: Best of Two Quizzes (10 points)
 
@@ -149,7 +149,7 @@ Try changing `hoursStudied` to 1, 3, and 6 and observe the messages.
 
 ---
 
-## Level 3 – Advanced Challenge (2 points)
+## Level 3 – Advanced Challenge [2 pts](#pill:degree)
 
 ### Challenge 7: Budget Helper
 

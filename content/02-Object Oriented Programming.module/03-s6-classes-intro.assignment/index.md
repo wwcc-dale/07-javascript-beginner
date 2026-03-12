@@ -28,7 +28,7 @@ Define classes with constructors and methods, create instances, and build practi
 
 1. Open the starter file, save a copy as `06-assignment.js`, and complete each challenge.
 
-## Level 1 – Core Tasks (15 points)
+## Level 1 – Core Tasks [15 pts](#pill:accent)
 
 ### Challenge 1: Student Class
 ```js
@@ -84,7 +84,7 @@ Define classes with constructors and methods, create instances, and build practi
 // console.log(book.percentComplete()); // 50
 ```
 
-## Level 2 – Stretch (3 points)
+## Level 2 – Stretch [3 pts](#pill:cert)
 
 ### Challenge 5: Timer Class
 Create a Timer class with:
@@ -99,7 +99,7 @@ Create 3 different Student instances and use a loop to:
 - Check if they're passing
 - Count how many students are passing
 
-## Level 3 – Advanced (2 points)
+## Level 3 – Advanced [2 pts](#pill:degree)
 
 ### Challenge 7: Grade Book System
 Create a GradeBook class that:

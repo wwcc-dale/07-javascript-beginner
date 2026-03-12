@@ -28,7 +28,7 @@ Create and remove elements dynamically. Build interactive todo list.
 
 1. Open the starter file, save a copy as `12-assignment.html`, and complete each challenge.
 
-## Level 1 – Core (15 pts)
+## Level 1 – Core [15 pts](#pill:accent)
 
 ### Challenge 1: Card Builder
 - Button "Add Card"
@@ -50,7 +50,7 @@ Create and remove elements dynamically. Build interactive todo list.
 - Each comment shows: text, timestamp, delete button
 - Uses createElement for all elements
 
-## Level 2 – Stretch (3 pts)
+## Level 2 – Stretch [3 pts](#pill:cert)
 
 ### Challenge 5: Photo Gallery
 Dynamically create image grid from array of objects
@@ -58,7 +58,7 @@ Dynamically create image grid from array of objects
 ### Challenge 6: Shopping List
 Add items with quantity, mark as bought (toggle class), delete
 
-## Level 3 – Advanced (2 pts)
+## Level 3 – Advanced [2 pts](#pill:degree)
 
 ### Challenge 7: Complete CRUD App
 Create, Read, Update, Delete items with full interface

@@ -28,7 +28,7 @@ Use classList and style manipulation to build interactive UIs.
 
 1. Open the starter file, save a copy as `13-assignment.html`, and complete each challenge.
 
-## Level 1 – Core (15 pts)
+## Level 1 – Core [15 pts](#pill:accent)
 
 ### Challenge 1: Class Toggle System
 - 3 boxes with default styling
@@ -50,7 +50,7 @@ Use classList and style manipulation to build interactive UIs.
 - Selecting updates div with appropriate class and message
 - Each class has unique styling
 
-## Level 2 – Stretch (3 pts)
+## Level 2 – Stretch [3 pts](#pill:cert)
 
 ### Challenge 5: Filter System
 Buttons for categories, clicking filters list items by adding/removing classes
@@ -58,7 +58,7 @@ Buttons for categories, clicking filters list items by adding/removing classes
 ### Challenge 6: Style Customizer
 Inputs for color, font-size, border-radius that update element styles live
 
-## Level 3 – Advanced (2 pts)
+## Level 3 – Advanced [2 pts](#pill:degree)
 
 ### Challenge 7: Complete Theme System
 Multiple themes (light, dark, blue, green), save preference, apply to all elements

@@ -27,7 +27,7 @@ Implement algorithmic patterns: find max/min, count matching items, calculate av
 
 1. Open the starter file, save a copy as `05-assignment.js`, and complete each challenge.
 
-## Level 1 – Core Tasks (15 points)
+## Level 1 – Core Tasks [15 pts](#pill:accent)
 
 ### Challenge 1: Find Maximum Score
 ```js
@@ -53,7 +53,7 @@ Implement algorithmic patterns: find max/min, count matching items, calculate av
 // Test: average([80, 90, 100]) → 90
 ```
 
-## Level 2 – Stretch (3 points)
+## Level 2 – Stretch [3 pts](#pill:cert)
 
 ### Challenge 5: Find Grade Status
 Combine max/min/average into one function that returns all three stats.
@@ -61,7 +61,7 @@ Combine max/min/average into one function that returns all three stats.
 ### Challenge 6: Grade Range
 Count how many scores fall within a range (e.g., 80-90).
 
-## Level 3 – Advanced (2 points)
+## Level 3 – Advanced [2 pts](#pill:degree)
 
 ### Challenge 7: Complete Grade Analysis
 Write a function that takes an array of scores and returns:

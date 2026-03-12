@@ -29,7 +29,7 @@ Build classes with proper encapsulation, validation, and controlled data access.
 
 1. Open the starter file, save a copy as `07-assignment.js`, and complete each challenge.
 
-## Level 1 – Core Tasks (15 points)
+## Level 1 – Core Tasks [15 pts](#pill:accent)
 
 ### Challenge 1: BankAccount with Validation
 ```js
@@ -97,7 +97,7 @@ Build classes with proper encapsulation, validation, and controlled data access.
 // console.log(temp.celsius);    // 100
 ```
 
-## Level 2 – Stretch (3 points)
+## Level 2 – Stretch [3 pts](#pill:cert)
 
 ### Challenge 5: ShoppingCart with Total
 Create ShoppingCart class with:
@@ -109,7 +109,7 @@ Create ShoppingCart class with:
 ### Challenge 6: Age Validation
 Create Person class with _age property and setter that only accepts ages 0-120.
 
-## Level 3 – Advanced (2 points)
+## Level 3 – Advanced [2 pts](#pill:degree)
 
 ### Challenge 7: Complete Validation System
 Create a Student class with:

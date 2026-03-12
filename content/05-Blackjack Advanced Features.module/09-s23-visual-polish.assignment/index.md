@@ -24,9 +24,13 @@ Add a theme toggle, card hover animations, and a win announcement animation to y
 
 **Time:** 60–90 minutes | **Points:** 20 | **Submit:** ZIP containing all game files with updated `style.css`
 
+> alert: info
+>
+> Start from your Session 22 game. All changes in this session go into `style.css` and `ui.js` — you are not creating new files.
+
 ---
 
-## Level 1 – Core Tasks (15 points)
+## Level 1 – Core Tasks [15 pts](#pill:accent)
 
 ### Challenge 1: CSS Custom Property System
 
@@ -96,7 +100,7 @@ messageEl.classList.add('announcing');
 
 ---
 
-## Level 2 – Stretch (3 points)
+## Level 2 – Stretch [3 pts](#pill:cert)
 
 ### Challenge 5: Staggered Deal Animation
 
@@ -117,7 +121,7 @@ When the chip balance changes:
 
 ---
 
-## Level 3 – Advanced (2 points)
+## Level 3 – Advanced [2 pts](#pill:degree)
 
 ### Challenge 7: Smooth result panel
 

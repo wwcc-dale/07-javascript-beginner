@@ -25,7 +25,9 @@ Refactor your Blackjack game from `<script>` tags to ES6 modules with a professi
 
 **Time:** 60–90 minutes | **Points:** 20 | **Submit:** ZIP of your reorganized game folder
 
-Start from your Session 23 project.
+> alert: info
+>
+> Start from your Session 23 project.
 
 ---
 
@@ -52,7 +54,7 @@ blackjack/
 
 ---
 
-## Level 1 – Core Tasks (15 points)
+## Level 1 – Core Tasks [15 pts](#pill:accent)
 
 ### Task 1: Move classes to individual files
 Move each class into its own file in the correct folder:
@@ -106,7 +108,7 @@ Run the game via VS Code Live Server. Fix any import path errors in the console.
 
 ---
 
-## Level 2 – Stretch (3 points)
+## Level 2 – Stretch [3 pts](#pill:cert)
 
 ### Task 5: Utility helpers file
 Create `src/utils/helpers.js` with named exports:
@@ -133,7 +135,7 @@ Update `BlackjackGame.js` to import from `'../classes/index.js'` instead of indi
 
 ---
 
-## Level 3 – Advanced (2 points)
+## Level 3 – Advanced [2 pts](#pill:degree)
 
 ### Task 7: Verify your work
 After the refactor, your browser console must show **zero errors**. In a comment at the top of `main.js`, list:

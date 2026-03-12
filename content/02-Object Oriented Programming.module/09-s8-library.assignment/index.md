@@ -28,7 +28,7 @@ Build a system with Book and Library classes that manage collections of objects.
 
 1. Open the starter file, save a copy as `08-assignment.js`, and complete each challenge.
 
-## Level 1 – Core Tasks (15 points)
+## Level 1 – Core Tasks [15 pts](#pill:accent)
 
 ### Challenge 1: Book Class
 ```js
@@ -81,7 +81,7 @@ Build a system with Book and Library classes that manage collections of objects.
 // lib.checkoutBook("JS Guide"); // false (already out)
 ```
 
-## Level 2 – Stretch (3 points)
+## Level 2 – Stretch [3 pts](#pill:cert)
 
 ### Challenge 5: Statistics
 Add methods to Library:
@@ -95,7 +95,7 @@ Create a Member class with:
 - Method checkoutBook(book): adds to their array if book available
 - Method returnBook(book): removes from their array
 
-## Level 3 – Advanced (2 points)
+## Level 3 – Advanced [2 pts](#pill:degree)
 
 ### Challenge 7: Complete System
 Build a system with:

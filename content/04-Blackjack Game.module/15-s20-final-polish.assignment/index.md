@@ -25,11 +25,13 @@ Complete and polish your Blackjack game so it is fully playable, visually clear,
 
 **Time:** 60–90 minutes | **Points:** 20 | **Submit:** A zip file of your complete game folder
 
-Start from your Session 19 project. Add the polish requirements below.
+> alert: info
+>
+> Start from your Session 19 project. Add the polish requirements below.
 
 ---
 
-## Level 1 – Core Tasks (15 points)
+## Level 1 – Core Tasks [15 pts](#pill:accent)
 
 ### Task 1: Visual design
 Your game must have:
@@ -57,7 +59,7 @@ Open DevTools and verify there are no JavaScript errors in the console. Fix any 
 
 ---
 
-## Level 2 – Stretch (3 points)
+## Level 2 – Stretch [3 pts](#pill:cert)
 
 ### Task 5: Deal animation
 Cards should appear one at a time with a short delay between each.
@@ -85,7 +87,7 @@ Add and remove the `flash` class when showing the result message.
 
 ---
 
-## Level 3 – Advanced (2 points)
+## Level 3 – Advanced [2 pts](#pill:degree)
 
 ### Task 7: Play a complete session
 Play your own game for at least 10 rounds. Write a short log (in a comment at the top of `ui.js`) recording:

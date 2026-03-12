@@ -23,7 +23,7 @@ Practice using `extends`, `super()`, and method overriding to build class hierar
 
 ---
 
-## Level 1 – Core Tasks (15 points)
+## Level 1 – Core Tasks [15 pts](#pill:accent)
 
 ### Challenge 1: Basic Inheritance
 ```js
@@ -115,7 +115,11 @@ Practice using `extends`, `super()`, and method overriding to build class hierar
 
 ---
 
-## Level 2 – Stretch (3 points)
+## Level 2 – Stretch [3 pts](#pill:cert)
+
+> alert: warning
+>
+> Challenge 5 requires your `Song` and `Playlist` classes from Session 9. Copy them to the top of this file before attempting it.
 
 ### Challenge 5: Extending Your Playlist
 ```js
@@ -153,7 +157,7 @@ Practice using `extends`, `super()`, and method overriding to build class hierar
 
 ---
 
-## Level 3 – Advanced (2 points)
+## Level 3 – Advanced [2 pts](#pill:degree)
 
 ### Challenge 7: Vehicle Fleet
 ```js

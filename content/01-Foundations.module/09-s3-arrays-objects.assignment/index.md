@@ -42,7 +42,7 @@ In this assignment you will create objects that represent real-world things. You
 
 ---
 
-## Level 1 – Core Tasks (15 points)
+## Level 1 – Core Tasks [15 pts](#pill:accent)
 
 ### Challenge 1: Create a Student Object
 
@@ -117,7 +117,7 @@ Create an object that represents a book.
 
 ---
 
-## Level 2 – Stretch Tasks (3 points)
+## Level 2 – Stretch Tasks [3 pts](#pill:cert)
 
 ### Challenge 5: Car Rental
 
@@ -156,7 +156,7 @@ const quizScore = {
 
 ---
 
-## Level 3 – Advanced Challenge (2 points)
+## Level 3 – Advanced Challenge [2 pts](#pill:degree)
 
 ### Challenge 7: Multiple Related Objects
 

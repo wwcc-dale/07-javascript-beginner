@@ -22,11 +22,13 @@ Build the `BlackjackGame` class that coordinates `Deck` and `Hand` objects.
 
 **Time:** 60–90 minutes | **Points:** 20 | **Submit:** `18-assignment.js`
 
-Copy your `Card`, `Deck`, and `Hand` classes from Sessions 16–17 into the top of this file.
+> alert: warning
+>
+> Copy your `Card`, `Deck`, and `Hand` classes from Sessions 16–17 into the top of this file before starting the challenges below.
 
 ---
 
-## Level 1 – Core Tasks (15 points)
+## Level 1 – Core Tasks [15 pts](#pill:accent)
 
 ### Challenge 1: Constructor and State
 ```js
@@ -141,7 +143,7 @@ Copy your `Card`, `Deck`, and `Hand` classes from Sessions 16–17 into the top 
 
 ---
 
-## Level 2 – Stretch (3 points)
+## Level 2 – Stretch [3 pts](#pill:cert)
 
 ### Challenge 5: Play 10 Rounds
 ```js
@@ -172,7 +174,7 @@ Copy your `Card`, `Deck`, and `Hand` classes from Sessions 16–17 into the top 
 
 ---
 
-## Level 3 – Advanced (2 points)
+## Level 3 – Advanced [2 pts](#pill:degree)
 
 ### Challenge 7: Soft hand detection
 ```js

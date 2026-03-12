@@ -28,7 +28,7 @@ Build fully interactive applications with event handling.
 
 1. Open the starter file, save a copy as `14-assignment.html`, and complete each challenge.
 
-## Level 1 – Core (15 pts)
+## Level 1 – Core [15 pts](#pill:accent)
 
 ### Challenge 1: Counter App
 - Display showing count (starts 0)
@@ -51,7 +51,7 @@ Build fully interactive applications with event handling.
 - Clicking changes box background to that color
 - Display current color name
 
-## Level 2 – Stretch (3 pts)
+## Level 2 – Stretch [3 pts](#pill:cert)
 
 ### Challenge 5: Calculator
 Basic calculator with number buttons, operator buttons, display
@@ -59,7 +59,7 @@ Basic calculator with number buttons, operator buttons, display
 ### Challenge 6: Character Counter
 Textarea that shows character count live as you type
 
-## Level 3 – Advanced (2 pts)
+## Level 3 – Advanced [2 pts](#pill:degree)
 
 ### Challenge 7: Complete Todo App
 Add todos, mark complete, filter (all/active/completed), delete, clear completed

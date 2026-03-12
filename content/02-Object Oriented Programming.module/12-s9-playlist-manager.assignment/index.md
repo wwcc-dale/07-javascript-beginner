@@ -23,7 +23,7 @@ Build a two-class system — `Song` and `Playlist` — that stores and manages a
 
 ---
 
-## Level 1 – Core Tasks (15 points)
+## Level 1 – Core Tasks [15 pts](#pill:accent)
 
 ### Challenge 1: Song Class
 ```js
@@ -91,7 +91,7 @@ Build a two-class system — `Song` and `Playlist` — that stores and manages a
 
 ---
 
-## Level 2 – Stretch (3 points)
+## Level 2 – Stretch [3 pts](#pill:cert)
 
 ### Challenge 5: getLongest
 ```js
@@ -118,7 +118,7 @@ Build a two-class system — `Song` and `Playlist` — that stores and manages a
 
 ---
 
-## Level 3 – Advanced (2 points)
+## Level 3 – Advanced [2 pts](#pill:degree)
 
 ### Challenge 7: Queue Playlist
 ```js
