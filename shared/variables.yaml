@@ -11,6 +11,8 @@ instructor_email: dale.chapman@wwcc.edu
 instructor_office: WSP South Complex, Classroom 1
 office_hours: Weekdays, 7:50-10:30am | 12:30-3:30pm
 
+course_banner: bridge.jpg
+
 # Session structure (progress-dashboard)
 total_sessions: 25              # total class sessions in the course
 module: 0                       # current module number (0 = not shown)
