@@ -65,3 +65,14 @@ Write a loop that doubles every number in an array.
 
 ### Challenge 7: Grade Summary
 Create a function that takes an array of scores and returns a summary: total students, how many passed (>=70), how many failed, and the average score.
+
+---
+
+## Before Submitting
+
+- checklist: Before Submitting
+- File named `04-assignment.js`
+- All Level 1 challenges complete and working
+- Loops produce correct output
+- Code runs without errors
+- Attempted Level 2 or 3 if time allowed

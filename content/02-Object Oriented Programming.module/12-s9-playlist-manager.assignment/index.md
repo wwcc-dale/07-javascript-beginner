@@ -140,3 +140,15 @@ Build a two-class system — `Song` and `Playlist` — that stores and manages a
 // q.advance(); // wraps back to 0
 // console.log(q.getCurrentSong().title); // "Song 1"
 ```
+
+---
+
+## Before Submitting
+
+- checklist: Before Submitting
+- File named `09-assignment.js`
+- `Song` class: `getLabel()` formats correctly with minutes and seconds
+- `Playlist` class: `addSong()` rejects duplicates, `removeSong()` and `findByArtist()` work
+- `totalDuration` getter returns correct sum
+- Code runs without errors
+- Attempted Level 2 or 3 if time allowed

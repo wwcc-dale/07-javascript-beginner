@@ -128,6 +128,19 @@ Copy your `Card`, `Deck`, and `Hand` classes from Sessions 16–17 into the top 
 
 ---
 
+## Before Submitting
+
+- checklist: Before Submitting
+- File named `18-assignment.js`
+- Card, Deck, and Hand classes copied from Sessions 16–17
+- `startRound()` deals 4 cards and sets state to `'playing'`
+- `playerHit()` and `playerStand()` update state correctly
+- `getResult()` returns correct outcome string for all 6 possible results
+- Code runs without errors
+- Attempted Level 2 or 3 if time allowed
+
+---
+
 ## Level 2 – Stretch (3 points)
 
 ### Challenge 5: Play 10 Rounds

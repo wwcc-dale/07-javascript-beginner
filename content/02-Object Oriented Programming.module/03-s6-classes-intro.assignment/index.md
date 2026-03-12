@@ -110,3 +110,14 @@ Create a GradeBook class that:
 - Method getTopStudent() returns the student with the highest grade
 
 Test with at least 4 students with different grades.
+
+---
+
+## Before Submitting
+
+- checklist: Before Submitting
+- File named `06-assignment.js`
+- All Level 1 classes have correct constructors and methods
+- Tested each class with the provided test cases
+- Code runs without errors
+- Attempted Level 2 or 3 if time allowed

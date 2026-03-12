@@ -33,11 +33,12 @@ In this assignment you will create objects that represent real-world things. You
 - buttons
 - Download Starter File | 03-starter.zip | primary | download
 
-1. Open the starter file.
-2. Save as `03-assignment.js`.
-3. Create the objects as instructed.
-4. Test by accessing and logging properties.
-5. Check that properties contain the expected values.
+- steps
+- Open the starter file
+- Save as `03-assignment.js`
+- Create the objects as instructed
+- Test by accessing and logging properties
+- Check that properties contain the expected values
 
 ---
 
@@ -190,11 +191,12 @@ Before submitting:
 
 ## Submission Checklist
 
-- [ ] File named `03-assignment.js`
-- [ ] All Level 1 objects are created correctly
-- [ ] All properties have correct values
-- [ ] Code runs without errors
-- [ ] Attempted Level 2 or 3 if time allowed
+- checklist: Submission Checklist
+- File named `03-assignment.js`
+- All Level 1 objects are created correctly
+- All properties have correct values
+- Code runs without errors
+- Attempted Level 2 or 3 if time allowed
 
 ---
 
@@ -209,9 +211,12 @@ Before submitting:
 
 ## Key Concepts
 
-**Object:** A container for related data  
-**Property:** A key-value pair in an object  
-**Dot notation:** The standard way to access properties (object.property)  
-**Modification:** You can change property values even in const objects
-
-These patterns will be used constantly in future sessions!
+- accordion: Key Concepts
+- Object
+  - A container for related data
+- Property
+  - A key-value pair in an object
+- Dot notation
+  - The standard way to access properties (object.property)
+- Modification
+  - You can change property values even in const objects

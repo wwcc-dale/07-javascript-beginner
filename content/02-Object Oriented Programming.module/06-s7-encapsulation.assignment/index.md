@@ -121,3 +121,15 @@ Create a Student class with:
 - Method addGrade(grade) with validation
 - Getter average that calculates grade average
 - Method getStatus() returns "Passing" or "Failing" based on average
+
+---
+
+## Before Submitting
+
+- checklist: Before Submitting
+- File named `07-assignment.js`
+- All Level 1 classes use private-style properties (`_name` convention)
+- Validation rejects invalid values correctly
+- Getters and setters work as expected
+- Code runs without errors
+- Attempted Level 2 or 3 if time allowed

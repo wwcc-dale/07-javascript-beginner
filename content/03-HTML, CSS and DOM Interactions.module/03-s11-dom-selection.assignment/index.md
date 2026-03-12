@@ -69,3 +69,15 @@ Build dashboard that displays:
 - Stats cards (created dynamically)
 - List of recent activities
 - All data from JS objects, all elements created/populated dynamically
+
+---
+
+## Before Submitting
+
+- checklist: Before Submitting
+- File named `11-assignment.html`
+- All Level 1 challenges work correctly in the browser
+- DOM elements selected and modified using correct methods
+- Dynamic list and user profile populate from JavaScript data
+- No JavaScript errors in the browser console
+- Attempted Level 2 or 3 if time allowed

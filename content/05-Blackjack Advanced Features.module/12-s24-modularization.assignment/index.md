@@ -140,3 +140,15 @@ After the refactor, your browser console must show **zero errors**. In a comment
 1. The order in which JavaScript loads your modules (you can find this in the Network tab of DevTools)
 2. Any circular dependency you found and how you resolved it (or "none found")
 3. One advantage of the modular structure you noticed while refactoring
+
+---
+
+## Before Submitting
+
+- checklist: Before Submitting
+- Zip file of reorganized game folder submitted
+- All classes exported from individual files with `export`
+- All import paths are correct and resolve without errors
+- Game runs via a single `<script type="module" src="src/main.js">` tag
+- No JavaScript errors in the browser console
+- Attempted Level 2 or 3 if time allowed

@@ -170,3 +170,15 @@ Practice using `extends`, `super()`, and method overriding to build class hierar
 // Loop through and call describe() on each.
 // Count how many are ElectricVehicle (using instanceof).
 ```
+
+---
+
+## Before Submitting
+
+- checklist: Before Submitting
+- File named `10-assignment.js`
+- All subclasses use `extends` and call `super()` correctly
+- Method overrides work and call `super.method()` where appropriate
+- `instanceof` checks return the expected results
+- Code runs without errors
+- Attempted Level 2 or 3 if time allowed

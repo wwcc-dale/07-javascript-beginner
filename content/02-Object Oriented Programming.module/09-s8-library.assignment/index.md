@@ -107,3 +107,15 @@ Build a system with:
 - Proper validation throughout
 
 Test with 5 books and 3 members.
+
+---
+
+## Before Submitting
+
+- checklist: Before Submitting
+- File named `08-assignment.js`
+- `Book` class: `checkout()`, `returnBook()`, `getInfo()` all work
+- `Library` class: books can be added, found, and checked out
+- Checkout returns `false` for missing or already-checked-out books
+- Code runs without errors
+- Attempted Level 2 or 3 if time allowed

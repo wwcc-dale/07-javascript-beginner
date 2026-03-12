@@ -130,3 +130,15 @@ Add a scoreboard that tracks wins, losses, and pushes across all rounds.
 - These numbers should persist as long as the page is open (no need for localStorage yet)
 
 Blackjack wins count as wins. Player busts count as losses.
+
+---
+
+## Before Submitting
+
+- checklist: Before Submitting
+- Zip file submitted containing `index.html`, `style.css`, and all `.js` files
+- Deal, Hit, and Stand buttons work and disable/enable correctly
+- Cards display and update on screen after each action
+- Result message shows correct text for all 6 outcomes
+- No JavaScript errors in the browser console
+- Attempted Level 2 or 3 if time allowed

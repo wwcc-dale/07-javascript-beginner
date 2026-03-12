@@ -97,13 +97,14 @@ This is a reflection task, not a coding task. Your comment shows that you tested
 
 ---
 
-## Checklist before submitting
+## Before Submitting
 
-- [ ] Green (or dark) felt background
-- [ ] Cards have white background, rounded corners, red colour for hearts/diamonds
-- [ ] Dealer's second card is face-down during player's turn
-- [ ] Correct result message for all 6 outcomes
-- [ ] Win/loss counter updates every round
-- [ ] Hit and Stand are disabled after round ends; re-enabled on next Deal
-- [ ] No errors in the browser console
-- [ ] All files in one folder, zipped for submission
+- checklist: Before Submitting
+- Green (or dark) felt background
+- Cards have white background, rounded corners, red colour for hearts/diamonds
+- Dealer's second card is face-down during player's turn
+- Correct result message for all 6 outcomes
+- Win/loss counter updates every round
+- Hit and Stand are disabled after round ends; re-enabled on next Deal
+- No errors in the browser console
+- All files in one folder, zipped for submission

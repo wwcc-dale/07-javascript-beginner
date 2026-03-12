@@ -62,3 +62,15 @@ Add items with quantity, mark as bought (toggle class), delete
 
 ### Challenge 7: Complete CRUD App
 Create, Read, Update, Delete items with full interface
+
+---
+
+## Before Submitting
+
+- checklist: Before Submitting
+- File named `12-assignment.html`
+- All Level 1 challenges work correctly in the browser
+- Elements created with `createElement` and appended correctly
+- Delete buttons remove their parent element
+- No JavaScript errors in the browser console
+- Attempted Level 2 or 3 if time allowed

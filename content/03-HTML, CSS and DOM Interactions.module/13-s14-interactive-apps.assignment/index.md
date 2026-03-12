@@ -63,3 +63,15 @@ Textarea that shows character count live as you type
 
 ### Challenge 7: Complete Todo App
 Add todos, mark complete, filter (all/active/completed), delete, clear completed
+
+---
+
+## Before Submitting
+
+- checklist: Before Submitting
+- File named `14-assignment.html`
+- All Level 1 challenges work correctly in the browser
+- Event listeners properly connected to buttons
+- Form validation prevents empty submissions
+- No JavaScript errors in the browser console
+- Attempted Level 2 or 3 if time allowed

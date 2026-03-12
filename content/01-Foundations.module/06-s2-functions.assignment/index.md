@@ -33,11 +33,12 @@ In this assignment you will write functions to solve real-world problems. You'll
 - buttons
 - Download Starter File | 02-starter.zip | primary | download
 
-1. Open the starter file.
-2. Save as `02-assignment.js`.
-3. Complete each challenge by writing functions.
-4. Test by calling each function with different values.
-5. Check the console output against expected results.
+- steps
+- Open the starter file
+- Save as `02-assignment.js`
+- Complete each challenge by writing functions
+- Test by calling each function with different values
+- Check the console output against expected results
 
 ---
 
@@ -168,11 +169,12 @@ Before submitting:
 
 ## Submission Checklist
 
-- [ ] File named `02-assignment.js`
-- [ ] All Level 1 functions are complete and working
-- [ ] Code runs without errors
-- [ ] Functions return correct values
-- [ ] Attempted Level 2 or 3 if time allowed
+- checklist: Submission Checklist
+- File named `02-assignment.js`
+- All Level 1 functions are complete and working
+- Code runs without errors
+- Functions return correct values
+- Attempted Level 2 or 3 if time allowed
 
 ---
 
@@ -187,9 +189,12 @@ Before submitting:
 
 ## Key Concepts
 
-**Parameters:** The inputs to a function  
-**Return Value:** The output from a function  
-**Calling a Function:** Using it with specific arguments  
-**Reusability:** Writing it once, using it many times
-
-These patterns will be used constantly in your future code!
+- accordion: Key Concepts
+- Parameters
+  - The inputs to a function
+- Return Value
+  - The output from a function
+- Calling a Function
+  - Using it with specific arguments
+- Reusability
+  - Writing it once, using it many times

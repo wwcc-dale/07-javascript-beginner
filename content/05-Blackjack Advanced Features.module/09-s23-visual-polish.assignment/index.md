@@ -126,3 +126,16 @@ Instead of instantly showing/hiding the result message, animate it:
 - On the next Deal: fade it out before the new round starts.
 
 Use `transitionend` event listener or a `delay()` to wait for the animation to finish before starting the new round.
+
+---
+
+## Before Submitting
+
+- checklist: Before Submitting
+- Zip file of complete game folder with updated `style.css`
+- CSS custom properties defined in `:root` and used throughout
+- Light/dark theme toggle works and saves preference to localStorage
+- Card hover animation lifts card on hover
+- Win announcement animation plays on win outcomes
+- No JavaScript errors in the browser console
+- Attempted Level 2 or 3 if time allowed

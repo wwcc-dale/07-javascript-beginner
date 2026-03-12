@@ -62,3 +62,15 @@ Inputs for color, font-size, border-radius that update element styles live
 
 ### Challenge 7: Complete Theme System
 Multiple themes (light, dark, blue, green), save preference, apply to all elements
+
+---
+
+## Before Submitting
+
+- checklist: Before Submitting
+- File named `13-assignment.html`
+- All Level 1 challenges work correctly in the browser
+- `classList.add`, `remove`, and `toggle` used appropriately
+- Dark mode toggle and status indicator work
+- No JavaScript errors in the browser console
+- Attempted Level 2 or 3 if time allowed

@@ -156,3 +156,15 @@ Build the foundation of your Blackjack game: a `Card` class and a `Deck` class.
 // shoe.shuffle();
 // console.log(shoe.deal().toString()); // random card
 ```
+
+---
+
+## Before Submitting
+
+- checklist: Before Submitting
+- File named `16-assignment.js`
+- `Card`: `toString()` and `getValue()` return correct values (including face cards and Ace)
+- `Deck`: builds all 52 cards, `shuffle()` randomises order, `deal()` returns and removes top card
+- `deal()` returns `null` on empty deck
+- Code runs without errors
+- Attempted Level 2 or 3 if time allowed

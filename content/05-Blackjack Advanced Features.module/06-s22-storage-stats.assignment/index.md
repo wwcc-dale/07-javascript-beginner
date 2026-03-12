@@ -124,3 +124,15 @@ Add a `version` field to the saved stats. Define `STATS_VERSION = 1` at the top 
 - Return `_defaults()`
 
 Test: manually type old data into DevTools localStorage and verify the app loads cleanly without crashing.
+
+---
+
+## Before Submitting
+
+- checklist: Before Submitting
+- Zip file submitted including `stats.js`
+- Stats persist after page reload (verify by reloading the page)
+- Win rate calculates and displays correctly
+- Stats panel shows all four values (games played, win rate, best chips, biggest win)
+- No JavaScript errors in the browser console
+- Attempted Level 2 or 3 if time allowed

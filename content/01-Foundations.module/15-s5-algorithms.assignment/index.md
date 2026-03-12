@@ -72,3 +72,14 @@ Write a function that takes an array of scores and returns:
 - Number who passed (>=70)
 - Number who failed (<70)
 - Percentage who passed
+
+---
+
+## Before Submitting
+
+- checklist: Before Submitting
+- File named `05-assignment.js`
+- All Level 1 functions return correct values
+- Tested each function with the provided inputs
+- Code runs without errors
+- Attempted Level 2 or 3 if time allowed

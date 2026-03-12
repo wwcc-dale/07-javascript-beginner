@@ -159,3 +159,16 @@ Copy your `Card` and `Deck` classes from Session 16 into the top of this file.
 // console.log('Dealer final total:', finalTotal);
 // // Should be 17 or more
 ```
+
+---
+
+## Before Submitting
+
+- checklist: Before Submitting
+- File named `17-assignment.js`
+- Card and Deck classes copied from Session 16
+- `Hand.getTotal()` handles ace adjustment correctly (adjusts 11→1 to avoid bust)
+- `isBust()` and `isBlackjack()` return correct results
+- `clear()` resets hand and `toString()` formats output correctly
+- Code runs without errors
+- Attempted Level 2 or 3 if time allowed

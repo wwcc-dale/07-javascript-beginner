@@ -122,3 +122,16 @@ Use a CSS class + `setTimeout` to remove it after 600ms.
 
 ### Challenge 7: Bet history
 Track the last 5 bets in the Wallet (as an array). Add a method `getRecentBets()` that returns this array. Display the last 5 bets in the UI as a "Recent bets" list. This list updates after each round.
+
+---
+
+## Before Submitting
+
+- checklist: Before Submitting
+- Zip file of complete game folder submitted
+- `Wallet` class: `placeBet()`, `win()`, `lose()`, `push()`, and `isBankrupt()` all work correctly
+- Invalid and unaffordable bets are rejected with a message
+- Chip count updates correctly after each round
+- Game over message shows when chips reach 0
+- No JavaScript errors in the browser console
+- Attempted Level 2 or 3 if time allowed

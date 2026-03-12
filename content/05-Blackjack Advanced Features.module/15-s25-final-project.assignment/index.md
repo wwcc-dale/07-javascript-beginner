@@ -34,31 +34,39 @@ Submit your complete, polished Blackjack game.
 Your game must include all of the following. Missing any mandatory item caps your grade at 25/50.
 
 ### Game Rules (must work correctly)
-- [ ] Two cards dealt to player and dealer at the start of each round
-- [ ] Dealer's second card hidden during player's turn, revealed at end
-- [ ] Hit: deals one card to player; updates total; detects bust
-- [ ] Ace adjustment: automatically adjusts from 11 to 1 when needed to avoid bust
-- [ ] Stand: dealer auto-plays to 17 or more, then round resolves
-- [ ] All 6 outcomes handled correctly: `player_wins`, `dealer_wins`, `player_bust`, `dealer_bust`, `blackjack`, `push`
-- [ ] Blackjack detected on 2-card total of 21
+
+- checklist: Game Rules
+- Two cards dealt to player and dealer at the start of each round
+- Dealer's second card hidden during player's turn, revealed at end
+- Hit: deals one card to player; updates total; detects bust
+- Ace adjustment: automatically adjusts from 11 to 1 when needed to avoid bust
+- Stand: dealer auto-plays to 17 or more, then round resolves
+- All 6 outcomes handled correctly: `player_wins`, `dealer_wins`, `player_bust`, `dealer_bust`, `blackjack`, `push`
+- Blackjack detected on 2-card total of 21
 
 ### Betting System
-- [ ] Player places a bet before each round
-- [ ] Invalid/unaffordable bets are rejected with a message
-- [ ] Correct payouts: win 1:1, blackjack 3:2, push returns bet
-- [ ] Chip balance updates after every round
-- [ ] Game ends when chips reach 0
+
+- checklist: Betting System
+- Player places a bet before each round
+- Invalid/unaffordable bets are rejected with a message
+- Correct payouts: win 1:1, blackjack 3:2, push returns bet
+- Chip balance updates after every round
+- Game ends when chips reach 0
 
 ### UI
-- [ ] Cards displayed on screen for both player and dealer
-- [ ] Player total and dealer total displayed
-- [ ] Clear result message after each round
-- [ ] Deal, Hit, Stand buttons properly enabled/disabled
-- [ ] Win/loss/tie counter displayed
+
+- checklist: UI
+- Cards displayed on screen for both player and dealer
+- Player total and dealer total displayed
+- Clear result message after each round
+- Deal, Hit, Stand buttons properly enabled/disabled
+- Win/loss/tie counter displayed
 
 ### Code Quality
-- [ ] No JavaScript errors in the browser console
-- [ ] README.md included (see requirements below)
+
+- checklist: Code Quality
+- No JavaScript errors in the browser console
+- README.md included (see requirements below)
 
 ---
 
@@ -108,8 +116,9 @@ Your `README.md` must include:
 
 ## Before Submitting
 
-1. Play at least 5 complete rounds — including one blackjack, one bust, one push if possible.
-2. Open DevTools and verify the console shows **no errors**.
-3. Test the game over condition by losing all chips.
-4. Read your README — does it clearly explain how to play and how to run the game?
-5. Zip the entire game folder (not just individual files) and submit.
+- steps
+- Play at least 5 complete rounds — including one blackjack, one bust, one push if possible
+- Open DevTools and verify the console shows **no errors**
+- Test the game over condition by losing all chips
+- Read your README — does it clearly explain how to play and how to run the game?
+- Zip the entire game folder (not just individual files) and submit

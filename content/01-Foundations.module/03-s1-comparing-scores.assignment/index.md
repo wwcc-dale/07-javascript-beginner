@@ -34,11 +34,12 @@ You will work with quiz scores, shopping totals, and other values, just like a r
 - buttons
 - Download Starter File | 01-starter.zip | primary | download
 
-1. Open the starter file.
-2. Save a copy as `01-assignment.js`.
-3. Follow the instructions for each challenge.
-4. Run your file and check the console output.
-5. If you finish Level 1 early, try Levels 2 and 3.
+- steps
+- Open the starter file
+- Save a copy as `01-assignment.js`
+- Follow the instructions for each challenge
+- Run your file and check the console output
+- If you finish Level 1 early, try Levels 2 and 3
 
 ---
 
@@ -184,11 +185,12 @@ Before you submit, check:
 
 ## Submission Checklist
 
-- [ ] File is named `01-assignment.js`.
-- [ ] All Level 1 challenges are complete.
-- [ ] Code runs without syntax errors.
-- [ ] Output matches the instructions.
-- [ ] You attempted Level 2 or 3 if you had time.
+- checklist: Submission Checklist
+- File is named `01-assignment.js`
+- All Level 1 challenges are complete
+- Code runs without syntax errors
+- Output matches the instructions
+- Attempted Level 2 or 3 if you had time
 
 ---
 
