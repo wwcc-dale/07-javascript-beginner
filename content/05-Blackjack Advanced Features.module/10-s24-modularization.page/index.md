@@ -222,3 +222,17 @@ Given this import in `game/BlackjackGame.js`:
 import { Card } from 'classes/Card.js';
 ```
 Identify the error and write the corrected import path. (Hint: the path needs to be relative to `game/BlackjackGame.js`'s location.)
+
+---
+
+- accordion: Helpful Resources
+- [JavaScript modules — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+  - Complete guide to ES6 modules: export, import, named vs default, dynamic imports
+- [export — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
+  - All forms of export: named, default, and re-export
+- [import — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
+  - All forms of import, including aliases and namespace imports
+- [script: type="module" — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#type)
+  - How to load an ES6 module entry point in an HTML page
+- [CORS errors — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS/Errors)
+  - Why modules require an HTTP server and how to diagnose CORS errors

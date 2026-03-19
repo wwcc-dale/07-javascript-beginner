@@ -276,3 +276,17 @@ Call `updateDisplay(true)` during the player's turn, and `updateDisplay(false)` 
 ### Supplemental Exercise
 
 Implement the hidden dealer card. Verify that the second card is hidden during the player's turn and revealed when the round ends.
+
+---
+
+- accordion: Helpful Resources
+- [Document.getElementById() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
+  - Select an element by its `id` attribute — common for targeting fixed UI elements
+- [EventTarget.addEventListener() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+  - Attach click handlers to Deal, Hit, and Stand buttons
+- [HTMLButtonElement.disabled — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/disabled)
+  - Enable and disable buttons based on game state
+- [async function — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+  - Write async game loops that wait for button clicks using await
+- [Promise — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+  - How waitForClick() works under the hood — a Promise that resolves on click

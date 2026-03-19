@@ -2,43 +2,39 @@
 allowed_attempts: 3
 indent: 1
 module: 3
-name: Session 14 Quiz – DOM Manipulation and Selection
+name: Session 14 Quiz – Event Handling and Interactivity
+pick: 8
 position: 11
-published: false
+published: true
 question_groups:
 - bank: s14-event-handling.bank
-  bank_id: 35301450
-  pick: 16
+  pick: 8
   points_per_question: 1
+- bank: s99-reflection.bank
+  pick: all
+  points_per_question: 0
 quiz_type: practice_quiz
 session: 14.2
 show_correct_answers: true
 shuffle_answers: true
-time_limit: 20
+time_limit: 15
 ---
 
-# Session 14 Quiz – DOM Manipulation and Selection
+{{include:quiz-instructions}}
 
-Test your understanding of DOM API methods, element selection, and manipulation.
+Test your understanding of event listeners, the event object, and form element values.
 
 **Topics Covered:**
-- querySelector and querySelectorAll
-- Element creation and manipulation
-- classList methods
-- textContent vs innerHTML
-- Attribute and data methods
+- addEventListener and common event types
+- event.target, event.key, event.preventDefault()
+- Event bubbling and stopPropagation
+- Reading values from input, textarea, and select
+- Event delegation
 
-**Instructions:**
-- 16 questions from the Session 14 question bank
-- 20 minute time limit
-- 3 attempts allowed
-- 16 points total (1 point per question)
+- stats
+- {{var:pick}} | Questions | accent
+- {{var:time_limit}} | Minutes | neutral
+- {{var:allowed_attempts}} | Attempts | cert
+- {{var:pick}} | Points | success
 
-**After syncing the question bank to Canvas:**
-1. Go to Canvas → Quizzes → Manage Question Banks
-2. Find "Session 14: DOM Manipulation and Selection" bank
-3. Note the bank ID from the URL (`...question_banks/[ID]`)
-4. Replace `PLACEHOLDER_REPLACE_AFTER_SYNC` above with that ID
-5. Re-sync this quiz
-
-Good luck!
+Plus 3 reflection questions at the end (ungraded — share your thoughts).

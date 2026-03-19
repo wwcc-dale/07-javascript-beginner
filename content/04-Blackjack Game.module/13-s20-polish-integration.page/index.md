@@ -250,6 +250,20 @@ Add a fade-in effect when a new card appears:
 
 Every time you `appendChild` a card element, the animation automatically plays because the element is new to the DOM.
 
+---
+
+- accordion: Helpful Resources
+- [Using CSS animations — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations)
+  - How to define @keyframes and apply animation properties for card deal effects
+- [CSS Flexbox — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)
+  - Layout technique for centering cards and arranging the game table
+- [setTimeout() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout)
+  - The underlying mechanism behind the delay() helper
+- [Using the browser DevTools console — MDN Guide](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/What_are_browser_developer_tools)
+  - How to use the browser console to debug JavaScript errors in your game
+- [button:disabled — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled)
+  - Style disabled buttons with reduced opacity using the CSS :disabled pseudo-class
+
 ### Supplemental Exercise
 
 Implement the staggered deal animation: each card appears 250ms after the previous one. Use `animationDelay`:

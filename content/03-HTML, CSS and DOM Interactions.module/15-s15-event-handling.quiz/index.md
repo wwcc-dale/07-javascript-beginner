@@ -2,43 +2,38 @@
 allowed_attempts: 3
 indent: 1
 module: 3
-name: Session 15 Quiz – Event Handling and Forms
+name: Session 15 Quiz – Midterm Review
+pick: 8
 position: 14
-published: false
+published: true
 question_groups:
 - bank: s15-event-handling.bank
-  bank_id: 35301452
-  pick: 16
+  pick: 8
   points_per_question: 1
+- bank: s99-reflection.bank
+  pick: all
+  points_per_question: 0
 quiz_type: practice_quiz
 session: 15.2
 show_correct_answers: true
 shuffle_answers: true
-time_limit: 20
+time_limit: 15
 ---
 
-# Session 15 Quiz – Event Handling and Forms
+{{include:quiz-instructions}}
 
-Test your understanding of event listeners, event objects, and form handling.
+Midterm review check covering DOM, events, and CSS manipulation from Sessions 11–14.
 
 **Topics Covered:**
-- addEventListener and event types
-- preventDefault and stopPropagation
-- Event bubbling and delegation
-- Form validation
-- this binding in event handlers
+- DOM selection and modification
+- Creating and removing elements
+- Event listeners and the event object
+- classList and localStorage
 
-**Instructions:**
-- 16 questions from the Session 15 question bank
-- 20 minute time limit
-- 3 attempts allowed
-- 16 points total (1 point per question)
+- stats
+- {{var:pick}} | Questions | accent
+- {{var:time_limit}} | Minutes | neutral
+- {{var:allowed_attempts}} | Attempts | cert
+- {{var:pick}} | Points | success
 
-**After syncing the question bank to Canvas:**
-1. Go to Canvas → Quizzes → Manage Question Banks
-2. Find "Session 15: Event Handling and Forms" bank
-3. Note the bank ID from the URL (`...question_banks/[ID]`)
-4. Replace `PLACEHOLDER_REPLACE_AFTER_SYNC` above with that ID
-5. Re-sync this quiz
-
-Good luck!
+Plus 3 reflection questions at the end (ungraded — share your thoughts).

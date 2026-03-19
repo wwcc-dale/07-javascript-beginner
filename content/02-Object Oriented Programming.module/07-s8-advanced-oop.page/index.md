@@ -139,3 +139,15 @@ console.log(playlist.getTotalDuration()); // 395
 ## Assignment (60–90 minutes)
 
 Build a Library system with Book and Library classes that manage multiple books.
+
+---
+
+- accordion: Helpful Resources
+- [Array.prototype.push() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+  - Add objects to a collection array inside a container class
+- [for...of — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+  - Clean syntax for iterating over an array of objects
+- [Classes — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes)
+  - Review class syntax and how to design coordinating classes
+- [Object-oriented programming — MDN Guide](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object-oriented_programming)
+  - Overview of OOP concepts including encapsulation and composition

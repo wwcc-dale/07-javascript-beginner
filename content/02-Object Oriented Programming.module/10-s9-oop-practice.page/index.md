@@ -233,3 +233,17 @@ Add a `getSummary()` method that returns a string like:
 `"Midnight Drive (2024) — 3 tracks, 10:38 total"`
 
 Convert `totalDuration` from seconds to `mm:ss` format inside this method.
+
+---
+
+- accordion: Helpful Resources
+- [Array.prototype.filter() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+  - Returns a new array of items that match a condition — useful for search methods
+- [Array.prototype.find() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+  - Returns the first item matching a condition, or `undefined`
+- [Array.prototype.some() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+  - Returns `true` if at least one item matches a condition — useful for duplicate checks
+- [Array.prototype.reduce() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+  - Combines all array elements into a single value — the standard pattern for summing durations
+- [Array.prototype.findIndex() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
+  - Returns the index of the first matching item — used before `splice` to remove by value

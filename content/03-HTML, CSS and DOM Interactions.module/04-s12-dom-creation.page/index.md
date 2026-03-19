@@ -348,3 +348,21 @@ Build interactive content that creates and removes elements using event listener
 Next session you'll control visual styling dynamically using `classList`. The session after that (Session 14) goes deep on the full range of events — form submission, keyboard events, mouse position, and more.
 
 Next session: **CSS Manipulation with JavaScript**
+
+---
+
+- accordion: Helpful Resources
+- [Document.createElement() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
+  - Create a new HTML element in JavaScript
+- [Node.appendChild() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
+  - Add an element as the last child of a parent node
+- [Element.remove() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove)
+  - Remove an element from the DOM
+- [EventTarget.addEventListener() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+  - Attach a callback to run when a specific event occurs on an element
+- [HTMLInputElement.value — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/value)
+  - Read or clear the text a user has typed into an input field
+- [Template literals — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+  - Build strings with embedded expressions using backtick syntax
+- [Date — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+  - Create and format dates and timestamps

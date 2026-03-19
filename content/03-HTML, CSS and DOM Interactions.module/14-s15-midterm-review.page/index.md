@@ -185,3 +185,17 @@ Reach out to your instructor before the exam if you need clarification on any to
 ## Next Session
 
 **Session 16:** Card Game Project Introduction
+
+---
+
+- accordion: Helpful Resources
+- [JavaScript Guide — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
+  - Complete reference guide covering all JavaScript fundamentals from Sessions 1–5
+- [Classes — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes)
+  - Review class syntax, constructors, getters, setters, and inheritance
+- [DOM Introduction — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+  - How the DOM works and how JavaScript interacts with it
+- [Introduction to events — MDN Guide](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events)
+  - Event listeners, the event object, bubbling, and delegation
+- [JavaScript data structures — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+  - Overview of all primitive types, arrays, and objects

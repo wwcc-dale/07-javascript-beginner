@@ -325,3 +325,17 @@ You will apply CSS custom properties, theme switching, transitions, and animatio
 The assignment asks you to add a theme toggle, smooth card hover animations, and a trick-winner announcement animation to your Spades game using the CSS patterns from this reading.
 
 Next session: **Session 24 — ES6 Modules and Professional Code Organization**
+
+---
+
+- accordion: Helpful Resources
+- [Using CSS custom properties — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+  - Declare and use CSS variables with `--name` and `var()`, including inheritance
+- [CSS transitions — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_transitions/Using_CSS_transitions)
+  - Animate property changes over time when triggered by class toggles
+- [Using CSS animations — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations)
+  - Define multi-step @keyframes animations and apply them with classes
+- [Element.classList — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
+  - Toggle theme classes and trigger animations from JavaScript
+- [document.documentElement — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement)
+  - Access the `<html>` element to toggle a dark-mode class on `:root`

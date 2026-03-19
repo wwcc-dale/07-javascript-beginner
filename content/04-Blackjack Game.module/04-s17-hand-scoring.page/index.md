@@ -172,3 +172,15 @@ Example output: `[Ace of Spades, King of Hearts] = 21`
 ### Supplemental Exercise
 
 Add a `getVisibleTotal()` method to `Hand` that only adds the values of `_cards[0]` through `_cards[length-2]` — in other words, it hides the last card. (This simulates the dealer's face-down card.) Log the visible total and the true total for a 3-card dealer hand.
+
+---
+
+- accordion: Helpful Resources
+- [Array.prototype.map() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+  - Transform an array of cards into an array of values or strings
+- [while statement — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
+  - The while loop used to keep downgrading Aces until the total is valid
+- [Array.prototype.join() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+  - Combine an array of card strings into a single display string
+- [for...of — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+  - Cleanly iterate over each card in the hand when calculating the total

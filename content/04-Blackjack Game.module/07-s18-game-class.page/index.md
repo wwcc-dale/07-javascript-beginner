@@ -217,3 +217,15 @@ Write a `simulateGame()` function that plays 10 rounds automatically:
 - If player total ≤ 15, hit
 - Otherwise stand
 - Count wins, losses, and pushes across all 10 rounds.
+
+---
+
+- accordion: Helpful Resources
+- [Classes — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes)
+  - Review class design, state management with properties, and separation of concerns
+- [Spread syntax (...) — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+  - The `[...array]` pattern used to return a defensive copy of the cards array
+- [Conditional (ternary) operator — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator)
+  - Compact if/else expressions useful for assigning outcome strings
+- [Object initializer — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
+  - How to build and return a plain result object from getResult()

@@ -2,14 +2,17 @@
 allowed_attempts: 3
 indent: 1
 module: 1
-name: Session 5 Quiz – Objects and Object Methods
+name: Session 5 Quiz – Algorithmic Thinking
+pick: 8
 position: 14
-published: false
+published: true
 question_groups:
 - bank: s5-algorithms.bank
-  bank_id: 35301432
-  pick: 16
+  pick: 8
   points_per_question: 1
+- bank: s99-reflection.bank
+  pick: all
+  points_per_question: 0
 quiz_type: practice_quiz
 session: 5.2
 show_correct_answers: true
@@ -17,29 +20,20 @@ shuffle_answers: true
 time_limit: 20
 ---
 
-# Session 5 Quiz – Objects and Object Methods
+{{include:quiz-instructions}}
 
-Test your understanding of object literals, properties, methods, and object manipulation.
+Test your understanding of common algorithmic patterns using loops, conditionals, and functions.
 
 **Topics Covered:**
-- Object creation and access
-- Dot vs bracket notation
-- Object methods
-- this keyword
-- Object destructuring
-- Object.keys, Object.values, Object.entries
+- Find max / find min patterns
+- Count matching items
+- Calculate averages
+- Breaking problems into algorithmic steps
 
-**Instructions:**
-- 16 questions from the Session 5 question bank
-- 20 minute time limit
-- 3 attempts allowed
-- 16 points total (1 point per question)
+- stats
+- {{var:pick}} | Questions | accent
+- {{var:time_limit}} | Minutes | neutral
+- {{var:allowed_attempts}} | Attempts | cert
+- {{var:pick}} | Points | success
 
-**After syncing the question bank to Canvas:**
-1. Go to Canvas → Quizzes → Manage Question Banks
-2. Find "Session 5: Objects and Object Methods" bank
-3. Note the bank ID from the URL (`...question_banks/[ID]`)
-4. Replace `PLACEHOLDER_REPLACE_AFTER_SYNC` above with that ID
-5. Re-sync this quiz
-
-Good luck!
+Plus 3 reflection questions at the end (ungraded — share your thoughts).

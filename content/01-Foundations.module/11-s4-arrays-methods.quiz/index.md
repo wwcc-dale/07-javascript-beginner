@@ -3,13 +3,16 @@ allowed_attempts: 3
 indent: 1
 module: 1
 name: Session 4 Quiz – Arrays and Array Methods
+pick: 8
 position: 11
-published: false
+published: true
 question_groups:
 - bank: s4-loops.bank
-  bank_id: 35301430
-  pick: 16
+  pick: 8
   points_per_question: 1
+- bank: s99-reflection.bank
+  pick: all
+  points_per_question: 0
 quiz_type: practice_quiz
 session: 4.2
 show_correct_answers: true
@@ -17,29 +20,20 @@ shuffle_answers: true
 time_limit: 20
 ---
 
-# Session 4 Quiz – Arrays and Array Methods
+{{include:quiz-instructions}}
 
-Test your understanding of arrays, array manipulation, and higher-order array methods.
+Test your understanding of arrays, array manipulation, and iteration.
 
 **Topics Covered:**
-- Array creation and access
+- Array creation and index access
 - push, pop, shift, unshift
-- map, filter, reduce
-- forEach, find, findIndex
-- Array destructuring
-- Spread operator
+- Looping over arrays
+- Array length and common patterns
 
-**Instructions:**
-- 16 questions from the Session 4 question bank
-- 20 minute time limit
-- 3 attempts allowed
-- 16 points total (1 point per question)
+- stats
+- {{var:pick}} | Questions | accent
+- {{var:time_limit}} | Minutes | neutral
+- {{var:allowed_attempts}} | Attempts | cert
+- {{var:pick}} | Points | success
 
-**After syncing the question bank to Canvas:**
-1. Go to Canvas → Quizzes → Manage Question Banks
-2. Find "Session 4: Arrays and Array Methods" bank
-3. Note the bank ID from the URL (`...question_banks/[ID]`)
-4. Replace `PLACEHOLDER_REPLACE_AFTER_SYNC` above with that ID
-5. Re-sync this quiz
-
-Good luck!
+Plus 3 reflection questions at the end (ungraded — share your thoughts).

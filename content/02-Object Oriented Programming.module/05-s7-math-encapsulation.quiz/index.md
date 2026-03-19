@@ -2,14 +2,17 @@
 allowed_attempts: 3
 indent: 1
 module: 2
-name: Session 7 Quiz – Math and Number Methods
+name: Session 7 Quiz – Math Methods and Encapsulation
+pick: 8
 position: 5
-published: false
+published: true
 question_groups:
 - bank: s7-math-encapsulation.bank
-  bank_id: 35301436
-  pick: 16
+  pick: 8
   points_per_question: 1
+- bank: s99-reflection.bank
+  pick: all
+  points_per_question: 0
 quiz_type: practice_quiz
 session: 7.2
 show_correct_answers: true
@@ -17,29 +20,20 @@ shuffle_answers: true
 time_limit: 20
 ---
 
-# Session 7 Quiz – Math and Number Methods
+{{include:quiz-instructions}}
 
-Test your understanding of the Math object, number methods, and numeric operations.
+Test your understanding of the Math object, number methods, getters, and setters.
 
 **Topics Covered:**
 - Math.random, Math.floor, Math.ceil, Math.round
 - Math.max, Math.min, Math.abs
-- Number methods (toFixed, parseInt, parseFloat)
-- isNaN and Number.isInteger
-- Random number generation
-- Rounding and precision
+- Number methods (toFixed, parseInt, parseFloat, isNaN)
+- Getters and setters for encapsulation
 
-**Instructions:**
-- 16 questions from the Session 7 question bank
-- 20 minute time limit
-- 3 attempts allowed
-- 16 points total (1 point per question)
+- stats
+- {{var:pick}} | Questions | accent
+- {{var:time_limit}} | Minutes | neutral
+- {{var:allowed_attempts}} | Attempts | cert
+- {{var:pick}} | Points | success
 
-**After syncing the question bank to Canvas:**
-1. Go to Canvas → Quizzes → Manage Question Banks
-2. Find "Session 7: Math and Number Methods" bank
-3. Note the bank ID from the URL (`...question_banks/[ID]`)
-4. Replace `PLACEHOLDER_REPLACE_AFTER_SYNC` above with that ID
-5. Re-sync this quiz
-
-Good luck!
+Plus 3 reflection questions at the end (ungraded — share your thoughts).

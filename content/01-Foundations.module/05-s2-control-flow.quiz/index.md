@@ -3,13 +3,16 @@ allowed_attempts: 3
 indent: 1
 module: 1
 name: Session 2 Quiz – Control Flow (if/else, loops)
+pick: 8
 position: 5
-published: false
+published: true
 question_groups:
 - bank: s2-functions.bank
-  bank_id: 35301426
-  pick: 16
+  pick: 8
   points_per_question: 1
+- bank: s99-reflection.bank
+  pick: all
+  points_per_question: 0
 quiz_type: practice_quiz
 session: 2.2
 show_correct_answers: true
@@ -17,29 +20,21 @@ shuffle_answers: true
 time_limit: 20
 ---
 
-# Session 2 Quiz – Control Flow (if/else, loops)
+{{include:quiz-instructions}}
 
 Test your understanding of conditional statements and loop structures.
 
 **Topics Covered:**
 - if, else if, else statements
 - Ternary operator
-- switch statements
 - for loops
 - while and do...while loops
 - break and continue
 
-**Instructions:**
-- 16 questions from the Session 2 question bank
-- 20 minute time limit
-- 3 attempts allowed
-- 16 points total (1 point per question)
+- stats
+- {{var:pick}} | Questions | accent
+- {{var:time_limit}} | Minutes | neutral
+- {{var:allowed_attempts}} | Attempts | cert
+- {{var:pick}} | Points | success
 
-**After syncing the question bank to Canvas:**
-1. Go to Canvas → Quizzes → Manage Question Banks
-2. Find "Session 2: Control Flow" bank
-3. Note the bank ID from the URL (`...question_banks/[ID]`)
-4. Replace `PLACEHOLDER_REPLACE_AFTER_SYNC` above with that ID
-5. Re-sync this quiz
-
-Good luck!
+Plus 3 reflection questions at the end (ungraded — share your thoughts).

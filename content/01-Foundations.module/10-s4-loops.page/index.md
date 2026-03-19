@@ -413,3 +413,17 @@ Next session (Session 5), you'll learn **algorithms**—sophisticated ways to so
 - Ask your instructor if something is unclear.
 
 Next session: **Algorithmic Thinking**
+
+---
+
+- accordion: Helpful Resources
+- [Loops and iteration — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
+  - Overview of all loop types with examples for each
+- [for — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
+  - Syntax and details of the classic for loop
+- [while — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
+  - How while loops work and when to use them
+- [for...of — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+  - The modern syntax for iterating over array values directly
+- [break and continue — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break)
+  - How to exit a loop early or skip an iteration

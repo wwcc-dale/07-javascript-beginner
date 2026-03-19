@@ -191,3 +191,17 @@ This is optional for now but you may find it useful in Session 19 when you build
 ### Supplemental Exercise
 
 Add an `isRed()` method to `Card` that returns `true` for Hearts and Diamonds. Then write a loop that deals the whole deck and counts how many red cards there are. (Should always be 26.)
+
+---
+
+- accordion: Helpful Resources
+- [Array.prototype.includes() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+  - Check if an array contains a value — used to test whether a rank is a face card
+- [parseInt() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)
+  - Convert a string like "7" to the number 7 — used in Card's getValue()
+- [Destructuring assignment — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+  - The `[a, b] = [b, a]` swap pattern used in the Fisher-Yates shuffle
+- [Math.random() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+  - Generates a random decimal — combined with Math.floor to pick a random index
+- [Array.prototype.pop() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+  - Removes and returns the last element — the mechanism behind deal()

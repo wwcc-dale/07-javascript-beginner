@@ -1,0 +1,37 @@
+# Question Bank ID Mappings
+# Generated from Canvas HTML scrape
+# Last updated: 2026-03-18 20:18:40
+# Format: bank_filename → Canvas bank ID
+
+s1-javascript-basics.bank: 35701106
+s10-advanced-arrays-nodejs.bank: 35701154
+s11-dom-basics.bank: 35701156
+s12-dom-creation.bank: 35701164
+s13-css-manipulation.bank: 35701166
+s14-event-handling.bank: 35701168
+s15-event-handling.bank: 35701174
+s16-card-deck.bank: 35701176
+s17-hand-scoring.bank: 35701182
+s17-player-hand.bank: 35701184
+s18-game-class.bank: 35701190
+s18-game-ui.bank: 35701192
+s19-events-animations.bank: 35701198
+s19-game-ui.bank: 35701200
+s2-functions.bank: 35701112
+s20-polish-testing.bank: 35701206
+s21-ai-strategies.bank: 35701208
+s21-betting-system.bank: 35701304
+s22-localstorage.bank: 35701314
+s22-storage-ui.bank: 35701316
+s23-advanced-ui.bank: 35701318
+s24-modularization.bank: 35701324
+s24-testing-quality.bank: 35701326
+s25-final-project.bank: 35701332
+s3-arrays-objects.bank: 35701114
+s4-loops.bank: 35701116
+s5-algorithms.bank: 35701126
+s6-classes-intro.bank: 35701132
+s7-math-encapsulation.bank: 35701138
+s8-advanced-oop.bank: 35701140
+s9-inheritance.bank: 35701142
+s9-oop-practice.bank: 35701148

@@ -104,36 +104,36 @@
     "canvas_id": 25100358
   },
   "content/01-Foundations.module/02-s1-variables-datatypes.quiz": {
-    "hash": "2f80918922b3",
-    "canvas_id": 25099296
+    "hash": "e0824d10eaec",
+    "canvas_id": 25460780
   },
   "content/01-Foundations.module/05-s2-control-flow.quiz": {
     "hash": "91136b48d300",
-    "canvas_id": 25099298
+    "canvas_id": 25460782
   },
   "content/01-Foundations.module/08-s3-functions-scope.quiz": {
     "hash": "d5f7740b1641",
-    "canvas_id": 25099300
+    "canvas_id": 25460786
   },
   "content/01-Foundations.module/11-s4-arrays-methods.quiz": {
     "hash": "e3bbeb53ddde",
-    "canvas_id": 25099302
+    "canvas_id": 25460788
   },
   "content/01-Foundations.module/14-s5-algorithms.quiz": {
     "hash": "fe90c2bc1279",
-    "canvas_id": 25099304
+    "canvas_id": 25460790
   },
   "content/02-Object Oriented Programming.module/02-s6-classes-intro.quiz": {
     "hash": "0106823bd2d2",
-    "canvas_id": 25099306
+    "canvas_id": 25460792
   },
   "content/02-Object Oriented Programming.module/05-s7-math-encapsulation.quiz": {
     "hash": "1ccfe4c30950",
-    "canvas_id": 25099308
+    "canvas_id": 25460794
   },
   "content/02-Object Oriented Programming.module/08-s8-advanced-oop.quiz": {
     "hash": "5f124170537e",
-    "canvas_id": 25099310
+    "canvas_id": 25460796
   },
   "content/02-Object Oriented Programming.module/11-s9-inheritance.quiz": {
     "hash": "8898aaccd5bd",
@@ -145,23 +145,23 @@
   },
   "content/03-HTML, CSS and DOM Interactions.module/05-s12-dom-creation.quiz": {
     "hash": "da5b4fab85a1",
-    "canvas_id": 25099316
+    "canvas_id": 25460808
   },
   "content/03-HTML, CSS and DOM Interactions.module/07-s12-practice.quiz": {
     "hash": "60294fffeeeb",
-    "canvas_id": 25369990
+    "canvas_id": 25460810
   },
   "content/03-HTML, CSS and DOM Interactions.module/09-s13-css-manipulation.quiz": {
     "hash": "c0cfc5409eed",
-    "canvas_id": 25100334
+    "canvas_id": 25460812
   },
   "content/03-HTML, CSS and DOM Interactions.module/12-s14-event-handling.quiz": {
     "hash": "6ee1ead7c450",
-    "canvas_id": 25100336
+    "canvas_id": 25460814
   },
   "content/03-HTML, CSS and DOM Interactions.module/15-s15-event-handling.quiz": {
     "hash": "156c85c9f0b6",
-    "canvas_id": 25100338
+    "canvas_id": 25460816
   },
   "content/04-Card Game Implementation.module/02-s16-card-deck.quiz": {
     "hash": "6c53ff53213f",
@@ -197,58 +197,58 @@
   },
   "content/02-Object Oriented Programming.module/11-s9-oop-practice.quiz": {
     "hash": "2798d7ced271",
-    "canvas_id": 25359826
+    "canvas_id": 25460798
   },
   "content/02-Object Oriented Programming.module/14-s10-inheritance.quiz": {
     "hash": "78917f7c7aaa",
-    "canvas_id": 25359828
+    "canvas_id": 25460802
   },
   "content/02-Object Oriented Programming.module/16-s10-credit-02.quiz": {
     "hash": "a788ccc0eb46",
-    "canvas_id": 25359830
+    "canvas_id": 25460804
   },
   "content/03-HTML, CSS and DOM Interactions.module/02-s11-dom-basics.quiz": {
     "hash": "0b3386036ccd",
-    "canvas_id": 25359832
+    "canvas_id": 25460806
   },
   "content/04-Blackjack Game.module/02-s16-card-deck.quiz": {
     "hash": "7a865f70bfa8",
-    "canvas_id": 25359834
+    "canvas_id": 25460818
   },
   "content/04-Blackjack Game.module/05-s17-hand-scoring.quiz": {
     "hash": "b81b72334553",
-    "canvas_id": 25359836
+    "canvas_id": 25460820
   },
   "content/04-Blackjack Game.module/08-s18-game-class.quiz": {
     "hash": "208adf60e953",
-    "canvas_id": 25359838
+    "canvas_id": 25460822
   },
   "content/04-Blackjack Game.module/11-s19-game-ui.quiz": {
     "hash": "10641f09daa5",
-    "canvas_id": 25359840
+    "canvas_id": 25460824
   },
   "content/04-Blackjack Game.module/14-s20-polish-testing.quiz": {
     "hash": "97f4e0b6b6c8",
-    "canvas_id": 25359842
+    "canvas_id": 25460826
   },
   "content/05-Blackjack Advanced Features.module/02-s21-betting-system.quiz": {
     "hash": "6acac864e2b8",
-    "canvas_id": 25359844
+    "canvas_id": 25460828
   },
   "content/05-Blackjack Advanced Features.module/05-s22-storage-stats.quiz": {
     "hash": "2adf156b216d",
-    "canvas_id": 25359846
+    "canvas_id": 25460830
   },
   "content/05-Blackjack Advanced Features.module/08-s23-visual-polish.quiz": {
     "hash": "0337f2db765c",
-    "canvas_id": 25359848
+    "canvas_id": 25460832
   },
   "content/05-Blackjack Advanced Features.module/11-s24-modularization.quiz": {
     "hash": "dd1b24150e70",
-    "canvas_id": 25359850
+    "canvas_id": 25460834
   },
   "content/05-Blackjack Advanced Features.module/14-s25-final-project.quiz": {
     "hash": "fa80a66d1d84",
-    "canvas_id": 25359852
+    "canvas_id": 25460836
   }
 }

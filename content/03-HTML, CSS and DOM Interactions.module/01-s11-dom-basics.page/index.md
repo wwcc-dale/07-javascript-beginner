@@ -320,3 +320,19 @@ You will:
 Next session, you'll learn to modify **CSS with JavaScript**—making dynamic styling changes.
 
 Next session: **DOM Manipulation and Creation**
+
+---
+
+- accordion: Helpful Resources
+- [Introduction to the DOM — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+  - What the DOM is, how browsers build it from HTML, and how JavaScript interacts with it
+- [Document.querySelector() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
+  - Select a single element using any CSS selector
+- [Document.querySelectorAll() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
+  - Select all matching elements and iterate over them
+- [Element.textContent — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
+  - Read or set the plain text content of an element
+- [Element.innerHTML — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
+  - Read or set the HTML markup inside an element
+- [Element.setAttribute() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute)
+  - Set any attribute on a DOM element (href, src, alt, etc.)

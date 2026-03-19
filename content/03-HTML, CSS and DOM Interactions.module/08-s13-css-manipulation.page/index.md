@@ -179,3 +179,15 @@ Watch: `assets/videos/13-css-manipulation.mp4`
 Open **"Session 13: Dynamic Styling and Themes"**.
 
 Build interactive UI with classList and dynamic styling.
+
+---
+
+- accordion: Helpful Resources
+- [Element.classList — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
+  - Add, remove, toggle, and check CSS classes on an element
+- [HTMLElement.style — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style)
+  - Apply inline styles directly from JavaScript
+- [Window.localStorage — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+  - Store key-value string data that persists across browser sessions
+- [Using the Web Storage API — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API)
+  - How to use localStorage and sessionStorage, including JSON serialization

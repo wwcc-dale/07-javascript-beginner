@@ -2,14 +2,17 @@
 allowed_attempts: 3
 indent: 1
 module: 2
-name: Session 6 Quiz – String Methods and Template Literals
+name: Session 6 Quiz – Introduction to Classes
+pick: 8
 position: 2
-published: false
+published: true
 question_groups:
 - bank: s6-classes-intro.bank
-  bank_id: 35301434
-  pick: 16
+  pick: 8
   points_per_question: 1
+- bank: s99-reflection.bank
+  pick: all
+  points_per_question: 0
 quiz_type: practice_quiz
 session: 6.2
 show_correct_answers: true
@@ -17,29 +20,20 @@ shuffle_answers: true
 time_limit: 20
 ---
 
-# Session 6 Quiz – String Methods and Template Literals
+{{include:quiz-instructions}}
 
-Test your understanding of string manipulation, methods, and template literals.
+Test your understanding of ES6 classes, constructors, methods, and the `this` keyword.
 
 **Topics Covered:**
-- String methods (slice, substring, indexOf, etc.)
-- Template literals and interpolation
-- String searching and replacing
-- toUpperCase, toLowerCase, trim
-- split and join
-- String immutability
+- Class declarations and constructors
+- Creating instances with `new`
+- Instance properties and methods
+- `this` keyword in class context
 
-**Instructions:**
-- 16 questions from the Session 6 question bank
-- 20 minute time limit
-- 3 attempts allowed
-- 16 points total (1 point per question)
+- stats
+- {{var:pick}} | Questions | accent
+- {{var:time_limit}} | Minutes | neutral
+- {{var:allowed_attempts}} | Attempts | cert
+- {{var:pick}} | Points | success
 
-**After syncing the question bank to Canvas:**
-1. Go to Canvas → Quizzes → Manage Question Banks
-2. Find "Session 6: String Methods and Template Literals" bank
-3. Note the bank ID from the URL (`...question_banks/[ID]`)
-4. Replace `PLACEHOLDER_REPLACE_AFTER_SYNC` above with that ID
-5. Re-sync this quiz
-
-Good luck!
+Plus 3 reflection questions at the end (ungraded — share your thoughts).

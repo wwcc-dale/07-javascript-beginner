@@ -2,43 +2,38 @@
 allowed_attempts: 3
 indent: 1
 module: 3
-name: Session 13 Quiz – Responsive Design and Media Queries
+name: Session 13 Quiz – CSS Manipulation with JavaScript
+pick: 8
 position: 8
-published: false
+published: true
 question_groups:
 - bank: s13-css-manipulation.bank
-  bank_id: 35301448
-  pick: 16
+  pick: 8
   points_per_question: 1
+- bank: s99-reflection.bank
+  pick: all
+  points_per_question: 0
 quiz_type: practice_quiz
 session: 13.2
 show_correct_answers: true
 shuffle_answers: true
-time_limit: 20
+time_limit: 15
 ---
 
-# Session 13 Quiz – Responsive Design and Media Queries
+{{include:quiz-instructions}}
 
-Test your understanding of responsive design, media queries, and flexible layouts.
+Test your understanding of classList, inline styles, and localStorage for persisting settings.
 
 **Topics Covered:**
-- Media queries and breakpoints
-- Mobile-first vs desktop-first
-- Viewport units and relative sizing
-- Flexbox and CSS Grid
-- Responsive images
+- classList.add, remove, toggle, contains
+- element.style properties
+- localStorage setItem, getItem
+- Persisting user preferences across page loads
 
-**Instructions:**
-- 16 questions from the Session 13 question bank
-- 20 minute time limit
-- 3 attempts allowed
-- 16 points total (1 point per question)
+- stats
+- {{var:pick}} | Questions | accent
+- {{var:time_limit}} | Minutes | neutral
+- {{var:allowed_attempts}} | Attempts | cert
+- {{var:pick}} | Points | success
 
-**After syncing the question bank to Canvas:**
-1. Go to Canvas → Quizzes → Manage Question Banks
-2. Find "Session 13: Responsive Design and Media Queries" bank
-3. Note the bank ID from the URL (`...question_banks/[ID]`)
-4. Replace `PLACEHOLDER_REPLACE_AFTER_SYNC` above with that ID
-5. Re-sync this quiz
-
-Good luck!
+Plus 3 reflection questions at the end (ungraded — share your thoughts).

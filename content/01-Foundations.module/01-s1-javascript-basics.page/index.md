@@ -221,3 +221,17 @@ If any part of today's work felt confusing:
 - Ask your instructor for help. They are here to support you.
 
 Next session, you will learn **functions**, which let you bundle code into reusable tools you can call whenever you need them.
+
+---
+
+- accordion: Helpful Resources
+- [let — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+  - Declares a block-scoped variable that can be reassigned
+- [const — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+  - Declares a block-scoped constant that cannot be reassigned
+- [if...else — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
+  - Full reference for conditional statements, including if/else if/else chains
+- [Comparison operators — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
+  - Covers `===`, `!==`, `<`, `>`, `<=`, `>=` and how they work
+- [JavaScript data types and data structures — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+  - Overview of all primitive types: number, string, boolean, null, undefined

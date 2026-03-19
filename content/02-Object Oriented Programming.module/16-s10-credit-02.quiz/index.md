@@ -4,7 +4,7 @@ indent: 1
 module: 2
 name: Credit 2 Assessment – Object-Oriented Programming
 position: 16
-published: false
+published: true
 question_groups:
 - bank: s6-classes-intro.bank
   pick: 5
@@ -26,13 +26,19 @@ session: 10.4
 show_correct_answers: false
 shuffle_answers: true
 time_limit: 40
+total_points: 50
+total_questions: 25
 ---
 
-# Credit 2 Assessment – Object-Oriented Programming
+{{include:quiz-instructions}}
 
 This is the graded summative quiz for Credit 2. It covers everything from Sessions 6 through 10.
 
-**25 questions · 40 minutes · 2 attempts · 50 points**
+- stats
+- {{var:total_questions}} | Questions | accent
+- {{var:time_limit}} | Minutes | neutral
+- {{var:allowed_attempts}} | Attempts | cert
+- {{var:total_points}} | Points | success
 
 Topics covered:
 - Classes, constructors, and methods (S6)

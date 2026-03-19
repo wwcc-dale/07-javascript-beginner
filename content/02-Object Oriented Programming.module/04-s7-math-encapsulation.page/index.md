@@ -446,3 +446,17 @@ Next session (Session 8) goes deeper into OOP: static methods, and more sophisti
 - Ask your instructor if anything is unclear.
 
 Next session: **Advanced OOP**
+
+---
+
+- accordion: Helpful Resources
+- [Math — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
+  - Full reference for all Math methods and constants
+- [Math.random() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+  - Generates a random decimal between 0 and 1
+- [Number.prototype.toFixed() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed)
+  - Rounds a number to a specified number of decimal places and returns a string
+- [get — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get)
+  - Syntax and behavior of getter methods in classes
+- [set — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set)
+  - Syntax and behavior of setter methods in classes — where validation logic lives

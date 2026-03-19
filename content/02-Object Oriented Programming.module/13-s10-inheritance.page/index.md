@@ -207,3 +207,17 @@ Create a `DiscountProduct` class that extends a `Product` class.
 - `DiscountProduct` extends `Product` and adds `_discountPercent`.
 - Add getter `salePrice` that returns `price * (1 - discountPercent / 100)`.
 - Override `toString()` to return `"[name]: $[price] → $[salePrice]"`.
+
+---
+
+- accordion: Helpful Resources
+- [extends — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends)
+  - Syntax and rules for creating a child class that inherits from a parent
+- [super — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super)
+  - How `super()` calls the parent constructor and `super.method()` calls a parent method
+- [instanceof — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof)
+  - Check whether an object is an instance of a class or any of its parent classes
+- [Inheritance and the prototype chain — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+  - How JavaScript's prototype-based inheritance works under the hood
+- [Object-oriented programming — MDN Guide](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object-oriented_programming)
+  - Inheritance vs composition — when to use each design pattern

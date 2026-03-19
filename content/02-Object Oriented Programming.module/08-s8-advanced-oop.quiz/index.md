@@ -2,14 +2,17 @@
 allowed_attempts: 3
 indent: 1
 module: 2
-name: Session 8 Quiz – Classes and Object-Oriented Programming
+name: Session 8 Quiz – Working with Multiple Objects
+pick: 8
 position: 8
-published: false
+published: true
 question_groups:
 - bank: s8-advanced-oop.bank
-  bank_id: 35301438
-  pick: 16
+  pick: 8
   points_per_question: 1
+- bank: s99-reflection.bank
+  pick: all
+  points_per_question: 0
 quiz_type: practice_quiz
 session: 8.2
 show_correct_answers: true
@@ -17,29 +20,20 @@ shuffle_answers: true
 time_limit: 20
 ---
 
-# Session 8 Quiz – Classes and Object-Oriented Programming
+{{include:quiz-instructions}}
 
-Test your understanding of ES6 classes, constructors, methods, and OOP principles.
+Test your understanding of arrays of objects and container class patterns.
 
 **Topics Covered:**
-- Class declarations and syntax
-- Constructor methods
-- Instance properties and methods
-- this keyword in classes
-- Creating and using instances
-- Encapsulation basics
+- Arrays of class instances
+- Container classes that manage collections
+- Iterating over object arrays
+- Methods that coordinate multiple objects
 
-**Instructions:**
-- 16 questions from the Session 8 question bank
-- 20 minute time limit
-- 3 attempts allowed
-- 16 points total (1 point per question)
+- stats
+- {{var:pick}} | Questions | accent
+- {{var:time_limit}} | Minutes | neutral
+- {{var:allowed_attempts}} | Attempts | cert
+- {{var:pick}} | Points | success
 
-**After syncing the question bank to Canvas:**
-1. Go to Canvas → Quizzes → Manage Question Banks
-2. Find "Session 8: Classes and Object-Oriented Programming" bank
-3. Note the bank ID from the URL (`...question_banks/[ID]`)
-4. Replace `PLACEHOLDER_REPLACE_AFTER_SYNC` above with that ID
-5. Re-sync this quiz
-
-Good luck!
+Plus 3 reflection questions at the end (ungraded — share your thoughts).

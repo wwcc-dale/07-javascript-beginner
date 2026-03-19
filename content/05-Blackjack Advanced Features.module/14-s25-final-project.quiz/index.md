@@ -4,7 +4,7 @@ indent: 1
 module: 5
 name: Credit 5 Assessment – Advanced Features and Final Project
 position: 14
-published: false
+published: true
 question_groups:
 - bank: s21-betting-system.bank
   pick: 5
@@ -23,13 +23,19 @@ session: 25.2
 show_correct_answers: false
 shuffle_answers: true
 time_limit: 40
+total_points: 40
+total_questions: 20
 ---
 
-# Credit 5 Assessment – Advanced Features and Final Project
+{{include:quiz-instructions}}
 
 This is the graded summative quiz for Credit 5. It covers Sessions 21–24.
 
-**20 questions · 40 minutes · 2 attempts · 40 points**
+- stats
+- {{var:total_questions}} | Questions | accent
+- {{var:time_limit}} | Minutes | neutral
+- {{var:allowed_attempts}} | Attempts | cert
+- {{var:total_points}} | Points | success
 
 Topics covered:
 - Betting system and Wallet class (S21)

@@ -270,3 +270,19 @@ Build fully interactive apps with event handling.
 Session 15 reviews everything from Module 3 in preparation for the midterm. Module 4 immediately applies all of these DOM and event skills to building the card game interface.
 
 Next session: **Midterm Review**
+
+---
+
+- accordion: Helpful Resources
+- [EventTarget.addEventListener() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+  - Full reference for attaching event listeners, including event types and options
+- [Event — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Event)
+  - The event object: `target`, `type`, `preventDefault()`, `stopPropagation()`, and more
+- [Introduction to events — MDN Guide](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events)
+  - How events work in the browser, bubbling, delegation, and common patterns
+- [KeyboardEvent.key — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key)
+  - Which key was pressed — values like "Enter", "Escape", "ArrowLeft"
+- [Event bubbling — MDN Guide](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling)
+  - How events bubble up the DOM tree and when to use `stopPropagation()`
+- [HTMLFormElement: submit event — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event)
+  - Handle form submission and use `preventDefault()` to stop page reload

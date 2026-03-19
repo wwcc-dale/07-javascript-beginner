@@ -216,3 +216,15 @@ If you're confused about any part:
 - Don't move on until this feels solid—functions are fundamental.
 
 Next session: **Arrays and Collections**
+
+---
+
+- accordion: Helpful Resources
+- [Functions — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
+  - Complete guide covering declarations, parameters, scope, and closures
+- [function declaration — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)
+  - Syntax and rules for declaring named functions
+- [return statement — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)
+  - How return works and what happens when a function has no return
+- [Arrow functions — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+  - The compact `() => {}` syntax you'll see later in the course

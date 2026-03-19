@@ -246,3 +246,17 @@ You've now completed **Phase 1: Foundations!** You know:
 - Ask your instructor if anything is unclear.
 
 **Congratulations on completing the Foundations phase!** 🎉
+
+---
+
+- accordion: Helpful Resources
+- [Algorithms — Wikipedia overview](https://en.wikipedia.org/wiki/Algorithm)
+  - Explains what an algorithm is and the general concepts behind algorithmic thinking
+- [Array.prototype.indexOf() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+  - Find the position of a value in an array — useful for searching
+- [Math.max() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max)
+  - Returns the largest of the provided numbers
+- [Math.min() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min)
+  - Returns the smallest of the provided numbers
+- [Expressions and operators — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators)
+  - Covers arithmetic, comparison, and logical operators used inside algorithm conditions

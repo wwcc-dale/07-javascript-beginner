@@ -235,3 +235,17 @@ Build a `QuizStats` class that persists across reloads:
 - `reset()` — clears the stats
 
 Verify: call `recordAnswer()` 5 times, reload, call it 2 more times — the total should show 7.
+
+---
+
+- accordion: Helpful Resources
+- [Window.localStorage — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+  - setItem, getItem, removeItem, and clear — the full localStorage API
+- [JSON.stringify() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
+  - Serialize a JavaScript object to a JSON string for storage
+- [JSON.parse() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
+  - Deserialize a JSON string back into a JavaScript object
+- [try...catch — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
+  - Handle errors when parsing potentially corrupt stored data
+- [Using the Web Storage API — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API)
+  - Comprehensive guide to localStorage including how to inspect it in DevTools

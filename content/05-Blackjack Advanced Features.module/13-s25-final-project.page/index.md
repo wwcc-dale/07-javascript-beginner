@@ -176,3 +176,15 @@ If you want to keep building after submission, here are ideas:
 - **Leaderboard** — store top 10 scores in localStorage
 
 None of these are required. They are here to spark ideas.
+
+---
+
+- accordion: Helpful Resources
+- [JavaScript Guide — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
+  - The full JavaScript reference guide — a great resource to revisit any topic from the course
+- [Web APIs — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API)
+  - Comprehensive index of browser APIs including DOM, localStorage, events, and fetch
+- [Writing a README — GitHub Docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
+  - Guidelines for writing a clear, helpful README for your project
+- [JavaScript debugging in the browser — MDN Guide](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Debugging_JavaScript)
+  - How to use browser DevTools to find and fix errors in your final project
