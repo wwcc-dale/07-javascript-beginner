@@ -9,6 +9,8 @@ related_outcomes:
 session: 6.1
 ---
 
+[lead]You've mastered the fundamentals — now it's time to level up with Object-Oriented Programming, one of the most widely used patterns in software development. Classes are blueprints that let you create many similar objects without repeating yourself, and once you see how they work, you'll start recognizing them everywhere from web frameworks to game engines. This session is the start of a new way of thinking about code.
+
 # Session 6: Introduction to Classes
 
 ## Learning Outcomes
@@ -334,14 +336,12 @@ Next session: **Methods and Encapsulation**
 
 ---
 
-- accordion: Helpful Resources
-- [Classes — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes)
-  - Comprehensive guide to class syntax, constructors, methods, and instances
-- [class — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class)
-  - Syntax reference for declaring classes
-- [constructor — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor)
-  - How the constructor method works and when it runs
-- [new operator — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new)
-  - What happens when you use `new` to create an instance
-- [this — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
-  - How `this` refers to the current instance inside a class method
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [Classes — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes) | Comprehensive guide to class syntax, constructors, methods, and instances |
+| [class — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class) | Syntax reference for declaring classes |
+| [constructor — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor) | How the constructor method works and when it runs |
+| [new operator — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new) | What happens when you use `new` to create an instance |
+| [this — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this) | How `this` refers to the current instance inside a class method |

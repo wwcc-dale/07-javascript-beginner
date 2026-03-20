@@ -10,6 +10,8 @@ related_outcomes:
 session: 24.1
 ---
 
+[lead]Your Blackjack game has grown into a multi-file project, and managing it with a long chain of `<script>` tags is starting to feel messy. ES6 modules — JavaScript's built-in system for `import` and `export` — solve this by making each file self-contained and its dependencies explicit. This is how every professional JavaScript project is organized, and converting your game to use modules is a real step toward writing production-quality code.
+
 # Session 24: ES6 Modules and Professional Code Organization
 
 ## Learning Outcomes
@@ -225,14 +227,12 @@ Identify the error and write the corrected import path. (Hint: the path needs to
 
 ---
 
-- accordion: Helpful Resources
-- [JavaScript modules — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
-  - Complete guide to ES6 modules: export, import, named vs default, dynamic imports
-- [export — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
-  - All forms of export: named, default, and re-export
-- [import — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
-  - All forms of import, including aliases and namespace imports
-- [script: type="module" — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#type)
-  - How to load an ES6 module entry point in an HTML page
-- [CORS errors — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS/Errors)
-  - Why modules require an HTTP server and how to diagnose CORS errors
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [JavaScript modules — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) | Complete guide to ES6 modules: export, import, named vs default, dynamic imports |
+| [export — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) | All forms of export: named, default, and re-export |
+| [import — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) | All forms of import, including aliases and namespace imports |
+| [script: type="module" — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#type) | How to load an ES6 module entry point in an HTML page |
+| [CORS errors — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS/Errors) | Why modules require an HTTP server and how to diagnose CORS errors |

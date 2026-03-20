@@ -12,6 +12,8 @@ related_outcomes:
 session: 25.1
 ---
 
+[lead]This is it — the final session of the course. You've built a complete Blackjack game with OOP design, a betting system, persistent data, polished CSS, and modular code organization, and today you review it against a professional checklist, write a README, squash any last bugs, and submit. Take a moment to appreciate how far you've come: from `let score = 0` all the way to a fully playable browser game. That's real software development.
+
 # Session 25: Final Project Review and Submission
 
 ## Learning Outcomes
@@ -179,12 +181,11 @@ None of these are required. They are here to spark ideas.
 
 ---
 
-- accordion: Helpful Resources
-- [JavaScript Guide — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
-  - The full JavaScript reference guide — a great resource to revisit any topic from the course
-- [Web APIs — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API)
-  - Comprehensive index of browser APIs including DOM, localStorage, events, and fetch
-- [Writing a README — GitHub Docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
-  - Guidelines for writing a clear, helpful README for your project
-- [JavaScript debugging in the browser — MDN Guide](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Debugging_JavaScript)
-  - How to use browser DevTools to find and fix errors in your final project
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [JavaScript Guide — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) | The full JavaScript reference guide — a great resource to revisit any topic from the course |
+| [Web APIs — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API) | Comprehensive index of browser APIs including DOM, localStorage, events, and fetch |
+| [Writing a README — GitHub Docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes) | Guidelines for writing a clear, helpful README for your project |
+| [JavaScript debugging in the browser — MDN Guide](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Debugging_JavaScript) | How to use browser DevTools to find and fix errors in your final project |

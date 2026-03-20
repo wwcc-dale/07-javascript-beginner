@@ -9,6 +9,8 @@ related_outcomes:
 session: 13.1
 ---
 
+[lead]You can now create elements and respond to clicks — the next piece is controlling how things look dynamically. This session covers toggling CSS classes with `classList`, applying inline styles when needed, and using `localStorage` to remember user preferences across page loads. These are the tools behind dark mode toggles, accessibility settings, and any UI that adapts to what the user wants.
+
 # Session 13: CSS Manipulation with JavaScript
 
 ## Learning Outcomes
@@ -182,12 +184,11 @@ Build interactive UI with classList and dynamic styling.
 
 ---
 
-- accordion: Helpful Resources
-- [Element.classList — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
-  - Add, remove, toggle, and check CSS classes on an element
-- [HTMLElement.style — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style)
-  - Apply inline styles directly from JavaScript
-- [Window.localStorage — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
-  - Store key-value string data that persists across browser sessions
-- [Using the Web Storage API — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API)
-  - How to use localStorage and sessionStorage, including JSON serialization
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [Element.classList — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList) | Add, remove, toggle, and check CSS classes on an element |
+| [HTMLElement.style — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style) | Apply inline styles directly from JavaScript |
+| [Window.localStorage — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) | Store key-value string data that persists across browser sessions |
+| [Using the Web Storage API — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API) | How to use localStorage and sessionStorage, including JSON serialization |

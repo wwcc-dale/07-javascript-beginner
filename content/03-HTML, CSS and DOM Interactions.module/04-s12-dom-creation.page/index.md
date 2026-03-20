@@ -9,6 +9,8 @@ related_outcomes:
 session: 12.1
 ---
 
+[lead]Last session you learned to select and modify elements that already exist in the HTML — now you'll go further and create brand-new elements on the fly, remove them, and respond to user clicks. These three abilities — create, remove, and react — are the core of every interactive web app, from a simple to-do list to a card game that updates every time the player makes a move.
+
 # Session 12: DOM Manipulation and Event Basics
 
 ## Learning Outcomes
@@ -351,18 +353,14 @@ Next session: **CSS Manipulation with JavaScript**
 
 ---
 
-- accordion: Helpful Resources
-- [Document.createElement() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
-  - Create a new HTML element in JavaScript
-- [Node.appendChild() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
-  - Add an element as the last child of a parent node
-- [Element.remove() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove)
-  - Remove an element from the DOM
-- [EventTarget.addEventListener() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
-  - Attach a callback to run when a specific event occurs on an element
-- [HTMLInputElement.value — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/value)
-  - Read or clear the text a user has typed into an input field
-- [Template literals — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
-  - Build strings with embedded expressions using backtick syntax
-- [Date — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-  - Create and format dates and timestamps
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [Document.createElement() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement) | Create a new HTML element in JavaScript |
+| [Node.appendChild() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild) | Add an element as the last child of a parent node |
+| [Element.remove() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) | Remove an element from the DOM |
+| [EventTarget.addEventListener() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) | Attach a callback to run when a specific event occurs on an element |
+| [HTMLInputElement.value — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/value) | Read or clear the text a user has typed into an input field |
+| [Template literals — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) | Build strings with embedded expressions using backtick syntax |
+| [Date — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | Create and format dates and timestamps |

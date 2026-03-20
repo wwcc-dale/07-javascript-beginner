@@ -10,6 +10,8 @@ related_outcomes:
 session: 20.1
 ---
 
+[lead]Your Blackjack game works — now let's make it feel like a real game. This session is about the details that turn a functional prototype into something polished: card styling, smooth transitions, timed deal animations with `async/await`, and a clean browser console with zero errors. The debugging skills you'll practice here are ones you'll use for the rest of your career.
+
 # Session 20: Polish and Full Game Integration
 
 ## Learning Outcomes
@@ -252,17 +254,15 @@ Every time you `appendChild` a card element, the animation automatically plays b
 
 ---
 
-- accordion: Helpful Resources
-- [Using CSS animations — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations)
-  - How to define @keyframes and apply animation properties for card deal effects
-- [CSS Flexbox — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)
-  - Layout technique for centering cards and arranging the game table
-- [setTimeout() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout)
-  - The underlying mechanism behind the delay() helper
-- [Using the browser DevTools console — MDN Guide](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/What_are_browser_developer_tools)
-  - How to use the browser console to debug JavaScript errors in your game
-- [button:disabled — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled)
-  - Style disabled buttons with reduced opacity using the CSS :disabled pseudo-class
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [Using CSS animations — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations) | How to define @keyframes and apply animation properties for card deal effects |
+| [CSS Flexbox — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox) | Layout technique for centering cards and arranging the game table |
+| [setTimeout() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout) | The underlying mechanism behind the delay() helper |
+| [Using the browser DevTools console — MDN Guide](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/What_are_browser_developer_tools) | How to use the browser console to debug JavaScript errors in your game |
+| [button:disabled — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled) | Style disabled buttons with reduced opacity using the CSS :disabled pseudo-class |
 
 ### Supplemental Exercise
 

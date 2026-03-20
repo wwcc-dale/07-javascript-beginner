@@ -9,6 +9,8 @@ related_outcomes:
 session: 7.1
 ---
 
+[lead]Building on the classes you wrote last session, this session covers two important upgrades: JavaScript's built-in `Math` toolkit (rounding, random numbers, clamping — things you'll use constantly) and encapsulation, the practice of controlling how the outside world reads and writes your object's data. Getters and setters might sound technical, but they solve a very practical problem: keeping your objects in a valid state no matter what other code does to them.
+
 # Session 7: Math Methods and Encapsulation
 
 ## Learning Outcomes
@@ -449,14 +451,12 @@ Next session: **Advanced OOP**
 
 ---
 
-- accordion: Helpful Resources
-- [Math — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
-  - Full reference for all Math methods and constants
-- [Math.random() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-  - Generates a random decimal between 0 and 1
-- [Number.prototype.toFixed() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed)
-  - Rounds a number to a specified number of decimal places and returns a string
-- [get — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get)
-  - Syntax and behavior of getter methods in classes
-- [set — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set)
-  - Syntax and behavior of setter methods in classes — where validation logic lives
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [Math — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) | Full reference for all Math methods and constants |
+| [Math.random() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) | Generates a random decimal between 0 and 1 |
+| [Number.prototype.toFixed() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed) | Rounds a number to a specified number of decimal places and returns a string |
+| [get — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get) | Syntax and behavior of getter methods in classes |
+| [set — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set) | Syntax and behavior of setter methods in classes — where validation logic lives |

@@ -1,4 +1,5 @@
 ---
+indent: 2
 allowed_extensions:
 - html
 - css

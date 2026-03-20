@@ -1,8 +1,8 @@
 {
   "assets": {
     "content-hash-055eea64a547": {
-      "canvas_file_id": 340674157,
-      "canvas_url": "https://canvas.instructure.com/files/340674157/download?download_frd=1&verifier=IA88HTgmGEagmV0UQbKmb6BglvBDMtxtQk7b66Tk",
+      "canvas_file_id": 340849055,
+      "canvas_url": "https://canvas.instructure.com/files/340849055/download?download_frd=1&verifier=v0ho7kmGk9qgoXnCYAlBuK0ZB2k4r84cR9IeC9TF",
       "content_hash": "055eea64a547",
       "file_size": 2820252,
       "filename": "bridge.jpg",
@@ -10,11 +10,11 @@
         "assets/bridge.jpg",
         "../../assets/bridge.jpg"
       ],
-      "uploaded_at": "2026-03-18T14:03:37.750946+00:00"
+      "uploaded_at": "2026-03-19T13:52:56.178658+00:00"
     },
     "content-hash-1c4c847790d8": {
-      "canvas_file_id": 340674175,
-      "canvas_url": "https://canvas.instructure.com/files/340674175/download?download_frd=1&verifier=0sDMHIaVFud625hEvj0yHHAgdfvBwCb0iZ8qrSaV",
+      "canvas_file_id": 340849065,
+      "canvas_url": "https://canvas.instructure.com/files/340849065/download?download_frd=1&verifier=r9yacWds30EUJUuEyI3N2R1J5DrARvxd2aXwssfN",
       "content_hash": "1c4c847790d8",
       "file_size": 546,
       "filename": "Card.js",
@@ -22,11 +22,11 @@
         "assets/spades_codebase/Card.js",
         "../../assets/spades_codebase/Card.js"
       ],
-      "uploaded_at": "2026-03-18T14:03:42.073493+00:00"
+      "uploaded_at": "2026-03-19T13:52:59.326568+00:00"
     },
     "content-hash-2a2cc090ca4d": {
-      "canvas_file_id": 340674197,
-      "canvas_url": "https://canvas.instructure.com/files/340674197/download?download_frd=1&verifier=IHdZQRefzB0DPf4md5FUwKMZmUa9VMt6mqRYdtvi",
+      "canvas_file_id": 340849097,
+      "canvas_url": "https://canvas.instructure.com/files/340849097/download?download_frd=1&verifier=I5nyOZQ13j9OqG0LmHxTrjUMEfPgeirVlkkwbjwB",
       "content_hash": "2a2cc090ca4d",
       "file_size": 5217,
       "filename": "SpadesGame.js",
@@ -34,33 +34,33 @@
         "assets/spades_codebase/SpadesGame.js",
         "../../assets/spades_codebase/SpadesGame.js"
       ],
-      "uploaded_at": "2026-03-18T14:03:47.284153+00:00"
+      "uploaded_at": "2026-03-19T13:53:04.137522+00:00"
     },
     "content-hash-45821686af30": {
-      "canvas_file_id": 340674017,
-      "canvas_url": "https://canvas.instructure.com/files/340674017/download?download_frd=1&verifier=12HxErgS94EUfpLvV10BnLHKJTPmBAxNeP4eHhTl",
+      "canvas_file_id": 340848945,
+      "canvas_url": "https://canvas.instructure.com/files/340848945/download?download_frd=1&verifier=9aO2zMu5tMO6kjTmb04kBJsZiXRCTRMgWI1yNu7O",
       "content_hash": "45821686af30",
       "file_size": 2948,
       "filename": "12-starter.html",
       "local_paths": [
         "content/03-HTML, CSS and DOM Interactions.module/06-s12-dynamic-content.assignment/12-starter.html"
       ],
-      "uploaded_at": "2026-03-18T14:02:45.625963+00:00"
+      "uploaded_at": "2026-03-19T13:52:03.651117+00:00"
     },
     "content-hash-54e22860fff4": {
-      "canvas_file_id": 340673987,
-      "canvas_url": "https://canvas.instructure.com/files/340673987/download?download_frd=1&verifier=CbuV799Cau1n43i5heXf3HMeNv5UNaPUdw9zI7X2",
+      "canvas_file_id": 340848931,
+      "canvas_url": "https://canvas.instructure.com/files/340848931/download?download_frd=1&verifier=KeCYVuoFR4sE0msXx0Oe0kmFuSvnn1GGleNOiuFz",
       "content_hash": "54e22860fff4",
       "file_size": 1182,
       "filename": "06-starter.zip",
       "local_paths": [
         "content/02-Object Oriented Programming.module/03-s6-classes-intro.assignment/06-starter.zip"
       ],
-      "uploaded_at": "2026-03-18T14:02:38.678341+00:00"
+      "uploaded_at": "2026-03-19T13:51:56.679969+00:00"
     },
     "content-hash-5d51007eb5d2": {
-      "canvas_file_id": 340674185,
-      "canvas_url": "https://canvas.instructure.com/files/340674185/download?download_frd=1&verifier=8gUCI5ARcFBAxZKP0m0VVbSLOzkzMyewkUgqNafQ",
+      "canvas_file_id": 340849071,
+      "canvas_url": "https://canvas.instructure.com/files/340849071/download?download_frd=1&verifier=jdkiMuoKBkiS3aonxdqBC61MuhHALKxIqrVsSa9U",
       "content_hash": "5d51007eb5d2",
       "file_size": 6172,
       "filename": "GameBoard.js",
@@ -68,33 +68,33 @@
         "assets/spades_codebase/GameBoard.js",
         "../../assets/spades_codebase/GameBoard.js"
       ],
-      "uploaded_at": "2026-03-18T14:03:43.728477+00:00"
+      "uploaded_at": "2026-03-19T13:53:00.921270+00:00"
     },
     "content-hash-600376b54488": {
-      "canvas_file_id": 340674021,
-      "canvas_url": "https://canvas.instructure.com/files/340674021/download?download_frd=1&verifier=TY11jOSqC3ToeyvAIEOtK1lOBgFmAA1ABhtBeXb2",
+      "canvas_file_id": 340848955,
+      "canvas_url": "https://canvas.instructure.com/files/340848955/download?download_frd=1&verifier=XQnkxUpLvbzNIw2kXtJMZxtoGvHh4S7ZQAoRp3OK",
       "content_hash": "600376b54488",
       "file_size": 1040,
       "filename": "02-starter.zip",
       "local_paths": [
         "content/01-Foundations.module/06-s2-functions.assignment/02-starter.zip"
       ],
-      "uploaded_at": "2026-03-18T14:02:48.586253+00:00"
+      "uploaded_at": "2026-03-19T13:52:06.753440+00:00"
     },
     "content-hash-712ca37361df": {
-      "canvas_file_id": 340673969,
-      "canvas_url": "https://canvas.instructure.com/files/340673969/download?download_frd=1&verifier=D4u1IaR5de00POBlXIWEkRHiypceWAr4TSe0fhVW",
+      "canvas_file_id": 340848921,
+      "canvas_url": "https://canvas.instructure.com/files/340848921/download?download_frd=1&verifier=tkHwQjiX2DRAYjTgKp60PjxlwBVo16gLiC5g43yI",
       "content_hash": "712ca37361df",
       "file_size": 5771,
       "filename": "11-starter.html",
       "local_paths": [
         "content/03-HTML, CSS and DOM Interactions.module/03-s11-dom-selection.assignment/11-starter.html"
       ],
-      "uploaded_at": "2026-03-18T14:02:34.992112+00:00"
+      "uploaded_at": "2026-03-19T13:51:52.732383+00:00"
     },
     "content-hash-71f7441949e5": {
-      "canvas_file_id": 340674209,
-      "canvas_url": "https://canvas.instructure.com/files/340674209/download?download_frd=1&verifier=PHlvAgRDD45neAvp1zZbzbgVq152iyrzFC2oVB6a",
+      "canvas_file_id": 340849105,
+      "canvas_url": "https://canvas.instructure.com/files/340849105/download?download_frd=1&verifier=yNco1Nw8GJpza55XEodYfRkho5FuTp1A0TZcsAdM",
       "content_hash": "71f7441949e5",
       "file_size": 8494,
       "filename": "spades_codebase.zip",
@@ -102,11 +102,11 @@
         "assets/spades_codebase.zip",
         "../../assets/spades_codebase.zip"
       ],
-      "uploaded_at": "2026-03-18T14:03:49.752018+00:00"
+      "uploaded_at": "2026-03-19T13:53:06.398054+00:00"
     },
     "content-hash-75c6bc75efa8": {
-      "canvas_file_id": 340674183,
-      "canvas_url": "https://canvas.instructure.com/files/340674183/download?download_frd=1&verifier=PCraHdGEpDYV3w6MQ4fYwGrbSMiNb3vCj9L7evP5",
+      "canvas_file_id": 340849069,
+      "canvas_url": "https://canvas.instructure.com/files/340849069/download?download_frd=1&verifier=kiNM49cV0opfWtCpgJYVPUI70IX6RY49dKFQBBlx",
       "content_hash": "75c6bc75efa8",
       "file_size": 779,
       "filename": "Deck.js",
@@ -114,44 +114,44 @@
         "assets/spades_codebase/Deck.js",
         "../../assets/spades_codebase/Deck.js"
       ],
-      "uploaded_at": "2026-03-18T14:03:42.996647+00:00"
+      "uploaded_at": "2026-03-19T13:53:00.122504+00:00"
     },
     "content-hash-7f0196f4d66e": {
-      "canvas_file_id": 340673963,
-      "canvas_url": "https://canvas.instructure.com/files/340673963/download?download_frd=1&verifier=IPFWW5KmZynHb3g5fBpZJu2GVGuX4V66GoV3OLcW",
+      "canvas_file_id": 340848917,
+      "canvas_url": "https://canvas.instructure.com/files/340848917/download?download_frd=1&verifier=me2mNTacn9RBq7sSXLQRKsaOuG1mMoNsXqto3Rem",
       "content_hash": "7f0196f4d66e",
       "file_size": 1197,
       "filename": "01-starter.zip",
       "local_paths": [
         "content/01-Foundations.module/03-s1-comparing-scores.assignment/01-starter.zip"
       ],
-      "uploaded_at": "2026-03-18T14:02:33.484540+00:00"
+      "uploaded_at": "2026-03-19T13:51:51.048935+00:00"
     },
     "content-hash-7f697d3650e5": {
-      "canvas_file_id": 340674067,
-      "canvas_url": "https://canvas.instructure.com/files/340674067/download?download_frd=1&verifier=auFTZj2R7IOJ1vn2D8YNPcEaQLz9rOOae0IxRMb8",
+      "canvas_file_id": 340848989,
+      "canvas_url": "https://canvas.instructure.com/files/340848989/download?download_frd=1&verifier=ACNoq5h4ZnMU0OCGkLp0HYikEL1xl5KkOeFDHwCl",
       "content_hash": "7f697d3650e5",
       "file_size": 1150,
       "filename": "08-starter.zip",
       "local_paths": [
         "content/02-Object Oriented Programming.module/09-s8-library.assignment/08-starter.zip"
       ],
-      "uploaded_at": "2026-03-18T14:03:03.363294+00:00"
+      "uploaded_at": "2026-03-19T13:52:21.836639+00:00"
     },
     "content-hash-817f6ee94a94": {
-      "canvas_file_id": 340674101,
-      "canvas_url": "https://canvas.instructure.com/files/340674101/download?download_frd=1&verifier=EXee8bbF7OSquvW1toNrskIluTUdCsmzxL9ezZNK",
+      "canvas_file_id": 340849021,
+      "canvas_url": "https://canvas.instructure.com/files/340849021/download?download_frd=1&verifier=pYQX3sabQTYlmda8hvUTEfy1McyfOzTXBt2dhY0a",
       "content_hash": "817f6ee94a94",
       "file_size": 651,
       "filename": "04-starter.zip",
       "local_paths": [
         "content/01-Foundations.module/12-s4-loops.assignment/04-starter.zip"
       ],
-      "uploaded_at": "2026-03-18T14:03:16.160015+00:00"
+      "uploaded_at": "2026-03-19T13:52:34.439383+00:00"
     },
     "content-hash-96a6709e196e": {
-      "canvas_file_id": 340674169,
-      "canvas_url": "https://canvas.instructure.com/files/340674169/download?download_frd=1&verifier=tOVCBRaWHwL5ZkrTM8TdPKhRiL1FU1yg2bXWH913",
+      "canvas_file_id": 340849059,
+      "canvas_url": "https://canvas.instructure.com/files/340849059/download?download_frd=1&verifier=BftLtYc9ZFn4urAqTrKgNYZXeT70pbwNVwHkQQcT",
       "content_hash": "96a6709e196e",
       "file_size": 60520,
       "filename": "logo.webp",
@@ -159,11 +159,11 @@
         "assets/logo.webp",
         "../../assets/logo.webp"
       ],
-      "uploaded_at": "2026-03-18T14:03:39.420049+00:00"
+      "uploaded_at": "2026-03-19T13:52:57.843940+00:00"
     },
     "content-hash-a02551dbd923": {
-      "canvas_file_id": 340674173,
-      "canvas_url": "https://canvas.instructure.com/files/340674173/download?download_frd=1&verifier=JG8rNBRG1sxNoMd32H8x7USKeUwi4Q6gc8zR3GFi",
+      "canvas_file_id": 340849061,
+      "canvas_url": "https://canvas.instructure.com/files/340849061/download?download_frd=1&verifier=mDs3OFJJ2zAIRgFXe2Vm5vL6LhutfIPXS4ut5cw6",
       "content_hash": "a02551dbd923",
       "file_size": 2157,
       "filename": "AIPlayer.js",
@@ -171,11 +171,11 @@
         "assets/spades_codebase/AIPlayer.js",
         "../../assets/spades_codebase/AIPlayer.js"
       ],
-      "uploaded_at": "2026-03-18T14:03:40.268525+00:00"
+      "uploaded_at": "2026-03-19T13:52:58.532786+00:00"
     },
     "content-hash-aa60a9283ade": {
-      "canvas_file_id": 340674167,
-      "canvas_url": "https://canvas.instructure.com/files/340674167/download?download_frd=1&verifier=v0lgxYRlaCGbchCu2UkPTwmkkgtNSkeyWjpwU9R7",
+      "canvas_file_id": 340849057,
+      "canvas_url": "https://canvas.instructure.com/files/340849057/download?download_frd=1&verifier=Fq8iBDUaIVNzJK00x84HF1Fe2oqHMLQjhCgNCmTd",
       "content_hash": "aa60a9283ade",
       "file_size": 21050,
       "filename": "bridge2.jpg",
@@ -183,11 +183,11 @@
         "assets/bridge2.jpg",
         "../../assets/bridge2.jpg"
       ],
-      "uploaded_at": "2026-03-18T14:03:38.473997+00:00"
+      "uploaded_at": "2026-03-19T13:52:56.916056+00:00"
     },
     "content-hash-ac9a37eab1bd": {
-      "canvas_file_id": 340674193,
-      "canvas_url": "https://canvas.instructure.com/files/340674193/download?download_frd=1&verifier=odSJQHn6ztKJxrH8FR38c9tD4BzwTG9vpmegBxLr",
+      "canvas_file_id": 340849081,
+      "canvas_url": "https://canvas.instructure.com/files/340849081/download?download_frd=1&verifier=Q4GFxjbAyeufi6HVyAffeRJWr8AEx76gRtISLSpR",
       "content_hash": "ac9a37eab1bd",
       "file_size": 785,
       "filename": "GameState.js",
@@ -195,22 +195,22 @@
         "assets/spades_codebase/GameState.js",
         "../../assets/spades_codebase/GameState.js"
       ],
-      "uploaded_at": "2026-03-18T14:03:45.295665+00:00"
+      "uploaded_at": "2026-03-19T13:53:02.465362+00:00"
     },
     "content-hash-ade534f53d88": {
-      "canvas_file_id": 340674063,
-      "canvas_url": "https://canvas.instructure.com/files/340674063/download?download_frd=1&verifier=IQbr6YUzGGf0GmWQTJ2iUHXgHQeL25OTNBDp2Mit",
+      "canvas_file_id": 340848987,
+      "canvas_url": "https://canvas.instructure.com/files/340848987/download?download_frd=1&verifier=NW69tZbkQHa9cmiXhWe1HwqzcKa9TSxbk6mOW0pD",
       "content_hash": "ade534f53d88",
       "file_size": 1050,
       "filename": "03-starter.zip",
       "local_paths": [
         "content/01-Foundations.module/09-s3-arrays-objects.assignment/03-starter.zip"
       ],
-      "uploaded_at": "2026-03-18T14:03:01.478453+00:00"
+      "uploaded_at": "2026-03-19T13:52:19.681381+00:00"
     },
     "content-hash-aead59a9c0ee": {
-      "canvas_file_id": 340674201,
-      "canvas_url": "https://canvas.instructure.com/files/340674201/download?download_frd=1&verifier=qneFFYEj8c7XpxXK1DuUJcaUNq7cetoONFDp10Uf",
+      "canvas_file_id": 340849101,
+      "canvas_url": "https://canvas.instructure.com/files/340849101/download?download_frd=1&verifier=rWzTNAaUZAzLfRLobIclrM2gj2egu5w5oTdTxM1d",
       "content_hash": "aead59a9c0ee",
       "file_size": 1451,
       "filename": "app.js",
@@ -218,11 +218,11 @@
         "assets/spades_codebase/app.js",
         "../../assets/spades_codebase/app.js"
       ],
-      "uploaded_at": "2026-03-18T14:03:48.131516+00:00"
+      "uploaded_at": "2026-03-19T13:53:04.827957+00:00"
     },
     "content-hash-bce2234acbc5": {
-      "canvas_file_id": 340674189,
-      "canvas_url": "https://canvas.instructure.com/files/340674189/download?download_frd=1&verifier=ssSEIFzzsBEEbfzDgjOHd8lc5SjiLv5IlvLhYrcD",
+      "canvas_file_id": 340849075,
+      "canvas_url": "https://canvas.instructure.com/files/340849075/download?download_frd=1&verifier=bOnnZN8qP1OV0IuLMiZlp64q1cxpmn4wOCia4yW9",
       "content_hash": "bce2234acbc5",
       "file_size": 4580,
       "filename": "GameRunner.js",
@@ -230,11 +230,11 @@
         "assets/spades_codebase/GameRunner.js",
         "../../assets/spades_codebase/GameRunner.js"
       ],
-      "uploaded_at": "2026-03-18T14:03:44.557792+00:00"
+      "uploaded_at": "2026-03-19T13:53:01.629693+00:00"
     },
     "content-hash-c76f355bee5a": {
-      "canvas_file_id": 340674207,
-      "canvas_url": "https://canvas.instructure.com/files/340674207/download?download_frd=1&verifier=2Xn5I3GeeL3xwkPaZeWFlM3fn3OTbXoXkINvYSCm",
+      "canvas_file_id": 340849103,
+      "canvas_url": "https://canvas.instructure.com/files/340849103/download?download_frd=1&verifier=tHZIzZIWTvimqGldiCLulnxMkpR5RppKv9xW3db1",
       "content_hash": "c76f355bee5a",
       "file_size": 6120,
       "filename": "style.css",
@@ -242,44 +242,44 @@
         "assets/spades_codebase/style.css",
         "../../assets/spades_codebase/style.css"
       ],
-      "uploaded_at": "2026-03-18T14:03:48.945656+00:00"
+      "uploaded_at": "2026-03-19T13:53:05.668761+00:00"
     },
     "content-hash-c900ceb615fe": {
-      "canvas_file_id": 340674109,
-      "canvas_url": "https://canvas.instructure.com/files/340674109/download?download_frd=1&verifier=004G2hABkUssBJKJYuvkbGUA2byPGWcagslBl18X",
+      "canvas_file_id": 340849025,
+      "canvas_url": "https://canvas.instructure.com/files/340849025/download?download_frd=1&verifier=LYYaMWZdD9JjQdYnA0YOC3paTo14NE8m1HXj2b78",
       "content_hash": "c900ceb615fe",
       "file_size": 3695,
       "filename": "14-starter.html",
       "local_paths": [
         "content/03-HTML, CSS and DOM Interactions.module/13-s14-interactive-apps.assignment/14-starter.html"
       ],
-      "uploaded_at": "2026-03-18T14:03:19.835364+00:00"
+      "uploaded_at": "2026-03-19T13:52:38.353133+00:00"
     },
     "content-hash-d3178d65ee65": {
-      "canvas_file_id": 340674071,
-      "canvas_url": "https://canvas.instructure.com/files/340674071/download?download_frd=1&verifier=uwuWrlJp9fqdf0kn9JjJc3LXDCjwtBatsre1u63C",
+      "canvas_file_id": 340848993,
+      "canvas_url": "https://canvas.instructure.com/files/340848993/download?download_frd=1&verifier=hO0BP9HdCBw4lcsgSkV2F8SQjxv2SRiwx6AZxwJp",
       "content_hash": "d3178d65ee65",
       "file_size": 4636,
       "filename": "13-starter.html",
       "local_paths": [
         "content/03-HTML, CSS and DOM Interactions.module/10-s13-styling-themes.assignment/13-starter.html"
       ],
-      "uploaded_at": "2026-03-18T14:03:05.865798+00:00"
+      "uploaded_at": "2026-03-19T13:52:23.967934+00:00"
     },
     "content-hash-e068a5758aaf": {
-      "canvas_file_id": 340674033,
-      "canvas_url": "https://canvas.instructure.com/files/340674033/download?download_frd=1&verifier=h8av1JPtsjK6HXDRLyOVeWDSTH5z8edWSDtJBvpd",
+      "canvas_file_id": 340848973,
+      "canvas_url": "https://canvas.instructure.com/files/340848973/download?download_frd=1&verifier=Q561Si4vNGZeZHMW3uPMlyFIC3G5BAMvH58QSAKJ",
       "content_hash": "e068a5758aaf",
       "file_size": 1422,
       "filename": "07-starter.zip",
       "local_paths": [
         "content/02-Object Oriented Programming.module/06-s7-encapsulation.assignment/07-starter.zip"
       ],
-      "uploaded_at": "2026-03-18T14:02:51.832381+00:00"
+      "uploaded_at": "2026-03-19T13:52:09.767330+00:00"
     },
     "content-hash-f9c81ff4263b": {
-      "canvas_file_id": 340674195,
-      "canvas_url": "https://canvas.instructure.com/files/340674195/download?download_frd=1&verifier=qWEECtKqPJ8qXcqOxNKenNcd3xptpYIOtchunG8V",
+      "canvas_file_id": 340849085,
+      "canvas_url": "https://canvas.instructure.com/files/340849085/download?download_frd=1&verifier=uRYgq3Tg8Yw7GlRsTa6LTID1EJuI14Pocg9OzsU7",
       "content_hash": "f9c81ff4263b",
       "file_size": 583,
       "filename": "Player.js",
@@ -287,18 +287,18 @@
         "assets/spades_codebase/Player.js",
         "../../assets/spades_codebase/Player.js"
       ],
-      "uploaded_at": "2026-03-18T14:03:46.107607+00:00"
+      "uploaded_at": "2026-03-19T13:53:03.236990+00:00"
     },
     "content-hash-fafeed049c7e": {
-      "canvas_file_id": 340674149,
-      "canvas_url": "https://canvas.instructure.com/files/340674149/download?download_frd=1&verifier=bu4VbqhzvqwufPAmu4ArRcHm6KqXpAA0b9yaB5zd",
+      "canvas_file_id": 340849035,
+      "canvas_url": "https://canvas.instructure.com/files/340849035/download?download_frd=1&verifier=ooRKwdIfkUnkW2FYl9LnIx0jsIuKtHuOxSacWr6s",
       "content_hash": "fafeed049c7e",
       "file_size": 912,
       "filename": "05-starter.zip",
       "local_paths": [
         "content/01-Foundations.module/15-s5-algorithms.assignment/05-starter.zip"
       ],
-      "uploaded_at": "2026-03-18T14:03:32.626188+00:00"
+      "uploaded_at": "2026-03-19T13:52:51.456977+00:00"
     }
   },
   "path_lookup": {

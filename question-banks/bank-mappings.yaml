@@ -1,37 +1,38 @@
 # Question Bank ID Mappings
 # Generated from Canvas HTML scrape
-# Last updated: 2026-03-18 20:18:40
+# Last updated: 2026-03-19 07:21:12
 # Format: bank_filename → Canvas bank ID
 
-s1-javascript-basics.bank: 35701106
-s10-advanced-arrays-nodejs.bank: 35701154
-s11-dom-basics.bank: 35701156
-s12-dom-creation.bank: 35701164
-s13-css-manipulation.bank: 35701166
-s14-event-handling.bank: 35701168
-s15-event-handling.bank: 35701174
-s16-card-deck.bank: 35701176
-s17-hand-scoring.bank: 35701182
-s17-player-hand.bank: 35701184
-s18-game-class.bank: 35701190
-s18-game-ui.bank: 35701192
-s19-events-animations.bank: 35701198
-s19-game-ui.bank: 35701200
-s2-functions.bank: 35701112
-s20-polish-testing.bank: 35701206
-s21-ai-strategies.bank: 35701208
-s21-betting-system.bank: 35701304
-s22-localstorage.bank: 35701314
-s22-storage-ui.bank: 35701316
-s23-advanced-ui.bank: 35701318
-s24-modularization.bank: 35701324
-s24-testing-quality.bank: 35701326
-s25-final-project.bank: 35701332
-s3-arrays-objects.bank: 35701114
-s4-loops.bank: 35701116
-s5-algorithms.bank: 35701126
-s6-classes-intro.bank: 35701132
-s7-math-encapsulation.bank: 35701138
-s8-advanced-oop.bank: 35701140
-s9-inheritance.bank: 35701142
-s9-oop-practice.bank: 35701148
+s1-javascript-basics.bank: 35716896
+s10-advanced-arrays-nodejs.bank: 35716940
+s11-dom-basics.bank: 35716946
+s12-dom-creation.bank: 35716956
+s13-css-manipulation.bank: 35716962
+s14-event-handling.bank: 35716970
+s15-event-handling.bank: 35716978
+s16-card-deck.bank: 35716980
+s17-hand-scoring.bank: 35716982
+s17-player-hand.bank: 35716984
+s18-game-class.bank: 35716986
+s18-game-ui.bank: 35716988
+s19-events-animations.bank: 35716994
+s19-game-ui.bank: 35716996
+s2-functions.bank: 35716898
+s20-polish-testing.bank: 35716998
+s21-ai-strategies.bank: 35717000
+s21-betting-system.bank: 35717002
+s22-localstorage.bank: 35717004
+s22-storage-ui.bank: 35717006
+s23-advanced-ui.bank: 35717008
+s24-modularization.bank: 35717010
+s24-testing-quality.bank: 35717012
+s25-final-project.bank: 35717018
+s3-arrays-objects.bank: 35716908
+s4-loops.bank: 35716910
+s5-algorithms.bank: 35716912
+s6-classes-intro.bank: 35716914
+s7-math-encapsulation.bank: 35716916
+s8-advanced-oop.bank: 35716926
+s9-inheritance.bank: 35716936
+s9-oop-practice.bank: 35716938
+s99-reflection.bank: 35717020

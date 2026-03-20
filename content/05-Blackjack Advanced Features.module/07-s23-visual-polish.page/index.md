@@ -9,6 +9,8 @@ related_outcomes:
 session: 23.1
 ---
 
+[lead]Your game works and persists data — now let's make it look and feel genuinely polished. CSS custom properties let you define a complete design system in one place, theme switching gives users a dark/light toggle that persists across reloads, and `@keyframes` animations give every card deal and round result a satisfying visual response. The best part: almost all of this lives in CSS, with JavaScript just adding and removing classes at the right moment.
+
 # Session 23: CSS Custom Properties, Theming, and Transitions
 
 ## Learning Outcomes
@@ -328,14 +330,12 @@ Next session: **Session 24 — ES6 Modules and Professional Code Organization**
 
 ---
 
-- accordion: Helpful Resources
-- [Using CSS custom properties — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
-  - Declare and use CSS variables with `--name` and `var()`, including inheritance
-- [CSS transitions — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_transitions/Using_CSS_transitions)
-  - Animate property changes over time when triggered by class toggles
-- [Using CSS animations — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations)
-  - Define multi-step @keyframes animations and apply them with classes
-- [Element.classList — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
-  - Toggle theme classes and trigger animations from JavaScript
-- [document.documentElement — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement)
-  - Access the `<html>` element to toggle a dark-mode class on `:root`
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [Using CSS custom properties — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) | Declare and use CSS variables with `--name` and `var()`, including inheritance |
+| [CSS transitions — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_transitions/Using_CSS_transitions) | Animate property changes over time when triggered by class toggles |
+| [Using CSS animations — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations) | Define multi-step @keyframes animations and apply them with classes |
+| [Element.classList — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList) | Toggle theme classes and trigger animations from JavaScript |
+| [document.documentElement — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement) | Access the `<html>` element to toggle a dark-mode class on `:root` |

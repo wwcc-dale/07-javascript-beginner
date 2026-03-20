@@ -8,6 +8,8 @@ related_outcomes:
 session: 3.1
 ---
 
+[lead]Your functions from last session are great at working with single values — but real programs deal with collections of data, like a list of quiz scores or a user profile with multiple fields. This session introduces arrays for ordered lists and objects for named bundles of related data, two structures you'll use in virtually every JavaScript project you ever write.
+
 # Session 3: Arrays and Objects
 
 ## Learning Outcomes
@@ -394,14 +396,12 @@ Next session: **Loops and Iteration**
 
 ---
 
-- accordion: Helpful Resources
-- [Array — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-  - Full reference for arrays, all methods, and examples
-- [Array.prototype.push() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
-  - Adds one or more elements to the end of an array
-- [Array.prototype.pop() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
-  - Removes and returns the last element
-- [Working with objects — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects)
-  - Creating objects, accessing properties, dot vs bracket notation
-- [Object — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  - The base Object type — methods and properties available on every object
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [Array — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) | Full reference for arrays, all methods, and examples |
+| [Array.prototype.push() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) | Adds one or more elements to the end of an array |
+| [Array.prototype.pop() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop) | Removes and returns the last element |
+| [Working with objects — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects) | Creating objects, accessing properties, dot vs bracket notation |
+| [Object — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | The base Object type — methods and properties available on every object |

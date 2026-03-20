@@ -10,6 +10,8 @@ related_outcomes:
 session: 17.1
 ---
 
+[lead]You have a shuffled deck and a way to deal cards — now you need somewhere for those cards to go. This session builds the `Hand` class, which holds a player's or dealer's cards and calculates their total value. The trickiest part is the Ace: it can count as 1 or 11 depending on the situation, and implementing that logic correctly is one of the most satisfying algorithmic puzzles in this course.
+
 # Session 17: The Hand Class and Blackjack Scoring
 
 ## Learning Outcomes
@@ -175,12 +177,11 @@ Add a `getVisibleTotal()` method to `Hand` that only adds the values of `_cards[
 
 ---
 
-- accordion: Helpful Resources
-- [Array.prototype.map() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-  - Transform an array of cards into an array of values or strings
-- [while statement — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
-  - The while loop used to keep downgrading Aces until the total is valid
-- [Array.prototype.join() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
-  - Combine an array of card strings into a single display string
-- [for...of — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
-  - Cleanly iterate over each card in the hand when calculating the total
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [Array.prototype.map() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) | Transform an array of cards into an array of values or strings |
+| [while statement — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while) | The while loop used to keep downgrading Aces until the total is valid |
+| [Array.prototype.join() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join) | Combine an array of card strings into a single display string |
+| [for...of — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of) | Cleanly iterate over each card in the hand when calculating the total |

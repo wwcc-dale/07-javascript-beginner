@@ -8,7 +8,21 @@ related_outcomes:
 session: 1.1
 ---
 
+[lead]Welcome to JavaScript! In this first session you'll learn the building blocks every program is made of — how to store information in variables, work with numbers, text, and true/false values, and make your code choose different paths with `if/else` statements. These skills are the foundation for everything you'll build in this course, from small scripts to a fully playable browser game.
+
 # Session 1: JavaScript Fundamentals
+
+> alert: info
+>
+> #### Helpful Resources
+>
+> | [light] | |
+> |----------|-------------|
+> | [let — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let) | Declares a block-scoped variable that can be reassigned |
+> | [const — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) | Declares a block-scoped constant that cannot be reassigned |
+> | [if...else — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) | Full reference for conditional statements, including if/else if/else chains |
+> | [Comparison operators — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators) | Covers `===`, `!==`, `<`, `>`, `<=`, `>=` and how they work |
+> | [JavaScript data types and data structures — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures) | Overview of all primitive types: number, string, boolean, null, undefined |
 
 ## Learning Outcomes
 
@@ -222,16 +236,3 @@ If any part of today's work felt confusing:
 
 Next session, you will learn **functions**, which let you bundle code into reusable tools you can call whenever you need them.
 
----
-
-- accordion: Helpful Resources
-- [let — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
-  - Declares a block-scoped variable that can be reassigned
-- [const — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
-  - Declares a block-scoped constant that cannot be reassigned
-- [if...else — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
-  - Full reference for conditional statements, including if/else if/else chains
-- [Comparison operators — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
-  - Covers `===`, `!==`, `<`, `>`, `<=`, `>=` and how they work
-- [JavaScript data types and data structures — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
-  - Overview of all primitive types: number, string, boolean, null, undefined

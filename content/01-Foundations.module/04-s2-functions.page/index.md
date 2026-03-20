@@ -8,6 +8,8 @@ related_outcomes:
 session: 2.1
 ---
 
+[lead]Now that you can store values and write conditionals, it's time to stop repeating yourself — and that's exactly what functions are for. In this session you'll learn to bundle code into reusable blocks that accept inputs and return outputs, a skill every programmer relies on every single day. Writing clean, reusable functions is one of the habits that separates beginner code from professional code.
+
 # Session 2: Functions and Reusable Code
 
 ## Learning Outcomes
@@ -219,12 +221,11 @@ Next session: **Arrays and Collections**
 
 ---
 
-- accordion: Helpful Resources
-- [Functions — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
-  - Complete guide covering declarations, parameters, scope, and closures
-- [function declaration — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)
-  - Syntax and rules for declaring named functions
-- [return statement — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)
-  - How return works and what happens when a function has no return
-- [Arrow functions — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-  - The compact `() => {}` syntax you'll see later in the course
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [Functions — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions) | Complete guide covering declarations, parameters, scope, and closures |
+| [function declaration — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function) | Syntax and rules for declaring named functions |
+| [return statement — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return) | How return works and what happens when a function has no return |
+| [Arrow functions — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) | The compact `() => {}` syntax you'll see later in the course |

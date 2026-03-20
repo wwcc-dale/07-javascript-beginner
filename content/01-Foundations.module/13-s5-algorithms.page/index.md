@@ -8,6 +8,8 @@ related_outcomes:
 session: 5.1
 ---
 
+[lead]You've learned all the fundamental building blocks — variables, functions, arrays, and loops — and now it's time to put them together to solve real problems. Algorithmic thinking is the skill of breaking a problem into clear, repeatable steps, and patterns like "find the largest value" or "count matching items" show up everywhere in software. This session wraps up the Foundations phase and sets you up for the jump into Object-Oriented Programming.
+
 # Session 5: Algorithmic Thinking
 
 ## Learning Outcomes
@@ -249,14 +251,12 @@ You've now completed **Phase 1: Foundations!** You know:
 
 ---
 
-- accordion: Helpful Resources
-- [Algorithms — Wikipedia overview](https://en.wikipedia.org/wiki/Algorithm)
-  - Explains what an algorithm is and the general concepts behind algorithmic thinking
-- [Array.prototype.indexOf() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
-  - Find the position of a value in an array — useful for searching
-- [Math.max() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max)
-  - Returns the largest of the provided numbers
-- [Math.min() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min)
-  - Returns the smallest of the provided numbers
-- [Expressions and operators — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators)
-  - Covers arithmetic, comparison, and logical operators used inside algorithm conditions
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [Algorithms — Wikipedia overview](https://en.wikipedia.org/wiki/Algorithm) | Explains what an algorithm is and the general concepts behind algorithmic thinking |
+| [Array.prototype.indexOf() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) | Find the position of a value in an array — useful for searching |
+| [Math.max() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max) | Returns the largest of the provided numbers |
+| [Math.min() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min) | Returns the smallest of the provided numbers |
+| [Expressions and operators — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators) | Covers arithmetic, comparison, and logical operators used inside algorithm conditions |

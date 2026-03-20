@@ -12,6 +12,8 @@ related_outcomes:
 session: 15.1
 ---
 
+[lead]You've covered a lot of ground — JavaScript fundamentals, object-oriented programming, and a full module on the DOM and browser events. Before diving into the Blackjack game build, this session gives you a structured opportunity to review all of it, identify any gaps, and consolidate your knowledge with the midterm exam. Think of it as a checkpoint: everything you've learned so far is exactly what you'll need for the second half of the course.
+
 # Session 15: Midterm Review and Assessment
 
 ## Overview
@@ -188,14 +190,12 @@ Reach out to your instructor before the exam if you need clarification on any to
 
 ---
 
-- accordion: Helpful Resources
-- [JavaScript Guide — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
-  - Complete reference guide covering all JavaScript fundamentals from Sessions 1–5
-- [Classes — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes)
-  - Review class syntax, constructors, getters, setters, and inheritance
-- [DOM Introduction — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
-  - How the DOM works and how JavaScript interacts with it
-- [Introduction to events — MDN Guide](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events)
-  - Event listeners, the event object, bubbling, and delegation
-- [JavaScript data structures — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
-  - Overview of all primitive types, arrays, and objects
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [JavaScript Guide — MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) | Complete reference guide covering all JavaScript fundamentals from Sessions 1–5 |
+| [Classes — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes) | Review class syntax, constructors, getters, setters, and inheritance |
+| [DOM Introduction — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) | How the DOM works and how JavaScript interacts with it |
+| [Introduction to events — MDN Guide](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events) | Event listeners, the event object, bubbling, and delegation |
+| [JavaScript data structures — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures) | Overview of all primitive types, arrays, and objects |

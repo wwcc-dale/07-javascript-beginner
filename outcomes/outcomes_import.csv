@@ -1,6 +1,6 @@
 vendor_guid,object_type,title,description,display_name,calculation_method,calculation_int,workflow_state,parent_guids,mastery_points,ratings,,,,,,,,,
-14431983-01-CODE,outcome,Develop JS code for use in web pages.,Develop JS code for use in web pages.,01-CODE,,,active,,4,5,Excelling,4,Achieving,3,Developing,2,Beginning,0,No Evidence
-14431983-02-OOP,outcome,Object Oriented Programming,Understand and utilize the fundamentals of OOP and complex data processing,02-OOP,,,active,,4,5,Excelling,4,Achieving,3,Developing,2,Beginning,0,No Evidence
-14431983-03-ELEM,outcome,"Data types, data structures, functions and flow control","Control website behavior using data types, data structures, and logical dataflow and functions.",03-ELEM,,,active,,4,5,Excelling,4,Achieving,3,Developing,2,Beginning,0,No Evidence
-14431983-04-MOD,outcome,Browser APIs and built-in objects,Use browser APIs and built-in JavaScript objects to build interactive web applications.,04-MOD,,,active,,4,5,Excelling,4,Achieving,3,Developing,2,Beginning,0,No Evidence
-14431983-05-DEBUG,outcome,Troubleshoot problems related to code execution,Troubleshoot problems related to code execution.,05-DEBUG,,,active,,4,5,Excelling,4,Achieving,3,Developing,2,Beginning,0,No Evidence
+14440177-01-CODE,outcome,Develop JS code for use in web pages.,Develop JS code for use in web pages.,01-CODE,,,active,,4,5,Excelling,4,Achieving,3,Developing,2,Beginning,0,No Evidence
+14440177-02-OOP,outcome,Object Oriented Programming,Understand and utilize the fundamentals of OOP and complex data processing,02-OOP,,,active,,4,5,Excelling,4,Achieving,3,Developing,2,Beginning,0,No Evidence
+14440177-03-ELEM,outcome,"Data types, data structures, functions and flow control","Control website behavior using data types, data structures, and logical dataflow and functions.",03-ELEM,,,active,,4,5,Excelling,4,Achieving,3,Developing,2,Beginning,0,No Evidence
+14440177-04-MOD,outcome,Browser APIs and built-in objects,Use browser APIs and built-in JavaScript objects to build interactive web applications.,04-MOD,,,active,,4,5,Excelling,4,Achieving,3,Developing,2,Beginning,0,No Evidence
+14440177-05-DEBUG,outcome,Troubleshoot problems related to code execution,Troubleshoot problems related to code execution.,05-DEBUG,,,active,,4,5,Excelling,4,Achieving,3,Developing,2,Beginning,0,No Evidence

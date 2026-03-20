@@ -8,6 +8,8 @@ related_outcomes:
 session: 4.1
 ---
 
+[lead]You've got arrays full of data — now you need a way to actually do something with every item in them without writing the same code over and over. Loops are how programs handle repetition, and in this session you'll learn three flavors: `for`, `while`, and `for...of`. These are the engine behind everything from processing a list of scores to dealing every card in a deck.
+
 # Session 4: Loops and Iteration
 
 ## Learning Outcomes
@@ -416,14 +418,12 @@ Next session: **Algorithmic Thinking**
 
 ---
 
-- accordion: Helpful Resources
-- [Loops and iteration — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
-  - Overview of all loop types with examples for each
-- [for — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
-  - Syntax and details of the classic for loop
-- [while — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
-  - How while loops work and when to use them
-- [for...of — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
-  - The modern syntax for iterating over array values directly
-- [break and continue — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break)
-  - How to exit a loop early or skip an iteration
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [Loops and iteration — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration) | Overview of all loop types with examples for each |
+| [for — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) | Syntax and details of the classic for loop |
+| [while — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while) | How while loops work and when to use them |
+| [for...of — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of) | The modern syntax for iterating over array values directly |
+| [break and continue — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break) | How to exit a loop early or skip an iteration |

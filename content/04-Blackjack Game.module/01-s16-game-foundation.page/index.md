@@ -10,6 +10,8 @@ related_outcomes:
 session: 16.1
 ---
 
+[lead]The midterm is behind you — now the fun really begins. Everything you've learned about classes, encapsulation, and the container pattern comes together in this module as you build a real, playable Blackjack game from scratch. Today's session starts with the data model: a `Card` class and a `Deck` class that generates all 52 cards and shuffles them using a classic algorithm. This is where the game's foundation gets laid.
+
 # Session 16: Game Foundation — Card and Deck Classes
 
 ## Learning Outcomes
@@ -194,14 +196,12 @@ Add an `isRed()` method to `Card` that returns `true` for Hearts and Diamonds. T
 
 ---
 
-- accordion: Helpful Resources
-- [Array.prototype.includes() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
-  - Check if an array contains a value — used to test whether a rank is a face card
-- [parseInt() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)
-  - Convert a string like "7" to the number 7 — used in Card's getValue()
-- [Destructuring assignment — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
-  - The `[a, b] = [b, a]` swap pattern used in the Fisher-Yates shuffle
-- [Math.random() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-  - Generates a random decimal — combined with Math.floor to pick a random index
-- [Array.prototype.pop() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
-  - Removes and returns the last element — the mechanism behind deal()
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [Array.prototype.includes() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes) | Check if an array contains a value — used to test whether a rank is a face card |
+| [parseInt() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt) | Convert a string like "7" to the number 7 — used in Card's getValue() |
+| [Destructuring assignment — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) | The `[a, b] = [b, a]` swap pattern used in the Fisher-Yates shuffle |
+| [Math.random() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) | Generates a random decimal — combined with Math.floor to pick a random index |
+| [Array.prototype.pop() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop) | Removes and returns the last element — the mechanism behind deal() |

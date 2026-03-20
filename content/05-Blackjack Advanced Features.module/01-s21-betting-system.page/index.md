@@ -10,6 +10,8 @@ related_outcomes:
 session: 21.1
 ---
 
+[lead]You have a fully playable Blackjack game — but without anything at stake, it's hard to care about winning. This session adds a `Wallet` class with chip tracking, bet validation, and correct Blackjack payout rules (including the 3:2 bonus for a natural blackjack). Stakes make the game meaningful, and the Wallet class is a great example of encapsulation doing real work: it enforces rules so the rest of the game can't accidentally cheat.
+
 # Session 21: Adding a Betting System
 
 ## Learning Outcomes
@@ -221,14 +223,12 @@ Add an "All In" button that sets the bet to the player's entire chip balance. Di
 
 ---
 
-- accordion: Helpful Resources
-- [Classes — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes)
-  - Review class design for the Wallet class with validation in setters and methods
-- [HTMLInputElement — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement)
-  - Read numeric bet input from `<input type="number">` using `.value`
-- [isNaN() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN)
-  - Validate that the bet input is a real number before using it
-- [Element: dataset property — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)
-  - Read `data-amount` attributes from quick-pick bet buttons
-- [NodeList.forEach() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach)
-  - Attach click handlers to multiple `.bet-btn` elements at once
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [Classes — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes) | Review class design for the Wallet class with validation in setters and methods |
+| [HTMLInputElement — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement) | Read numeric bet input from `<input type="number">` using `.value` |
+| [isNaN() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN) | Validate that the bet input is a real number before using it |
+| [Element: dataset property — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset) | Read `data-amount` attributes from quick-pick bet buttons |
+| [NodeList.forEach() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach) | Attach click handlers to multiple `.bet-btn` elements at once |

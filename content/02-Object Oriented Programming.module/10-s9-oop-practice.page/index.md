@@ -9,6 +9,8 @@ related_outcomes:
 session: 9.1
 ---
 
+[lead]Sessions 6 through 8 gave you classes, encapsulation, and the container pattern — and now it's time to put all three together in one focused project. Building a Playlist Manager with `Track` and `Album` classes is great practice, and the two-class design you'll use here is exactly the same structure you'll follow when building the Card and Deck classes for Blackjack. Think of this as your rehearsal.
+
 # Session 9: OOP Practice — Building a Playlist Manager
 
 ## Learning Outcomes
@@ -236,14 +238,12 @@ Convert `totalDuration` from seconds to `mm:ss` format inside this method.
 
 ---
 
-- accordion: Helpful Resources
-- [Array.prototype.filter() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-  - Returns a new array of items that match a condition — useful for search methods
-- [Array.prototype.find() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
-  - Returns the first item matching a condition, or `undefined`
-- [Array.prototype.some() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
-  - Returns `true` if at least one item matches a condition — useful for duplicate checks
-- [Array.prototype.reduce() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
-  - Combines all array elements into a single value — the standard pattern for summing durations
-- [Array.prototype.findIndex() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
-  - Returns the index of the first matching item — used before `splice` to remove by value
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [Array.prototype.filter() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) | Returns a new array of items that match a condition — useful for search methods |
+| [Array.prototype.find() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find) | Returns the first item matching a condition, or `undefined` |
+| [Array.prototype.some() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) | Returns `true` if at least one item matches a condition — useful for duplicate checks |
+| [Array.prototype.reduce() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) | Combines all array elements into a single value — the standard pattern for summing durations |
+| [Array.prototype.findIndex() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex) | Returns the index of the first matching item — used before `splice` to remove by value |

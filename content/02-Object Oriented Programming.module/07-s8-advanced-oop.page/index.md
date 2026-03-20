@@ -9,6 +9,8 @@ related_outcomes:
 session: 8.1
 ---
 
+[lead]Now that you can write solid individual classes with encapsulation, the next step is making them work together — because real programs are rarely just one object. In this session you'll learn to manage collections of object instances and build container classes that coordinate multiple objects, a pattern you'll use directly when building the `Deck` and `Playlist` classes later in the course.
+
 # Session 8: Working with Multiple Objects
 
 ## Learning Outcomes
@@ -142,12 +144,11 @@ Build a Library system with Book and Library classes that manage multiple books.
 
 ---
 
-- accordion: Helpful Resources
-- [Array.prototype.push() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
-  - Add objects to a collection array inside a container class
-- [for...of — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
-  - Clean syntax for iterating over an array of objects
-- [Classes — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes)
-  - Review class syntax and how to design coordinating classes
-- [Object-oriented programming — MDN Guide](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object-oriented_programming)
-  - Overview of OOP concepts including encapsulation and composition
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [Array.prototype.push() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) | Add objects to a collection array inside a container class |
+| [for...of — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of) | Clean syntax for iterating over an array of objects |
+| [Classes — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes) | Review class syntax and how to design coordinating classes |
+| [Object-oriented programming — MDN Guide](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object-oriented_programming) | Overview of OOP concepts including encapsulation and composition |

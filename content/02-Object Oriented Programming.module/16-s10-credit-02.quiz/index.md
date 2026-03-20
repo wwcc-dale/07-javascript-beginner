@@ -1,6 +1,6 @@
 ---
 allowed_attempts: 2
-indent: 1
+indent: 2
 module: 2
 name: Credit 2 Assessment – Object-Oriented Programming
 position: 16

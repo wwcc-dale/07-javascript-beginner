@@ -10,6 +10,8 @@ related_outcomes:
 session: 19.1
 ---
 
+[lead]Your game logic is solid and fully tested — now it's time to make it visible to a real user in the browser. This session connects `BlackjackGame` to an HTML page with buttons and card display areas, using the DOM and event skills you built in Module 3. Watching your class-based game logic come to life in a browser for the first time is one of the most rewarding moments in this course.
+
 # Session 19: Connecting the Game to a Browser UI
 
 ## Learning Outcomes
@@ -279,14 +281,12 @@ Implement the hidden dealer card. Verify that the second card is hidden during t
 
 ---
 
-- accordion: Helpful Resources
-- [Document.getElementById() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
-  - Select an element by its `id` attribute — common for targeting fixed UI elements
-- [EventTarget.addEventListener() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
-  - Attach click handlers to Deal, Hit, and Stand buttons
-- [HTMLButtonElement.disabled — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/disabled)
-  - Enable and disable buttons based on game state
-- [async function — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
-  - Write async game loops that wait for button clicks using await
-- [Promise — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-  - How waitForClick() works under the hood — a Promise that resolves on click
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [Document.getElementById() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) | Select an element by its `id` attribute — common for targeting fixed UI elements |
+| [EventTarget.addEventListener() — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) | Attach click handlers to Deal, Hit, and Stand buttons |
+| [HTMLButtonElement.disabled — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/disabled) | Enable and disable buttons based on game state |
+| [async function — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) | Write async game loops that wait for button clicks using await |
+| [Promise — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) | How waitForClick() works under the hood — a Promise that resolves on click |

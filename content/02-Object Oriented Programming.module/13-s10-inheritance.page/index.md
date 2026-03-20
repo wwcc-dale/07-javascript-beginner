@@ -9,6 +9,8 @@ related_outcomes:
 session: 10.1
 ---
 
+[lead]Your two-class designs from last session work great, but what happens when you need a specialized version of an existing class — one that does everything the original does, plus a little more? That's what inheritance is for, and the `extends` keyword makes it clean and powerful. This is the final session in the OOP module, and after this you'll have a complete toolkit for designing professional object-oriented code.
+
 # Session 10: Inheritance — Extending Classes
 
 ## Learning Outcomes
@@ -210,14 +212,12 @@ Create a `DiscountProduct` class that extends a `Product` class.
 
 ---
 
-- accordion: Helpful Resources
-- [extends — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends)
-  - Syntax and rules for creating a child class that inherits from a parent
-- [super — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super)
-  - How `super()` calls the parent constructor and `super.method()` calls a parent method
-- [instanceof — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof)
-  - Check whether an object is an instance of a class or any of its parent classes
-- [Inheritance and the prototype chain — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
-  - How JavaScript's prototype-based inheritance works under the hood
-- [Object-oriented programming — MDN Guide](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object-oriented_programming)
-  - Inheritance vs composition — when to use each design pattern
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [extends — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends) | Syntax and rules for creating a child class that inherits from a parent |
+| [super — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super) | How `super()` calls the parent constructor and `super.method()` calls a parent method |
+| [instanceof — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof) | Check whether an object is an instance of a class or any of its parent classes |
+| [Inheritance and the prototype chain — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain) | How JavaScript's prototype-based inheritance works under the hood |
+| [Object-oriented programming — MDN Guide](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object-oriented_programming) | Inheritance vs composition — when to use each design pattern |

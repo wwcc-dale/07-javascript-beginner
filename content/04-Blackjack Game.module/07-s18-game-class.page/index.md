@@ -10,6 +10,8 @@ related_outcomes:
 session: 18.1
 ---
 
+[lead]You have `Card`, `Deck`, and `Hand` — now you need a coordinator that knows the rules and manages the flow of a round. This session builds the `BlackjackGame` class, which is the brain of the whole application: it tracks game state, enforces rules, and returns structured results that the UI can display. The separation between game logic and display you'll establish here is a pattern used in professional software development every day.
+
 # Session 18: The BlackjackGame Class
 
 ## Learning Outcomes
@@ -220,12 +222,11 @@ Write a `simulateGame()` function that plays 10 rounds automatically:
 
 ---
 
-- accordion: Helpful Resources
-- [Classes — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes)
-  - Review class design, state management with properties, and separation of concerns
-- [Spread syntax (...) — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
-  - The `[...array]` pattern used to return a defensive copy of the cards array
-- [Conditional (ternary) operator — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator)
-  - Compact if/else expressions useful for assigning outcome strings
-- [Object initializer — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
-  - How to build and return a plain result object from getResult()
+#### Helpful Resources
+
+| [light] | |
+|----------|-------------|
+| [Classes — MDN Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_classes) | Review class design, state management with properties, and separation of concerns |
+| [Spread syntax (...) — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) | The `[...array]` pattern used to return a defensive copy of the cards array |
+| [Conditional (ternary) operator — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator) | Compact if/else expressions useful for assigning outcome strings |
+| [Object initializer — MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer) | How to build and return a plain result object from getResult() |
